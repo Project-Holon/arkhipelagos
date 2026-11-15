@@ -98,13 +98,52 @@ Configuration (made by the mod when a game is created):
 Options: `goal` (ghetsis, champion), `season_control` (vanilla,
 changeable), `modify_logic` (require_flash, require_dowsing),
 `species_sources`, `starter_pool` (species numbers to draw three starters
-from). A player's options override the game's.
+from), and the randomizers below. A player's options override the game's.
 
 The world holds, per player: the effective options, every location of
 their game with the item placed there and the player who gets it, the
-locations no item can unlock (none with the default options), the
-starters and the picks. It also records the generator version, the hash of
-the data files and the configuration's hash.
+locations no item can unlock, the starters, the picks, and `tables`: what
+the randomizers changed in the player's game (only the entries that
+differ from the original tables). It also records the generator version,
+the hash of the data files and the configuration's hash.
+
+## Randomizers
+
+Each option is a list of modifiers; an empty list (the default) leaves
+that part of the game as it is. They change the player's tables before the
+logic is built on them, so the logic always matches the game the player
+gets.
+
+| Option | Modifiers |
+|---|---|
+| `randomize_wild_pokemon` | `randomize`; `ensure_all` (every species, legendaries too, at least once), `similar_stats` (base stat total within 10%, widened when too few), `type_themed_areas`. The same original species becomes the same new one in every season of an area and method. |
+| `randomize_static_pokemon` | `randomize`; `similar_stats`, `no_legendaries` |
+| `randomize_gift_pokemon` | `randomize`; `similar_stats`, `no_legendaries`, `split_monkeys` (else the three Dreamyard monkeys stay one species) |
+| `randomize_legendary_pokemon` | `randomize`; `keep_legendary` (a legendary for a legendary). The roaming pair stays. |
+| `randomize_trade_pokemon` | `randomize_offer`, `randomize_request` |
+| `randomize_starter_pokemon` | `randomize`; `any_base` (else first stages that evolve twice), `similar_stats`, `type_variety`. `starter_pool` (three or more species) also picks the starters. |
+| `randomize_trainer_pokemon` | `randomize`; `similar_stats`, `type_themed`, `shuffle_gym_types` (one type per gym town), `rivals_keep_starter` (a rival's starter becomes the new starter in the same place, evolved to its level). Trainers with their own moves get the new species' last four level-up moves. |
+| `randomize_evolutions` | `randomize` (new targets, methods kept); `follow_type` (the target shares a type) |
+| `replace_evo_methods` | `trade`: trade becomes level 37, trade holding an item becomes level up holding it, Karrablast and Shelmet evolve with each other in the party, beauty becomes level 30 |
+| `randomize_tm_hm_compatibility` | `randomize` (the same number of machines per species); `all_hms`, `all_tms`, `follow_evolutions` |
+| `randomize_types` | `shuffle` (one permutation of the 17 types for all species) or `randomize` (dual stays dual); `follow_evolutions` |
+| `randomize_base_stats` | `randomize` (the six stats permuted); `follow_evolutions`, `random_total` (the same total split at random). Shedinja keeps 1 HP. |
+| `randomize_catch_rates` | `shuffle` or `randomize` (3 to 255) |
+| `randomize_gender_ratio` | `randomize` (fixed ratios stay) |
+| `randomize_abilities` | `randomize` (Wonder Guard stays where it was) |
+| `randomize_held_items` | `randomize` (wild held items shuffled between species) |
+| `randomize_levelup_movesets` | `randomize` (levels and count kept); `match_types` |
+| `randomize_move_data` | `power`, `type`, `accuracy`, `pp`; the moves machines teach keep theirs |
+| `randomize_type_chart` | `shuffle` (the chart's cells shuffled) |
+
+Each randomizer has its own random stream per player
+(`rand:<name>:<attempt>`). If a random set of tables leaves a player's goal
+out of reach even with every item, the tables are made again from the next
+attempt's streams (at most 10 tries).
+
+Locations that need a species the player's tables never give (Shaymin or
+Genesect to show without `ensure_all`, all four Deerling forms when no
+Deerling is found) are left out of the world and keep the game's items.
 
 ## How a world is made
 
@@ -130,14 +169,17 @@ new option or stage does not reshuffle the others.
   for all test configurations (`tests/golden.txt`, `tests/wasm_hash.mjs`).
   The data hash skips carriage returns, so Windows and Linux checkouts
   agree.
-- Every world can be finished: `arkh-gen sweep 300`, random games of 1 to
-  6 players with mixed versions, both goals, both season modes and logic
-  options: 300 of 300 made and finishable.
+- Every world can be finished: `arkh-gen sweep 200`, random games of 1 to
+  6 players with mixed versions, both goals, both season modes, logic
+  options, and in half of them random randomizers with random modifiers:
+  200 of 200 made and finishable.
 - Nothing is left out: with the default options every location of every
   test world is in the world (1,234 in the two-player test).
 - The logic holds items back: in the two-player test world, 50 of 1,234
   locations are reachable with nothing; the world opens over 13 spheres
   (`arkh-gen spheres`).
 - Speed (release build, x86-64): 1 player 0.2 s, 2 players 0.15 s,
-  8 players 0.9 s, 16 players 3.2 s. The wasm module is 2.9 MB with the
-  logic and facts in it.
+  8 players 0.9 s, 16 players 3.9 s; 2 players with every randomizer on
+  0.3 s. The wasm module is 3.1 MB with the logic and facts in it. With
+  every randomizer on, one player's part of the world is about 0.7 MB of
+  JSON (all species records change); the original game's is a few KB.

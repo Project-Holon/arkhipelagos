@@ -13,6 +13,7 @@ pub mod data;
 pub mod facts;
 pub mod gen;
 pub mod model;
+pub mod randomize;
 pub mod rng;
 pub mod species;
 

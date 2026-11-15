@@ -58,6 +58,29 @@ fn spheres(path: &str) -> Result<(), String> {
     Ok(())
 }
 
+/// Every randomizer option with its modifiers (the first one turns it on).
+const RANDOMIZERS: &[(&str, &[&str])] = &[
+    ("randomize_wild_pokemon", &["randomize", "ensure_all", "similar_stats", "type_themed_areas"]),
+    ("randomize_static_pokemon", &["randomize", "similar_stats", "no_legendaries"]),
+    ("randomize_gift_pokemon", &["randomize", "similar_stats", "no_legendaries", "split_monkeys"]),
+    ("randomize_legendary_pokemon", &["randomize", "keep_legendary"]),
+    ("randomize_trade_pokemon", &["randomize_offer", "randomize_request"]),
+    ("randomize_starter_pokemon", &["randomize", "any_base", "similar_stats", "type_variety"]),
+    ("randomize_trainer_pokemon", &["randomize", "similar_stats", "type_themed", "shuffle_gym_types", "rivals_keep_starter"]),
+    ("randomize_evolutions", &["randomize", "follow_type"]),
+    ("replace_evo_methods", &["trade"]),
+    ("randomize_tm_hm_compatibility", &["randomize", "all_hms", "all_tms", "follow_evolutions"]),
+    ("randomize_types", &["shuffle", "follow_evolutions"]),
+    ("randomize_base_stats", &["randomize", "follow_evolutions", "random_total"]),
+    ("randomize_catch_rates", &["shuffle"]),
+    ("randomize_gender_ratio", &["randomize"]),
+    ("randomize_abilities", &["randomize"]),
+    ("randomize_held_items", &["randomize"]),
+    ("randomize_levelup_movesets", &["randomize", "match_types"]),
+    ("randomize_move_data", &["power", "type", "accuracy", "pp"]),
+    ("randomize_type_chart", &["shuffle"]),
+];
+
 fn sweep(count: u64) -> Result<(), String> {
     let m = arkh_gen::model()?;
     let mut rng = Rng::new(0x5EED);
@@ -75,6 +98,21 @@ fn sweep(count: u64) -> Result<(), String> {
                 let mut po = Map::new();
                 if rng.below(3) == 0 {
                     po.insert("modify_logic".into(), Value::Array(vec![Value::String("require_flash".into())]));
+                }
+                // half the games random: each randomizer on in about half of
+                // those, with random modifiers
+                if k % 2 == 1 {
+                    for (opt, mods) in RANDOMIZERS {
+                        if rng.below(2) == 0 {
+                            let mut v = vec![Value::String(mods[0].into())];
+                            for md in &mods[1..] {
+                                if rng.below(2) == 0 {
+                                    v.push(Value::String((*md).into()));
+                                }
+                            }
+                            po.insert((*opt).into(), Value::Array(v));
+                        }
+                    }
                 }
                 PlayerConfig {
                     name: format!("P{}", i + 1),

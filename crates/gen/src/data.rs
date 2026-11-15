@@ -186,6 +186,7 @@ pub struct SpeciesRules {
     pub evolution_items: std::collections::BTreeMap<String, String>,
     pub sets: std::collections::BTreeMap<String, Value>,
     pub form_changes: Vec<FormChange>,
+    pub legendaries: Vec<u32>,
 }
 
 pub struct Data {

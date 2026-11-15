@@ -3,7 +3,7 @@
 
 use std::collections::BTreeMap;
 
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 
 pub const SPECIES: &str = include_str!("../../../data/facts/species.json");
 pub const LEARNSETS: &str = include_str!("../../../data/facts/learnsets.json");
@@ -19,7 +19,7 @@ pub const ALL: [&str; 8] = [SPECIES, LEARNSETS, EVOLUTIONS, MOVES, MACHINES, TYP
 /// The last species number (Genesect).
 pub const LAST_DEX: u32 = 649;
 
-#[derive(Deserialize, Clone, Debug, PartialEq, Eq)]
+#[derive(Deserialize, Serialize, Clone, Debug, PartialEq, Eq)]
 pub struct Personal {
     /// HP, Attack, Defense, Speed, Sp. Atk, Sp. Def
     pub stats: [u8; 6],
@@ -38,7 +38,7 @@ pub struct Personal {
     pub machines: Vec<u8>,
 }
 
-#[derive(Deserialize, Clone, Debug)]
+#[derive(Deserialize, Serialize, Clone, Debug, PartialEq, Eq)]
 pub struct Move {
     #[serde(rename = "type")]
     pub kind: u8,
@@ -63,27 +63,27 @@ pub struct Machine {
     pub compat_bit: u8,
 }
 
-#[derive(Deserialize, Clone, Debug)]
+#[derive(Deserialize, Serialize, Clone, Debug, PartialEq, Eq)]
 pub struct EncounterBlock {
     pub rates: BTreeMap<String, u8>,
     /// per method: [species, form, min level, max level] per slot
     pub slots: BTreeMap<String, Vec<[u16; 4]>>,
 }
 
-#[derive(Deserialize, Clone, Debug, PartialEq, Eq)]
+#[derive(Deserialize, Serialize, Clone, Debug, PartialEq, Eq)]
 pub struct TrainerMon {
     pub species: u16,
     pub form: u16,
     pub level: u16,
     pub dv: u8,
     pub ability: u8,
-    #[serde(default)]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
     pub item: Option<u16>,
-    #[serde(default)]
+    #[serde(default, skip_serializing_if = "Option::is_none")]
     pub moves: Option<[u16; 4]>,
 }
 
-#[derive(Deserialize, Clone, Debug)]
+#[derive(Deserialize, Serialize, Clone, Debug, PartialEq, Eq)]
 pub struct Trainer {
     pub class: u8,
     pub party: Vec<TrainerMon>,

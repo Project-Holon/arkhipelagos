@@ -52,6 +52,8 @@ pub struct TradeDef {
 
 pub struct TrainerDef {
     pub id: u32,
+    /// the gym town (or "League N") of a gym trainer
+    pub gym: Option<String>,
     pub region: Option<u32>,
     pub include: Rule,
     pub rule: Rule,
@@ -86,6 +88,7 @@ pub struct SpeciesModel {
     pub evo_methods: BTreeMap<u32, Value>,
     pub evo_items: BTreeMap<u32, String>,
     pub hall: Option<u32>,
+    pub legendaries: Vec<u32>,
 }
 
 impl SpeciesModel {
@@ -128,6 +131,7 @@ impl SpeciesModel {
             let what = format!("trainer {}", t.id);
             s.trainers.push(TrainerDef {
                 id: t.id,
+                gym: t.gym.as_ref().and_then(|g| g.get(0)).and_then(|x| x.as_str()).map(|x| x.to_string()),
                 region: if t.region.is_empty() { None } else { Some(m.region(&t.region, &what)?) },
                 include: c(&t.include, &what)?,
                 rule: c(&t.rule, &what)?,
@@ -165,6 +169,7 @@ impl SpeciesModel {
             s.evo_items.insert(k.parse().map_err(|_| format!("evolution item {k}"))?, v.clone());
         }
         s.hall = m.region_by_name.get("Hall of Fame").copied();
+        s.legendaries = d.species_rules.legendaries.clone();
         Ok(s)
     }
 }
@@ -185,6 +190,8 @@ pub struct Tables {
     pub trainers: Vec<Option<Trainer>>,
     /// per machine (facts order): the move it teaches
     pub machine_moves: Vec<u32>,
+    pub moves: Vec<Option<crate::facts::Move>>,
+    pub type_chart: Vec<Vec<u8>>,
 }
 
 impl Tables {
@@ -200,7 +207,17 @@ impl Tables {
             trades: m.species.trades.iter().map(|t| (t.vanilla[version], t.wanted[version])).collect(),
             trainers: f.trainers.clone(),
             machine_moves: f.machines.iter().map(|x| x.mv).collect(),
+            moves: f.moves.clone(),
+            type_chart: f.type_chart.clone(),
         }
+    }
+
+    pub fn moves_ok(&self, mv: u32) -> bool {
+        matches!(self.moves.get(mv as usize), Some(Some(_)))
+    }
+
+    pub fn move_type(&self, mv: u32) -> u8 {
+        self.moves.get(mv as usize).cloned().flatten().map(|m| m.kind).unwrap_or(0)
     }
 
     pub fn personal_of(&self, m: &Model, mon: u32) -> &Personal {
@@ -215,6 +232,85 @@ impl Tables {
         };
         let b = &blocks[(season.unwrap_or(0) as usize).min(blocks.len() - 1)];
         b.slots.get(method).map(|v| v.as_slice()).unwrap_or(&[])
+    }
+}
+
+/// What the randomizers changed in one player's game: only the entries
+/// that differ from the original tables. The mod turns these into the
+/// player's game files.
+#[derive(Clone, Debug, Default, serde::Serialize, serde::Deserialize, PartialEq, Eq)]
+pub struct Changes {
+    #[serde(skip_serializing_if = "BTreeMap::is_empty", default)]
+    pub personal: BTreeMap<u32, Personal>,
+    #[serde(skip_serializing_if = "BTreeMap::is_empty", default)]
+    pub learnsets: BTreeMap<u32, Vec<[u16; 2]>>,
+    #[serde(skip_serializing_if = "BTreeMap::is_empty", default)]
+    pub evolutions: BTreeMap<u32, Vec<[u16; 3]>>,
+    #[serde(skip_serializing_if = "BTreeMap::is_empty", default)]
+    pub moves: BTreeMap<u32, crate::facts::Move>,
+    #[serde(skip_serializing_if = "Option::is_none", default)]
+    pub type_chart: Option<Vec<Vec<u8>>>,
+    /// encounter file -> its season blocks
+    #[serde(skip_serializing_if = "BTreeMap::is_empty", default)]
+    pub wild: BTreeMap<u32, Vec<EncounterBlock>>,
+    /// static encounter name -> [species, form]
+    #[serde(skip_serializing_if = "BTreeMap::is_empty", default)]
+    pub statics: BTreeMap<String, [u32; 2]>,
+    /// trade name -> ([species, form] offered, species wanted)
+    #[serde(skip_serializing_if = "BTreeMap::is_empty", default)]
+    pub trades: BTreeMap<String, ([u32; 2], u32)>,
+    #[serde(skip_serializing_if = "BTreeMap::is_empty", default)]
+    pub trainers: BTreeMap<u32, Trainer>,
+}
+
+impl Changes {
+    pub fn of(m: &Model, t: &Tables) -> Changes {
+        let v = Tables::vanilla(m, t.version);
+        let mut c = Changes::default();
+        for (i, (a, b)) in t.personal.iter().zip(&v.personal).enumerate().skip(1) {
+            if a != b {
+                c.personal.insert(i as u32, a.clone());
+            }
+        }
+        for (i, (a, b)) in t.learnsets.iter().zip(&v.learnsets).enumerate() {
+            if a != b {
+                c.learnsets.insert(i as u32, a.clone());
+            }
+        }
+        for (i, (a, b)) in t.evolutions.iter().zip(&v.evolutions).enumerate() {
+            if a != b {
+                c.evolutions.insert(i as u32, a.clone());
+            }
+        }
+        for (i, (a, b)) in t.moves.iter().zip(&v.moves).enumerate() {
+            if let (Some(a), true) = (a, a != b) {
+                c.moves.insert(i as u32, a.clone());
+            }
+        }
+        if t.type_chart != v.type_chart {
+            c.type_chart = Some(t.type_chart.clone());
+        }
+        for (i, (a, b)) in t.wild.iter().zip(&v.wild).enumerate() {
+            if a != b {
+                c.wild.insert(i as u32, a.clone());
+            }
+        }
+        for (i, s) in m.species.statics.iter().enumerate() {
+            if t.statics[i] != v.statics[i] {
+                c.statics.insert(s.name.clone(), t.statics[i]);
+            }
+        }
+        for (i, tr) in m.species.trades.iter().enumerate() {
+            if t.trades[i] != v.trades[i] {
+                c.trades.insert(tr.name.clone(), t.trades[i]);
+            }
+        }
+        for (i, (a, b)) in t.trainers.iter().zip(&v.trainers).enumerate() {
+            if let (Some(a), true) = (a, a != b) {
+                c.trainers.insert(i as u32, a.clone());
+            }
+        }
+        c
     }
 }
 

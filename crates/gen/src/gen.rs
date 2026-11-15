@@ -12,7 +12,8 @@ use serde_json::{Map, Value};
 use crate::data::Rule;
 use crate::model::Model;
 use crate::rng::{fnv1a, Rng};
-use crate::species::{self, Picks, PlayerSpecies, SpState, Tables, Use};
+use crate::randomize::{self, Families};
+use crate::species::{self, Changes, Picks, PlayerSpecies, SpState, Tables, Use};
 
 pub const GENERATOR_VERSION: &str = env!("CARGO_PKG_VERSION");
 pub const SCHEMA: u32 = 1;
@@ -54,10 +55,10 @@ fn defaults() -> Map<String, Value> {
 pub struct Opts(pub Map<String, Value>);
 
 impl Opts {
-    fn str(&self, k: &str) -> &str {
+    pub fn str(&self, k: &str) -> &str {
         self.0.get(k).and_then(|v| v.as_str()).unwrap_or("")
     }
-    fn has(&self, k: &str, v: &str) -> bool {
+    pub fn has(&self, k: &str, v: &str) -> bool {
         match self.0.get(k) {
             Some(Value::Array(a)) => a.iter().any(|x| x.as_str() == Some(v)),
             Some(Value::String(s)) => s == v,
@@ -111,6 +112,8 @@ pub struct PlayerWorld {
     pub goal: u32,
     pub tables: Tables,
     pub ps: PlayerSpecies,
+    /// the three starters (left, middle, right)
+    pub starters: Vec<u32>,
 }
 
 /// The state of a sweep: per player, item counts, reachable regions, which
@@ -337,6 +340,8 @@ pub struct PlayerOut {
     pub starters: Vec<u32>,
     /// the per-world picks some locations ask for
     pub picks: Picks,
+    /// what the randomizers changed in the player's game
+    pub tables: Changes,
 }
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, Eq)]
@@ -368,12 +373,49 @@ pub fn stream(cfg: &Config, stage: &str, player: usize) -> Rng {
     Rng::new(fnv1a(&[&config_seed(cfg).to_le_bytes(), stage.as_bytes(), &(player as u64).to_le_bytes()]))
 }
 
+/// A player's game: the tables (randomized when asked) and the logic on
+/// them. When a random set of tables leaves the player's goal out of reach
+/// even with every item, the tables are made again from the next stream.
 fn build_player(m: &Model, cfg: &Config, p: &PlayerConfig, index: usize) -> Result<PlayerWorld, String> {
     if p.version != "black" && p.version != "white" {
         return Err(format!("{}: version must be black or white", p.name));
     }
-    let opts = Opts(effective(cfg, p));
-    let tables = Tables::vanilla(m, if p.version == "black" { 0 } else { 1 });
+    let fam = Families::new(m);
+    let mut last = String::new();
+    for attempt in 0..10u32 {
+        let opts = Opts(effective(cfg, p));
+        let mut tables = Tables::vanilla(m, if p.version == "black" { 0 } else { 1 });
+        let rc = randomize::Ctx { m, o: &opts, fam: &fam, legendary: &m.species.legendaries };
+        let st = randomize::run(&rc, &mut tables, &|stage: &str| stream(cfg, &format!("rand:{stage}:{attempt}"), index));
+        let w = build_player_with(m, cfg, p, index, opts, tables, st.0)?;
+        if player_can_finish(m, &w) {
+            return Ok(w);
+        }
+        last = format!("{}: no random tables let the goal be reached ({} tries)", p.name, attempt + 1);
+    }
+    Err(last)
+}
+
+fn player_can_finish(m: &Model, w: &PlayerWorld) -> bool {
+    let ws = std::slice::from_ref(w);
+    let mut st = State::new(m, ws);
+    let (prog, _, _) = pool_items(m, w);
+    for i in prog {
+        st.counts[0][i as usize] += 1;
+    }
+    sweep(m, ws, &mut st, &vec![vec![None; m.locs.len()]; 1]);
+    st.counts[0][w.goal as usize] > 0
+}
+
+fn build_player_with(
+    m: &Model,
+    cfg: &Config,
+    p: &PlayerConfig,
+    index: usize,
+    opts: Opts,
+    tables: Tables,
+    starters: Vec<u32>,
+) -> Result<PlayerWorld, String> {
     let flags = PlayerSpecies::flags(m, &tables);
     let empty_counts = vec![0u32; m.items.len()];
     let empty_reach = vec![false; m.regions.len()];
@@ -413,6 +455,7 @@ fn build_player(m: &Model, cfg: &Config, p: &PlayerConfig, index: usize) -> Resu
         goal,
         tables,
         ps,
+        starters,
     })
 }
 
@@ -579,14 +622,10 @@ pub fn generate(m: &Model, cfg: &Config) -> Result<World, String> {
             let mut left_out: Vec<u32> =
                 (0..m.locs.len()).filter(|&l| w.loc_on[l] && !in_world[p][l]).map(|l| m.locs[l].id).collect();
             left_out.sort();
-            let pool: Vec<u32> = w
-                .opts
-                .0
-                .get("starter_pool")
-                .and_then(|v| v.as_array())
-                .map(|a| a.iter().filter_map(|x| x.as_u64()).map(|x| x as u32).collect())
-                .unwrap_or_default();
-            let starters = pick_starters(&pool, &mut rng);
+            let changes = Changes::of(m, &w.tables);
+            let vanilla: Vec<u32> =
+                m.species.statics.iter().filter(|s| s.kind == "starter").map(|s| s.vanilla[0][0]).collect();
+            let starters = if w.starters == vanilla { Vec::new() } else { w.starters.clone() };
             PlayerOut {
                 slot: p as u32 + 1,
                 name: w.name.clone(),
@@ -596,6 +635,7 @@ pub fn generate(m: &Model, cfg: &Config) -> Result<World, String> {
                 left_out,
                 starters,
                 picks: w.ps.picks.clone(),
+                tables: changes,
             }
         })
         .collect();
@@ -608,20 +648,6 @@ pub fn generate(m: &Model, cfg: &Config) -> Result<World, String> {
         config_hash: format!("{:016x}", config_seed(cfg)),
         players,
     })
-}
-
-/// Starters from a list the configuration gives (species numbers). v1 needs
-/// no game tables for this; an empty list keeps the game's own starters.
-fn pick_starters(pool: &[u32], rng: &mut Rng) -> Vec<u32> {
-    let mut p: Vec<u32> = pool.to_vec();
-    p.sort();
-    p.dedup();
-    if p.len() < 3 {
-        return Vec::new();
-    }
-    rng.shuffle(&mut p);
-    p.truncate(3);
-    p
 }
 
 /// Assumed fill: take progression items in random order; for each, assume

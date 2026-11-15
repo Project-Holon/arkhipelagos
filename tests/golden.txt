@@ -1,5 +1,7 @@
-4cb05fd47b4f120c  eight-mixed.json
-03f800184b00d16f  solo-black.json
-63026e15d878e45d  solo-white-seasons.json
-676859854786db99  two-players.json
-954e5be7dfc62c59  sixteen.json
+9312c86d560ea166  eight-mixed.json
+e51f1a7b46777c5d  solo-black.json
+63b40caf064bc9df  solo-white-seasons.json
+b235700efb42c248  two-players.json
+d6e7b50375aa3dbc  sixteen.json
+8ed8905ed21f7dd6  all-random.json
+739c37c3967573ca  random-wild-only.json

@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "seed": 31337,
+  "options": {"goal": "champion", "season_control": "vanilla", "randomize_wild_pokemon": ["randomize"], "randomize_trainer_pokemon": ["randomize", "type_themed"]},
+  "players": [
+    {"name": "Solo", "version": "white", "options": {"starter_pool": [1, 4, 7, 152, 155, 158]}}
+  ]
+}
