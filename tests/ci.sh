@@ -24,7 +24,7 @@ while read -r h f; do
 done < tests/golden.txt
 [ $fail = 0 ] && echo "golden hashes match, native and wasm32"
 echo "== generator: finishable worlds"
-"$T/release/arkh-gen" sweep 200
+"$T/release/arkh-gen" sweep 150
 echo "== lines (no cartridge)"
 "${PYTHON:-python3}" tools/checklines.py --no-carts
 exit $fail

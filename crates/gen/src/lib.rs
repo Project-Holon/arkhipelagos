@@ -10,9 +10,11 @@
 //! - `gen`: options, the sweep, the item fill, the world
 
 pub mod data;
+pub mod facts;
 pub mod gen;
 pub mod model;
 pub mod rng;
+pub mod species;
 
 pub use gen::{generate, Config, PlayerConfig, World};
 

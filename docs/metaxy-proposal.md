@@ -97,7 +97,8 @@ Archipelago message 2 MB.
   what guards against a generator change.
 - A world is made again only when it is first needed after a start (a
   join or a check), then kept in memory while it has players, and dropped
-  after 10 minutes without one. 16 players take about 1.6 s.
+  after 10 minutes without one. 16 players take about 3.2 s (with the
+  species logic; `docs/generator.md`).
 - The log stays as it is: it is the world's state (claims, checks, items
   handed over, goals), which the generator cannot make again.
 - At start, metaxy rebuilds a world's state from `world.json` and `log`;
@@ -116,7 +117,7 @@ Archipelago message 2 MB.
 - `arkh-gen` is a Rust crate linked into metaxy. Worlds are made on a small
   thread pool (setting `gen-workers`, default the number of cores minus
   one), never on the async runtime, so relay traffic never waits on it.
-- A generation has a time limit (default 10 s; 16 players take about 1.6 s
+- A generation has a time limit (default 10 s; 16 players take about 3.2 s
   today) and the configuration a size limit.
 - Same configuration and seed give the same world (checked across native
   and wasm32 builds).

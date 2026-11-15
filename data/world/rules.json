@@ -368,16 +368,28 @@
     {
      "all": [
       {
-       "has": "Deerling (Spring)"
+       "species": [
+        585,
+        0
+       ]
       },
       {
-       "has": "Deerling (Summer)"
+       "species": [
+        585,
+        1
+       ]
       },
       {
-       "has": "Deerling (Autumn)"
+       "species": [
+        585,
+        2
+       ]
       },
       {
-       "has": "Deerling (Winter)"
+       "species": [
+        585,
+        3
+       ]
       }
      ]
     }
@@ -619,34 +631,58 @@
   "has_forces_of_nature": {
    "all": [
     {
-     "has": "Thundurus"
+     "species": [
+      642,
+      0
+     ]
     },
     {
-     "has": "Tornadus"
+     "species": [
+      641,
+      0
+     ]
     }
    ]
   },
   "has_celebi": {
-   "has": "Celebi"
+   "species": [
+    251,
+    0
+   ]
   },
   "has_legendary_beasts": {
    "all": [
     {
-     "has": "Entei"
+     "species": [
+      244,
+      0
+     ]
     },
     {
-     "has": "Raikou"
+     "species": [
+      243,
+      0
+     ]
     },
     {
-     "has": "Suicune"
+     "species": [
+      245,
+      0
+     ]
     }
    ]
   },
   "has_genesect": {
-   "has": "Genesect"
+   "species": [
+    649,
+    0
+   ]
   },
   "has_shaymin": {
-   "has": "Shaymin"
+   "species": [
+    492,
+    0
+   ]
   },
   "has_other_locations_species": {
    "has_value": "other_locations_species"

@@ -12,6 +12,7 @@ use serde_json::{Map, Value};
 use crate::data::Rule;
 use crate::model::Model;
 use crate::rng::{fnv1a, Rng};
+use crate::species::{self, Picks, PlayerSpecies, SpState, Tables, Use};
 
 pub const GENERATOR_VERSION: &str = env!("CARGO_PKG_VERSION");
 pub const SCHEMA: u32 = 1;
@@ -42,6 +43,11 @@ fn defaults() -> Map<String, Value> {
     m.insert("modify_logic".into(), Value::Array(vec![]));
     m.insert("randomize_wild_pokemon".into(), Value::Array(vec![]));
     m.insert("starter_pool".into(), Value::Array(vec![]));
+    // where the logic finds species besides wild grass and water
+    m.insert(
+        "species_sources".into(),
+        Value::Array(["static", "evolutions", "form_change", "trainers"].iter().map(|s| Value::String((*s).into())).collect()),
+    );
     m
 }
 
@@ -60,31 +66,16 @@ impl Opts {
     }
 }
 
-/// v1 has no vanilla game tables (decision pending), so rules about species
-/// are simplified: an HM is usable once its HM is held (BWAP also asks for a
-/// Pokemon that can learn it); every other species rule is unmet, so the
-/// few locations that need one are left out of the world.
-fn v1_species(s: &str) -> bool {
-    matches!(
-        s,
-        "any:surf_species"
-            | "any:cut_species"
-            | "any:strength_species"
-            | "any:waterfall_species"
-            | "any:dive_species"
-            | "any:flash_species"
-            | "any:fly_species"
-    )
+pub(crate) struct Ctx<'a> {
+    pub m: &'a Model,
+    pub opts: &'a Opts,
+    pub counts: &'a [u32],
+    pub reach: &'a [bool],
+    pub sp: &'a SpState,
+    pub ps: &'a PlayerSpecies,
 }
 
-struct Ctx<'a> {
-    m: &'a Model,
-    opts: &'a Opts,
-    counts: &'a [u32],
-    reach: &'a [bool],
-}
-
-fn eval(r: &Rule, c: &Ctx) -> bool {
+pub(crate) fn eval(r: &Rule, c: &Ctx) -> bool {
     match r {
         Rule::Const(b) => *b,
         Rule::Has(i, n) => c.counts[*i as usize] >= *n,
@@ -97,8 +88,14 @@ fn eval(r: &Rule, c: &Ctx) -> bool {
         Rule::OptEq(o, v) => c.opts.0.get(o) == Some(v),
         Rule::OptHas(o, v) => c.opts.has(o, v),
         Rule::OptSet(o) => matches!(c.opts.0.get(o), Some(Value::Bool(true))),
-        Rule::Value(name) => name == "monkeys_not_split",
-        Rule::Species(s) => v1_species(s),
+        Rule::Value(name) => name == "monkeys_not_split" && c.ps.monkeys_not_split,
+        Rule::SetAny(s) => c.sp.set_hit[*s as usize],
+        Rule::Seen(n) => c.sp.seen_n >= *n,
+        Rule::Caught(mon) => c.sp.caught[*mon as usize],
+        // levels count in steps of 5, as BWAP's level events do
+        Rule::Level(l) => c.sp.level / 5 >= *l / 5,
+        Rule::Pick(0) => c.ps.other_mon.map(|x| c.sp.caught[x as usize]) == Some(true),
+        Rule::Pick(_) => c.ps.tm_item.map(|x| c.counts[x as usize] > 0) == Some(true),
     }
 }
 
@@ -112,26 +109,110 @@ pub struct PlayerWorld {
     pub loc_on: Vec<bool>,
     pub event_on: Vec<bool>,
     pub goal: u32,
+    pub tables: Tables,
+    pub ps: PlayerSpecies,
 }
 
-/// The state of a sweep: per player, item counts, reachable regions, and
-/// which locations and events were collected.
+/// The state of a sweep: per player, item counts, reachable regions, which
+/// locations and events were collected, and the species state.
 #[derive(Clone)]
 pub struct State {
     pub counts: Vec<Vec<u32>>,
     pub reach: Vec<Vec<bool>>,
     pub got_loc: Vec<Vec<bool>>,
     pub got_event: Vec<Vec<bool>>,
+    pub sp: Vec<SpState>,
 }
 
 impl State {
-    fn new(m: &Model, players: usize) -> State {
+    fn new(m: &Model, ws: &[PlayerWorld]) -> State {
+        let players = ws.len();
         State {
             counts: vec![vec![0; m.items.len()]; players],
             reach: vec![vec![false; m.regions.len()]; players],
             got_loc: vec![vec![false; m.locs.len()]; players],
             got_event: vec![vec![false; m.events.len()]; players],
+            sp: ws
+                .iter()
+                .map(|w| {
+                    let mut s = SpState::new(m);
+                    s.src_done = vec![false; w.ps.sources.len()];
+                    s.evo_done = vec![false; w.ps.evos.len()];
+                    s
+                })
+                .collect(),
         }
+    }
+}
+
+fn ctx<'a>(m: &'a Model, w: &'a PlayerWorld, st: &'a State, p: usize) -> Ctx<'a> {
+    Ctx { m, opts: &w.opts, counts: &st.counts[p], reach: &st.reach[p], sp: &st.sp[p], ps: &w.ps }
+}
+
+/// Catch and see what the player's reached places give, until nothing changes.
+fn species_step(m: &Model, w: &PlayerWorld, st: &mut State, p: usize) -> bool {
+    let ps = &w.ps;
+    let mut changed = false;
+    loop {
+        let mut grew = false;
+        if let Some(h) = ps.hall {
+            if st.reach[p][h as usize] && st.sp[p].level < 100 {
+                st.sp[p].level = 100;
+                grew = true;
+            }
+        }
+        for (k, s) in ps.sources.iter().enumerate() {
+            if !s.on || st.sp[p].src_done[k] || !s.regions.iter().any(|r| st.reach[p][*r as usize]) {
+                continue;
+            }
+            if !eval(&s.rule, &ctx(m, w, st, p)) {
+                continue;
+            }
+            let sp = &mut st.sp[p];
+            sp.src_done[k] = true;
+            sp.level = sp.level.max(s.level);
+            for &mon in &s.mons {
+                if s.seen {
+                    sp.see(m.facts.mons[mon as usize].0 as u32);
+                } else {
+                    sp.catch(m, ps, mon);
+                }
+            }
+            grew = true;
+        }
+        for (k, e) in ps.evos.iter().enumerate() {
+            if st.sp[p].evo_done[k] || !st.sp[p].caught[e.base as usize] {
+                continue;
+            }
+            if st.sp[p].caught[e.target as usize] {
+                st.sp[p].evo_done[k] = true;
+                continue;
+            }
+            if eval(&e.rule, &ctx(m, w, st, p)) {
+                st.sp[p].evo_done[k] = true;
+                st.sp[p].catch(m, ps, e.target);
+                grew = true;
+            }
+        }
+        for g in &ps.forms {
+            if !st.reach[p][g.region as usize] || !g.mons.iter().any(|x| st.sp[p].caught[*x as usize]) {
+                continue;
+            }
+            for (i, &mon) in g.mons.iter().enumerate() {
+                if st.sp[p].caught[mon as usize] {
+                    continue;
+                }
+                let ok = g.rules.get(i).map(|r| eval(r, &ctx(m, w, st, p))).unwrap_or(false);
+                if ok {
+                    st.sp[p].catch(m, ps, mon);
+                    grew = true;
+                }
+            }
+        }
+        if !grew {
+            return changed;
+        }
+        changed = true;
     }
 }
 
@@ -142,58 +223,85 @@ fn loc_ok(m: &Model, w: &PlayerWorld, st: &State, p: usize, l: usize) -> bool {
     let loc = &m.locs[l];
     w.loc_on[l]
         && st.reach[p][loc.region as usize]
-        && eval(&loc.rule, &Ctx { m, opts: &w.opts, counts: &st.counts[p], reach: &st.reach[p] })
+        && eval(&loc.rule, &ctx(m, w, st, p))
+}
+
+/// Grow one player's reach, events and species until nothing changes.
+/// Returns whether anything grew.
+fn grow_player(m: &Model, w: &PlayerWorld, st: &mut State, p: usize) -> bool {
+    let mut any = false;
+    if !st.reach[p][m.menu as usize] {
+        st.reach[p][m.menu as usize] = true;
+        any = true;
+    }
+    loop {
+        let mut grew = false;
+        // regions: repeat a pass until stable (rules may ask for reach)
+        loop {
+            let mut more = false;
+            for (ci, cn) in m.conns.iter().enumerate() {
+                if !w.conn_on[ci] {
+                    continue;
+                }
+                let (a, b) = (cn.from as usize, cn.to as usize);
+                let fwd = st.reach[p][a] && !st.reach[p][b] && w.region_on[b];
+                let back = !cn.one_way && st.reach[p][b] && !st.reach[p][a] && w.region_on[a];
+                if fwd && eval(&cn.rule, &ctx(m, w, st, p)) {
+                    st.reach[p][b] = true;
+                    more = true;
+                } else if back && eval(&cn.back, &ctx(m, w, st, p)) {
+                    st.reach[p][a] = true;
+                    more = true;
+                }
+            }
+            if !more {
+                break;
+            }
+            grew = true;
+        }
+        for (ei, ev) in m.events.iter().enumerate() {
+            if st.got_event[p][ei] || !w.event_on[ei] || !st.reach[p][ev.region as usize] {
+                continue;
+            }
+            if eval(&ev.rule, &ctx(m, w, st, p)) {
+                st.got_event[p][ei] = true;
+                st.counts[p][ev.item as usize] += 1;
+                grew = true;
+            }
+        }
+        if species_step(m, w, st, p) {
+            grew = true;
+        }
+        if !grew {
+            return any;
+        }
+        any = true;
+    }
 }
 
 /// Expand everything reachable, collecting events and placed items, until
-/// nothing changes.
+/// nothing changes. A player is looked at again only when something of
+/// theirs changed (an item arrived), so large worlds stay fast.
 fn sweep(m: &Model, ws: &[PlayerWorld], st: &mut State, placed: &Placement) {
+    let n = ws.len();
+    let mut dirty = vec![true; n];
+    let mut first = true;
     loop {
-        let mut changed = false;
+        let mut touched = vec![false; n];
         for (p, w) in ws.iter().enumerate() {
-            // regions: repeat a pass until stable (rules may ask for reach)
-            if !st.reach[p][m.menu as usize] {
-                st.reach[p][m.menu as usize] = true;
-                changed = true;
-            }
-            loop {
-                let mut grew = false;
-                for (ci, cn) in m.conns.iter().enumerate() {
-                    if !w.conn_on[ci] {
-                        continue;
-                    }
-                    let ctx = Ctx { m, opts: &w.opts, counts: &st.counts[p], reach: &st.reach[p] };
-                    let (a, b) = (cn.from as usize, cn.to as usize);
-                    if st.reach[p][a] && !st.reach[p][b] && w.region_on[b] && eval(&cn.rule, &ctx) {
-                        st.reach[p][b] = true;
-                        grew = true;
-                    } else if !cn.one_way
-                        && st.reach[p][b]
-                        && !st.reach[p][a]
-                        && w.region_on[a]
-                        && eval(&cn.back, &Ctx { m, opts: &w.opts, counts: &st.counts[p], reach: &st.reach[p] })
-                    {
-                        st.reach[p][a] = true;
-                        grew = true;
-                    }
-                }
-                if !grew {
-                    break;
-                }
-                changed = true;
-            }
-            for (ei, ev) in m.events.iter().enumerate() {
-                if st.got_event[p][ei] || !w.event_on[ei] || !st.reach[p][ev.region as usize] {
-                    continue;
-                }
-                if eval(&ev.rule, &Ctx { m, opts: &w.opts, counts: &st.counts[p], reach: &st.reach[p] }) {
-                    st.got_event[p][ei] = true;
-                    st.counts[p][ev.item as usize] += 1;
-                    changed = true;
-                }
+            if dirty[p] {
+                // an item arrived (or the first round): its locations are
+                // looked at again even when nothing else grew
+                dirty[p] = false;
+                grow_player(m, w, st, p);
+                touched[p] = true;
             }
         }
-        for p in 0..ws.len() {
+        let mut any = false;
+        for p in 0..n {
+            if !(first || touched[p]) {
+                continue;
+            }
             for l in 0..m.locs.len() {
                 if st.got_loc[p][l] {
                     continue;
@@ -202,12 +310,14 @@ fn sweep(m: &Model, ws: &[PlayerWorld], st: &mut State, placed: &Placement) {
                     if loc_ok(m, &ws[p], st, p, l) {
                         st.got_loc[p][l] = true;
                         st.counts[rcv as usize][item as usize] += 1;
-                        changed = true;
+                        dirty[rcv as usize] = true;
+                        any = true;
                     }
                 }
             }
         }
-        if !changed {
+        first = false;
+        if !any && !dirty.iter().any(|d| *d) {
             return;
         }
     }
@@ -221,9 +331,12 @@ pub struct PlayerOut {
     pub options: Map<String, Value>,
     /// [location id, item id, receiving slot], by location id
     pub locations: Vec<[u32; 3]>,
-    /// locations of this game that v1 leaves out (their rule needs data v1 lacks)
+    /// locations of this game no item can ever unlock (none with the
+    /// default options)
     pub left_out: Vec<u32>,
     pub starters: Vec<u32>,
+    /// the per-world picks some locations ask for
+    pub picks: Picks,
 }
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, Eq)]
@@ -249,14 +362,23 @@ fn effective(cfg: &Config, p: &PlayerConfig) -> Map<String, Value> {
     m
 }
 
-fn build_player(m: &Model, cfg: &Config, p: &PlayerConfig) -> Result<PlayerWorld, String> {
+/// A random stream of its own for one stage of one player, so that a new
+/// option or stage never reshuffles the others.
+pub fn stream(cfg: &Config, stage: &str, player: usize) -> Rng {
+    Rng::new(fnv1a(&[&config_seed(cfg).to_le_bytes(), stage.as_bytes(), &(player as u64).to_le_bytes()]))
+}
+
+fn build_player(m: &Model, cfg: &Config, p: &PlayerConfig, index: usize) -> Result<PlayerWorld, String> {
     if p.version != "black" && p.version != "white" {
         return Err(format!("{}: version must be black or white", p.name));
     }
     let opts = Opts(effective(cfg, p));
+    let tables = Tables::vanilla(m, if p.version == "black" { 0 } else { 1 });
+    let flags = PlayerSpecies::flags(m, &tables);
     let empty_counts = vec![0u32; m.items.len()];
     let empty_reach = vec![false; m.regions.len()];
-    let ctx = Ctx { m, opts: &opts, counts: &empty_counts, reach: &empty_reach };
+    let empty_sp = SpState::new(m);
+    let ctx = Ctx { m, opts: &opts, counts: &empty_counts, reach: &empty_reach, sp: &empty_sp, ps: &flags };
     let region_on: Vec<bool> = m.region_include.iter().map(|r| eval(r, &ctx)).collect();
     let conn_on: Vec<bool> = m
         .conns
@@ -271,12 +393,36 @@ fn build_player(m: &Model, cfg: &Config, p: &PlayerConfig) -> Result<PlayerWorld
         g => return Err(format!("{}: unknown goal {g}", p.name)),
     };
     let goal = m.item_by_name[goal_name];
-    Ok(PlayerWorld { name: p.name.clone(), version: p.version.clone(), opts, region_on, conn_on, loc_on, event_on, goal })
+    let use_ = Use {
+        statics: opts.has("species_sources", "static"),
+        trades: opts.has("species_sources", "trades"),
+        evolutions: opts.has("species_sources", "evolutions"),
+        form_change: opts.has("species_sources", "form_change"),
+        trainers: opts.has("species_sources", "trainers"),
+    };
+    let mut rng = stream(cfg, "picks", index);
+    let ps = species::build(m, &tables, &use_, &|r: &Rule| eval(r, &ctx), &mut rng)?;
+    Ok(PlayerWorld {
+        name: p.name.clone(),
+        version: p.version.clone(),
+        opts,
+        region_on,
+        conn_on,
+        loc_on,
+        event_on,
+        goal,
+        tables,
+        ps,
+    })
 }
 
 /// The item's class for this player (two classes depend on options).
 fn class_of<'a>(m: &'a Model, w: &PlayerWorld, i: usize) -> &'a str {
     let it = &m.items[i];
+    // the TM the Driftveil lady asks about unlocks her location
+    if w.ps.tm_item == Some(i as u32) {
+        return "progression";
+    }
     match it.class.as_str() {
         "tm_hm_class" => {
             if w.opts.has("goal", "tmhm_hunt") {
@@ -338,7 +484,8 @@ pub fn generate(m: &Model, cfg: &Config) -> Result<World, String> {
             return Err(format!("two players named {}", p.name));
         }
     }
-    let ws: Vec<PlayerWorld> = cfg.players.iter().map(|p| build_player(m, cfg, p)).collect::<Result<_, _>>()?;
+    let ws: Vec<PlayerWorld> =
+        cfg.players.iter().enumerate().map(|(i, p)| build_player(m, cfg, p, i)).collect::<Result<_, _>>()?;
     let np = ws.len();
     let mut rng = Rng::new(config_seed(cfg));
 
@@ -351,7 +498,7 @@ pub fn generate(m: &Model, cfg: &Config) -> Result<World, String> {
 
     // which locations can ever be reached (all progression assumed): the rest
     // is left out of the world
-    let mut full = State::new(m, np);
+    let mut full = State::new(m, &ws);
     for &(p, i) in &prog_all {
         full.counts[p as usize][i as usize] += 1;
     }
@@ -413,7 +560,7 @@ pub fn generate(m: &Model, cfg: &Config) -> Result<World, String> {
     }
 
     // the world must be finishable from nothing
-    let mut st = State::new(m, np);
+    let mut st = State::new(m, &ws);
     sweep(m, &ws, &mut st, &placed);
     for (p, w) in ws.iter().enumerate() {
         if st.counts[p][w.goal as usize] == 0 {
@@ -448,6 +595,7 @@ pub fn generate(m: &Model, cfg: &Config) -> Result<World, String> {
                 locations: locs,
                 left_out,
                 starters,
+                picks: w.ps.picks.clone(),
             }
         })
         .collect();
@@ -491,7 +639,7 @@ fn fill_progression(
     items.sort();
     rng.shuffle(&mut items);
     let mut placed: Placement = vec![vec![None; m.locs.len()]; np];
-    let mut base = State::new(m, np);
+    let mut base = State::new(m, ws);
     for &(p, i) in &items {
         base.counts[p as usize][i as usize] += 1;
     }
@@ -521,7 +669,8 @@ fn fill_progression(
 /// the previous one. Returns, per sphere, how many locations of all players
 /// are reachable. A logic that holds back nothing would show one sphere.
 pub fn spheres(m: &Model, cfg: &Config, w: &World) -> Result<Vec<usize>, String> {
-    let ws: Vec<PlayerWorld> = cfg.players.iter().map(|p| build_player(m, cfg, p)).collect::<Result<_, _>>()?;
+    let ws: Vec<PlayerWorld> =
+        cfg.players.iter().enumerate().map(|(i, p)| build_player(m, cfg, p, i)).collect::<Result<_, _>>()?;
     let np = ws.len();
     let by_id: BTreeMap<u32, usize> = m.locs.iter().enumerate().map(|(i, l)| (l.id, i)).collect();
     let item_by_id: BTreeMap<u32, usize> =
@@ -533,7 +682,7 @@ pub fn spheres(m: &Model, cfg: &Config, w: &World) -> Result<Vec<usize>, String>
         }
     }
     // sphere by sphere: collect only what was reachable at the start of the round
-    let mut st = State::new(m, np);
+    let mut st = State::new(m, &ws);
     let mut out = Vec::new();
     let none: Placement = vec![vec![None; m.locs.len()]; np];
     loop {
