@@ -10,7 +10,7 @@ record and writes the values. The generator compiles these files in.
 | `forms.json` | the form table (personal member 668) | |
 | `learnsets.json` | level-up moves, `[move, level]` | personal record number |
 | `evolutions.json` | `[method, parameter, target]` | personal record number |
-| `moves.json` | type, category (0 status, 1 physical, 2 special), power, accuracy, PP, priority, effect | move number |
+| `moves.json` | type, group (the game's "category", the effect group), damage type (0 status, 1 physical, 2 special), power, accuracy, PP, priority, ailment | move number |
 | `machines.json` | TM01-95 and HM01-06: item number, move, compatibility bit | |
 | `type_chart.json` | 17 x 17, the game's codes (0, 2, 4, 8) | attacking type, defending type |
 | `encounters.json` | per encounter file, per season block: method rates and slots `[species, form, min, max]` | encounter file number; `black` and `white` |
@@ -52,8 +52,11 @@ record and writes the values. The generator compiles these files in.
 
 ## A note on the move record
 
-aletheia's `tools/assets/waza.py` names byte 1 the move type. The data says
-byte 0: Karate Chop reads 1 (Fighting) there and Fire Punch 9 (Fire),
-while byte 1 is the same (4) for Fire, Ice and Thunder Punch. With byte 0,
-every move in BWAP's table matches. The finding is reported to aletheia; this repository
-does not change it.
+The fields follow the game's `struct WazaData`, as aletheia's
+`tools/assets/waza.py` names them since c69433ce23: byte 0 type, byte 1
+category (the effect group), byte 2 damage type, then power, accuracy,
+base PP, priority, and the ailment (`sickId`) at +8. Our names:
+`type`, `group`, `damage_type`, `power`, `accuracy`, `pp`, `priority`,
+`ailment`. Before that fix waza.py's map was one byte off; this file was
+read from the data (Karate Chop reads 1, Fighting, in byte 0; Fire Punch
+9, Fire) and every move in BWAP's table matches.

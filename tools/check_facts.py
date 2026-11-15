@@ -66,8 +66,8 @@ def main():
         want = (TY.by_name[d.type], d.power, d.accuracy, d.pp)
         if got != want:
             diff("moves", f"{name} ({d.id}): ours {got}, BWAP {want}")
-        if f["category"] != {"Physical": 1, "Special": 2, "Status": 0}[d.category]:
-            diff("move-category", f"{name}: ours {f['category']}, BWAP {d.category} ({cat[d.category]})")
+        if f["damage_type"] != {"Physical": 1, "Special": 2, "Status": 0}[d.category]:
+            diff("move-category", f"{name}: ours {f['damage_type']}, BWAP {d.category}")
     # machines
     for m in mach:
         t = MV.tm_hm.get(m["name"])

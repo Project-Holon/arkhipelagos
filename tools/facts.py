@@ -15,8 +15,8 @@ Where each layout comes from (aletheia's source and its verified converters):
   0-94, HM01-06 are 95-100); member 668 is the form table (u16, 999 = none)
 - learnsets a/0/1/8: (u16 move, u16 level) pairs, ended by 0xFFFF 0xFFFF
 - evolutions a/0/1/9: 7 rows of (u16 method, u16 param, u16 species)
-- moves a/0/2/1: 36-byte records (waza.py; struct read by sub_0201BD28);
-  the type is byte 0, checked against known moves (see moves())
+- moves a/0/2/1: 36-byte records, struct WazaData (aletheia waza.py since
+  c69433ce23; the type is byte 0)
 - machines: arm9 table g_0209EAA0 (English Black address), 101 u16 move
   numbers in the order of FILE_UTIL_GetMachineMove: TM01-92, HM01-06,
   TM93-95; found in each cartridge by the English table's content
@@ -119,13 +119,13 @@ def moves(cart):
         if i == 0:
             continue
         assert len(d) == 36, i
-        # the type is byte 0: Karate Chop reads 1 (Fighting), Fire Punch 9
-        # (Fire); byte 1 is the same for the three elemental punches, so it
-        # is not the type (waza.py's label for bytes 0 and 1 is swapped)
-        typ, _kind, cat, power, acc, pp, prio = struct.unpack_from("<6Bb", d, 0)
-        effect = struct.unpack_from("<H", d, 8)[0]
-        out[str(i)] = {"type": typ, "category": cat, "power": power, "accuracy": acc,
-                       "pp": pp, "priority": prio, "effect": effect}
+        # struct WazaData (aletheia waza.py since c69433ce23): type, category
+        # (the effect group), damageType (0 status, 1 physical, 2 special),
+        # power, accuracy, basePP, priority; sickId (the ailment) at +8
+        typ, group, damage, power, acc, pp, prio = struct.unpack_from("<6Bb", d, 0)
+        ailment = struct.unpack_from("<H", d, 8)[0]
+        out[str(i)] = {"type": typ, "group": group, "damage_type": damage, "power": power,
+                       "accuracy": acc, "pp": pp, "priority": prio, "ailment": ailment}
     return out
 
 
