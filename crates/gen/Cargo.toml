@@ -1,0 +1,14 @@
+[package]
+name = "arkh-gen"
+description = "arkhipelagos world generator: one game's logic, item fill across players, randomizers"
+edition.workspace = true
+license.workspace = true
+version.workspace = true
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[[bin]]
+name = "arkh-gen"
+path = "src/main.rs"

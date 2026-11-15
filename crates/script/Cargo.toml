@@ -1,0 +1,13 @@
+[package]
+name = "arkh-script"
+description = "Field-script disassembler and assembler for Pokemon Black and White, all 12 cartridges"
+edition.workspace = true
+license.workspace = true
+version.workspace = true
+
+[dependencies]
+arkh-formats = { path = "../formats" }
+
+[[bin]]
+name = "arkh-script"
+path = "src/main.rs"

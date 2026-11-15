@@ -1,0 +1,4021 @@
+{
+ "_source": "PokemonBWAP 0.4.5 data (BlastSlimey and contributors, MIT), converted by tools/bwap2data.py",
+ "regions": [
+  {
+   "name": "Menu",
+   "type": "Virtual",
+   "map": -1,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Pokédex",
+   "type": "Virtual",
+   "map": -1,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Map Visits",
+   "type": "Virtual",
+   "map": -1,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Evolutions",
+   "type": "Virtual",
+   "map": -1,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Form Change",
+   "type": "Virtual",
+   "map": -1,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nuvema Town",
+   "type": "City",
+   "map": 389,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Nuvema Town Near Lab",
+   "type": "City",
+   "map": 389,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Player's House",
+   "type": "Interior",
+   "map": 390,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Player's Bedroom",
+   "type": "Interior",
+   "map": 391,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Cheren's House",
+   "type": "Interior",
+   "map": 394,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Cheren's Bedroom",
+   "type": "Interior",
+   "map": 395,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Bianca's House",
+   "type": "Interior",
+   "map": 392,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Bianca's Bedroom",
+   "type": "Interior",
+   "map": 393,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Juniper's Lab",
+   "type": "Interior",
+   "map": 396,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 1 East",
+   "type": "Route",
+   "map": 317,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 1 West",
+   "type": "Route",
+   "map": 317,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 1 Gate",
+   "type": "Gate",
+   "map": 318,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 17 Shore",
+   "type": "Route",
+   "map": 423,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 17 South",
+   "type": "Route",
+   "map": 423,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 17 North",
+   "type": "Route",
+   "map": 423,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 18",
+   "type": "Route",
+   "map": 387,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 18 Coast",
+   "type": "Route",
+   "map": 387,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 18 House",
+   "type": "Interior",
+   "map": 388,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "P2 Laboratory Outside",
+   "type": "Route",
+   "map": 238,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "P2 Laboratory",
+   "type": "Interior",
+   "map": 239,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Accumula Town",
+   "type": "City",
+   "map": 397,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Accumula Town Near Gate",
+   "type": "City",
+   "map": 397,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Accumula Town Pokemon Center",
+   "type": "Interior",
+   "map": 398,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Accumula Town South West House 1F",
+   "type": "Interior",
+   "map": 399,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Accumula Town South West House 2F",
+   "type": "Interior",
+   "map": 400,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Accumula Town North East House",
+   "type": "Interior",
+   "map": 405,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Accumula Town North Left House 1F",
+   "type": "Interior",
+   "map": 403,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Accumula Town North Left House 2F",
+   "type": "Interior",
+   "map": 404,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Accumula Town North Right House 1F",
+   "type": "Interior",
+   "map": 401,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Accumula Town North Right House 2F",
+   "type": "Interior",
+   "map": 402,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Accumula Gate",
+   "type": "Gate",
+   "map": 320,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 2",
+   "type": "Route",
+   "map": 319,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Striaton City",
+   "type": "City",
+   "map": 6,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Striaton City Near Gym",
+   "type": "City",
+   "map": 6,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Striaton City Pokemon Center",
+   "type": "Interior",
+   "map": 8,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Striaton Gym",
+   "type": "Interior",
+   "map": 7,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Striaton City Trainers' School",
+   "type": "Interior",
+   "map": 15,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Striaton City South West House 1F",
+   "type": "Interior",
+   "map": 13,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Striaton City South West House 2F",
+   "type": "Interior",
+   "map": 14,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Striaton City East Lower House 1F",
+   "type": "Interior",
+   "map": 11,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Striaton City East Lower House 2F",
+   "type": "Interior",
+   "map": 12,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Striaton City East Upper House 1F",
+   "type": "Interior",
+   "map": 9,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Striaton City East Upper House 2F",
+   "type": "Interior",
+   "map": 10,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Dreamyard Entrance",
+   "type": "Dungeon",
+   "map": 152,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Dreamyard North West",
+   "type": "Dungeon",
+   "map": 152,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Dreamyard North East",
+   "type": "Dungeon",
+   "map": 152,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Dreamyard Basement",
+   "type": "Dungeon",
+   "map": 153,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Dreamyard Basement North West",
+   "type": "Dungeon",
+   "map": 153,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Dreamyard South",
+   "type": "Dungeon",
+   "map": 152,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 3 North",
+   "type": "Route",
+   "map": 321,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 3 South",
+   "type": "Route",
+   "map": 321,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 3 South or Dreamyard North East",
+   "type": "Virtual",
+   "map": -1,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 3 Pokémon Day Care",
+   "type": "Interior",
+   "map": 323,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 3 Kindergarten",
+   "type": "Interior",
+   "map": 322,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Wellspring Cave Entrance",
+   "type": "Dungeon",
+   "map": 324,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Wellspring Cave Inner",
+   "type": "Dungeon",
+   "map": 324,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Wellspring Cave B1F Entrance",
+   "type": "Dungeon",
+   "map": 325,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Wellspring Cave B1F",
+   "type": "Dungeon",
+   "map": 325,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Nacrene City",
+   "type": "City",
+   "map": 16,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nacrene City Pokemon Center",
+   "type": "Interior",
+   "map": 20,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nacrene Museum",
+   "type": "Interior",
+   "map": 17,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nacrene Gym",
+   "type": "Interior",
+   "map": 18,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Café Warehouse",
+   "type": "Interior",
+   "map": 26,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nacrene City South East Left House",
+   "type": "Interior",
+   "map": 23,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nacrene City South East Right House",
+   "type": "Interior",
+   "map": 21,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nacrene City South West Left House",
+   "type": "Interior",
+   "map": 25,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nacrene City South West Right House",
+   "type": "Interior",
+   "map": 24,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nacrene City North East House",
+   "type": "Interior",
+   "map": 22,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nacrene Gate",
+   "type": "Gate",
+   "map": 27,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Pinwheel Forest Outside",
+   "type": "Route",
+   "map": 154,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Pinwheel Forest South",
+   "type": "Dungeon",
+   "map": 155,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Pinwheel Forest West",
+   "type": "Dungeon",
+   "map": 155,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Pinwheel Forest North",
+   "type": "Dungeon",
+   "map": 155,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Pinwheel Forest East",
+   "type": "Dungeon",
+   "map": 155,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Pinwheel Forest North East",
+   "type": "Dungeon",
+   "map": 155,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Rumination Field",
+   "type": "Dungeon",
+   "map": 156,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Skyarrow Bridge Entrance",
+   "type": "Gate",
+   "map": 250,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Skyarrow Bridge South Gate",
+   "type": "Gate",
+   "map": 251,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Skyarrow Bridge",
+   "type": "Bridge",
+   "map": 249,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Skyarrow Bridge North Gate",
+   "type": "Gate",
+   "map": 252,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City",
+   "type": "City",
+   "map": 28,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia Pokemon Center",
+   "type": "Interior",
+   "map": 41,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia Gym Entrance",
+   "type": "Interior",
+   "map": 29,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Castelia Gym",
+   "type": "Interior",
+   "map": 29,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Castelia City Central Plaza",
+   "type": "City",
+   "map": 30,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Northern Street",
+   "type": "City",
+   "map": 32,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Castelia Street",
+   "type": "City",
+   "map": 34,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Mode Street",
+   "type": "City",
+   "map": 33,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Narrow Street",
+   "type": "City",
+   "map": 35,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Gym Street",
+   "type": "City",
+   "map": 31,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Liberty Pier",
+   "type": "City",
+   "map": 36,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Unity Pier",
+   "type": "City",
+   "map": 37,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Prime Pier",
+   "type": "City",
+   "map": 38,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Cruise Dock",
+   "type": "City",
+   "map": 39,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Thumb Pier",
+   "type": "City",
+   "map": 40,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Passerby Analytics HQ",
+   "type": "Interior",
+   "map": 42,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Studio Castelia",
+   "type": "Interior",
+   "map": 43,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Battle Company 1F",
+   "type": "Interior",
+   "map": 44,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Battle Company 47F",
+   "type": "Interior",
+   "map": 45,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Battle Company 55F",
+   "type": "Interior",
+   "map": 46,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Castelia Street East Building 1F",
+   "type": "Interior",
+   "map": 47,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Game Freak Headquarters",
+   "type": "Interior",
+   "map": 48,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Northern Street West Building 1F",
+   "type": "Interior",
+   "map": 49,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Northern Street West Building 11F",
+   "type": "Interior",
+   "map": 50,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia Gate",
+   "type": "Gate",
+   "map": 51,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Royal Unova",
+   "type": "Interior",
+   "map": 52,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Café Sonata",
+   "type": "Interior",
+   "map": 53,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Castelia Street West Building 1F",
+   "type": "Interior",
+   "map": 54,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Castelia Street West Building 11F",
+   "type": "Interior",
+   "map": 55,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Plasma Hideout 1F",
+   "type": "Interior",
+   "map": 56,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Plasma Hideout 2F",
+   "type": "Interior",
+   "map": 57,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Northern Street East Upper Building 1F",
+   "type": "Interior",
+   "map": 58,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Northern Street East Upper Building 47F",
+   "type": "Interior",
+   "map": 59,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Northern Street East Lower Building 1F",
+   "type": "Interior",
+   "map": 60,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Castelia City Northern Street East Lower Building 47F",
+   "type": "Interior",
+   "map": 61,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Liberty Garden",
+   "type": "Dungeon",
+   "map": 235,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Liberty Garden Hallway",
+   "type": "Dungeon",
+   "map": 236,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Liberty Garden Basement",
+   "type": "Dungeon",
+   "map": 237,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 4 South",
+   "type": "Route",
+   "map": 326,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 4 South House",
+   "type": "Interior",
+   "map": 327,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 4 North",
+   "type": "Route",
+   "map": 326,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 4 North House",
+   "type": "Interior",
+   "map": 328,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Desert Resort",
+   "type": "Dungeon",
+   "map": 158,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Desert Resort Gate",
+   "type": "Gate",
+   "map": 159,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Desert Resort Outside",
+   "type": "Route",
+   "map": 157,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Castleside 1F",
+   "type": "Dungeon",
+   "map": 160,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Castleside 1F North",
+   "type": "Dungeon",
+   "map": 160,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Castleside 1F South West",
+   "type": "Dungeon",
+   "map": 160,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Castleside B1F North",
+   "type": "Dungeon",
+   "map": 161,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Castleside B1F North West",
+   "type": "Dungeon",
+   "map": 161,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Castleside B1F South",
+   "type": "Dungeon",
+   "map": 161,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Castleside B2F",
+   "type": "Dungeon",
+   "map": 162,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Castleside B2F North West",
+   "type": "Dungeon",
+   "map": 162,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Castleside B3F South",
+   "type": "Dungeon",
+   "map": 163,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Castleside B3F North West",
+   "type": "Dungeon",
+   "map": 163,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Castleside B3F North East",
+   "type": "Dungeon",
+   "map": 163,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Castleside B4F East",
+   "type": "Dungeon",
+   "map": 164,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Castleside B4F North West",
+   "type": "Dungeon",
+   "map": 164,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Castleside B4F South West",
+   "type": "Dungeon",
+   "map": 164,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Castleside Sand Filled Room",
+   "type": "Dungeon",
+   "map": 165,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Castleside Back Room",
+   "type": "Dungeon",
+   "map": 166,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Basement Top Right Room",
+   "type": "Dungeon",
+   "map": 167,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Basement Top Left Room",
+   "type": "Dungeon",
+   "map": 168,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Basement Left of Center Room",
+   "type": "Dungeon",
+   "map": 169,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Basement Right of Center Room",
+   "type": "Dungeon",
+   "map": 170,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Basement Right of Top Center Room",
+   "type": "Dungeon",
+   "map": 171,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Basement Top Center Room",
+   "type": "Dungeon",
+   "map": 172,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Basement Left of Top Center Room",
+   "type": "Dungeon",
+   "map": 173,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Basement Center Room",
+   "type": "Dungeon",
+   "map": 174,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Basement Left of Volcarona Entrance",
+   "type": "Dungeon",
+   "map": 175,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Basement Right of Volcarona Entrance",
+   "type": "Dungeon",
+   "map": 176,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Basement Below Top Right Room",
+   "type": "Dungeon",
+   "map": 177,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Basement Bottom Right Room",
+   "type": "Dungeon",
+   "map": 178,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Basement Below Top Left Room",
+   "type": "Dungeon",
+   "map": 179,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Basement Bottom Left Room",
+   "type": "Dungeon",
+   "map": 180,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Basement Volcarona Entrance",
+   "type": "Dungeon",
+   "map": 181,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Basement Volcarona Room",
+   "type": "Dungeon",
+   "map": 182,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Towerside Front Room",
+   "type": "Dungeon",
+   "map": 183,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Towerside B6F",
+   "type": "Dungeon",
+   "map": 184,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Towerside B5F",
+   "type": "Dungeon",
+   "map": 185,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Towerside B4F",
+   "type": "Dungeon",
+   "map": 186,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Towerside B3F",
+   "type": "Dungeon",
+   "map": 187,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Towerside B2F",
+   "type": "Dungeon",
+   "map": 188,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Towerside B1F",
+   "type": "Dungeon",
+   "map": 189,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Towerside 1F East",
+   "type": "Dungeon",
+   "map": 190,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Relic Castle Towerside 1F",
+   "type": "Dungeon",
+   "map": 190,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Nimbasa City",
+   "type": "City",
+   "map": 62,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nimbasa City Park",
+   "type": "City",
+   "map": 64,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nimbasa City Pokemon Center",
+   "type": "Interior",
+   "map": 65,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nimbasa Gym",
+   "type": "Interior",
+   "map": 63,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Gear Station",
+   "type": "Interior",
+   "map": 66,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Musical Theater",
+   "type": "Interior",
+   "map": 77,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Big Stadium Entrance",
+   "type": "Interior",
+   "map": 79,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Big Stadium Stand",
+   "type": "Interior",
+   "map": 80,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Big Stadium Football Field",
+   "type": "Interior",
+   "map": 81,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Big Stadium Baseball Field",
+   "type": "Interior",
+   "map": 82,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Big Stadium Soccer Field",
+   "type": "Interior",
+   "map": 83,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Small Court Entrance",
+   "type": "Interior",
+   "map": 84,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Small Court Stand",
+   "type": "Interior",
+   "map": 85,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Small Court Tennis Court",
+   "type": "Interior",
+   "map": 86,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Small Court Basketball Court",
+   "type": "Interior",
+   "map": 87,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Any Big Stadium or Small Court",
+   "type": "Virtual",
+   "map": -1,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nimbasa City North West House 1F",
+   "type": "Interior",
+   "map": 88,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nimbasa City North West House 2F",
+   "type": "Interior",
+   "map": 89,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nimbasa South Gate",
+   "type": "Gate",
+   "map": 90,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nimbasa West Gate",
+   "type": "Gate",
+   "map": 91,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nimbasa East Gate",
+   "type": "Gate",
+   "map": 92,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Battle Institute",
+   "type": "Interior",
+   "map": 93,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nimbasa City North East House 1F",
+   "type": "Interior",
+   "map": 94,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Nimbasa City North East House 2F",
+   "type": "Interior",
+   "map": 95,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Anville Town",
+   "type": "City",
+   "map": 418,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Anville Town North House",
+   "type": "Interior",
+   "map": 419,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Anville Town South West House",
+   "type": "Interior",
+   "map": 420,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Anville Town South East House",
+   "type": "Interior",
+   "map": 421,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 5",
+   "type": "Route",
+   "map": 329,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 5 Near Bridge",
+   "type": "Route",
+   "map": 329,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 5 Caravan",
+   "type": "Interior",
+   "map": 330,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Driftveil Drawbridge",
+   "type": "Bridge",
+   "map": 253,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Driftveil City",
+   "type": "City",
+   "map": 96,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Driftveil City Near Bridge",
+   "type": "City",
+   "map": 96,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Driftveil City Near Gym",
+   "type": "City",
+   "map": 96,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Driftveil City Pokemon Center",
+   "type": "Interior",
+   "map": 99,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Driftveil Gym",
+   "type": "Interior",
+   "map": 98,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Driftveil City Safehouse",
+   "type": "Interior",
+   "map": 104,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Driftveil City House North of Market",
+   "type": "Interior",
+   "map": 106,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Driftveil Market",
+   "type": "Interior",
+   "map": 105,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Driftveil Market Behind Counter",
+   "type": "Interior",
+   "map": 105,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Driftveil City Upper Left House East of Market",
+   "type": "Interior",
+   "map": 100,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Driftveil City Upper Right House East of Market",
+   "type": "Interior",
+   "map": 101,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Driftveil City Lower Left House East of Market",
+   "type": "Interior",
+   "map": 102,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Driftveil City Lower Right House East of Market",
+   "type": "Interior",
+   "map": 103,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Cold Storage",
+   "type": "Route",
+   "map": 191,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Cold Storage Building",
+   "type": "Dungeon",
+   "map": 192,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Cold Storage Container",
+   "type": "Interior",
+   "map": 193,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 6",
+   "type": "Route",
+   "map": 331,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 6 North East",
+   "type": "Route",
+   "map": 331,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Season Research Lab",
+   "type": "Interior",
+   "map": 332,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 6 North House",
+   "type": "Interior",
+   "map": 336,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Mistralton Cave Very Close Entrance",
+   "type": "Dungeon",
+   "map": 333,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Mistralton Cave Entrance",
+   "type": "Dungeon",
+   "map": 333,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Mistralton Cave 1F",
+   "type": "Dungeon",
+   "map": 333,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Mistralton Cave 1F South",
+   "type": "Dungeon",
+   "map": 333,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Mistralton Cave 1F Center",
+   "type": "Dungeon",
+   "map": 333,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Mistralton Cave 2F",
+   "type": "Dungeon",
+   "map": 334,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Mistralton Cave 2F West",
+   "type": "Dungeon",
+   "map": 334,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Mistralton Cave 2F West Near Stairs",
+   "type": "Dungeon",
+   "map": 334,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Mistralton Cave 2F Center",
+   "type": "Dungeon",
+   "map": 334,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Mistralton Cave 2F Center Near Stairs",
+   "type": "Dungeon",
+   "map": 334,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Guidance Chamber",
+   "type": "Dungeon",
+   "map": 335,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Guidance Chamber Near Stairs",
+   "type": "Dungeon",
+   "map": 335,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Chargestone Cave Entrance",
+   "type": "Route",
+   "map": 194,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Chargestone Cave Entrance North",
+   "type": "Route",
+   "map": 194,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Chargestone Cave 1F",
+   "type": "Dungeon",
+   "map": 195,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Chargestone Cave 1F North East",
+   "type": "Dungeon",
+   "map": 195,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Chargestone Cave 1F South Shortcut",
+   "type": "Dungeon",
+   "map": 195,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Chargestone Cave B1F",
+   "type": "Dungeon",
+   "map": 196,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Chargestone Cave B2F",
+   "type": "Dungeon",
+   "map": 197,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Mistralton City",
+   "type": "City",
+   "map": 107,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Mistralton City Near Gym",
+   "type": "City",
+   "map": 107,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Mistralton City Pokemon Center",
+   "type": "Interior",
+   "map": 109,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Mistralton Gym",
+   "type": "Interior",
+   "map": 108,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Mistralton Cargo Service",
+   "type": "Interior",
+   "map": 111,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Mistralton City North House",
+   "type": "Interior",
+   "map": 110,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Mistralton City East House",
+   "type": "Interior",
+   "map": 112,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 7",
+   "type": "Route",
+   "map": 337,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 7 West House",
+   "type": "Interior",
+   "map": 343,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 7 North House",
+   "type": "Interior",
+   "map": 344,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Celestial Tower 1F",
+   "type": "Dungeon",
+   "map": 338,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Celestial Tower 2F",
+   "type": "Dungeon",
+   "map": 339,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Celestial Tower 3F",
+   "type": "Dungeon",
+   "map": 340,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Celestial Tower 4F",
+   "type": "Dungeon",
+   "map": 341,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Celestial Tower 5F",
+   "type": "Dungeon",
+   "map": 342,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Entrance",
+   "type": "Route",
+   "map": 198,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Entrance Near Cave",
+   "type": "Route",
+   "map": 198,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Outside 3F North Footbridge",
+   "type": "Dungeon",
+   "map": 199,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Outside 3F West Footbridge",
+   "type": "Dungeon",
+   "map": 199,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Outside 3F South East Footbridge",
+   "type": "Dungeon",
+   "map": 199,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Outside 3F East Footbridge",
+   "type": "Dungeon",
+   "map": 199,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Outside 2F North East Footbridge",
+   "type": "Dungeon",
+   "map": 199,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Outside 2F North West Footbridge",
+   "type": "Dungeon",
+   "map": 199,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Outside 2F South Footbridge",
+   "type": "Dungeon",
+   "map": 199,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Outside 1F East",
+   "type": "Dungeon",
+   "map": 199,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Outside 1F",
+   "type": "Dungeon",
+   "map": 199,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Outside Snow",
+   "type": "Dungeon",
+   "map": 199,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Near 2F North West Door",
+   "type": "Dungeon",
+   "map": 199,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Near 1F North West Door",
+   "type": "Dungeon",
+   "map": 199,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Near 1F North East Door",
+   "type": "Dungeon",
+   "map": 199,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Near 1F South West Door",
+   "type": "Dungeon",
+   "map": 199,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Near House",
+   "type": "Dungeon",
+   "map": 199,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain 3F North West",
+   "type": "Dungeon",
+   "map": 200,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain 3F North East",
+   "type": "Dungeon",
+   "map": 200,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain 3F South West",
+   "type": "Dungeon",
+   "map": 200,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain 3F South East",
+   "type": "Dungeon",
+   "map": 200,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain 2F North West",
+   "type": "Dungeon",
+   "map": 201,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain 2F North",
+   "type": "Dungeon",
+   "map": 201,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain 2F North East",
+   "type": "Dungeon",
+   "map": 201,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain 2F North Dead End",
+   "type": "Dungeon",
+   "map": 201,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain 2F South West",
+   "type": "Dungeon",
+   "map": 201,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain 2F South East",
+   "type": "Dungeon",
+   "map": 201,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain 1F North West",
+   "type": "Dungeon",
+   "map": 202,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain 1F North East",
+   "type": "Dungeon",
+   "map": 202,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain 1F South West",
+   "type": "Dungeon",
+   "map": 202,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain 1F South East",
+   "type": "Dungeon",
+   "map": 202,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Ice Cave",
+   "type": "Dungeon",
+   "map": 203,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Twist Mountain Outside House",
+   "type": "Interior",
+   "map": 204,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Icirrus City",
+   "type": "City",
+   "map": 113,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Icirrus City South",
+   "type": "City",
+   "map": 113,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Icirrus City Pokemon Center",
+   "type": "Interior",
+   "map": 115,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Icirrus Gym",
+   "type": "Interior",
+   "map": 114,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Icirrus City South House",
+   "type": "Interior",
+   "map": 118,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Icirrus City Pokémon Fan Club",
+   "type": "Interior",
+   "map": 119,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Icirrus City Aha's House",
+   "type": "Interior",
+   "map": 117,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Icirrus City House North of Pokemon Center",
+   "type": "Interior",
+   "map": 116,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Dragonspiral Tower Entrance",
+   "type": "Route",
+   "map": 205,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Dragonspiral Tower Entrance Upper Platform",
+   "type": "Route",
+   "map": 205,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Dragonspiral Tower Outside West",
+   "type": "Dungeon",
+   "map": 206,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Dragonspiral Tower Outside East",
+   "type": "Dungeon",
+   "map": 206,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Dragonspiral Tower 1F",
+   "type": "Dungeon",
+   "map": 207,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Dragonspiral Tower 2F",
+   "type": "Dungeon",
+   "map": 208,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Dragonspiral Tower 3F",
+   "type": "Dungeon",
+   "map": 209,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Dragonspiral Tower 4F",
+   "type": "Dungeon",
+   "map": 210,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Dragonspiral Tower 5F",
+   "type": "Dungeon",
+   "map": 211,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Dragonspiral Tower 6F",
+   "type": "Dungeon",
+   "map": 212,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Dragonspiral Tower 7F",
+   "type": "Dungeon",
+   "map": 213,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 8",
+   "type": "Route",
+   "map": 345,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 8 North East",
+   "type": "Route",
+   "map": 345,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 8 Near Gate",
+   "type": "Route",
+   "map": 345,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Moor of Icirrus",
+   "type": "Dungeon",
+   "map": 346,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Moor of Icirrus West",
+   "type": "Dungeon",
+   "map": 346,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Tubeline Bridge",
+   "type": "Bridge",
+   "map": 254,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Tubeline Bridge West Gate",
+   "type": "Gate",
+   "map": 347,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Tubeline Bridge East Gate",
+   "type": "Gate",
+   "map": 349,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 9",
+   "type": "Route",
+   "map": 348,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 9 Near Challenger's cave",
+   "type": "Route",
+   "map": 348,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Shopping Mall Nine",
+   "type": "Interior",
+   "map": 350,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Shopping Mall Nine Back Room",
+   "type": "Interior",
+   "map": 351,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Challenger's Cave 1F",
+   "type": "Dungeon",
+   "map": 352,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Challenger's Cave 1F Near Entrance",
+   "type": "Dungeon",
+   "map": 352,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Challenger's Cave 1F Near Stairs",
+   "type": "Dungeon",
+   "map": 352,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Challenger's Cave B1F",
+   "type": "Dungeon",
+   "map": 353,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Challenger's Cave B1F Near South Stairs",
+   "type": "Dungeon",
+   "map": 353,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Challenger's Cave B1F Near North Stairs",
+   "type": "Dungeon",
+   "map": 353,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Challenger's Cave B2F Very Close Entrance",
+   "type": "Dungeon",
+   "map": 354,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Challenger's Cave B2F Entrance",
+   "type": "Dungeon",
+   "map": 354,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Challenger's Cave B2F",
+   "type": "Dungeon",
+   "map": 354,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 11",
+   "type": "Route",
+   "map": 365,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 11 Ravine",
+   "type": "Route",
+   "map": 365,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 11 Caravan",
+   "type": "Interior",
+   "map": 367,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Village Bridge West Gate",
+   "type": "Gate",
+   "map": 366,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Village Bridge",
+   "type": "Bridge",
+   "map": 255,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Village Bridge Caravan",
+   "type": "Interior",
+   "map": 262,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Village Bridge Left House on Left Side",
+   "type": "Interior",
+   "map": 256,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Village Bridge Middle House on Left Side",
+   "type": "Interior",
+   "map": 257,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Village Bridge Right House on Left Side",
+   "type": "Interior",
+   "map": 259,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Village Bridge Left House on Right Side",
+   "type": "Interior",
+   "map": 258,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Village Bridge Middle House on Right Side",
+   "type": "Interior",
+   "map": 260,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Village Bridge Right House on Right Side",
+   "type": "Interior",
+   "map": 261,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Village Bridge East Gate",
+   "type": "Gate",
+   "map": 369,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 12",
+   "type": "Route",
+   "map": 368,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Lacunosa Town",
+   "type": "City",
+   "map": 406,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Lacunosa Town Pokemon Center",
+   "type": "Interior",
+   "map": 407,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Lacunosa Town South West House",
+   "type": "Interior",
+   "map": 408,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Lacunosa Town North East House",
+   "type": "Interior",
+   "map": 411,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Lacunosa Town Big North House",
+   "type": "Interior",
+   "map": 409,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Lacunosa Town Small North House",
+   "type": "Interior",
+   "map": 410,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 13 North",
+   "type": "Route",
+   "map": 370,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 13 South",
+   "type": "Route",
+   "map": 370,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 13 North East",
+   "type": "Route",
+   "map": 370,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 13 West",
+   "type": "Route",
+   "map": 370,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 13 Island",
+   "type": "Route",
+   "map": 370,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 13 West House",
+   "type": "Interior",
+   "map": 371,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 13 Center House",
+   "type": "Interior",
+   "map": 373,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Giant Chasm Outer",
+   "type": "Route",
+   "map": 230,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Giant Chasm Entrance Cave",
+   "type": "Dungeon",
+   "map": 231,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Giant Chasm Entrance Cave Inner",
+   "type": "Dungeon",
+   "map": 231,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Giant Chasm Crater",
+   "type": "Dungeon",
+   "map": 232,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Giant Chasm Crater North East",
+   "type": "Dungeon",
+   "map": 232,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Giant Chasm Crater Snow",
+   "type": "Dungeon",
+   "map": 233,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Giant Chasm Inner Cave",
+   "type": "Dungeon",
+   "map": 234,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Undella Town",
+   "type": "City",
+   "map": 412,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Undella Town Pokemon Center",
+   "type": "Interior",
+   "map": 413,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Undella Town Gate",
+   "type": "Gate",
+   "map": 372,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Undella Town Caitlin's Villa",
+   "type": "Interior",
+   "map": 417,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Undella Town Middle Small Villa",
+   "type": "Interior",
+   "map": 416,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Undella Town Left Small Villa",
+   "type": "Interior",
+   "map": 415,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "The Riches' Villa",
+   "type": "Interior",
+   "map": 414,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Undella Bay Shore",
+   "type": "Route",
+   "map": 240,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Undella Bay",
+   "type": "Route",
+   "map": 240,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Abyssal Ruins Outside North",
+   "type": "Dungeon",
+   "map": 241,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Abyssal Ruins Outside South",
+   "type": "Dungeon",
+   "map": 244,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Abyssal Ruins Outside West",
+   "type": "Dungeon",
+   "map": 242,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Abyssal Ruins Outside East",
+   "type": "Dungeon",
+   "map": 243,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Abyssal Ruins 1F",
+   "type": "Dungeon",
+   "map": 245,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Abyssal Ruins 2F",
+   "type": "Dungeon",
+   "map": 246,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Abyssal Ruins 3F",
+   "type": "Dungeon",
+   "map": 247,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Abyssal Ruins 4F",
+   "type": "Dungeon",
+   "map": 248,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 14",
+   "type": "Route",
+   "map": 374,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 14 West",
+   "type": "Route",
+   "map": 374,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 14 Top Platform",
+   "type": "Route",
+   "map": 374,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Abundant Shrine",
+   "type": "Dungeon",
+   "map": 376,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Abundant Shrine House",
+   "type": "Interior",
+   "map": 377,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Black City/White Forest North Gate Upper Side",
+   "type": "Gate",
+   "map": 375,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Black City/White Forest North Gate Lower Side",
+   "type": "Gate",
+   "map": 375,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Black City",
+   "type": "City",
+   "map": 0,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "White Forest",
+   "type": "City",
+   "map": 424,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Black City/White Forest West Gate",
+   "type": "Gate",
+   "map": 379,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 15",
+   "type": "Route",
+   "map": 378,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 15 Below East Bridge",
+   "type": "Route",
+   "map": 378,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Poké Transfer Lab",
+   "type": "Interior",
+   "map": 381,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 15 Caravan",
+   "type": "Interior",
+   "map": 382,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Marvelous Bridge",
+   "type": "Bridge",
+   "map": 263,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Marvelous Bridge West Gate",
+   "type": "Gate",
+   "map": 384,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Marvelous Bridge East Gate",
+   "type": "Gate",
+   "map": 380,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 16",
+   "type": "Route",
+   "map": 383,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 16 Behind Boulder",
+   "type": "Route",
+   "map": 383,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Route 16 Near East Gate",
+   "type": "Route",
+   "map": 383,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Lostlorn Forest",
+   "type": "Dungeon",
+   "map": 385,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Lostlorn Forest Upper Platform",
+   "type": "Dungeon",
+   "map": 385,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Lostlorn Forest Caravan",
+   "type": "Interior",
+   "map": 386,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Opelucid City",
+   "type": "City",
+   "map": 120,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Opelucid City Near Gym",
+   "type": "City",
+   "map": 120,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Opelucid City Pokemon Center",
+   "type": "Interior",
+   "map": 122,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Opelucid Gym",
+   "type": "Interior",
+   "map": 121,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Opelucid City West House 1F",
+   "type": "Interior",
+   "map": 127,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Opelucid City West House 2F",
+   "type": "Interior",
+   "map": 128,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Opelucid City House Next to Gym 1F",
+   "type": "Interior",
+   "map": 134,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Opelucid City House Next to Gym 2F",
+   "type": "Interior",
+   "map": 135,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Opelucid City Battle House 1F",
+   "type": "Interior",
+   "map": 125,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Opelucid City Battle House 2F",
+   "type": "Interior",
+   "map": 126,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Opelucid City Drayden's House 1F",
+   "type": "Interior",
+   "map": 123,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Opelucid City Drayden's House 2F",
+   "type": "Interior",
+   "map": 124,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Opelucid City House Next to Drayden's House 1F",
+   "type": "Interior",
+   "map": 129,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Opelucid City House Next to Drayden's House 2F",
+   "type": "Interior",
+   "map": 130,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Opelucid City West Gate",
+   "type": "Gate",
+   "map": 131,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Opelucid City East Gate Left Side",
+   "type": "Gate",
+   "map": 133,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Opelucid City East Gate Right Side",
+   "type": "Gate",
+   "map": 133,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Opelucid City North Gate",
+   "type": "Gate",
+   "map": 132,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Route 10",
+   "type": "Route",
+   "map": 355,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Badge Gate 1",
+   "type": "Route",
+   "map": 356,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Behind Badge Gate 1",
+   "type": "Route",
+   "map": 356,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Badge Gate 2",
+   "type": "Route",
+   "map": 357,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Behind Badge Gate 2",
+   "type": "Route",
+   "map": 357,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Badge Gate 3",
+   "type": "Route",
+   "map": 358,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Behind Badge Gate 3",
+   "type": "Route",
+   "map": 358,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Badge Gate 4",
+   "type": "Route",
+   "map": 359,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Behind Badge Gate 4",
+   "type": "Route",
+   "map": 359,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Badge Gate 5",
+   "type": "Route",
+   "map": 360,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Behind Badge Gate 5",
+   "type": "Route",
+   "map": 360,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Badge Gate 6",
+   "type": "Route",
+   "map": 361,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Behind Badge Gate 6",
+   "type": "Route",
+   "map": 361,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Badge Gate 7",
+   "type": "Route",
+   "map": 362,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Behind Badge Gate 7",
+   "type": "Route",
+   "map": 362,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Badge Gate 8",
+   "type": "Route",
+   "map": 363,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Behind Badge Gate 8",
+   "type": "Route",
+   "map": 363,
+   "encounters": false,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road Entrance",
+   "type": "Route",
+   "map": 364,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Victory Road Outside 1F Center",
+   "type": "Dungeon",
+   "map": 214,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road Outside 1F West",
+   "type": "Dungeon",
+   "map": 214,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road Outside 1F East",
+   "type": "Dungeon",
+   "map": 214,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road Outside 1F Back",
+   "type": "Dungeon",
+   "map": 214,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road Outside 2F Center",
+   "type": "Dungeon",
+   "map": 214,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road Outside 2F Small Passage",
+   "type": "Dungeon",
+   "map": 214,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road Outside 2F East",
+   "type": "Dungeon",
+   "map": 214,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road Outside 3F",
+   "type": "Dungeon",
+   "map": 214,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road Outside 4F West",
+   "type": "Dungeon",
+   "map": 214,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road Outside 4F Center",
+   "type": "Dungeon",
+   "map": 214,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road Outside 4F East",
+   "type": "Dungeon",
+   "map": 214,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road Outside 5F West",
+   "type": "Dungeon",
+   "map": 214,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road Outside 5F Center",
+   "type": "Dungeon",
+   "map": 214,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road Outside 6F West",
+   "type": "Dungeon",
+   "map": 214,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road Outside 6F East",
+   "type": "Dungeon",
+   "map": 214,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road Outside 7F",
+   "type": "Dungeon",
+   "map": 214,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road 1F Middle Cave",
+   "type": "Dungeon",
+   "map": 215,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Victory Road 2F Left Cave North",
+   "type": "Dungeon",
+   "map": 216,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road 2F Left Cave South",
+   "type": "Dungeon",
+   "map": 216,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road 3F Middle Cave",
+   "type": "Dungeon",
+   "map": 217,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Victory Road 4F Middle Cave",
+   "type": "Dungeon",
+   "map": 218,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Victory Road 2F Right Cave",
+   "type": "Dungeon",
+   "map": 219,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Victory Road 1F Right Cave",
+   "type": "Dungeon",
+   "map": 220,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Victory Road 3F Right Cave",
+   "type": "Dungeon",
+   "map": 221,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Victory Road 1F Left Cave",
+   "type": "Dungeon",
+   "map": 222,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Victory Road 3F Left Cave North",
+   "type": "Dungeon",
+   "map": 223,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road 3F Left Cave South",
+   "type": "Dungeon",
+   "map": 223,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road 4F Left Cave West",
+   "type": "Dungeon",
+   "map": 224,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road 4F Left Cave East",
+   "type": "Dungeon",
+   "map": 224,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road 5F Cave",
+   "type": "Dungeon",
+   "map": 225,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Victory Road 6F Cave North",
+   "type": "Dungeon",
+   "map": 226,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road 6F Cave East",
+   "type": "Dungeon",
+   "map": 226,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road 6F Cave South",
+   "type": "Dungeon",
+   "map": 226,
+   "encounters": true,
+   "full_map": false,
+   "include": true
+  },
+  {
+   "name": "Victory Road 4F Right Cave",
+   "type": "Dungeon",
+   "map": 227,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Victory Road 7F Cave",
+   "type": "Dungeon",
+   "map": 228,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Trial Chamber",
+   "type": "Dungeon",
+   "map": 229,
+   "encounters": true,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Pokémon League Outside",
+   "type": "City",
+   "map": 136,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Pokémon League Pokemon Center",
+   "type": "Interior",
+   "map": 146,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Pokémon League Main Hall",
+   "type": "Interior",
+   "map": 137,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Pokémon League Shauntal's Room",
+   "type": "Interior",
+   "map": 140,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Pokémon League Marshal's Room",
+   "type": "Interior",
+   "map": 142,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Pokémon League Grimsley's Room",
+   "type": "Interior",
+   "map": 141,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Pokémon League Caitlin's Room",
+   "type": "Interior",
+   "map": 143,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Pokémon League Staircase",
+   "type": "Interior",
+   "map": 138,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Pokémon League Champion's Room",
+   "type": "Interior",
+   "map": 144,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Hall of Fame",
+   "type": "Interior",
+   "map": 145,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "Landing Stage to N's Castle",
+   "type": "Interior",
+   "map": 139,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "N's Castle 1F",
+   "type": "Interior",
+   "map": 264,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "N's Castle 2F",
+   "type": "Interior",
+   "map": 265,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "N's Castle 2F Left Room",
+   "type": "Interior",
+   "map": 266,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "N's Castle 2F Middle Room",
+   "type": "Interior",
+   "map": 267,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "N's Castle 2F Right Room",
+   "type": "Interior",
+   "map": 268,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "N's Castle 3F",
+   "type": "Interior",
+   "map": 269,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "N's Castle 3F Left Room",
+   "type": "Interior",
+   "map": 272,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "N's Castle 3F Middle Room",
+   "type": "Interior",
+   "map": 271,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "N's Castle 3F Right Room",
+   "type": "Interior",
+   "map": 270,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "N's Castle 4F",
+   "type": "Interior",
+   "map": 273,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "N's Castle 4F Left Room",
+   "type": "Interior",
+   "map": 274,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "N's Castle 4F Middle Room",
+   "type": "Interior",
+   "map": 275,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "N's Castle 4F Right Room",
+   "type": "Interior",
+   "map": 276,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "N's Castle 5F",
+   "type": "Interior",
+   "map": 277,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  },
+  {
+   "name": "N's Castle Throne Room",
+   "type": "Interior",
+   "map": 278,
+   "encounters": false,
+   "full_map": true,
+   "include": true
+  }
+ ]
+}

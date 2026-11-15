@@ -1,0 +1,4985 @@
+{
+ "_source": "PokemonBWAP 0.4.5 data (BlastSlimey and contributors, MIT), converted by tools/bwap2data.py",
+ "items": [
+  {
+   "id": 616,
+   "name": "Light Stone",
+   "group": "key",
+   "table": "special",
+   "class": "progression",
+   "game_item": 616
+  },
+  {
+   "id": 617,
+   "name": "Dark Stone",
+   "group": "key",
+   "table": "special",
+   "class": "progression",
+   "game_item": 617
+  },
+  {
+   "id": 622,
+   "name": "God Stone",
+   "group": "key",
+   "table": "special",
+   "class": "filler",
+   "game_item": 622
+  },
+  {
+   "id": 621,
+   "name": "Xtransceiver (Blue)",
+   "group": "key",
+   "table": "special",
+   "class": "filler",
+   "game_item": 621
+  },
+  {
+   "id": 626,
+   "name": "Xtransceiver (Red)",
+   "group": "key",
+   "table": "special",
+   "class": "filler",
+   "game_item": 626
+  },
+  {
+   "id": 428,
+   "name": "Explorer Kit",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 428
+  },
+  {
+   "id": 429,
+   "name": "Loot Sack",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 429
+  },
+  {
+   "id": 441,
+   "name": "Red Chain",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 441
+  },
+  {
+   "id": 447,
+   "name": "Super Rod",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 447
+  },
+  {
+   "id": 452,
+   "name": "Oak's Letter",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 452
+  },
+  {
+   "id": 459,
+   "name": "Parcel",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 459
+  },
+  {
+   "id": 472,
+   "name": "Blue Card",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 472
+  },
+  {
+   "id": 476,
+   "name": "Basement Key",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 476
+  },
+  {
+   "id": 481,
+   "name": "Machine Part",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 481
+  },
+  {
+   "id": 503,
+   "name": "Tidal Bell",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 503
+  },
+  {
+   "id": 533,
+   "name": "Lock Capsule",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 533
+  },
+  {
+   "id": 574,
+   "name": "Liberty Pass",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 574
+  },
+  {
+   "id": 579,
+   "name": "Dragon Skull",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 579
+  },
+  {
+   "id": 623,
+   "name": "Wingull Gram 1",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 623
+  },
+  {
+   "id": 624,
+   "name": "Wingull Gram 2",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 624
+  },
+  {
+   "id": 625,
+   "name": "Wingull Gram 3",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 625
+  },
+  {
+   "id": 502,
+   "name": "GB Sounds",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 502
+  },
+  {
+   "id": 482,
+   "name": "Silver Wing",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 482
+  },
+  {
+   "id": 466,
+   "name": "Gracidea",
+   "group": "key",
+   "table": "progression",
+   "class": "progression",
+   "game_item": 466
+  },
+  {
+   "id": 471,
+   "name": "Dowsing Machine",
+   "group": "key",
+   "table": "progression",
+   "class": "dowsing_machine_logic",
+   "game_item": 471
+  },
+  {
+   "id": 437,
+   "name": "Pal Pad",
+   "group": "key",
+   "table": "vanilla",
+   "class": "filler",
+   "game_item": 437
+  },
+  {
+   "id": 450,
+   "name": "Bicycle",
+   "group": "key",
+   "table": "vanilla",
+   "class": "useful",
+   "game_item": 450
+  },
+  {
+   "id": 465,
+   "name": "Vs. Recorder",
+   "group": "key",
+   "table": "vanilla",
+   "class": "filler",
+   "game_item": 465
+  },
+  {
+   "id": 578,
+   "name": "Prop Case",
+   "group": "key",
+   "table": "vanilla",
+   "class": "filler",
+   "game_item": 578
+  },
+  {
+   "id": 442,
+   "name": "Town Map",
+   "group": "key",
+   "table": "vanilla",
+   "class": "useful",
+   "game_item": 442
+  },
+  {
+   "id": 430,
+   "name": "Rule Book",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 430
+  },
+  {
+   "id": 431,
+   "name": "Poké Radar",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 431
+  },
+  {
+   "id": 432,
+   "name": "Point Card",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 432
+  },
+  {
+   "id": 433,
+   "name": "Journal",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 433
+  },
+  {
+   "id": 434,
+   "name": "Seal Case",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 434
+  },
+  {
+   "id": 435,
+   "name": "Fashion Case",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 435
+  },
+  {
+   "id": 436,
+   "name": "Seal Bag",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 436
+  },
+  {
+   "id": 438,
+   "name": "Works Key",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 438
+  },
+  {
+   "id": 439,
+   "name": "Old Charm",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 439
+  },
+  {
+   "id": 440,
+   "name": "Galactic Key",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 440
+  },
+  {
+   "id": 443,
+   "name": "Vs. Seeker",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 443
+  },
+  {
+   "id": 444,
+   "name": "Coin Case",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 444
+  },
+  {
+   "id": 445,
+   "name": "Old Rod",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 445
+  },
+  {
+   "id": 446,
+   "name": "Good Rod",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 446
+  },
+  {
+   "id": 448,
+   "name": "Sprayduck",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 448
+  },
+  {
+   "id": 449,
+   "name": "Poffin Case",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 449
+  },
+  {
+   "id": 451,
+   "name": "Suite Key",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 451
+  },
+  {
+   "id": 453,
+   "name": "Lunar Wing",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 453
+  },
+  {
+   "id": 454,
+   "name": "Member Card",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 454
+  },
+  {
+   "id": 455,
+   "name": "Azure Flute",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 455
+  },
+  {
+   "id": 456,
+   "name": "S.S. Ticket",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 456
+  },
+  {
+   "id": 457,
+   "name": "Contest Pass",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 457
+  },
+  {
+   "id": 458,
+   "name": "Magma Stone",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 458
+  },
+  {
+   "id": 460,
+   "name": "Pokétch Coupon 1",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 460
+  },
+  {
+   "id": 461,
+   "name": "Pokétch Coupon 2",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 461
+  },
+  {
+   "id": 462,
+   "name": "Pokétch Coupon 3",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 462
+  },
+  {
+   "id": 463,
+   "name": "Storage Key",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 463
+  },
+  {
+   "id": 464,
+   "name": "Secret Potion",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 464
+  },
+  {
+   "id": 467,
+   "name": "Secret Key",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 467
+  },
+  {
+   "id": 468,
+   "name": "Apricorn Box",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 468
+  },
+  {
+   "id": 469,
+   "name": "Unown Report",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 469
+  },
+  {
+   "id": 470,
+   "name": "Berry Pots",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 470
+  },
+  {
+   "id": 473,
+   "name": "Slowpoke Tail",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 473
+  },
+  {
+   "id": 474,
+   "name": "Clear Bell",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 474
+  },
+  {
+   "id": 475,
+   "name": "Card Key",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 475
+  },
+  {
+   "id": 477,
+   "name": "Squirt Bottle",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 477
+  },
+  {
+   "id": 478,
+   "name": "Red Scale",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 478
+  },
+  {
+   "id": 479,
+   "name": "Lost Item",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 479
+  },
+  {
+   "id": 480,
+   "name": "Maglev Pass",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 480
+  },
+  {
+   "id": 483,
+   "name": "Rainbow Wing",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 483
+  },
+  {
+   "id": 484,
+   "name": "Mystery Egg",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 484
+  },
+  {
+   "id": 501,
+   "name": "Photo Album",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 501
+  },
+  {
+   "id": 532,
+   "name": "Jade Orb",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 532
+  },
+  {
+   "id": 534,
+   "name": "Red Orb",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 534
+  },
+  {
+   "id": 535,
+   "name": "Blue Orb",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 535
+  },
+  {
+   "id": 536,
+   "name": "Enigma Stone",
+   "group": "key",
+   "table": "useless",
+   "class": "filler",
+   "game_item": 536
+  },
+  {
+   "id": 137,
+   "name": "Greet Mail",
+   "group": "main",
+   "table": "mail",
+   "class": "filler",
+   "game_item": 137
+  },
+  {
+   "id": 138,
+   "name": "Favored Mail",
+   "group": "main",
+   "table": "mail",
+   "class": "filler",
+   "game_item": 138
+  },
+  {
+   "id": 139,
+   "name": "RSVP Mail",
+   "group": "main",
+   "table": "mail",
+   "class": "filler",
+   "game_item": 139
+  },
+  {
+   "id": 140,
+   "name": "Thanks Mail",
+   "group": "main",
+   "table": "mail",
+   "class": "filler",
+   "game_item": 140
+  },
+  {
+   "id": 141,
+   "name": "Inquiry Mail",
+   "group": "main",
+   "table": "mail",
+   "class": "filler",
+   "game_item": 141
+  },
+  {
+   "id": 142,
+   "name": "Like Mail",
+   "group": "main",
+   "table": "mail",
+   "class": "filler",
+   "game_item": 142
+  },
+  {
+   "id": 143,
+   "name": "Reply Mail",
+   "group": "main",
+   "table": "mail",
+   "class": "filler",
+   "game_item": 143
+  },
+  {
+   "id": 144,
+   "name": "Bridge Mail S",
+   "group": "main",
+   "table": "mail",
+   "class": "filler",
+   "game_item": 144
+  },
+  {
+   "id": 145,
+   "name": "Bridge Mail D",
+   "group": "main",
+   "table": "mail",
+   "class": "filler",
+   "game_item": 145
+  },
+  {
+   "id": 146,
+   "name": "Bridge Mail T",
+   "group": "main",
+   "table": "mail",
+   "class": "filler",
+   "game_item": 146
+  },
+  {
+   "id": 147,
+   "name": "Bridge Mail V",
+   "group": "main",
+   "table": "mail",
+   "class": "filler",
+   "game_item": 147
+  },
+  {
+   "id": 148,
+   "name": "Bridge Mail M",
+   "group": "main",
+   "table": "mail",
+   "class": "filler",
+   "game_item": 148
+  },
+  {
+   "id": 99,
+   "name": "Root Fossil",
+   "group": "main",
+   "table": "fossils",
+   "class": "progression",
+   "game_item": 99
+  },
+  {
+   "id": 100,
+   "name": "Claw Fossil",
+   "group": "main",
+   "table": "fossils",
+   "class": "progression",
+   "game_item": 100
+  },
+  {
+   "id": 101,
+   "name": "Helix Fossil",
+   "group": "main",
+   "table": "fossils",
+   "class": "progression",
+   "game_item": 101
+  },
+  {
+   "id": 102,
+   "name": "Dome Fossil",
+   "group": "main",
+   "table": "fossils",
+   "class": "progression",
+   "game_item": 102
+  },
+  {
+   "id": 103,
+   "name": "Old Amber",
+   "group": "main",
+   "table": "fossils",
+   "class": "progression",
+   "game_item": 103
+  },
+  {
+   "id": 104,
+   "name": "Armor Fossil",
+   "group": "main",
+   "table": "fossils",
+   "class": "progression",
+   "game_item": 104
+  },
+  {
+   "id": 105,
+   "name": "Skull Fossil",
+   "group": "main",
+   "table": "fossils",
+   "class": "progression",
+   "game_item": 105
+  },
+  {
+   "id": 572,
+   "name": "Cover Fossil",
+   "group": "main",
+   "table": "fossils",
+   "class": "progression",
+   "game_item": 572
+  },
+  {
+   "id": 573,
+   "name": "Plume Fossil",
+   "group": "main",
+   "table": "fossils",
+   "class": "progression",
+   "game_item": 573
+  },
+  {
+   "id": 1,
+   "name": "Master Ball",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 1
+  },
+  {
+   "id": 216,
+   "name": "Exp. Share",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 216
+  },
+  {
+   "id": 254,
+   "name": "Sea Incense",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 254
+  },
+  {
+   "id": 255,
+   "name": "Lax Incense",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 255
+  },
+  {
+   "id": 314,
+   "name": "Odd Incense",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 314
+  },
+  {
+   "id": 315,
+   "name": "Rock Incense",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 315
+  },
+  {
+   "id": 316,
+   "name": "Full Incense",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 316
+  },
+  {
+   "id": 317,
+   "name": "Wave Incense",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 317
+  },
+  {
+   "id": 318,
+   "name": "Rose Incense",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 318
+  },
+  {
+   "id": 319,
+   "name": "Luck Incense",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 319
+  },
+  {
+   "id": 320,
+   "name": "Pure Incense",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 320
+  },
+  {
+   "id": 80,
+   "name": "Sun Stone",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 80
+  },
+  {
+   "id": 81,
+   "name": "Moon Stone",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 81
+  },
+  {
+   "id": 82,
+   "name": "Fire Stone",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 82
+  },
+  {
+   "id": 83,
+   "name": "Thunder Stone",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 83
+  },
+  {
+   "id": 84,
+   "name": "Water Stone",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 84
+  },
+  {
+   "id": 85,
+   "name": "Leaf Stone",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 85
+  },
+  {
+   "id": 107,
+   "name": "Shiny Stone",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 107
+  },
+  {
+   "id": 108,
+   "name": "Dusk Stone",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 108
+  },
+  {
+   "id": 109,
+   "name": "Dawn Stone",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 109
+  },
+  {
+   "id": 93,
+   "name": "Heart Scale",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 93
+  },
+  {
+   "id": 213,
+   "name": "Bright Powder",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 213
+  },
+  {
+   "id": 214,
+   "name": "White Herb",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 214
+  },
+  {
+   "id": 219,
+   "name": "Mental Herb",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 219
+  },
+  {
+   "id": 222,
+   "name": "Silver Powder",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 222
+  },
+  {
+   "id": 111,
+   "name": "Odd Keystone",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 111
+  },
+  {
+   "id": 110,
+   "name": "Oval Stone",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 110
+  },
+  {
+   "id": 112,
+   "name": "Griseous Orb",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 112
+  },
+  {
+   "id": 116,
+   "name": "Douse Drive",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 116
+  },
+  {
+   "id": 117,
+   "name": "Shock Drive",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 117
+  },
+  {
+   "id": 118,
+   "name": "Burn Drive",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 118
+  },
+  {
+   "id": 119,
+   "name": "Chill Drive",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 119
+  },
+  {
+   "id": 135,
+   "name": "Adamant Orb",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 135
+  },
+  {
+   "id": 136,
+   "name": "Lustrous Orb",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 136
+  },
+  {
+   "id": 215,
+   "name": "Macho Brace",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 215
+  },
+  {
+   "id": 217,
+   "name": "Quick Claw",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 217
+  },
+  {
+   "id": 218,
+   "name": "Soothe Bell",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 218
+  },
+  {
+   "id": 220,
+   "name": "Choice Band",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 220
+  },
+  {
+   "id": 221,
+   "name": "King's Rock",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 221
+  },
+  {
+   "id": 223,
+   "name": "Amulet Coin",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 223
+  },
+  {
+   "id": 224,
+   "name": "Cleanse Tag",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 224
+  },
+  {
+   "id": 225,
+   "name": "Soul Dew",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 225
+  },
+  {
+   "id": 226,
+   "name": "Deep Sea Tooth",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 226
+  },
+  {
+   "id": 227,
+   "name": "Deep Sea Scale",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 227
+  },
+  {
+   "id": 228,
+   "name": "Smoke Ball",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 228
+  },
+  {
+   "id": 229,
+   "name": "Everstone",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 229
+  },
+  {
+   "id": 230,
+   "name": "Focus Band",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 230
+  },
+  {
+   "id": 231,
+   "name": "Lucky Egg",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 231
+  },
+  {
+   "id": 232,
+   "name": "Scope Lens",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 232
+  },
+  {
+   "id": 233,
+   "name": "Metal Coat",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 233
+  },
+  {
+   "id": 234,
+   "name": "Leftovers",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 234
+  },
+  {
+   "id": 235,
+   "name": "Dragon Scale",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 235
+  },
+  {
+   "id": 236,
+   "name": "Light Ball",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 236
+  },
+  {
+   "id": 237,
+   "name": "Soft Sand",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 237
+  },
+  {
+   "id": 238,
+   "name": "Hard Stone",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 238
+  },
+  {
+   "id": 239,
+   "name": "Miracle Seed",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 239
+  },
+  {
+   "id": 240,
+   "name": "Black Glasses",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 240
+  },
+  {
+   "id": 241,
+   "name": "Black Belt",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 241
+  },
+  {
+   "id": 242,
+   "name": "Magnet",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 242
+  },
+  {
+   "id": 243,
+   "name": "Mystic Water",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 243
+  },
+  {
+   "id": 244,
+   "name": "Sharp Beak",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 244
+  },
+  {
+   "id": 245,
+   "name": "Poison Barb",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 245
+  },
+  {
+   "id": 246,
+   "name": "Never Melt Ice",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 246
+  },
+  {
+   "id": 247,
+   "name": "Spell Tag",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 247
+  },
+  {
+   "id": 248,
+   "name": "Twisted Spoon",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 248
+  },
+  {
+   "id": 249,
+   "name": "Charcoal",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 249
+  },
+  {
+   "id": 250,
+   "name": "Dragon Fang",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 250
+  },
+  {
+   "id": 251,
+   "name": "Silk Scarf",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 251
+  },
+  {
+   "id": 252,
+   "name": "Up-Grade",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 252
+  },
+  {
+   "id": 253,
+   "name": "Shell Bell",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 253
+  },
+  {
+   "id": 256,
+   "name": "Lucky Punch",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 256
+  },
+  {
+   "id": 257,
+   "name": "Metal Powder",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 257
+  },
+  {
+   "id": 258,
+   "name": "Thick Club",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 258
+  },
+  {
+   "id": 259,
+   "name": "Stick",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 259
+  },
+  {
+   "id": 265,
+   "name": "Wide Lens",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 265
+  },
+  {
+   "id": 266,
+   "name": "Muscle Band",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 266
+  },
+  {
+   "id": 267,
+   "name": "Wise Glasses",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 267
+  },
+  {
+   "id": 268,
+   "name": "Expert Belt",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 268
+  },
+  {
+   "id": 269,
+   "name": "Light Clay",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 269
+  },
+  {
+   "id": 270,
+   "name": "Life Orb",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 270
+  },
+  {
+   "id": 271,
+   "name": "Power Herb",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 271
+  },
+  {
+   "id": 272,
+   "name": "Toxic Orb",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 272
+  },
+  {
+   "id": 273,
+   "name": "Flame Orb",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 273
+  },
+  {
+   "id": 274,
+   "name": "Quick Powder",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 274
+  },
+  {
+   "id": 275,
+   "name": "Focus Sash",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 275
+  },
+  {
+   "id": 276,
+   "name": "Zoom Lens",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 276
+  },
+  {
+   "id": 277,
+   "name": "Metronome",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 277
+  },
+  {
+   "id": 278,
+   "name": "Iron Ball",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 278
+  },
+  {
+   "id": 279,
+   "name": "Lagging Tail",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 279
+  },
+  {
+   "id": 280,
+   "name": "Destiny Knot",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 280
+  },
+  {
+   "id": 281,
+   "name": "Black Sludge",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 281
+  },
+  {
+   "id": 282,
+   "name": "Icy Rock",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 282
+  },
+  {
+   "id": 283,
+   "name": "Smooth Rock",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 283
+  },
+  {
+   "id": 284,
+   "name": "Heat Rock",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 284
+  },
+  {
+   "id": 285,
+   "name": "Damp Rock",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 285
+  },
+  {
+   "id": 286,
+   "name": "Grip Claw",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 286
+  },
+  {
+   "id": 287,
+   "name": "Choice Scarf",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 287
+  },
+  {
+   "id": 288,
+   "name": "Sticky Barb",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 288
+  },
+  {
+   "id": 289,
+   "name": "Power Bracer",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 289
+  },
+  {
+   "id": 290,
+   "name": "Power Belt",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 290
+  },
+  {
+   "id": 291,
+   "name": "Power Lens",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 291
+  },
+  {
+   "id": 292,
+   "name": "Power Band",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 292
+  },
+  {
+   "id": 293,
+   "name": "Power Anklet",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 293
+  },
+  {
+   "id": 294,
+   "name": "Power Weight",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 294
+  },
+  {
+   "id": 295,
+   "name": "Shed Shell",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 295
+  },
+  {
+   "id": 296,
+   "name": "Big Root",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 296
+  },
+  {
+   "id": 297,
+   "name": "Choice Specs",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 297
+  },
+  {
+   "id": 298,
+   "name": "Flame Plate",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 298
+  },
+  {
+   "id": 299,
+   "name": "Splash Plate",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 299
+  },
+  {
+   "id": 300,
+   "name": "Zap Plate",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 300
+  },
+  {
+   "id": 301,
+   "name": "Meadow Plate",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 301
+  },
+  {
+   "id": 302,
+   "name": "Icicle Plate",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 302
+  },
+  {
+   "id": 303,
+   "name": "Fist Plate",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 303
+  },
+  {
+   "id": 304,
+   "name": "Toxic Plate",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 304
+  },
+  {
+   "id": 305,
+   "name": "Earth Plate",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 305
+  },
+  {
+   "id": 306,
+   "name": "Sky Plate",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 306
+  },
+  {
+   "id": 307,
+   "name": "Mind Plate",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 307
+  },
+  {
+   "id": 308,
+   "name": "Insect Plate",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 308
+  },
+  {
+   "id": 309,
+   "name": "Stone Plate",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 309
+  },
+  {
+   "id": 310,
+   "name": "Spooky Plate",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 310
+  },
+  {
+   "id": 311,
+   "name": "Draco Plate",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 311
+  },
+  {
+   "id": 312,
+   "name": "Dread Plate",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 312
+  },
+  {
+   "id": 313,
+   "name": "Iron Plate",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 313
+  },
+  {
+   "id": 321,
+   "name": "Protector",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 321
+  },
+  {
+   "id": 322,
+   "name": "Electirizer",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 322
+  },
+  {
+   "id": 323,
+   "name": "Magmarizer",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 323
+  },
+  {
+   "id": 324,
+   "name": "Dubious Disc",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 324
+  },
+  {
+   "id": 325,
+   "name": "Reaper Cloth",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 325
+  },
+  {
+   "id": 326,
+   "name": "Razor Claw",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 326
+  },
+  {
+   "id": 327,
+   "name": "Razor Fang",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 327
+  },
+  {
+   "id": 537,
+   "name": "Prism Scale",
+   "group": "main",
+   "table": "min_once",
+   "class": "useful",
+   "game_item": 537
+  },
+  {
+   "id": 538,
+   "name": "Eviolite",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 538
+  },
+  {
+   "id": 539,
+   "name": "Float Stone",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 539
+  },
+  {
+   "id": 540,
+   "name": "Rocky Helmet",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 540
+  },
+  {
+   "id": 541,
+   "name": "Air Balloon",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 541
+  },
+  {
+   "id": 542,
+   "name": "Red Card",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 542
+  },
+  {
+   "id": 543,
+   "name": "Ring Target",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 543
+  },
+  {
+   "id": 544,
+   "name": "Binding Band",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 544
+  },
+  {
+   "id": 545,
+   "name": "Absorb Bulb",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 545
+  },
+  {
+   "id": 546,
+   "name": "Cell Battery",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 546
+  },
+  {
+   "id": 547,
+   "name": "Eject Button",
+   "group": "main",
+   "table": "min_once",
+   "class": "filler",
+   "game_item": 547
+  },
+  {
+   "id": 2,
+   "name": "Ultra Ball",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 2
+  },
+  {
+   "id": 3,
+   "name": "Great Ball",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 3
+  },
+  {
+   "id": 4,
+   "name": "Poké Ball",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 4
+  },
+  {
+   "id": 5,
+   "name": "Safari Ball",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 5
+  },
+  {
+   "id": 6,
+   "name": "Net Ball",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 6
+  },
+  {
+   "id": 7,
+   "name": "Dive Ball",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 7
+  },
+  {
+   "id": 8,
+   "name": "Nest Ball",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 8
+  },
+  {
+   "id": 9,
+   "name": "Repeat Ball",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 9
+  },
+  {
+   "id": 10,
+   "name": "Timer Ball",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 10
+  },
+  {
+   "id": 11,
+   "name": "Luxury Ball",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 11
+  },
+  {
+   "id": 12,
+   "name": "Premier Ball",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 12
+  },
+  {
+   "id": 13,
+   "name": "Dusk Ball",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 13
+  },
+  {
+   "id": 14,
+   "name": "Heal Ball",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 14
+  },
+  {
+   "id": 15,
+   "name": "Quick Ball",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 15
+  },
+  {
+   "id": 16,
+   "name": "Cherish Ball",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 16
+  },
+  {
+   "id": 55,
+   "name": "Guard Spec.",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 55
+  },
+  {
+   "id": 56,
+   "name": "Dire Hit",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 56
+  },
+  {
+   "id": 57,
+   "name": "X Attack",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 57
+  },
+  {
+   "id": 58,
+   "name": "X Defend",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 58
+  },
+  {
+   "id": 59,
+   "name": "X Speed",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 59
+  },
+  {
+   "id": 60,
+   "name": "X Accuracy",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 60
+  },
+  {
+   "id": 61,
+   "name": "X Special",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 61
+  },
+  {
+   "id": 62,
+   "name": "X Sp. Def",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 62
+  },
+  {
+   "id": 63,
+   "name": "Poké Doll",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 63
+  },
+  {
+   "id": 64,
+   "name": "Fluffy Tail",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 64
+  },
+  {
+   "id": 65,
+   "name": "Blue Flute",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 65
+  },
+  {
+   "id": 66,
+   "name": "Yellow Flute",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 66
+  },
+  {
+   "id": 67,
+   "name": "Red Flute",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 67
+  },
+  {
+   "id": 68,
+   "name": "Black Flute",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 68
+  },
+  {
+   "id": 69,
+   "name": "White Flute",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 69
+  },
+  {
+   "id": 70,
+   "name": "Shoal Salt",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 70
+  },
+  {
+   "id": 71,
+   "name": "Shoal Shell",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 71
+  },
+  {
+   "id": 72,
+   "name": "Red Shard",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 72
+  },
+  {
+   "id": 73,
+   "name": "Blue Shard",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 73
+  },
+  {
+   "id": 74,
+   "name": "Yellow Shard",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 74
+  },
+  {
+   "id": 75,
+   "name": "Green Shard",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 75
+  },
+  {
+   "id": 76,
+   "name": "Super Repel",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 76
+  },
+  {
+   "id": 77,
+   "name": "Max Repel",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 77
+  },
+  {
+   "id": 78,
+   "name": "Escape Rope",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 78
+  },
+  {
+   "id": 79,
+   "name": "Repel",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 79
+  },
+  {
+   "id": 86,
+   "name": "Tiny Mushroom",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 86
+  },
+  {
+   "id": 87,
+   "name": "Big Mushroom",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 87
+  },
+  {
+   "id": 88,
+   "name": "Pearl",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 88
+  },
+  {
+   "id": 89,
+   "name": "Big Pearl",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 89
+  },
+  {
+   "id": 90,
+   "name": "Stardust",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 90
+  },
+  {
+   "id": 91,
+   "name": "Star Piece",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 91
+  },
+  {
+   "id": 92,
+   "name": "Nugget",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 92
+  },
+  {
+   "id": 94,
+   "name": "Honey",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 94
+  },
+  {
+   "id": 106,
+   "name": "Rare Bone",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 106
+  },
+  {
+   "id": 548,
+   "name": "Fire Gem",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 548
+  },
+  {
+   "id": 549,
+   "name": "Water Gem",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 549
+  },
+  {
+   "id": 550,
+   "name": "Electric Gem",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 550
+  },
+  {
+   "id": 551,
+   "name": "Grass Gem",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 551
+  },
+  {
+   "id": 552,
+   "name": "Ice Gem",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 552
+  },
+  {
+   "id": 553,
+   "name": "Fighting Gem",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 553
+  },
+  {
+   "id": 554,
+   "name": "Poison Gem",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 554
+  },
+  {
+   "id": 555,
+   "name": "Ground Gem",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 555
+  },
+  {
+   "id": 556,
+   "name": "Flying Gem",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 556
+  },
+  {
+   "id": 557,
+   "name": "Psychic Gem",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 557
+  },
+  {
+   "id": 558,
+   "name": "Bug Gem",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 558
+  },
+  {
+   "id": 559,
+   "name": "Rock Gem",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 559
+  },
+  {
+   "id": 560,
+   "name": "Ghost Gem",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 560
+  },
+  {
+   "id": 561,
+   "name": "Dragon Gem",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 561
+  },
+  {
+   "id": 562,
+   "name": "Dark Gem",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 562
+  },
+  {
+   "id": 563,
+   "name": "Steel Gem",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 563
+  },
+  {
+   "id": 564,
+   "name": "Normal Gem",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 564
+  },
+  {
+   "id": 571,
+   "name": "Pretty Wing",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 571
+  },
+  {
+   "id": 576,
+   "name": "Dream Ball",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 576
+  },
+  {
+   "id": 577,
+   "name": "Poké Toy",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 577
+  },
+  {
+   "id": 580,
+   "name": "Balm Mushroom",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 580
+  },
+  {
+   "id": 581,
+   "name": "Big Nugget",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 581
+  },
+  {
+   "id": 582,
+   "name": "Pearl String",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 582
+  },
+  {
+   "id": 583,
+   "name": "Comet Shard",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 583
+  },
+  {
+   "id": 584,
+   "name": "Relic Copper",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 584
+  },
+  {
+   "id": 585,
+   "name": "Relic Silver",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 585
+  },
+  {
+   "id": 586,
+   "name": "Relic Gold",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 586
+  },
+  {
+   "id": 587,
+   "name": "Relic Vase",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 587
+  },
+  {
+   "id": 588,
+   "name": "Relic Band",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 588
+  },
+  {
+   "id": 589,
+   "name": "Relic Statue",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 589
+  },
+  {
+   "id": 590,
+   "name": "Relic Crown",
+   "group": "main",
+   "table": "filler",
+   "class": "filler",
+   "game_item": 590
+  },
+  {
+   "id": 575,
+   "name": "Pass Orb",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 575
+  },
+  {
+   "id": 95,
+   "name": "Growth Mulch",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 95
+  },
+  {
+   "id": 96,
+   "name": "Damp Mulch",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 96
+  },
+  {
+   "id": 97,
+   "name": "Stable Mulch",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 97
+  },
+  {
+   "id": 98,
+   "name": "Gooey Mulch",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 98
+  },
+  {
+   "id": 260,
+   "name": "Red Scarf",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 260
+  },
+  {
+   "id": 261,
+   "name": "Blue Scarf",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 261
+  },
+  {
+   "id": 262,
+   "name": "Pink Scarf",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 262
+  },
+  {
+   "id": 263,
+   "name": "Green Scarf",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 263
+  },
+  {
+   "id": 264,
+   "name": "Yellow Scarf",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 264
+  },
+  {
+   "id": 485,
+   "name": "Red Apricorn",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 485
+  },
+  {
+   "id": 486,
+   "name": "Blue Apricorn",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 486
+  },
+  {
+   "id": 487,
+   "name": "Yellow Apricorn",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 487
+  },
+  {
+   "id": 488,
+   "name": "Green Apricorn",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 488
+  },
+  {
+   "id": 489,
+   "name": "Pink Apricorn",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 489
+  },
+  {
+   "id": 490,
+   "name": "White Apricorn",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 490
+  },
+  {
+   "id": 491,
+   "name": "Black Apricorn",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 491
+  },
+  {
+   "id": 492,
+   "name": "Fast Ball",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 492
+  },
+  {
+   "id": 493,
+   "name": "Level Ball",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 493
+  },
+  {
+   "id": 494,
+   "name": "Lure Ball",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 494
+  },
+  {
+   "id": 495,
+   "name": "Heavy Ball",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 495
+  },
+  {
+   "id": 496,
+   "name": "Love Ball",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 496
+  },
+  {
+   "id": 497,
+   "name": "Friend Ball",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 497
+  },
+  {
+   "id": 498,
+   "name": "Moon Ball",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 498
+  },
+  {
+   "id": 499,
+   "name": "Sport Ball",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 499
+  },
+  {
+   "id": 500,
+   "name": "Park Ball",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 500
+  },
+  {
+   "id": 505,
+   "name": "Pokéathlon Data Card 1",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 505
+  },
+  {
+   "id": 506,
+   "name": "Pokéathlon Data Card 2",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 506
+  },
+  {
+   "id": 507,
+   "name": "Pokéathlon Data Card 3",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 507
+  },
+  {
+   "id": 508,
+   "name": "Pokéathlon Data Card 4",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 508
+  },
+  {
+   "id": 509,
+   "name": "Pokéathlon Data Card 5",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 509
+  },
+  {
+   "id": 510,
+   "name": "Pokéathlon Data Card 6",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 510
+  },
+  {
+   "id": 511,
+   "name": "Pokéathlon Data Card 7",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 511
+  },
+  {
+   "id": 512,
+   "name": "Pokéathlon Data Card 8",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 512
+  },
+  {
+   "id": 513,
+   "name": "Pokéathlon Data Card 9",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 513
+  },
+  {
+   "id": 514,
+   "name": "Pokéathlon Data Card 10",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 514
+  },
+  {
+   "id": 515,
+   "name": "Pokéathlon Data Card 11",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 515
+  },
+  {
+   "id": 516,
+   "name": "Pokéathlon Data Card 12",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 516
+  },
+  {
+   "id": 517,
+   "name": "Pokéathlon Data Card 13",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 517
+  },
+  {
+   "id": 518,
+   "name": "Pokéathlon Data Card 14",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 518
+  },
+  {
+   "id": 519,
+   "name": "Pokéathlon Data Card 15",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 519
+  },
+  {
+   "id": 520,
+   "name": "Pokéathlon Data Card 16",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 520
+  },
+  {
+   "id": 521,
+   "name": "Pokéathlon Data Card 17",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 521
+  },
+  {
+   "id": 522,
+   "name": "Pokéathlon Data Card 18",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 522
+  },
+  {
+   "id": 523,
+   "name": "Pokéathlon Data Card 19",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 523
+  },
+  {
+   "id": 524,
+   "name": "Pokéathlon Data Card 20",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 524
+  },
+  {
+   "id": 525,
+   "name": "Pokéathlon Data Card 21",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 525
+  },
+  {
+   "id": 526,
+   "name": "Pokéathlon Data Card 22",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 526
+  },
+  {
+   "id": 527,
+   "name": "Pokéathlon Data Card 23",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 527
+  },
+  {
+   "id": 528,
+   "name": "Pokéathlon Data Card 24",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 528
+  },
+  {
+   "id": 529,
+   "name": "Pokéathlon Data Card 25",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 529
+  },
+  {
+   "id": 530,
+   "name": "Pokéathlon Data Card 26",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 530
+  },
+  {
+   "id": 531,
+   "name": "Pokéathlon Data Card 27",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 531
+  },
+  {
+   "id": 592,
+   "name": "WL Dire Hit 2",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 592
+  },
+  {
+   "id": 593,
+   "name": "WL X Speed 2",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 593
+  },
+  {
+   "id": 594,
+   "name": "WL X Special 2",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 594
+  },
+  {
+   "id": 595,
+   "name": "WL X Sp. Def 2",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 595
+  },
+  {
+   "id": 596,
+   "name": "WL X Defend 2",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 596
+  },
+  {
+   "id": 597,
+   "name": "WL X Attack 2",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 597
+  },
+  {
+   "id": 598,
+   "name": "WL X Accuracy 2",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 598
+  },
+  {
+   "id": 599,
+   "name": "WL X Speed 3",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 599
+  },
+  {
+   "id": 600,
+   "name": "WL X Special 3",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 600
+  },
+  {
+   "id": 601,
+   "name": "WL X Sp. Def 3",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 601
+  },
+  {
+   "id": 602,
+   "name": "WL X Defend 3",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 602
+  },
+  {
+   "id": 603,
+   "name": "WL X Attack 3",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 603
+  },
+  {
+   "id": 604,
+   "name": "WL X Accuracy 3",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 604
+  },
+  {
+   "id": 605,
+   "name": "WL X Speed 6",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 605
+  },
+  {
+   "id": 606,
+   "name": "WL X Special 6",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 606
+  },
+  {
+   "id": 607,
+   "name": "WL X Sp. Def 6",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 607
+  },
+  {
+   "id": 608,
+   "name": "WL X Defend 6",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 608
+  },
+  {
+   "id": 609,
+   "name": "WL X Attack 6",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 609
+  },
+  {
+   "id": 610,
+   "name": "WL X Accuracy 6",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 610
+  },
+  {
+   "id": 611,
+   "name": "WL Ability Urge",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 611
+  },
+  {
+   "id": 612,
+   "name": "WL Item Drop",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 612
+  },
+  {
+   "id": 613,
+   "name": "WL Item Urge",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 613
+  },
+  {
+   "id": 614,
+   "name": "WL Reset Urge",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 614
+  },
+  {
+   "id": 615,
+   "name": "WL Dire Hit 3",
+   "group": "main",
+   "table": "unused",
+   "class": "filler",
+   "game_item": 615
+  },
+  {
+   "id": 149,
+   "name": "Cheri Berry",
+   "group": "berry",
+   "table": "standard",
+   "class": "filler",
+   "game_item": 149
+  },
+  {
+   "id": 150,
+   "name": "Chesto Berry",
+   "group": "berry",
+   "table": "standard",
+   "class": "filler",
+   "game_item": 150
+  },
+  {
+   "id": 151,
+   "name": "Pecha Berry",
+   "group": "berry",
+   "table": "standard",
+   "class": "filler",
+   "game_item": 151
+  },
+  {
+   "id": 152,
+   "name": "Rawst Berry",
+   "group": "berry",
+   "table": "standard",
+   "class": "filler",
+   "game_item": 152
+  },
+  {
+   "id": 153,
+   "name": "Aspear Berry",
+   "group": "berry",
+   "table": "standard",
+   "class": "filler",
+   "game_item": 153
+  },
+  {
+   "id": 154,
+   "name": "Leppa Berry",
+   "group": "berry",
+   "table": "standard",
+   "class": "filler",
+   "game_item": 154
+  },
+  {
+   "id": 155,
+   "name": "Oran Berry",
+   "group": "berry",
+   "table": "standard",
+   "class": "filler",
+   "game_item": 155
+  },
+  {
+   "id": 156,
+   "name": "Persim Berry",
+   "group": "berry",
+   "table": "standard",
+   "class": "filler",
+   "game_item": 156
+  },
+  {
+   "id": 157,
+   "name": "Lum Berry",
+   "group": "berry",
+   "table": "standard",
+   "class": "filler",
+   "game_item": 157
+  },
+  {
+   "id": 158,
+   "name": "Sitrus Berry",
+   "group": "berry",
+   "table": "standard",
+   "class": "filler",
+   "game_item": 158
+  },
+  {
+   "id": 159,
+   "name": "Figy Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 159
+  },
+  {
+   "id": 160,
+   "name": "Wiki Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 160
+  },
+  {
+   "id": 161,
+   "name": "Mago Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 161
+  },
+  {
+   "id": 162,
+   "name": "Aguav Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 162
+  },
+  {
+   "id": 163,
+   "name": "Iapapa Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 163
+  },
+  {
+   "id": 164,
+   "name": "Razz Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 164
+  },
+  {
+   "id": 165,
+   "name": "Bluk Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 165
+  },
+  {
+   "id": 166,
+   "name": "Nanab Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 166
+  },
+  {
+   "id": 167,
+   "name": "Wepear Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 167
+  },
+  {
+   "id": 168,
+   "name": "Pinap Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 168
+  },
+  {
+   "id": 169,
+   "name": "Pomeg Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 169
+  },
+  {
+   "id": 170,
+   "name": "Kelpsy Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 170
+  },
+  {
+   "id": 171,
+   "name": "Qualot Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 171
+  },
+  {
+   "id": 172,
+   "name": "Hondew Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 172
+  },
+  {
+   "id": 173,
+   "name": "Grepa Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 173
+  },
+  {
+   "id": 174,
+   "name": "Tamato Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 174
+  },
+  {
+   "id": 175,
+   "name": "Cornn Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 175
+  },
+  {
+   "id": 176,
+   "name": "Magost Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 176
+  },
+  {
+   "id": 177,
+   "name": "Rabuta Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 177
+  },
+  {
+   "id": 178,
+   "name": "Nomel Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 178
+  },
+  {
+   "id": 179,
+   "name": "Spelon Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 179
+  },
+  {
+   "id": 180,
+   "name": "Pamtre Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 180
+  },
+  {
+   "id": 181,
+   "name": "Watmel Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 181
+  },
+  {
+   "id": 182,
+   "name": "Durin Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 182
+  },
+  {
+   "id": 183,
+   "name": "Belue Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 183
+  },
+  {
+   "id": 184,
+   "name": "Occa Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 184
+  },
+  {
+   "id": 185,
+   "name": "Passho Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 185
+  },
+  {
+   "id": 186,
+   "name": "Wacan Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 186
+  },
+  {
+   "id": 187,
+   "name": "Rindo Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 187
+  },
+  {
+   "id": 188,
+   "name": "Yache Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 188
+  },
+  {
+   "id": 189,
+   "name": "Chople Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 189
+  },
+  {
+   "id": 190,
+   "name": "Kebia Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 190
+  },
+  {
+   "id": 191,
+   "name": "Shuca Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 191
+  },
+  {
+   "id": 192,
+   "name": "Coba Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 192
+  },
+  {
+   "id": 193,
+   "name": "Payapa Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 193
+  },
+  {
+   "id": 194,
+   "name": "Tanga Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 194
+  },
+  {
+   "id": 195,
+   "name": "Charti Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 195
+  },
+  {
+   "id": 196,
+   "name": "Kasib Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 196
+  },
+  {
+   "id": 197,
+   "name": "Haban Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 197
+  },
+  {
+   "id": 198,
+   "name": "Colbur Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 198
+  },
+  {
+   "id": 199,
+   "name": "Babiri Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 199
+  },
+  {
+   "id": 200,
+   "name": "Chilan Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 200
+  },
+  {
+   "id": 201,
+   "name": "Liechi Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 201
+  },
+  {
+   "id": 202,
+   "name": "Ganlon Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 202
+  },
+  {
+   "id": 203,
+   "name": "Salac Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 203
+  },
+  {
+   "id": 204,
+   "name": "Petaya Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 204
+  },
+  {
+   "id": 205,
+   "name": "Apicot Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 205
+  },
+  {
+   "id": 206,
+   "name": "Lansat Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 206
+  },
+  {
+   "id": 207,
+   "name": "Starf Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 207
+  },
+  {
+   "id": 208,
+   "name": "Enigma Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 208
+  },
+  {
+   "id": 209,
+   "name": "Micle Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 209
+  },
+  {
+   "id": 210,
+   "name": "Custap Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 210
+  },
+  {
+   "id": 211,
+   "name": "Jaboca Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 211
+  },
+  {
+   "id": 212,
+   "name": "Rowap Berry",
+   "group": "berry",
+   "table": "niche",
+   "class": "filler",
+   "game_item": 212
+  },
+  {
+   "id": 504,
+   "name": "Rage Candy Bar",
+   "group": "medicine",
+   "table": "important",
+   "class": "progression",
+   "game_item": 504
+  },
+  {
+   "id": 17,
+   "name": "Potion",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 17
+  },
+  {
+   "id": 18,
+   "name": "Antidote",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 18
+  },
+  {
+   "id": 19,
+   "name": "Burn Heal",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 19
+  },
+  {
+   "id": 20,
+   "name": "Ice Heal",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 20
+  },
+  {
+   "id": 21,
+   "name": "Awakening",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 21
+  },
+  {
+   "id": 22,
+   "name": "Parlyz Heal",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 22
+  },
+  {
+   "id": 23,
+   "name": "Full Restore",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 23
+  },
+  {
+   "id": 24,
+   "name": "Max Potion",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 24
+  },
+  {
+   "id": 25,
+   "name": "Hyper Potion",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 25
+  },
+  {
+   "id": 26,
+   "name": "Super Potion",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 26
+  },
+  {
+   "id": 27,
+   "name": "Full Heal",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 27
+  },
+  {
+   "id": 28,
+   "name": "Revive",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 28
+  },
+  {
+   "id": 29,
+   "name": "Max Revive",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 29
+  },
+  {
+   "id": 30,
+   "name": "Fresh Water",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 30
+  },
+  {
+   "id": 31,
+   "name": "Soda Pop",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 31
+  },
+  {
+   "id": 32,
+   "name": "Lemonade",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 32
+  },
+  {
+   "id": 33,
+   "name": "Moomoo Milk",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 33
+  },
+  {
+   "id": 34,
+   "name": "Energy Powder",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 34
+  },
+  {
+   "id": 35,
+   "name": "Energy Root",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 35
+  },
+  {
+   "id": 36,
+   "name": "Heal Powder",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 36
+  },
+  {
+   "id": 37,
+   "name": "Revival Herb",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 37
+  },
+  {
+   "id": 38,
+   "name": "Ether",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 38
+  },
+  {
+   "id": 39,
+   "name": "Max Ether",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 39
+  },
+  {
+   "id": 40,
+   "name": "Elixir",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 40
+  },
+  {
+   "id": 41,
+   "name": "Max Elixir",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 41
+  },
+  {
+   "id": 42,
+   "name": "Lava Cookie",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 42
+  },
+  {
+   "id": 43,
+   "name": "Berry Juice",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 43
+  },
+  {
+   "id": 44,
+   "name": "Sacred Ash",
+   "group": "medicine",
+   "table": "table",
+   "class": "useful",
+   "game_item": 44
+  },
+  {
+   "id": 45,
+   "name": "HP Up",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 45
+  },
+  {
+   "id": 46,
+   "name": "Protein",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 46
+  },
+  {
+   "id": 47,
+   "name": "Iron",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 47
+  },
+  {
+   "id": 48,
+   "name": "Carbos",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 48
+  },
+  {
+   "id": 49,
+   "name": "Calcium",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 49
+  },
+  {
+   "id": 50,
+   "name": "Rare Candy",
+   "group": "medicine",
+   "table": "table",
+   "class": "useful",
+   "game_item": 50
+  },
+  {
+   "id": 51,
+   "name": "PP Up",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 51
+  },
+  {
+   "id": 52,
+   "name": "Zinc",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 52
+  },
+  {
+   "id": 53,
+   "name": "PP Max",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 53
+  },
+  {
+   "id": 54,
+   "name": "Old Gateau",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 54
+  },
+  {
+   "id": 134,
+   "name": "Sweet Heart",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 134
+  },
+  {
+   "id": 565,
+   "name": "Health Wing",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 565
+  },
+  {
+   "id": 566,
+   "name": "Muscle Wing",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 566
+  },
+  {
+   "id": 567,
+   "name": "Resist Wing",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 567
+  },
+  {
+   "id": 568,
+   "name": "Genius Wing",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 568
+  },
+  {
+   "id": 569,
+   "name": "Clever Wing",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 569
+  },
+  {
+   "id": 570,
+   "name": "Swift Wing",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 570
+  },
+  {
+   "id": 591,
+   "name": "Casteliacone",
+   "group": "medicine",
+   "table": "table",
+   "class": "filler",
+   "game_item": 591
+  },
+  {
+   "id": 133,
+   "name": "Running Shoes",
+   "group": "other",
+   "table": "special",
+   "class": "useful",
+   "game_item": 133
+  },
+  {
+   "id": 1000000,
+   "name": "Out of logic",
+   "group": "other",
+   "table": "special",
+   "class": "progression",
+   "game_item": 1000000
+  },
+  {
+   "id": 328,
+   "name": "TM01 Hone Claws",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 328
+  },
+  {
+   "id": 329,
+   "name": "TM02 Dragon Claw",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 329
+  },
+  {
+   "id": 330,
+   "name": "TM03 Psyshock",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 330
+  },
+  {
+   "id": 331,
+   "name": "TM04 Calm Mind",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 331
+  },
+  {
+   "id": 332,
+   "name": "TM05 Roar",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 332
+  },
+  {
+   "id": 333,
+   "name": "TM06 Toxic",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 333
+  },
+  {
+   "id": 334,
+   "name": "TM07 Hail",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 334
+  },
+  {
+   "id": 335,
+   "name": "TM08 Bulk Up",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 335
+  },
+  {
+   "id": 336,
+   "name": "TM09 Venoshock",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 336
+  },
+  {
+   "id": 337,
+   "name": "TM10 Hidden Power",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 337
+  },
+  {
+   "id": 338,
+   "name": "TM11 Sunny Day",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 338
+  },
+  {
+   "id": 339,
+   "name": "TM12 Taunt",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 339
+  },
+  {
+   "id": 340,
+   "name": "TM13 Ice Beam",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 340
+  },
+  {
+   "id": 341,
+   "name": "TM14 Blizzard",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 341
+  },
+  {
+   "id": 342,
+   "name": "TM15 Hyper Beam",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 342
+  },
+  {
+   "id": 343,
+   "name": "TM16 Light Screen",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 343
+  },
+  {
+   "id": 344,
+   "name": "TM17 Protect",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 344
+  },
+  {
+   "id": 345,
+   "name": "TM18 Rain Dance",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 345
+  },
+  {
+   "id": 346,
+   "name": "TM19 Telekinesis",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 346
+  },
+  {
+   "id": 347,
+   "name": "TM20 Safeguard",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 347
+  },
+  {
+   "id": 348,
+   "name": "TM21 Frustration",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 348
+  },
+  {
+   "id": 349,
+   "name": "TM22 SolarBeam",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 349
+  },
+  {
+   "id": 350,
+   "name": "TM23 Smack Down",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 350
+  },
+  {
+   "id": 351,
+   "name": "TM24 Thunderbolt",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 351
+  },
+  {
+   "id": 352,
+   "name": "TM25 Thunder",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 352
+  },
+  {
+   "id": 353,
+   "name": "TM26 Earthquake",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 353
+  },
+  {
+   "id": 354,
+   "name": "TM27 Return",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 354
+  },
+  {
+   "id": 355,
+   "name": "TM28 Dig",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 355
+  },
+  {
+   "id": 356,
+   "name": "TM29 Psychic",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 356
+  },
+  {
+   "id": 357,
+   "name": "TM30 Shadow Ball",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 357
+  },
+  {
+   "id": 358,
+   "name": "TM31 Brick Break",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 358
+  },
+  {
+   "id": 359,
+   "name": "TM32 Double Team",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 359
+  },
+  {
+   "id": 360,
+   "name": "TM33 Reflect",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 360
+  },
+  {
+   "id": 361,
+   "name": "TM34 Sludge Wave",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 361
+  },
+  {
+   "id": 362,
+   "name": "TM35 Flamethrower",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 362
+  },
+  {
+   "id": 363,
+   "name": "TM36 Sludge Bomb",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 363
+  },
+  {
+   "id": 364,
+   "name": "TM37 Sandstorm",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 364
+  },
+  {
+   "id": 365,
+   "name": "TM38 Fire Blast",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 365
+  },
+  {
+   "id": 366,
+   "name": "TM39 Rock Tomb",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 366
+  },
+  {
+   "id": 367,
+   "name": "TM40 Aerial Ace",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 367
+  },
+  {
+   "id": 368,
+   "name": "TM41 Torment",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 368
+  },
+  {
+   "id": 369,
+   "name": "TM42 Facade",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 369
+  },
+  {
+   "id": 370,
+   "name": "TM43 Flame Charge",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 370
+  },
+  {
+   "id": 371,
+   "name": "TM44 Rest",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 371
+  },
+  {
+   "id": 372,
+   "name": "TM45 Attract",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 372
+  },
+  {
+   "id": 373,
+   "name": "TM46 Thief",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 373
+  },
+  {
+   "id": 374,
+   "name": "TM47 Low Sweep",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 374
+  },
+  {
+   "id": 375,
+   "name": "TM48 Round",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 375
+  },
+  {
+   "id": 376,
+   "name": "TM49 Echoed Voice",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 376
+  },
+  {
+   "id": 377,
+   "name": "TM50 Overheat",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 377
+  },
+  {
+   "id": 378,
+   "name": "TM51 Ally Switch",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 378
+  },
+  {
+   "id": 379,
+   "name": "TM52 Focus Blast",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 379
+  },
+  {
+   "id": 380,
+   "name": "TM53 Energy Ball",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 380
+  },
+  {
+   "id": 381,
+   "name": "TM54 False Swipe",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 381
+  },
+  {
+   "id": 382,
+   "name": "TM55 Scald",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 382
+  },
+  {
+   "id": 383,
+   "name": "TM56 Fling",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 383
+  },
+  {
+   "id": 384,
+   "name": "TM57 Charge Beam",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 384
+  },
+  {
+   "id": 385,
+   "name": "TM58 Sky Drop",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 385
+  },
+  {
+   "id": 386,
+   "name": "TM59 Incinerate",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 386
+  },
+  {
+   "id": 387,
+   "name": "TM60 Quash",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 387
+  },
+  {
+   "id": 388,
+   "name": "TM61 Will-o-wisp",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 388
+  },
+  {
+   "id": 389,
+   "name": "TM62 Acrobatics",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 389
+  },
+  {
+   "id": 390,
+   "name": "TM63 Embargo",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 390
+  },
+  {
+   "id": 391,
+   "name": "TM64 Explosion",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 391
+  },
+  {
+   "id": 392,
+   "name": "TM65 Shadow Claw",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 392
+  },
+  {
+   "id": 393,
+   "name": "TM66 Payback",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 393
+  },
+  {
+   "id": 394,
+   "name": "TM67 Retaliate",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 394
+  },
+  {
+   "id": 395,
+   "name": "TM68 Giga Impact",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 395
+  },
+  {
+   "id": 396,
+   "name": "TM69 Rock Polish",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 396
+  },
+  {
+   "id": 397,
+   "name": "TM70 Flash",
+   "group": "tm",
+   "table": "tm",
+   "class": "progression",
+   "game_item": 397
+  },
+  {
+   "id": 398,
+   "name": "TM71 Stone Edge",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 398
+  },
+  {
+   "id": 399,
+   "name": "TM72 Volt Switch",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 399
+  },
+  {
+   "id": 400,
+   "name": "TM73 Thunder Wave",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 400
+  },
+  {
+   "id": 401,
+   "name": "TM74 Gyro Ball",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 401
+  },
+  {
+   "id": 402,
+   "name": "TM75 Swords Dance",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 402
+  },
+  {
+   "id": 403,
+   "name": "TM76 Struggle Bug",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 403
+  },
+  {
+   "id": 404,
+   "name": "TM77 Psych Up",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 404
+  },
+  {
+   "id": 405,
+   "name": "TM78 Bulldoze",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 405
+  },
+  {
+   "id": 406,
+   "name": "TM79 Frost Breath",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 406
+  },
+  {
+   "id": 407,
+   "name": "TM80 Rock Slide",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 407
+  },
+  {
+   "id": 408,
+   "name": "TM81 X-scissor",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 408
+  },
+  {
+   "id": 409,
+   "name": "TM82 Dragon Tail",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 409
+  },
+  {
+   "id": 410,
+   "name": "TM83 Work Up",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 410
+  },
+  {
+   "id": 411,
+   "name": "TM84 Poison Jab",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 411
+  },
+  {
+   "id": 412,
+   "name": "TM85 Dream Eater",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 412
+  },
+  {
+   "id": 413,
+   "name": "TM86 Grass Knot",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 413
+  },
+  {
+   "id": 414,
+   "name": "TM87 Swagger",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 414
+  },
+  {
+   "id": 415,
+   "name": "TM88 Pluck",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 415
+  },
+  {
+   "id": 416,
+   "name": "TM89 U-Turn",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 416
+  },
+  {
+   "id": 417,
+   "name": "TM90 Substitute",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 417
+  },
+  {
+   "id": 418,
+   "name": "TM91 Flash Cannon",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 418
+  },
+  {
+   "id": 419,
+   "name": "TM92 Trick Room",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 419
+  },
+  {
+   "id": 618,
+   "name": "TM93 Wild Charge",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 618
+  },
+  {
+   "id": 619,
+   "name": "TM94 Rock Smash",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 619
+  },
+  {
+   "id": 620,
+   "name": "TM95 Snarl",
+   "group": "tm",
+   "table": "tm",
+   "class": "tm_hm_class",
+   "game_item": 620
+  },
+  {
+   "id": 420,
+   "name": "HM01 Cut",
+   "group": "hm",
+   "table": "hm",
+   "class": "progression",
+   "game_item": 420
+  },
+  {
+   "id": 421,
+   "name": "HM02 Fly",
+   "group": "hm",
+   "table": "hm",
+   "class": "progression",
+   "game_item": 421
+  },
+  {
+   "id": 422,
+   "name": "HM03 Surf",
+   "group": "hm",
+   "table": "hm",
+   "class": "progression",
+   "game_item": 422
+  },
+  {
+   "id": 423,
+   "name": "HM04 Strength",
+   "group": "hm",
+   "table": "hm",
+   "class": "progression",
+   "game_item": 423
+  },
+  {
+   "id": 424,
+   "name": "HM05 Waterfall",
+   "group": "hm",
+   "table": "hm",
+   "class": "progression",
+   "game_item": 424
+  },
+  {
+   "id": 425,
+   "name": "HM06 Dive",
+   "group": "hm",
+   "table": "hm",
+   "class": "progression",
+   "game_item": 425
+  },
+  {
+   "id": 4096,
+   "name": "Trio Badge",
+   "group": "badge",
+   "table": "badges",
+   "class": "progression",
+   "game_item": 120,
+   "badge_bit": 0
+  },
+  {
+   "id": 4097,
+   "name": "Basic Badge",
+   "group": "badge",
+   "table": "badges",
+   "class": "progression",
+   "game_item": 121,
+   "badge_bit": 1
+  },
+  {
+   "id": 4098,
+   "name": "Insect Badge",
+   "group": "badge",
+   "table": "badges",
+   "class": "progression",
+   "game_item": 122,
+   "badge_bit": 2
+  },
+  {
+   "id": 4099,
+   "name": "Bolt Badge",
+   "group": "badge",
+   "table": "badges",
+   "class": "progression",
+   "game_item": 123,
+   "badge_bit": 3
+  },
+  {
+   "id": 4100,
+   "name": "Quake Badge",
+   "group": "badge",
+   "table": "badges",
+   "class": "progression",
+   "game_item": 124,
+   "badge_bit": 4
+  },
+  {
+   "id": 4101,
+   "name": "Jet Badge",
+   "group": "badge",
+   "table": "badges",
+   "class": "progression",
+   "game_item": 125,
+   "badge_bit": 5
+  },
+  {
+   "id": 4102,
+   "name": "Freeze Badge",
+   "group": "badge",
+   "table": "badges",
+   "class": "progression",
+   "game_item": 126,
+   "badge_bit": 6
+  },
+  {
+   "id": 4103,
+   "name": "Legend Badge",
+   "group": "badge",
+   "table": "badges",
+   "class": "progression",
+   "game_item": 127,
+   "badge_bit": 7
+  },
+  {
+   "id": 4352,
+   "name": "Spring",
+   "group": "season",
+   "table": "seasons",
+   "class": "progression",
+   "flag": 385,
+   "var_value": 0
+  },
+  {
+   "id": 4353,
+   "name": "Summer",
+   "group": "season",
+   "table": "seasons",
+   "class": "progression",
+   "flag": 386,
+   "var_value": 1
+  },
+  {
+   "id": 4354,
+   "name": "Autumn",
+   "group": "season",
+   "table": "seasons",
+   "class": "progression",
+   "flag": 387,
+   "var_value": 2
+  },
+  {
+   "id": 4355,
+   "name": "Winter",
+   "group": "season",
+   "table": "seasons",
+   "class": "progression",
+   "flag": 388,
+   "var_value": 3
+  }
+ ]
+}

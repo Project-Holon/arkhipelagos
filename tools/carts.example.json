@@ -1,0 +1,87 @@
+{
+ "IRBO": {
+  "rom": "<path to rom>",
+  "root": "<path to root>",
+  "data": "<path to data>",
+  "ov": "<path to ov>",
+  "arm9": "<path to arm9>"
+ },
+ "IRAO": {
+  "rom": "<path to rom>",
+  "root": "<path to root>",
+  "data": "<path to data>",
+  "ov": "<path to ov>",
+  "arm9": "<path to arm9>"
+ },
+ "IRBJ": {
+  "rom": "<path to rom>",
+  "root": "<path to root>",
+  "data": "<path to data>",
+  "ov": "<path to ov>",
+  "arm9": "<path to arm9>"
+ },
+ "IRAJ": {
+  "rom": "<path to rom>",
+  "root": "<path to root>",
+  "data": "<path to data>",
+  "ov": "<path to ov>",
+  "arm9": "<path to arm9>"
+ },
+ "IRBF": {
+  "rom": "<path to rom>",
+  "root": "<path to root>",
+  "data": "<path to data>",
+  "ov": "<path to ov>",
+  "arm9": "<path to arm9>"
+ },
+ "IRAF": {
+  "rom": "<path to rom>",
+  "root": "<path to root>",
+  "data": "<path to data>",
+  "ov": "<path to ov>",
+  "arm9": "<path to arm9>"
+ },
+ "IRBD": {
+  "rom": "<path to rom>",
+  "root": "<path to root>",
+  "data": "<path to data>",
+  "ov": "<path to ov>",
+  "arm9": "<path to arm9>"
+ },
+ "IRAD": {
+  "rom": "<path to rom>",
+  "root": "<path to root>",
+  "data": "<path to data>",
+  "ov": "<path to ov>",
+  "arm9": "<path to arm9>"
+ },
+ "IRBI": {
+  "rom": "<path to rom>",
+  "root": "<path to root>",
+  "data": "<path to data>",
+  "ov": "<path to ov>",
+  "arm9": "<path to arm9>"
+ },
+ "IRAI": {
+  "rom": "<path to rom>",
+  "root": "<path to root>",
+  "data": "<path to data>",
+  "ov": "<path to ov>",
+  "arm9": "<path to arm9>"
+ },
+ "IRBS": {
+  "rom": "<path to rom>",
+  "root": "<path to root>",
+  "data": "<path to data>",
+  "ov": "<path to ov>",
+  "arm9": "<path to arm9>"
+ },
+ "IRAS": {
+  "rom": "<path to rom>",
+  "root": "<path to root>",
+  "data": "<path to data>",
+  "ov": "<path to ov>",
+  "arm9": "<path to arm9>"
+ },
+ "_aletheia": "<path to the aletheia checkout>"
+}

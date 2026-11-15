@@ -1,0 +1,5 @@
+c1a2d5c78d795dff  eight-mixed.json
+a7af7371c35b9026  solo-black.json
+4c2080781aa20ebe  solo-white-seasons.json
+5d9a4460c2d6e57a  two-players.json
+7377306e309fcf6e  sixteen.json

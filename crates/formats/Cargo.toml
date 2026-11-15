@@ -1,0 +1,8 @@
+[package]
+name = "arkh-formats"
+description = "NARC archives and message text of Pokemon Black and White (own code)"
+edition.workspace = true
+license.workspace = true
+version.workspace = true
+
+[dependencies]

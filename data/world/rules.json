@@ -1,0 +1,771 @@
+{
+ "_source": "PokemonBWAP 0.4.5 data (BlastSlimey and contributors, MIT), converted by tools/bwap2data.py",
+ "rules": {
+  "can_use_strength": {
+   "all": [
+    {
+     "has": "HM04 Strength"
+    },
+    {
+     "has_any_set": "strength_species"
+    }
+   ]
+  },
+  "can_use_surf": {
+   "all": [
+    {
+     "has": "HM03 Surf"
+    },
+    {
+     "has_any_set": "surf_species"
+    }
+   ]
+  },
+  "can_use_cut": {
+   "all": [
+    {
+     "has": "HM01 Cut"
+    },
+    {
+     "has_any_set": "cut_species"
+    }
+   ]
+  },
+  "can_use_waterfall": {
+   "all": [
+    {
+     "rule": "can_use_surf"
+    },
+    {
+     "has": "HM05 Waterfall"
+    },
+    {
+     "has_any_set": "waterfall_species"
+    }
+   ]
+  },
+  "can_use_dive": {
+   "all": [
+    {
+     "rule": "can_use_surf"
+    },
+    {
+     "has": "HM06 Dive"
+    },
+    {
+     "has_any_set": "dive_species"
+    }
+   ]
+  },
+  "can_use_flash": {
+   "all": [
+    {
+     "has": "TM70 Flash"
+    },
+    {
+     "has_any_set": "flash_species"
+    }
+   ]
+  },
+  "can_use_fly": {
+   "all": [
+    {
+     "has": "HM02 Fly"
+    },
+    {
+     "has_any_set": "fly_species"
+    }
+   ]
+  },
+  "can_fish": {
+   "has": "Super Rod"
+  },
+  "has_rage_candy_bar": {
+   "has": "Rage Candy Bar"
+  },
+  "has_basement_key": {
+   "has": "Basement Key"
+  },
+  "has_parcel": {
+   "has": "Parcel"
+  },
+  "has_loot_sack": {
+   "has": "Loot Sack"
+  },
+  "has_dragon_skull": {
+   "has": "Dragon Skull"
+  },
+  "has_liberty_pass": {
+   "has": "Liberty Pass"
+  },
+  "has_machine_part": {
+   "has": "Machine Part"
+  },
+  "has_explorer_kit": {
+   "has": "Explorer Kit"
+  },
+  "has_tidal_bell": {
+   "has": "Tidal Bell"
+  },
+  "has_oaks_letter": {
+   "has": "Oak's Letter"
+  },
+  "has_blue_card": {
+   "has": "Blue Card"
+  },
+  "has_red_chain": {
+   "has": "Red Chain"
+  },
+  "has_any_legendary_stone": {
+   "any": [
+    {
+     "has": "Light Stone"
+    },
+    {
+     "has": "Dark Stone"
+    }
+   ]
+  },
+  "has_lock_capsule": {
+   "has": "Lock Capsule"
+  },
+  "has_all_grams": {
+   "all": [
+    {
+     "has": "Wingull Gram 1"
+    },
+    {
+     "has": "Wingull Gram 2"
+    },
+    {
+     "has": "Wingull Gram 3"
+    }
+   ]
+  },
+  "has_gb_player": {
+   "has": "GB Sounds"
+  },
+  "has_silver_wing": {
+   "has": "Silver Wing"
+  },
+  "has_all_tms_hms": {
+   "all": [
+    {
+     "has_all_group": "tm"
+    },
+    {
+     "has_all_group": "hm"
+    }
+   ]
+  },
+  "has_root_fossil": {
+   "has": "Root Fossil"
+  },
+  "has_claw_fossil": {
+   "has": "Claw Fossil"
+  },
+  "has_helix_fossil": {
+   "has": "Helix Fossil"
+  },
+  "has_dome_fossil": {
+   "has": "Dome Fossil"
+  },
+  "has_old_amber": {
+   "has": "Old Amber"
+  },
+  "has_armor_fossil": {
+   "has": "Armor Fossil"
+  },
+  "has_skull_fossil": {
+   "has": "Skull Fossil"
+  },
+  "has_cover_fossil": {
+   "has": "Cover Fossil"
+  },
+  "has_plume_fossil": {
+   "has": "Plume Fossil"
+  },
+  "has_trio_badge": {
+   "has": "Trio Badge"
+  },
+  "has_basic_badge": {
+   "has": "Basic Badge"
+  },
+  "has_insect_badge": {
+   "has": "Insect Badge"
+  },
+  "has_bolt_badge": {
+   "has": "Bolt Badge"
+  },
+  "has_quake_badge": {
+   "has": "Quake Badge"
+  },
+  "has_jet_badge": {
+   "has": "Jet Badge"
+  },
+  "has_freeze_badge": {
+   "has": "Freeze Badge"
+  },
+  "has_legend_badge": {
+   "has": "Legend Badge"
+  },
+  "can_set_winter": {
+   "any": [
+    {
+     "option": "season_control",
+     "eq": "vanilla"
+    },
+    {
+     "all": [
+      {
+       "reach": "Nimbasa City"
+      },
+      {
+       "any": [
+        {
+         "option": "season_control",
+         "eq": "changeable"
+        },
+        {
+         "has": "Winter"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "can_set_autumn": {
+   "any": [
+    {
+     "option": "season_control",
+     "eq": "vanilla"
+    },
+    {
+     "all": [
+      {
+       "reach": "Nimbasa City"
+      },
+      {
+       "any": [
+        {
+         "option": "season_control",
+         "eq": "changeable"
+        },
+        {
+         "has": "Autumn"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "can_set_summer": {
+   "any": [
+    {
+     "option": "season_control",
+     "eq": "vanilla"
+    },
+    {
+     "all": [
+      {
+       "reach": "Nimbasa City"
+      },
+      {
+       "any": [
+        {
+         "option": "season_control",
+         "eq": "changeable"
+        },
+        {
+         "has": "Summer"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "can_set_spring": {
+   "any": [
+    {
+     "option": "season_control",
+     "eq": "vanilla"
+    },
+    {
+     "all": [
+      {
+       "reach": "Nimbasa City"
+      },
+      {
+       "any": [
+        {
+         "option": "season_control",
+         "eq": "changeable"
+        },
+        {
+         "has": "Spring"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "can_set_other_than_winter": {
+   "any": [
+    {
+     "option": "season_control",
+     "eq": "vanilla"
+    },
+    {
+     "all": [
+      {
+       "reach": "Nimbasa City"
+      },
+      {
+       "any": [
+        {
+         "option": "season_control",
+         "eq": "changeable"
+        },
+        {
+         "any": [
+          {
+           "has": "Spring"
+          },
+          {
+           "has": "Summer"
+          },
+          {
+           "has": "Autumn"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "can_catch_all_deerlings": {
+   "any": [
+    {
+     "all": [
+      {
+       "not": {
+        "option": "randomize_wild_pokemon",
+        "has": "randomize"
+       }
+      },
+      {
+       "option": "season_control",
+       "eq": "vanilla"
+      }
+     ]
+    },
+    {
+     "all": [
+      {
+       "has": "Deerling (Spring)"
+      },
+      {
+       "has": "Deerling (Summer)"
+      },
+      {
+       "has": "Deerling (Autumn)"
+      },
+      {
+       "has": "Deerling (Winter)"
+      }
+     ]
+    }
+   ]
+  },
+  "encounter_can_set_spring": {
+   "all": [
+    {
+     "reach": "Nimbasa City"
+    },
+    {
+     "any": [
+      {
+       "option": "season_control",
+       "eq": "changeable"
+      },
+      {
+       "has": "Spring"
+      }
+     ]
+    }
+   ]
+  },
+  "encounter_can_set_summer": {
+   "all": [
+    {
+     "reach": "Nimbasa City"
+    },
+    {
+     "any": [
+      {
+       "option": "season_control",
+       "eq": "changeable"
+      },
+      {
+       "has": "Summer"
+      }
+     ]
+    }
+   ]
+  },
+  "encounter_can_set_autumn": {
+   "all": [
+    {
+     "reach": "Nimbasa City"
+    },
+    {
+     "any": [
+      {
+       "option": "season_control",
+       "eq": "changeable"
+      },
+      {
+       "has": "Autumn"
+      }
+     ]
+    }
+   ]
+  },
+  "encounter_can_set_winter": {
+   "all": [
+    {
+     "reach": "Nimbasa City"
+    },
+    {
+     "any": [
+      {
+       "option": "season_control",
+       "eq": "changeable"
+      },
+      {
+       "has": "Winter"
+      }
+     ]
+    }
+   ]
+  },
+  "has_visited_biancas_house": {
+   "has": "[Event] Argument in Bianca's house"
+  },
+  "has_seen_accumula_speech": {
+   "has": "[Event] Accumula Town Ghetsis speech"
+  },
+  "has_fought_cheren_trainerschool": {
+   "has": "[Event] Trainers' School Cheren fight"
+  },
+  "has_seen_plasma_route_3": {
+   "has": "[Event] Grunts running on Route 3"
+  },
+  "has_fought_plasma_wellspring": {
+   "has": "[Event] Wellspring Cave Plasma fight"
+  },
+  "has_helped_man_nimbasa": {
+   "has": "[Event] Helping old man in Nimbasa"
+  },
+  "has_encountered_cobalion": {
+   "has": "[Event] Encounter Cobalion"
+  },
+  "has_fought_plasma_castelia": {
+   "has": "[Event] Castelia Plasma fight"
+  },
+  "has_confronted_plasma_castelia": {
+   "has": "[Event] Castelia Plasma Hideout confrontation"
+  },
+  "has_fought_dancer_mickey": {
+   "has": "[Event] Defeating Catelia Dancer Mickey"
+  },
+  "has_searched_cold_storage": {
+   "has": "[Event] Search with Cheren in Cold Storage building"
+  },
+  "has_confronted_plasma_cold_storage": {
+   "has": "[Event] Cold Storage Plasma confrontation"
+  },
+  "has_battled_n_chargestone": {
+   "has": "[Event] Defeating N Chargestone"
+  },
+  "has_rung_bell_celestial": {
+   "has": "[Event] Ring bell Celestial Tower"
+  },
+  "has_talked_drayden_iris": {
+   "has": "[Event] Talk with Iris and Drayden"
+  },
+  "has_released_roamer": {
+   "has": "[Event] Released roamer"
+  },
+  "has_introduced_junipers_lab": {
+   "has": "[Event] Introduction in Juniper's Lab"
+  },
+  "has_fought_plasma_dreamyard": {
+   "has": "[Event] Dreamyard North Plasma fight"
+  },
+  "has_confronted_ghetsis_relic_castle": {
+   "has": "[Event] Relic Castle Ghetsis confrontation"
+  },
+  "has_fought_castelia_dancers": {
+   "all": [
+    {
+     "has": "[Event] Defeating Catelia Dancer Mickey"
+    },
+    {
+     "has": "[Event] Defeating Catelia Dancer Raymond"
+    },
+    {
+     "has": "[Event] Defeating Catelia Dancer Edmond"
+    }
+   ]
+  },
+  "has_found_woman_on_village_bridge": {
+   "has": "[Event] Talking to Patrat woman Village Bridge"
+  },
+  "has_talked_wingull_route_13": {
+   "has": "[Event] Talked to girl next to Wingull Route 13"
+  },
+  "has_heard_weather_route_10": {
+   "has": "[Event] Heard weather warning route 10 gate"
+  },
+  "has_talked_to_kids_mistralton": {
+   "has": "[Event] Talked with kids Mistralton"
+  },
+  "has_defeated_striaton_gym": {
+   "has": "[Event] Defeating leader Cilan/Chili/Cress"
+  },
+  "has_defeated_nacrene_gym": {
+   "has": "[Event] Defeating leader Lenora"
+  },
+  "has_defeated_castelia_gym": {
+   "has": "[Event] Defeating leader Burgh"
+  },
+  "has_defeated_nimbasa_gym": {
+   "has": "[Event] Defeating leader Elesa"
+  },
+  "has_defeated_driftveil_gym": {
+   "has": "[Event] Defeating leader Clay"
+  },
+  "has_defeated_mistralton_gym": {
+   "has": "[Event] Defeating leader Skyla"
+  },
+  "has_defeated_icirrus_gym": {
+   "has": "[Event] Defeating leader Brycen"
+  },
+  "has_defeated_opelucid_gym": {
+   "has": "[Event] Defeating leader Iris/Drayden"
+  },
+  "has_defeated_elite_four": {
+   "all": [
+    {
+     "has": "[Event] Defeating elite four Shauntal"
+    },
+    {
+     "has": "[Event] Defeating elite four Marshal"
+    },
+    {
+     "has": "[Event] Defeating elite four Grimsley"
+    },
+    {
+     "has": "[Event] Defeating elite four Caitlin"
+    }
+   ]
+  },
+  "has_beaten_ghetsis": {
+   "has": "[Event] Defeating Ghetsis"
+  },
+  "has_access_magnetic_area": {
+   "has": "[Event] Magnetic Area"
+  },
+  "has_access_moss_rock": {
+   "has": "[Event] Moss Rock"
+  },
+  "has_access_ice_rock": {
+   "has": "[Event] Ice Rock"
+  },
+  "has_access_move_relearner": {
+   "has": "[Event] Access to move relearner"
+  },
+  "has_access_friendship_checker": {
+   "has": "[Event] Access to friendship checker"
+  },
+  "has_access_castelia_evo_items": {
+   "has": "[Event] Castelia evo items"
+  },
+  "has_access_chargestone_evo_items": {
+   "has": "[Event] Chargestone evo items"
+  },
+  "has_access_twist_evo_items": {
+   "has": "[Event] Twist Mountain evo items"
+  },
+  "has_access_mall_evo_items": {
+   "has": "[Event] Shopping Mall Nine evo items"
+  },
+  "has_access_r10_evo_items": {
+   "has": "[Event] Route 10 evo items"
+  },
+  "has_access_undella_evo_items": {
+   "has": "[Event] Undella evo items"
+  },
+  "has_access_chasm_evo_items": {
+   "has": "[Event] Giant Chasm evo items"
+  },
+  "has_forces_of_nature": {
+   "all": [
+    {
+     "has": "Thundurus"
+    },
+    {
+     "has": "Tornadus"
+    }
+   ]
+  },
+  "has_celebi": {
+   "has": "Celebi"
+  },
+  "has_legendary_beasts": {
+   "all": [
+    {
+     "has": "Entei"
+    },
+    {
+     "has": "Raikou"
+    },
+    {
+     "has": "Suicune"
+    }
+   ]
+  },
+  "has_genesect": {
+   "has": "Genesect"
+  },
+  "has_shaymin": {
+   "has": "Shaymin"
+  },
+  "has_other_locations_species": {
+   "has_value": "other_locations_species"
+  },
+  "has_20_species": {
+   "seen_count": 20
+  },
+  "has_25_species": {
+   "seen_count": 25
+  },
+  "has_51_species": {
+   "seen_count": 51
+  },
+  "has_60_species": {
+   "seen_count": 60
+  },
+  "has_115_species_seen": {
+   "seen_count": 115
+  },
+  "has_fighting_type_species": {
+   "has_any_set": "fighting_type_species"
+  },
+  "has_studio_castelia_type_species": {
+   "has_any_set": "studio_castelia_type_species"
+  },
+  "dark_cave": {
+   "any": [
+    {
+     "not": {
+      "option": "modify_logic",
+      "has": "require_flash"
+     }
+    },
+    {
+     "rule": "can_use_flash"
+    },
+    {
+     "has": "Out of logic"
+    }
+   ]
+  },
+  "driftveil_random_tm": {
+   "all": [
+    {
+     "has_value": "driftveil_random_tm"
+    },
+    {
+     "has_value": "other_locations_species"
+    }
+   ]
+  },
+  "route_8_logic": {
+   "any": [
+    {
+     "rule": "can_use_surf"
+    },
+    {
+     "all": [
+      {
+       "reach": "Nimbasa City"
+      },
+      {
+       "any": [
+        {
+         "option": "season_control",
+         "eq": "changeable"
+        },
+        {
+         "any": [
+          {
+           "has": "Spring"
+          },
+          {
+           "has": "Summer"
+          },
+          {
+           "has": "Autumn"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "include": {
+  "vanilla_seasons": {
+   "option": "season_control",
+   "eq": "vanilla"
+  },
+  "changeable_seasons": {
+   "not": {
+    "option": "season_control",
+    "eq": "vanilla"
+   }
+  },
+  "disabled": false,
+  "randomized_wild": {
+   "option": "randomize_wild_pokemon",
+   "has": "randomize"
+  },
+  "tm_hm_hunt_goal": {
+   "option": "goal",
+   "has": "tmhm_hunt"
+  },
+  "monkeys_not_split": {
+   "value": "monkeys_not_split"
+  },
+  "black_version": {
+   "option": "version",
+   "eq": "black"
+  },
+  "white_version": {
+   "option": "version",
+   "eq": "white"
+  },
+  "shuffled_doors": false,
+  "vanilla_doors": true
+ }
+}

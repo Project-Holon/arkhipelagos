@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "seed": 4242,
+  "options": {"goal": "ghetsis", "season_control": "vanilla"},
+  "players": [
+    {"name": "Ash", "version": "black"},
+    {"name": "Misty", "version": "white", "options": {"modify_logic": ["require_flash"]}}
+  ]
+}

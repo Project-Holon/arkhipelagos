@@ -1,0 +1,11 @@
+[workspace]
+resolver = "2"
+members = ["crates/formats", "crates/script", "crates/gen", "crates/gen-wasm"]
+
+[workspace.package]
+edition = "2021"
+license = "MIT"
+version = "0.1.0"
+
+[profile.release]
+opt-level = 3

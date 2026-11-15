@@ -1,0 +1,5816 @@
+{
+ "_source": "PokemonBWAP 0.4.5 data (BlastSlimey and contributors, MIT), converted by tools/bwap2data.py",
+ "connections": [
+  {
+   "from": "Menu",
+   "to": "Pokédex",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Menu",
+   "to": "Map Visits",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Menu",
+   "to": "Evolutions",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Menu",
+   "to": "Form Change",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Menu",
+   "to": "Player's Bedroom",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Player's Bedroom",
+   "to": "Player's House",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Player's House",
+   "to": "Nuvema Town",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nuvema Town",
+   "to": "Cheren's House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Cheren's House",
+   "to": "Cheren's Bedroom",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nuvema Town",
+   "to": "Bianca's House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Bianca's House",
+   "to": "Bianca's Bedroom",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nuvema Town",
+   "to": "Nuvema Town Near Lab",
+   "type": "Virtual",
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_visited_biancas_house"
+    }
+   },
+   "rule_back": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "any": [
+      {
+       "rule": "has_visited_biancas_house"
+      },
+      {
+       "rule": "can_use_fly"
+      },
+      {
+       "rule": "has_introduced_junipers_lab"
+      }
+     ]
+    }
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nuvema Town Near Lab",
+   "to": "Juniper's Lab",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nuvema Town",
+   "to": "Route 1 East",
+   "type": "Adjacent maps",
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_introduced_junipers_lab"
+    }
+   },
+   "rule_back": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_introduced_junipers_lab"
+    }
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 1 East",
+   "to": "Route 1 West",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_surf"
+   },
+   "rule_back": {
+    "rule": "can_use_surf"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 1 West",
+   "to": "Route 1 Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 1 Gate",
+   "to": "Route 17 Shore",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 17 Shore",
+   "to": "Route 17 South",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_surf"
+   },
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 17 South",
+   "to": "Route 18",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": {
+    "rule": "can_use_surf"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 18",
+   "to": "Route 18 House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 18",
+   "to": "Route 17 North",
+   "type": "Adjacent maps",
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "can_use_surf"
+    }
+   },
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 17 North",
+   "to": "Route 17 South",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Route 17 North",
+   "to": "Route 18 Coast",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Route 17 North",
+   "to": "P2 Laboratory Outside",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": {
+    "rule": "can_use_surf"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "P2 Laboratory Outside",
+   "to": "P2 Laboratory",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 1 East",
+   "to": "Accumula Town",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Accumula Town",
+   "to": "Accumula Town Pokemon Center",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Accumula Town",
+   "to": "Accumula Town South West House 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Accumula Town",
+   "to": "Accumula Town North East House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Accumula Town",
+   "to": "Accumula Town North Left House 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Accumula Town",
+   "to": "Accumula Town North Right House 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Accumula Town",
+   "to": "Accumula Town Near Gate",
+   "type": "Virtual",
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_seen_accumula_speech"
+    }
+   },
+   "rule_back": {
+    "any": [
+     {
+      "if": {
+       "include": "shuffled_doors"
+      },
+      "then": {
+       "rule": "has_seen_accumula_speech"
+      }
+     },
+     {
+      "rule": "can_use_fly"
+     }
+    ]
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Accumula Town Near Gate",
+   "to": "Accumula Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Accumula Town South West House 1F",
+   "to": "Accumula Town South West House 2F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Accumula Town North Left House 1F",
+   "to": "Accumula Town North Left House 2F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Accumula Town North Right House 1F",
+   "to": "Accumula Town North Right House 2F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Accumula Gate",
+   "to": "Route 2",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 2",
+   "to": "Striaton City",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Striaton City",
+   "to": "Striaton City Pokemon Center",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Striaton City",
+   "to": "Striaton City Near Gym",
+   "type": "Virtual",
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_fought_cheren_trainerschool"
+    }
+   },
+   "rule_back": {
+    "any": [
+     {
+      "if": {
+       "include": "shuffled_doors"
+      },
+      "then": {
+       "rule": "has_fought_cheren_trainerschool"
+      }
+     },
+     {
+      "rule": "can_use_fly"
+     }
+    ]
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Striaton City Near Gym",
+   "to": "Striaton Gym",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Striaton City",
+   "to": "Striaton City Trainers' School",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Striaton City",
+   "to": "Striaton City South West House 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Striaton City",
+   "to": "Striaton City East Lower House 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Striaton City",
+   "to": "Striaton City East Upper House 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Striaton City",
+   "to": "Dreamyard Entrance",
+   "type": "Trees",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Striaton City",
+   "to": "Route 3 North",
+   "type": "Adjacent maps",
+   "rule": {
+    "rule": "has_parcel"
+   },
+   "rule_back": {
+    "rule": "has_parcel"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Striaton City South West House 1F",
+   "to": "Striaton City South West House 2F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Striaton City East Lower House 1F",
+   "to": "Striaton City East Lower House 2F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Striaton City East Upper House 1F",
+   "to": "Striaton City East Upper House 2F",
+   "type": "Stairs",
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_defeated_striaton_gym"
+    }
+   },
+   "rule_back": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_defeated_striaton_gym"
+    }
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Dreamyard Entrance",
+   "to": "Dreamyard North West",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_cut"
+   },
+   "rule_back": {
+    "rule": "can_use_cut"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Dreamyard Entrance",
+   "to": "Dreamyard North East",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_basement_key"
+   },
+   "rule_back": {
+    "rule": "has_basement_key"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Dreamyard North East",
+   "to": "Dreamyard Basement",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Dreamyard North East",
+   "to": "Route 3 South or Dreamyard North East",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Dreamyard Basement",
+   "to": "Dreamyard South",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Dreamyard South",
+   "to": "Dreamyard Basement North West",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Dreamyard South",
+   "to": "Dreamyard Entrance",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_strength"
+   },
+   "rule_back": {
+    "rule": "can_use_strength"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Route 3 North",
+   "to": "Route 3 South",
+   "type": "Virtual",
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_fought_plasma_wellspring"
+    }
+   },
+   "rule_back": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_fought_plasma_wellspring"
+    }
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 3 North",
+   "to": "Route 3 Pokémon Day Care",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 3 North",
+   "to": "Route 3 Kindergarten",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 3 North",
+   "to": "Wellspring Cave Entrance",
+   "type": "Cave",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 3 South",
+   "to": "Nacrene Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 3 South",
+   "to": "Route 3 South or Dreamyard North East",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Wellspring Cave Entrance",
+   "to": "Wellspring Cave Inner",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_surf"
+   },
+   "rule_back": {
+    "rule": "can_use_surf"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Wellspring Cave Inner",
+   "to": "Wellspring Cave B1F Entrance",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Wellspring Cave B1F Entrance",
+   "to": "Wellspring Cave B1F",
+   "type": "Virtual",
+   "rule": {
+    "rule": "dark_cave"
+   },
+   "rule_back": {
+    "rule": "dark_cave"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Nacrene Gate",
+   "to": "Nacrene City",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nacrene City",
+   "to": "Nacrene City Pokemon Center",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nacrene City",
+   "to": "Nacrene Museum",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nacrene City",
+   "to": "Café Warehouse",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nacrene City",
+   "to": "Pinwheel Forest Outside",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nacrene City",
+   "to": "Nacrene City South East Left House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nacrene City",
+   "to": "Nacrene City South East Left House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nacrene City",
+   "to": "Nacrene City South East Right House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nacrene City",
+   "to": "Nacrene City South West Left House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nacrene City",
+   "to": "Nacrene City South West Right House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nacrene City",
+   "to": "Nacrene City South West Right House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nacrene City",
+   "to": "Nacrene City North East House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nacrene City",
+   "to": "Nacrene City North East House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nacrene Museum",
+   "to": "Nacrene Gym",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Pinwheel Forest Outside",
+   "to": "Pinwheel Forest South",
+   "type": "Trees",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Pinwheel Forest South",
+   "to": "Pinwheel Forest West",
+   "type": "Virtual",
+   "rule": {
+    "any": [
+     {
+      "rule": "has_loot_sack"
+     },
+     {
+      "rule": "has_defeated_nacrene_gym"
+     }
+    ]
+   },
+   "rule_back": {
+    "any": [
+     {
+      "rule": "has_loot_sack"
+     },
+     {
+      "rule": "has_defeated_nacrene_gym"
+     }
+    ]
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Pinwheel Forest West",
+   "to": "Pinwheel Forest North",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_dragon_skull"
+   },
+   "rule_back": {
+    "rule": "has_dragon_skull"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Pinwheel Forest West",
+   "to": "Pinwheel Forest East",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_helped_man_nimbasa"
+   },
+   "rule_back": {
+    "any": [
+     {
+      "rule": "has_helped_man_nimbasa"
+     },
+     {
+      "rule": "can_use_surf"
+     }
+    ]
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Pinwheel Forest East",
+   "to": "Pinwheel Forest North East",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_encountered_cobalion"
+   },
+   "rule_back": {
+    "rule": "has_encountered_cobalion"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Pinwheel Forest North East",
+   "to": "Rumination Field",
+   "type": "Trees",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Pinwheel Forest North",
+   "to": "Skyarrow Bridge Entrance",
+   "type": "Trees",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Skyarrow Bridge Entrance",
+   "to": "Skyarrow Bridge South Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Skyarrow Bridge South Gate",
+   "to": "Skyarrow Bridge",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Skyarrow Bridge",
+   "to": "Skyarrow Bridge North Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Skyarrow Bridge North Gate",
+   "to": "Castelia City",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City",
+   "to": "Castelia Pokemon Center",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City",
+   "to": "Castelia City Castelia Street",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City",
+   "to": "Castelia City Mode Street",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City",
+   "to": "Castelia City Narrow Street",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City",
+   "to": "Castelia City Gym Street",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City",
+   "to": "Castelia City Liberty Pier",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City",
+   "to": "Castelia City Unity Pier",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City",
+   "to": "Castelia City Prime Pier",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City",
+   "to": "Castelia City Cruise Dock",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City",
+   "to": "Castelia City Thumb Pier",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City",
+   "to": "Passerby Analytics HQ",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City",
+   "to": "Battle Company 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Gym Street",
+   "to": "Castelia Gym Entrance",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Gym Street",
+   "to": "Castelia City Plasma Hideout 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Gym Street",
+   "to": "Castelia City Central Plaza",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Mode Street",
+   "to": "Studio Castelia",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Mode Street",
+   "to": "Castelia City Central Plaza",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Castelia Street",
+   "to": "Castelia City Castelia Street East Building 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Castelia Street",
+   "to": "Castelia City Castelia Street West Building 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Castelia Street",
+   "to": "Castelia City Central Plaza",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Narrow Street",
+   "to": "Café Sonata",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Narrow Street",
+   "to": "Castelia City Central Plaza",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Liberty Pier",
+   "to": "Liberty Garden",
+   "type": "Other script",
+   "rule": {
+    "rule": "has_liberty_pass"
+   },
+   "rule_back": {
+    "rule": "has_liberty_pass"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Cruise Dock",
+   "to": "Royal Unova",
+   "type": "Other script",
+   "rule": {
+    "rule": "has_beaten_ghetsis"
+   },
+   "rule_back": {
+    "rule": "has_beaten_ghetsis"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Castelia City Northern Street",
+   "to": "Castelia City Central Plaza",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Northern Street",
+   "to": "Castelia City Northern Street West Building 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Northern Street",
+   "to": "Castelia City Northern Street East Upper Building 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Northern Street",
+   "to": "Castelia City Northern Street East Lower Building 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Northern Street",
+   "to": "Castelia Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Battle Company 1F",
+   "to": "Battle Company 47F",
+   "type": "Elevator",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Battle Company 1F",
+   "to": "Battle Company 55F",
+   "type": "Elevator",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Battle Company 47F",
+   "to": "Battle Company 55F",
+   "type": "Elevator",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia Gym Entrance",
+   "to": "Castelia Gym",
+   "type": "Virtual",
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_confronted_plasma_castelia"
+    }
+   },
+   "rule_back": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_confronted_plasma_castelia"
+    }
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Castelia City Plasma Hideout 1F",
+   "to": "Castelia City Plasma Hideout 2F",
+   "type": "Elevator",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Castelia Street East Building 1F",
+   "to": "Game Freak Headquarters",
+   "type": "Elevator",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Castelia Street West Building 1F",
+   "to": "Castelia City Castelia Street West Building 11F",
+   "type": "Elevator",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Northern Street West Building 1F",
+   "to": "Castelia City Northern Street West Building 11F",
+   "type": "Elevator",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Northern Street East Upper Building 1F",
+   "to": "Castelia City Northern Street East Upper Building 47F",
+   "type": "Elevator",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia City Northern Street East Lower Building 1F",
+   "to": "Castelia City Northern Street East Lower Building 47F",
+   "type": "Elevator",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Liberty Garden",
+   "to": "Liberty Garden Hallway",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Liberty Garden Hallway",
+   "to": "Liberty Garden Basement",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Castelia Gate",
+   "to": "Route 4 South",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 4 South",
+   "to": "Route 4 South House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 4 South",
+   "to": "Route 4 North",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_machine_part"
+   },
+   "rule_back": {
+    "rule": "has_machine_part"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 4 North",
+   "to": "Route 4 North House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 4 North",
+   "to": "Desert Resort Outside",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 4 North",
+   "to": "Nimbasa South Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Desert Resort Outside",
+   "to": "Desert Resort Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Desert Resort Gate",
+   "to": "Desert Resort",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Desert Resort",
+   "to": "Relic Castle Towerside 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Desert Resort",
+   "to": "Relic Castle Castleside 1F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside 1F",
+   "to": "Relic Castle Castleside B1F North",
+   "type": "Quicksand",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside 1F",
+   "to": "Relic Castle Castleside B1F North",
+   "type": "Quicksand",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside 1F",
+   "to": "Relic Castle Castleside 1F South West",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_explorer_kit"
+   },
+   "rule_back": {
+    "rule": "has_explorer_kit"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside 1F South West",
+   "to": "Relic Castle Castleside B1F South",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside 1F North",
+   "to": "Relic Castle Castleside 1F",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside B1F North",
+   "to": "Relic Castle Castleside 1F North",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside B1F South",
+   "to": "Relic Castle Castleside B2F",
+   "type": "Quicksand",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside B1F North West",
+   "to": "Relic Castle Castleside B1F North",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside B2F",
+   "to": "Relic Castle Castleside B1F North West",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside B2F",
+   "to": "Relic Castle Castleside B3F South",
+   "type": "Quicksand",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside B2F",
+   "to": "Relic Castle Castleside B3F North East",
+   "type": "Quicksand",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside B2F North West",
+   "to": "Relic Castle Castleside B2F",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside B3F South",
+   "to": "Relic Castle Castleside B4F East",
+   "type": "Quicksand",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside B3F South",
+   "to": "Relic Castle Castleside B4F East",
+   "type": "Quicksand",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside B3F South",
+   "to": "Relic Castle Castleside B4F East",
+   "type": "Quicksand",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside B3F South",
+   "to": "Relic Castle Castleside B4F South West",
+   "type": "Quicksand",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside B3F North West",
+   "to": "Relic Castle Castleside B3F North East",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside B3F North East",
+   "to": "Relic Castle Castleside B2F North West",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside B4F East",
+   "to": "Relic Castle Castleside B3F North West",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside B4F North West",
+   "to": "Relic Castle Castleside B4F East",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside B4F South West",
+   "to": "Relic Castle Castleside Sand Filled Room",
+   "type": "Quicksand",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside B4F South West",
+   "to": "Relic Castle Castleside B4F East",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside Sand Filled Room",
+   "to": "Relic Castle Castleside B4F North West",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside Sand Filled Room",
+   "to": "Relic Castle Castleside Back Room",
+   "type": "Door",
+   "rule": {
+    "rule": "has_silver_wing"
+   },
+   "rule_back": {
+    "rule": "has_silver_wing"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Castleside Back Room",
+   "to": "Relic Castle Basement Top Right Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Basement Top Right Room",
+   "to": "Relic Castle Basement Below Top Right Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Basement Top Right Room",
+   "to": "Relic Castle Basement Right of Top Center Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Basement Top Center Room",
+   "to": "Relic Castle Basement Right of Top Center Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Basement Top Center Room",
+   "to": "Relic Castle Basement Left of Top Center Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Basement Top Left Room",
+   "to": "Relic Castle Basement Left of Top Center Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Basement Top Left Room",
+   "to": "Relic Castle Towerside Front Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Basement Top Left Room",
+   "to": "Relic Castle Basement Below Top Left Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Basement Right of Center Room",
+   "to": "Relic Castle Basement Center Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Basement Right of Center Room",
+   "to": "Relic Castle Basement Below Top Right Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Basement Right of Center Room",
+   "to": "Relic Castle Basement Bottom Right Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Basement Left of Center Room",
+   "to": "Relic Castle Basement Below Top Left Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Basement Left of Center Room",
+   "to": "Relic Castle Basement Bottom Left Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Basement Left of Center Room",
+   "to": "Relic Castle Basement Center Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Basement Volcarona Entrance",
+   "to": "Relic Castle Basement Volcarona Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Basement Volcarona Entrance",
+   "to": "Relic Castle Basement Left of Volcarona Entrance",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Basement Volcarona Entrance",
+   "to": "Relic Castle Basement Right of Volcarona Entrance",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Basement Bottom Right Room",
+   "to": "Relic Castle Basement Right of Volcarona Entrance",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Basement Bottom Left Room",
+   "to": "Relic Castle Basement Left of Volcarona Entrance",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Towerside Front Room",
+   "to": "Relic Castle Towerside B6F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Towerside B6F",
+   "to": "Relic Castle Towerside B5F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Towerside B5F",
+   "to": "Relic Castle Towerside B4F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Towerside B4F",
+   "to": "Relic Castle Towerside B3F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Towerside B3F",
+   "to": "Relic Castle Towerside B2F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Towerside B2F",
+   "to": "Relic Castle Towerside B1F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Towerside B1F",
+   "to": "Relic Castle Towerside 1F East",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Relic Castle Towerside 1F East",
+   "to": "Relic Castle Towerside 1F",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Nimbasa South Gate",
+   "to": "Nimbasa City",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nimbasa City",
+   "to": "Nimbasa City Park",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nimbasa City",
+   "to": "Nimbasa City Pokemon Center",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nimbasa City",
+   "to": "Nimbasa City North West House 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nimbasa City",
+   "to": "Nimbasa City North East House 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nimbasa City",
+   "to": "Battle Institute",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nimbasa City",
+   "to": "Musical Theater",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nimbasa City",
+   "to": "Big Stadium Entrance",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nimbasa City",
+   "to": "Small Court Entrance",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nimbasa City",
+   "to": "Nimbasa West Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nimbasa City",
+   "to": "Nimbasa East Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nimbasa City",
+   "to": "Gear Station",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nimbasa City Park",
+   "to": "Nimbasa Gym",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nimbasa City North West House 1F",
+   "to": "Nimbasa City North West House 2F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nimbasa City North East House 1F",
+   "to": "Nimbasa City North East House 2F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Big Stadium Entrance",
+   "to": "Big Stadium Stand",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Big Stadium Entrance",
+   "to": "Big Stadium Football Field",
+   "type": "Warp",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Big Stadium Entrance",
+   "to": "Big Stadium Baseball Field",
+   "type": "Warp",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Big Stadium Entrance",
+   "to": "Big Stadium Soccer Field",
+   "type": "Warp",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Big Stadium Football Field",
+   "to": "Any Big Stadium or Small Court",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Big Stadium Baseball Field",
+   "to": "Any Big Stadium or Small Court",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Big Stadium Soccer Field",
+   "to": "Any Big Stadium or Small Court",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Small Court Entrance",
+   "to": "Small Court Stand",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Small Court Entrance",
+   "to": "Small Court Tennis Court",
+   "type": "Warp",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Small Court Entrance",
+   "to": "Small Court Basketball Court",
+   "type": "Warp",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Small Court Tennis Court",
+   "to": "Any Big Stadium or Small Court",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Small Court Basketball Court",
+   "to": "Any Big Stadium or Small Court",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Gear Station",
+   "to": "Anville Town",
+   "type": "Other script",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Anville Town",
+   "to": "Anville Town North House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Anville Town",
+   "to": "Anville Town South West House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Anville Town",
+   "to": "Anville Town South East House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Nimbasa West Gate",
+   "to": "Route 5",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 5",
+   "to": "Route 5 Caravan",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 5",
+   "to": "Route 5 Near Bridge",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_tidal_bell"
+   },
+   "rule_back": {
+    "rule": "has_tidal_bell"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 5 Near Bridge",
+   "to": "Driftveil Drawbridge",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Driftveil Drawbridge",
+   "to": "Driftveil City Near Bridge",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Driftveil City Near Bridge",
+   "to": "Driftveil City",
+   "type": "Virtual",
+   "rule": {
+    "any": [
+     {
+      "rule": "has_tidal_bell"
+     },
+     {
+      "rule": "can_use_fly"
+     }
+    ]
+   },
+   "rule_back": {
+    "rule": "has_tidal_bell"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Driftveil City",
+   "to": "Driftveil City Pokemon Center",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Driftveil City",
+   "to": "Driftveil City Near Gym",
+   "type": "Virtual",
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_confronted_plasma_cold_storage"
+    }
+   },
+   "rule_back": {
+    "any": [
+     {
+      "rule": "has_confronted_plasma_cold_storage"
+     },
+     {
+      "rule": "can_use_fly"
+     }
+    ]
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Driftveil City Near Gym",
+   "to": "Driftveil Gym",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Driftveil City",
+   "to": "Route 6",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Driftveil City",
+   "to": "Driftveil City Safehouse",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Driftveil City",
+   "to": "Driftveil City House North of Market",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Driftveil City",
+   "to": "Driftveil Market",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Driftveil City",
+   "to": "Driftveil Market",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Driftveil City",
+   "to": "Driftveil Market",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Driftveil City",
+   "to": "Driftveil Market Behind Counter",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Driftveil City",
+   "to": "Driftveil City Upper Left House East of Market",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Driftveil City",
+   "to": "Driftveil City Upper Right House East of Market",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Driftveil City",
+   "to": "Driftveil City Lower Left House East of Market",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Driftveil City",
+   "to": "Driftveil City Lower Right House East of Market",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Driftveil City",
+   "to": "Cold Storage",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Cold Storage",
+   "to": "Cold Storage Building",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Cold Storage Building",
+   "to": "Cold Storage Container",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 6",
+   "to": "Route 6 North East",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_surf"
+   },
+   "rule_back": {
+    "rule": "can_use_surf"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 6",
+   "to": "Season Research Lab",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 6",
+   "to": "Route 6 North House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 6",
+   "to": "Chargestone Cave Entrance",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 6 North East",
+   "to": "Mistralton Cave Very Close Entrance",
+   "type": "Cave",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Mistralton Cave Very Close Entrance",
+   "to": "Mistralton Cave Entrance",
+   "type": "Virtual",
+   "rule": {
+    "rule": "dark_cave"
+   },
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Mistralton Cave Entrance",
+   "to": "Mistralton Cave 1F South",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_strength"
+   },
+   "rule_back": {
+    "rule": "can_use_strength"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Mistralton Cave 1F South",
+   "to": "Mistralton Cave 1F",
+   "type": "Virtual",
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "can_use_strength"
+    }
+   },
+   "rule_back": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "can_use_strength"
+    }
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Mistralton Cave 1F",
+   "to": "Mistralton Cave Entrance",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_strength"
+   },
+   "rule_back": {
+    "rule": "can_use_strength"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Mistralton Cave 1F",
+   "to": "Mistralton Cave 1F Center",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": {
+    "rule": "dark_cave"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Mistralton Cave 1F Center",
+   "to": "Mistralton Cave 2F West Near Stairs",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Mistralton Cave 2F West Near Stairs",
+   "to": "Mistralton Cave 2F West",
+   "type": "Virtual",
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "dark_cave"
+    }
+   },
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Mistralton Cave 2F West",
+   "to": "Mistralton Cave 2F",
+   "type": "Virtual",
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "can_use_strength"
+    }
+   },
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Mistralton Cave 2F",
+   "to": "Mistralton Cave 2F Center",
+   "type": "Virtual",
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "can_use_strength"
+    }
+   },
+   "rule_back": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "can_use_strength"
+    }
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Mistralton Cave 2F Center",
+   "to": "Mistralton Cave 2F West",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_strength"
+   },
+   "rule_back": {
+    "rule": "can_use_strength"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Mistralton Cave 2F Center",
+   "to": "Mistralton Cave 2F Center Near Stairs",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": {
+    "rule": "dark_cave"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Mistralton Cave 2F Center Near Stairs",
+   "to": "Guidance Chamber Near Stairs",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Guidance Chamber Near Stairs",
+   "to": "Guidance Chamber",
+   "type": "Virtual",
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "dark_cave"
+    }
+   },
+   "rule_back": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "dark_cave"
+    }
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Chargestone Cave Entrance",
+   "to": "Chargestone Cave Entrance North",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_quake_badge"
+   },
+   "rule_back": {
+    "rule": "has_quake_badge"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Chargestone Cave Entrance North",
+   "to": "Chargestone Cave 1F",
+   "type": "Cave",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Chargestone Cave 1F",
+   "to": "Chargestone Cave B1F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Chargestone Cave B1F",
+   "to": "Chargestone Cave 1F North East",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Chargestone Cave B1F",
+   "to": "Chargestone Cave 1F South Shortcut",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Chargestone Cave B1F",
+   "to": "Chargestone Cave B2F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Chargestone Cave 1F North East",
+   "to": "Chargestone Cave 1F",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": {
+    "rule": "has_battled_n_chargestone"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Chargestone Cave 1F South Shortcut",
+   "to": "Chargestone Cave 1F",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Chargestone Cave 1F North East",
+   "to": "Mistralton City",
+   "type": "Cave",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Mistralton City",
+   "to": "Mistralton City Pokemon Center",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Mistralton City",
+   "to": "Mistralton City Near Gym",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_rung_bell_celestial"
+   },
+   "rule_back": {
+    "rule": "has_rung_bell_celestial"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Mistralton City Near Gym",
+   "to": "Mistralton Gym",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Mistralton City",
+   "to": "Mistralton Cargo Service",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Mistralton City",
+   "to": "Mistralton City North House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Mistralton City",
+   "to": "Mistralton City East House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Mistralton City",
+   "to": "Route 7",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 7",
+   "to": "Route 7 West House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 7",
+   "to": "Route 7 North House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 7",
+   "to": "Celestial Tower 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 7",
+   "to": "Twist Mountain Entrance",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Celestial Tower 1F",
+   "to": "Celestial Tower 2F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Celestial Tower 2F",
+   "to": "Celestial Tower 3F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Celestial Tower 3F",
+   "to": "Celestial Tower 4F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Celestial Tower 4F",
+   "to": "Celestial Tower 5F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Entrance",
+   "to": "Twist Mountain Entrance Near Cave",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_jet_badge"
+   },
+   "rule_back": {
+    "rule": "has_jet_badge"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Entrance Near Cave",
+   "to": "Twist Mountain 3F South West",
+   "type": "Cave",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside 3F North Footbridge",
+   "to": "Twist Mountain 3F North West",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside 3F West Footbridge",
+   "to": "Twist Mountain 3F South West",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside 3F West Footbridge",
+   "to": "Twist Mountain 3F South East",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside 3F South East Footbridge",
+   "to": "Twist Mountain 3F South East",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside 3F East Footbridge",
+   "to": "Twist Mountain 3F South East",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside 3F East Footbridge",
+   "to": "Twist Mountain 3F North East",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside 2F North East Footbridge",
+   "to": "Twist Mountain 2F North East",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside 2F North West Footbridge",
+   "to": "Twist Mountain 2F North Dead End",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside 2F North West Footbridge",
+   "to": "Twist Mountain Near 2F North West Door",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_set_other_than_winter"
+   },
+   "rule_back": {
+    "rule": "can_set_other_than_winter"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside 2F North West Footbridge",
+   "to": "Twist Mountain 2F South West",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside 2F South Footbridge",
+   "to": "Twist Mountain 2F South West",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside 2F South Footbridge",
+   "to": "Twist Mountain 2F South East",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside 1F East",
+   "to": "Twist Mountain 1F South East",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside 1F East",
+   "to": "Twist Mountain Outside 1F",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_set_other_than_winter"
+   },
+   "rule_back": {
+    "rule": "can_set_other_than_winter"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside 1F",
+   "to": "Twist Mountain Near 1F South West Door",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_set_other_than_winter"
+   },
+   "rule_back": {
+    "rule": "can_set_other_than_winter"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside 1F",
+   "to": "Twist Mountain Near 1F North West Door",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_set_other_than_winter"
+   },
+   "rule_back": {
+    "rule": "can_set_other_than_winter"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside 1F",
+   "to": "Twist Mountain Near 1F North East Door",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_set_other_than_winter"
+   },
+   "rule_back": {
+    "rule": "can_set_other_than_winter"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside 1F",
+   "to": "Twist Mountain Near House",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Near House",
+   "to": "Twist Mountain Outside House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Near 2F North West Door",
+   "to": "Twist Mountain 2F North West",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Near 1F North West Door",
+   "to": "Twist Mountain 1F North West",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Near 1F North East Door",
+   "to": "Twist Mountain 1F North East",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Near 1F South West Door",
+   "to": "Twist Mountain 1F South West",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain 3F North West",
+   "to": "Twist Mountain 2F North",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain 3F North East",
+   "to": "Twist Mountain 2F South East",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain 2F North West",
+   "to": "Twist Mountain 1F North West",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain 2F North West",
+   "to": "Twist Mountain 2F North Dead End",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain 2F North",
+   "to": "Twist Mountain 2F North Dead End",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain 2F North",
+   "to": "Twist Mountain 2F North East",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain 2F North East",
+   "to": "Twist Mountain 1F North East",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain 1F South West",
+   "to": "Twist Mountain Ice Cave",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain 1F North East",
+   "to": "Icirrus City",
+   "type": "Cave",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside Snow",
+   "to": "Twist Mountain Outside 3F North Footbridge",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_set_winter"
+   },
+   "rule_back": {
+    "rule": "can_set_winter"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside Snow",
+   "to": "Twist Mountain Outside 3F West Footbridge",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_set_winter"
+   },
+   "rule_back": {
+    "rule": "can_set_winter"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside Snow",
+   "to": "Twist Mountain Outside 2F North East Footbridge",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_set_winter"
+   },
+   "rule_back": {
+    "rule": "can_set_winter"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside Snow",
+   "to": "Twist Mountain Outside 2F North West Footbridge",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_set_winter"
+   },
+   "rule_back": {
+    "rule": "can_set_winter"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside Snow",
+   "to": "Twist Mountain Outside 2F South Footbridge",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_set_winter"
+   },
+   "rule_back": {
+    "rule": "can_set_winter"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside Snow",
+   "to": "Twist Mountain Outside 1F East",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_set_winter"
+   },
+   "rule_back": {
+    "rule": "can_set_winter"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Outside Snow",
+   "to": "Twist Mountain Near 1F South West Door",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_set_winter"
+   },
+   "rule_back": {
+    "rule": "can_set_winter"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Near 2F North West Door",
+   "to": "Twist Mountain Outside Snow",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_set_winter"
+   },
+   "rule_back": {
+    "rule": "can_set_winter"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Near 1F North West Door",
+   "to": "Twist Mountain Outside Snow",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_set_winter"
+   },
+   "rule_back": {
+    "rule": "can_set_winter"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Twist Mountain Near 1F North East Door",
+   "to": "Twist Mountain Outside Snow",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_set_winter"
+   },
+   "rule_back": {
+    "rule": "can_set_winter"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Icirrus City",
+   "to": "Icirrus City South",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_set_winter"
+   },
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Icirrus City",
+   "to": "Icirrus City Pokemon Center",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Icirrus City",
+   "to": "Icirrus Gym",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Icirrus City",
+   "to": "Icirrus City Pokémon Fan Club",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Icirrus City",
+   "to": "Icirrus City Aha's House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Icirrus City",
+   "to": "Icirrus City House North of Pokemon Center",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Icirrus City",
+   "to": "Dragonspiral Tower Entrance",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Icirrus City",
+   "to": "Dragonspiral Tower Entrance Upper Platform",
+   "type": "Adjacent maps",
+   "rule": {
+    "rule": "can_set_winter"
+   },
+   "rule_back": {
+    "rule": "can_set_winter"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Icirrus City",
+   "to": "Route 8",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Icirrus City South",
+   "to": "Icirrus City South House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Dragonspiral Tower Entrance",
+   "to": "Dragonspiral Tower Outside West",
+   "type": "Trees",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Dragonspiral Tower Outside West",
+   "to": "Dragonspiral Tower Outside East",
+   "type": "Virtual",
+   "rule": {
+    "all": [
+     {
+      "rule": "has_defeated_icirrus_gym"
+     },
+     {
+      "rule": "can_use_surf"
+     }
+    ]
+   },
+   "rule_back": {
+    "all": [
+     {
+      "rule": "has_defeated_icirrus_gym"
+     },
+     {
+      "rule": "can_use_surf"
+     }
+    ]
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Dragonspiral Tower Outside West",
+   "to": "Dragonspiral Tower 1F",
+   "type": "Door",
+   "rule": {
+    "rule": "has_defeated_icirrus_gym"
+   },
+   "rule_back": {
+    "rule": "has_defeated_icirrus_gym"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Dragonspiral Tower 1F",
+   "to": "Dragonspiral Tower 2F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Dragonspiral Tower 2F",
+   "to": "Dragonspiral Tower 3F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Dragonspiral Tower 3F",
+   "to": "Dragonspiral Tower 4F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Dragonspiral Tower 4F",
+   "to": "Dragonspiral Tower 5F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Dragonspiral Tower 5F",
+   "to": "Dragonspiral Tower 6F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Dragonspiral Tower 6F",
+   "to": "Dragonspiral Tower 7F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 8",
+   "to": "Route 8 North East",
+   "type": "Virtual",
+   "rule": {
+    "rule": "route_8_logic"
+   },
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 8",
+   "to": "Route 8 Near Gate",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_any_legendary_stone"
+   },
+   "rule_back": {
+    "rule": "has_any_legendary_stone"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 8 Near Gate",
+   "to": "Tubeline Bridge West Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 8 North East",
+   "to": "Moor of Icirrus",
+   "type": "Trees",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Moor of Icirrus",
+   "to": "Moor of Icirrus West",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_strength"
+   },
+   "rule_back": {
+    "rule": "can_use_strength"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Tubeline Bridge West Gate",
+   "to": "Tubeline Bridge",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Tubeline Bridge",
+   "to": "Tubeline Bridge East Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Tubeline Bridge East Gate",
+   "to": "Route 9",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 9",
+   "to": "Shopping Mall Nine",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 9",
+   "to": "Route 9 Near Challenger's cave",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_red_chain"
+   },
+   "rule_back": {
+    "rule": "has_red_chain"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 9 Near Challenger's cave",
+   "to": "Challenger's Cave 1F Near Entrance",
+   "type": "Cave",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 9",
+   "to": "Opelucid City West Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Shopping Mall Nine",
+   "to": "Shopping Mall Nine Back Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Challenger's Cave 1F Near Entrance",
+   "to": "Challenger's Cave 1F",
+   "type": "Virtual",
+   "rule": {
+    "rule": "dark_cave"
+   },
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Challenger's Cave 1F",
+   "to": "Challenger's Cave 1F Near Stairs",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": {
+    "rule": "dark_cave"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Challenger's Cave 1F Near Stairs",
+   "to": "Challenger's Cave B1F Near South Stairs",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Challenger's Cave B1F Near South Stairs",
+   "to": "Challenger's Cave B1F",
+   "type": "Virtual",
+   "rule": {
+    "rule": "dark_cave"
+   },
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Challenger's Cave B1F",
+   "to": "Challenger's Cave B1F Near North Stairs",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": {
+    "rule": "dark_cave"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Challenger's Cave B1F Near North Stairs",
+   "to": "Challenger's Cave B2F Very Close Entrance",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Challenger's Cave B2F Very Close Entrance",
+   "to": "Challenger's Cave B2F Entrance",
+   "type": "Virtual",
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "dark_cave"
+    }
+   },
+   "rule_back": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "dark_cave"
+    }
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Challenger's Cave B2F Entrance",
+   "to": "Challenger's Cave B2F",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_surf"
+   },
+   "rule_back": {
+    "rule": "can_use_surf"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Opelucid City East Gate Left Side",
+   "to": "Opelucid City East Gate Right Side",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_oaks_letter"
+   },
+   "rule_back": {
+    "rule": "has_oaks_letter"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Opelucid City East Gate Right Side",
+   "to": "Route 11",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 11",
+   "to": "Route 11 Caravan",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 11",
+   "to": "Route 11 Ravine",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_waterfall"
+   },
+   "rule_back": {
+    "rule": "can_use_waterfall"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Route 11",
+   "to": "Village Bridge West Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Village Bridge West Gate",
+   "to": "Village Bridge",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Village Bridge",
+   "to": "Village Bridge Caravan",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Village Bridge",
+   "to": "Village Bridge Left House on Left Side",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Village Bridge",
+   "to": "Village Bridge Middle House on Left Side",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Village Bridge",
+   "to": "Village Bridge Right House on Left Side",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Village Bridge",
+   "to": "Village Bridge Left House on Right Side",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Village Bridge",
+   "to": "Village Bridge Middle House on Right Side",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Village Bridge",
+   "to": "Village Bridge Right House on Right Side",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Village Bridge",
+   "to": "Village Bridge East Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Village Bridge East Gate",
+   "to": "Route 12",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 12",
+   "to": "Lacunosa Town",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Lacunosa Town",
+   "to": "Lacunosa Town Pokemon Center",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Lacunosa Town",
+   "to": "Lacunosa Town South West House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Lacunosa Town",
+   "to": "Lacunosa Town North East House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Lacunosa Town",
+   "to": "Lacunosa Town Big North House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Lacunosa Town",
+   "to": "Lacunosa Town Small North House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Lacunosa Town",
+   "to": "Route 13 North",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 13 North",
+   "to": "Route 13 North East",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_surf"
+   },
+   "rule_back": {
+    "any": [
+     {
+      "rule": "can_use_surf"
+     },
+     {
+      "rule": "can_use_strength"
+     }
+    ]
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 13 North",
+   "to": "Route 13 West",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_surf"
+   },
+   "rule_back": {
+    "rule": "can_use_surf"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 13 North",
+   "to": "Route 13 Center House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 13 North",
+   "to": "Route 13 South",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_surf"
+   },
+   "rule_back": {
+    "rule": "can_use_surf"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 13 North",
+   "to": "Route 13 Island",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_surf"
+   },
+   "rule_back": {
+    "rule": "can_use_surf"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Route 13 South",
+   "to": "Undella Town Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 13 West",
+   "to": "Route 13 West House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 13 North East",
+   "to": "Giant Chasm Outer",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Giant Chasm Outer",
+   "to": "Giant Chasm Entrance Cave",
+   "type": "Cave",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Giant Chasm Entrance Cave",
+   "to": "Giant Chasm Entrance Cave Inner",
+   "type": "Virtual",
+   "rule": {
+    "any": [
+     {
+      "rule": "can_use_surf"
+     },
+     {
+      "rule": "can_use_strength"
+     }
+    ]
+   },
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Giant Chasm Entrance Cave Inner",
+   "to": "Giant Chasm Crater",
+   "type": "Cave",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Giant Chasm Crater North East",
+   "to": "Giant Chasm Crater",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Giant Chasm Crater North East",
+   "to": "Giant Chasm Inner Cave",
+   "type": "Cave",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Giant Chasm Crater",
+   "to": "Giant Chasm Crater Snow",
+   "type": "Other script",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Giant Chasm Crater Snow",
+   "to": "Giant Chasm Inner Cave",
+   "type": "Cave",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Giant Chasm Crater Snow",
+   "to": "Giant Chasm Entrance Cave Inner",
+   "type": "Cave",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Undella Town Gate",
+   "to": "Undella Town",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Undella Town",
+   "to": "Undella Town Pokemon Center",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Undella Town",
+   "to": "Undella Town Caitlin's Villa",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Undella Town",
+   "to": "Undella Town Middle Small Villa",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Undella Town",
+   "to": "Undella Town Left Small Villa",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Undella Town",
+   "to": "The Riches' Villa",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Undella Town",
+   "to": "Undella Bay Shore",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Undella Town",
+   "to": "Route 14",
+   "type": "Adjacent maps",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Undella Bay Shore",
+   "to": "Undella Bay",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_surf"
+   },
+   "rule_back": {
+    "rule": "can_use_surf"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Undella Bay",
+   "to": "Abyssal Ruins Outside North",
+   "type": "Other script",
+   "rule": {
+    "rule": "can_use_dive"
+   },
+   "rule_back": {
+    "rule": "can_use_dive"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Undella Bay",
+   "to": "Abyssal Ruins Outside South",
+   "type": "Other script",
+   "rule": {
+    "rule": "can_use_dive"
+   },
+   "rule_back": {
+    "rule": "can_use_dive"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Undella Bay",
+   "to": "Abyssal Ruins Outside West",
+   "type": "Other script",
+   "rule": {
+    "rule": "can_use_dive"
+   },
+   "rule_back": {
+    "rule": "can_use_dive"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Undella Bay",
+   "to": "Abyssal Ruins Outside East",
+   "type": "Other script",
+   "rule": {
+    "rule": "can_use_dive"
+   },
+   "rule_back": {
+    "rule": "can_use_dive"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Abyssal Ruins Outside North",
+   "to": "Abyssal Ruins 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Abyssal Ruins Outside South",
+   "to": "Abyssal Ruins 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Abyssal Ruins Outside West",
+   "to": "Abyssal Ruins 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Abyssal Ruins Outside East",
+   "to": "Abyssal Ruins 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Abyssal Ruins 1F",
+   "to": "Abyssal Ruins 2F",
+   "type": "Other script",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Abyssal Ruins 2F",
+   "to": "Abyssal Ruins 3F",
+   "type": "Other script",
+   "rule": {
+    "rule": "can_use_flash"
+   },
+   "rule_back": {
+    "rule": "can_use_flash"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Abyssal Ruins 3F",
+   "to": "Abyssal Ruins 4F",
+   "type": "Other script",
+   "rule": {
+    "rule": "can_use_strength"
+   },
+   "rule_back": {
+    "rule": "can_use_strength"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Route 14",
+   "to": "Black City/White Forest North Gate Upper Side",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 14",
+   "to": "Route 14 Top Platform",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_waterfall"
+   },
+   "rule_back": {
+    "rule": "can_use_waterfall"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 14 Top Platform",
+   "to": "Route 14 West",
+   "type": "Virtual",
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "can_use_waterfall"
+    }
+   },
+   "rule_back": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "can_use_waterfall"
+    }
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 14 West",
+   "to": "Route 14",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_surf"
+   },
+   "rule_back": {
+    "rule": "can_use_surf"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Route 14 West",
+   "to": "Abundant Shrine",
+   "type": "Trees",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Abundant Shrine",
+   "to": "Abundant Shrine House",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Black City/White Forest North Gate Upper Side",
+   "to": "Black City/White Forest North Gate Lower Side",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_gb_player"
+   },
+   "rule_back": {
+    "rule": "has_gb_player"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Black City/White Forest North Gate Lower Side",
+   "to": "Black City",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Black City/White Forest North Gate Lower Side",
+   "to": "White Forest",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Black City",
+   "to": "Black City/White Forest West Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "White Forest",
+   "to": "Black City/White Forest West Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Black City/White Forest West Gate",
+   "to": "Route 15",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 15",
+   "to": "Route 15 Below East Bridge",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_strength"
+   },
+   "rule_back": {
+    "rule": "can_use_strength"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Route 15",
+   "to": "Poké Transfer Lab",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 15",
+   "to": "Route 15 Caravan",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 15",
+   "to": "Marvelous Bridge East Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Marvelous Bridge East Gate",
+   "to": "Marvelous Bridge",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Marvelous Bridge",
+   "to": "Marvelous Bridge West Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Marvelous Bridge West Gate",
+   "to": "Route 16 Near East Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 16 Near East Gate",
+   "to": "Route 16",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_blue_card"
+   },
+   "rule_back": {
+    "rule": "has_blue_card"
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 16",
+   "to": "Route 16 Behind Boulder",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_strength"
+   },
+   "rule_back": {
+    "rule": "can_use_strength"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Route 16",
+   "to": "Nimbasa East Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 16",
+   "to": "Lostlorn Forest",
+   "type": "Trees",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Lostlorn Forest",
+   "to": "Lostlorn Forest Upper Platform",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_waterfall"
+   },
+   "rule_back": {
+    "rule": "can_use_waterfall"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Lostlorn Forest",
+   "to": "Lostlorn Forest Caravan",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Opelucid City",
+   "to": "Opelucid City West Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Opelucid City",
+   "to": "Opelucid City East Gate Left Side",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Opelucid City",
+   "to": "Opelucid City Pokemon Center",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Opelucid City",
+   "to": "Opelucid City West House 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Opelucid City",
+   "to": "Opelucid City Drayden's House 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Opelucid City",
+   "to": "Opelucid City House Next to Drayden's House 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Opelucid City",
+   "to": "Opelucid City Near Gym",
+   "type": "Virtual",
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_talked_drayden_iris"
+    }
+   },
+   "rule_back": {
+    "any": [
+     {
+      "rule": "has_talked_drayden_iris"
+     },
+     {
+      "rule": "can_use_fly"
+     }
+    ]
+   },
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Opelucid City Near Gym",
+   "to": "Opelucid Gym",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Opelucid City",
+   "to": "Opelucid City House Next to Gym 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Opelucid City",
+   "to": "Opelucid City Battle House 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Opelucid City",
+   "to": "Opelucid City North Gate",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Opelucid City West House 1F",
+   "to": "Opelucid City West House 2F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Opelucid City House Next to Gym 1F",
+   "to": "Opelucid City House Next to Gym 2F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Opelucid City Battle House 1F",
+   "to": "Opelucid City Battle House 2F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Opelucid City House Next to Drayden's House 1F",
+   "to": "Opelucid City House Next to Drayden's House 2F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Opelucid City Drayden's House 1F",
+   "to": "Opelucid City Drayden's House 2F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Opelucid City North Gate",
+   "to": "Route 10",
+   "type": "Gate",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Route 10",
+   "to": "Badge Gate 1",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Badge Gate 1",
+   "to": "Behind Badge Gate 1",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_trio_badge"
+   },
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Behind Badge Gate 1",
+   "to": "Badge Gate 2",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Badge Gate 2",
+   "to": "Behind Badge Gate 2",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_basic_badge"
+   },
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Behind Badge Gate 2",
+   "to": "Badge Gate 3",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Badge Gate 3",
+   "to": "Behind Badge Gate 3",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_insect_badge"
+   },
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Behind Badge Gate 3",
+   "to": "Badge Gate 4",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Badge Gate 4",
+   "to": "Behind Badge Gate 4",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_bolt_badge"
+   },
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Behind Badge Gate 4",
+   "to": "Badge Gate 5",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Badge Gate 5",
+   "to": "Behind Badge Gate 5",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_quake_badge"
+   },
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Behind Badge Gate 5",
+   "to": "Badge Gate 6",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Badge Gate 6",
+   "to": "Behind Badge Gate 6",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_jet_badge"
+   },
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Behind Badge Gate 6",
+   "to": "Badge Gate 7",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Badge Gate 7",
+   "to": "Behind Badge Gate 7",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_freeze_badge"
+   },
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Behind Badge Gate 7",
+   "to": "Badge Gate 8",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Badge Gate 8",
+   "to": "Behind Badge Gate 8",
+   "type": "Virtual",
+   "rule": {
+    "rule": "has_legend_badge"
+   },
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Behind Badge Gate 8",
+   "to": "Victory Road Entrance",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road Entrance",
+   "to": "Victory Road Outside 1F Center",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 1F Center",
+   "to": "Victory Road 1F Middle Cave",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 1F West",
+   "to": "Victory Road Outside 1F Center",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 1F East",
+   "to": "Victory Road Outside 1F Center",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 1F East",
+   "to": "Victory Road 1F Right Cave",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 1F Back",
+   "to": "Victory Road 1F Left Cave",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 2F Center",
+   "to": "Victory Road 2F Left Cave South",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 2F Center",
+   "to": "Victory Road Outside 1F East",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 2F Small Passage",
+   "to": "Victory Road 2F Right Cave",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 2F Small Passage",
+   "to": "Victory Road Outside 1F East",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 2F East",
+   "to": "Victory Road Outside 1F East",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 3F",
+   "to": "Victory Road 3F Middle Cave",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 3F",
+   "to": "Victory Road 3F Right Cave",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 3F",
+   "to": "Victory Road 3F Left Cave South",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 3F",
+   "to": "Victory Road Outside 2F Center",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 3F",
+   "to": "Victory Road Outside 2F East",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 4F West",
+   "to": "Victory Road 4F Left Cave East",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 4F West",
+   "to": "Victory Road Outside 1F West",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 4F Center",
+   "to": "Victory Road 4F Middle Cave",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 4F East",
+   "to": "Victory Road 4F Right Cave",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 5F West",
+   "to": "Victory Road Outside 4F West",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 5F Center",
+   "to": "Victory Road 5F Cave",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 5F Center",
+   "to": "Victory Road Outside 4F West",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 6F West",
+   "to": "Victory Road 6F Cave South",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 6F East",
+   "to": "Victory Road 6F Cave South",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 6F East",
+   "to": "Victory Road Outside 5F Center",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 6F East",
+   "to": "Victory Road Outside 4F East",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 7F",
+   "to": "Victory Road 7F Cave",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 7F",
+   "to": "Victory Road Outside 5F West",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 7F",
+   "to": "Victory Road Outside 1F Back",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 7F",
+   "to": "Victory Road Outside 6F East",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 7F",
+   "to": "Pokémon League Outside",
+   "type": "Open transition",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 1F Back",
+   "to": "Victory Road Outside 1F Center",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_fly"
+   },
+   "rule_back": {
+    "rule": "can_use_fly"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 4F Center",
+   "to": "Victory Road Outside 1F Center",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_fly"
+   },
+   "rule_back": {
+    "rule": "can_use_fly"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 4F East",
+   "to": "Victory Road Outside 1F Center",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_fly"
+   },
+   "rule_back": {
+    "rule": "can_use_fly"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road Outside 6F West",
+   "to": "Victory Road Outside 1F Center",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_fly"
+   },
+   "rule_back": {
+    "rule": "can_use_fly"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road 1F Middle Cave",
+   "to": "Victory Road 2F Left Cave South",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road 2F Left Cave North",
+   "to": "Victory Road 3F Middle Cave",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road 2F Left Cave North",
+   "to": "Victory Road 2F Left Cave South",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_strength"
+   },
+   "rule_back": {
+    "rule": "can_use_strength"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road 3F Middle Cave",
+   "to": "Victory Road 4F Middle Cave",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road 2F Right Cave",
+   "to": "Victory Road 1F Right Cave",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road 2F Right Cave",
+   "to": "Victory Road 3F Right Cave",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road 1F Left Cave",
+   "to": "Victory Road 3F Left Cave North",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road 3F Left Cave North",
+   "to": "Victory Road 3F Left Cave South",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road 3F Left Cave South",
+   "to": "Victory Road 4F Left Cave West",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road 4F Left Cave West",
+   "to": "Victory Road 5F Cave",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road 4F Left Cave East",
+   "to": "Victory Road 4F Left Cave West",
+   "type": "Virtual",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road 5F Cave",
+   "to": "Victory Road 6F Cave South",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road 6F Cave North",
+   "to": "Victory Road 6F Cave South",
+   "type": "Virtual",
+   "rule": {
+    "rule": "can_use_strength"
+   },
+   "rule_back": {
+    "rule": "can_use_strength"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road 6F Cave North",
+   "to": "Victory Road 6F Cave East",
+   "type": "Virtual",
+   "rule": {
+    "all": [
+     {
+      "rule": "can_use_strength"
+     },
+     {
+      "rule": "has_encountered_cobalion"
+     }
+    ]
+   },
+   "rule_back": {
+    "all": [
+     {
+      "rule": "can_use_strength"
+     },
+     {
+      "rule": "has_encountered_cobalion"
+     }
+    ]
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Victory Road 6F Cave North",
+   "to": "Victory Road 7F Cave",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road 6F Cave East",
+   "to": "Trial Chamber",
+   "type": "Cave",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Victory Road 4F Right Cave",
+   "to": "Victory Road 7F Cave",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Pokémon League Outside",
+   "to": "Pokémon League Pokemon Center",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Pokémon League Outside",
+   "to": "Pokémon League Main Hall",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Pokémon League Main Hall",
+   "to": "Pokémon League Shauntal's Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Pokémon League Shauntal's Room",
+   "to": "Pokémon League Main Hall",
+   "type": "Other script",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Pokémon League Main Hall",
+   "to": "Pokémon League Marshal's Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Pokémon League Marshal's Room",
+   "to": "Pokémon League Main Hall",
+   "type": "Other script",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Pokémon League Main Hall",
+   "to": "Pokémon League Grimsley's Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Pokémon League Grimsley's Room",
+   "to": "Pokémon League Main Hall",
+   "type": "Other script",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Pokémon League Main Hall",
+   "to": "Pokémon League Caitlin's Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Pokémon League Caitlin's Room",
+   "to": "Pokémon League Main Hall",
+   "type": "Other script",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Pokémon League Main Hall",
+   "to": "Pokémon League Staircase",
+   "type": "Other script",
+   "rule": {
+    "rule": "has_defeated_elite_four"
+   },
+   "rule_back": {
+    "rule": "has_defeated_elite_four"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Pokémon League Staircase",
+   "to": "Pokémon League Champion's Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "Pokémon League Champion's Room",
+   "to": "Hall of Fame",
+   "type": "Other script",
+   "rule": {
+    "rule": "has_beaten_ghetsis"
+   },
+   "rule_back": {
+    "rule": "has_beaten_ghetsis"
+   },
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Pokémon League Champion's Room",
+   "to": "Landing Stage to N's Castle",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": true,
+   "include": true
+  },
+  {
+   "from": "Landing Stage to N's Castle",
+   "to": "N's Castle 1F",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "N's Castle 1F",
+   "to": "N's Castle 2F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "N's Castle 2F",
+   "to": "N's Castle 2F Left Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "N's Castle 2F",
+   "to": "N's Castle 2F Middle Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "N's Castle 2F",
+   "to": "N's Castle 2F Right Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "N's Castle 2F",
+   "to": "N's Castle 3F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "N's Castle 3F",
+   "to": "N's Castle 3F Left Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "N's Castle 3F",
+   "to": "N's Castle 3F Middle Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "N's Castle 3F",
+   "to": "N's Castle 3F Right Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "N's Castle 3F",
+   "to": "N's Castle 4F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "N's Castle 4F",
+   "to": "N's Castle 4F Left Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "N's Castle 4F",
+   "to": "N's Castle 4F Middle Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "N's Castle 4F",
+   "to": "N's Castle 4F Right Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "N's Castle 4F",
+   "to": "N's Castle 5F",
+   "type": "Stairs",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  },
+  {
+   "from": "N's Castle 5F",
+   "to": "N's Castle Throne Room",
+   "type": "Door",
+   "rule": true,
+   "rule_back": true,
+   "one_way": false,
+   "include": true
+  }
+ ]
+}

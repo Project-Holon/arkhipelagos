@@ -1,0 +1,1 @@
+{"schema": 1, "seed": 2, "options": {"goal": "ghetsis", "season_control": "changeable"}, "players": [{"name": "Solo", "version": "white", "options": {"modify_logic": ["require_flash", "require_dowsing"]}}]}

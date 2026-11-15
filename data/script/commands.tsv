@@ -1,0 +1,1197 @@
+family	op	name	args	ends	uses	check	source
+eu	0x000	SCRIPT_WORK_CmdNop		0	0	bwap-agrees	ov010/script_work.c
+eu	0x001	find_socket		0	0	bwap-agrees	ov009/cps_network.c
+eu	0x002	SCRIPT_WORK_CmdHalt		1	25740	bwap-agrees	ov010/script_work.c
+eu	0x003	SCRIPT_WORK_CmdTimeWait	u16	0	5380	bwap-agrees	ov010/script_work.c
+eu	0x004	SCRIPT_WORK_CmdCall	code	0	16030	bwap-agrees	ov010/script_work.c
+eu	0x005	SCRIPT_WORK_CmdReturn		1	8990	bwap-agrees	ov010/script_work.c
+eu	0x006	SCRIPT_WORK_CmdDebugWork	wv	0	400	bwap-agrees	ov010/script_work.c
+eu	0x007	SCRIPT_WORK_CmdDebugStack	wv	0	0	bwap-agrees	ov010/script_work.c
+eu	0x008	SCRIPT_WORK_CmdPushConst	u16	0	37910	bwap-agrees	ov010/script_work_cmd.c
+eu	0x009	SCRIPT_WORK_CmdPushWorkValue	wv	0	41240	bwap-agrees	ov010/script_work_cmd.c
+eu	0x00a	SCRIPT_WORK_CmdPopToWork	wp	0	7780	bwap-agrees	ov010/script_work_cmd.c
+eu	0x00b	SCRIPT_WORK_CmdPopDiscard		0	0	bwap-agrees	ov010/script_work_cmd.c
+eu	0x00c	SCRIPT_WORK_CmdAdd		0	0	bwap-agrees	ov010/script_work_cmd.c
+eu	0x00d	SCRIPT_WORK_CmdSub		0	0	bwap-agrees	ov010/script_work_cmd.c
+eu	0x00e	SCRIPT_WORK_CmdMul		0	0	bwap-agrees	ov010/script_work_cmd.c
+eu	0x00f	SCRIPT_WORK_CmdDiv		0	0	bwap-agrees	ov010/script_work_cmd.c
+eu	0x010	SCRIPT_WORK_CmdPushEventFlag	wv	0	5450	bwap-agrees	ov010/script_work_cmd.c
+eu	0x011	SCRIPT_WORK_CmdCompareStack	u16	0	41420	bwap-agrees	ov010/script_work_cmd.c
+eu	0x012	SCRIPT_WORK_CmdAndWork	wp,wv	0	0	bwap-agrees	ov010/script_work_cmd.c
+eu	0x013	SCRIPT_WORK_CmdOrWork	wp,wv	0	90	bwap-agrees	ov010/script_work_cmd.c
+eu	0x014	SCRIPT_WORK_CmdLoadRegValue	u8,u8	0	0	bwap-agrees	ov010/script_work.c
+eu	0x015	SCRIPT_WORK_CmdSetLocalU32	u8,u32	0	0	bwap-agrees	ov010/script_work_cmd_local.c
+eu	0x016	SCRIPT_WORK_CmdCopyLocal	u8,u8	0	0	bwap-agrees	ov010/script_work_cmd_local.c
+eu	0x017	SCRIPT_WORK_CmdCompareRegs	u8,u8	0	0	bwap-agrees	ov010/script_work_cmd.c
+eu	0x018	SCRIPT_WORK_CmdCompareRegConst	u8,u8	0	0	bwap-agrees	ov010/script_work_cmd.c
+eu	0x019	SCRIPT_WORK_CmdCompareWorkConst	wp,u16	0	18670	bwap-agrees	ov010/script_work_cmd.c
+eu	0x01a	SCRIPT_WORK_CmdCompareWorks	wp,wp	0	0	bwap-agrees	ov010/script_work_cmd.c
+eu	0x01b	SCRIPT_WORK_CmdChangeScript	u16	0	0	bwap-agrees	ov010/script_work_cmd.c
+eu	0x01c	SCRIPT_WORK_CmdCallScript	u16	0	3770	bwap-agrees	ov010/script_work_cmd.c
+eu	0x01d	SCRIPT_WORK_CmdEnd		1	410	bwap-agrees	ov010/script_work_cmd.c
+eu	0x01e	SCRIPT_WORK_CmdJump	code	1	59440	bwap-agrees	ov010/script_work_cmd.c
+eu	0x01f	SCRIPT_WORK_CmdIfJump	u8,code	0	54070	bwap-agrees	ov010/script_work_cmd.c
+eu	0x020	SCRIPT_WORK_CmdIfCall	u8,code	0	0	bwap-agrees	ov010/script_work_cmd.c
+eu	0x021	SCRIPT_WORK_CmdSetProcAction	u16	0	310	bwap-agrees	ov010/script_work_cmd.c
+eu	0x022	SCRIPT_WORK_CmdGetContinueFlag	wp	0	40	bwap-agrees	ov010/script_work_cmd.c
+eu	0x023	SCRIPT_WORK_CmdSetEventFlag	wv	0	9210	bwap-agrees	ov010/script_work_cmd.c
+eu	0x024	SCRIPT_WORK_CmdResetEventFlag	wv	0	3990	bwap-agrees	ov010/script_work_cmd.c
+eu	0x025	SCRIPT_WORK_CmdCheckEventFlag	wv,wp	0	1060	bwap-agrees	ov010/script_work_cmd.c
+eu	0x026	SCRIPT_WORK_CmdAddWork	wp,wv	0	1150	bwap-agrees	ov010/script_work_cmd.c
+eu	0x027	SCRIPT_WORK_CmdSubWork	wp,wv	0	228	bwap-agrees	ov010/script_work_cmd.c
+eu	0x028	SCRIPT_WORK_CmdLoadWorkConst	wp,u16	0	48920	bwap-agrees	ov010/script_work_cmd.c
+eu	0x029	SCRIPT_WORK_CmdCopyWork	wp,wp	0	2660	bwap-agrees	ov010/script_work_cmd.c
+eu	0x02a	SCRIPT_WORK_CmdLoadWorkValue	wp,wv	0	6970	bwap-agrees	ov010/script_work_cmd.c
+eu	0x02b	SCRIPT_WORK_CmdMulWork	wp,wv	0	140	bwap-agrees	ov010/script_work_cmd.c
+eu	0x02c	SCRIPT_WORK_CmdDivWork	wp,wv	0	0	bwap-agrees	ov010/script_work_cmd.c
+eu	0x02d	SCRIPT_WORK_CmdModWork	wp,wv	0	0	bwap-agrees	ov010/script_work_cmd.c
+eu	0x02e	SCRIPT_WORK_CmdCallFieldCommand		0	22070	bwap-agrees	ov010/script_work_cmd.c
+eu	0x02f	SCRIPT_WORK_CmdPopAllBgm		0	22280	bwap-agrees	ov010/script_work_cmd.c
+eu	0x030	SCRIPT_WORK_CmdCallScriptEvent		0	22280	bwap-agrees	ov010/script_work_cmd.c
+eu	0x031	SCRIPT_WORK_CmdWaitKeyDecide		0	30	bwap-agrees	ov010/script_work_cmd.c
+eu	0x032	SCRIPT_WORK_CmdWaitKeyAny		0	18990	bwap-agrees	ov010/script_work_cmd.c
+eu	0x033	SCRCMD_MSGWIN_CmdSetAutoMode	u16	0	70	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x034	SCRCMD_MSGWIN_CmdInfoSysWinMsg	wv,u16	0	3540	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x035	SCRCMD_MSGWIN_CmdInfoSysWinMsgNow	wv,u16	0	120	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x036	SCRCMD_MSGWIN_CmdCloseInfoSysWin		0	2560	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x037	SCRCMD_MSGWIN_CmdSetTimeIcon	wv	0	30	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x038	SCRCMD_MSGWIN_CmdPlainWinMsg	wv,u8	0	3240	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x039	SCRCMD_MSGWIN_CmdClosePlainWin		0	770	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x03a	SCRCMD_MSGWIN_CmdAddSubWinMsg	u16,wv,wv,u16	0	420	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x03b	SCRCMD_MSGWIN_CmdDeleteSubWinMsg	u16	0	420	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x03c	SCRCMD_MSGWIN_CmdBalloonWinMsg	wv,wv,wv,wv,wv	0	22780	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x03d	SCRCMD_MSGWIN_CmdBalloonWinMsgTarget	wv,wv,wv,wv	0	16060	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x03e	SCRCMD_MSGWIN_CmdCloseTalkWin		0	21920	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x03f	SCRCMD_MSGWIN_CmdCloseAllWins		0	13210	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x040	SCRCMD_MSGWIN_CmdOpenMoneyWin	wv,wv	0	120	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x041	SCRCMD_MSGWIN_CmdCloseMoneyWin		0	330	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x042	SCRCMD_MSGWIN_CmdUpdateMoneyWin		0	120	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x043	SCRCMD_MSGWIN_CmdBgWinMsg	u16,u16	0	1220	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x044	SCRCMD_MSGWIN_CmdCloseBgWin		0	1610	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x045	SCRCMD_MSGWIN_CmdSpWinMsg	u16,u16	0	0	bwap-differs	ov021/scrcmd_msgwin.c
+eu	0x046	SCRCMD_MSGWIN_CmdCloseSpWin		0	0	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x047	SCRCMD_MSGWIN_CmdYesNoWin	wp	0	2830	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x048	SCRCMD_MSGWIN_CmdBalloonWinMsgGender	wv,wv,wv,wv,wv,wv	0	200	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x049	SCRCMD_MSGWIN_CmdBalloonWinMsgSkipArg	wv,wv,wv,wv,wv,wv	0	1030	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x04a	SCRCMD_MSGWIN_CmdPlainWinMsgFrame1	wv,u8	0	240	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x04b	SCRCMD_MSGWIN_CmdWaitMsgKey		0	1260	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x04c	SCRCMD_BufferPlayerName	u8	0	3030	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x04d	SCRCMD_BufferItemName	u8,wv	0	924	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x04e	SCRCMD_BufferItemNameWithCount	u8,wv,wv,u8	0	146	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x04f	SCRCMD_BufferItemNameAlt	u8,wv	0	30	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x050	SCRCMD_BufferConvertedEntryName	u8,wv	0	90	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x051	SCRCMD_BufferGroupEntryName	u8,wv	0	250	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x052	SCRCMD_BufferShortEntryName	u8,wv	0	40	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x053	SCRCMD_BufferPartyMonSpeciesName	u8,wv	0	120	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x054	SCRCMD_BufferPartyMonNickname	u8,wv	0	460	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x055	SCRCMD_BufferDaycareMonSpeciesName	u8,wv	0	0	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x056	SCRCMD_BufferCategoryEntryName	u8,wv	0	110	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x057	SCRCMD_BufferSpeciesName	u8,wv	0	900	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x058	SCRCMD_BufferSpeciesEntryName	u8,wv	0	0	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x059	SCRCMD_BufferPlaceName	u8,wv	0	0	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x05a	SCRCMD_BufferEasyChatWord	u8,wv	0	10	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x05b	SCRCMD_BufferDaycareMonNickname	u8,wv	0	70	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x05c	SCRCMD_BufferNumber	u8,wv,wv	0	710	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x05d	SCRCMD_MUSICAL_BufferString	u8,u8,wv	0	160	bwap-agrees	ov010/scrcmd_musical.c
+eu	0x05e	SCRCMD_BufferGroupedEntryName	u8,wv	0	10	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x05f	SCRCMD_BufferByteEntryNameA	u8,wv	0	10	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x060	SCRCMD_BufferSignedEntryName	u8,wv	0	20	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x061	SCRCMD_BufferMapEntryNameA	u8,wv	0	10	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x062	SCRCMD_BufferMapEntryNameB	u8,wv	0	0	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x063	SCRCMD_BufferByteEntryNameB	u8,wv	0	40	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x064	SCRCMD_FLDMMDL_StartMmdlAnime	wv,movement	0	36920	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x065	SCRCMD_FLDMMDL_WaitAnimeTasks		0	22290	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x066	SCRCMD_FLDMMDL_GetMmdlMoveCode	wp,wv	0	10	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x067	SCRCMD_FLDMMDL_GetMmdlGridPos	wv,wp,wp	0	80	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x068	SCRCMD_FLDMMDL_GetPlayerGridPos	wp,wp	0	1330	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x069	SCRCMD_FLDMMDL_AddMmdl	wv,wv,wv,wv,wv,wv	0	860	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x06a	SCRCMD_FLDMMDL_GetMmdlEventFlag	wv,wp	0	30	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x06b	SCRCMD_FLDMMDL_AddPartyFollowerMmdl	wv	0	1060	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x06c	SCRCMD_FLDMMDL_DeleteMmdl	wv	0	3500	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x06d	SCRCMD_FLDMMDL_InitMmdlGridPosition	wv,wv,wv,wv,wv	0	3210	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x06e	SCRCMD_FLDMMDL_GetPlayerDir	wp	0	620	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x06f	SCRCMD_FLDMMDL_SearchMmdlInFrontOfPlayer	wp,wp	0	10	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x070	SCRCMD_FLDMMDL_SearchMmdlAtGrid	wp,wp,wv,wv,wv	0	20	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x071	SCRCMD_FLDMMDL_GetPlayerRailLocation	wp,wp,wp	0	0	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x072	SCRCMD_FLDMMDL_GetMmdlRailLocation	wv,wp,wp,wp	0	0	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x073	SCRCMD_FLDMMDL_ChangeMmdlMoveCode	wv,wv	0	40	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x074	SCRCMD_FLDMMDL_TurnTargetMmdlToPlayer		0	13060	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x075	SCRCMD_FLDMMDL_StartPlayerFormChangeAndWait	u16	0	310	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x076	SCRCMD_FLDMMDL_StartPlayerPosOffsetTween	wv,wv,wv,wv	0	80	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x077	SCRCMD_FLDMMDL_TurnPlayerToFrontEvent		0	80	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x078	SCRCMD_FLDMMDL_GetPlayerForm	wp	0	170	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x079	SCRCMD_FLDMMDL_GetMmdlParam	wv,wv,wp	0	20	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x07a	SCRCMD_FLDMMDL_StartMmdlRailSlipDown	wv	0	10	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x07b	SCRCMD_FLDMMDL_StartMmdlMoveToGrid	wv,wv,wv,wv	0	10	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x07c	SCRCMD_FLDMMDL_SetPlayerRailLocation	wv,wv,wv	0	20	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x07d	SCRCMD_FLDMMDL_SetMmdlRailLocation	wv,wv,wv,wv	0	0	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x07e	SCRCMD_FLDMMDL_StartMmdlSpinRise	wv	0	10	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x07f	SCRCMD_GetTrainerEyeTrainerId	wv,wp	0	60	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x080	SCRCMD_CreateTrainerEye	wv	0	50	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x081	SCRCMD_CallTrainerEyePairEvent		0	40	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x082	SCRCMD_GetTrainerEyeObjId	wv,wp	0	50	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x083	SCRCMD_GetTrainerHitKind	wp	0	10	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x084	SCRCMD_GetScriptTrainerId	wp	0	30	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x085	SCRCMD_StartTrainerBattle	wv,wv,wv	0	1370	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x086	SCRCMD_StartMultiTrainerBattle	wv,wv,wv,wv	0	60	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x087	SCRCMD_MSGWIN_CmdBalloonWinSavedText	wv,wv,wv	0	140	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x088	SCRCMD_GetTrainerMessageIds	wp,wp,wp	0	40	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x08a	SCRCMD_GetTrainerBattleKind	wv,wp	0	10	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x08b	SCRCMD_PlayTrainerEncounterBgm	wv	0	120	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x08c	SCRCMD_WORK_CmdEndScriptWhiteOutA		1	1280	bwap-agrees	ov010/scrcmd_work.c
+eu	0x08d	SCRCMD_WORK_CmdCheckLastBattleResultA	wp	0	1300	bwap-agrees	ov010/scrcmd_work.c
+eu	0x08e	SCRCMD_FadeInField		0	1300	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x092	SCRCMD_ClassifyTrainer	wv,wp	0	30	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x093	SCRCMD_GetTrainerBattleParam	wv,wp	0	10	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x094	SCRCMD_StartTrainerBattleWithMon	wv,wv,wv,wv	0	30	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x095	SCRCMD_WORK_CmdSetTrainerDefeatedFlag	wv	0	590	bwap-agrees	ov010/scrcmd_work.c
+eu	0x096	SCRCMD_WORK_CmdClearTrainerDefeatedFlag	wv	0	100	bwap-agrees	ov010/scrcmd_work.c
+eu	0x097	SCRCMD_WORK_CmdCheckTrainerDefeatedFlag	wv,wp	0	120	bwap-agrees	ov010/scrcmd_work.c
+eu	0x098	SCRCMD_FadeOutPlayBgm	u16	0	560	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x09b	SCRCMD_IsBgmPlaying	u16,wp	0	0	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x09e	SCRCMD_ResumeZoneBgm		0	570	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x09f	SCRCMD_PushBgmAndPlayWait	wv	0	100	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0a0	SCRCMD_StartWaitBgmStopped		0	10	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0a1	SCRCMD_PushBgm	wv	0	30	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0a2	SCRCMD_PopBgm	wv,wv	0	30	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0a3	SCRCMD_IssSwitchOn	wv	0	100	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0a4	SCRCMD_IssSwitchOff	wv	0	80	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0a5	SCRCMD_IsIssSwitchOn	wp,wv	0	60	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0a6	SCRCMD_PlaySe	wv	0	19340	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0a7	SCRCMD_StopSe		0	160	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0a8	SCRCMD_StartWaitSeStopped		0	1960	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0a9	SCRCMD_PushAndPlayBgm	u16	0	800	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0aa	SCRCMD_StartWaitBgmThenPop		0	760	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0ab	SCRCMD_PlayPokeVoice	wv,wv	0	960	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0ac	SCRCMD_StartWaitPokeVoice		0	950	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0ad	SCRCMD_MSGWIN_CmdInitMenu	u8,u8,wv,u8,u16	0	0	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x0ae	SCRCMD_MSGWIN_CmdInitMenuMsgData	u8,u8,wv,u8,u16	0	0	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x0af	SCRCMD_MSGWIN_CmdAddMenuItem	u16,u16,wv	0	3620	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x0b0	SCRCMD_MSGWIN_CmdStartMenu		0	770	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x0b1	SCRCMD_MSGWIN_CmdStartMenuEx		0	40	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x0b2	SCRCMD_MSGWIN_CmdInitMenuMsgDataMode1	u8,u8,wv,u8,u16	0	840	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x0b3	SCRCMD_SCREENEFFECTS_StartBrightnessChange	u16,u16,u16,u16	0	1010	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x0b4	SCRCMD_SCREENEFFECTS_WaitBrightness		0	1180	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x0b5	SCRCMD_AddItem	wv,wv,wp	0	70	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0b6	SCRCMD_RemoveItem	wv,wv,wp	0	210	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0b7	SCRCMD_CanAddItem	wv,wv,wp	0	180	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0b8	SCRCMD_HasItem	wv,wv,wp	0	360	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0b9	SCRCMD_GetItemQuantity	wv,wp	0	10	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0ba	SCRCMD_IsItemMachine	wv,wp	0	10	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0bb	SCRCMD_GetItemPocket	wv,wp	0	70	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0bc	SCRCMD_PROC_FLD_StoreEffectEncountItemId	wp	0	10	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x0bd	SCRCMD_GetItemPartyUse	wv,wp	0	10	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x0be	SCRCMD_WarpToPositionPlain	u16,u16,u16,u16	0	10	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x0bf	SCRCMD_WarpToPositionFixedExit	u16,u16,u16,u16	0	120	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x0c0	SCRCMD_WarpToRailLocation	u16,u16,u16,u16,u16	0	0	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x0c1	SCRCMD_WarpToPositionEvent	u16,u16,u16	0	120	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x0c2	SCRCMD_WarpToPosition	u16,u16,u16,u16	0	80	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x0c3	SCRCMD_WarpToFixedZone		0	10	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x0c4	SCRCMD_WarpToPosition3D	u16,u16,u16,u16,u16	0	580	bwap-agrees	ov021/scrcmd_wordset_warp.c
+eu	0x0c5	SCRCMD_PLAYER_GRID_EVENT_StartHop		0	20	bwap-agrees	ov021/scrcmd_player_events.c
+eu	0x0c6	SCRCMD_PLAYER_GRID_EVENT_StartJump	wv	0	30	bwap-agrees	ov021/scrcmd_player_events.c
+eu	0x0c7	SCRCMD_IAIGIRI_StartOnPlayer		0	20	bwap-agrees	ov021/scrcmd_player_events.c
+eu	0x0c8	SCRCMD_SAVEANIME_Start	wv	0	60	bwap-agrees	ov021/scrcmd_player_events.c
+eu	0x0c9	SCRCMD_WORK_CmdToggleConfigFlag		0	0	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0ca	SCRCMD_WORK_CmdGetConfigFlag	wp	0	0	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0cb	SCRCMD_WORK_CmdGetRandom	wp,wv	0	390	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0cc	SCRCMD_WORK_CmdGetMsgDataId	wp	0	290	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0cd	SCRCMD_WORK_CmdGetTimeZone	wp	0	110	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0ce	SCRCMD_WORK_CmdGetTrainerCardStars	wp	0	10	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0cf	SCRCMD_WORK_CmdGetWeek	wp	0	170	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0d0	SCRCMD_WORK_CmdGetMonthAndDay	wp,wp	0	60	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0d1	SCRCMD_WORK_CmdGetHourAndMinute	wp,wp	0	50	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0d2	SCRCMD_WORK_CmdGetSeason	wp	0	160	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0d3	SCRCMD_WORK_CmdGetScriptId	wp	0	20	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0d4	SCRCMD_WORK_CmdGetBirthday	wp,wp	0	20	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0d5	SCRCMD_WORK_CmdCheckBadge	wp,wv	0	800	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0d6	SCRCMD_WORK_CmdSetBadge	wv	0	110	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0d7	SCRCMD_WORK_CmdGetBadgeCount	wp	0	0	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0d8	SCRCMD_WORK_CmdCheckMapReplaceFlag	wv,wp	0	30	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0d9	SCRCMD_WORK_CmdSetWarpDestination	wv	0	40	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0da	SCRCMD_WORK_CmdSetMapReplaceFlag	wv,wv,wv	0	100	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0db	SCRCMD_WORK_CmdSetSpecialLocationHere		0	30	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0dc	SCRCMD_WORK_CmdSetSpecialLocation	wv,wv,wv,wv,wv	0	50	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0dd	SCRCMD_WORK_CmdGetNationalZukanCount	wv,wp	0	30	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0de	SCRCMD_WORK_CmdRegisterZukanSeen	wv,wv	0	10	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0df	SCRCMD_WORK_CmdCheckZukanSeenOrCaught	wv,wv,wp	0	20	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0e0	SCRCMD_WORK_CmdGetRomVersion	wp	0	640	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0e1	SCRCMD_WORK_CmdGetPlayerSex	wp	0	390	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0e2	SCRCMD_WORK_CmdGetButtonMode	wp	0	10	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0e3	SCRCMD_WORK_CmdSetFixedEventFlag		0	20	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0e4	SCRCMD_WORK_CmdSetBoxFlags	wv	0	20	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0e5	SCRCMD_WORK_CmdGetTrainerViewGroupAndMarkSeen	wp,wp	0	10	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0e6	SCRCMD_WORK_CmdGetMiscByte	wv,wp	0	10	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0e7	SCRCMD_WORK_CmdSetMiscByte	wv	0	40	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0e8	SCRCMD_WORK_CmdCheckMiscByte	wv,wp	0	10	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0e9	SCRCMD_GetPlayerLocationValue	wp	0	10	bwap-agrees	ov021/scrcmd_otid.c
+eu	0x0ea	SCRCMD_WORK_CmdCheckExtraSaveData	wp	0	10	bwap-agrees	ov010/scrcmd_work.c
+eu	0x0eb	SCRCMD_PROC_CheckDaycareHasEgg	wp	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0ec	SCRCMD_PROC_ReceiveDaycareEgg		0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0ed	SCRCMD_PROC_DeclineDaycareEgg		0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0ee	SCRCMD_PROC_GetDaycareMonCount	wp	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0ef	SCRCMD_PROC_GetDaycareCompatibility	wp	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0f0	SCRCMD_PROC_DepositDaycareMon	wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0f1	SCRCMD_PROC_WithdrawDaycareMon	wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0f2	SCRCMD_PROC_GetDaycareMonSpecies	wp,wv	0	20	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0f3	SCRCMD_PROC_GetDaycareMonForm	wp,wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0f4	SCRCMD_PROC_GetDaycareSlotLevel	wp,wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0f5	SCRCMD_PROC_GetDaycareSlotLevelsGrown	wp,wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0f6	SCRCMD_PROC_GetDaycareSlotPrice	wp,wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0f7	SCRCMD_PROC_CallDaycarePartyMenu	wp	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0f8	SCRCMD_PROC_GetDaycareMonGender	wp,wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0f9	SCRCMD_PROC_AddMoney	wv	0	20	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0fa	SCRCMD_PROC_SubMoney	wv	0	70	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0fb	SCRCMD_PROC_CheckMoneyAtLeast	wp,wv	0	70	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0fc	SCRCMD_PROC_GetMonFriendship	wp,wv	0	40	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0fd	SCRCMD_PROC_ChangeMonFriendship	wv,wv,u16	0	30	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0fe	SCRCMD_PROC_GetMonSpeciesOrEgg	wp,wv	0	80	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x0ff	SCRCMD_PROC_GetMonForm	wp,wv	0	40	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x100	SCRCMD_POKEMON_FLD_CheckPartyFlagged	wp	0	10	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x101	SCRCMD_PROC_CheckMonHpNotFullOrEgg	wp,wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x102	SCRCMD_PROC_CheckMonIsEgg	wp,wv	0	180	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x103	SCRCMD_PROC_GetPartyCount	wp,wv	0	380	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x104	SCRCMD_PROC_HealParty		0	320	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x105	SCRCMD_POKEMON_FLD_StartSelectEvent	wp,wv,wv	0	60	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x106	SCRCMD_POKEMON_FLD_StartEggHatch	wp	0	10	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x107	SCRCMD_POKEMON_FLD_SelectPartyMon	wp,wp,wv	0	200	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x108	SCRCMD_PROC_CountMonMoves	wp,wv	0	40	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x109	SCRCMD_POKEMON_FLD_SelectMonMove	wp,wp,wv,wv	0	30	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x10a	SCRCMD_PROC_GetMonMove	wp,wv,wv	0	50	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x10b	SCRCMD_PROC_SetMonMove	wv,wv,wv	0	30	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x10c	SCRCMD_PROC_AddMonToPartySimple	wp,wv,wv,wv	0	60	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x10d	SCRCMD_PROC_FindFirstPartyIndex	wp,wv	0	60	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x10e	SCRCMD_PROC_AddMonToPartyDetailed	wp,wv,wv,wv,wv,wv,wv,wv,wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x10f	SCRCMD_PROC_AddEggToParty	wp,wv,wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x110	SCRCMD_PROC_GetMonParamIfListed	wp,wv,wv	0	50	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x111	SCRCMD_PROC_SetMonParamChecked	wv,wv,wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x112	SCRCMD_PROC_GetMonEvTotal	wp,wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x113	SCRCMD_PROC_CheckMonIsPlayerOwned	wp,wv	0	30	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x114	SCRCMD_PROC_CountPartyMonsOfSpecies	wv,wp	0	20	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x115	SCRCMD_PROC_CheckPartyMonKnowsMove	wp,wv,wv	0	40	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x116	SCRCMD_PROC_FindPartyMonWithMove	wp,wv	0	120	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x117	SCRCMD_PROC_ChangeMonForm	wv,wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x118	SCRCMD_PROC_FindPartyMonBySpecies	wv,wp,wp	0	50	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x119	SCRCMD_PROC_CheckMonParamMatchesTable	wp,wv,wv	0	0	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x11a	SCRCMD_PROC_GetMonTripleParams	wp,wp,wp,wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x11b	SCRCMD_PROC_GetMonPairedParams	wp,wp,wv	0	20	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x11c	SCRCMD_PROC_SetRotomFormMove	wv,wv,wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x11d	SCRCMD_POKEMON_FLD_StoreMonRecord	wv	0	10	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x11e	SCRCMD_POKEMON_FLD_StorePartySpeciesRecord	wv	0	110	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x11f	SCRCMD_POKEMON_FLD_RegisterRecordSpecies	wv,wp	0	10	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x120	SCRCMD_POKEMON_FLD_StoreMonName	wv,wv	0	30	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x121	SCRCMD_PROC_GetBoxMonCount	wp,wv	0	50	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x122	SCRCMD_PROC_AddMonToBoxSimple	wp,wv,wv,wv	0	0	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x123	SCRCMD_PROC_AddMonToBoxDetailed	wp,wv,wv,wv,wv,wv,wv,wv,wv	0	0	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x124	SCRCMD_SCREENEFFECTS_PlayBuildModelNodeSlotMode2	wv,wv	0	10	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x125	SCRCMD_SCREENEFFECTS_StartRecoveryPartyEvent		0	10	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x126	SCRCMD_SCREENEFFECTS_SetBuildModelIndex	wv,wv,wv,wv	0	20	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x127	SCRCMD_SCREENEFFECTS_CreateBuildModelNode	wp,wv,wv,wv	0	370	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x128	SCRCMD_SCREENEFFECTS_DeleteBuildModelNode	wv	0	340	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x129	SCRCMD_SCREENEFFECTS_PlayBuildModelNodeSlotWithSe	wv,wv	0	570	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x12a	SCRCMD_SCREENEFFECTS_WaitBuildModelNodeAnim	wv	0	530	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x12b	SCRCMD_SCREENEFFECTS_PlayBuildModelAnimPair	wv,wv,wv	0	170	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x12c	SCRCMD_SCREENEFFECTS_PlayBuildModelNodeCurrentMode3	wv	0	50	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x12d	SCRCMD_SCREENEFFECTS_SwapBuildModelId	wv,wv,wv,wv	0	80	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x12e	SCRCMD_SCREENEFFECTS_PlayBuildModelAnimTwo	wv,wv,wv	0	140	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x12f	SCRCMD_SCREENEFFECTS_StartRecoveryBallsEvent	wv	0	20	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x130	SCRCMD_SCREENEFFECTS_StartDoorOpen		0	10	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x131	SCRCMD_SCREENEFFECTS_StartDoorSetOpen		0	20	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x132	SCRCMD_SCREENEFFECTS_StartDoorClose	wv	0	10	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x133	SCRCMD_C03CENTER_TurnCameraToQuarter	wv	0	0	no-bwap	ov021/scrcmd_c03center.c
+eu	0x134	SCRCMD_POKEMON_FLD_StartOv55SubProc		0	80	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x135	SCRCMD_StartSubProcOv057		0	80	bwap-differs	ov021/scrcmd_otid.c
+eu	0x136	SYMBOL_MAP_ScrCmdSetSubscreenMode	wv,wv	0	40	bwap-agrees	ov010/symbol_map.c
+eu	0x137	SCRIPT_WORK_CmdReportSave	wp	0	90	bwap-agrees	ov010/script_work_cmd.c
+eu	0x138	SCRCMD_WORK_CmdGetSaveStatus	wp,wp,wp	0	10	bwap-agrees	ov010/scrcmd_work.c
+eu	0x139	SCRCMD_NETWORK_CmdWaitCommState	wp	0	50	bwap-agrees	ov010/scrcmd_network.c
+eu	0x13a	SCRCMD_PROC_FLD_StoreCommKind	wp	0	10	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x13b	SCRCMD_NETWORK_CmdGetCommValue	wp	0	110	bwap-agrees	ov010/scrcmd_network.c
+eu	0x13c	SCRCMD_NETWORK_CmdStartAutoComm		0	100	bwap-agrees	ov010/scrcmd_network.c
+eu	0x13d	SCRCMD_NETWORK_CmdRequestCommExit		0	200	bwap-agrees	ov010/scrcmd_network.c
+eu	0x13e	SCRCMD_NETWORK_CmdRestartAutoComm		0	200	bwap-agrees	ov010/scrcmd_network.c
+eu	0x13f	SCRCMD_PROC_FLD_SaveCamera		0	1100	bwap-agrees	ov021/scrcmd_encount.c
+eu	0x140	SCRCMD_PROC_FLD_RestoreCameraCmd		0	970	bwap-agrees	ov021/scrcmd_encount.c
+eu	0x141	SCRCMD_PROC_FLD_StopCameraTargetTrace		0	1180	bwap-agrees	ov021/scrcmd_encount.c
+eu	0x142	SCRCMD_PROC_FLD_ResumeCameraTargetTrace		0	730	bwap-agrees	ov021/scrcmd_encount.c
+eu	0x143	SCRCMD_PROC_FLD_StartCameraMoveFromStream	u16,u16,u32,u32,u32,u32,u16	0	1760	bwap-agrees	ov021/scrcmd_encount.c
+eu	0x144	SCRCMD_PROC_FLD_StartCameraMoveToSaved	u16	0	320	bwap-agrees	ov021/scrcmd_encount.c
+eu	0x145	SCRCMD_PROC_FLD_WaitCameraIdle		0	2140	bwap-agrees	ov021/scrcmd_encount.c
+eu	0x146	SCRCMD_PROC_FLD_StartCameraMoveFromArchive	u16,u16	0	80	bwap-agrees	ov021/scrcmd_encount.c
+eu	0x147	SCRCMD_PROC_FLD_StartCameraMoveToSetting	u16	0	390	bwap-agrees	ov021/scrcmd_encount.c
+eu	0x148	SCRCMD_PROC_FLD_StartCameraShake	wv,wv,wv,wv,wv,wv,wv,wv	0	100	bwap-agrees	ov021/scrcmd_encount.c
+eu	0x149	SCRCMD_SHOP_StartShop	wv,wp	0	10	bwap-agrees	ov021/scrcmd_shop.c
+eu	0x14a	SCRCMD_PROC_CallFieldOpenEvent		0	520	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x14b	SCRCMD_PROC_CallFieldCloseEvent		0	520	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x14c	SCRCMD_PROC_FreeScriptUserWork		0	0	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x14d	SCRCMD_PROC_FLD_CallShortcutEvent	wv,wp	0	20	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x14e	SCRCMD_PROC_CallBagScreen	wv,wp,wp	0	60	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x14f	SCRCMD_PROC_FLD_CallOv170Event	wp,wv	0	50	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x150	SCRCMD_PROC_CallGtsNegotiation	wp	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x151	SCRCMD_PROC_CallModeScreen	wv,wv	0	140	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x152	SCRCMD_PROC_FLD_CallOv219Event		0	10	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x153	SCRCMD_PROC_CallWordScreen	wp	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x154	SCRCMD_PROC_CallSubEvent	wv,wv	0	130	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x155	SCRCMD_PROC_CallValueScreen	wv	0	60	bwap-differs	ov010/scrcmd_proc.c
+eu	0x156	SCRCMD_PROC_FLD_SetGameClearEventAndEnd	wv	1	20	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x157	BSUBWAY_SCR_CmdClearWorkPtr		0	10	bwap-agrees	ov021/bsubway_scr.c
+eu	0x158	BSUBWAY_SCR_CmdCreateWork	u16,wv	0	50	bwap-agrees	ov021/bsubway_scr.c
+eu	0x159	BSUBWAY_SCR_CmdDeleteWork		0	40	bwap-agrees	ov021/bsubway_scr.c
+eu	0x15a	BSUBWAY_SCR_CmdTool	u16,wv,wv,u16	0	4510	bwap-agrees	ov021/bsubway_scr.c
+eu	0x15b	SCRCMD_CreateMmdlIcaProc	wv	0	20	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x15c	SCRCMD_EndMmdlIcaProc		0	10	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x15d	SCRCMD_StartMmdlIcaAnime	wv	0	40	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x15e	SCRCMD_WaitMmdlIcaAnime		0	40	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x15f	SCRCMD_PROC_FLD_StoreWifiProfileValid	wp	0	10	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x160	SCRCMD_PROC_FLD_StoreWifiFriendCount	wp	0	10	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x161	SCRCMD_PROC_FLD_CallWifiClubEvent		0	10	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x162	SCRCMD_PROC_FLD_CallWorldTradeEvent		0	10	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x163	SCRCMD_PROC_WaitNothing		0	0	bwap-differs	ov010/scrcmd_proc.c
+eu	0x164	SCRCMD_PROC_CallWifiBattleMatch	wv,wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x165	SCRCMD_PROC_CallMenuProc	wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x166	SCRCMD_PROC_FLD_CallGtsNegoEvent		0	10	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x167	SCRCMD_MUSICAL_StartMusical	wv,u8	1	30	bwap-agrees	ov010/scrcmd_musical.c
+eu	0x168	SCRCMD_MUSICAL_ShowPartyMonMusical	wv	0	20	bwap-agrees	ov010/scrcmd_musical.c
+eu	0x169	SCRCMD_MUSICAL_GetValue	u8,wv,wp	0	260	bwap-agrees	ov010/scrcmd_musical.c
+eu	0x16a	SCRCMD_MUSICAL_GetProgramInfo	wv,u8,wp	0	150	bwap-agrees	ov010/scrcmd_musical.c
+eu	0x16b	SCRCMD_MUSICAL_LinkControl	wv,wv,wv,wp	0	410	bwap-agrees	ov010/scrcmd_musical.c
+eu	0x16c	SCRCMD_MUSICAL_AddOwnedProp	wv	0	10	bwap-agrees	ov010/scrcmd_musical.c
+eu	0x16d	SCRCMD_MUSICAL_ResetProgramRank	wv	0	20	bwap-agrees	ov010/scrcmd_musical.c
+eu	0x16e	SCRCMD_MUSICAL_SelectPartyMon	wp,wp	0	20	bwap-agrees	ov010/scrcmd_musical.c
+eu	0x16f	INTRUDE_SUBDISP_ScriptAddAreaMmdls		0	10	bwap-agrees	ov018/intrude_subdisp.c
+eu	0x170	EVENT_COMM_COMMON_CmdGetIntrudeDistance	wp	0	20	bwap-agrees	ov018/event_comm_common.c
+eu	0x171	INTRUDE_SUBDISP_ScriptAddAreaMapsAndMarkers		0	10	bwap-agrees	ov018/intrude_subdisp.c
+eu	0x172	SCRCMD_PROC_CallPlayerProfile		0	10	bwap-differs	ov010/scrcmd_proc.c
+eu	0x173	EVENT_COMM_COMMON_CmdCallExitSyncEvent	wp	0	10	bwap-agrees	ov018/event_comm_common.c
+eu	0x174	EVENT_COMM_COMMON_CmdCheckBattleRecState	wp	0	10	bwap-differs	ov018/event_comm_common.c
+eu	0x175	EVENT_COMM_COMMON_CmdGetObjCode	wp	0	10	bwap-agrees	ov018/event_comm_common.c
+eu	0x176	EVENT_COMM_COMMON_CmdCheckMissionInfoPending	wp	0	10	bwap-agrees	ov018/event_comm_common.c
+eu	0x177	EVENT_COMM_COMMON_CmdCallMissionInfoEvent		0	10	bwap-agrees	ov018/event_comm_common.c
+eu	0x178	SCRCMD_PROC_FLD_StartScriptedWildBattle	wv,wv,wv	0	200	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x179	SCRCMD_PROC_FLD_StartFieldMapFadeIn		0	210	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x17a	SCRCMD_WORK_CmdEndScriptWhiteOutB		1	180	bwap-agrees	ov010/scrcmd_work.c
+eu	0x17b	SCRCMD_WORK_CmdCheckLastBattleResultB	wp	0	180	bwap-agrees	ov010/scrcmd_work.c
+eu	0x17c	SCRCMD_PROC_FLD_StoreBattleResult	wp	0	110	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x17d	SCRCMD_PROC_FLD_CallCatchTutorial		0	10	bwap-differs	ov021/scrcmd_proc_fld.c
+eu	0x17e	GIMMICK_OBJ_ELBOARD_CmdStartCameraEvent	wv	0	180	bwap-agrees	ov048/gimmick_obj_elboard.c
+eu	0x17f	SCRCMD_PROC_Ov037InitFromVars	wp,wp	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x180	SCRCMD_FIELD_GIMMICK_CART_LANES_CreateSwitchEvent	u16	0	40	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x181	SCRCMD_FIELD_GIMMICK_CART_LANES_UnlockLaneFromScript	u16	0	20	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x182	SCRCMD_PROC_Ov037SetValueA	wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x183	SCRCMD_FIELD_GIMMICK_FLAG_ANIME_SetFlag		0	0	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x184	SCRCMD_FIELD_GIMMICK_FLAG_ANIME_GetFlag	wp	0	0	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x185	SCRCMD_FIELD_GIMMICK_FLAG_ANIME_CreateEvent	u16	0	10	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x186	SCRCMD_PROC_Ov037SetValueB	wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x187	SCRCMD_FIELD_GIMMICK_BUTTON_STATES_CreateStateEventWithFlag	u16	0	90	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x188	SCRCMD_FIELD_GIMMICK_BUTTON_STATES_CreateOneShotEvent	u16	0	30	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x189	SCRCMD_FIELD_GIMMICK_BUTTON_STATES_CreateStateEvent	u16	0	90	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x18a	SCRCMD_FIELD_GIMMICK_LIFT_ELEVATOR_SnapElevatorToTop		0	10	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x18b	SCRCMD_FIELD_GIMMICK_LIFT_SnapLiftToBottom		0	10	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x18c	SCRCMD_FIELD_GIMMICK_PLATE_DOORS_StartSwitchEvent	wp	0	10	bwap-differs	ov021/scrcmd_gimmick.c
+eu	0x18d	SCRCMD_FIELD_GIMMICK_PLATE_DOORS_StartPlateEvent	wp	0	10	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x18e	SCRCMD_FIELD_GIMMICK_PLATE_DOORS_StartScriptedEvent	u16	0	20	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x18f	SCRCMD_PROC_Ov037ReadEightVars	wp,wp,wp,wp,wp,wp,wp,wp	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x190	SCRCMD_FIELD_GIMMICK_LIFT_ELEVATOR_CallLiftEvent	u16	0	120	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x191	SCRCMD_FIELD_GIMMICK_LIFT_ELEVATOR_CallElevatorEvent	u16	0	20	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x192	SCRCMD_FIELD_GIMMICK_LIFT_CallEvent	u16	0	20	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x193	SCRCMD_FIELD_GIMMICK_SWITCH_TOGGLE_StartSecondarySwitchEvent	u16	0	30	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x194	SCRCMD_FIELD_GIMMICK_BUTTON_STATES_CreateOneShotEventU16	u16	0	30	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x195	SCRCMD_FIELD_GIMMICK_SWITCH_TOGGLE_ReplacePlayerIfRequirementMet	u16	0	80	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x196	SCRCMD_PROC_Ov037Finish		0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x197	SCRCMD_FIELD_GIMMICK_PLATE_DOORS_StartDoorEvent	u16,u16	0	60	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x198	SCRCMD_FIELD_GIMMICK_ROTATING_ROOM_StartHopEvent	u16	0	60	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x199	SCRCMD_FIELD_GIMMICK_ROTATING_ROOM_StartRotateEvent	wv	0	10	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x19a	SCRCMD_FIELD_GIMMICK_ROTATING_ROOM_StartLeverEvent	wv,wv	0	10	bwap-agrees	ov021/scrcmd_gimmick.c
+eu	0x19b	SCRCMD_PROC_FLD_ObtainCGearAndCallCommResetEvent	wv	0	30	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x19c	SCRCMD_ChangeSubscreenMode	wv	0	10	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x19d	SCRCMD_ResetSubscreenMode		0	10	bwap-differs	ov021/scrcmd_misc.c
+eu	0x19e	SCRCMD_ShowOrClearInfoWindow	u16	0	30	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x19f	SCRCMD_StartFld3dCi	u16	0	260	bwap-agrees	ov021/fld_wipe_3dobj.c
+eu	0x1a0	SCRCMD_StartFld3dCiByVar	wv	0	140	bwap-agrees	ov021/fld_wipe_3dobj.c
+eu	0x1a1	SCRCMD_RunFld3dCiMain	wv	0	20	bwap-agrees	ov021/fld_wipe_3dobj.c
+eu	0x1a2	SCRCMD_PROC_FLD_CallOv056Event	wv	0	40	bwap-agrees	ov021/scrcmd_encount.c
+eu	0x1a3	SCRCMD_PROC_FLD_SetCameraSettingFromFkDemoSlot	wv	0	40	bwap-agrees	ov021/scrcmd_encount.c
+eu	0x1a4	SCRCMD_PROC_FLD_StartFkDemoSubProc	wv	0	80	bwap-agrees	ov021/scrcmd_encount.c
+eu	0x1a5	PLEASURE_BOAT_ScrCmdCreate		0	10	bwap-agrees	ov021/pleasure_boat.c
+eu	0x1a6	PLEASURE_BOAT_ScrCmdDelete		0	10	bwap-agrees	ov021/pleasure_boat.c
+eu	0x1a7	PLEASURE_BOAT_ScrCmdGetStat	u16,wp	0	100	bwap-agrees	ov021/pleasure_boat.c
+eu	0x1a8	PLEASURE_BOAT_ScrCmdAddTime	u16,u16	0	20	bwap-differs	ov021/pleasure_boat.c
+eu	0x1a9	SYMBOL_MAP_ScrCmdGetEventStateValue	wv,u16,wv,wp	0	240	bwap-agrees	ov010/symbol_map.c
+eu	0x1aa	PLEASURE_BOAT_ScrCmdSetPassengerInfo	wv,u16,u16,wv	0	10	bwap-agrees	ov021/pleasure_boat.c
+eu	0x1ab	SYMBOL_MAP_ScrCmdStartRecordTask	wp	0	10	bwap-agrees	ov010/symbol_map.c
+eu	0x1ac	PLEASURE_BOAT_ScrCmdLock		0	30	bwap-agrees	ov021/pleasure_boat.c
+eu	0x1ad	SCRCMD_SCREENEFFECTS_FadeInSlowAgain		0	750	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x1ae	SCRCMD_SCREENEFFECTS_FadeOutSlow		0	820	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x1af	SCRCMD_SCREENEFFECTS_FadeInSlowAltScreens		0	40	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x1b0	SCRCMD_SCREENEFFECTS_FadeOutSlowAltScreens		0	0	bwap-differs	ov021/scrcmd_screeneffects.c
+eu	0x1b1	SCRCMD_SCREENEFFECTS_WaitScriptEffect		0	1770	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x1b2	SCRCMD_SCREENEFFECTS_FadeInSlow		0	30	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x1b4	SCRCMD_SCREENEFFECTS_StartFieldFadeIn		0	10	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x1b5	SCRCMD_SCREENEFFECTS_FadeInFast		0	110	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x1b6	SCRCMD_SCREENEFFECTS_FadeOutFast		0	160	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x1b7	SCRCMD_SCREENEFFECTS_FadeInFastAltScreens		0	10	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x1b8	SCRCMD_SCREENEFFECTS_FadeOutFastAltScreens		0	10	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x1b9	SCRCMD_FLD_BATTLE_RegisterAllowedSpecies	wv,wp	0	10	bwap-agrees	ov021/scrcmd_fld_battle.c
+eu	0x1ba	SCRCMD_FLD_BATTLE_CheckPartyRegulation	wv,wp	0	30	bwap-agrees	ov021/scrcmd_fld_battle.c
+eu	0x1bb	SCRCMD_PALPARK_CallFallEvent		0	10	bwap-agrees	ov021/scrcmd_palpark.c
+eu	0x1bc	SCRCMD_PROC_FLD_SpawnMovePokemonIfInactive	wv	0	20	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x1bd	FIELD_G3D_MAP_ScrCmdReadSaveByte	wv,wp	0	80	bwap-agrees	ov010/field_g3d_map_scr.c
+eu	0x1be	SCRCMD_POKEMON_FLD_StartTradeEvent	wv,wv	0	60	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x1bf	SCRCMD_POKEMON_FLD_CheckTradeMon	wp,wv,wv	0	60	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x1c0	SCRCMD_PALPARK_CallPalParkProc		0	10	bwap-agrees	ov021/scrcmd_palpark.c
+eu	0x1c1	SCRCMD_PALPARK_GetSaveValue	u8,wp	0	10	bwap-agrees	ov021/scrcmd_palpark.c
+eu	0x1c2	FIELD_WFBC_DATA_LOCAL_ScrCmdMarkFacingPerson		0	20	bwap-agrees	ov020/field_wfbc_data_local.c
+eu	0x1c3	FIELD_WFBC_DATA_LOCAL_ScrCmdCheckAndMarkFacingPerson		0	20	bwap-differs	ov020/field_wfbc_data_local.c
+eu	0x1c4	FIELD_WFBC_DATA_LOCAL_ScrCmdGetWfbcValue	wv,wp	0	160	bwap-agrees	ov020/field_wfbc_data_local.c
+eu	0x1c5	FIELD_WFBC_DATA_LOCAL_ScrCmdSetFacingPersonParam	wv	0	10	bwap-differs	ov020/field_wfbc_data_local.c
+eu	0x1c6	FIELD_WFBC_DATA_LOCAL_ScrCmdFindTargetPokemonInParty	wp,wp,wp	0	10	bwap-agrees	ov020/field_wfbc_data_local.c
+eu	0x1c7	FIELD_WFBC_DATA_LOCAL_ScrCmdAddPoints		0	10	bwap-agrees	ov020/field_wfbc_data_local.c
+eu	0x1c8	FIELD_WFBC_DATA_LOCAL_ScrCmdCallPersonTalkEvent		0	20	bwap-agrees	ov020/field_wfbc_data_local.c
+eu	0x1c9	FIELD_WFBC_DATA_LOCAL_ScrCmdGetFacingPersonMessageIndex	wp,wv	0	80	bwap-agrees	ov020/field_wfbc_data_local.c
+eu	0x1ca	SCRCMD_GIMMICK_BRIDGE_ResetSave		0	0	bwap-agrees	ov010/scrcmd_bridge_gimmick.c
+eu	0x1cb	SCRCMD_POKEMON_FLD_SetWarpTable	warp	0	140	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x1cc	SCRCMD_POKEMON_FLD_AddWarpMenuItems		0	10	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x1cd	SCRCMD_POKEMON_FLD_WarpToEntry	wv	0	10	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x1ce	SCRCMD_POKEMON_FLD_GetPokedexComplete	wp,wv	0	60	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x1cf	SCRCMD_POKEMON_FLD_GetPokedexRating	wv,wp,wp	0	60	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x1d0	SCRCMD_WORK_CmdEnableNationalDex		0	10	bwap-agrees	ov010/scrcmd_work.c
+eu	0x1d1	SCRCMD_WORK_CmdGetZukanNationalFlag	wp	0	20	bwap-agrees	ov010/scrcmd_work.c
+eu	0x1d2	SCRCMD_WORK_CmdSetZukanObtained		0	10	bwap-agrees	ov010/scrcmd_work.c
+eu	0x1d3	FLD_FACEUP_ScrCmdStart	u16,u16,u16	0	30	bwap-agrees	ov010/fld_faceup.c
+eu	0x1d4	FLD_FACEUP_ScrCmdWaitEnd		0	30	bwap-agrees	ov010/fld_faceup.c
+eu	0x1d5	FLD_FACEUP_ScrCmdPrepareField		0	100	bwap-agrees	ov010/fld_faceup.c
+eu	0x1d6	SCRCMD_POKEMON_FLD_GetMysteryEntryCount	wp	0	10	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x1d7	SCRCMD_POKEMON_FLD_RegisterBirthdayEntry	wv	0	10	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x1d8	SCRCMD_GetWifiHistoryCountryCount	wv,wp	0	20	bwap-differs	ov021/scrcmd_wifi_history.c
+eu	0x1d9	SCRCMD_MarkPartnerCandidate	wv	0	10	bwap-differs	ov021/scrcmd_wifi_history.c
+eu	0x1da	SCRCMD_IsPartnerCandidateMarked	wv,wp	0	10	bwap-differs	ov021/scrcmd_wifi_history.c
+eu	0x1db	SCRCMD_SetWifiHistoryRatingLevel	wv	0	50	bwap-agrees	ov021/scrcmd_wifi_history.c
+eu	0x1dc	SCRCMD_FillPartnerCandidatesFromScript	wv,wv	0	20	bwap-agrees	ov021/scrcmd_wifi_history.c
+eu	0x1dd	SYMBOL_MAP_ScrCmdGetSyncBlockItem	u16,wp	0	50	bwap-agrees	ov010/symbol_map.c
+eu	0x1de	SYMBOL_MAP_ScrCmdGetSyncBlockHeader	wv,wp	0	50	bwap-agrees	ov010/symbol_map.c
+eu	0x1df	SCRCMD_GetPartnerGreetingMessageFromScript	wv,u16,wp	0	20	bwap-agrees	ov021/scrcmd_wifi_history.c
+eu	0x1e0	SYMBOL_MAP_ScrCmdStartPicker	wv,wp,wp,wp	0	20	bwap-agrees	ov010/symbol_map.c
+eu	0x1e1	SCRCMD_GetWifiHistoryEntryCount	wp	0	10	bwap-agrees	ov021/scrcmd_wifi_history.c
+eu	0x1e2	SCRCMD_SetWifiHistoryGreetingSet	wv	0	10	bwap-agrees	ov021/scrcmd_wifi_history.c
+eu	0x1e3	SCRCMD_GetWifiHistoryGreetingSet	wp	0	10	bwap-agrees	ov021/scrcmd_wifi_history.c
+eu	0x1e4	SCRCMD_POKEMON_FLD_GetTutorAvailability	wv,wp	0	30	bwap-differs	ov021/scrcmd_pokemon_fld.c
+eu	0x1e5	SCRCMD_POKEMON_FLD_CheckMonTutorStatus	wv,wv,wp	0	30	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x1e6	SCRCMD_POKEMON_FLD_GetMonTutorMove	wv,wv,wp	0	20	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x1e7	SCRCMD_POKEMON_FLD_SelectTutorMon	wv,wp,wp	0	30	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x1e8	SCRCMD_PROC_GetRelearnableMoveCount	wp,wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x1e9	SCRCMD_PROC_CallMoveRelearn	wp,wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x1ea	SCRCMD_WORK_CmdSetBgEventGridPos	wv,wv,wv,wv	0	80	bwap-agrees	ov010/scrcmd_work.c
+eu	0x1eb	SCRCMD_WORK_CmdSetConnectGridPos	wv,wv,wv,wv	0	130	bwap-agrees	ov010/scrcmd_work.c
+eu	0x1ec	SCRCMD_WORK_CmdSetNpcGridPos	wv,wv,wv,wv,wv	0	150	bwap-agrees	ov010/scrcmd_work.c
+eu	0x1ed	SYMBOL_MAP_ScrCmdStartPmsInput	wv,wp,wp,wp	0	40	bwap-agrees	ov010/symbol_map.c
+eu	0x1ee	SCRCMD_POKEMON_FLD_HandleMysteryGift	wv,wp	0	120	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x1ef	SCRCMD_MUSICAL_WifiListCommand	wv,wp	0	70	bwap-agrees	ov010/scrcmd_musical.c
+eu	0x1f0	SCRCMD_PALPARK_SetBeacon	wv,wv	0	230	bwap-agrees	ov021/scrcmd_palpark.c
+eu	0x1f1	SCRCMD_PALPARK_ClearExpiredGPower	wp,wp	0	10	bwap-agrees	ov021/scrcmd_palpark.c
+eu	0x1f2	SCRCMD_PALPARK_CallGPowerFlashEvent		0	10	bwap-agrees	ov021/scrcmd_palpark.c
+eu	0x1f3	SCRCMD_NETWORK_CmdSetNpcEventPairFromTable	wv,wv,wv,wv	0	200	bwap-agrees	ov010/scrcmd_network.c
+eu	0x1f4	SCRCMD_NETWORK_CmdLoadNpcTable		0	120	bwap-agrees	ov010/scrcmd_network.c
+eu	0x1f5	SCRCMD_NETWORK_CmdFreeNpcTable		0	120	bwap-agrees	ov010/scrcmd_network.c
+eu	0x1f6	SCRCMD_NETWORK_CmdSetNpcEventFromTable	wv,wv,wv	0	350	bwap-agrees	ov010/scrcmd_network.c
+eu	0x1f7	SCRCMD_NETWORK_CmdSetNpcTripleFromTable	wv,wv,wv,wv,wv,wv	0	50	bwap-agrees	ov010/scrcmd_network.c
+eu	0x1f8	SCRCMD_NETWORK_CmdApplyTableEventKeys		0	20	bwap-agrees	ov010/scrcmd_network.c
+eu	0x1f9	SCRCMD_TRIALHOUSE_CreateWork		0	10	bwap-agrees	ov010/scrcmd_trialhouse.c
+eu	0x1fa	SCRCMD_TRIALHOUSE_FreeWork		0	10	bwap-agrees	ov010/scrcmd_trialhouse.c
+eu	0x1fb	SCRCMD_TRIALHOUSE_SetBattleMode	wv	0	10	bwap-agrees	ov010/scrcmd_trialhouse.c
+eu	0x1fc	SCRCMD_TRIALHOUSE_StartPartySelect	wv,wv,wp	0	10	bwap-agrees	ov010/scrcmd_trialhouse.c
+eu	0x1fd	SCRCMD_TRIALHOUSE_LoadRecord	wv,wp	0	10	bwap-agrees	ov010/scrcmd_trialhouse.c
+eu	0x1fe	SCRCMD_TRIALHOUSE_StartTrainerMessage	wv,wv	0	10	bwap-agrees	ov010/scrcmd_trialhouse.c
+eu	0x1ff	SCRCMD_TRIALHOUSE_StartBattle		0	10	bwap-agrees	ov010/scrcmd_trialhouse.c
+eu	0x200	SCRCMD_TRIALHOUSE_SetRecordSource	wv	0	10	bwap-agrees	ov010/scrcmd_trialhouse.c
+eu	0x201	SCRCMD_TRIALHOUSE_SetRank	wv	0	0	bwap-differs	ov010/scrcmd_trialhouse.c
+eu	0x202	SCRCMD_TRIALHOUSE_GetRank	wp	0	20	bwap-agrees	ov010/scrcmd_trialhouse.c
+eu	0x203	SCRCMD_TRIALHOUSE_StartDownload	wp	0	10	bwap-agrees	ov010/scrcmd_trialhouse.c
+eu	0x204	SCRCMD_TRIALHOUSE_GetRankAndScore	wp,wp	0	10	bwap-agrees	ov010/scrcmd_trialhouse.c
+eu	0x205	SCRCMD_TRIALHOUSE_GetSaveState	wp	0	30	bwap-agrees	ov010/scrcmd_trialhouse.c
+eu	0x206	SCRCMD_TRIALHOUSE_StartSaveEvent	wv	0	10	bwap-agrees	ov010/scrcmd_trialhouse.c
+eu	0x207	SCRCMD_TRIALHOUSE_StartAward	wv,wv	0	20	bwap-agrees	ov010/scrcmd_trialhouse.c
+eu	0x208	SCRCMD_TRIALHOUSE_GetClearFlags	wp	0	10	bwap-agrees	ov010/scrcmd_trialhouse.c
+eu	0x209	SCRCMD_CheckWifiListFlags	wv,wv,wv,wp	0	20	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x20a	SCRCMD_WifiListOperation	wv,wv,wv,wp	0	50	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x20b	SCRCMD_SetWifiFriendNameWord	wv,wv	0	50	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x20c	SCRCMD_CheckPmsWordPair	wv,wv,wv,wp	0	20	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x20d	SCRCMD_GetBirthdayMessageIds	wv,wp,wp,wp	0	10	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x20e	SCRCMD_POKEMON_FLD_CheckTableItemInBag	wv,wp	0	40	bwap-differs	ov021/scrcmd_pokemon_fld.c
+eu	0x20f	SCRCMD_POKEMON_FLD_LookupTableValue	wv,wv,wp	0	50	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x210	SCRCMD_RESEARCH_CmdStartMission	wv,wv,wv,wv	0	10	bwap-agrees	ov010/scrcmd_research.c
+eu	0x211	SCRCMD_RESEARCH_CmdClearMission		0	30	bwap-agrees	ov010/scrcmd_research.c
+eu	0x212	SCRCMD_RESEARCH_CmdGetMissionIndex	wp	0	100	bwap-agrees	ov010/scrcmd_research.c
+eu	0x213	SCRCMD_RESEARCH_CmdGetMissionTargets	wp,wp,wp	0	10	bwap-agrees	ov010/scrcmd_research.c
+eu	0x214	SCRCMD_RESEARCH_CmdGetTopTallyEntry	wv,wp	0	30	bwap-agrees	ov010/scrcmd_research.c
+eu	0x215	SCRCMD_RESEARCH_CmdGetMissionStatus	wv,wp	0	20	bwap-agrees	ov010/scrcmd_research.c
+eu	0x216	SCRCMD_RESEARCH_CmdGetMissionProgress	wp	0	10	bwap-agrees	ov010/scrcmd_research.c
+eu	0x217	SCRCMD_RESEARCH_CmdGetMissionElapsedHours	wp	0	0	bwap-agrees	ov010/scrcmd_research.c
+eu	0x218	SCRCMD_PROC_FLD_StartNameInMode5	wp	0	10	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x219	SCRCMD_PROC_FLD_StartNameInMode6	wp	0	10	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x21a	SCRCMD_BufferBeaconThanksCount	u8	0	0	bwap-differs	ov021/scrcmd_wordset_warp.c
+eu	0x21b	SCRCMD_BufferBeaconGreetCount	u8	0	0	bwap-differs	ov021/scrcmd_wordset_warp.c
+eu	0x21c	SCRCMD_RESEARCH_CmdSetSurveyAnswer	wv,wv	0	110	bwap-agrees	ov010/scrcmd_research.c
+eu	0x21d	SCRCMD_RESEARCH_CmdStartResearchReport		0	10	bwap-differs	ov010/scrcmd_research.c
+eu	0x21e	SCRCMD_RESEARCH_CmdGetResearchRank	wp	0	150	bwap-agrees	ov010/scrcmd_research.c
+eu	0x21f	SCRCMD_RESEARCH_CmdRaiseResearchRank		0	20	bwap-agrees	ov010/scrcmd_research.c
+eu	0x220	SCRCMD_EVENT_MON_CmdFindEventMonInParty	wv,wv,wp,wp	0	170	bwap-agrees	ov010/scrcmd_event_mon.c
+eu	0x221	SCRCMD_EVENT_MON_CmdStartSpPokeGimmickTask	wv,wv,wv,wv,wv,wv	0	70	bwap-agrees	ov010/scrcmd_event_mon.c
+eu	0x222	SCRCMD_EVENT_MON_CmdMoveSpPokeGimmick	wv,wv,wv,wv	0	70	bwap-agrees	ov010/scrcmd_event_mon.c
+eu	0x223	SCRCMD_EVENT_MON_CmdStartSpPokeGimmickStepA	wv	0	70	bwap-agrees	ov010/scrcmd_event_mon.c
+eu	0x224	SCRCMD_EVENT_MON_CmdStartSpPokeGimmickStepB	wv	0	70	bwap-agrees	ov010/scrcmd_event_mon.c
+eu	0x225	SCRCMD_MMDL_StartRise	wv,wv,wv	0	20	bwap-agrees	ov010/scrcmd_mmdl.c
+eu	0x226	SCRCMD_MMDL_StartOrbit	wv	0	10	bwap-agrees	ov010/scrcmd_mmdl.c
+eu	0x227	SCRCMD_ShowPokeIconWindow	wv,wv,wv,wv	0	10	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x228	SCRCMD_EVENT_MON_CmdClearEventMonFlag	wv,wv	0	20	bwap-agrees	ov010/scrcmd_event_mon.c
+eu	0x229	SCRCMD_CheckBeaconTrainerKey	wv,wp	0	30	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x22a	SCRCMD_SYMBOL_StartEntryEvent	wv	0	70	bwap-agrees	ov010/scrcmd_symbol.c
+eu	0x22b	SCRCMD_SYMBOL_GetState	wv,wp	0	40	bwap-agrees	ov010/scrcmd_symbol.c
+eu	0x22c	SCRCMD_SYMBOL_MoveObjectEntryToPairedBand	wv,wp	0	20	bwap-agrees	ov010/scrcmd_symbol.c
+eu	0x22d	SCRCMD_SYMBOL_SetObjectPokemonWord	wv,wv	0	70	bwap-agrees	ov010/scrcmd_symbol.c
+eu	0x22e	SCRCMD_SYMBOL_ApplyLinkRecord		0	10	bwap-differs	ov010/scrcmd_symbol.c
+eu	0x22f	SCRCMD_SYMBOL_StartViewEvent	wv,wp	0	10	bwap-agrees	ov010/scrcmd_symbol.c
+eu	0x230	SCRCMD_SYMBOL_SelectObjectEntry	wv	0	10	bwap-differs	ov010/scrcmd_symbol.c
+eu	0x231	SCRCMD_PROC_FLD_StoreRandomUniqueEntry	wp	0	20	bwap-agrees	ov021/scrcmd_encount.c
+eu	0x232	SCRCMD_WORK_CmdLookupTable	wv,wp	0	10	bwap-agrees	ov010/scrcmd_work.c
+eu	0x233	SCRCMD_PROC_LookupTableValue	wv,wp	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x234	SCRCMD_POKEMON_FLD_GetDailyGift	wv,wp	0	20	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x235	SCRCMD_POKEMON_FLD_GetDailyGiftIndex	wp	0	10	bwap-differs	ov021/scrcmd_pokemon_fld.c
+eu	0x236	SCRCMD_POKEMON_FLD_GetMonTypeForTm	wp,wv	0	10	bwap-differs	ov021/scrcmd_pokemon_fld.c
+eu	0x237	SCRCMD_POKEMON_FLD_GetMonIvStat	wv,wv,wp	0	80	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x238	SCRCMD_POKEMON_FLD_GetRandomBagPocketValue	wp	0	10	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x239	SCRCMD_StartCountOtherOtIdsTask	wp	0	10	bwap-agrees	ov021/scrcmd_otid.c
+eu	0x23a	SCRCMD_AddTrainerRecordValue	wv,wv	0	70	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x23b	SCRCMD_GetTrainerRecordValue	wv,wp	0	20	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x23c	NAMEIN_SETUP_ScrCmdSetFieldSaveFlag		0	40	bwap-agrees	ov010/namein_setup.c
+eu	0x23d	SCRCMD_GetNpcGreetingMessage	wv,wp	0	10	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x23e	SCRCMD_StartSwapNpcEvent	wv,wv	0	10	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x23f	SCRCMD_StartArcPlayerEffect		0	10	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x240	SCRCMD_StartFld3dCiByTable	wv	0	20	bwap-agrees	ov021/fld_wipe_3dobj.c
+eu	0x241	SCRCMD_FLDMMDL_SetMmdlZoneDeleteOff	wv	0	20	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x242	SCRCMD_POKEMON_FLD_RegisterStoredName	wv,wv	0	40	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x243	SCRCMD_MSGWIN_CmdBgWinMsgFont	u16,u16	0	390	bwap-agrees	ov021/scrcmd_msgwin.c
+eu	0x244	SCRCMD_PROC_FLD_CallGameManual	wp	0	10	bwap-agrees	ov021/scrcmd_proc_fld.c
+eu	0x245	SCRCMD_POKEMON_FLD_ControlLegendMon	wv,wp	0	40	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x246	SCRCMD_HasPlayerLanguage	wp	0	20	bwap-agrees	ov021/scrcmd_wifi_history.c
+eu	0x247	SCRCMD_FLDMMDL_StartMmdlDropIn	wv,wv,wv,wv	0	10	bwap-differs	ov021/scrcmd_fldmmdl.c
+eu	0x248	SCRCMD_FadeOutPlayBgmWithFade	u16,u16	0	140	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x249	SCRCMD_POKEMON_FLD_RegisterTableValueNumber	wv,wv,wv,wv	0	50	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x24a	SCRCMD_POKEMON_FLD_AddTableValueToPoints	wv,wv	0	50	bwap-agrees	ov021/scrcmd_pokemon_fld.c
+eu	0x24b	SCRCMD_ResumeZoneBgmWithFade	u16	0	50	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x24c	SCRCMD_FLDMMDL_CheckPlayerFormModel	wp	0	30	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x24d	SCRCMD_PlayPerapVoice	wv,wv	0	20	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x24e	TRCARD_SYS_ScrCmdSetRecordFlag36		0	10	bwap-agrees	ov010/trcard_sys.c
+eu	0x24f	TRCARD_SYS_ScrCmdStartFieldProc		0	10	bwap-agrees	ov010/trcard_sys.c
+eu	0x250	TRCARD_SYS_ScrCmdRunScriptTask		0	10	bwap-agrees	ov010/trcard_sys.c
+eu	0x251	SCRCMD_PROC_GetDaycareMonGenderKindIfFirst	wp,wv,wv	0	10	bwap-agrees	ov010/scrcmd_proc.c
+eu	0x252	SCRCMD_SCREENEFFECTS_ShowPlaceName		0	90	bwap-agrees	ov021/scrcmd_screeneffects.c
+eu	0x253	SCRCMD_FadeBgmVolume	wv,wv	0	30	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x254	SCRCMD_RestoreBgmVolume	wv	0	30	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x255	SCRCMD_StartArcEffect	wv,wv,wv,wv,wv,wv	0	10	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x256	SCRCMD_ShowArcModelAt	wv,wv,wv	0	10	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x257	SCRCMD_WaitArcEffectEnd		0	10	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x258	SCRCMD_WaitArcEffectPeak		0	10	bwap-agrees	ov021/scrcmd_misc.c
+eu	0x259	SCRCMD_FadeOutPlayFixedBgm	u16	0	10	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x25a	SCRCMD_WarpToRailLocationWithTransition	u16,u16,u16,u16,u16	0	10	bwap-differs	ov021/scrcmd_wordset_warp.c
+eu	0x25b	SCRCMD_FLDMMDL_StartPlayerOffsetTaskAgain	wv,wv,wv,wv	0	20	bwap-agrees	ov021/scrcmd_fldmmdl.c
+eu	0x25c	SCRCMD_NETWORK_PickSixDistinctRandom	wp,wp,wp,wp,wp,wp	0	50	bwap-agrees	ov010/scrcmd_network.c
+eu	0x25d	SCRCMD_NETWORK_CmdGetAlwaysNet	wp	0	10	bwap-agrees	ov010/scrcmd_network.c
+eu	0x25e	SCRCMD_NETWORK_CmdClearAlwaysNet		0	40	bwap-agrees	ov010/scrcmd_network.c
+eu	0x25f	SCRCMD_ResumeBgmSlots		0	80	bwap-agrees	ov021/scrcmd_trainer_audio_item.c
+eu	0x260	SCRCMD_FIELD_GIMMICK_CART_LANES_TransferSound		0	10	bwap-agrees	ov021/scrcmd_gimmick.c
+ja	0x000	SCRIPT_WORK_CmdNop		0	0	no-bwap	ov010/script_work.c
+ja	0x001	find_socket		0	0	no-bwap	ov009/cps_network.c
+ja	0x002	SCRIPT_WORK_CmdHalt		1	5148	no-bwap	ov010/script_work.c
+ja	0x003	SCRIPT_WORK_CmdTimeWait	u16	0	1072	no-bwap	ov010/script_work.c
+ja	0x004	SCRIPT_WORK_CmdCall	code	0	3204	no-bwap	ov010/script_work.c
+ja	0x005	SCRIPT_WORK_CmdReturn		1	1794	no-bwap	ov010/script_work.c
+ja	0x006	SCRIPT_WORK_CmdDebugWork	wv	0	70	no-bwap	ov010/script_work.c
+ja	0x007	SCRIPT_WORK_CmdDebugStack	wv	0	0	no-bwap	ov010/script_work.c
+ja	0x008	SCRIPT_WORK_CmdPushConst	u16	0	7564	no-bwap	ov010/script_work_cmd.c
+ja	0x009	SCRIPT_WORK_CmdPushWorkValue	wv	0	8230	no-bwap	ov010/script_work_cmd.c
+ja	0x00a	SCRIPT_WORK_CmdPopToWork	wp	0	1556	no-bwap	ov010/script_work_cmd.c
+ja	0x00b	SCRIPT_WORK_CmdPopDiscard		0	0	no-bwap	ov010/script_work_cmd.c
+ja	0x00c	SCRIPT_WORK_CmdAdd		0	0	no-bwap	ov010/script_work_cmd.c
+ja	0x00d	SCRIPT_WORK_CmdSub		0	0	no-bwap	ov010/script_work_cmd.c
+ja	0x00e	SCRIPT_WORK_CmdMul		0	0	no-bwap	ov010/script_work_cmd.c
+ja	0x00f	SCRIPT_WORK_CmdDiv		0	0	no-bwap	ov010/script_work_cmd.c
+ja	0x010	SCRIPT_WORK_CmdPushEventFlag	wv	0	1090	no-bwap	ov010/script_work_cmd.c
+ja	0x011	SCRIPT_WORK_CmdCompareStack	u16	0	8266	no-bwap	ov010/script_work_cmd.c
+ja	0x012	SCRIPT_WORK_CmdAndWork	wp,wv	0	0	no-bwap	ov010/script_work_cmd.c
+ja	0x013	SCRIPT_WORK_CmdOrWork	wp,wv	0	18	no-bwap	ov010/script_work_cmd.c
+ja	0x014	SCRIPT_WORK_CmdLoadRegValue	u8,u8	0	0	no-bwap	ov010/script_work.c
+ja	0x015	SCRIPT_WORK_CmdSetLocalU32	u8,u32	0	0	no-bwap	ov010/script_work_cmd_local.c
+ja	0x016	SCRIPT_WORK_CmdCopyLocal	u8,u8	0	0	no-bwap	ov010/script_work_cmd_local.c
+ja	0x017	SCRIPT_WORK_CmdCompareRegs	u8,u8	0	0	no-bwap	ov010/script_work_cmd.c
+ja	0x018	SCRIPT_WORK_CmdCompareRegConst	u8,u8	0	0	no-bwap	ov010/script_work_cmd.c
+ja	0x019	SCRIPT_WORK_CmdCompareWorkConst	wp,u16	0	3734	no-bwap	ov010/script_work_cmd.c
+ja	0x01a	SCRIPT_WORK_CmdCompareWorks	wp,wp	0	0	no-bwap	ov010/script_work_cmd.c
+ja	0x01b	SCRIPT_WORK_CmdChangeScript	u16	0	0	no-bwap	ov010/script_work_cmd.c
+ja	0x01c	SCRIPT_WORK_CmdCallScript	u16	0	754	no-bwap	ov010/script_work_cmd.c
+ja	0x01d	SCRIPT_WORK_CmdEnd		1	82	no-bwap	ov010/script_work_cmd.c
+ja	0x01e	SCRIPT_WORK_CmdJump	code	1	11878	no-bwap	ov010/script_work_cmd.c
+ja	0x01f	SCRIPT_WORK_CmdIfJump	u8,code	0	10796	no-bwap	ov010/script_work_cmd.c
+ja	0x020	SCRIPT_WORK_CmdIfCall	u8,code	0	0	no-bwap	ov010/script_work_cmd.c
+ja	0x021	SCRIPT_WORK_CmdSetProcAction	u16	0	62	no-bwap	ov010/script_work_cmd.c
+ja	0x022	SCRIPT_WORK_CmdGetContinueFlag	wp	0	8	no-bwap	ov010/script_work_cmd.c
+ja	0x023	SCRIPT_WORK_CmdSetEventFlag	wv	0	1838	no-bwap	ov010/script_work_cmd.c
+ja	0x024	SCRIPT_WORK_CmdResetEventFlag	wv	0	798	no-bwap	ov010/script_work_cmd.c
+ja	0x025	SCRIPT_WORK_CmdCheckEventFlag	wv,wp	0	212	no-bwap	ov010/script_work_cmd.c
+ja	0x026	SCRIPT_WORK_CmdAddWork	wp,wv	0	230	no-bwap	ov010/script_work_cmd.c
+ja	0x027	SCRIPT_WORK_CmdSubWork	wp,wv	0	44	no-bwap	ov010/script_work_cmd.c
+ja	0x028	SCRIPT_WORK_CmdLoadWorkConst	wp,u16	0	9776	no-bwap	ov010/script_work_cmd.c
+ja	0x029	SCRIPT_WORK_CmdCopyWork	wp,wp	0	534	no-bwap	ov010/script_work_cmd.c
+ja	0x02a	SCRIPT_WORK_CmdLoadWorkValue	wp,wv	0	1394	no-bwap	ov010/script_work_cmd.c
+ja	0x02b	SCRIPT_WORK_CmdMulWork	wp,wv	0	28	no-bwap	ov010/script_work_cmd.c
+ja	0x02c	SCRIPT_WORK_CmdDivWork	wp,wv	0	0	no-bwap	ov010/script_work_cmd.c
+ja	0x02d	SCRIPT_WORK_CmdModWork	wp,wv	0	0	no-bwap	ov010/script_work_cmd.c
+ja	0x02e	SCRIPT_WORK_CmdCallFieldCommand		0	4414	no-bwap	ov010/script_work_cmd.c
+ja	0x02f	SCRIPT_WORK_CmdPopAllBgm		0	4456	no-bwap	ov010/script_work_cmd.c
+ja	0x030	SCRIPT_WORK_CmdCallScriptEvent		0	4456	no-bwap	ov010/script_work_cmd.c
+ja	0x031	SCRIPT_WORK_CmdWaitKeyDecide		0	6	no-bwap	ov010/script_work_cmd.c
+ja	0x032	SCRIPT_WORK_CmdWaitKeyAny		0	3790	no-bwap	ov010/script_work_cmd.c
+ja	0x033	SCRCMD_MSGWIN_CmdSetAutoMode	u16	0	14	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x034	SCRCMD_MSGWIN_CmdInfoSysWinMsg	wv,u16	0	708	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x035	SCRCMD_MSGWIN_CmdInfoSysWinMsgNow	wv,u16	0	24	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x036	SCRCMD_MSGWIN_CmdCloseInfoSysWin		0	512	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x037	SCRCMD_MSGWIN_CmdSetTimeIcon	wv	0	6	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x038	SCRCMD_MSGWIN_CmdPlainWinMsg	wv,u8	0	648	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x039	SCRCMD_MSGWIN_CmdClosePlainWin		0	154	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x03a	SCRCMD_MSGWIN_CmdAddSubWinMsg	u16,wv,wv,u16	0	84	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x03b	SCRCMD_MSGWIN_CmdDeleteSubWinMsg	u16	0	84	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x03c	SCRCMD_MSGWIN_CmdBalloonWinMsg	wv,wv,wv,wv,wv	0	4548	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x03d	SCRCMD_MSGWIN_CmdBalloonWinMsgTarget	wv,wv,wv,wv	0	3212	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x03e	SCRCMD_MSGWIN_CmdCloseTalkWin		0	4384	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x03f	SCRCMD_MSGWIN_CmdCloseAllWins		0	2644	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x040	SCRCMD_MSGWIN_CmdOpenMoneyWin	wv,wv	0	24	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x041	SCRCMD_MSGWIN_CmdCloseMoneyWin		0	66	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x042	SCRCMD_MSGWIN_CmdUpdateMoneyWin		0	24	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x043	SCRCMD_MSGWIN_CmdBgWinMsg	u16,u16	0	244	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x044	SCRCMD_MSGWIN_CmdCloseBgWin		0	322	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x045	SCRCMD_MSGWIN_CmdSpWinMsg	u16,u16	0	0	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x046	SCRCMD_MSGWIN_CmdCloseSpWin		0	0	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x047	SCRCMD_MSGWIN_CmdYesNoWin	wp	0	562	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x048	SCRCMD_MSGWIN_CmdBalloonWinMsgGender	wv,wv,wv,wv,wv,wv	0	40	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x049	SCRCMD_MSGWIN_CmdBalloonWinMsgSkipArg	wv,wv,wv,wv,wv,wv	0	206	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x04a	SCRCMD_MSGWIN_CmdPlainWinMsgFrame1	wv,u8	0	48	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x04b	SCRCMD_MSGWIN_CmdWaitMsgKey		0	240	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x04c	SCRCMD_BufferPlayerName	u8	0	606	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x04d	SCRCMD_BufferItemName	u8,wv	0	216	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x04e	SCRCMD_BufferConvertedEntryName	u8,wv	0	18	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x04f	SCRCMD_BufferGroupEntryName	u8,wv	0	50	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x050	SCRCMD_BufferShortEntryName	u8,wv	0	8	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x051	SCRCMD_BufferPartyMonSpeciesName	u8,wv	0	24	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x052	SCRCMD_BufferPartyMonNickname	u8,wv	0	92	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x053	SCRCMD_BufferDaycareMonSpeciesName	u8,wv	0	0	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x054	SCRCMD_BufferCategoryEntryName	u8,wv	0	22	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x055	SCRCMD_BufferSpeciesName	u8,wv	0	180	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x056	SCRCMD_BufferPlaceName	u8,wv	0	0	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x057	SCRCMD_BufferEasyChatWord	u8,wv	0	2	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x058	SCRCMD_BufferDaycareMonNickname	u8,wv	0	14	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x059	SCRCMD_BufferNumber	u8,wv,wv	0	142	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x05a	SCRCMD_MUSICAL_BufferString	u8,u8,wv	0	32	no-bwap	ov010/scrcmd_musical.c
+ja	0x05b	SCRCMD_BufferGroupedEntryName	u8,wv	0	2	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x05c	SCRCMD_BufferByteEntryNameA	u8,wv	0	2	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x05d	SCRCMD_BufferSignedEntryName	u8,wv	0	4	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x05e	SCRCMD_BufferMapEntryNameA	u8,wv	0	2	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x05f	SCRCMD_BufferByteEntryNameB	u8,wv	0	8	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x060	SCRCMD_FLDMMDL_StartMmdlAnime	wv,movement	0	7384	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x061	SCRCMD_FLDMMDL_WaitAnimeTasks		0	4458	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x062	SCRCMD_FLDMMDL_GetMmdlMoveCode	wp,wv	0	2	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x063	SCRCMD_FLDMMDL_GetMmdlGridPos	wv,wp,wp	0	16	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x064	SCRCMD_FLDMMDL_GetPlayerGridPos	wp,wp	0	266	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x065	SCRCMD_FLDMMDL_AddMmdl	wv,wv,wv,wv,wv,wv	0	172	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x066	SCRCMD_FLDMMDL_GetMmdlEventFlag	wv,wp	0	6	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x067	SCRCMD_FLDMMDL_AddPartyFollowerMmdl	wv	0	212	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x068	SCRCMD_FLDMMDL_DeleteMmdl	wv	0	700	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x069	SCRCMD_FLDMMDL_InitMmdlGridPosition	wv,wv,wv,wv,wv	0	642	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x06a	SCRCMD_FLDMMDL_GetPlayerDir	wp	0	124	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x06b	SCRCMD_FLDMMDL_SearchMmdlInFrontOfPlayer	wp,wp	0	2	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x06c	SCRCMD_FLDMMDL_SearchMmdlAtGrid	wp,wp,wv,wv,wv	0	4	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x06d	SCRCMD_FLDMMDL_GetPlayerRailLocation	wp,wp,wp	0	0	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x06e	SCRCMD_FLDMMDL_GetMmdlRailLocation	wv,wp,wp,wp	0	0	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x06f	SCRCMD_FLDMMDL_ChangeMmdlMoveCode	wv,wv	0	8	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x070	SCRCMD_FLDMMDL_TurnTargetMmdlToPlayer		0	2612	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x071	SCRCMD_FLDMMDL_StartPlayerFormChangeAndWait	u16	0	62	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x072	SCRCMD_FLDMMDL_StartPlayerPosOffsetTween	wv,wv,wv,wv	0	16	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x073	SCRCMD_FLDMMDL_TurnPlayerToFrontEvent		0	16	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x074	SCRCMD_FLDMMDL_GetPlayerForm	wp	0	34	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x075	SCRCMD_FLDMMDL_GetMmdlParam	wv,wv,wp	0	4	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x076	SCRCMD_FLDMMDL_StartMmdlRailSlipDown	wv	0	2	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x077	SCRCMD_FLDMMDL_StartMmdlMoveToGrid	wv,wv,wv,wv	0	2	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x078	SCRCMD_FLDMMDL_SetPlayerRailLocation	wv,wv,wv	0	4	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x079	SCRCMD_FLDMMDL_SetMmdlRailLocation	wv,wv,wv,wv	0	0	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x07a	SCRCMD_FLDMMDL_StartMmdlSpinRise	wv	0	2	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x07b	SCRCMD_GetTrainerEyeTrainerId	wv,wp	0	12	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x07c	SCRCMD_CreateTrainerEye	wv	0	10	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x07d	SCRCMD_CallTrainerEyePairEvent		0	8	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x07e	SCRCMD_GetTrainerEyeObjId	wv,wp	0	10	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x07f	SCRCMD_GetTrainerHitKind	wp	0	2	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x080	SCRCMD_GetScriptTrainerId	wp	0	6	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x081	SCRCMD_StartTrainerBattle	wv,wv,wv	0	274	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x082	SCRCMD_StartMultiTrainerBattle	wv,wv,wv,wv	0	12	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x083	SCRCMD_MSGWIN_CmdBalloonWinSavedText	wv,wv,wv	0	28	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x084	SCRCMD_GetTrainerMessageIds	wp,wp,wp	0	8	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x086	SCRCMD_GetTrainerBattleKind	wv,wp	0	2	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x087	SCRCMD_PlayTrainerEncounterBgm	wv	0	24	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x088	SCRCMD_WORK_CmdEndScriptWhiteOutA		1	256	no-bwap	ov010/scrcmd_work.c
+ja	0x089	SCRCMD_WORK_CmdCheckLastBattleResultA	wp	0	260	no-bwap	ov010/scrcmd_work.c
+ja	0x08a	SCRCMD_FadeInField		0	260	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x08e	SCRCMD_ClassifyTrainer	wv,wp	0	6	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x08f	SCRCMD_GetTrainerBattleParam	wv,wp	0	2	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x090	SCRCMD_StartTrainerBattleWithMon	wv,wv,wv,wv	0	6	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x091	SCRCMD_WORK_CmdSetTrainerDefeatedFlag	wv	0	118	no-bwap	ov010/scrcmd_work.c
+ja	0x092	SCRCMD_WORK_CmdClearTrainerDefeatedFlag	wv	0	20	no-bwap	ov010/scrcmd_work.c
+ja	0x093	SCRCMD_WORK_CmdCheckTrainerDefeatedFlag	wv,wp	0	24	no-bwap	ov010/scrcmd_work.c
+ja	0x094	SCRCMD_FadeOutPlayBgm	u16	0	112	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x097	SCRCMD_IsBgmPlaying	u16,wp	0	0	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x09a	SCRCMD_ResumeZoneBgm		0	114	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x09b	SCRCMD_PushBgmAndPlayWait	wv	0	20	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x09c	SCRCMD_StartWaitBgmStopped		0	2	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x09d	SCRCMD_PushBgm	wv	0	6	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x09e	SCRCMD_PopBgm	wv,wv	0	6	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x09f	SCRCMD_IssSwitchOn	wv	0	20	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x0a0	SCRCMD_IssSwitchOff	wv	0	16	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x0a1	SCRCMD_IsIssSwitchOn	wp,wv	0	12	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x0a2	SCRCMD_PlaySe	wv	0	3866	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x0a3	SCRCMD_StopSe		0	32	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x0a4	SCRCMD_StartWaitSeStopped		0	396	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x0a5	SCRCMD_PushAndPlayBgm	u16	0	160	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x0a6	SCRCMD_StartWaitBgmThenPop		0	152	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x0a7	SCRCMD_PlayPokeVoice	wv,wv	0	192	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x0a8	SCRCMD_StartWaitPokeVoice		0	190	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x0a9	SCRCMD_MSGWIN_CmdInitMenu	u8,u8,wv,u8,u16	0	0	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x0aa	SCRCMD_MSGWIN_CmdInitMenuMsgData	u8,u8,wv,u8,u16	0	0	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x0ab	SCRCMD_MSGWIN_CmdAddMenuItem	u16,u16,wv	0	724	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x0ac	SCRCMD_MSGWIN_CmdStartMenu		0	154	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x0ad	SCRCMD_MSGWIN_CmdStartMenuEx		0	8	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x0ae	SCRCMD_MSGWIN_CmdInitMenuMsgDataMode1	u8,u8,wv,u8,u16	0	168	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x0af	SCRCMD_SCREENEFFECTS_StartBrightnessChange	u16,u16,u16,u16	0	202	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x0b0	SCRCMD_SCREENEFFECTS_WaitBrightness		0	236	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x0b1	SCRCMD_AddItem	wv,wv,wp	0	14	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x0b2	SCRCMD_RemoveItem	wv,wv,wp	0	42	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x0b3	SCRCMD_CanAddItem	wv,wv,wp	0	36	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x0b4	SCRCMD_HasItem	wv,wv,wp	0	72	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x0b5	SCRCMD_GetItemQuantity	wv,wp	0	2	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x0b6	SCRCMD_IsItemMachine	wv,wp	0	2	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x0b7	SCRCMD_GetItemPocket	wv,wp	0	14	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x0b8	SCRCMD_PROC_FLD_StoreEffectEncountItemId	wp	0	2	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x0b9	SCRCMD_GetItemPartyUse	wv,wp	0	2	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x0ba	SCRCMD_WarpToPositionPlain	u16,u16,u16,u16	0	2	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x0bb	SCRCMD_WarpToPositionFixedExit	u16,u16,u16,u16	0	24	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x0bc	SCRCMD_WarpToRailLocation	u16,u16,u16,u16,u16	0	0	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x0bd	SCRCMD_WarpToPositionEvent	u16,u16,u16	0	24	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x0be	SCRCMD_WarpToPosition	u16,u16,u16,u16	0	16	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x0bf	SCRCMD_WarpToFixedZone		0	2	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x0c0	SCRCMD_WarpToPosition3D	u16,u16,u16,u16,u16	0	116	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x0c1	SCRCMD_PLAYER_GRID_EVENT_StartHop		0	4	no-bwap	ov021/scrcmd_player_events.c
+ja	0x0c2	SCRCMD_PLAYER_GRID_EVENT_StartJump	wv	0	6	no-bwap	ov021/scrcmd_player_events.c
+ja	0x0c3	SCRCMD_IAIGIRI_StartOnPlayer		0	4	no-bwap	ov021/scrcmd_player_events.c
+ja	0x0c4	SCRCMD_SAVEANIME_Start	wv	0	12	no-bwap	ov021/scrcmd_player_events.c
+ja	0x0c5	SCRCMD_WORK_CmdToggleConfigFlag		0	2	no-bwap	ov010/scrcmd_work.c
+ja	0x0c6	SCRCMD_WORK_CmdGetConfigFlag	wp	0	0	no-bwap	ov010/scrcmd_work.c
+ja	0x0c7	SCRCMD_WORK_CmdGetRandom	wp,wv	0	78	no-bwap	ov010/scrcmd_work.c
+ja	0x0c8	SCRCMD_WORK_CmdGetMsgDataId	wp	0	58	no-bwap	ov010/scrcmd_work.c
+ja	0x0c9	SCRCMD_WORK_CmdGetTimeZone	wp	0	22	no-bwap	ov010/scrcmd_work.c
+ja	0x0ca	SCRCMD_WORK_CmdGetTrainerCardStars	wp	0	2	no-bwap	ov010/scrcmd_work.c
+ja	0x0cb	SCRCMD_WORK_CmdGetWeek	wp	0	34	no-bwap	ov010/scrcmd_work.c
+ja	0x0cc	SCRCMD_WORK_CmdGetMonthAndDay	wp,wp	0	12	no-bwap	ov010/scrcmd_work.c
+ja	0x0cd	SCRCMD_WORK_CmdGetHourAndMinute	wp,wp	0	10	no-bwap	ov010/scrcmd_work.c
+ja	0x0ce	SCRCMD_WORK_CmdGetSeason	wp	0	32	no-bwap	ov010/scrcmd_work.c
+ja	0x0cf	SCRCMD_WORK_CmdGetScriptId	wp	0	4	no-bwap	ov010/scrcmd_work.c
+ja	0x0d0	SCRCMD_WORK_CmdGetBirthday	wp,wp	0	4	no-bwap	ov010/scrcmd_work.c
+ja	0x0d1	SCRCMD_WORK_CmdCheckBadge	wp,wv	0	160	no-bwap	ov010/scrcmd_work.c
+ja	0x0d2	SCRCMD_WORK_CmdSetBadge	wv	0	22	no-bwap	ov010/scrcmd_work.c
+ja	0x0d3	SCRCMD_WORK_CmdGetBadgeCount	wp	0	0	no-bwap	ov010/scrcmd_work.c
+ja	0x0d4	SCRCMD_WORK_CmdCheckMapReplaceFlag	wv,wp	0	6	no-bwap	ov010/scrcmd_work.c
+ja	0x0d5	SCRCMD_WORK_CmdSetWarpDestination	wv	0	8	no-bwap	ov010/scrcmd_work.c
+ja	0x0d6	SCRCMD_WORK_CmdSetMapReplaceFlag	wv,wv,wv	0	20	no-bwap	ov010/scrcmd_work.c
+ja	0x0d7	SCRCMD_WORK_CmdSetSpecialLocationHere		0	6	no-bwap	ov010/scrcmd_work.c
+ja	0x0d8	SCRCMD_WORK_CmdSetSpecialLocation	wv,wv,wv,wv,wv	0	10	no-bwap	ov010/scrcmd_work.c
+ja	0x0d9	SCRCMD_WORK_CmdGetNationalZukanCount	wv,wp	0	6	no-bwap	ov010/scrcmd_work.c
+ja	0x0da	SCRCMD_WORK_CmdRegisterZukanSeen	wv,wv	0	2	no-bwap	ov010/scrcmd_work.c
+ja	0x0db	SCRCMD_WORK_CmdCheckZukanSeenOrCaught	wv,wv,wp	0	4	no-bwap	ov010/scrcmd_work.c
+ja	0x0dc	SCRCMD_WORK_CmdGetRomVersion	wp	0	126	no-bwap	ov010/scrcmd_work.c
+ja	0x0dd	SCRCMD_WORK_CmdGetPlayerSex	wp	0	78	no-bwap	ov010/scrcmd_work.c
+ja	0x0de	SCRCMD_WORK_CmdGetButtonMode	wp	0	2	no-bwap	ov010/scrcmd_work.c
+ja	0x0df	SCRCMD_WORK_CmdSetFixedEventFlag		0	4	no-bwap	ov010/scrcmd_work.c
+ja	0x0e0	SCRCMD_WORK_CmdSetBoxFlags	wv	0	4	no-bwap	ov010/scrcmd_work.c
+ja	0x0e1	SCRCMD_WORK_CmdGetTrainerViewGroupAndMarkSeen	wp,wp	0	2	no-bwap	ov010/scrcmd_work.c
+ja	0x0e2	SCRCMD_WORK_CmdGetMiscByte	wv,wp	0	2	no-bwap	ov010/scrcmd_work.c
+ja	0x0e3	SCRCMD_WORK_CmdSetMiscByte	wv	0	8	no-bwap	ov010/scrcmd_work.c
+ja	0x0e4	SCRCMD_WORK_CmdCheckMiscByte	wv,wp	0	2	no-bwap	ov010/scrcmd_work.c
+ja	0x0e5	SCRCMD_GetPlayerLocationValue	wp	0	2	no-bwap	ov021/scrcmd_otid.c
+ja	0x0e6	SCRCMD_WORK_CmdCheckExtraSaveData	wp	0	2	no-bwap	ov010/scrcmd_work.c
+ja	0x0e7	SCRCMD_PROC_CheckDaycareHasEgg	wp	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x0e8	SCRCMD_PROC_ReceiveDaycareEgg		0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x0e9	SCRCMD_PROC_DeclineDaycareEgg		0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x0ea	SCRCMD_PROC_GetDaycareMonCount	wp	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x0eb	SCRCMD_PROC_GetDaycareCompatibility	wp	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x0ec	SCRCMD_PROC_DepositDaycareMon	wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x0ed	SCRCMD_PROC_WithdrawDaycareMon	wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x0ee	SCRCMD_PROC_GetDaycareMonSpecies	wp,wv	0	4	no-bwap	ov010/scrcmd_proc.c
+ja	0x0ef	SCRCMD_PROC_GetDaycareMonForm	wp,wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x0f0	SCRCMD_PROC_GetDaycareSlotLevel	wp,wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x0f1	SCRCMD_PROC_GetDaycareSlotLevelsGrown	wp,wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x0f2	SCRCMD_PROC_GetDaycareSlotPrice	wp,wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x0f3	SCRCMD_PROC_CallDaycarePartyMenu	wp	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x0f4	SCRCMD_PROC_GetDaycareMonGender	wp,wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x0f5	SCRCMD_PROC_AddMoney	wv	0	4	no-bwap	ov010/scrcmd_proc.c
+ja	0x0f6	SCRCMD_PROC_SubMoney	wv	0	14	no-bwap	ov010/scrcmd_proc.c
+ja	0x0f7	SCRCMD_PROC_CheckMoneyAtLeast	wp,wv	0	14	no-bwap	ov010/scrcmd_proc.c
+ja	0x0f8	SCRCMD_PROC_GetMonFriendship	wp,wv	0	8	no-bwap	ov010/scrcmd_proc.c
+ja	0x0f9	SCRCMD_PROC_ChangeMonFriendship	wv,wv,u16	0	6	no-bwap	ov010/scrcmd_proc.c
+ja	0x0fa	SCRCMD_PROC_GetMonSpeciesOrEgg	wp,wv	0	16	no-bwap	ov010/scrcmd_proc.c
+ja	0x0fb	SCRCMD_PROC_GetMonForm	wp,wv	0	8	no-bwap	ov010/scrcmd_proc.c
+ja	0x0fc	SCRCMD_POKEMON_FLD_CheckPartyFlagged	wp	0	2	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x0fd	SCRCMD_PROC_CheckMonHpNotFullOrEgg	wp,wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x0fe	SCRCMD_PROC_CheckMonIsEgg	wp,wv	0	36	no-bwap	ov010/scrcmd_proc.c
+ja	0x0ff	SCRCMD_PROC_GetPartyCount	wp,wv	0	72	no-bwap	ov010/scrcmd_proc.c
+ja	0x100	SCRCMD_PROC_HealParty		0	60	no-bwap	ov010/scrcmd_proc.c
+ja	0x101	SCRCMD_POKEMON_FLD_StartSelectEvent	wp,wv,wv	0	12	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x102	SCRCMD_POKEMON_FLD_StartEggHatch	wp	0	2	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x103	SCRCMD_POKEMON_FLD_SelectPartyMon	wp,wp,wv	0	40	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x104	SCRCMD_PROC_CountMonMoves	wp,wv	0	8	no-bwap	ov010/scrcmd_proc.c
+ja	0x105	SCRCMD_POKEMON_FLD_SelectMonMove	wp,wp,wv,wv	0	6	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x106	SCRCMD_PROC_GetMonMove	wp,wv,wv	0	10	no-bwap	ov010/scrcmd_proc.c
+ja	0x107	SCRCMD_PROC_SetMonMove	wv,wv,wv	0	6	no-bwap	ov010/scrcmd_proc.c
+ja	0x108	SCRCMD_PROC_AddMonToPartySimple	wp,wv,wv,wv	0	12	no-bwap	ov010/scrcmd_proc.c
+ja	0x109	SCRCMD_PROC_FindFirstPartyIndex	wp,wv	0	12	no-bwap	ov010/scrcmd_proc.c
+ja	0x10a	SCRCMD_PROC_AddMonToPartyDetailed	wp,wv,wv,wv,wv,wv,wv,wv,wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x10b	SCRCMD_PROC_AddEggToParty	wp,wv,wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x10c	SCRCMD_PROC_GetMonParamIfListed	wp,wv,wv	0	10	no-bwap	ov010/scrcmd_proc.c
+ja	0x10d	SCRCMD_PROC_SetMonParamChecked	wv,wv,wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x10e	SCRCMD_PROC_GetMonEvTotal	wp,wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x10f	SCRCMD_PROC_CheckMonIsPlayerOwned	wp,wv	0	6	no-bwap	ov010/scrcmd_proc.c
+ja	0x110	SCRCMD_PROC_CountPartyMonsOfSpecies	wv,wp	0	4	no-bwap	ov010/scrcmd_proc.c
+ja	0x111	SCRCMD_PROC_CheckPartyMonKnowsMove	wp,wv,wv	0	8	no-bwap	ov010/scrcmd_proc.c
+ja	0x112	SCRCMD_PROC_FindPartyMonWithMove	wp,wv	0	24	no-bwap	ov010/scrcmd_proc.c
+ja	0x113	SCRCMD_PROC_ChangeMonForm	wv,wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x114	SCRCMD_PROC_FindPartyMonBySpecies	wv,wp,wp	0	10	no-bwap	ov010/scrcmd_proc.c
+ja	0x115	SCRCMD_PROC_CheckMonParamMatchesTable	wp,wv,wv	0	0	no-bwap	ov010/scrcmd_proc.c
+ja	0x116	SCRCMD_PROC_GetMonTripleParams	wp,wp,wp,wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x117	SCRCMD_PROC_GetMonPairedParams	wp,wp,wv	0	4	no-bwap	ov010/scrcmd_proc.c
+ja	0x118	SCRCMD_PROC_SetRotomFormMove	wv,wv,wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x119	SCRCMD_POKEMON_FLD_StoreMonRecord	wv	0	2	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x11a	SCRCMD_POKEMON_FLD_StorePartySpeciesRecord	wv	0	22	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x11b	SCRCMD_POKEMON_FLD_RegisterRecordSpecies	wv,wp	0	2	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x11c	SCRCMD_POKEMON_FLD_StoreMonName	wv,wv	0	6	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x11d	SCRCMD_PROC_GetBoxMonCount	wp,wv	0	10	no-bwap	ov010/scrcmd_proc.c
+ja	0x11e	SCRCMD_PROC_AddMonToBoxSimple	wp,wv,wv,wv	0	0	no-bwap	ov010/scrcmd_proc.c
+ja	0x11f	SCRCMD_PROC_AddMonToBoxDetailed	wp,wv,wv,wv,wv,wv,wv,wv,wv	0	0	no-bwap	ov010/scrcmd_proc.c
+ja	0x120	SCRCMD_SCREENEFFECTS_PlayBuildModelNodeSlotMode2	wv,wv	0	2	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x121	SCRCMD_SCREENEFFECTS_StartRecoveryPartyEvent		0	2	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x122	SCRCMD_SCREENEFFECTS_SetBuildModelIndex	wv,wv,wv,wv	0	4	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x123	SCRCMD_SCREENEFFECTS_CreateBuildModelNode	wp,wv,wv,wv	0	74	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x124	SCRCMD_SCREENEFFECTS_DeleteBuildModelNode	wv	0	68	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x125	SCRCMD_SCREENEFFECTS_PlayBuildModelNodeSlotWithSe	wv,wv	0	114	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x126	SCRCMD_SCREENEFFECTS_WaitBuildModelNodeAnim	wv	0	106	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x127	SCRCMD_SCREENEFFECTS_PlayBuildModelAnimPair	wv,wv,wv	0	34	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x128	SCRCMD_SCREENEFFECTS_PlayBuildModelNodeCurrentMode3	wv	0	10	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x129	SCRCMD_SCREENEFFECTS_SwapBuildModelId	wv,wv,wv,wv	0	16	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x12a	SCRCMD_SCREENEFFECTS_PlayBuildModelAnimTwo	wv,wv,wv	0	28	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x12b	SCRCMD_SCREENEFFECTS_StartRecoveryBallsEvent	wv	0	4	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x12c	SCRCMD_SCREENEFFECTS_StartDoorOpen		0	2	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x12d	SCRCMD_SCREENEFFECTS_StartDoorSetOpen		0	4	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x12e	SCRCMD_SCREENEFFECTS_StartDoorClose	wv	0	2	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x12f	SCRCMD_C03CENTER_TurnCameraToQuarter	wv	0	0	no-bwap	ov021/scrcmd_c03center.c
+ja	0x130	SCRCMD_POKEMON_FLD_StartOv55SubProc		0	16	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x131	SCRCMD_StartSubProcOv057		0	16	no-bwap	ov021/scrcmd_otid.c
+ja	0x132	SYMBOL_MAP_ScrCmdSetSubscreenMode	wv,wv	0	8	no-bwap	ov010/symbol_map.c
+ja	0x133	SCRIPT_WORK_CmdReportSave	wp	0	18	no-bwap	ov010/script_work_cmd.c
+ja	0x134	SCRCMD_WORK_CmdGetSaveStatus	wp,wp,wp	0	2	no-bwap	ov010/scrcmd_work.c
+ja	0x135	SCRCMD_NETWORK_CmdWaitCommState	wp	0	10	no-bwap	ov010/scrcmd_network.c
+ja	0x136	SCRCMD_PROC_FLD_StoreCommKind	wp	0	2	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x137	SCRCMD_NETWORK_CmdGetCommValue	wp	0	22	no-bwap	ov010/scrcmd_network.c
+ja	0x138	SCRCMD_NETWORK_CmdStartAutoComm		0	20	no-bwap	ov010/scrcmd_network.c
+ja	0x139	SCRCMD_NETWORK_CmdRequestCommExit		0	40	no-bwap	ov010/scrcmd_network.c
+ja	0x13a	SCRCMD_NETWORK_CmdRestartAutoComm		0	40	no-bwap	ov010/scrcmd_network.c
+ja	0x13b	SCRCMD_PROC_FLD_SaveCamera		0	220	no-bwap	ov021/scrcmd_encount.c
+ja	0x13c	SCRCMD_PROC_FLD_RestoreCameraCmd		0	194	no-bwap	ov021/scrcmd_encount.c
+ja	0x13d	SCRCMD_PROC_FLD_StopCameraTargetTrace		0	236	no-bwap	ov021/scrcmd_encount.c
+ja	0x13e	SCRCMD_PROC_FLD_ResumeCameraTargetTrace		0	146	no-bwap	ov021/scrcmd_encount.c
+ja	0x13f	SCRCMD_PROC_FLD_StartCameraMoveFromStream	u16,u16,u32,u32,u32,u32,u16	0	352	no-bwap	ov021/scrcmd_encount.c
+ja	0x140	SCRCMD_PROC_FLD_StartCameraMoveToSaved	u16	0	64	no-bwap	ov021/scrcmd_encount.c
+ja	0x141	SCRCMD_PROC_FLD_WaitCameraIdle		0	428	no-bwap	ov021/scrcmd_encount.c
+ja	0x142	SCRCMD_PROC_FLD_StartCameraMoveFromArchive	u16,u16	0	16	no-bwap	ov021/scrcmd_encount.c
+ja	0x143	SCRCMD_PROC_FLD_StartCameraMoveToSetting	u16	0	78	no-bwap	ov021/scrcmd_encount.c
+ja	0x144	SCRCMD_PROC_FLD_StartCameraShake	wv,wv,wv,wv,wv,wv,wv,wv	0	20	no-bwap	ov021/scrcmd_encount.c
+ja	0x145	SCRCMD_SHOP_StartShop	wv,wp	0	2	no-bwap	ov021/scrcmd_shop.c
+ja	0x146	SCRCMD_PROC_CallFieldOpenEvent		0	104	no-bwap	ov010/scrcmd_proc.c
+ja	0x147	SCRCMD_PROC_CallFieldCloseEvent		0	104	no-bwap	ov010/scrcmd_proc.c
+ja	0x148	SCRCMD_PROC_FreeScriptUserWork		0	0	no-bwap	ov010/scrcmd_proc.c
+ja	0x149	SCRCMD_PROC_FLD_CallShortcutEvent	wv,wp	0	4	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x14a	SCRCMD_PROC_CallBagScreen	wv,wp,wp	0	12	no-bwap	ov010/scrcmd_proc.c
+ja	0x14b	SCRCMD_PROC_FLD_CallOv170Event	wp,wv	0	10	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x14c	SCRCMD_PROC_CallGtsNegotiation	wp	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x14d	SCRCMD_PROC_CallModeScreen	wv,wv	0	28	no-bwap	ov010/scrcmd_proc.c
+ja	0x14e	SCRCMD_PROC_FLD_CallOv219Event		0	2	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x14f	SCRCMD_PROC_CallWordScreen	wp	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x150	SCRCMD_PROC_CallSubEvent	wv,wv	0	26	no-bwap	ov010/scrcmd_proc.c
+ja	0x151	SCRCMD_PROC_CallValueScreen	wv	0	12	no-bwap	ov010/scrcmd_proc.c
+ja	0x152	SCRCMD_PROC_FLD_SetGameClearEventAndEnd	wv	1	4	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x153	BSUBWAY_SCR_CmdClearWorkPtr		0	2	no-bwap	ov021/bsubway_scr.c
+ja	0x154	BSUBWAY_SCR_CmdCreateWork	u16,wv	0	10	no-bwap	ov021/bsubway_scr.c
+ja	0x155	BSUBWAY_SCR_CmdDeleteWork		0	8	no-bwap	ov021/bsubway_scr.c
+ja	0x156	BSUBWAY_SCR_CmdTool	u16,wv,wv,u16	0	902	no-bwap	ov021/bsubway_scr.c
+ja	0x157	SCRCMD_CreateMmdlIcaProc	wv	0	4	no-bwap	ov021/scrcmd_misc.c
+ja	0x158	SCRCMD_EndMmdlIcaProc		0	2	no-bwap	ov021/scrcmd_misc.c
+ja	0x159	SCRCMD_StartMmdlIcaAnime	wv	0	8	no-bwap	ov021/scrcmd_misc.c
+ja	0x15a	SCRCMD_WaitMmdlIcaAnime		0	8	no-bwap	ov021/scrcmd_misc.c
+ja	0x15b	SCRCMD_PROC_FLD_StoreWifiProfileValid	wp	0	2	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x15c	SCRCMD_PROC_FLD_StoreWifiFriendCount	wp	0	2	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x15d	SCRCMD_PROC_FLD_CallWifiClubEvent		0	2	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x15e	SCRCMD_PROC_FLD_CallWorldTradeEvent		0	2	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x15f	SCRCMD_PROC_WaitNothing		0	0	no-bwap	ov010/scrcmd_proc.c
+ja	0x160	SCRCMD_PROC_CallWifiBattleMatch	wv,wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x161	SCRCMD_PROC_CallMenuProc	wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x162	SCRCMD_PROC_FLD_CallGtsNegoEvent		0	2	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x163	SCRCMD_MUSICAL_StartMusical	wv,u8	1	6	no-bwap	ov010/scrcmd_musical.c
+ja	0x164	SCRCMD_MUSICAL_ShowPartyMonMusical	wv	0	4	no-bwap	ov010/scrcmd_musical.c
+ja	0x165	SCRCMD_MUSICAL_GetValue	u8,wv,wp	0	52	no-bwap	ov010/scrcmd_musical.c
+ja	0x166	SCRCMD_MUSICAL_GetProgramInfo	wv,u8,wp	0	30	no-bwap	ov010/scrcmd_musical.c
+ja	0x167	SCRCMD_MUSICAL_LinkControl	wv,wv,wv,wp	0	80	no-bwap	ov010/scrcmd_musical.c
+ja	0x168	SCRCMD_MUSICAL_AddOwnedProp	wv	0	2	no-bwap	ov010/scrcmd_musical.c
+ja	0x169	SCRCMD_MUSICAL_ResetProgramRank	wv	0	4	no-bwap	ov010/scrcmd_musical.c
+ja	0x16a	SCRCMD_MUSICAL_SelectPartyMon	wp,wp	0	4	no-bwap	ov010/scrcmd_musical.c
+ja	0x16b	INTRUDE_SUBDISP_ScriptAddAreaMmdls		0	2	no-bwap	ov018/intrude_subdisp.c
+ja	0x16c	EVENT_COMM_COMMON_CmdGetIntrudeDistance	wp	0	4	no-bwap	ov018/event_comm_common.c
+ja	0x16d	INTRUDE_SUBDISP_ScriptAddAreaMapsAndMarkers		0	2	no-bwap	ov018/intrude_subdisp.c
+ja	0x16e	SCRCMD_PROC_CallPlayerProfile		0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x16f	EVENT_COMM_COMMON_CmdCallExitSyncEvent	wp	0	2	no-bwap	ov018/event_comm_common.c
+ja	0x170	EVENT_COMM_COMMON_CmdCheckBattleRecState	wp	0	2	no-bwap	ov018/event_comm_common.c
+ja	0x171	EVENT_COMM_COMMON_CmdGetObjCode	wp	0	2	no-bwap	ov018/event_comm_common.c
+ja	0x172	EVENT_COMM_COMMON_CmdCheckMissionInfoPending	wp	0	2	no-bwap	ov018/event_comm_common.c
+ja	0x173	EVENT_COMM_COMMON_CmdCallMissionInfoEvent		0	2	no-bwap	ov018/event_comm_common.c
+ja	0x174	SCRCMD_PROC_FLD_StartScriptedWildBattle	wv,wv,wv	0	40	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x175	SCRCMD_PROC_FLD_StartFieldMapFadeIn		0	42	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x176	SCRCMD_WORK_CmdEndScriptWhiteOutB		1	36	no-bwap	ov010/scrcmd_work.c
+ja	0x177	SCRCMD_WORK_CmdCheckLastBattleResultB	wp	0	36	no-bwap	ov010/scrcmd_work.c
+ja	0x178	SCRCMD_PROC_FLD_StoreBattleResult	wp	0	22	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x179	SCRCMD_PROC_FLD_CallCatchTutorial		0	2	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x17a	GIMMICK_OBJ_ELBOARD_CmdStartCameraEvent	wv	0	36	no-bwap	ov048/gimmick_obj_elboard.c
+ja	0x17b	SCRCMD_PROC_Ov037InitFromVars	wp,wp	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x17c	SCRCMD_FIELD_GIMMICK_CART_LANES_CreateSwitchEvent	u16	0	8	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x17d	SCRCMD_FIELD_GIMMICK_CART_LANES_UnlockLaneFromScript	u16	0	4	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x17e	SCRCMD_PROC_Ov037SetValueA	wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x17f	SCRCMD_FIELD_GIMMICK_FLAG_ANIME_SetFlag		0	0	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x180	SCRCMD_FIELD_GIMMICK_FLAG_ANIME_GetFlag	wp	0	0	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x181	SCRCMD_FIELD_GIMMICK_FLAG_ANIME_CreateEvent	u16	0	2	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x182	SCRCMD_PROC_Ov037SetValueB	wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x183	SCRCMD_FIELD_GIMMICK_BUTTON_STATES_CreateStateEventWithFlag	u16	0	18	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x184	SCRCMD_FIELD_GIMMICK_BUTTON_STATES_CreateOneShotEvent	u16	0	6	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x185	SCRCMD_FIELD_GIMMICK_BUTTON_STATES_CreateStateEvent	u16	0	18	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x186	SCRCMD_FIELD_GIMMICK_LIFT_ELEVATOR_SnapElevatorToTop		0	2	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x187	SCRCMD_FIELD_GIMMICK_LIFT_SnapLiftToBottom		0	2	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x188	SCRCMD_FIELD_GIMMICK_PLATE_DOORS_StartSwitchEvent	wp	0	2	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x189	SCRCMD_FIELD_GIMMICK_PLATE_DOORS_StartPlateEvent	wp	0	2	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x18a	SCRCMD_FIELD_GIMMICK_PLATE_DOORS_StartScriptedEvent	u16	0	4	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x18b	SCRCMD_PROC_Ov037ReadEightVars	wp,wp,wp,wp,wp,wp,wp,wp	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x18c	SCRCMD_FIELD_GIMMICK_LIFT_ELEVATOR_CallLiftEvent	u16	0	24	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x18d	SCRCMD_FIELD_GIMMICK_LIFT_ELEVATOR_CallElevatorEvent	u16	0	4	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x18e	SCRCMD_FIELD_GIMMICK_LIFT_CallEvent	u16	0	4	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x18f	SCRCMD_FIELD_GIMMICK_SWITCH_TOGGLE_StartSecondarySwitchEvent	u16	0	6	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x190	SCRCMD_FIELD_GIMMICK_BUTTON_STATES_CreateOneShotEventU16	u16	0	6	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x191	SCRCMD_FIELD_GIMMICK_SWITCH_TOGGLE_ReplacePlayerIfRequirementMet	u16	0	16	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x192	SCRCMD_PROC_Ov037Finish		0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x193	SCRCMD_FIELD_GIMMICK_PLATE_DOORS_StartDoorEvent	u16,u16	0	12	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x194	SCRCMD_FIELD_GIMMICK_ROTATING_ROOM_StartHopEvent	u16	0	12	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x195	SCRCMD_FIELD_GIMMICK_ROTATING_ROOM_StartRotateEvent	wv	0	2	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x196	SCRCMD_FIELD_GIMMICK_ROTATING_ROOM_StartLeverEvent	wv,wv	0	2	no-bwap	ov021/scrcmd_gimmick.c
+ja	0x197	SCRCMD_PROC_FLD_ObtainCGearAndCallCommResetEvent	wv	0	6	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x198	SCRCMD_ChangeSubscreenMode	wv	0	2	no-bwap	ov021/scrcmd_misc.c
+ja	0x199	SCRCMD_ResetSubscreenMode		0	2	no-bwap	ov021/scrcmd_misc.c
+ja	0x19a	SCRCMD_ShowOrClearInfoWindow	u16	0	6	no-bwap	ov021/scrcmd_misc.c
+ja	0x19b	SCRCMD_StartFld3dCi	u16	0	52	no-bwap	ov021/fld_wipe_3dobj.c
+ja	0x19c	SCRCMD_StartFld3dCiByVar	wv	0	28	no-bwap	ov021/fld_wipe_3dobj.c
+ja	0x19d	SCRCMD_RunFld3dCiMain	wv	0	4	no-bwap	ov021/fld_wipe_3dobj.c
+ja	0x19e	SCRCMD_PROC_FLD_CallOv056Event	wv	0	8	no-bwap	ov021/scrcmd_encount.c
+ja	0x19f	SCRCMD_PROC_FLD_SetCameraSettingFromFkDemoSlot	wv	0	8	no-bwap	ov021/scrcmd_encount.c
+ja	0x1a0	SCRCMD_PROC_FLD_StartFkDemoSubProc	wv	0	16	no-bwap	ov021/scrcmd_encount.c
+ja	0x1a1	PLEASURE_BOAT_ScrCmdCreate		0	2	no-bwap	ov021/pleasure_boat.c
+ja	0x1a2	PLEASURE_BOAT_ScrCmdDelete		0	2	no-bwap	ov021/pleasure_boat.c
+ja	0x1a3	PLEASURE_BOAT_ScrCmdGetStat	u16,wp	0	20	no-bwap	ov021/pleasure_boat.c
+ja	0x1a4	PLEASURE_BOAT_ScrCmdAddTime	u16,u16	0	4	no-bwap	ov021/pleasure_boat.c
+ja	0x1a5	SYMBOL_MAP_ScrCmdGetEventStateValue	wv,u16,wv,wp	0	48	no-bwap	ov010/symbol_map.c
+ja	0x1a6	PLEASURE_BOAT_ScrCmdSetPassengerInfo	wv,u16,u16,wv	0	2	no-bwap	ov021/pleasure_boat.c
+ja	0x1a7	SYMBOL_MAP_ScrCmdStartRecordTask	wp	0	2	no-bwap	ov010/symbol_map.c
+ja	0x1a8	PLEASURE_BOAT_ScrCmdLock		0	6	no-bwap	ov021/pleasure_boat.c
+ja	0x1a9	SCRCMD_SCREENEFFECTS_FadeInSlowAgain		0	150	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x1aa	SCRCMD_SCREENEFFECTS_FadeOutSlow		0	164	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x1ab	SCRCMD_SCREENEFFECTS_FadeInSlowAltScreens		0	8	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x1ac	SCRCMD_SCREENEFFECTS_FadeOutSlowAltScreens		0	0	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x1ad	SCRCMD_SCREENEFFECTS_WaitScriptEffect		0	354	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x1ae	SCRCMD_SCREENEFFECTS_FadeInSlow		0	6	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x1b0	SCRCMD_SCREENEFFECTS_StartFieldFadeIn		0	2	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x1b1	SCRCMD_SCREENEFFECTS_FadeInFast		0	22	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x1b2	SCRCMD_SCREENEFFECTS_FadeOutFast		0	32	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x1b3	SCRCMD_SCREENEFFECTS_FadeInFastAltScreens		0	2	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x1b4	SCRCMD_SCREENEFFECTS_FadeOutFastAltScreens		0	2	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x1b5	SCRCMD_FLD_BATTLE_RegisterAllowedSpecies	wv,wp	0	2	no-bwap	ov021/scrcmd_fld_battle.c
+ja	0x1b6	SCRCMD_FLD_BATTLE_CheckPartyRegulation	wv,wp	0	6	no-bwap	ov021/scrcmd_fld_battle.c
+ja	0x1b7	SCRCMD_PALPARK_CallFallEvent		0	2	no-bwap	ov021/scrcmd_palpark.c
+ja	0x1b8	SCRCMD_PROC_FLD_SpawnMovePokemonIfInactive	wv	0	4	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x1b9	FIELD_G3D_MAP_ScrCmdReadSaveByte	wv,wp	0	16	no-bwap	ov010/field_g3d_map_scr.c
+ja	0x1ba	SCRCMD_POKEMON_FLD_StartTradeEvent	wv,wv	0	12	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x1bb	SCRCMD_POKEMON_FLD_CheckTradeMon	wp,wv,wv	0	12	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x1bc	SCRCMD_PALPARK_CallPalParkProc		0	2	no-bwap	ov021/scrcmd_palpark.c
+ja	0x1bd	SCRCMD_PALPARK_GetSaveValue	u8,wp	0	2	no-bwap	ov021/scrcmd_palpark.c
+ja	0x1be	FIELD_WFBC_DATA_LOCAL_ScrCmdMarkFacingPerson		0	4	no-bwap	ov020/field_wfbc_data_local.c
+ja	0x1bf	FIELD_WFBC_DATA_LOCAL_ScrCmdCheckAndMarkFacingPerson		0	4	no-bwap	ov020/field_wfbc_data_local.c
+ja	0x1c0	FIELD_WFBC_DATA_LOCAL_ScrCmdGetWfbcValue	wv,wp	0	32	no-bwap	ov020/field_wfbc_data_local.c
+ja	0x1c1	FIELD_WFBC_DATA_LOCAL_ScrCmdSetFacingPersonParam	wv	0	2	no-bwap	ov020/field_wfbc_data_local.c
+ja	0x1c2	FIELD_WFBC_DATA_LOCAL_ScrCmdFindTargetPokemonInParty	wp,wp,wp	0	2	no-bwap	ov020/field_wfbc_data_local.c
+ja	0x1c3	FIELD_WFBC_DATA_LOCAL_ScrCmdAddPoints		0	2	no-bwap	ov020/field_wfbc_data_local.c
+ja	0x1c4	FIELD_WFBC_DATA_LOCAL_ScrCmdCallPersonTalkEvent		0	4	no-bwap	ov020/field_wfbc_data_local.c
+ja	0x1c5	FIELD_WFBC_DATA_LOCAL_ScrCmdGetFacingPersonMessageIndex	wp,wv	0	16	no-bwap	ov020/field_wfbc_data_local.c
+ja	0x1c6	SCRCMD_GIMMICK_BRIDGE_ResetSave		0	0	no-bwap	ov010/scrcmd_bridge_gimmick.c
+ja	0x1c7	SCRCMD_POKEMON_FLD_SetWarpTable	warp	0	28	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x1c8	SCRCMD_POKEMON_FLD_AddWarpMenuItems		0	2	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x1c9	SCRCMD_POKEMON_FLD_WarpToEntry	wv	0	2	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x1ca	SCRCMD_POKEMON_FLD_GetPokedexComplete	wp,wv	0	12	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x1cb	SCRCMD_POKEMON_FLD_GetPokedexRating	wv,wp,wp	0	12	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x1cc	SCRCMD_WORK_CmdEnableNationalDex		0	2	no-bwap	ov010/scrcmd_work.c
+ja	0x1cd	SCRCMD_WORK_CmdGetZukanNationalFlag	wp	0	4	no-bwap	ov010/scrcmd_work.c
+ja	0x1ce	SCRCMD_WORK_CmdSetZukanObtained		0	2	no-bwap	ov010/scrcmd_work.c
+ja	0x1cf	FLD_FACEUP_ScrCmdStart	u16,u16,u16	0	6	no-bwap	ov010/fld_faceup.c
+ja	0x1d0	FLD_FACEUP_ScrCmdWaitEnd		0	6	no-bwap	ov010/fld_faceup.c
+ja	0x1d1	FLD_FACEUP_ScrCmdPrepareField		0	20	no-bwap	ov010/fld_faceup.c
+ja	0x1d2	SCRCMD_POKEMON_FLD_GetMysteryEntryCount	wp	0	2	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x1d3	SCRCMD_POKEMON_FLD_RegisterBirthdayEntry	wv	0	2	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x1d4	SCRCMD_GetWifiHistoryCountryCount	wv,wp	0	4	no-bwap	ov021/scrcmd_wifi_history.c
+ja	0x1d5	SCRCMD_MarkPartnerCandidate	wv	0	2	no-bwap	ov021/scrcmd_wifi_history.c
+ja	0x1d6	SCRCMD_IsPartnerCandidateMarked	wv,wp	0	2	no-bwap	ov021/scrcmd_wifi_history.c
+ja	0x1d7	SCRCMD_SetWifiHistoryRatingLevel	wv	0	10	no-bwap	ov021/scrcmd_wifi_history.c
+ja	0x1d8	SCRCMD_FillPartnerCandidatesFromScript	wv,wv	0	4	no-bwap	ov021/scrcmd_wifi_history.c
+ja	0x1d9	SYMBOL_MAP_ScrCmdGetSyncBlockItem	u16,wp	0	10	no-bwap	ov010/symbol_map.c
+ja	0x1da	SYMBOL_MAP_ScrCmdGetSyncBlockHeader	wv,wp	0	10	no-bwap	ov010/symbol_map.c
+ja	0x1db	SCRCMD_GetPartnerGreetingMessageFromScript	wv,u16,wp	0	4	no-bwap	ov021/scrcmd_wifi_history.c
+ja	0x1dc	SYMBOL_MAP_ScrCmdStartPicker	wv,wp,wp,wp	0	4	no-bwap	ov010/symbol_map.c
+ja	0x1dd	SCRCMD_GetWifiHistoryEntryCount	wp	0	2	no-bwap	ov021/scrcmd_wifi_history.c
+ja	0x1de	SCRCMD_SetWifiHistoryGreetingSet	wv	0	2	no-bwap	ov021/scrcmd_wifi_history.c
+ja	0x1df	SCRCMD_GetWifiHistoryGreetingSet	wp	0	2	no-bwap	ov021/scrcmd_wifi_history.c
+ja	0x1e0	SCRCMD_POKEMON_FLD_GetTutorAvailability	wv,wp	0	6	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x1e1	SCRCMD_POKEMON_FLD_CheckMonTutorStatus	wv,wv,wp	0	6	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x1e2	SCRCMD_POKEMON_FLD_GetMonTutorMove	wv,wv,wp	0	4	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x1e3	SCRCMD_POKEMON_FLD_SelectTutorMon	wv,wp,wp	0	6	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x1e4	SCRCMD_PROC_GetRelearnableMoveCount	wp,wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x1e5	SCRCMD_PROC_CallMoveRelearn	wp,wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x1e6	SCRCMD_WORK_CmdSetBgEventGridPos	wv,wv,wv,wv	0	16	no-bwap	ov010/scrcmd_work.c
+ja	0x1e7	SCRCMD_WORK_CmdSetConnectGridPos	wv,wv,wv,wv	0	26	no-bwap	ov010/scrcmd_work.c
+ja	0x1e8	SCRCMD_WORK_CmdSetNpcGridPos	wv,wv,wv,wv,wv	0	30	no-bwap	ov010/scrcmd_work.c
+ja	0x1e9	SYMBOL_MAP_ScrCmdStartPmsInput	wv,wp,wp,wp	0	8	no-bwap	ov010/symbol_map.c
+ja	0x1ea	SCRCMD_POKEMON_FLD_HandleMysteryGift	wv,wp	0	24	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x1eb	SCRCMD_MUSICAL_WifiListCommand	wv,wp	0	14	no-bwap	ov010/scrcmd_musical.c
+ja	0x1ec	SCRCMD_PALPARK_SetBeacon	wv,wv	0	46	no-bwap	ov021/scrcmd_palpark.c
+ja	0x1ed	SCRCMD_PALPARK_ClearExpiredGPower	wp,wp	0	2	no-bwap	ov021/scrcmd_palpark.c
+ja	0x1ee	SCRCMD_PALPARK_CallGPowerFlashEvent		0	2	no-bwap	ov021/scrcmd_palpark.c
+ja	0x1ef	SCRCMD_NETWORK_CmdSetNpcEventPairFromTable	wv,wv,wv,wv	0	40	no-bwap	ov010/scrcmd_network.c
+ja	0x1f0	SCRCMD_NETWORK_CmdLoadNpcTable		0	24	no-bwap	ov010/scrcmd_network.c
+ja	0x1f1	SCRCMD_NETWORK_CmdFreeNpcTable		0	24	no-bwap	ov010/scrcmd_network.c
+ja	0x1f2	SCRCMD_NETWORK_CmdSetNpcEventFromTable	wv,wv,wv	0	70	no-bwap	ov010/scrcmd_network.c
+ja	0x1f3	SCRCMD_NETWORK_CmdSetNpcTripleFromTable	wv,wv,wv,wv,wv,wv	0	10	no-bwap	ov010/scrcmd_network.c
+ja	0x1f4	SCRCMD_NETWORK_CmdApplyTableEventKeys		0	4	no-bwap	ov010/scrcmd_network.c
+ja	0x1f5	SCRCMD_TRIALHOUSE_CreateWork		0	2	no-bwap	ov010/scrcmd_trialhouse.c
+ja	0x1f6	SCRCMD_TRIALHOUSE_FreeWork		0	2	no-bwap	ov010/scrcmd_trialhouse.c
+ja	0x1f7	SCRCMD_TRIALHOUSE_SetBattleMode	wv	0	2	no-bwap	ov010/scrcmd_trialhouse.c
+ja	0x1f8	SCRCMD_TRIALHOUSE_StartPartySelect	wv,wv,wp	0	2	no-bwap	ov010/scrcmd_trialhouse.c
+ja	0x1f9	SCRCMD_TRIALHOUSE_LoadRecord	wv,wp	0	2	no-bwap	ov010/scrcmd_trialhouse.c
+ja	0x1fa	SCRCMD_TRIALHOUSE_StartTrainerMessage	wv,wv	0	2	no-bwap	ov010/scrcmd_trialhouse.c
+ja	0x1fb	SCRCMD_TRIALHOUSE_StartBattle		0	2	no-bwap	ov010/scrcmd_trialhouse.c
+ja	0x1fc	SCRCMD_TRIALHOUSE_SetRecordSource	wv	0	2	no-bwap	ov010/scrcmd_trialhouse.c
+ja	0x1fd	SCRCMD_TRIALHOUSE_SetRank	wv	0	0	no-bwap	ov010/scrcmd_trialhouse.c
+ja	0x1fe	SCRCMD_TRIALHOUSE_GetRank	wp	0	4	no-bwap	ov010/scrcmd_trialhouse.c
+ja	0x1ff	SCRCMD_TRIALHOUSE_StartDownload	wp	0	2	no-bwap	ov010/scrcmd_trialhouse.c
+ja	0x200	SCRCMD_TRIALHOUSE_GetRankAndScore	wp,wp	0	2	no-bwap	ov010/scrcmd_trialhouse.c
+ja	0x201	SCRCMD_TRIALHOUSE_GetSaveState	wp	0	6	no-bwap	ov010/scrcmd_trialhouse.c
+ja	0x202	SCRCMD_TRIALHOUSE_StartSaveEvent	wv	0	2	no-bwap	ov010/scrcmd_trialhouse.c
+ja	0x203	SCRCMD_TRIALHOUSE_StartAward	wv,wv	0	4	no-bwap	ov010/scrcmd_trialhouse.c
+ja	0x204	SCRCMD_TRIALHOUSE_GetClearFlags	wp	0	2	no-bwap	ov010/scrcmd_trialhouse.c
+ja	0x205	SCRCMD_CheckWifiListFlags	wv,wv,wv,wp	0	4	no-bwap	ov021/scrcmd_misc.c
+ja	0x206	SCRCMD_WifiListOperation	wv,wv,wv,wp	0	10	no-bwap	ov021/scrcmd_misc.c
+ja	0x207	SCRCMD_SetWifiFriendNameWord	wv,wv	0	10	no-bwap	ov021/scrcmd_misc.c
+ja	0x208	SCRCMD_CheckPmsWordPair	wv,wv,wv,wp	0	4	no-bwap	ov021/scrcmd_misc.c
+ja	0x209	SCRCMD_GetBirthdayMessageIds	wv,wp,wp,wp	0	2	no-bwap	ov021/scrcmd_misc.c
+ja	0x20a	SCRCMD_POKEMON_FLD_CheckTableItemInBag	wv,wp	0	8	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x20b	SCRCMD_POKEMON_FLD_LookupTableValue	wv,wv,wp	0	10	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x20c	SCRCMD_RESEARCH_CmdStartMission	wv,wv,wv,wv	0	2	no-bwap	ov010/scrcmd_research.c
+ja	0x20d	SCRCMD_RESEARCH_CmdClearMission		0	6	no-bwap	ov010/scrcmd_research.c
+ja	0x20e	SCRCMD_RESEARCH_CmdGetMissionIndex	wp	0	20	no-bwap	ov010/scrcmd_research.c
+ja	0x20f	SCRCMD_RESEARCH_CmdGetMissionTargets	wp,wp,wp	0	2	no-bwap	ov010/scrcmd_research.c
+ja	0x210	SCRCMD_RESEARCH_CmdGetTopTallyEntry	wv,wp	0	6	no-bwap	ov010/scrcmd_research.c
+ja	0x211	SCRCMD_RESEARCH_CmdGetMissionStatus	wv,wp	0	4	no-bwap	ov010/scrcmd_research.c
+ja	0x212	SCRCMD_RESEARCH_CmdGetMissionProgress	wp	0	2	no-bwap	ov010/scrcmd_research.c
+ja	0x213	SCRCMD_RESEARCH_CmdGetMissionElapsedHours	wp	0	0	no-bwap	ov010/scrcmd_research.c
+ja	0x214	SCRCMD_PROC_FLD_StartNameInMode5	wp	0	2	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x215	SCRCMD_PROC_FLD_StartNameInMode6	wp	0	2	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x216	SCRCMD_BufferBeaconThanksCount	u8	0	0	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x217	SCRCMD_BufferBeaconGreetCount	u8	0	0	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x218	SCRCMD_RESEARCH_CmdSetSurveyAnswer	wv,wv	0	22	no-bwap	ov010/scrcmd_research.c
+ja	0x219	SCRCMD_RESEARCH_CmdStartResearchReport		0	2	no-bwap	ov010/scrcmd_research.c
+ja	0x21a	SCRCMD_RESEARCH_CmdGetResearchRank	wp	0	30	no-bwap	ov010/scrcmd_research.c
+ja	0x21b	SCRCMD_RESEARCH_CmdRaiseResearchRank		0	4	no-bwap	ov010/scrcmd_research.c
+ja	0x21c	SCRCMD_EVENT_MON_CmdFindEventMonInParty	wv,wv,wp,wp	0	34	no-bwap	ov010/scrcmd_event_mon.c
+ja	0x21d	SCRCMD_EVENT_MON_CmdStartSpPokeGimmickTask	wv,wv,wv,wv,wv,wv	0	14	no-bwap	ov010/scrcmd_event_mon.c
+ja	0x21e	SCRCMD_EVENT_MON_CmdMoveSpPokeGimmick	wv,wv,wv,wv	0	14	no-bwap	ov010/scrcmd_event_mon.c
+ja	0x21f	SCRCMD_EVENT_MON_CmdStartSpPokeGimmickStepA	wv	0	14	no-bwap	ov010/scrcmd_event_mon.c
+ja	0x220	SCRCMD_EVENT_MON_CmdStartSpPokeGimmickStepB	wv	0	14	no-bwap	ov010/scrcmd_event_mon.c
+ja	0x221	SCRCMD_MMDL_StartRise	wv,wv,wv	0	4	no-bwap	ov010/scrcmd_mmdl.c
+ja	0x222	SCRCMD_MMDL_StartOrbit	wv	0	2	no-bwap	ov010/scrcmd_mmdl.c
+ja	0x223	SCRCMD_ShowPokeIconWindow	wv,wv,wv,wv	0	2	no-bwap	ov021/scrcmd_misc.c
+ja	0x224	SCRCMD_EVENT_MON_CmdClearEventMonFlag	wv,wv	0	4	no-bwap	ov010/scrcmd_event_mon.c
+ja	0x225	SCRCMD_CheckBeaconTrainerKey	wv,wp	0	6	no-bwap	ov021/scrcmd_misc.c
+ja	0x226	SCRCMD_SYMBOL_StartEntryEvent	wv	0	14	no-bwap	ov010/scrcmd_symbol.c
+ja	0x227	SCRCMD_SYMBOL_GetState	wv,wp	0	8	no-bwap	ov010/scrcmd_symbol.c
+ja	0x228	SCRCMD_SYMBOL_MoveObjectEntryToPairedBand	wv,wp	0	4	no-bwap	ov010/scrcmd_symbol.c
+ja	0x229	SCRCMD_SYMBOL_SetObjectPokemonWord	wv,wv	0	14	no-bwap	ov010/scrcmd_symbol.c
+ja	0x22a	SCRCMD_SYMBOL_ApplyLinkRecord		0	2	no-bwap	ov010/scrcmd_symbol.c
+ja	0x22b	SCRCMD_SYMBOL_StartViewEvent	wv,wp	0	2	no-bwap	ov010/scrcmd_symbol.c
+ja	0x22c	SCRCMD_SYMBOL_SelectObjectEntry	wv	0	2	no-bwap	ov010/scrcmd_symbol.c
+ja	0x22d	SCRCMD_PROC_FLD_StoreRandomUniqueEntry	wp	0	4	no-bwap	ov021/scrcmd_encount.c
+ja	0x22e	SCRCMD_WORK_CmdLookupTable	wv,wp	0	2	no-bwap	ov010/scrcmd_work.c
+ja	0x22f	SCRCMD_PROC_LookupTableValue	wv,wp	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x230	SCRCMD_POKEMON_FLD_GetDailyGift	wv,wp	0	4	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x231	SCRCMD_POKEMON_FLD_GetDailyGiftIndex	wp	0	2	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x232	SCRCMD_POKEMON_FLD_GetMonTypeForTm	wp,wv	0	2	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x233	SCRCMD_POKEMON_FLD_GetMonIvStat	wv,wv,wp	0	16	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x234	SCRCMD_POKEMON_FLD_GetRandomBagPocketValue	wp	0	2	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x235	SCRCMD_StartCountOtherOtIdsTask	wp	0	2	no-bwap	ov021/scrcmd_otid.c
+ja	0x236	SCRCMD_AddTrainerRecordValue	wv,wv	0	14	no-bwap	ov021/scrcmd_misc.c
+ja	0x237	SCRCMD_GetTrainerRecordValue	wv,wp	0	4	no-bwap	ov021/scrcmd_misc.c
+ja	0x238	NAMEIN_SETUP_ScrCmdSetFieldSaveFlag		0	8	no-bwap	ov010/namein_setup.c
+ja	0x239	SCRCMD_GetNpcGreetingMessage	wv,wp	0	2	no-bwap	ov021/scrcmd_misc.c
+ja	0x23a	SCRCMD_StartSwapNpcEvent	wv,wv	0	2	no-bwap	ov021/scrcmd_misc.c
+ja	0x23b	SCRCMD_StartArcPlayerEffect		0	2	no-bwap	ov021/scrcmd_misc.c
+ja	0x23c	SCRCMD_StartFld3dCiByTable	wv	0	4	no-bwap	ov021/fld_wipe_3dobj.c
+ja	0x23d	SCRCMD_FLDMMDL_SetMmdlZoneDeleteOff	wv	0	4	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x23e	SCRCMD_POKEMON_FLD_RegisterStoredName	wv,wv	0	8	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x23f	SCRCMD_MSGWIN_CmdBgWinMsgFont	u16,u16	0	78	no-bwap	ov021/scrcmd_msgwin.c
+ja	0x240	SCRCMD_PROC_FLD_CallGameManual	wp	0	2	no-bwap	ov021/scrcmd_proc_fld.c
+ja	0x241	SCRCMD_POKEMON_FLD_ControlLegendMon	wv,wp	0	8	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x242	SCRCMD_HasPlayerLanguage	wp	0	4	no-bwap	ov021/scrcmd_wifi_history.c
+ja	0x243	SCRCMD_FLDMMDL_StartMmdlDropIn	wv,wv,wv,wv	0	2	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x244	SCRCMD_FadeOutPlayBgmWithFade	u16,u16	0	28	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x245	SCRCMD_POKEMON_FLD_RegisterTableValueNumber	wv,wv,wv,wv	0	10	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x246	SCRCMD_POKEMON_FLD_AddTableValueToPoints	wv,wv	0	10	no-bwap	ov021/scrcmd_pokemon_fld.c
+ja	0x247	SCRCMD_ResumeZoneBgmWithFade	u16	0	10	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x248	SCRCMD_FLDMMDL_CheckPlayerFormModel	wp	0	6	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x249	SCRCMD_PlayPerapVoice	wv,wv	0	4	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x24a	TRCARD_SYS_ScrCmdSetRecordFlag36		0	2	no-bwap	ov010/trcard_sys.c
+ja	0x24b	TRCARD_SYS_ScrCmdStartFieldProc		0	2	no-bwap	ov010/trcard_sys.c
+ja	0x24c	TRCARD_SYS_ScrCmdRunScriptTask		0	2	no-bwap	ov010/trcard_sys.c
+ja	0x24d	SCRCMD_PROC_GetDaycareMonGenderKindIfFirst	wp,wv,wv	0	2	no-bwap	ov010/scrcmd_proc.c
+ja	0x24e	SCRCMD_SCREENEFFECTS_ShowPlaceName		0	16	no-bwap	ov021/scrcmd_screeneffects.c
+ja	0x24f	SCRCMD_FadeBgmVolume	wv,wv	0	6	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x250	SCRCMD_RestoreBgmVolume	wv	0	6	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x251	SCRCMD_StartArcEffect	wv,wv,wv,wv,wv,wv	0	2	no-bwap	ov021/scrcmd_misc.c
+ja	0x252	SCRCMD_ShowArcModelAt	wv,wv,wv	0	2	no-bwap	ov021/scrcmd_misc.c
+ja	0x253	SCRCMD_WaitArcEffectEnd		0	2	no-bwap	ov021/scrcmd_misc.c
+ja	0x254	SCRCMD_WaitArcEffectPeak		0	2	no-bwap	ov021/scrcmd_misc.c
+ja	0x255	SCRCMD_FadeOutPlayFixedBgm	u16	0	2	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x256	SCRCMD_WarpToRailLocationWithTransition	u16,u16,u16,u16,u16	0	2	no-bwap	ov021/scrcmd_wordset_warp.c
+ja	0x257	SCRCMD_FLDMMDL_StartPlayerOffsetTaskAgain	wv,wv,wv,wv	0	4	no-bwap	ov021/scrcmd_fldmmdl.c
+ja	0x258	SCRCMD_NETWORK_PickSixDistinctRandom	wp,wp,wp,wp,wp,wp	0	10	no-bwap	ov010/scrcmd_network.c
+ja	0x259	SCRCMD_NETWORK_CmdGetAlwaysNet	wp	0	2	no-bwap	ov010/scrcmd_network.c
+ja	0x25a	SCRCMD_NETWORK_CmdClearAlwaysNet		0	8	no-bwap	ov010/scrcmd_network.c
+ja	0x25b	SCRCMD_ResumeBgmSlots		0	16	no-bwap	ov021/scrcmd_trainer_audio_item.c
+ja	0x25c	SCRCMD_FIELD_GIMMICK_CART_LANES_TransferSound		0	2	no-bwap	ov021/scrcmd_gimmick.c

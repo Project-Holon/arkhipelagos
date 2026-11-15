@@ -1,0 +1,22 @@
+# build output and intermediate files
+target/
+out/
+*.wasm
+mod.bw
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# machine-local paths to the cartridges
+tools/carts.local.json
+
+# never commit game data: ROMs, extracted files, game binaries
+*.nds
+*.srl
+*.sav
+*.narc
+*.bin
+extract*/
+overlays*/
+data/game/

@@ -1,0 +1,7382 @@
+{
+ "_source": "PokemonBWAP 0.4.5 data (BlastSlimey and contributors, MIT), converted by tools/bwap2data.py",
+ "locations": [
+  {
+   "id": 85216,
+   "name": "Route 1 - West item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1230,
+   "region": "Route 1 West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83824,
+   "name": "Route 1 - South item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1143,
+   "region": "Route 1 West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85056,
+   "name": "Route 17 - South east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1220,
+   "region": "Route 17 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85072,
+   "name": "Route 17 - South west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1221,
+   "region": "Route 17 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85136,
+   "name": "Route 18 - South item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1225,
+   "region": "Route 18",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_strength"
+   }
+  },
+  {
+   "id": 85152,
+   "name": "Route 18 - West item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1226,
+   "region": "Route 18",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85120,
+   "name": "Route 18 - Ravine item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1224,
+   "region": "Route 18",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_strength"
+   }
+  },
+  {
+   "id": 87392,
+   "name": "Route 18 - East item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1366,
+   "region": "Route 18 Coast",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85104,
+   "name": "Route 18 - North item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1223,
+   "region": "Route 18 Coast",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87808,
+   "name": "P2 Laboratory - Item inside",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1392,
+   "region": "P2 Laboratory",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85088,
+   "name": "P2 Laboratory - Item outside",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1222,
+   "region": "P2 Laboratory Outside",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83248,
+   "name": "Route 2 - South west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1107,
+   "region": "Route 2",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83361,
+   "name": "Route 2 - East item #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1114,
+   "region": "Route 2",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83234,
+   "name": "Route 2 - East item #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1106,
+   "region": "Route 2",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83264,
+   "name": "Route 2 - Item behind boulder",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1108,
+   "region": "Route 2",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_strength"
+   }
+  },
+  {
+   "id": 83281,
+   "name": "Route 2 - Item behind cut tree #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1109,
+   "region": "Route 2",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_cut"
+   }
+  },
+  {
+   "id": 83298,
+   "name": "Route 2 - Item behind cut tree #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1110,
+   "region": "Route 2",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_cut"
+   }
+  },
+  {
+   "id": 87328,
+   "name": "Striaton City - South item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1362,
+   "region": "Striaton City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85632,
+   "name": "Striaton City - Garden item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1256,
+   "region": "Striaton City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87888,
+   "name": "Dreamyard - Item near traffic cone",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1397,
+   "region": "Dreamyard Entrance",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83888,
+   "name": "Dreamyard - North west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1147,
+   "region": "Dreamyard North West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83312,
+   "name": "Dreamyard - Item behind broken wall",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1111,
+   "region": "Dreamyard North West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83344,
+   "name": "Dreamyard - 2F east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1113,
+   "region": "Dreamyard North West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83328,
+   "name": "Dreamyard - 2F west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1112,
+   "region": "Dreamyard North West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83872,
+   "name": "Dreamyard - Item near furnace",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1146,
+   "region": "Dreamyard South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83904,
+   "name": "Dreamyard - South west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1148,
+   "region": "Dreamyard South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 88032,
+   "name": "Dreamyard Basement - North west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1406,
+   "region": "Dreamyard Basement North West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 88048,
+   "name": "Dreamyard Basement - South west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1407,
+   "region": "Dreamyard Basement",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83424,
+   "name": "Route 3 - North west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1118,
+   "region": "Route 3 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83856,
+   "name": "Route 3 - North item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1145,
+   "region": "Route 3 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83840,
+   "name": "Route 3 - Center item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1144,
+   "region": "Route 3 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83456,
+   "name": "Route 3 - South item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1120,
+   "region": "Route 3 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87904,
+   "name": "Route 3 - South west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1398,
+   "region": "Route 3 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83440,
+   "name": "Route 3 - Item across water",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1119,
+   "region": "Route 3 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 83921,
+   "name": "Route 3 - West item #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1149,
+   "region": "Route 3 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 83938,
+   "name": "Route 3 - West item #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1150,
+   "region": "Route 3 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 85344,
+   "name": "Wellspring Cave - 1F north east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1238,
+   "region": "Wellspring Cave Entrance",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85376,
+   "name": "Wellspring Cave - 1F west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1240,
+   "region": "Wellspring Cave Inner",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85360,
+   "name": "Wellspring Cave - 1F south item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1239,
+   "region": "Wellspring Cave Inner",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85392,
+   "name": "Wellspring Cave - B1F north item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1241,
+   "region": "Wellspring Cave B1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "can_use_surf"
+    }
+   }
+  },
+  {
+   "id": 85456,
+   "name": "Wellspring Cave - B1F south item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1245,
+   "region": "Wellspring Cave B1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "can_use_surf"
+    }
+   }
+  },
+  {
+   "id": 85424,
+   "name": "Wellspring Cave - B1F item east of trainers",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1243,
+   "region": "Wellspring Cave B1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85440,
+   "name": "Wellspring Cave - B1F item south of trainers",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1244,
+   "region": "Wellspring Cave B1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83984,
+   "name": "Pinwheel Forest - Outside south west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1153,
+   "region": "Pinwheel Forest Outside",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84000,
+   "name": "Pinwheel Forest - Outside north item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1154,
+   "region": "Pinwheel Forest Outside",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86784,
+   "name": "Pinwheel Forest - Outside item near railway",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1328,
+   "region": "Pinwheel Forest Outside",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83968,
+   "name": "Pinwheel Forest - Outside south item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1152,
+   "region": "Pinwheel Forest Outside",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83952,
+   "name": "Pinwheel Forest - Outside item near ledge",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1151,
+   "region": "Pinwheel Forest Outside",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83617,
+   "name": "Pinwheel Forest - South item #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1130,
+   "region": "Pinwheel Forest West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87922,
+   "name": "Pinwheel Forest - South item #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1399,
+   "region": "Pinwheel Forest West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84960,
+   "name": "Pinwheel Forest - West item inside tree stump",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1214,
+   "region": "Pinwheel Forest West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83600,
+   "name": "Pinwheel Forest - North west item inside tree stump",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1129,
+   "region": "Pinwheel Forest West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83633,
+   "name": "Pinwheel Forest - Item near water #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1131,
+   "region": "Pinwheel Forest West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83586,
+   "name": "Pinwheel Forest - Item near water #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1128,
+   "region": "Pinwheel Forest East",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 85488,
+   "name": "Pinwheel Forest - North item near ledge",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1247,
+   "region": "Pinwheel Forest West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85472,
+   "name": "Pinwheel Forest - East item inside tree stump",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1246,
+   "region": "Pinwheel Forest East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83648,
+   "name": "Pinwheel Forest - South east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1132,
+   "region": "Pinwheel Forest East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84912,
+   "name": "Battle Company - 47F item in lower-left corner",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1211,
+   "region": "Battle Company 47F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87664,
+   "name": "Battle Company - 55F center item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1383,
+   "region": "Battle Company 55F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72512,
+   "name": "Castelia City - Item in Plasma hideout",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 436,
+   "region": "Castelia City Plasma Hideout 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_confronted_plasma_castelia"
+    }
+   }
+  },
+  {
+   "id": 84016,
+   "name": "Route 4 - South item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1155,
+   "region": "Route 4 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84064,
+   "name": "Route 4 - Item south west of parasol lady",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1158,
+   "region": "Route 4 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85504,
+   "name": "Route 4 - Item north east of parasol lady",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1248,
+   "region": "Route 4 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85536,
+   "name": "Route 4 - North west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1250,
+   "region": "Route 4 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84096,
+   "name": "Route 4 - South east item in sandy area",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1160,
+   "region": "Route 4 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84080,
+   "name": "Route 4 - South west item in sandy area",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1159,
+   "region": "Route 4 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83488,
+   "name": "Route 4 - North east item in sandy area",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1122,
+   "region": "Route 4 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85553,
+   "name": "Desert Resort - Sandy area item #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1251,
+   "region": "Desert Resort",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84114,
+   "name": "Desert Resort - Sandy area item #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1161,
+   "region": "Desert Resort",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84147,
+   "name": "Desert Resort - Sandy area item #3",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1163,
+   "region": "Desert Resort",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84128,
+   "name": "Desert Resort - South west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1162,
+   "region": "Desert Resort",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85568,
+   "name": "Desert Resort - Even more south west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1252,
+   "region": "Desert Resort",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83664,
+   "name": "Desert Resort - North west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1133,
+   "region": "Desert Resort",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83680,
+   "name": "Desert Resort - Item between Relic Castle entrances",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1134,
+   "region": "Desert Resort",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84304,
+   "name": "Relic Castle - 1F towerside item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1173,
+   "region": "Relic Castle Towerside 1F East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83472,
+   "name": "Relic Castle - B1F castleside item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1121,
+   "region": "Relic Castle Castleside B1F North",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84033,
+   "name": "Relic Castle - B2F castleside item #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1156,
+   "region": "Relic Castle Castleside B2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84162,
+   "name": "Relic Castle - B2F castleside item #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1164,
+   "region": "Relic Castle Castleside B2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84609,
+   "name": "Relic Castle - B3F castleside item #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1192,
+   "region": "Relic Castle Castleside B3F South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84178,
+   "name": "Relic Castle - B3F castleside item #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1165,
+   "region": "Relic Castle Castleside B3F South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84192,
+   "name": "Relic Castle - B4F castleside item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1166,
+   "region": "Relic Castle Castleside B4F East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84048,
+   "name": "Nimbasa City - Item near ferris wheel",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1157,
+   "region": "Nimbasa City Park",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83408,
+   "name": "Route 5 - South west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1117,
+   "region": "Route 5",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83392,
+   "name": "Route 5 - North west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1116,
+   "region": "Route 5",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85520,
+   "name": "Route 5 - North east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1249,
+   "region": "Route 5",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83376,
+   "name": "Route 5 - Item near ledge",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1115,
+   "region": "Route 5",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85232,
+   "name": "Driftveil City - Item in market",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1231,
+   "region": "Driftveil Market Behind Counter",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85248,
+   "name": "Driftveil City - North west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1232,
+   "region": "Driftveil City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85264,
+   "name": "Driftveil City - Item near lighthouse",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1233,
+   "region": "Driftveil City",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 84640,
+   "name": "Cold Storage - East item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1194,
+   "region": "Cold Storage",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84224,
+   "name": "Cold Storage - West item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1168,
+   "region": "Cold Storage",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84624,
+   "name": "Cold Storage - Center item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1193,
+   "region": "Cold Storage",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85584,
+   "name": "Cold Storage Building - Item near entrance, up the stairs",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1253,
+   "region": "Cold Storage Building",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84208,
+   "name": "Cold Storage Building - Item on first ice field",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1167,
+   "region": "Cold Storage Building",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83696,
+   "name": "Cold Storage Building - South east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1135,
+   "region": "Cold Storage Building",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83712,
+   "name": "Cold Storage Building - North east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1136,
+   "region": "Cold Storage Building",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87936,
+   "name": "Cold Storage Building - Item in container",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1400,
+   "region": "Cold Storage Container",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84272,
+   "name": "Route 6 - Item next to Season Research Lab",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1171,
+   "region": "Route 6",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85280,
+   "name": "Route 6 - South item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1234,
+   "region": "Route 6",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 84256,
+   "name": "Route 6 - North east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1170,
+   "region": "Route 6",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 85296,
+   "name": "Route 6 - Item south of Season Research Lab",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1235,
+   "region": "Route 6",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84240,
+   "name": "Route 6 - West item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1169,
+   "region": "Route 6",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85616,
+   "name": "Mistralton Cave - 1F north west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1255,
+   "region": "Mistralton Cave 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85600,
+   "name": "Mistralton Cave - 1F north east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1254,
+   "region": "Mistralton Cave 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85648,
+   "name": "Mistralton Cave - 2F north west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1257,
+   "region": "Mistralton Cave 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85664,
+   "name": "Mistralton Cave - 2F item near stairs to 3F",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1258,
+   "region": "Mistralton Cave 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85680,
+   "name": "Mistralton Cave - 2F south item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1259,
+   "region": "Mistralton Cave 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85712,
+   "name": "Guidance Chamber - South west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1261,
+   "region": "Guidance Chamber",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85696,
+   "name": "Guidance Chamber - North east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1260,
+   "region": "Guidance Chamber",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85728,
+   "name": "Guidance Chamber - North west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1262,
+   "region": "Guidance Chamber",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87953,
+   "name": "Chargestone Cave - 1F north west item #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1401,
+   "region": "Chargestone Cave 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83746,
+   "name": "Chargestone Cave - 1F north west item #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1138,
+   "region": "Chargestone Cave 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83731,
+   "name": "Chargestone Cave - 1F north west item #3",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1137,
+   "region": "Chargestone Cave 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83776,
+   "name": "Chargestone Cave - 1F north east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1140,
+   "region": "Chargestone Cave 1F North East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87969,
+   "name": "Chargestone Cave - 1F south east item #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1402,
+   "region": "Chargestone Cave 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83762,
+   "name": "Chargestone Cave - 1F south east item #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1139,
+   "region": "Chargestone Cave 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83792,
+   "name": "Chargestone Cave - B1F north item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1141,
+   "region": "Chargestone Cave B1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84288,
+   "name": "Chargestone Cave - B1F center item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1172,
+   "region": "Chargestone Cave B1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83808,
+   "name": "Chargestone Cave - B2F north east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1142,
+   "region": "Chargestone Cave B2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87984,
+   "name": "Chargestone Cave - B2F south east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1403,
+   "region": "Chargestone Cave B2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 88000,
+   "name": "Chargestone Cave - B2F south west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1404,
+   "region": "Chargestone Cave B2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 68432,
+   "name": "Mistralton City - Appearing item at south end of runway",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 181,
+   "region": "Mistralton City",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_talked_to_kids_mistralton"
+    }
+   }
+  },
+  {
+   "id": 85744,
+   "name": "Mistralton City - Item near south plane",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1263,
+   "region": "Mistralton City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84320,
+   "name": "Route 7 - South item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1174,
+   "region": "Route 7",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84336,
+   "name": "Route 7 - Item south of Celestial Tower",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1175,
+   "region": "Route 7",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84368,
+   "name": "Route 7 - Item south east of Celestial Tower",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1177,
+   "region": "Route 7",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84352,
+   "name": "Route 7 - East item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1176,
+   "region": "Route 7",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85168,
+   "name": "Celestial Tower - 2F left item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1227,
+   "region": "Celestial Tower 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85184,
+   "name": "Celestial Tower - 2F right item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1228,
+   "region": "Celestial Tower 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85200,
+   "name": "Celestial Tower - 3F item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1229,
+   "region": "Celestial Tower 3F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85760,
+   "name": "Celestial Tower - 4F left item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1264,
+   "region": "Celestial Tower 4F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85776,
+   "name": "Celestial Tower - 4F right item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1265,
+   "region": "Celestial Tower 4F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86096,
+   "name": "Twist Mountain - Main floor north west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1285,
+   "region": "Twist Mountain Outside 3F West Footbridge",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84384,
+   "name": "Twist Mountain - Main floor south item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1178,
+   "region": "Twist Mountain Outside 3F West Footbridge",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84656,
+   "name": "Twist Mountain - Main floor west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1195,
+   "region": "Twist Mountain Outside 2F South Footbridge",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84432,
+   "name": "Twist Mountain - Main floor east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1181,
+   "region": "Twist Mountain Outside 2F South Footbridge",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84400,
+   "name": "Twist Mountain - Upper floor north east cave item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1179,
+   "region": "Twist Mountain 3F North East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85313,
+   "name": "Twist Mountain - Middle floor west cave item #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1236,
+   "region": "Twist Mountain 2F South West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84418,
+   "name": "Twist Mountain - Middle floor west cave item #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1180,
+   "region": "Twist Mountain 2F South West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84464,
+   "name": "Twist Mountain - Item near ice rock",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1183,
+   "region": "Twist Mountain Ice Cave",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84480,
+   "name": "Dragonspiral Tower - Outside item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1184,
+   "region": "Dragonspiral Tower Outside East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85328,
+   "name": "Dragonspiral Tower - 2F north east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1237,
+   "region": "Dragonspiral Tower 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85856,
+   "name": "Dragonspiral Tower - 2F item on pillar",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1270,
+   "region": "Dragonspiral Tower 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85968,
+   "name": "Dragonspiral Tower - 3F item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1277,
+   "region": "Dragonspiral Tower 3F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 88112,
+   "name": "Dragonspiral Tower - 4F item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1411,
+   "region": "Dragonspiral Tower 4F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86017,
+   "name": "Dragonspiral Tower - 5F item #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1280,
+   "region": "Dragonspiral Tower 5F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86002,
+   "name": "Dragonspiral Tower - 5F item #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1279,
+   "region": "Dragonspiral Tower 5F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85939,
+   "name": "Dragonspiral Tower - 5F item #3",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1275,
+   "region": "Dragonspiral Tower 5F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85008,
+   "name": "Dragonspiral Tower - 6F item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1217,
+   "region": "Dragonspiral Tower 6F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 88064,
+   "name": "Route 8 - East item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1408,
+   "region": "Route 8 North East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84512,
+   "name": "Route 8 - Center item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1186,
+   "region": "Route 8",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84496,
+   "name": "Route 8 - North west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1185,
+   "region": "Route 8",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85824,
+   "name": "Route 8 - Item near northern lake",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1268,
+   "region": "Route 8",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86512,
+   "name": "Moor of Icirrus - Item near northern lake",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1311,
+   "region": "Moor of Icirrus",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "any": [
+     {
+      "rule": "can_use_surf"
+     },
+     {
+      "rule": "can_set_other_than_winter"
+     }
+    ]
+   }
+  },
+  {
+   "id": 86560,
+   "name": "Moor of Icirrus - North east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1314,
+   "region": "Moor of Icirrus",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86577,
+   "name": "Moor of Icirrus - Item behind boulder #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1315,
+   "region": "Moor of Icirrus West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86450,
+   "name": "Moor of Icirrus - Item behind boulder #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1307,
+   "region": "Moor of Icirrus West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84529,
+   "name": "Route 9 - Item near Challenger's Cave #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1187,
+   "region": "Route 9",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84546,
+   "name": "Route 9 - Item near Challenger's Cave #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1188,
+   "region": "Route 9",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86688,
+   "name": "Shopping Mall Nine - Item in storage room",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1322,
+   "region": "Shopping Mall Nine Back Room",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85872,
+   "name": "Challenger's Cave - B1F north item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1271,
+   "region": "Challenger's Cave B1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85840,
+   "name": "Challenger's Cave - B1F south item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1269,
+   "region": "Challenger's Cave B1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85905,
+   "name": "Challenger's Cave - B2F item near stairs #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1273,
+   "region": "Challenger's Cave B2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85890,
+   "name": "Challenger's Cave - B2F item near stairs #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1272,
+   "region": "Challenger's Cave B2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85920,
+   "name": "Challenger's Cave - B2F item on island",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1274,
+   "region": "Challenger's Cave B2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85952,
+   "name": "Challenger's Cave - B2F item near eastern ledge",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1276,
+   "region": "Challenger's Cave B2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85984,
+   "name": "Challenger's Cave - B2F south east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1278,
+   "region": "Challenger's Cave B2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85040,
+   "name": "Route 16 - Item near Lostlorn Forest entrance",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1219,
+   "region": "Route 16",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_cut"
+   }
+  },
+  {
+   "id": 87824,
+   "name": "Route 16 - Item near eastern gate",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1393,
+   "region": "Route 16 Behind Boulder",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85024,
+   "name": "Route 16 - Item near dark grass",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1218,
+   "region": "Route 16 Behind Boulder",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87792,
+   "name": "Lostlorn Forest - Item in tree stump",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1391,
+   "region": "Lostlorn Forest",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85408,
+   "name": "Lostlorn Forest - Item in dark grass",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1242,
+   "region": "Lostlorn Forest Upper Platform",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84976,
+   "name": "Route 15 - South east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1215,
+   "region": "Route 15",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_strength"
+   }
+  },
+  {
+   "id": 84992,
+   "name": "Route 15 - Item in dark grass",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1216,
+   "region": "Route 15",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_strength"
+   }
+  },
+  {
+   "id": 84944,
+   "name": "Route 14 - Item near dark grass",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1213,
+   "region": "Route 14",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 84928,
+   "name": "Route 14 - North item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1212,
+   "region": "Route 14",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 87712,
+   "name": "Abundant Shrine - South west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1386,
+   "region": "Abundant Shrine",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87728,
+   "name": "Abundant Shrine - Item near ledge",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1387,
+   "region": "Abundant Shrine",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87760,
+   "name": "Abundant Shrine - East item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1389,
+   "region": "Abundant Shrine",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87648,
+   "name": "Abundant Shrine - North east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1382,
+   "region": "Abundant Shrine",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "can_use_surf"
+    }
+   }
+  },
+  {
+   "id": 87680,
+   "name": "Abundant Shrine - Center item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1384,
+   "region": "Abundant Shrine",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86608,
+   "name": "Undella Town - Behind the hedges of The Riches' Mansion",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1317,
+   "region": "Undella Town",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84848,
+   "name": "Route 13 - Item near northern ledges",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1207,
+   "region": "Route 13 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_cut"
+   }
+  },
+  {
+   "id": 84736,
+   "name": "Route 13 - Item near stairs to Giant Chasm",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1200,
+   "region": "Route 13 North East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84881,
+   "name": "Route 13 - Item on cliff near bridges #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1209,
+   "region": "Route 13 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72498,
+   "name": "Route 13 - Item on cliff near bridges #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 435,
+   "region": "Route 13 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84896,
+   "name": "Route 13 - Item on cliff behind boulder",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1210,
+   "region": "Route 13 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_strength"
+   }
+  },
+  {
+   "id": 87632,
+   "name": "Route 13 - South item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1381,
+   "region": "Route 13 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_cut"
+   }
+  },
+  {
+   "id": 84864,
+   "name": "Route 13 - Item in shallow water",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1208,
+   "region": "Route 13 Island",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86064,
+   "name": "Giant Chasm Entrance Cave - North west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1283,
+   "region": "Giant Chasm Entrance Cave",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_strength"
+   }
+  },
+  {
+   "id": 86080,
+   "name": "Giant Chasm Entrance Cave - North east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1284,
+   "region": "Giant Chasm Entrance Cave",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_strength"
+   }
+  },
+  {
+   "id": 86048,
+   "name": "Giant Chasm Entrance Cave - South west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1282,
+   "region": "Giant Chasm Entrance Cave",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_strength"
+   }
+  },
+  {
+   "id": 87600,
+   "name": "Giant Chasm Crater - South west item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1379,
+   "region": "Giant Chasm Crater",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87568,
+   "name": "Giant Chasm Crater - West item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1377,
+   "region": "Giant Chasm Crater",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87505,
+   "name": "Giant Chasm Crater - North west item #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1373,
+   "region": "Giant Chasm Crater",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87522,
+   "name": "Giant Chasm Crater - North west item #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1374,
+   "region": "Giant Chasm Crater",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87537,
+   "name": "Giant Chasm Crater - Item near northern stairs #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1375,
+   "region": "Giant Chasm Crater",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87554,
+   "name": "Giant Chasm Crater - Item near northern stairs #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1376,
+   "region": "Giant Chasm Crater",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87616,
+   "name": "Giant Chasm Crater - South east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1380,
+   "region": "Giant Chasm Crater",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87584,
+   "name": "Giant Chasm Crater - Item near lake",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1378,
+   "region": "Giant Chasm Crater",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84800,
+   "name": "Route 12 - Item near western gate",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1204,
+   "region": "Route 12",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84832,
+   "name": "Route 12 - North east item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1206,
+   "region": "Route 12",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84816,
+   "name": "Route 12 - Item on hills",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1205,
+   "region": "Route 12",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87840,
+   "name": "Village Bridge - Item on northern island",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1394,
+   "region": "Village Bridge",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 87872,
+   "name": "Village Bridge - Item on southern island",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1396,
+   "region": "Village Bridge",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 84784,
+   "name": "Route 11 - Item in ravine",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1203,
+   "region": "Route 11 Ravine",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84768,
+   "name": "Route 11 - Item on northern cliff",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1202,
+   "region": "Route 11",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_waterfall"
+   }
+  },
+  {
+   "id": 84752,
+   "name": "Route 11 - Item near western gate",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1201,
+   "region": "Route 11",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84592,
+   "name": "Route 10 - West item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1191,
+   "region": "Route 10",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84560,
+   "name": "Route 10 - Center item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1189,
+   "region": "Route 10",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86032,
+   "name": "Route 10 - Item near badge gate",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1281,
+   "region": "Route 10",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84577,
+   "name": "Route 10 - Item in dark grass #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1190,
+   "region": "Route 10",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87698,
+   "name": "Route 10 - Item in dark grass #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1385,
+   "region": "Route 10",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83521,
+   "name": "Victory Road Outside - Item #1",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1124,
+   "region": "Victory Road Outside 4F Center",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83538,
+   "name": "Victory Road Outside - Item #2",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1125,
+   "region": "Victory Road Outside 5F West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83555,
+   "name": "Victory Road Outside - Item #3",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1126,
+   "region": "Victory Road Outside 1F Back",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83572,
+   "name": "Victory Road Outside - Item #4",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1127,
+   "region": "Victory Road Outside 1F West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 83509,
+   "name": "Victory Road Outside - Item #5",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1123,
+   "region": "Victory Road Outside 2F East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87750,
+   "name": "Victory Road Outside - Item #6",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1388,
+   "region": "Victory Road Outside 6F West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84672,
+   "name": "Victory Road 1F - Center cavern item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1196,
+   "region": "Victory Road 1F Middle Cave",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 84688,
+   "name": "Victory Road 1F - Eastern cavern item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1197,
+   "region": "Victory Road 1F Right Cave",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 84704,
+   "name": "Victory Road 3F - Western cavern item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1198,
+   "region": "Victory Road 3F Left Cave North",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84720,
+   "name": "Victory Road 4F - Western cavern item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1199,
+   "region": "Victory Road 4F Left Cave East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87856,
+   "name": "N's Castle - 2F right room item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1395,
+   "region": "N's Castle 2F Right Room",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 88016,
+   "name": "N's Castle - 3F center room item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1405,
+   "region": "N's Castle 3F Middle Room",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87776,
+   "name": "N's Castle - 4F center room item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1390,
+   "region": "N's Castle 4F Middle Room",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 88080,
+   "name": "N's Castle - N's room item",
+   "kind": "item_ball",
+   "table": "table",
+   "flag": 1409,
+   "region": "N's Castle 4F Left Room",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86496,
+   "name": "Abyssal Ruins 1F North - West item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1310,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86336,
+   "name": "Abyssal Ruins 1F North - Item west of entrance",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1300,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86272,
+   "name": "Abyssal Ruins 1F North - Item east of entrance",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1296,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86256,
+   "name": "Abyssal Ruins 1F North - East item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1295,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86240,
+   "name": "Abyssal Ruins 1F North - Item north of center",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1294,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86176,
+   "name": "Abyssal Ruins 1F South - West item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1290,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86545,
+   "name": "Abyssal Ruins 1F South - North west item #1",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1313,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86146,
+   "name": "Abyssal Ruins 1F South - North west item #2",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1288,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86289,
+   "name": "Abyssal Ruins 1F South - North item #1",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1297,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86162,
+   "name": "Abyssal Ruins 1F South - North item #2",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1289,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86400,
+   "name": "Abyssal Ruins 1F South - Item near entrance",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1304,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86480,
+   "name": "Abyssal Ruins 1F South - East item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1309,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86305,
+   "name": "Abyssal Ruins 1F West - North item #1",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1298,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86418,
+   "name": "Abyssal Ruins 1F West - North item #2",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1305,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86320,
+   "name": "Abyssal Ruins 1F West - East item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1299,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86113,
+   "name": "Abyssal Ruins 1F West - South east item #1",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1286,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86370,
+   "name": "Abyssal Ruins 1F West - South east item #2",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1302,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86128,
+   "name": "Abyssal Ruins 1F West - South item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1287,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86192,
+   "name": "Abyssal Ruins 1F East - South item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1291,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86464,
+   "name": "Abyssal Ruins 1F East - Kinda south item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1308,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86208,
+   "name": "Abyssal Ruins 1F East - Item near center",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1292,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86352,
+   "name": "Abyssal Ruins 1F East - West item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1301,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86225,
+   "name": "Abyssal Ruins 1F East - North item #1",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1293,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86434,
+   "name": "Abyssal Ruins 1F East - North item #2",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1306,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86592,
+   "name": "Abyssal Ruins 1F Center - North item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1316,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86528,
+   "name": "Abyssal Ruins 1F Center - East item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1312,
+   "region": "Abyssal Ruins 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86672,
+   "name": "Abyssal Ruins 2F - Item west of center",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1321,
+   "region": "Abyssal Ruins 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86640,
+   "name": "Abyssal Ruins 2F - Item south east of center",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1319,
+   "region": "Abyssal Ruins 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86800,
+   "name": "Abyssal Ruins 2F - Item north east of center",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1329,
+   "region": "Abyssal Ruins 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87312,
+   "name": "Abyssal Ruins 2F - South west item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1361,
+   "region": "Abyssal Ruins 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86624,
+   "name": "Abyssal Ruins 2F - Kinda south west item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1318,
+   "region": "Abyssal Ruins 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86816,
+   "name": "Abyssal Ruins 2F - South east item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1330,
+   "region": "Abyssal Ruins 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86736,
+   "name": "Abyssal Ruins 2F - East item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1325,
+   "region": "Abyssal Ruins 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86720,
+   "name": "Abyssal Ruins 2F - Kinda north east item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1324,
+   "region": "Abyssal Ruins 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86656,
+   "name": "Abyssal Ruins 2F - Kinda north item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1320,
+   "region": "Abyssal Ruins 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86768,
+   "name": "Abyssal Ruins 2F - North west item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1327,
+   "region": "Abyssal Ruins 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86704,
+   "name": "Abyssal Ruins 2F - Kinda north west item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1323,
+   "region": "Abyssal Ruins 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87408,
+   "name": "Abyssal Ruins 3F - West item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1367,
+   "region": "Abyssal Ruins 3F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87360,
+   "name": "Abyssal Ruins 3F - South west item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1364,
+   "region": "Abyssal Ruins 3F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87472,
+   "name": "Abyssal Ruins 3F - North west item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1371,
+   "region": "Abyssal Ruins 3F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87440,
+   "name": "Abyssal Ruins 3F - Center item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1369,
+   "region": "Abyssal Ruins 3F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87344,
+   "name": "Abyssal Ruins 3F - Item south of center",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1363,
+   "region": "Abyssal Ruins 3F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87456,
+   "name": "Abyssal Ruins 3F - East item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1370,
+   "region": "Abyssal Ruins 3F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87376,
+   "name": "Abyssal Ruins 3F - North east item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1365,
+   "region": "Abyssal Ruins 3F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87424,
+   "name": "Abyssal Ruins 3F - Kinda north east item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1368,
+   "region": "Abyssal Ruins 3F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 87488,
+   "name": "Abyssal Ruins 4F - Item",
+   "kind": "item_ball",
+   "table": "abyssal_ruins",
+   "flag": 1372,
+   "region": "Abyssal Ruins 4F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85792,
+   "name": "Twist Mountain - Middle floor north cave item (Winter)",
+   "kind": "item_ball",
+   "table": "seasonal",
+   "flag": 1266,
+   "region": "Twist Mountain 2F North",
+   "progress": "season_dependant",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 84448,
+   "name": "Twist Mountain - Lower floor little east cave item (Winter)",
+   "kind": "item_ball",
+   "table": "seasonal",
+   "flag": 1182,
+   "region": "Twist Mountain 1F South East",
+   "progress": "season_dependant",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 85808,
+   "name": "Twist Mountain - Lower floor north west cave item (Spring/Summer/Autumn)",
+   "kind": "item_ball",
+   "table": "seasonal",
+   "flag": 1267,
+   "region": "Twist Mountain 1F North West",
+   "progress": "season_dependant",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86752,
+   "name": "Icirrus City - Item west of pokémon center (Winter)",
+   "kind": "item_ball",
+   "table": "seasonal",
+   "flag": 1326,
+   "region": "Icirrus City",
+   "progress": "season_dependant",
+   "include": true,
+   "rule": {
+    "rule": "can_set_winter"
+   }
+  },
+  {
+   "id": 88096,
+   "name": "Dragonspiral Tower - Item near entrance (Winter)",
+   "kind": "item_ball",
+   "table": "seasonal",
+   "flag": 1410,
+   "region": "Dragonspiral Tower Entrance Upper Platform",
+   "progress": "season_dependant",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 86384,
+   "name": "Moor of Icirrus - South east item (Spring/Summer/Autumn)",
+   "kind": "item_ball",
+   "table": "seasonal",
+   "flag": 1303,
+   "region": "Moor of Icirrus",
+   "progress": "season_dependant",
+   "include": true,
+   "rule": {
+    "rule": "can_set_other_than_winter"
+   }
+  },
+  {
+   "id": 81904,
+   "name": "Route 1 - South hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1023,
+   "region": "Route 1 West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81793,
+   "name": "Route 17 - North hidden item #1",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1016,
+   "region": "Route 17 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81810,
+   "name": "Route 17 - North hidden item #2",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1017,
+   "region": "Route 17 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81875,
+   "name": "Route 17 - North hidden item #3",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1021,
+   "region": "Route 17 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82096,
+   "name": "Route 17 - Central hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1035,
+   "region": "Route 17 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81824,
+   "name": "Route 18 - Ravine hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1018,
+   "region": "Route 18",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_strength"
+   }
+  },
+  {
+   "id": 81840,
+   "name": "Route 18 - Upper coast hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1019,
+   "region": "Route 18 Coast",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72544,
+   "name": "Route 18 - Lower coast hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 438,
+   "region": "Route 18 Coast",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 79937,
+   "name": "Striaton City - North west hidden item #1",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 900,
+   "region": "Striaton City",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "any": [
+     {
+      "rule": "can_use_surf"
+     },
+     {
+      "rule": "has_parcel"
+     }
+    ]
+   }
+  },
+  {
+   "id": 79954,
+   "name": "Striaton City - North west hidden item #2",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 901,
+   "region": "Striaton City",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 79968,
+   "name": "Dreamyard - South hidden item in barrel",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 902,
+   "region": "Dreamyard South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80032,
+   "name": "Dreamyard Basement - North east hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 906,
+   "region": "Dreamyard Basement",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81968,
+   "name": "Dreamyard Basement - West hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1027,
+   "region": "Dreamyard Basement",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80048,
+   "name": "Dreamyard Basement - South west hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 907,
+   "region": "Dreamyard Basement",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 79984,
+   "name": "Route 3 or Dreamyard - Hidden item in sandbox or behind traffic cone",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 903,
+   "region": "Route 3 South or Dreamyard North East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80000,
+   "name": "Route 3 - South east or west hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 904,
+   "region": "Route 3 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82529,
+   "name": "Wellspring Cave - 1F hidden item #1",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1062,
+   "region": "Wellspring Cave Entrance",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82514,
+   "name": "Wellspring Cave - 1F hidden item #2",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1061,
+   "region": "Wellspring Cave Entrance",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 82560,
+   "name": "Wellspring Cave - B1F south hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1064,
+   "region": "Wellspring Cave B1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82544,
+   "name": "Wellspring Cave - B1F hidden item south east of trainers",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1063,
+   "region": "Wellspring Cave B1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82112,
+   "name": "Wellspring Cave - B1F hidden item north west of trainers",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1036,
+   "region": "Wellspring Cave B1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81888,
+   "name": "Wellspring Cave - B1F north hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1022,
+   "region": "Wellspring Cave B1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "can_use_surf"
+    }
+   }
+  },
+  {
+   "id": 80016,
+   "name": "Nacrene City - Hidden item on railway",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 905,
+   "region": "Nacrene City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80576,
+   "name": "Nacrene City - Hidden item near Café Warehouse",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 940,
+   "region": "Nacrene City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80592,
+   "name": "Pinwheel Forest - Outside north hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 941,
+   "region": "Pinwheel Forest Outside",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80064,
+   "name": "Pinwheel Forest - Outside south east hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 908,
+   "region": "Pinwheel Forest Outside",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80608,
+   "name": "Pinwheel Forest - Outside south hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 942,
+   "region": "Pinwheel Forest Outside",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80624,
+   "name": "Pinwheel Forest - Outside hidden item behind dark grass",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 943,
+   "region": "Pinwheel Forest Outside",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80656,
+   "name": "Pinwheel Forest - West hidden item inside tree stump",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 945,
+   "region": "Pinwheel Forest West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82736,
+   "name": "Pinwheel Forest - South west hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1075,
+   "region": "Pinwheel Forest West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80640,
+   "name": "Pinwheel Forest - East hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 944,
+   "region": "Pinwheel Forest East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82208,
+   "name": "Liberty Garden - Hidden item in trash can",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1042,
+   "region": "Liberty Garden",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82480,
+   "name": "Route 4 - South west hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1059,
+   "region": "Route 4 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80672,
+   "name": "Route 4 - Central hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 946,
+   "region": "Route 4 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82465,
+   "name": "Route 4 - Hidden item near buildings #1",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1058,
+   "region": "Route 4 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82754,
+   "name": "Route 4 - Hidden item near buildings #2",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1076,
+   "region": "Route 4 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80688,
+   "name": "Route 4 - North east hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 947,
+   "region": "Route 4 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82000,
+   "name": "Desert Resort - South hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1029,
+   "region": "Desert Resort",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80720,
+   "name": "Desert Resort - West hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 949,
+   "region": "Desert Resort",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80736,
+   "name": "Desert Resort - North east hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 950,
+   "region": "Desert Resort",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80704,
+   "name": "Desert Resort - Hidden item near tower",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 948,
+   "region": "Desert Resort",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82352,
+   "name": "Relic Castle - B1F castleside hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1051,
+   "region": "Relic Castle Castleside B1F North",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82368,
+   "name": "Relic Castle - B4F castleside hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1052,
+   "region": "Relic Castle Castleside B4F East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80752,
+   "name": "Relic Castle - B3F towerside hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 951,
+   "region": "Relic Castle Towerside B3F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80768,
+   "name": "Nimbasa City - Hidden item near ferris wheel",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 952,
+   "region": "Nimbasa City Park",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82192,
+   "name": "Anville Town - North hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1041,
+   "region": "Anville Town",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82448,
+   "name": "Driftveil City - Hidden item in market",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1057,
+   "region": "Driftveil Market",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82640,
+   "name": "Cold Storage - North east hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1069,
+   "region": "Cold Storage",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80784,
+   "name": "Cold Storage - South east hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 953,
+   "region": "Cold Storage",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82624,
+   "name": "Cold Storage - Hidden item in trash can",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1068,
+   "region": "Cold Storage",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72656,
+   "name": "Route 6 - East hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 445,
+   "region": "Route 6 North East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72673,
+   "name": "Route 6 - Hidden item behind Season Research Lab #1",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 446,
+   "region": "Route 6",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 80818,
+   "name": "Route 6 - Hidden item behind Season Research Lab #2",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 955,
+   "region": "Route 6",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 82384,
+   "name": "Mistralton Cave - 1F west hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1053,
+   "region": "Mistralton Cave 1F South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82400,
+   "name": "Mistralton Cave - 1F north hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1054,
+   "region": "Mistralton Cave 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82592,
+   "name": "Mistralton Cave - 2F north west hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1066,
+   "region": "Mistralton Cave 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82576,
+   "name": "Mistralton Cave - 2F south west hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1065,
+   "region": "Mistralton Cave 2F West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80864,
+   "name": "Mistralton Cave - 2F south east hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 958,
+   "region": "Mistralton Cave 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80880,
+   "name": "Guidance Chamber - North east hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 959,
+   "region": "Guidance Chamber",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82416,
+   "name": "Guidance Chamber - North west hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1055,
+   "region": "Guidance Chamber",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80896,
+   "name": "Chargestone Cave - 1F south hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 960,
+   "region": "Chargestone Cave 1F South Shortcut",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82305,
+   "name": "Chargestone Cave - 1F north hidden item #1",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1048,
+   "region": "Chargestone Cave 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80914,
+   "name": "Chargestone Cave - 1F north hidden item #2",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 961,
+   "region": "Chargestone Cave 1F North East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82320,
+   "name": "Chargestone Cave - B1F west hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1049,
+   "region": "Chargestone Cave B1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80928,
+   "name": "Chargestone Cave - B1F east hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 962,
+   "region": "Chargestone Cave B1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82336,
+   "name": "Chargestone Cave - B2F east hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1050,
+   "region": "Chargestone Cave B2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80944,
+   "name": "Chargestone Cave - B2F west hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 963,
+   "region": "Chargestone Cave B2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80961,
+   "name": "Mistralton City - Hidden item at greenhouse or vegetable patches #1",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 964,
+   "region": "Mistralton City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80978,
+   "name": "Mistralton City - Hidden item at greenhouse or vegetable patches #2",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 965,
+   "region": "Mistralton City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80995,
+   "name": "Mistralton City - Hidden item at greenhouse or vegetable patches #3",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 966,
+   "region": "Mistralton City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81008,
+   "name": "Twist Mountain - Outside hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 967,
+   "region": "Twist Mountain Entrance",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81088,
+   "name": "Twist Mountain - Upper floor north east cave hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 972,
+   "region": "Twist Mountain 3F North East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81072,
+   "name": "Twist Mountain - Upper floor south east cave hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 971,
+   "region": "Twist Mountain 3F South East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81121,
+   "name": "Twist Mountain - Middle floor west cave hidden item #1",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 974,
+   "region": "Twist Mountain 2F South West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81138,
+   "name": "Twist Mountain - Middle floor west cave hidden item #2",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 975,
+   "region": "Twist Mountain 2F South West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81104,
+   "name": "Twist Mountain - Middle floor east cave hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 973,
+   "region": "Twist Mountain 2F South East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81168,
+   "name": "Icirrus City - Hidden item in large water puddle",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 977,
+   "region": "Icirrus City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82673,
+   "name": "Icirrus City - East hidden item #1",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1071,
+   "region": "Icirrus City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82690,
+   "name": "Icirrus City - East hidden item #2",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1072,
+   "region": "Icirrus City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81200,
+   "name": "Dragonspiral Tower - Outside hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 979,
+   "region": "Dragonspiral Tower Outside East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82608,
+   "name": "Route 8 - East hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1067,
+   "region": "Route 8",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "route_8_logic"
+   }
+  },
+  {
+   "id": 82144,
+   "name": "Moor of Icirrus - South east hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1038,
+   "region": "Moor of Icirrus",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82160,
+   "name": "Moor of Icirrus - Hidden item near ledge",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1039,
+   "region": "Moor of Icirrus",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82176,
+   "name": "Moor of Icirrus - North hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1040,
+   "region": "Moor of Icirrus",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72752,
+   "name": "Route 9 - Hidden item on road",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 451,
+   "region": "Route 9",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81232,
+   "name": "Route 9 - Hidden item near Challenger's Cave",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 981,
+   "region": "Route 9",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81296,
+   "name": "Challenger's Cave - B1F hidden item near stairs to 1F",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 985,
+   "region": "Challenger's Cave B1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81312,
+   "name": "Challenger's Cave - B1F hidden item near stairs to B2F",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 986,
+   "region": "Challenger's Cave B1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81328,
+   "name": "Challenger's Cave - B2F north east hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 987,
+   "region": "Challenger's Cave B2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82032,
+   "name": "Challenger's Cave - B2F south east hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1031,
+   "region": "Challenger's Cave B2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81345,
+   "name": "Challenger's Cave - B2F south west hidden item #1",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 988,
+   "region": "Challenger's Cave B2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82018,
+   "name": "Challenger's Cave - B2F south west hidden item #2",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1030,
+   "region": "Challenger's Cave B2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82048,
+   "name": "Challenger's Cave - B2F hidden item on south end of island",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1032,
+   "region": "Challenger's Cave B2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82656,
+   "name": "Lostlorn Forest - Hidden item near dark grass",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1070,
+   "region": "Lostlorn Forest Upper Platform",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81776,
+   "name": "Route 15 - Hidden item near Poké Transfer Lab",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1015,
+   "region": "Route 15",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82080,
+   "name": "Route 15 - Hidden item between ledges",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1034,
+   "region": "Route 15",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82288,
+   "name": "Route 14 - East hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1047,
+   "region": "Route 14",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 81744,
+   "name": "Abundant Shrine - Hidden item on southern lake",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1013,
+   "region": "Abundant Shrine",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "can_use_surf"
+    }
+   }
+  },
+  {
+   "id": 81760,
+   "name": "Abundant Shrine - Hidden item near northern lake",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1014,
+   "region": "Abundant Shrine",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "can_use_surf"
+    }
+   }
+  },
+  {
+   "id": 82496,
+   "name": "Abundant Shrine - East hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1060,
+   "region": "Abundant Shrine",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82064,
+   "name": "Abundant Shrine - Center hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1033,
+   "region": "Abundant Shrine",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81712,
+   "name": "Abundant Shrine - North west hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1011,
+   "region": "Abundant Shrine",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72785,
+   "name": "Undella Bay - Hidden item on western shore #1",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 453,
+   "region": "Undella Bay Shore",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72802,
+   "name": "Undella Bay - Hidden item on western shore #2",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 454,
+   "region": "Undella Bay Shore",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81728,
+   "name": "Undella Bay - North hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1012,
+   "region": "Undella Bay",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72817,
+   "name": "Route 13 - Hidden item on south eastern coast #1",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 455,
+   "region": "Route 13 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72834,
+   "name": "Route 13 - Hidden item on south eastern coast #2",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 456,
+   "region": "Route 13 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72851,
+   "name": "Route 13 - Hidden item on south eastern coast #3",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 457,
+   "region": "Route 13 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81633,
+   "name": "Route 13 - Hidden item in dark grass #1",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1006,
+   "region": "Route 13 Island",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81650,
+   "name": "Route 13 - Hidden item in dark grass #2",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1007,
+   "region": "Route 13 Island",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82432,
+   "name": "Route 13 - West hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1056,
+   "region": "Route 13 West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81664,
+   "name": "Route 13 - Hidden item on side of cliff between bridges",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1008,
+   "region": "Route 13 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 82224,
+   "name": "Giant Chasm Entrance Cave - Hidden item near entrance",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1043,
+   "region": "Giant Chasm Entrance Cave",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82256,
+   "name": "Giant Chasm Entrance Cave - North hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1045,
+   "region": "Giant Chasm Entrance Cave",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82240,
+   "name": "Giant Chasm Entrance Cave - North west hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1044,
+   "region": "Giant Chasm Entrance Cave",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81552,
+   "name": "Lacunosa Town - Hidden item near policeman",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1001,
+   "region": "Lacunosa Town",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81568,
+   "name": "Lacunosa Town - Hidden item on north eastern wall",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1002,
+   "region": "Lacunosa Town",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72881,
+   "name": "Route 12 - Hidden item #1",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 459,
+   "region": "Route 12",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72898,
+   "name": "Route 12 - Hidden item #2",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 460,
+   "region": "Route 12",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81523,
+   "name": "Route 12 - Hidden item #3",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 999,
+   "region": "Route 12",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72916,
+   "name": "Route 12 - Hidden item #4",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 461,
+   "region": "Route 12",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81984,
+   "name": "Village Bridge - Hidden item in trash can",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1028,
+   "region": "Village Bridge",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82705,
+   "name": "Village Bridge - North east hidden item #1",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1073,
+   "region": "Village Bridge",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 82722,
+   "name": "Village Bridge - North east hidden item #2",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1074,
+   "region": "Village Bridge",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81472,
+   "name": "Route 11 - Hidden item near western gate",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 996,
+   "region": "Route 11",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 82272,
+   "name": "Route 11 - Hidden item on northern cliff",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 1046,
+   "region": "Route 11",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_waterfall"
+   }
+  },
+  {
+   "id": 81264,
+   "name": "Opelucid City - Hidden item near Pokémon Center",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 983,
+   "region": "Opelucid City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81280,
+   "name": "Opelucid City - Hidden item on northern road",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 984,
+   "region": "Opelucid City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 80848,
+   "name": "Route 10 - Hidden item on western cliff",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 957,
+   "region": "Route 10",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81393,
+   "name": "Victory Road 1F - Western cavern hidden item #1",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 991,
+   "region": "Victory Road 1F Left Cave",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81410,
+   "name": "Victory Road 1F - Western cavern hidden item #2",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 992,
+   "region": "Victory Road 1F Left Cave",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81376,
+   "name": "Victory Road 2F - Eastern cavern hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 990,
+   "region": "Victory Road 2F Right Cave",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81360,
+   "name": "Victory Road 3F - Middle cavern hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 989,
+   "region": "Victory Road 3F Middle Cave",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81424,
+   "name": "Victory Road 4F - Western cavern hidden item",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 993,
+   "region": "Victory Road 4F Left Cave West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81441,
+   "name": "Victory Road 4F - Eastern cavern hidden item #1",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 994,
+   "region": "Victory Road 4F Right Cave",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81458,
+   "name": "Victory Road 4F - Eastern cavern hidden item #2",
+   "kind": "hidden",
+   "table": "table",
+   "flag": 995,
+   "region": "Victory Road 4F Right Cave",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81056,
+   "name": "Twist Mountain - Main floor east hidden item (Winter)",
+   "kind": "hidden",
+   "table": "seasonal",
+   "flag": 970,
+   "region": "Twist Mountain Outside Snow",
+   "progress": "season_dependant",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81024,
+   "name": "Twist Mountain - Main floor north hidden item #1 (Winter)",
+   "kind": "hidden",
+   "table": "seasonal",
+   "flag": 968,
+   "region": "Twist Mountain Outside Snow",
+   "progress": "season_dependant",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81040,
+   "name": "Twist Mountain - Main floor north hidden item #2 (Winter)",
+   "kind": "hidden",
+   "table": "seasonal",
+   "flag": 969,
+   "region": "Twist Mountain Outside 3F North Footbridge",
+   "progress": "season_dependant",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81152,
+   "name": "Twist Mountain - Lower floor north west cave hidden item (Spring/Summer/Autumn)",
+   "kind": "hidden",
+   "table": "seasonal",
+   "flag": 976,
+   "region": "Twist Mountain 1F North West",
+   "progress": "season_dependant",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 81184,
+   "name": "Icirrus City - Hidden item west of pokémon center (Winter)",
+   "kind": "hidden",
+   "table": "seasonal",
+   "flag": 978,
+   "region": "Icirrus City",
+   "progress": "season_dependant",
+   "include": true,
+   "rule": {
+    "rule": "can_set_winter"
+   }
+  },
+  {
+   "id": 72704,
+   "name": "Icirrus City - South hidden item #1 (Winter)",
+   "kind": "hidden",
+   "table": "seasonal",
+   "flag": 448,
+   "region": "Icirrus City South",
+   "progress": "season_dependant",
+   "include": true,
+   "rule": {
+    "rule": "can_set_winter"
+   }
+  },
+  {
+   "id": 72720,
+   "name": "Icirrus City - South hidden item #2 (Winter)",
+   "kind": "hidden",
+   "table": "seasonal",
+   "flag": 449,
+   "region": "Icirrus City South",
+   "progress": "season_dependant",
+   "include": true,
+   "rule": {
+    "rule": "can_set_winter"
+   }
+  },
+  {
+   "id": 81952,
+   "name": "Icirrus City - South hidden item #3 (Winter)",
+   "kind": "hidden",
+   "table": "seasonal",
+   "flag": 1026,
+   "region": "Icirrus City South",
+   "progress": "season_dependant",
+   "include": true,
+   "rule": {
+    "rule": "can_set_winter"
+   }
+  },
+  {
+   "id": 81216,
+   "name": "Route 8 - West hidden item (Spring/Summer/Autumn)",
+   "kind": "hidden",
+   "table": "seasonal",
+   "flag": 980,
+   "region": "Route 8",
+   "progress": "season_dependant",
+   "include": true,
+   "rule": {
+    "rule": "can_set_other_than_winter"
+   }
+  },
+  {
+   "id": 82128,
+   "name": "Moor of Icirrus - Hidden item behind boulder (Spring/Summer/Autumn)",
+   "kind": "hidden",
+   "table": "seasonal",
+   "flag": 1037,
+   "region": "Moor of Icirrus West",
+   "progress": "season_dependant",
+   "include": true,
+   "rule": {
+    "rule": "can_set_other_than_winter"
+   }
+  },
+  {
+   "id": 71824,
+   "name": "Nuvema Town - Item from Mom after first fight",
+   "kind": "npc",
+   "table": "table",
+   "flag": 393,
+   "region": "Player's House",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71760,
+   "name": "Nuvema Town - Item #2 from Mom",
+   "kind": "npc",
+   "table": "table",
+   "flag": 389,
+   "region": "Nuvema Town",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_introduced_junipers_lab"
+    }
+   }
+  },
+  {
+   "id": 71840,
+   "name": "Nuvema Town - Item from Looker after beating Ghetsis",
+   "kind": "npc",
+   "table": "table",
+   "flag": 394,
+   "region": "Player's House",
+   "progress": "post_ghetsis",
+   "include": true,
+   "rule": {
+    "rule": "has_beaten_ghetsis"
+   }
+  },
+  {
+   "id": 71857,
+   "name": "Route 1 - Item after catching tutorial #1",
+   "kind": "npc",
+   "table": "table",
+   "flag": 395,
+   "region": "Route 1 East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71858,
+   "name": "Route 1 - Item after catching tutorial #2",
+   "kind": "npc",
+   "table": "table",
+   "flag": 395,
+   "region": "Route 1 East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71859,
+   "name": "Route 1 - Item after catching tutorial #3",
+   "kind": "npc",
+   "table": "table",
+   "flag": 395,
+   "region": "Route 1 East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71860,
+   "name": "Route 1 - Item after catching tutorial #4",
+   "kind": "npc",
+   "table": "table",
+   "flag": 395,
+   "region": "Route 1 East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71861,
+   "name": "Route 1 - Item after catching tutorial #5",
+   "kind": "npc",
+   "table": "table",
+   "flag": 395,
+   "region": "Route 1 East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 67648,
+   "name": "Route 1 - Item from woman",
+   "kind": "npc",
+   "table": "table",
+   "flag": 132,
+   "region": "Route 1 East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 96752,
+   "name": "Route 1 - Item from ranger Brenda",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1951,
+   "region": "Route 1 West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 96768,
+   "name": "Route 1 - Item from ranger Claude",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1952,
+   "region": "Route 1 West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 73217,
+   "name": "P2 Laboratory - Item from scientist #1",
+   "kind": "npc",
+   "table": "table",
+   "flag": 480,
+   "region": "P2 Laboratory",
+   "progress": "wild_rando_dependant",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "randomized_wild"
+    },
+    "then": {
+     "rule": "has_genesect"
+    }
+   }
+  },
+  {
+   "id": 73218,
+   "name": "P2 Laboratory - Item from scientist #2",
+   "kind": "npc",
+   "table": "table",
+   "flag": 480,
+   "region": "P2 Laboratory",
+   "progress": "wild_rando_dependant",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "randomized_wild"
+    },
+    "then": {
+     "rule": "has_genesect"
+    }
+   }
+  },
+  {
+   "id": 67280,
+   "name": "Accumula Town - Item from man in north west building",
+   "kind": "npc",
+   "table": "table",
+   "flag": 109,
+   "region": "Accumula Town North Left House 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 67312,
+   "name": "Striaton City - Item from man in south east building",
+   "kind": "npc",
+   "table": "table",
+   "flag": 111,
+   "region": "Striaton City East Lower House 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 68560,
+   "name": "Striaton City - Item from roughneck",
+   "kind": "npc",
+   "table": "table",
+   "flag": 189,
+   "region": "Striaton City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 68609,
+   "name": "Striaton City - Item from Cheren #1",
+   "kind": "npc",
+   "table": "table",
+   "flag": 192,
+   "region": "Striaton City Trainers' School",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 68610,
+   "name": "Striaton City - Item from Cheren #2",
+   "kind": "npc",
+   "table": "table",
+   "flag": 192,
+   "region": "Striaton City Trainers' School",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 68611,
+   "name": "Striaton City - Item from Cheren #3",
+   "kind": "npc",
+   "table": "table",
+   "flag": 192,
+   "region": "Striaton City Trainers' School",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 68576,
+   "name": "Striaton City - Item from boy in Trainer's School",
+   "kind": "npc",
+   "table": "table",
+   "flag": 190,
+   "region": "Striaton City Trainers' School",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71872,
+   "name": "Striaton City - Item from Amanita",
+   "kind": "npc",
+   "table": "table",
+   "flag": 396,
+   "region": "Striaton City East Upper House 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_fought_plasma_dreamyard"
+   }
+  },
+  {
+   "id": 68528,
+   "name": "Striaton City - Item from fisherman",
+   "kind": "npc",
+   "table": "table",
+   "flag": 187,
+   "region": "Striaton City",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 67424,
+   "name": "Striaton Gym - Gym guide item",
+   "kind": "npc",
+   "table": "table",
+   "flag": 118,
+   "region": "Striaton Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 88576,
+   "name": "Route 3 - Item from pokémon breeder Adelaide",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1440,
+   "region": "Route 3 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71905,
+   "name": "Route 3 - Item from girl after Wellspring Cave #1",
+   "kind": "npc",
+   "table": "table",
+   "flag": 398,
+   "region": "Route 3 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_fought_plasma_wellspring"
+    }
+   }
+  },
+  {
+   "id": 71906,
+   "name": "Route 3 - Item from girl after Wellspring Cave #2",
+   "kind": "npc",
+   "table": "table",
+   "flag": 398,
+   "region": "Route 3 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_fought_plasma_wellspring"
+    }
+   }
+  },
+  {
+   "id": 71907,
+   "name": "Route 3 - Item from girl after Wellspring Cave #3",
+   "kind": "npc",
+   "table": "table",
+   "flag": 398,
+   "region": "Route 3 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_fought_plasma_wellspring"
+    }
+   }
+  },
+  {
+   "id": 88560,
+   "name": "Route 3 - Item from pokémon breeder Galen",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1439,
+   "region": "Route 3 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "can_use_surf"
+   }
+  },
+  {
+   "id": 72001,
+   "name": "Nacrene City - Item from Cheren #1",
+   "kind": "npc",
+   "table": "table",
+   "flag": 404,
+   "region": "Nacrene City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72002,
+   "name": "Nacrene City - Item from Cheren #2",
+   "kind": "npc",
+   "table": "table",
+   "flag": 404,
+   "region": "Nacrene City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72003,
+   "name": "Nacrene City - Item from Cheren #3",
+   "kind": "npc",
+   "table": "table",
+   "flag": 404,
+   "region": "Nacrene City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 70352,
+   "name": "Nacrene City - Item from girl in west building",
+   "kind": "npc",
+   "table": "table",
+   "flag": 301,
+   "region": "Nacrene City South West Left House",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72560,
+   "name": "Nacrene City - Item from waitress in Café Warehouse",
+   "kind": "npc",
+   "table": "table",
+   "flag": 439,
+   "region": "Café Warehouse",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71920,
+   "name": "Nacrene City - Item from Bianca",
+   "kind": "npc",
+   "table": "table",
+   "flag": 399,
+   "region": "Nacrene City",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_defeated_nacrene_gym"
+    }
+   }
+  },
+  {
+   "id": 72016,
+   "name": "Nacrene City - Item from Lenora after Relic Castle",
+   "kind": "npc",
+   "table": "table",
+   "flag": 405,
+   "region": "Nacrene City",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_confronted_ghetsis_relic_castle"
+   }
+  },
+  {
+   "id": 67440,
+   "name": "Nacrene Gym - Gym guide item",
+   "kind": "npc",
+   "table": "table",
+   "flag": 119,
+   "region": "Nacrene Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72576,
+   "name": "Pinwheel Forest Outside - Item from challenge rock",
+   "kind": "npc",
+   "table": "table",
+   "flag": 440,
+   "region": "Pinwheel Forest Outside",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_fighting_type_species"
+   }
+  },
+  {
+   "id": 88672,
+   "name": "Pinwheel Forest - Item from ranger Forrest",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1446,
+   "region": "Pinwheel Forest West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 88720,
+   "name": "Pinwheel Forest - Item from ranger Audra",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1449,
+   "region": "Pinwheel Forest West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 88688,
+   "name": "Pinwheel Forest - Item from ranger Irene",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1447,
+   "region": "Pinwheel Forest West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 88704,
+   "name": "Pinwheel Forest - Item from ranger Miguel",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1448,
+   "region": "Pinwheel Forest West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71792,
+   "name": "Pinwheel Forest - Stolen item from Plasma grunt",
+   "kind": "npc",
+   "table": "table",
+   "flag": 391,
+   "region": "Pinwheel Forest West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71808,
+   "name": "Pinwheel Forest - Item from Lenora",
+   "kind": "npc",
+   "table": "table",
+   "flag": 392,
+   "region": "Pinwheel Forest West",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69824,
+   "name": "Skyarrow Bridge - Item from hiker in gate",
+   "kind": "npc",
+   "table": "table",
+   "flag": 268,
+   "region": "Skyarrow Bridge South Gate",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69840,
+   "name": "Castelia City - Item from scientist at Thumb Pier",
+   "kind": "npc",
+   "table": "table",
+   "flag": 269,
+   "region": "Castelia City Thumb Pier",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69793,
+   "name": "Battle Company - 47F item from clerk #1",
+   "kind": "npc",
+   "table": "table",
+   "flag": 266,
+   "region": "Battle Company 47F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69794,
+   "name": "Battle Company - 47F item from clerk #2",
+   "kind": "npc",
+   "table": "table",
+   "flag": 266,
+   "region": "Battle Company 47F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69795,
+   "name": "Battle Company - 47F item from clerk #3",
+   "kind": "npc",
+   "table": "table",
+   "flag": 266,
+   "region": "Battle Company 47F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69796,
+   "name": "Battle Company - 47F item from clerk #4",
+   "kind": "npc",
+   "table": "table",
+   "flag": 266,
+   "region": "Battle Company 47F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69797,
+   "name": "Battle Company - 47F item from clerk #5",
+   "kind": "npc",
+   "table": "table",
+   "flag": 266,
+   "region": "Battle Company 47F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69798,
+   "name": "Battle Company - 47F item from clerk #6",
+   "kind": "npc",
+   "table": "table",
+   "flag": 266,
+   "region": "Battle Company 47F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 68592,
+   "name": "Battle Company - 47F item from scientist",
+   "kind": "npc",
+   "table": "table",
+   "flag": 191,
+   "region": "Battle Company 47F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 68144,
+   "name": "Battle Company - 55F item from President Geoff",
+   "kind": "npc",
+   "table": "table",
+   "flag": 163,
+   "region": "Battle Company 55F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72608,
+   "name": "Castelia City - Item from harlequin in Studio Castelia",
+   "kind": "npc",
+   "table": "table",
+   "flag": 442,
+   "region": "Studio Castelia",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_studio_castelia_type_species"
+   }
+  },
+  {
+   "id": 68160,
+   "name": "Castelia City - Item from manager in Café Sonata",
+   "kind": "npc",
+   "table": "table",
+   "flag": 164,
+   "region": "Café Sonata",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72080,
+   "name": "Castelia City - Item from Iris in Plasma hideout",
+   "kind": "npc",
+   "table": "table",
+   "flag": 409,
+   "region": "Castelia City Plasma Hideout 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_confronted_plasma_castelia"
+    }
+   }
+  },
+  {
+   "id": 72032,
+   "name": "Castelia City - Item from dancers",
+   "kind": "npc",
+   "table": "table",
+   "flag": 406,
+   "region": "Castelia City",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_fought_castelia_dancers"
+    }
+   }
+  },
+  {
+   "id": 70784,
+   "name": "Castelia City - Item from scientist in northern street for seeing 20 species",
+   "kind": "npc",
+   "table": "table",
+   "flag": 328,
+   "region": "Castelia City Northern Street East Upper Building 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_20_species"
+   }
+  },
+  {
+   "id": 67456,
+   "name": "Castelia Gym - Gym guide item",
+   "kind": "npc",
+   "table": "table",
+   "flag": 120,
+   "region": "Castelia Gym Entrance",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72064,
+   "name": "Royal Unova - Item for defeating every trainer",
+   "kind": "npc",
+   "table": "table",
+   "flag": 408,
+   "region": "Castelia City Cruise Dock",
+   "progress": "post_ghetsis",
+   "include": true,
+   "rule": {
+    "rule": "has_beaten_ghetsis"
+   }
+  },
+  {
+   "id": 72113,
+   "name": "Route 4 - Item from Professor Juniper #1",
+   "kind": "npc",
+   "table": "table",
+   "flag": 411,
+   "region": "Nimbasa South Gate",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72114,
+   "name": "Route 4 - Item from Professor Juniper #2",
+   "kind": "npc",
+   "table": "table",
+   "flag": 411,
+   "region": "Nimbasa South Gate",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72115,
+   "name": "Route 4 - Item from Professor Juniper #3",
+   "kind": "npc",
+   "table": "table",
+   "flag": 411,
+   "region": "Nimbasa South Gate",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72116,
+   "name": "Route 4 - Item from Professor Juniper #4",
+   "kind": "npc",
+   "table": "table",
+   "flag": 411,
+   "region": "Nimbasa South Gate",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72117,
+   "name": "Route 4 - Item from Professor Juniper #5",
+   "kind": "npc",
+   "table": "table",
+   "flag": 411,
+   "region": "Nimbasa South Gate",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72118,
+   "name": "Route 4 - Item from Professor Juniper #6",
+   "kind": "npc",
+   "table": "table",
+   "flag": 411,
+   "region": "Nimbasa South Gate",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72119,
+   "name": "Route 4 - Item from Professor Juniper #7",
+   "kind": "npc",
+   "table": "table",
+   "flag": 411,
+   "region": "Nimbasa South Gate",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72120,
+   "name": "Route 4 - Item from Professor Juniper #8",
+   "kind": "npc",
+   "table": "table",
+   "flag": 411,
+   "region": "Nimbasa South Gate",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72121,
+   "name": "Route 4 - Item from Professor Juniper #9",
+   "kind": "npc",
+   "table": "table",
+   "flag": 411,
+   "region": "Nimbasa South Gate",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72122,
+   "name": "Route 4 - Item from Professor Juniper #10",
+   "kind": "npc",
+   "table": "table",
+   "flag": 411,
+   "region": "Nimbasa South Gate",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69952,
+   "name": "Desert Resort - Item from man in black",
+   "kind": "npc",
+   "table": "table",
+   "flag": 276,
+   "region": "Desert Resort",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 97040,
+   "name": "Desert Resort - Item from ranger Mylene",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1969,
+   "region": "Desert Resort",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 97056,
+   "name": "Desert Resort - Item from ranger Jaden",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1970,
+   "region": "Desert Resort",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72128,
+   "name": "Desert Resort - Item from Professor Juniper",
+   "kind": "npc",
+   "table": "table",
+   "flag": 412,
+   "region": "Desert Resort",
+   "progress": "post_ghetsis",
+   "include": true,
+   "rule": {
+    "rule": "has_beaten_ghetsis"
+   }
+  },
+  {
+   "id": 67856,
+   "name": "Relic Castle - 1F castleside item from backpacker",
+   "kind": "npc",
+   "table": "table",
+   "flag": 145,
+   "region": "Relic Castle Castleside 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 67984,
+   "name": "Nimbasa City - Item from Day-Care man",
+   "kind": "npc",
+   "table": "table",
+   "flag": 153,
+   "region": "Nimbasa City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71392,
+   "name": "Nimbasa City - Item from socialite in western building",
+   "kind": "npc",
+   "table": "table",
+   "flag": 366,
+   "region": "Nimbasa City North West House 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72160,
+   "name": "Nimbasa City - Item from ace trainer exiting battle subway",
+   "kind": "npc",
+   "table": "table",
+   "flag": 414,
+   "region": "Nimbasa City",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69904,
+   "name": "Nimbasa City - Item from ace trainer in another western building",
+   "kind": "npc",
+   "table": "table",
+   "flag": 273,
+   "region": "Nimbasa City North East House 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71408,
+   "name": "Nimbasa City - Item from man in eastern gate",
+   "kind": "npc",
+   "table": "table",
+   "flag": 367,
+   "region": "Nimbasa East Gate",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 67472,
+   "name": "Nimbasa Gym - Gym guide item",
+   "kind": "npc",
+   "table": "table",
+   "flag": 121,
+   "region": "Nimbasa Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 94064,
+   "name": "Nimbasa City - Item from waiter Clint",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1783,
+   "region": "Any Big Stadium or Small Court",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 94080,
+   "name": "Nimbasa City - Item from waitress Bonita",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1784,
+   "region": "Any Big Stadium or Small Court",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 94416,
+   "name": "Nimbasa City - Item from nurse Kirsten",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1805,
+   "region": "Any Big Stadium or Small Court",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 94400,
+   "name": "Nimbasa City - Item from doctor Jules",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1804,
+   "region": "Any Big Stadium or Small Court",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 94288,
+   "name": "Nimbasa City - Item from baker Lilly",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1797,
+   "region": "Any Big Stadium or Small Court",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 94096,
+   "name": "Nimbasa City - Item from scientist Simon",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1785,
+   "region": "Any Big Stadium or Small Court",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 94112,
+   "name": "Nimbasa City - Item from scientist Blythe",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1786,
+   "region": "Any Big Stadium or Small Court",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 93968,
+   "name": "Nimbasa City - Item from ace trainer Lucille",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1777,
+   "region": "Any Big Stadium or Small Court",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 93984,
+   "name": "Nimbasa City - Item from ace trainer Charlie",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1778,
+   "region": "Any Big Stadium or Small Court",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 94000,
+   "name": "Nimbasa City - Item from veteran Arlen",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1779,
+   "region": "Any Big Stadium or Small Court",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 94016,
+   "name": "Nimbasa City - Item from veteran Sayuri",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1780,
+   "region": "Any Big Stadium or Small Court",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 94304,
+   "name": "Nimbasa City - Item from nursery aide Leah",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1798,
+   "region": "Any Big Stadium or Small Court",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 90608,
+   "name": "Nimbasa City - Item from youngster Kevin",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1567,
+   "region": "Any Big Stadium or Small Court",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 93920,
+   "name": "Nimbasa City - Item from lass Dana",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1774,
+   "region": "Any Big Stadium or Small Court",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 94384,
+   "name": "Nimbasa City - Item from backpacker Alexander",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1803,
+   "region": "Any Big Stadium or Small Court",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 94368,
+   "name": "Nimbasa City - Item from backpacker Patty",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1802,
+   "region": "Any Big Stadium or Small Court",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 94160,
+   "name": "Nimbasa City - Item from socialite Emilia",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1789,
+   "region": "Any Big Stadium or Small Court",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 94176,
+   "name": "Nimbasa City - Item from gentleman Renaud",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1790,
+   "region": "Any Big Stadium or Small Court",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 72176,
+   "name": "Nimbasa City - Item from Musical Theater owner",
+   "kind": "npc",
+   "table": "table",
+   "flag": 415,
+   "region": "Musical Theater",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 70704,
+   "name": "Anville Town - Item from depot agent on first visit",
+   "kind": "npc",
+   "table": "table",
+   "flag": 323,
+   "region": "Anville Town South East House",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69760,
+   "name": "Driftveil City - Item from man for seeing more than 50 pokémon",
+   "kind": "npc",
+   "table": "table",
+   "flag": 264,
+   "region": "Driftveil City Upper Right House East of Market",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_51_species"
+   }
+  },
+  {
+   "id": 67889,
+   "name": "Driftveil City - Item from girl in pokémon center #1",
+   "kind": "npc",
+   "table": "table",
+   "flag": 147,
+   "region": "Driftveil City Pokemon Center",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 67890,
+   "name": "Driftveil City - Item from girl in pokémon center #2",
+   "kind": "npc",
+   "table": "table",
+   "flag": 147,
+   "region": "Driftveil City Pokemon Center",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 67891,
+   "name": "Driftveil City - Item from girl in pokémon center #3",
+   "kind": "npc",
+   "table": "table",
+   "flag": 147,
+   "region": "Driftveil City Pokemon Center",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71376,
+   "name": "Driftveil City - Item from man in black in market",
+   "kind": "npc",
+   "table": "table",
+   "flag": 365,
+   "region": "Driftveil Market",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72640,
+   "name": "Driftveil City - Item from lady asking for a pokémon knowing a certain TM move",
+   "kind": "npc",
+   "table": "table",
+   "flag": 444,
+   "region": "Driftveil City House North of Market",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "driftveil_random_tm"
+   }
+  },
+  {
+   "id": 67488,
+   "name": "Driftveil Gym - Gym guide item",
+   "kind": "npc",
+   "table": "table",
+   "flag": 122,
+   "region": "Driftveil Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 70592,
+   "name": "Cold Storage - Item from worker",
+   "kind": "npc",
+   "table": "table",
+   "flag": 316,
+   "region": "Cold Storage",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 91232,
+   "name": "Route 6 - Item from ranger Shanti",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1606,
+   "region": "Route 6",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 91168,
+   "name": "Route 6 - Item from ranger Richard",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1602,
+   "region": "Route 6",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69712,
+   "name": "Route 6 - Item from child in western house",
+   "kind": "npc",
+   "table": "table",
+   "flag": 261,
+   "region": "Route 6 North House",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72240,
+   "name": "Chargestone Cave - Item from Professor Juniper",
+   "kind": "npc",
+   "table": "table",
+   "flag": 419,
+   "region": "Chargestone Cave 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 68241,
+   "name": "Chargestone Cave - Item from nugget brothers #1",
+   "kind": "npc",
+   "table": "table",
+   "flag": 169,
+   "region": "Chargestone Cave B1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 68242,
+   "name": "Chargestone Cave - Item from nugget brothers #2",
+   "kind": "npc",
+   "table": "table",
+   "flag": 169,
+   "region": "Chargestone Cave B1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 67840,
+   "name": "Mistralton City - Item from veteran in Cargo Service building",
+   "kind": "npc",
+   "table": "table",
+   "flag": 144,
+   "region": "Mistralton Cargo Service",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 67504,
+   "name": "Mistralton Gym - Gym guide item",
+   "kind": "npc",
+   "table": "table",
+   "flag": 123,
+   "region": "Mistralton Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 91248,
+   "name": "Route 7 - Item from ranger Mary",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1607,
+   "region": "Route 7",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 91184,
+   "name": "Route 7 - Item from ranger Pedro",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1603,
+   "region": "Route 7",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72688,
+   "name": "Twist Mountain - Item from worker near ice rock cave",
+   "kind": "npc",
+   "table": "table",
+   "flag": 447,
+   "region": "Twist Mountain 1F South West",
+   "progress": "post_ghetsis",
+   "include": true,
+   "rule": {
+    "rule": "has_beaten_ghetsis"
+   }
+  },
+  {
+   "id": 72304,
+   "name": "Icirrus City - Item from Aha if answer was correct",
+   "kind": "npc",
+   "table": "table",
+   "flag": 423,
+   "region": "Icirrus City Aha's House",
+   "progress": "always_default",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 72288,
+   "name": "Icirrus City - Item from Aha if answer was incorrect",
+   "kind": "npc",
+   "table": "table",
+   "flag": 422,
+   "region": "Icirrus City Aha's House",
+   "progress": "always_default",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": true
+  },
+  {
+   "id": 73328,
+   "name": "Icirrus City - Item from Aha for any answer",
+   "kind": "npc",
+   "table": "table",
+   "flag": 487,
+   "region": "Icirrus City Aha's House",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69552,
+   "name": "Icirrus City - Item from Pokémon Fan Club chairman for gaining 25 levels",
+   "kind": "npc",
+   "table": "table",
+   "flag": 251,
+   "region": "Icirrus City Pokémon Fan Club",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69568,
+   "name": "Icirrus City - Item from Pokémon Fan Club chairman for gaining 50 levels",
+   "kind": "npc",
+   "table": "table",
+   "flag": 252,
+   "region": "Icirrus City Pokémon Fan Club",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_beaten_ghetsis"
+   }
+  },
+  {
+   "id": 69584,
+   "name": "Icirrus City - Item from Pokémon Fan Club chairman for gaining 99 levels",
+   "kind": "npc",
+   "table": "table",
+   "flag": 253,
+   "region": "Icirrus City Pokémon Fan Club",
+   "progress": "always_excluded",
+   "include": {
+    "include": "disabled"
+   },
+   "rule": {
+    "rule": "has_beaten_ghetsis"
+   }
+  },
+  {
+   "id": 67520,
+   "name": "Icirrus Gym - Gym guide item",
+   "kind": "npc",
+   "table": "table",
+   "flag": 124,
+   "region": "Icirrus Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 70496,
+   "name": "Dragonspiral Tower - Item from Cedric Juniper",
+   "kind": "npc",
+   "table": "table",
+   "flag": 310,
+   "region": "Dragonspiral Tower Entrance",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_defeated_icirrus_gym"
+   }
+  },
+  {
+   "id": 72320,
+   "name": "Route 8 - Item from Bianca",
+   "kind": "npc",
+   "table": "table",
+   "flag": 424,
+   "region": "Route 8",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 91200,
+   "name": "Route 8 - Item from ranger Lewis",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1604,
+   "region": "Route 8",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 91264,
+   "name": "Route 8 - Item from ranger Annie",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1608,
+   "region": "Route 8 North East",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72736,
+   "name": "Route 8 - Item from eastern parasol lady",
+   "kind": "npc",
+   "table": "table",
+   "flag": 450,
+   "region": "Route 8",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 97568,
+   "name": "Moor of Icirrus - Item from ranger Chloris",
+   "kind": "npc",
+   "table": "table",
+   "flag": 2002,
+   "region": "Moor of Icirrus",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 97584,
+   "name": "Moor of Icirrus - Item from ranger Harry",
+   "kind": "npc",
+   "table": "table",
+   "flag": 2003,
+   "region": "Moor of Icirrus",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69728,
+   "name": "Shopping Mall Nine - Item from worker",
+   "kind": "npc",
+   "table": "table",
+   "flag": 262,
+   "region": "Shopping Mall Nine",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72353,
+   "name": "Marvelous Bridge - Item from Shadow Triad #1",
+   "kind": "npc",
+   "table": "table",
+   "flag": 426,
+   "region": "Marvelous Bridge",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72370,
+   "name": "Marvelous Bridge - Item from Shadow Triad #2",
+   "kind": "npc",
+   "table": "table",
+   "flag": 427,
+   "region": "Marvelous Bridge",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72387,
+   "name": "Marvelous Bridge - Item from Shadow Triad #3",
+   "kind": "npc",
+   "table": "table",
+   "flag": 428,
+   "region": "Marvelous Bridge",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72768,
+   "name": "Marvelous Bridge - Patrat shuffle reward",
+   "kind": "npc",
+   "table": "table",
+   "flag": 452,
+   "region": "Marvelous Bridge",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_found_woman_on_village_bridge"
+   }
+  },
+  {
+   "id": 95520,
+   "name": "Route 15 - Item from ranger Shelly",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1874,
+   "region": "Route 15",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 95552,
+   "name": "Route 15 - Item from ranger Keith",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1876,
+   "region": "Route 15",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71280,
+   "name": "Undella Town - Item from man in Pokémon Center",
+   "kind": "npc",
+   "table": "table",
+   "flag": 359,
+   "region": "Undella Town Pokemon Center",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71233,
+   "name": "Route 13 - Item from veteran in western house #1",
+   "kind": "npc",
+   "table": "table",
+   "flag": 356,
+   "region": "Route 13 West House",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71234,
+   "name": "Route 13 - Item from veteran in western house #2",
+   "kind": "npc",
+   "table": "table",
+   "flag": 356,
+   "region": "Route 13 West House",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 70624,
+   "name": "Route 13 - Item from old man",
+   "kind": "npc",
+   "table": "table",
+   "flag": 318,
+   "region": "Route 13 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 70640,
+   "name": "Route 13 - Item from parasol lady",
+   "kind": "npc",
+   "table": "table",
+   "flag": 319,
+   "region": "Route 13 South",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_talked_wingull_route_13"
+   }
+  },
+  {
+   "id": 70000,
+   "name": "Route 13 - Random item from man in black",
+   "kind": "npc",
+   "table": "table",
+   "flag": 279,
+   "region": "Route 13 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72864,
+   "name": "Lacunosa Town - Item from executive",
+   "kind": "npc",
+   "table": "table",
+   "flag": 458,
+   "region": "Lacunosa Town North East House",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 70800,
+   "name": "Lacunosa Town - Item from girl for showing a Shaymin",
+   "kind": "npc",
+   "table": "table",
+   "flag": 329,
+   "region": "Lacunosa Town Pokemon Center",
+   "progress": "wild_rando_dependant",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "randomized_wild"
+    },
+    "then": {
+     "rule": "has_shaymin"
+    }
+   }
+  },
+  {
+   "id": 95488,
+   "name": "Route 12 - Item from breeder Ethel",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1872,
+   "region": "Route 12",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 95472,
+   "name": "Route 12 - Item from breeder Eustace",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1871,
+   "region": "Route 12",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72432,
+   "name": "Village Bridge - Item from baker Chris",
+   "kind": "npc",
+   "table": "table",
+   "flag": 431,
+   "region": "Village Bridge",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72449,
+   "name": "Village Bridge - Item from fisherman for showing a certain pokémon caught today #1",
+   "kind": "npc",
+   "table": "table",
+   "flag": 432,
+   "region": "Village Bridge Left House on Right Side",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_other_locations_species"
+   }
+  },
+  {
+   "id": 72450,
+   "name": "Village Bridge - Item from fisherman for showing a certain pokémon caught today #2",
+   "kind": "npc",
+   "table": "table",
+   "flag": 432,
+   "region": "Village Bridge Left House on Right Side",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_other_locations_species"
+   }
+  },
+  {
+   "id": 72451,
+   "name": "Village Bridge - Item from fisherman for showing a certain pokémon caught today #3",
+   "kind": "npc",
+   "table": "table",
+   "flag": 432,
+   "region": "Village Bridge Left House on Right Side",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_other_locations_species"
+   }
+  },
+  {
+   "id": 72452,
+   "name": "Village Bridge - Item from fisherman for showing a certain pokémon caught today #4",
+   "kind": "npc",
+   "table": "table",
+   "flag": 432,
+   "region": "Village Bridge Left House on Right Side",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_other_locations_species"
+   }
+  },
+  {
+   "id": 72453,
+   "name": "Village Bridge - Item from fisherman for showing a certain pokémon caught today #5",
+   "kind": "npc",
+   "table": "table",
+   "flag": 432,
+   "region": "Village Bridge Left House on Right Side",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_other_locations_species"
+   }
+  },
+  {
+   "id": 95504,
+   "name": "Route 11 - Item from ranger Thalia",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1873,
+   "region": "Route 11",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 95536,
+   "name": "Route 11 - Item from ranger Crofton",
+   "kind": "npc",
+   "table": "table",
+   "flag": 1875,
+   "region": "Route 11 Ravine",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 70528,
+   "name": "Opelucid City - Item from female NPC in northern house",
+   "kind": "npc",
+   "table": "table",
+   "flag": 312,
+   "region": "Opelucid City House Next to Gym 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 70720,
+   "name": "Opelucid City - Item from linebacker in Drayden's house",
+   "kind": "npc",
+   "table": "table",
+   "flag": 324,
+   "region": "Opelucid City Drayden's House 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 70736,
+   "name": "Opelucid City - Item from female NPC in Drayden's house",
+   "kind": "npc",
+   "table": "table",
+   "flag": 325,
+   "region": "Opelucid City Drayden's House 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 67536,
+   "name": "Opelucid Gym - Gym guide item",
+   "kind": "npc",
+   "table": "table",
+   "flag": 125,
+   "region": "Opelucid Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72464,
+   "name": "Opelucid City - Item from Professor Juniper",
+   "kind": "npc",
+   "table": "table",
+   "flag": 433,
+   "region": "Opelucid City",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "rule": "has_defeated_opelucid_gym"
+    }
+   }
+  },
+  {
+   "id": 69744,
+   "name": "Route 10 - Item from veteran near northern bridge",
+   "kind": "npc",
+   "table": "table",
+   "flag": 263,
+   "region": "Route 10",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72481,
+   "name": "Route 10 - Item from Bianca #1",
+   "kind": "npc",
+   "table": "table",
+   "flag": 434,
+   "region": "Route 10",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_heard_weather_route_10"
+   }
+  },
+  {
+   "id": 72482,
+   "name": "Route 10 - Item from Bianca #2",
+   "kind": "npc",
+   "table": "table",
+   "flag": 434,
+   "region": "Route 10",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_heard_weather_route_10"
+   }
+  },
+  {
+   "id": 71328,
+   "name": "N's Castle - Item from grunt in 3F left room",
+   "kind": "npc",
+   "table": "table",
+   "flag": 362,
+   "region": "N's Castle 3F Left Room",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71136,
+   "name": "Route 6 - Item from scientist for all Deerling forms",
+   "kind": "npc",
+   "table": "seasonal",
+   "flag": 350,
+   "region": "Season Research Lab",
+   "progress": "deerling_dependant",
+   "include": true,
+   "rule": {
+    "rule": "can_catch_all_deerlings"
+   }
+  },
+  {
+   "id": 67680,
+   "name": "Icirrus City - Item from the former Team Rocket member's wife (Winter)",
+   "kind": "npc",
+   "table": "seasonal",
+   "flag": 134,
+   "region": "Icirrus City South House",
+   "progress": "season_dependant",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71456,
+   "name": "Striaton Gym - Badge reward",
+   "kind": "badge",
+   "table": "gym_badges",
+   "flag": 370,
+   "region": "Striaton Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71472,
+   "name": "Nacrene Gym - Badge reward",
+   "kind": "badge",
+   "table": "gym_badges",
+   "flag": 371,
+   "region": "Nacrene Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71488,
+   "name": "Castelia Gym - Badge reward",
+   "kind": "badge",
+   "table": "gym_badges",
+   "flag": 372,
+   "region": "Castelia Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71504,
+   "name": "Nimbasa Gym - Badge reward",
+   "kind": "badge",
+   "table": "gym_badges",
+   "flag": 373,
+   "region": "Nimbasa Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71520,
+   "name": "Driftveil Gym - Badge reward",
+   "kind": "badge",
+   "table": "gym_badges",
+   "flag": 374,
+   "region": "Driftveil Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71536,
+   "name": "Mistralton Gym - Badge reward",
+   "kind": "badge",
+   "table": "gym_badges",
+   "flag": 375,
+   "region": "Mistralton Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71552,
+   "name": "Icirrus Gym - Badge reward",
+   "kind": "badge",
+   "table": "gym_badges",
+   "flag": 376,
+   "region": "Icirrus Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71568,
+   "name": "Opelucid Gym - Badge reward",
+   "kind": "badge",
+   "table": "gym_badges",
+   "flag": 377,
+   "region": "Opelucid Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71464,
+   "name": "Striaton Gym - TM reward",
+   "kind": "tm",
+   "table": "gym_tms",
+   "flag": 370,
+   "region": "Striaton Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71480,
+   "name": "Nacrene Gym - TM reward",
+   "kind": "tm",
+   "table": "gym_tms",
+   "flag": 371,
+   "region": "Nacrene Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71496,
+   "name": "Castelia Gym - TM reward",
+   "kind": "tm",
+   "table": "gym_tms",
+   "flag": 372,
+   "region": "Castelia Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71512,
+   "name": "Nimbasa Gym - TM reward",
+   "kind": "tm",
+   "table": "gym_tms",
+   "flag": 373,
+   "region": "Nimbasa Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72232,
+   "name": "Route 6 - TM from Clay",
+   "kind": "tm",
+   "table": "gym_tms",
+   "flag": 418,
+   "region": "Chargestone Cave Entrance",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_quake_badge"
+   }
+  },
+  {
+   "id": 71544,
+   "name": "Mistralton Gym - TM reward",
+   "kind": "tm",
+   "table": "gym_tms",
+   "flag": 375,
+   "region": "Mistralton Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71560,
+   "name": "Icirrus Gym - TM reward",
+   "kind": "tm",
+   "table": "gym_tms",
+   "flag": 376,
+   "region": "Icirrus Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71576,
+   "name": "Opelucid Gym - TM reward",
+   "kind": "tm",
+   "table": "gym_tms",
+   "flag": 377,
+   "region": "Opelucid Gym",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 68320,
+   "name": "Nuvema Town - TM from Professor Juniper for seeing 25 species",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 174,
+   "region": "Juniper's Lab",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_25_species"
+   }
+  },
+  {
+   "id": 68336,
+   "name": "Nuvema Town - TM from Professor Juniper for seeing 60 species",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 175,
+   "region": "Juniper's Lab",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_60_species"
+   }
+  },
+  {
+   "id": 68352,
+   "name": "Nuvema Town - TM from Professor Juniper for seeing 115 species",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 176,
+   "region": "Juniper's Lab",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_115_species_seen"
+   }
+  },
+  {
+   "id": 71776,
+   "name": "Route 18 - TM from sage Rood",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 390,
+   "region": "Route 18",
+   "progress": "post_ghetsis",
+   "include": true,
+   "rule": {
+    "rule": "has_beaten_ghetsis"
+   }
+  },
+  {
+   "id": 71888,
+   "name": "Striaton City - TM from Fennel",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 397,
+   "region": "Striaton City East Upper House 2F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72096,
+   "name": "Dreamyard - TM from sage Gorm",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 410,
+   "region": "Dreamyard South",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69872,
+   "name": "Pinwheel Forest Outside - TM from woman near Nacrene City",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 271,
+   "region": "Pinwheel Forest Outside",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69776,
+   "name": "Castelia City - TM from hiker in building in Castelia Street",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 265,
+   "region": "Castelia City Castelia Street West Building 11F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72048,
+   "name": "Castelia City - TM from man in black behind dumpster",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 407,
+   "region": "Castelia City Narrow Street",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69856,
+   "name": "Castelia City - TM from school kid in building in northern street",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 270,
+   "region": "Castelia City Northern Street East Lower Building 47F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 70464,
+   "name": "Castelia City - TM from Mr. Lock in building in northern street",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 308,
+   "region": "Castelia City Northern Street West Building 11F",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_lock_capsule"
+   }
+  },
+  {
+   "id": 69888,
+   "name": "Route 4 - TM from worker in northern building",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 272,
+   "region": "Route 4 North House",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72144,
+   "name": "Relic Castle - TM from sage Ryoku",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 413,
+   "region": "Relic Castle Basement Volcarona Entrance",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 70176,
+   "name": "Nimbasa City - TM from ace trainer in western building",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 290,
+   "region": "Nimbasa City North West House 1F",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69808,
+   "name": "Nimbasa City - TM from lady in Musical Theater",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 267,
+   "region": "Musical Theater",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72192,
+   "name": "Driftveil City - TM from Bianca",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 416,
+   "region": "Driftveil City",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_defeated_driftveil_gym"
+   }
+  },
+  {
+   "id": 72208,
+   "name": "Cold Storage - TM from sage Zinzolin",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 417,
+   "region": "Cold Storage Container",
+   "progress": "post_ghetsis",
+   "include": true,
+   "rule": {
+    "rule": "has_beaten_ghetsis"
+   }
+  },
+  {
+   "id": 72256,
+   "name": "Chargestone Cave - TM from sage Bronius",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 420,
+   "region": "Chargestone Cave B2F",
+   "progress": "post_ghetsis",
+   "include": true,
+   "rule": {
+    "rule": "has_beaten_ghetsis"
+   }
+  },
+  {
+   "id": 67664,
+   "name": "Route 7 - TM from battle girl",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 133,
+   "region": "Route 7",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72272,
+   "name": "Twist Mountain - TM from Alder",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 421,
+   "region": "Twist Mountain Entrance",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_defeated_mistralton_gym"
+   }
+  },
+  {
+   "id": 67696,
+   "name": "Icirrus City - TM from old lady in pokémon center",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 135,
+   "region": "Icirrus City Pokemon Center",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69664,
+   "name": "Route 8 - TM from western parasol lady",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 258,
+   "region": "Route 8",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 69696,
+   "name": "Tubeline Bridge - TM from battle girl",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 260,
+   "region": "Tubeline Bridge",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72336,
+   "name": "Route 9 - TM from infielder",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 425,
+   "region": "Route 9",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72400,
+   "name": "Route 14 - TM from sage Giallo",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 429,
+   "region": "Route 14 Top Platform",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 71072,
+   "name": "Undella Town - TM from girl",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 346,
+   "region": "Undella Town",
+   "progress": "always_default",
+   "include": true,
+   "rule": true
+  },
+  {
+   "id": 72416,
+   "name": "Route 13 - TM from Wingull",
+   "kind": "tm",
+   "table": "tm_hm_ncps",
+   "flag": 430,
+   "region": "Route 13 North",
+   "progress": "always_default",
+   "include": true,
+   "rule": {
+    "rule": "has_all_grams"
+   }
+  }
+ ]
+}

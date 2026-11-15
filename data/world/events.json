@@ -1,0 +1,605 @@
+{
+ "_source": "PokemonBWAP 0.4.5 data (BlastSlimey and contributors, MIT), converted by tools/bwap2data.py",
+ "events": [
+  {
+   "name": "[Event] Argument in Bianca's house",
+   "region": "Bianca's House",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": true
+  },
+  {
+   "name": "[Event] Introduction in Juniper's Lab",
+   "region": "Juniper's Lab",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": true
+  },
+  {
+   "name": "[Event] Catching sage Rood",
+   "region": "Route 18",
+   "include": true,
+   "rule": {
+    "rule": "has_beaten_ghetsis"
+   }
+  },
+  {
+   "name": "[Event] Accumula Town PC tutorial",
+   "region": "Accumula Town Pokemon Center",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": true
+  },
+  {
+   "name": "[Event] Accumula Town Ghetsis speech",
+   "region": "Accumula Town",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": {
+    "has": "[Event] Accumula Town PC tutorial"
+   }
+  },
+  {
+   "name": "[Event] Trainers' School Cheren fight",
+   "region": "Striaton City Trainers' School",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": true
+  },
+  {
+   "name": "[Event] Defeating leader Cilan/Chili/Cress",
+   "region": "Striaton Gym",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Meeting Fennel in Striaton City",
+   "region": "Striaton City Near Gym",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": {
+    "rule": "has_defeated_striaton_gym"
+   }
+  },
+  {
+   "name": "[Event] First talk with Fennel in her house",
+   "region": "Striaton City East Upper House 2F",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": {
+    "has": "[Event] Meeting Fennel in Striaton City"
+   }
+  },
+  {
+   "name": "[Event] Dreamyard North Plasma fight",
+   "region": "Dreamyard North West",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "has": "[Event] First talk with Fennel in her house"
+    }
+   }
+  },
+  {
+   "name": "[Event] Catching sage Gorm",
+   "region": "Dreamyard South",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Grunts running on Route 3",
+   "region": "Route 3 North",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": true
+  },
+  {
+   "name": "[Event] Wellspring Cave Plasma fight",
+   "region": "Wellspring Cave Entrance",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": {
+    "rule": "has_seen_plasma_route_3"
+   }
+  },
+  {
+   "name": "[Event] Access to friendship checker",
+   "region": "Nacrene City South East Left House",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Defeating leader Lenora",
+   "region": "Nacrene Gym",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Moss Rock",
+   "region": "Pinwheel Forest South",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Moss Rock",
+   "region": "Pinwheel Forest North",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": true
+  },
+  {
+   "name": "[Event] Moss Rock",
+   "region": "Pinwheel Forest North East",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": true
+  },
+  {
+   "name": "[Event] Encounter Virizion",
+   "region": "Rumination Field",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Castelia evo items",
+   "region": "Castelia City Thumb Pier",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Burgh running out of gym",
+   "region": "Castelia City Gym Street",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": true
+  },
+  {
+   "name": "[Event] Meetup at Prime Pier",
+   "region": "Castelia City Prime Pier",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": {
+    "has": "[Event] Burgh running out of gym"
+   }
+  },
+  {
+   "name": "[Event] Burgh searching outside gym street",
+   "region": "Castelia City",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": {
+    "has": "[Event] Meetup at Prime Pier"
+   }
+  },
+  {
+   "name": "[Event] Burgh searching outside gym street",
+   "region": "Castelia City Central Plaza",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": {
+    "has": "[Event] Meetup at Prime Pier"
+   }
+  },
+  {
+   "name": "[Event] Castelia Plasma fight",
+   "region": "Castelia City Gym Street",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": {
+    "has": "[Event] Burgh searching outside gym street"
+   }
+  },
+  {
+   "name": "[Event] Castelia Plasma Hideout confrontation",
+   "region": "Castelia City Plasma Hideout 1F",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": {
+    "rule": "has_fought_plasma_castelia"
+   }
+  },
+  {
+   "name": "[Event] Defeating leader Burgh",
+   "region": "Castelia Gym",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Verifying TMs/HMs Castelia",
+   "region": "Castelia City Central Plaza",
+   "include": {
+    "include": "tm_hm_hunt_goal"
+   },
+   "rule": {
+    "rule": "has_all_tms_hms"
+   }
+  },
+  {
+   "name": "[Event] Defeating Catelia Dancer Mickey",
+   "region": "Castelia City Central Plaza",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": true
+  },
+  {
+   "name": "[Event] Defeating Catelia Dancer Raymond",
+   "region": "Castelia City Unity Pier",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": {
+    "rule": "has_fought_dancer_mickey"
+   }
+  },
+  {
+   "name": "[Event] Defeating Catelia Dancer Edmond",
+   "region": "Castelia City Narrow Street",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": {
+    "rule": "has_fought_dancer_mickey"
+   }
+  },
+  {
+   "name": "[Event] Encounter Victini",
+   "region": "Liberty Garden Basement",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Relic Castle Ghetsis confrontation",
+   "region": "Relic Castle Castleside Sand Filled Room",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Catching sage Ryoku",
+   "region": "Relic Castle Basement Volcarona Entrance",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Encounter Volcarona",
+   "region": "Relic Castle Basement Volcarona Room",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Helping old man in Nimbasa",
+   "region": "Nimbasa City",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Defeating leader Elesa",
+   "region": "Nimbasa Gym",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Talk with Cheren and Clay Driftveil",
+   "region": "Driftveil City",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": true
+  },
+  {
+   "name": "[Event] Search with Cheren in Cold Storage building",
+   "region": "Cold Storage Building",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": {
+    "has": "[Event] Talk with Cheren and Clay Driftveil"
+   }
+  },
+  {
+   "name": "[Event] Cold Storage Plasma confrontation",
+   "region": "Cold Storage Container",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": {
+    "rule": "has_searched_cold_storage"
+   }
+  },
+  {
+   "name": "[Event] Defeating leader Clay",
+   "region": "Driftveil Gym",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Catching sage Zinzolin",
+   "region": "Cold Storage Container",
+   "include": true,
+   "rule": {
+    "rule": "has_beaten_ghetsis"
+   }
+  },
+  {
+   "name": "[Event] Encounter Cobalion",
+   "region": "Guidance Chamber",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Magnetic Area",
+   "region": "Chargestone Cave 1F",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Magnetic Area",
+   "region": "Chargestone Cave B1F",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": true
+  },
+  {
+   "name": "[Event] Magnetic Area",
+   "region": "Chargestone Cave B2F",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": true
+  },
+  {
+   "name": "[Event] Chargestone evo items",
+   "region": "Chargestone Cave 1F",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Defeating N Chargestone",
+   "region": "Chargestone Cave 1F North East",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Catching sage Bronius",
+   "region": "Chargestone Cave B2F",
+   "include": true,
+   "rule": {
+    "rule": "has_beaten_ghetsis"
+   }
+  },
+  {
+   "name": "[Event] Ring bell Celestial Tower",
+   "region": "Celestial Tower 5F",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Defeating leader Skyla",
+   "region": "Mistralton Gym",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Talked with kids Mistralton",
+   "region": "Mistralton City North House",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": {
+    "has": "[Event] Defeating leader Skyla"
+   }
+  },
+  {
+   "name": "[Event] Access to move relearner",
+   "region": "Mistralton City East House",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Heard roamer rumor",
+   "region": "Route 7 North House",
+   "include": true,
+   "rule": {
+    "has": "[Event] Heard weather warning route 10 gate"
+   }
+  },
+  {
+   "name": "[Event] Released roamer",
+   "region": "Route 7",
+   "include": true,
+   "rule": {
+    "has": "[Event] Heard roamer rumor"
+   }
+  },
+  {
+   "name": "[Event] Ice Rock",
+   "region": "Twist Mountain Ice Cave",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Twist Mountain evo items",
+   "region": "Twist Mountain Outside 3F West Footbridge",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Defeating leader Brycen",
+   "region": "Icirrus Gym",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Shopping Mall Nine evo items",
+   "region": "Shopping Mall Nine",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Talking to Patrat woman Village Bridge",
+   "region": "Village Bridge Middle House on Right Side",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Encounter Kyurem",
+   "region": "Giant Chasm Inner Cave",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Giant Chasm evo items",
+   "region": "Giant Chasm Entrance Cave",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Talked to girl next to Wingull Route 13",
+   "region": "Route 13 North",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Defeating Cynthia",
+   "region": "Undella Town Caitlin's Villa",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Undella evo items",
+   "region": "The Riches' Villa",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Catching sage Giallo",
+   "region": "Route 14 Top Platform",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Opelucid Ghetsis speech",
+   "region": "Opelucid City",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": true
+  },
+  {
+   "name": "[Event] Talk with Iris and Drayden",
+   "region": "Opelucid City Drayden's House 1F",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": {
+    "has": "[Event] Opelucid Ghetsis speech"
+   }
+  },
+  {
+   "name": "[Event] Defeating leader Iris/Drayden",
+   "region": "Opelucid Gym",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Talk with Juniper Opelucid",
+   "region": "Opelucid City",
+   "include": {
+    "include": "shuffled_doors"
+   },
+   "rule": {
+    "has": "[Event] Defeating leader Iris/Drayden"
+   }
+  },
+  {
+   "name": "[Event] Heard weather warning route 10 gate",
+   "region": "Opelucid City North Gate",
+   "include": true,
+   "rule": {
+    "if": {
+     "include": "shuffled_doors"
+    },
+    "then": {
+     "has": "[Event] Talk with Juniper Opelucid"
+    }
+   }
+  },
+  {
+   "name": "[Event] Route 10 evo items",
+   "region": "Route 10",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Encounter Terrakion",
+   "region": "Trial Chamber",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Defeating elite four Shauntal",
+   "region": "Pokémon League Shauntal's Room",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Defeating elite four Marshal",
+   "region": "Pokémon League Marshal's Room",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Defeating elite four Grimsley",
+   "region": "Pokémon League Grimsley's Room",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Defeating elite four Caitlin",
+   "region": "Pokémon League Caitlin's Room",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Encounter Reshiram/Zekrom",
+   "region": "N's Castle Throne Room",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Defeating Ghetsis",
+   "region": "N's Castle Throne Room",
+   "include": true,
+   "rule": true
+  },
+  {
+   "name": "[Event] Defeating champ Alder",
+   "region": "Pokémon League Champion's Room",
+   "include": true,
+   "rule": {
+    "rule": "has_beaten_ghetsis"
+   }
+  }
+ ]
+}
