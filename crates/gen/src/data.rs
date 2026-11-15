@@ -29,15 +29,15 @@ pub const EVENTS: &str = include_str!("../../../data/world/events.json");
 pub const LOCATIONS: &str = include_str!("../../../data/world/locations.json");
 pub const RULES: &str = include_str!("../../../data/world/rules.json");
 
+/// The hash of the compiled-in data. Carriage returns are skipped, so a
+/// checkout with CRLF line ends (Windows) hashes the same as one with LF.
 pub fn data_hash() -> u64 {
-    crate::rng::fnv1a(&[
-        ITEMS.as_bytes(),
-        REGIONS.as_bytes(),
-        CONNECTIONS.as_bytes(),
-        EVENTS.as_bytes(),
-        LOCATIONS.as_bytes(),
-        RULES.as_bytes(),
-    ])
+    let parts: Vec<Vec<u8>> = [ITEMS, REGIONS, CONNECTIONS, EVENTS, LOCATIONS, RULES]
+        .iter()
+        .map(|s| s.bytes().filter(|b| *b != 0x0D).collect())
+        .collect();
+    let refs: Vec<&[u8]> = parts.iter().map(|v| v.as_slice()).collect();
+    crate::rng::fnv1a(&refs)
 }
 
 #[derive(Deserialize, Clone)]
