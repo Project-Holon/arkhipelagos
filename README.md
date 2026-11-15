@@ -27,6 +27,7 @@ cartridge files when the game starts.
 | `crates/script` | field-script disassembler and assembler, all 12 cartridges |
 | `crates/formats` | NARC archives (and later text) |
 | `crates/gen-wasm` | the generator built for wasm32 |
+| `crates/apply` | turns a world's table changes into the player's own game files (no game data shipped) |
 | `data/world` | the game's logic: items, regions, connections, events, locations, rules |
 | `data/facts` | the original game's tables as plain numbers (stats, learnsets, encounters, trainers and more) |
 | `data/script` | the field-script command table per language family |

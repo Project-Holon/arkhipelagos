@@ -9,6 +9,8 @@ cargo build --release -p arkh-gen-wasm --target wasm32-unknown-unknown
 cargo test --release
 echo "== field scripts, 12 cartridges"
 python tools/check_scripts.py
+echo "== apply step: written archives read back, 12 cartridges"
+python tools/check_apply.py
 echo "== generator: golden hashes (native)"
 fail=0
 while read -r h f; do
