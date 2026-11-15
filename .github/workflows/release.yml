@@ -1,0 +1,15 @@
+# On a tag v*: build the mod, pack the mod folder into mod.bw, write
+# mod.json and publish both as the release (katalogos's workflow,
+# katalogos docs/publishing.md).
+name: release
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  release:
+    uses: Project-Holon/katalogos/.github/workflows/build-mod.yml@main
+    with:
+      mod-dir: mod
+      build: sh tools/build_mod.sh

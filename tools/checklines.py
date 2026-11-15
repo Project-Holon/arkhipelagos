@@ -1,6 +1,8 @@
 """Check the in-game lines and their translations against each cartridge.
 
 usage: python tools/checklines.py [--show]
+       python tools/checklines.py --no-carts   (the checks that need no
+                                                cartridge; CI runs these)
 
 For every line, in every language, on every cartridge of that language:
 - every placeholder resolves from the cartridge's own text ({item:N} and
@@ -227,7 +229,8 @@ def main():
                     print(f"{lang}: own_terms entry {lid} has no line or no reason")
                     sys.exit(1)
     kinds = {l["id"]: l["kind"] for l in en["lines"]}
-    ref = Cart("IRBO", {2: None, 3: None}) if False else None
+    if "--no-carts" in sys.argv:
+        sys.exit(check_text_only(kinds, trans, own_terms))
     C0 = carts.load()
     base = Cart.__new__(Cart)
     # English counts for the file alignment
@@ -299,6 +302,43 @@ def main():
             print("    ", p)
     print("all lines pass" if errors == 0 else f"{errors} problems")
     sys.exit(1 if errors else 0)
+
+
+def check_text_only(kinds, trans, own_terms):
+    """The checks that need no cartridge (for CI): every line present, the
+    same placeholders as English, two lines per box, one line per menu
+    entry, at most three lines per item description, no kanji in kana."""
+    problems = []
+    for lang, lines in trans.items():
+        if lang == "en":
+            continue
+        for lid, kind in kinds.items():
+            src = trans["en"][lid]
+            t = lines.get(lid)
+            if t is None:
+                problems.append(f"{lang} {lid}: missing")
+                continue
+            variants = [("kana", t["kana"]), ("kanji", t["kanji"])] if lang == "ja" else [("", t)]
+            for vname, text in variants:
+                tag = f"{lang} {lid}{'/' + vname if vname else ''}"
+                if lid in own_terms.get(lang, {}):
+                    if codes_of(text) != codes_of(src):
+                        problems.append(f"{tag}: codes differ from English")
+                elif tokens(text) != tokens(src):
+                    problems.append(f"{tag}: placeholders differ from English")
+                if vname == "kana" and re.search(r"[㐀-䶿一-内冇-鿿]", text):
+                    problems.append(f"{tag}: kanji in the kana block")
+                n = len(re.split(r"\\[ncr]", text.replace("\\c", "").replace("\\r", "\\n").rstrip("\\n")))
+                if kind == "game" and not boxes_ok(text):
+                    problems.append(f"{tag}: more than two lines in one box")
+                if kind == "item" and n > 3:
+                    problems.append(f"{tag}: more than three lines")
+                if kind in ("menu", "item-name") and "\\n" in text:
+                    problems.append(f"{tag}: a menu entry has one line")
+    for p in problems:
+        print("    ", p)
+    print("all lines pass the checks that need no cartridge" if not problems else f"{len(problems)} problems")
+    return 1 if problems else 0
 
 
 if __name__ == "__main__":

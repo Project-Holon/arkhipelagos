@@ -28,6 +28,7 @@ cartridge files when the game starts.
 | `crates/formats` | NARC archives (and later text) |
 | `crates/gen-wasm` | the generator built for wasm32 |
 | `data/world` | the game's logic: items, regions, connections, events, locations, rules |
+| `data/facts` | the original game's tables as plain numbers (stats, learnsets, encounters, trainers and more) |
 | `data/script` | the field-script command table per language family |
 | `tools` | Python tools that build and check the data from the cartridges |
 | `tests` | test configurations, golden hashes, the check script |
@@ -46,15 +47,32 @@ sh tests/check.sh
 
 The script check needs the 12 cartridges' extracted data; list where they
 are in `tools/carts.local.json` (see `tools/carts.example.json`).
+`sh tests/ci.sh` runs the checks that need no cartridge; GitHub Actions
+runs it on every push. A tag `v*` builds the mod and publishes `mod.bw` and
+`mod.json` with katalogos's release workflow.
 
 ## Documents
 
 - `docs/script-tool.md`: the field-script tool and its checks
 - `docs/generator.md`: the generator, its data and its checks
-- `docs/eidos-api-proposal.md`: the eidos mod API it needs (proposal)
+- `docs/facts.md`: the game facts, how they are read and checked
+- `docs/eidos-api-proposal.md`: the eidos mod API it needs (approved)
 - `docs/metaxy-proposal.md`: world sessions and the Archipelago bridge in
-  metaxy (proposal)
+  metaxy (approved)
+
+## Credits
+
+- [PokemonBWAP](https://github.com/BlastSlimey/PokemonBWAP) by BlastSlimey
+  and contributors (MIT): the logic data started from its world data, and
+  its tables were the reference our game facts were checked against.
+- [Archipelago](https://archipelago.gg) (MIT): the multiworld system.
+- aletheia, the decompilation of Pokemon Black and White: the field-script
+  commands and the layouts of every game table come from its source.
+- [eidos](https://github.com/Project-Holon/eidos) and metaxy, which run
+  the mod and its online play.
+
+Details in [CREDITS.md](CREDITS.md).
 
 ## License
 
-MIT (`LICENSE`). Credits in `CREDITS.md`.
+MIT (`LICENSE`).
