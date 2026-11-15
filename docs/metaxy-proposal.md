@@ -1,8 +1,11 @@
 # Proposal: metaxy world sessions and Archipelago bridge
 
-For the user's approval. Nothing here is built, and nothing is changed in
-the metaxy tree, until it is approved. It is written as new parts of
-metaxy's `docs/SPEC.md`, in its style.
+Approved on 2026-11-16, with two notes that are now written in: a world
+is stored as its configuration, seed and generator version, not as the
+generated world (C4), and the world store must survive restarts and
+redeploys (Part F). It is written as new parts of metaxy's `docs/SPEC.md`,
+in its style. The metaxy work itself is done in the metaxy repository; this
+document is the agreed design.
 
 metaxy stays one service, one process. It gains two roles beside the
 relay:
@@ -79,9 +82,30 @@ Archipelago message 2 MB.
   one line per change: claim, check, item handed over, goal). Each line is
   written and flushed to disk before metaxy answers, so a crash loses
   nothing that was confirmed.
+- **What `world.json` holds (approval note).** The generator is
+  deterministic: the same configuration and seed give the same world,
+  checked between native and wasm32 builds. So metaxy stores what makes
+  the world, not the world:
+  - the configuration (as checked on `N`),
+  - the seed,
+  - the generator version (`arkh-gen` crate version and its data hash),
+  - the world hash the generator gave at creation.
+- **On load** metaxy makes the world again with that generator version
+  and compares the hash. Same hash: the world is served. Another hash:
+  the world is not served (`E gen-mismatch`) and the operator log says
+  which world and which version; nothing is guessed. The stored hash is
+  what guards against a generator change.
+- A world is made again only when it is first needed after a start (a
+  join or a check), then kept in memory while it has players, and dropped
+  after 10 minutes without one. 16 players take about 1.6 s.
+- The log stays as it is: it is the world's state (claims, checks, items
+  handed over, goals), which the generator cannot make again.
 - At start, metaxy rebuilds a world's state from `world.json` and `log`;
   logs are compacted from time to time.
-- Size: a 16-player world is about 1 to 2 MB.
+- Size: `world.json` is tens of KB (the configuration is at most 64 KB),
+  instead of about 2 MB for a generated 16-player world. The log grows
+  with play: about 1,200 checks per player, a line each, so a few hundred
+  KB for a full 16-player world at its end.
 - Expiry (decided): deleted after 90 days with no join, or 30 days after
   every player reached the goal. Only the owner key deletes earlier.
 - What it holds about people: the names in the configuration, key hashes,
@@ -121,6 +145,7 @@ Rates per client count all roles together.
 | `not-owner` | the owner key is wrong |
 | `name-taken` | that player is claimed; join with the player key |
 | `bad-key` | the player key is wrong |
+| `gen-mismatch` | the world made again on load does not match its stored hash |
 
 ## Part D: the Archipelago bridge
 
@@ -204,13 +229,56 @@ arkh-gen = { git = "https://github.com/Project-Holon/arkhipelagos", tag = "gen-v
 
 - The crate carries the game's logic compiled in; metaxy reads no data
   files for it.
-- A world records the generator version and the data hash. metaxy serves a
-  stored world from its stored data, so an older world keeps working when
-  metaxy moves to a newer generator.
+- A world records the generator version and its world hash (C4).
+  Because metaxy makes stored worlds again on load, a newer generator
+  must not drop the version old worlds need. metaxy links every generator
+  version that open worlds use (Cargo allows one crate at several versions
+  under different names: `arkh-gen-0-1`, `arkh-gen-0-2`), and a world is
+  made by the version it names.
+- A version is removed only when no open world uses it (worlds expire
+  after at most 90 days without a join). Before that, an operator command
+  `metaxy world freeze <version>` writes the generated world of each
+  remaining world into its folder (`world.full.json`, the old 2 MB form),
+  and metaxy serves those from the file.
+- Inside one version, a change that alters worlds is a bug: arkhipelagos'
+  golden hashes catch it before a release tag.
 - metaxy's tests include arkhipelagos' golden hashes for the pinned tag, so
   a dependency update that changes worlds is noticed.
 - The world format and the configuration format are owned by arkhipelagos
   (`docs/generator.md` there); metaxy only stores and routes them.
+
+## Part F: deployment
+
+The world store is state that must outlive the process (approval note).
+
+- `--world-store <dir>` names a folder that survives restarts and
+  redeploys. metaxy refuses to start the world role when the folder cannot
+  be written, and says so; it never falls back to a temporary folder.
+- **Docker:** the store is a named volume, never the container's own
+  layer, which a redeploy throws away:
+
+  ```sh
+  docker volume create metaxy-worlds
+  docker run -d --restart unless-stopped -p 4141:4141 \
+    -v metaxy-worlds:/var/lib/metaxy/worlds metaxy --world-store /var/lib/metaxy/worlds
+  ```
+
+  The image declares `VOLUME /var/lib/metaxy/worlds`, so a run without
+  `-v` still keeps the store in an anonymous volume, and the README shows
+  the named form.
+- **systemd:** the store is `/var/lib/metaxy/worlds` with
+  `StateDirectory=metaxy/worlds`, so it is made with the right owner and
+  kept across upgrades.
+- **Hosted containers** (Fly, Railway and similar): a persistent volume
+  mounted at the store path. One metaxy instance per volume: two instances
+  must never share one store, as each keeps worlds in memory.
+- **Size:** at tens of KB per world plus its log, 10,000 open worlds take
+  a few GB at most. 1 GB is enough to start.
+- **Backups:** the store is plain files, written with flush and rename, so
+  a file copy of the folder while metaxy runs is a usable backup (the last
+  log line may be cut; metaxy skips a cut last line on load).
+- Shutting down: on SIGTERM metaxy stops taking checks, flushes every log
+  and exits, so a redeploy loses nothing confirmed.
 
 ## Tests
 
@@ -228,8 +296,10 @@ arkh-gen = { git = "https://github.com/Project-Holon/arkhipelagos", tag = "gen-v
 
 - The bridge connects to archipelago.gg by default; the player may set any
   other Archipelago server in eidos (D3). The `RoomInfo` guard stays.
-
-## Questions
-
-1. The world store needs a disk on the metaxy machine (worlds are about
-   2 MB each). Is that fine for the public relay?
+- Approved on 2026-11-16 with two notes, now in the text:
+  - a world is stored as configuration, seed, generator version and world
+    hash; metaxy makes it again on load and checks the hash; the log stays
+    (C4, Part E);
+  - the world store survives restarts and redeploys: a persistent volume
+    in a container (Part F).
+- The world store on the public relay's disk: yes, at tens of KB per world.

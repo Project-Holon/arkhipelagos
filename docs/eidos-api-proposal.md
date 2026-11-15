@@ -1,7 +1,9 @@
 # Proposal: eidos mod API additions for arkhipelagos
 
-For the user's approval. Nothing here is built, and nothing is changed in
-the eidos tree, until it is approved.
+Approved on 2026-11-16, with three notes that are now written in: the
+type chart (item 11), archives that are already open (item 1) and a size
+quota for mod files (item 15). The eidos work itself is done in the eidos
+repository; this document is the agreed design.
 
 Every addition is general mod API (interface version 6), usable by any
 mod, not only arkhipelagos. Where possible an addition is an **event with
@@ -30,11 +32,11 @@ battle", and "Encounter tables: reading a zone's encounter slots".
 | 8 | `item.usable` | event, writable `usable` | allow or refuse a field item (Gracidea first) |
 | 9 | `season.change` | event, writable `season` | season control |
 | 10 | `encounter.slot` | event, writable `slot` | which wild slot is picked |
-| 11 | `battle.type_effect` | event, writable `effect` | the type chart |
+| 11 | `type_chart_set`, `battle.type_effect` | service; event, writable `effect` | the type chart: written once (main path), or per lookup (rule mods) |
 | 12 | `starter.choices` | event, writable `species[3]` | the three starters shown |
 | 13 | `egg.species` | event, writable `species`, `rules` | what hatches, and the special cases |
 | 14 | `text_input` | service | ask the player for text, on every device |
-| 15 | `mod_file_*` | service | a mod's own files in the eidos documents folder |
+| 15 | `mod_file_*` | service | a mod's own files in the eidos documents folder, 16 MiB per mod |
 | 16 | `world_*`, `ap_*` | services | metaxy world sessions and the Archipelago bridge |
 | 17 | `peer_position`, `townmap_marker_*` | service | see other players in the field and on the Town Map |
 
@@ -50,9 +52,33 @@ int  (*vfs_member_get)(const char *archive, u32 index, void *out, u32 size); /* 
   existing merge in `sdk/vfs_narc.c`: the latest layer wins, so a mod's
   memory layer is placed where its folder would be in the load order.
 - A change drops the cached merged archive for that path
-  (`bw_vfs_flush` for one path); an archive already open keeps its image,
-  as today. So a mod sets members before the game opens them: between the
-  title screen and loading a save, or at a map change for map data.
+  (`bw_vfs_flush` for one path), so the next open sees it.
+- **Archives that are already open** (approval note). Some archives stay
+  open from boot or for a whole scene (scripts, text, the Pokedex's 35
+  message banks), so "set it before the game opens it" is not enough. The
+  port also reaches the open ones:
+  - The game reads an open archive through its `ArcHandle`, which keeps
+    the member count, the FAT offset and the image base from the open
+    (`ARC_TOOL_ReadHandleHeader`), and reads a member's FAT entry again on
+    every load (`ARC_TOOL_ReadHandleMember` 0x0204932C: seek to
+    `fatOffset + 0xC + index * 8`, then to `imageBase + 8 + start`).
+  - So for an open archive the port builds a **layout-stable image**: the
+    same header, file name table, member count and image base; changed
+    members are written at the end of the image, and only their FAT
+    entries change. Every offset the handle keeps stays true.
+  - The port swaps that image into every open file of the archive
+    (`BwFsSlot.mem` and the window size in `sdk/fs.c`; a slot that read
+    the host file becomes a memory slot). The old image is freed when its
+    last reader closes, as `stale` entries are today.
+  - The swap is queued and done between frames, on the game thread, so no
+    read is ever half on the old image and half on the new one.
+  - A member past the end cannot be added to an open archive (the handle
+    keeps the count): `vfs_member_set` returns -1 with a message. Growing
+    an archive works when it is closed.
+  - What the game already copied into its own memory (a script loaded by
+    the VM, a decoded text bank) does not change until the game loads it
+    again; a mod changes zone scripts and text before the map change or
+    scene that loads them.
 - `vfs_member_get` lets a mod build its change from the player's own
   member (arkhipelagos assembles its scripts against the player's own
   scripts).
@@ -161,13 +187,30 @@ int (*script_run)(u16 script_id, u32 *ticket);   /* queued */
 - Payload: method (ground, water, fishing), the roll, `slot` (writable).
 - Also from the backlog: a state call to read a zone's slot table.
 
-## 11. `battle.type_effect`
+## 11. `type_chart_set` and `battle.type_effect`
 
-- Binding: `BTL_CALC_GetTypeAffinity` 0x021D794C (reads
-  `gBtlCalcTypeAffinityTable`).
-- Payload: attacking type, defending type, `effect` (writable: the game's
-  code, 0 to 5).
-- This is the backlog's "writable type effectiveness".
+```c
+int (*type_chart_set)(const u8 chart[17][17]);   /* the game's codes: 0, 2, 4, 8 */
+int (*type_chart_get)(u8 out[17][17]);
+```
+
+- **Main path (approval note): `type_chart_set`.** The chart is
+  `gBtlCalcTypeAffinityTable` 0x021F047C, `u8 [17][17]`, in the battle
+  overlay ov093. The game's codes are 0 (no effect), 2 (half), 4 (normal)
+  and 8 (double). The port keeps the mod's chart and writes it over the
+  table each time ov093 is loaded, so there is no cost per damage roll.
+  The write also reaches code that reads the table directly, not through
+  the lookup (`BTL_CALC_ListResistingTypes`, used by the AI).
+- With several mods, the last one in the load order wins, as for members.
+  `type_chart_get` returns the chart as it is now (the game's, or a mod's).
+- **For rule mods: the event `battle.type_effect`.**
+  Binding: `BTL_CALC_GetTypeAffinity` 0x021D794C. Payload: attacking type,
+  defending type, `effect` (writable, the affinity class). It runs once
+  per lookup, so once per damage roll and more in AI scoring; it costs
+  nothing when no mod listens, and a rule mod uses it for conditional
+  changes (one battle, one trainer). It sees the chart after
+  `type_chart_set`.
+- Together they are the backlog's "writable type effectiveness".
 
 ## 12. `starter.choices`
 
@@ -210,6 +253,16 @@ int (*mod_file_delete)(const char *name);
 - The mod's saved data (`state_store`) stays per save; these files are
   shared by the mod across saves (arkhipelagos: stored solo worlds and
   cached player data).
+- **Quota (approval note): 16 MiB per mod**, counted over all its files.
+  A write that would pass it returns -1 and changes nothing (the old file
+  stays whole), so a mod cannot fill a phone's or a console's storage.
+  `mod_file_list` also gives the bytes used and the quota. A file is
+  written to a temporary name and renamed, so a crash never leaves half a
+  file.
+  - Why 16 MiB is enough for arkhipelagos: a stored world is its
+    configuration, seed and generator version (tens of KB; the world is
+    made again from them, see `docs/metaxy-proposal.md` C4), so hundreds
+    of worlds fit.
 
 ## 16. metaxy world sessions and the Archipelago bridge
 
@@ -262,3 +315,9 @@ test in eidos's own suite before the next.
 1. Everything ships at once, as interface version 6.
 2. The memory cap: 16 MiB per mod, 32 MiB for all mods (reasons in
    item 1).
+3. Approved on 2026-11-16 with three notes, now in the items:
+   - the type chart is written once with `type_chart_set` (main path); the
+     per-lookup event stays for rule mods (item 11);
+   - member overrides also reach archives that are already open, through
+     a layout-stable image swapped in between frames (item 1);
+   - mod files have a quota of 16 MiB per mod (item 15).
