@@ -1,0 +1,615 @@
+{
+ "_about": "arkhipelagos in-game lines, English master. Lines marked source bwap are derived from PokemonBWAP's lines (MIT, see CREDITS.md); the others are ours. Official names are placeholders filled from each cartridge's own text, never translated by hand.",
+ "_format": {
+  "\\n": "new line",
+  "\\r": "scroll one line",
+  "\\c": "wait for a button, then clear the box",
+  "{c:N}": "text colour N (2 key item, 3 place); {c:0} back to normal",
+  "{buf:N}": "word buffer N, filled by the script (a name, a number, an item)",
+  "{item:N}": "the cartridge's name of item N (a/0/0/2/54)",
+  "{species:N}": "the cartridge's name of species N (a/0/0/2/70)",
+  "{place:N}": "the cartridge's place name N (a/0/0/2/89)",
+  "{name:N}": "the cartridge's word N of a/0/0/2/0 (Gym Leaders, seasons)",
+  "{badge:N}": "the cartridge's badge name, entry N of a/0/0/3/64 (11 to 18)"
+ },
+ "terms": {
+  "item": [
+   2,
+   54
+  ],
+  "species": [
+   2,
+   70
+  ],
+  "place": [
+   2,
+   89
+  ],
+  "name": [
+   2,
+   0
+  ],
+  "badge": [
+   3,
+   64
+  ]
+ },
+ "lines": [
+  {
+   "id": "item.badge.desc",
+   "kind": "item",
+   "source": "bwap a/0/0/2/53 120",
+   "text": "A Gym Badge. It counts as one of\nthe eight Badges you need."
+  },
+  {
+   "id": "item.season.spring.desc",
+   "kind": "item",
+   "source": "bwap a/0/0/2/53 129",
+   "text": "Lets you choose spring with the\nseason helper in {place:9}."
+  },
+  {
+   "id": "item.season.summer.desc",
+   "kind": "item",
+   "source": "bwap a/0/0/2/53 130",
+   "text": "Lets you choose summer with the\nseason helper in {place:9}."
+  },
+  {
+   "id": "item.season.autumn.desc",
+   "kind": "item",
+   "source": "bwap a/0/0/2/53 131",
+   "text": "Lets you choose autumn with the\nseason helper in {place:9}."
+  },
+  {
+   "id": "item.season.winter.desc",
+   "kind": "item",
+   "source": "bwap a/0/0/2/53 132",
+   "text": "Lets you choose winter with the\nseason helper in {place:9}."
+  },
+  {
+   "id": "item.other.name",
+   "kind": "item-name",
+   "source": "bwap a/0/0/2/54 128",
+   "text": "Far Item"
+  },
+  {
+   "id": "item.other.desc",
+   "kind": "item",
+   "source": "bwap a/0/0/2/53 128",
+   "text": "An item for a player in another world.\nIt goes to them on its own."
+  },
+  {
+   "id": "item.explorer_kit.desc",
+   "kind": "item",
+   "source": "bwap a/0/0/2/53 428",
+   "text": "A bag of tools for exploring.\nA worker in {place:35} wants\nto borrow it."
+  },
+  {
+   "id": "item.loot_sack.desc",
+   "kind": "item",
+   "source": "bwap a/0/0/2/53 429",
+   "text": "A strong, large bag for loot.\nSome Team Plasma Grunts are\nlooking for it."
+  },
+  {
+   "id": "item.red_chain.desc",
+   "kind": "item",
+   "source": "bwap a/0/0/2/53 441",
+   "text": "A mythical chain. It looks a bit\nlike a red belt. A Black Belt\nhas lost one like it."
+  },
+  {
+   "id": "item.oaks_letter.desc",
+   "kind": "item",
+   "source": "bwap a/0/0/2/53 452",
+   "text": "A letter from Prof. Oak. It lets\nyou pass the east gate of\n{place:13}."
+  },
+  {
+   "id": "item.parcel.desc",
+   "kind": "item",
+   "source": "bwap a/0/0/2/53 459",
+   "text": "A parcel in your care. Take it to\nthe old man on the way out of\n{place:6}."
+  },
+  {
+   "id": "item.blue_card.desc",
+   "kind": "item",
+   "source": "bwap a/0/0/2/53 472",
+   "text": "Shows the guards that you may cross\n{place:68}."
+  },
+  {
+   "id": "item.basement_key.desc",
+   "kind": "item",
+   "source": "bwap a/0/0/2/53 476",
+   "text": "A key that opens... a traffic cone?\nIt lets you into the lower part\nof {place:32}."
+  },
+  {
+   "id": "item.machine_part.desc",
+   "kind": "item",
+   "source": "bwap a/0/0/2/53 481",
+   "text": "A machine part that was taken from\nthe workers on {place:17}."
+  },
+  {
+   "id": "item.tidal_bell.desc",
+   "kind": "item",
+   "source": "bwap a/0/0/2/53 503",
+   "text": "An old bell with a gentle ring.\nThe guards of {place:65}\nlet you pass with it."
+  },
+  {
+   "id": "parcel.ask",
+   "kind": "game",
+   "source": "bwap a/0/0/3/11 26",
+   "text": "I'm thirsty! Bring me my {c:2}parcel{c:0}!\\c\nWhy? Because!"
+  },
+  {
+   "id": "parcel.thanks",
+   "kind": "game",
+   "source": "bwap a/0/0/3/11 28",
+   "text": "That's my parcel! Thanks!\\c\nShall I show you how to catch Pokémon?\\c\nNo? All right..."
+  },
+  {
+   "id": "tidal_bell.no",
+   "kind": "game",
+   "source": "bwap a/0/0/3/101 59",
+   "text": "Sorry, no one may pass without\na {c:2}{item:503}{c:0}.\\c"
+  },
+  {
+   "id": "tidal_bell.yes",
+   "kind": "game",
+   "source": "bwap a/0/0/3/361 54",
+   "text": "Oh, that's the {item:503}!\nYou may pass."
+  },
+  {
+   "id": "oak_letter.no",
+   "kind": "game",
+   "source": "bwap a/0/0/3/138 4",
+   "text": "Sorry, you may only pass with\n{c:2}permission from a professor{c:0}.\\c"
+  },
+  {
+   "id": "oak_letter.yes",
+   "kind": "game",
+   "source": "bwap a/0/0/3/138 5",
+   "text": "That is Prof. Oak's permission.\nYou may pass.\\c"
+  },
+  {
+   "id": "basement_key.cone_gone",
+   "kind": "game",
+   "source": "bwap a/0/0/3/160 60",
+   "text": "The traffic cone disappeared...\\c"
+  },
+  {
+   "id": "basement_key.hint",
+   "kind": "game",
+   "source": "bwap a/0/0/3/160 61",
+   "text": "That traffic cone looks like\nit can be... opened?\\c\nPerhaps with some kind of {c:2}key{c:0}!"
+  },
+  {
+   "id": "loot_sack.ask",
+   "kind": "game",
+   "source": "bwap a/0/0/3/163 43",
+   "text": "The boss will throw us out if he\nfinds out we lost the {c:2}loot sack{c:0}!\\c"
+  },
+  {
+   "id": "loot_sack.found",
+   "kind": "game",
+   "source": "bwap a/0/0/3/163 44",
+   "text": "That's our loot sack!\nGive it back, kid!\\c"
+  },
+  {
+   "id": "dragon_skull.ask",
+   "kind": "game",
+   "source": "bwap a/0/0/3/163 45",
+   "text": "Find the {c:2}{item:579}{c:0}.\\c"
+  },
+  {
+   "id": "dragon_skull.leave",
+   "kind": "game",
+   "source": "bwap a/0/0/3/163 46",
+   "text": "We will be waiting for you.\\c\nSomewhere. Sometime.\\c"
+  },
+  {
+   "id": "nimbasa.later",
+   "kind": "game",
+   "source": "bwap a/0/0/3/163 40",
+   "text": "Come back when you have\nreached {c:3}{place:9}{c:0}.\\c"
+  },
+  {
+   "id": "explorer_kit.ask",
+   "kind": "game",
+   "source": "bwap a/0/0/3/168 13",
+   "text": "You can't go on yet, there is\ntoo much sand!\\c\nAn {c:2}explorer kit{c:0} would help me\nclear it away.\\c"
+  },
+  {
+   "id": "explorer_kit.borrow",
+   "kind": "game",
+   "source": "bwap a/0/0/3/168 14",
+   "text": "May I borrow your explorer kit?\\c\nThanks!\\c"
+  },
+  {
+   "id": "silver_wing.ask",
+   "kind": "game",
+   "source": "bwap a/0/0/3/173 19",
+   "text": "I can stir up the sand in this room\nif you bring me a {c:2}{item:482}{c:0}.\\c"
+  },
+  {
+   "id": "silver_wing.found",
+   "kind": "game",
+   "source": "bwap a/0/0/3/173 20",
+   "text": "Yes, that's a {item:482}!\nWait a moment...\\c"
+  },
+  {
+   "id": "nest.blocked",
+   "kind": "game",
+   "source": "bwap a/0/0/3/202 0",
+   "text": "A Pokémon nest blocks the way.\\c\n{name:113} can help, but only if\nyou have his {c:2}Gym Badge{c:0}.\\c"
+  },
+  {
+   "id": "nest.poffins",
+   "kind": "game",
+   "source": "bwap a/0/0/3/202 8",
+   "text": "The {species:596} took some of\nyour poffins...\\c"
+  },
+  {
+   "id": "jet_badge.need",
+   "kind": "game",
+   "source": "bwap a/0/0/3/206 10",
+   "text": "To go into {place:38},\nyou need the {c:2}{badge:16}{c:0}.\\c"
+  },
+  {
+   "id": "jet_badge.yes",
+   "kind": "game",
+   "source": "bwap a/0/0/3/206 12",
+   "text": "Yes, that's the {badge:16}!\nYou may pass."
+  },
+  {
+   "id": "machine_part.ask",
+   "kind": "game",
+   "source": "bwap a/0/0/3/358 16",
+   "text": "We want to finish the road, but\nsomeone took a {c:2}machine part{c:0}.\\c"
+  },
+  {
+   "id": "machine_part.found",
+   "kind": "game",
+   "source": "bwap a/0/0/3/358 17",
+   "text": "Hey! Why do you have the missing\npart of our machine?\\c\nYou're not with Team Plasma...?\\c\nNo? Fine...\\c"
+  },
+  {
+   "id": "stone.scared",
+   "kind": "game",
+   "source": "bwap a/0/0/3/377 21",
+   "text": "Oh no, a stone!\nAaaaah!\\c"
+  },
+  {
+   "id": "stone.ask",
+   "kind": "game",
+   "source": "bwap a/0/0/3/377 22",
+   "text": "Team Plasma: N wants to wake a\nlegendary dragon from a {c:2}stone{c:0}.\\c\nBring one of those stones here.\\c"
+  },
+  {
+   "id": "red_chain.ask",
+   "kind": "game",
+   "source": "bwap a/0/0/3/380 8",
+   "text": "Have you seen my belt?\nIt is {c:2}red and shaped like a chain{c:0}.\\c"
+  },
+  {
+   "id": "red_chain.found",
+   "kind": "game",
+   "source": "bwap a/0/0/3/380 9",
+   "text": "That's my belt! Thank you!\nI'll put it on right now.\\c\nWhat is that strange red light?\\c"
+  },
+  {
+   "id": "red_chain.gone",
+   "kind": "game",
+   "source": "bwap a/0/0/3/380 10",
+   "text": "Aaaaah...!"
+  },
+  {
+   "id": "gb_sounds.ask",
+   "kind": "game",
+   "source": "bwap a/0/0/3/407 4",
+   "text": "We would dance today, if only we had\nsome {c:2}old game music{c:0}...\\c"
+  },
+  {
+   "id": "gb_sounds.play",
+   "kind": "game",
+   "source": "bwap a/0/0/3/407 5",
+   "text": "Is that a {item:502}?\nPlease turn it on!\\c"
+  },
+  {
+   "id": "gb_sounds.dance",
+   "kind": "game",
+   "source": "bwap a/0/0/3/407 6",
+   "text": "Now we dance for a reason! ♪\nAnd we won't go away. ♪"
+  },
+  {
+   "id": "blue_card.ask",
+   "kind": "game",
+   "source": "bwap a/0/0/3/415 0",
+   "text": "{place:68} is closed for checks.\nOnly people with permission may enter.\\c\nIf you have permission, show me\nyour {c:2}{item:472}{c:0}.\\c"
+  },
+  {
+   "id": "blue_card.yes",
+   "kind": "game",
+   "source": "bwap a/0/0/3/415 4",
+   "text": "Please show me your {item:472}.\n...\\c\nYou may enter.\\c"
+  },
+  {
+   "id": "shop.stones.offer",
+   "kind": "game",
+   "source": "bwap a/0/0/3/45 16",
+   "text": "Do you need an evolution stone?\nI sell them for $1,000 each!\\c"
+  },
+  {
+   "id": "shop.bought",
+   "kind": "game",
+   "source": "bwap a/0/0/3/45 20",
+   "text": "{buf:0} bought\n{buf:1}.\\c"
+  },
+  {
+   "id": "shop.no_money",
+   "kind": "game",
+   "source": "bwap a/0/0/3/45 15",
+   "text": "You don't have enough money.\nCome back when you have more."
+  },
+  {
+   "id": "shop.stones.bye",
+   "kind": "game",
+   "source": "bwap a/0/0/3/45 21",
+   "text": "Come back whenever you need\na stone!"
+  },
+  {
+   "id": "shop.sure",
+   "kind": "game",
+   "source": "bwap a/0/0/3/45 22",
+   "text": "Are you sure?\\c"
+  },
+  {
+   "id": "shop.later",
+   "kind": "game",
+   "source": "bwap a/0/0/3/207 6",
+   "text": "Come back later if you change\nyour mind."
+  },
+  {
+   "id": "shop.cancel",
+   "kind": "menu",
+   "source": "bwap a/0/0/3/382 30",
+   "text": "Cancel"
+  },
+  {
+   "id": "hiker.offer",
+   "kind": "game",
+   "source": "bwap a/0/0/3/203 40",
+   "text": "I just found a {item:83} and\na {item:233}.\\c\nDo you want them?"
+  },
+  {
+   "id": "hiker.count",
+   "kind": "game",
+   "source": "bwap a/0/0/3/203 41",
+   "text": "I found {buf:0} of them today.\nMaybe I should start a business..."
+  },
+  {
+   "id": "crater.sun",
+   "kind": "game",
+   "source": "bwap a/0/0/3/207 4",
+   "text": "A worker found this {item:80}.\nI'll sell it to you for $1,000.\\c"
+  },
+  {
+   "id": "crater.moon",
+   "kind": "game",
+   "source": "bwap a/0/0/3/207 5",
+   "text": "A worker found this {item:81}.\nI'll sell it to you for $1,000.\\c"
+  },
+  {
+   "id": "mall.offer",
+   "kind": "game",
+   "source": "bwap a/0/0/3/382 23",
+   "text": "Special offer!\n$500 for each of these rare items!\\c"
+  },
+  {
+   "id": "mall.sure",
+   "kind": "game",
+   "source": "bwap a/0/0/3/382 31",
+   "text": "Do you want to buy\n{buf:0} for $500?\\c"
+  },
+  {
+   "id": "mall.thanks",
+   "kind": "game",
+   "source": "bwap a/0/0/3/382 32",
+   "text": "Thank you for your purchase!\nPlease come again!"
+  },
+  {
+   "id": "mall.bye",
+   "kind": "game",
+   "source": "bwap a/0/0/3/382 33",
+   "text": "Please come again!"
+  },
+  {
+   "id": "route10.offer",
+   "kind": "game",
+   "source": "bwap a/0/0/3/387 20",
+   "text": "Nature is beautiful, isn't it?\\c\nJust like evolving your Pokémon!\nTake one of these!\\c"
+  },
+  {
+   "id": "route10.bye",
+   "kind": "game",
+   "source": "bwap a/0/0/3/387 24",
+   "text": "Come back if you need more.\nI'll stay here."
+  },
+  {
+   "id": "rich.offer",
+   "kind": "game",
+   "source": "bwap a/0/0/3/453 48",
+   "text": "You look like someone who knows\nthe value of rare items.\\c\nWhat about this {buf:0}\nfor {buf:1}?\\c"
+  },
+  {
+   "id": "rich.no_money",
+   "kind": "game",
+   "source": "bwap a/0/0/3/453 49",
+   "text": "Sorry, I can't give credit.\\c\nCome back when you're a little...\nricher.\\c"
+  },
+  {
+   "id": "rich.yes",
+   "kind": "game",
+   "source": "bwap a/0/0/3/453 51",
+   "text": "I knew you would like it.\\c"
+  },
+  {
+   "id": "rich.no",
+   "kind": "game",
+   "source": "bwap a/0/0/3/453 52",
+   "text": "What a shame...\\c"
+  },
+  {
+   "id": "seasons.ask",
+   "kind": "game",
+   "source": "bwap a/0/0/3/67 59",
+   "text": "Lately, it feels like it's getting...\\c"
+  },
+  {
+   "id": "seasons.choice.spring",
+   "kind": "menu",
+   "source": "bwap a/0/0/3/67 60",
+   "text": "Warmer"
+  },
+  {
+   "id": "seasons.choice.summer",
+   "kind": "menu",
+   "source": "bwap a/0/0/3/67 61",
+   "text": "Really hot"
+  },
+  {
+   "id": "seasons.choice.autumn",
+   "kind": "menu",
+   "source": "bwap a/0/0/3/67 62",
+   "text": "Cool, rainy"
+  },
+  {
+   "id": "seasons.choice.winter",
+   "kind": "menu",
+   "source": "bwap a/0/0/3/67 63",
+   "text": "Very cold"
+  },
+  {
+   "id": "seasons.spring",
+   "kind": "game",
+   "source": "bwap a/0/0/3/67 64",
+   "text": "I think so too!\n{name:30} will be here soon.\\c"
+  },
+  {
+   "id": "seasons.summer",
+   "kind": "game",
+   "source": "bwap a/0/0/3/67 65",
+   "text": "I think so too!\n{name:31} will be here soon.\\c"
+  },
+  {
+   "id": "seasons.autumn",
+   "kind": "game",
+   "source": "bwap a/0/0/3/67 66",
+   "text": "I think so too!\n{name:32} will be here soon.\\c"
+  },
+  {
+   "id": "seasons.winter",
+   "kind": "game",
+   "source": "bwap a/0/0/3/67 67",
+   "text": "I think so too!\n{name:33} will be here soon.\\c"
+  },
+  {
+   "id": "tmhm.check",
+   "kind": "game",
+   "source": "bwap a/0/0/3/35 20",
+   "text": "Let me look at your TMs...\\c"
+  },
+  {
+   "id": "tmhm.missing_tm",
+   "kind": "game",
+   "source": "bwap a/0/0/3/35 21",
+   "text": "You don't have all the TMs yet.\nTry to find {buf:0} next!"
+  },
+  {
+   "id": "tmhm.check_hm",
+   "kind": "game",
+   "source": "bwap a/0/0/3/35 22",
+   "text": "You have all the TMs!\nNow let me look at your HMs...\\c"
+  },
+  {
+   "id": "tmhm.missing_hm",
+   "kind": "game",
+   "source": "bwap a/0/0/3/35 23",
+   "text": "You don't have all the HMs yet.\nTry to find {buf:0} next!"
+  },
+  {
+   "id": "tmhm.done",
+   "kind": "game",
+   "source": "bwap a/0/0/3/35 24",
+   "text": "That's all of them! You have every\nTM and HM!\\c\nCongratulations!"
+  },
+  {
+   "id": "share.found_for",
+   "kind": "game",
+   "source": "arkh",
+   "text": "You found {buf:0}\nfor {buf:1}!\\c"
+  },
+  {
+   "id": "share.received",
+   "kind": "game",
+   "source": "arkh",
+   "text": "{buf:1} sent you\n{buf:0}!\\c"
+  },
+  {
+   "id": "share.received_many",
+   "kind": "game",
+   "source": "arkh",
+   "text": "Items from other players\nare waiting for you.\\c"
+  },
+  {
+   "id": "share.offline",
+   "kind": "game",
+   "source": "arkh",
+   "text": "You are not connected.\nThe item will be sent later.\\c"
+  },
+  {
+   "id": "goal.reached",
+   "kind": "game",
+   "source": "arkh",
+   "text": "You reached your goal!\\c\nThe others may still be playing.\\c"
+  },
+  {
+   "id": "goal.all",
+   "kind": "game",
+   "source": "arkh",
+   "text": "Every player reached their goal.\nThe world is complete!\\c"
+  },
+  {
+   "id": "menu.title",
+   "kind": "menu",
+   "source": "arkh",
+   "text": "Islands"
+  },
+  {
+   "id": "menu.items",
+   "kind": "menu",
+   "source": "arkh",
+   "text": "Received"
+  },
+  {
+   "id": "menu.players",
+   "kind": "menu",
+   "source": "arkh",
+   "text": "Players"
+  },
+  {
+   "id": "menu.connection",
+   "kind": "menu",
+   "source": "arkh",
+   "text": "Connection"
+  },
+  {
+   "id": "menu.pc",
+   "kind": "menu",
+   "source": "bwap a/0/0/3/314 94",
+   "text": "Portable PC"
+  },
+  {
+   "id": "menu.close",
+   "kind": "menu",
+   "source": "arkh",
+   "text": "Close"
+  }
+ ]
+}
