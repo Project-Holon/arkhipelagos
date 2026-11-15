@@ -254,8 +254,27 @@ The world store is state that must outlive the process (approval note).
 - `--world-store <dir>` names a folder that survives restarts and
   redeploys. metaxy refuses to start the world role when the folder cannot
   be written, and says so; it never falls back to a temporary folder.
-- **Docker:** the store is a named volume, never the container's own
-  layer, which a redeploy throws away:
+- **The public relay runs on Railway (decided).** The world store is a
+  Railway Volume attached to the metaxy service, mounted at `/data`, and
+  metaxy runs with `--world-store /data/worlds`. There is no separate
+  storage service.
+  - A Railway service with a volume runs as a single instance. That fits
+    metaxy: it is one process and keeps open worlds in memory, so two
+    instances must never share a store anyway.
+  - A redeploy stops the old instance before the new one mounts the
+    volume, so there is a short gap. metaxy's SIGTERM handling (below)
+    flushes every log first, and clients reconnect and resend their
+    checks (C2), so nothing confirmed is lost.
+  - The image runs as the non-root user `metaxy`, and a Railway volume is
+    mounted owned by root. At set-up, either set `RAILWAY_RUN_UID=0` on
+    the service (Railway's own advice for non-root images) or give the
+    folder to the user; the start check above refuses to run the world
+    role if `/data/worlds` cannot be written, so a wrong set-up shows at
+    once.
+  - Size: start the volume at 1 GB (below) and grow it in Railway when
+    the operator log's store size nears it.
+- **Docker** (self-hosted): the store is a named volume, never the
+  container's own layer, which a redeploy throws away:
 
   ```sh
   docker volume create metaxy-worlds
@@ -263,15 +282,14 @@ The world store is state that must outlive the process (approval note).
     -v metaxy-worlds:/var/lib/metaxy/worlds metaxy --world-store /var/lib/metaxy/worlds
   ```
 
-  The image declares `VOLUME /var/lib/metaxy/worlds`, so a run without
-  `-v` still keeps the store in an anonymous volume, and the README shows
-  the named form.
+  The image does not declare a `VOLUME` (Railway does not take one); the
+  README shows the named-volume form.
 - **systemd:** the store is `/var/lib/metaxy/worlds` with
   `StateDirectory=metaxy/worlds`, so it is made with the right owner and
   kept across upgrades.
-- **Hosted containers** (Fly, Railway and similar): a persistent volume
-  mounted at the store path. One metaxy instance per volume: two instances
-  must never share one store, as each keeps worlds in memory.
+- **Other hosts:** a persistent volume mounted at the store path. One
+  metaxy instance per volume: two instances must never share one store,
+  as each keeps worlds in memory.
 - **Size:** at tens of KB per world plus its log, 10,000 open worlds take
   a few GB at most. 1 GB is enough to start.
 - **Backups:** the store is plain files, written with flush and rename, so
@@ -302,4 +320,8 @@ The world store is state that must outlive the process (approval note).
     (C4, Part E);
   - the world store survives restarts and redeploys: a persistent volume
     in a container (Part F).
+- The public relay runs on Railway: a Railway Volume on the metaxy
+  service, mounted at `/data`, with `--world-store /data/worlds`; no
+  separate storage service; a service with a volume is a single instance,
+  which fits metaxy's one-process design (Part F).
 - The world store on the public relay's disk: yes, at tens of KB per world.
