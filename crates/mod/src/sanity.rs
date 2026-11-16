@@ -51,14 +51,26 @@ pub fn caught_count(host: &mut dyn Host) -> u32 {
 impl Game {
     /// The `dex.register` handler.
     pub fn on_dex_register(&mut self, host: &mut dyn Host, species: u16, caught: bool) {
-        let count = if caught { caught_count(host) } else { 0 };
+        // eidos fires dex.register as the game starts to register the
+        // species, before its caught bit is written: this species counts
+        // too (and only once, if a later eidos fires it after the write)
+        let count = if caught {
+            caught_count(host) + u32::from(host.dex_caught(species) != Some(true))
+        } else {
+            0
+        };
         let locs = dex_locations(species, caught, count);
+        host.log(&format!(
+            "arkhipelagos: dex.register species {species} {} (caught {count})",
+            if caught { "caught" } else { "seen" }
+        ));
         self.extra_checks(host, locs);
     }
 
     /// The `battle.end` handler.
     pub fn on_battle_end(&mut self, host: &mut dyn Host, outcome: u8, trainers: [u16; 2]) {
         let locs = battle_locations(outcome, trainers);
+        host.log(&format!("arkhipelagos: battle.end outcome {outcome} trainers {trainers:?}"));
         self.extra_checks(host, locs);
     }
 

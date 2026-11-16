@@ -203,7 +203,15 @@ impl Mod {
                     p.name = format!("Player {k}");
                     cfg.players.push(p);
                 }
-                match serde_json::to_string(&cfg) {
+                // open names: a joiner's own multiplayer name takes the next
+                // free place (metaxy SPEC), so nobody plays as "Player 2"
+                let json = serde_json::to_value(&cfg).map(|mut v| {
+                    if let Some(o) = v.as_object_mut() {
+                        o.insert("open_names".into(), serde_json::Value::Bool(true));
+                    }
+                    v.to_string()
+                });
+                match json {
                     Ok(json) if host.world_create(&json) => {
                         host.log(&format!("arkhipelagos: making a world for {n} players"));
                         host.member_clear_all();
