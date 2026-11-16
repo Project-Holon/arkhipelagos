@@ -3,5 +3,5 @@ a78b9d2d3596283f  solo-black.json
 7f9ac1445c4cda30  solo-white-seasons.json
 ae318030da146f3b  two-players.json
 fe5e40620428c8f2  sixteen.json
-d5f49ccda2483fee  all-random.json
+fa31f5c82cdf2c0d  all-random.json
 7b7fa17de01da47e  random-wild-only.json

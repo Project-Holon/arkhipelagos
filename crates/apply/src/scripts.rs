@@ -86,6 +86,25 @@ struct MemberEdits {
 /// Every check edit, built on the player's own members. Returns the
 /// changed members (index, bytes).
 pub fn members(family: Family, get: &dyn Fn(u32) -> Option<Vec<u8>>) -> Result<Vec<(u32, Vec<u8>)>, String> {
+    members_for(family, None, get)
+}
+
+/// What a world changes in the scripts besides the checks: the species of
+/// the statics, gifts, fossils and starters.
+pub struct WorldSpecies<'a> {
+    /// "black" or "white"
+    pub version: &'a str,
+    pub changes: &'a arkh_gen::species::Changes,
+    /// the three starters (left, middle, right), empty when unchanged
+    pub starters: &'a [u32],
+}
+
+/// The check edits, and the world's species edits when a world is given.
+pub fn members_for(
+    family: Family,
+    world: Option<&WorldSpecies>,
+    get: &dyn Fn(u32) -> Option<Vec<u8>>,
+) -> Result<Vec<(u32, Vec<u8>)>, String> {
     let sites: Value = serde_json::from_str(arkh_gen::data::ITEM_SITES).map_err(|e| e.to_string())?;
     let fk = family.name();
     let mut scripts: BTreeMap<u32, Script> = BTreeMap::new();
@@ -248,6 +267,13 @@ pub fn members(family: Family, get: &dyn Fn(u32) -> Option<Vec<u8>>) -> Result<V
         }
     }
 
+    if let Some(w) = world {
+        for (m, reps) in species_edits(family, w, get)? {
+            load(m, &mut scripts)?;
+            edits.entry(m).or_default().replaces.extend(reps);
+        }
+    }
+
     let mut out = Vec::new();
     for (m, e) in edits {
         let mut s = scripts.remove(&m).ok_or("lost a member")?;
@@ -332,4 +358,144 @@ fn verify(
         return Err(format!("member {m}: the edited member does not read back the same"));
     }
     Ok(())
+}
+
+/// Where each static, gift and fossil is given or fought (the member
+/// that holds the command with its species).
+const STATIC_MEMBERS: &[(&str, u32)] = &[
+    ("Castelia City Gift Encounter", 94),
+    ("Dreamyard Gift Encounter", 304),
+    ("Dreamyard Static Encounter", 306),
+    ("Rumination Field Static Encounter", 312),
+    ("Desert Resort Static Encounter", 316),
+    ("Relic Castle Static Encounter", 364),
+    ("Dragonspiral Tower Static Encounter", 426),
+    ("Dragonspiral Tower Static Encounter", 556),
+    ("Trial Chamber Static Encounter", 458),
+    ("Giant Chasm Static Encounter", 468),
+    ("Liberty Garden Static Encounter", 474),
+    ("Marvelous Bridge Sold Encounter", 526),
+    ("Guidance Chamber Static Encounter", 670),
+    ("Abundant Shrine Static Encounter", 752),
+    ("Lostlorn Forest Static Encounter", 770),
+    ("Route 18 Egg Encounter", 776),
+    ("Reanimation", 877),
+    ("Route 6 Item Encounter", 897),
+    ("Route 10 Item Encounter", 897),
+];
+
+/// The starter script: the choice loads 0x8021 with the species.
+const STARTER_MEMBER: u32 = 782;
+/// The fossil script: the fossil loads 0x8023 with the species.
+const FOSSIL_MEMBER: u32 = 877;
+
+/// The commands that give or fight a Pokemon: (name, species argument).
+const GIVES: &[(&str, usize)] = &[
+    ("SCRCMD_PROC_FLD_StartScriptedWildBattle", 0),
+    ("SCRCMD_PROC_AddMonToPartySimple", 1),
+    ("SCRCMD_PROC_AddMonToPartyDetailed", 1),
+    ("SCRCMD_PROC_AddMonToBoxSimple", 1),
+    ("SCRCMD_PROC_AddEggToParty", 1),
+];
+/// Other commands that name a species (shown or heard).
+const NAMES: &[(&str, usize)] = &[("SCRCMD_BufferSpeciesName", 1), ("SCRCMD_PlayPokeVoice", 0)];
+
+fn num_args(it: &Item) -> Option<(&str, Vec<u32>)> {
+    match it {
+        Item::Cmd { name, args } => Some((
+            name.as_str(),
+            args.iter().map(|a| if let arkh_script::Value::Num(n) = a { *n } else { u32::MAX }).collect(),
+        )),
+        _ => None,
+    }
+}
+
+/// The species edits of a world, per member: same-size replaces of the
+/// species constants.
+fn species_edits(
+    family: Family,
+    w: &WorldSpecies,
+    get: &dyn Fn(u32) -> Option<Vec<u8>>,
+) -> Result<BTreeMap<u32, Vec<Replace>>, String> {
+    let data: Value = serde_json::from_str(arkh_gen::data::SPECIES_LOGIC).map_err(|e| e.to_string())?;
+    // member -> [(original species, new species, new form)], in static order
+    let mut per: BTreeMap<u32, Vec<(u32, u32, u32)>> = BTreeMap::new();
+    for st in data["statics"].as_array().ok_or("species.json statics")? {
+        let name = st["name"].as_str().unwrap_or("");
+        let Some(new) = w.changes.statics.get(name) else { continue };
+        let orig = st[w.version][0].as_u64().ok_or("static species")? as u32;
+        if st["kind"] == "starter" || *new == [orig, 0] {
+            continue;
+        }
+        let ms: Vec<u32> = STATIC_MEMBERS.iter().filter(|(n, _)| name.contains(n)).map(|&(_, m)| m).collect();
+        if ms.is_empty() && !st["fixed"].as_bool().unwrap_or(false) {
+            return Err(format!("no script known for {name}"));
+        }
+        for m in ms {
+            per.entry(m).or_default().push((orig, new[0], new[1]));
+        }
+    }
+    if w.starters.len() == 3 {
+        let vanilla: Vec<u32> = data["statics"]
+            .as_array()
+            .unwrap()
+            .iter()
+            .filter(|s| s["kind"] == "starter")
+            .filter_map(|s| s[w.version][0].as_u64().map(|x| x as u32))
+            .collect();
+        for (o, n) in vanilla.iter().zip(w.starters) {
+            per.entry(STARTER_MEMBER).or_default().push((*o, *n, 0));
+        }
+    }
+    let mut out: BTreeMap<u32, Vec<Replace>> = BTreeMap::new();
+    for (m, list) in per {
+        let d = get(m).ok_or(format!("member {m} missing"))?;
+        let s = arkh_script::disassemble(&d, family).map_err(|e| format!("member {m}: {}", e.0))?;
+        // an original species with several new ones (Desert Resort): the
+        // k-th give of it is the k-th static
+        let mut by_orig: BTreeMap<u32, Vec<(u32, u32)>> = BTreeMap::new();
+        for &(o, n, f) in &list {
+            by_orig.entry(o).or_default().push((n, f));
+        }
+        let mut seen: BTreeMap<u32, usize> = BTreeMap::new();
+        let mut reps = Vec::new();
+        let mut found: BTreeMap<u32, usize> = BTreeMap::new();
+        for (ord, it) in s.items.iter().filter(|it| matches!(it, Item::Cmd { .. })).enumerate() {
+            let Some((name, args)) = num_args(it) else { continue };
+            let give = GIVES.iter().find(|(n, _)| *n == name).map(|&(_, a)| a);
+            let shown = NAMES.iter().find(|(n, _)| *n == name).map(|&(_, a)| a);
+            let load = name == LOAD_CONST
+                && ((m == STARTER_MEMBER && args[0] == 0x8021) || (m == FOSSIL_MEMBER && args[0] == 0x8023));
+            let a = match (give, shown, load) {
+                (Some(a), _, _) | (_, Some(a), _) => a,
+                (_, _, true) => 1,
+                _ => continue,
+            };
+            let Some(news) = by_orig.get(&args[a]) else { continue };
+            let pick = if news.iter().all(|x| *x == news[0]) {
+                Some(news[0])
+            } else if give.is_some() {
+                let k = seen.entry(args[a]).or_default();
+                *k += 1;
+                news.get(*k - 1).copied()
+            } else {
+                None // a name of a species that became several: left as it is
+            };
+            let Some((new, form)) = pick else { continue };
+            *found.entry(args[a]).or_default() += 1;
+            let mut nargs = args.clone();
+            nargs[a] = new;
+            if name == "SCRCMD_PROC_AddMonToPartyDetailed" {
+                nargs[2] = form;
+            }
+            reps.push(Replace { at: ord, with: cmd(name, &nargs) });
+        }
+        for o in by_orig.keys() {
+            if !found.contains_key(o) {
+                return Err(format!("member {m}: species {o} not found"));
+            }
+        }
+        out.insert(m, reps);
+    }
+    Ok(out)
 }

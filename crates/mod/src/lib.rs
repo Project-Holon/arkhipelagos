@@ -191,7 +191,8 @@ impl Game {
         }
         let scripts = arkh_apply::scripts::SCRIPTS;
         let get = |i: u32| cell.borrow_mut().member_get(scripts, i);
-        for (i, d) in arkh_apply::scripts::members(self.family, &get)? {
+        let ws = arkh_apply::scripts::WorldSpecies { version: &p.version, changes: &p.tables, starters: &p.starters };
+        for (i, d) in arkh_apply::scripts::members_for(self.family, Some(&ws), &get)? {
             sets.push((scripts, i, d));
         }
         let host = cell.into_inner();

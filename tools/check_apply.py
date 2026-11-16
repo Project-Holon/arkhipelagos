@@ -79,7 +79,8 @@ def main():
             if carts.version(code) != p["version"]:
                 continue
             out = os.path.join(ROOT, "out", "apply", f"{p['slot']}-{code}")
-            subprocess.run([os.path.join(BIN, "arkh-apply"), world, str(p["slot"]), C[code]["data"], out],
+            fam = "ja" if code.endswith("J") else "eu"
+            subprocess.run([os.path.join(BIN, "arkh-apply"), world, str(p["slot"]), C[code]["data"], out, fam],
                            check=True, capture_output=True)
 
             # facts.py's readers, pointed at the written archives first
@@ -108,10 +109,61 @@ def main():
                     for x in keys[:2]:
                         print("   ours", json.dumps(a.get(x))[:200])
                         print("   want", json.dumps(b.get(x))[:200])
+            bad += check_species(p, code, out)
             print(f"{p['name']} ({p['version']}) {code}: {'ok' if not bad else 'differences'}")
     print("apply matches the world on every cartridge" if not bad else f"{bad} differences")
     bad += check_edits()
     sys.exit(1 if bad else 0)
+
+
+GIVES = ("SCRCMD_PROC_FLD_StartScriptedWildBattle", "SCRCMD_PROC_AddMonToPartySimple",
+         "SCRCMD_PROC_AddMonToPartyDetailed", "SCRCMD_PROC_AddEggToParty")
+
+
+def check_species(p, code, out):
+    """The world's statics, gifts, fossils and starters are in the written
+    scripts, and its trades in a/1/6/5."""
+    import struct
+    sys.path.insert(0, HERE)
+    data = json.load(open(os.path.join(ROOT, "data", "world", "species.json"), encoding="utf-8"))
+    arc = os.path.join(out, "a", "0", "5", "7")
+    members = {"Castelia City Gift": 94, "Dreamyard Gift": 304, "Dreamyard Static": 306, "Rumination": 312,
+               "Desert Resort": 316, "Relic Castle": 364, "Dragonspiral": 426, "Trial Chamber": 458,
+               "Giant Chasm": 468, "Liberty Garden": 474, "Marvelous Bridge": 526, "Guidance": 670,
+               "Abundant": 752, "Lostlorn": 770, "Route 18 Egg": 776, "Reanimation": 877,
+               "Item Encounter": 897}
+    bad = 0
+    statics = p["tables"].get("statics", {})
+    cache = {}
+    for st in data["statics"]:
+        new = statics.get(st["name"])
+        if not new or st["kind"] == "starter" or st.get("fixed"):
+            continue
+        m = next((v for k, v in members.items() if k in st["name"]), None)
+        if m not in cache:
+            cache[m] = dis(code, arc, m)[0]
+        loads = [c for c in cache[m] if c[0] in GIVES or (c[0] == "SCRIPT_WORK_CmdLoadWorkConst" and c[1] == "0x8023")]
+        if not any(hex(new[0]) in c[1:3] for c in loads):
+            bad += 1
+            print(f"  {code}: {st['name']} should give {new[0]}")
+    if p.get("starters"):
+        cmds = dis(code, arc, 782)[0]
+        got = [int(c[2], 16) for c in cmds if c[:2] == ["SCRIPT_WORK_CmdLoadWorkConst", "0x8021"] and c[2] != "0x0"]
+        if got != p["starters"]:
+            bad += 1
+            print(f"  {code}: starters {got}, want {p['starters']}")
+    trades = p["tables"].get("trades", {})
+    if trades:
+        recs = narc_files(os.path.join(out, "a", "1", "6", "5"))
+        ids = {"Nacrene City Trade Encounter": 0, "Driftveil City Trade Encounter": 2, "Route 7 Trade Encounter": 4,
+               "Undella Town Trade Encounter": 5, "Route 15 Trade Encounter": 6}
+        for name, (offer, wanted) in trades.items():
+            r = recs[ids[name] + (1 if p["version"] == "white" and ids[name] in (0, 2) else 0)]
+            got = (struct.unpack_from("<I", r, 4)[0], struct.unpack_from("<I", r, 8)[0], struct.unpack_from("<I", r, 0x5C)[0])
+            if got != (offer[0], offer[1], wanted):
+                bad += 1
+                print(f"  {code}: trade {name} is {got}, want {offer} for {wanted}")
+    return bad
 
 
 def dis(code, arc, member):

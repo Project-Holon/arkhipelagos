@@ -483,6 +483,7 @@ fn statics(c: &Ctx, t: &mut Tables, rng: &mut Rng) {
     let non_leg: Vec<u32> = pool_all.iter().copied().filter(|&d| !c.is_legendary(d)).collect();
     let legs: Vec<u32> = c.legendary.to_vec();
     let mut monkey: Option<u32> = None;
+    let mut shared: std::collections::BTreeMap<u32, u32> = Default::default();
     for (i, s) in defs.iter().enumerate() {
         if s.fixed || s.kind == "starter" {
             continue;
@@ -507,6 +508,11 @@ fn statics(c: &Ctx, t: &mut Tables, rng: &mut Rng) {
         // the three Dreamyard monkeys stay one species unless split
         if s.name.starts_with("Dreamyard Gift Encounter") && !c.o.has(opt, "split_monkeys") {
             new = *monkey.get_or_insert(new);
+        }
+        // the Route 6 and Route 10 "item" encounters share one script per
+        // original species (member 897), so they share the new species too
+        if s.name.starts_with("Route 6 Item Encounter") || s.name.starts_with("Route 10 Item Encounter") {
+            new = *shared.entry(orig).or_insert(new);
         }
         t.statics[i] = [new, 0];
     }

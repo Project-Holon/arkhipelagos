@@ -106,6 +106,19 @@ with a marker instead of giving the item (the contract is in
   the gym leaders' members, `CheckBadge N` becomes `CheckEventFlag 370 + N`
   (same size), so a beaten leader stays beaten whoever holds the badge.
 
+## A world's species (`scripts.rs`, `species_edits`)
+
+The species a world gives are same-size replaces of constants in the
+scripts, built per world: the statics, gifts and the egg in their members
+(the battle or give command, and the cries and names of the same
+species), the fossils (`LoadWorkConst 0x8023` in 877), the starters
+(`LoadWorkConst 0x8021` and the names in 782; the starter screen shows them
+through `starter.choices`). The five Desert Resort statics share one
+original species in one member: the k-th battle is the k-th static.
+Trades are data: a/1/6/5, one record per trade id, written for both
+versions' ids. `tools/check_apply.py` reads them back from a world with
+every randomizer on.
+
 `edit.rs` does the two edit kinds that never move bytes: a detour (the
 covered commands become a jump padded with `Nop`, the new code is
 appended) and a same-size replace. `arkh-apply scripts` checks each

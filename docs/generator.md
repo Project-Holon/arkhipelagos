@@ -117,7 +117,7 @@ gets.
 | Option | Modifiers |
 |---|---|
 | `randomize_wild_pokemon` | `randomize`; `ensure_all` (every species, legendaries too, at least once), `similar_stats` (base stat total within 10%, widened when too few), `type_themed_areas`. The same original species becomes the same new one in every season of an area and method. |
-| `randomize_static_pokemon` | `randomize`; `similar_stats`, `no_legendaries` |
+| `randomize_static_pokemon` | `randomize`; `similar_stats`, `no_legendaries`. The Route 6 and Route 10 "item" encounters share one script per original species, so they share the new one. |
 | `randomize_gift_pokemon` | `randomize`; `similar_stats`, `no_legendaries`, `split_monkeys` (else the three Dreamyard monkeys stay one species) |
 | `randomize_legendary_pokemon` | `randomize`; `keep_legendary` (a legendary for a legendary). The roaming pair stays. |
 | `randomize_trade_pokemon` | `randomize_offer`, `randomize_request` |

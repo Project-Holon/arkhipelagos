@@ -17,9 +17,24 @@ pub const EVOLUTIONS: &str = "a/0/1/9";
 pub const MOVES: &str = "a/0/2/1";
 pub const ENCOUNTERS: &str = "a/1/2/6";
 pub const TRAINER_PARTIES: &str = "a/0/9/3";
+/// The in-game trades: one 0x6C-byte record per trade id (struct
+/// FldTradeData, ov021 fld_trade.c): species at +4, form at +8, the
+/// species wanted at +0x5C.
+pub const TRADES: &str = "a/1/6/5";
 
 /// The archives a change can touch, in a fixed order.
-pub const ARCHIVES: [&str; 6] = [PERSONAL, LEARNSETS, EVOLUTIONS, MOVES, ENCOUNTERS, TRAINER_PARTIES];
+pub const ARCHIVES: [&str; 7] = [PERSONAL, LEARNSETS, EVOLUTIONS, MOVES, ENCOUNTERS, TRAINER_PARTIES, TRADES];
+
+/// The trade ids of each trade (species.json "trades"): Black's, then
+/// White's. The scripts pick the id by version (Nacrene, Driftveil); a
+/// changed trade is written to both, since only one is used.
+pub const TRADE_IDS: [(&str, [u32; 2]); 5] = [
+    ("Nacrene City Trade Encounter", [0, 1]),
+    ("Driftveil City Trade Encounter", [2, 3]),
+    ("Route 7 Trade Encounter", [4, 4]),
+    ("Undella Town Trade Encounter", [5, 5]),
+    ("Route 15 Trade Encounter", [6, 6]),
+];
 
 const METHODS: [(&str, usize); 7] = [
     ("grass", 12),
@@ -219,6 +234,23 @@ pub fn members(
         TRAINER_PARTIES => {
             for (i, t) in &c.trainers {
                 out.push((*i, party(&orig(*i)?, t)?));
+            }
+        }
+        TRADES => {
+            for (name, (offer, wanted)) in &c.trades {
+                let ids = TRADE_IDS.iter().find(|(n, _)| n == name).ok_or(format!("no trade id for {name}"))?.1;
+                let mut ids = ids.to_vec();
+                ids.dedup();
+                for i in ids {
+                    let mut d = orig(i)?;
+                    if d.len() < 0x6C {
+                        return Err(format!("{archive}: trade {i} is {} bytes", d.len()));
+                    }
+                    d[4..8].copy_from_slice(&offer[0].to_le_bytes());
+                    d[8..12].copy_from_slice(&offer[1].to_le_bytes());
+                    d[0x5C..0x60].copy_from_slice(&wanted.to_le_bytes());
+                    out.push((i, d));
+                }
             }
         }
         _ => return Err(format!("no table in {archive}")),

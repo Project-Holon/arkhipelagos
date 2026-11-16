@@ -208,10 +208,15 @@ fn apply_to_a_cartridge() {
     let mut cfg = solo_config(arkh_mod::version_of(&h.code), 99, "Player", Default::default());
     cfg.options.insert("randomize_type_chart".into(), serde_json::json!(["shuffle"]));
     cfg.options.insert("randomize_wild_pokemon".into(), serde_json::json!(["randomize"]));
+    for opt in ["randomize_static_pokemon", "randomize_gift_pokemon", "randomize_legendary_pokemon", "randomize_starter_pokemon"] {
+        cfg.options.insert(opt.into(), serde_json::json!(["randomize"]));
+    }
+    cfg.options.insert("randomize_trade_pokemon".into(), serde_json::json!(["randomize_offer", "randomize_request"]));
     let g = Game::create_solo(&mut h, &cfg).expect("world");
     let n = g.apply(&mut h).expect("apply");
     let scripts = h.set.keys().filter(|(a, _)| a == "a/0/5/7").count();
-    assert_eq!(scripts, 77, "the check edits");
+    assert!(scripts > 77, "the check edits and the species edits");
+    assert!(h.set.keys().any(|(a, _)| a == "a/1/6/5"), "the trades");
     assert!(n > scripts, "and the tables");
     assert!(h.chart.is_some(), "the type chart");
     // applying again builds on the originals, not on the first apply

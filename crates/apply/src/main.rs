@@ -1,7 +1,7 @@
 //! arkh-apply: write one player's changed archives, built on a cartridge's
 //! own files (a test of the apply step without eidos).
 //!
-//!   arkh-apply <world.json> <slot> <cartridge data folder> <out folder>
+//!   arkh-apply <world.json> <slot> <cartridge data folder> <out folder> [eu|ja]
 //!   arkh-apply scripts <eu|ja> <cartridge data folder> <out folder>
 //!
 //! `scripts` writes <out>/a/0/5/7 with the check edits (scripts.rs), each
@@ -9,7 +9,8 @@
 //! member reads back the same.
 //!
 //! Writes <out>/a/0/1/6 and the other touched archives as whole NARCs, and
-//! <out>/type_chart.bin when the chart changed.
+//! <out>/type_chart.bin when the chart changed, and <out>/a/0/5/7 with the
+//! check edits and the world's species (family eu unless given).
 
 use std::process::ExitCode;
 
@@ -27,11 +28,11 @@ fn main() -> ExitCode {
             }
         };
     }
-    if a.len() != 5 {
+    if a.len() != 5 && a.len() != 6 {
         eprintln!("usage: arkh-apply <world.json> <slot> <cartridge data folder> <out folder>");
         return ExitCode::FAILURE;
     }
-    match run(&a[1], &a[2], &a[3], &a[4]) {
+    match run(&a[1], &a[2], &a[3], &a[4], a.get(5).map(|s| s.as_str()).unwrap_or("eu")) {
         Ok(()) => ExitCode::SUCCESS,
         Err(e) => {
             eprintln!("{e}");
@@ -40,7 +41,7 @@ fn main() -> ExitCode {
     }
 }
 
-fn run(world: &str, slot: &str, data: &str, out: &str) -> Result<(), String> {
+fn run(world: &str, slot: &str, data: &str, out: &str, fam: &str) -> Result<(), String> {
     let text = std::fs::read_to_string(world).map_err(|e| format!("{world}: {e}"))?;
     let w: World = serde_json::from_str(&text).map_err(|e| format!("{world}: {e}"))?;
     let slot: u32 = slot.parse().map_err(|_| "slot: a number".to_string())?;
@@ -55,6 +56,26 @@ fn run(world: &str, slot: &str, data: &str, out: &str) -> Result<(), String> {
         if changed.is_empty() {
             continue;
         }
+        for (i, d) in &changed {
+            narc.files[*i as usize] = d.clone();
+        }
+        let dst = format!("{out}/{arc}");
+        if let Some(dir) = std::path::Path::new(&dst).parent() {
+            std::fs::create_dir_all(dir).map_err(|e| format!("{dst}: {e}"))?;
+        }
+        std::fs::write(&dst, narc.pack()).map_err(|e| format!("{dst}: {e}"))?;
+        println!("{arc}: {} members", changed.len());
+        touched += 1;
+    }
+    {
+        let family = arkh_script::Family::parse(fam).ok_or("family: eu or ja")?;
+        let arc = arkh_apply::scripts::SCRIPTS;
+        let path = format!("{data}/{arc}");
+        let bytes = std::fs::read(&path).map_err(|e| format!("{path}: {e}"))?;
+        let mut narc = Narc::parse(&bytes).map_err(|e| format!("{path}: {}", e.0))?;
+        let files = narc.files.clone();
+        let ws = arkh_apply::scripts::WorldSpecies { version: &p.version, changes: &p.tables, starters: &p.starters };
+        let changed = arkh_apply::scripts::members_for(family, Some(&ws), &|i| files.get(i as usize).cloned())?;
         for (i, d) in &changed {
             narc.files[*i as usize] = d.clone();
         }
