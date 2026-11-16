@@ -244,6 +244,7 @@ impl Game {
         let orig_item = host.work_get(0x8008).unwrap_or(0);
         let orig_count = host.work_get(0x8009).unwrap_or(0);
         let locs = self.checks.get(&(flag, key)).cloned().unwrap_or_default();
+        host.log(&format!("arkhipelagos: check: flag {flag} key {key}, original item {orig_item} x{orig_count}, locations {locs:?}"));
         let mine: Vec<u32> = locs.iter().copied().filter(|l| self.placed.contains_key(l)).collect();
         if mine.is_empty() || mine.iter().all(|l| self.state.checked.contains(l)) {
             // not a location of this world, or one already checked (a gift
@@ -330,7 +331,9 @@ impl Game {
         if let Some((item, count)) = self.messages.pop_front() {
             host.work_set(MSG_ITEM_WORK, item);
             host.work_set(MSG_COUNT_WORK, count);
-            if host.script_run(MSG_SCRIPT).is_some() {
+            let ran = host.script_run(MSG_SCRIPT).is_some();
+            host.log(&format!("arkhipelagos: message for item {item} x{count}: script {MSG_SCRIPT} {}", if ran { "queued" } else { "refused" }));
+            if ran {
                 self.showing = true;
             }
         }

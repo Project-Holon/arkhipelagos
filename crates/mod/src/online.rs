@@ -186,6 +186,7 @@ impl Mod {
                 }
             }
             Ok(None) => {
+                host.log("arkhipelagos: this save has no world: the plain game");
                 host.member_clear_all();
                 self.game = None;
             }

@@ -220,10 +220,9 @@ thread_local! {
 }
 
 fn with_mod(f: impl FnOnce(&mut Mod, &mut Eidos)) {
-    MOD.with(|m| {
-        if let Ok(mut m) = m.try_borrow_mut() {
-            f(&mut m, &mut Eidos);
-        }
+    MOD.with(|m| match m.try_borrow_mut() {
+        Ok(mut m) => f(&mut m, &mut Eidos),
+        Err(_) => Eidos.log("arkhipelagos: an event came while another was handled; skipped"),
     });
 }
 
@@ -242,6 +241,7 @@ extern "C" fn on_game_new(_e: *mut Event) -> i32 {
 }
 
 extern "C" fn on_save_load(_e: *mut Event) -> i32 {
+    Eidos.log("arkhipelagos: save.load");
     with_mod(|m, h| m.save_load(h));
     CONTINUE
 }
@@ -258,6 +258,10 @@ extern "C" fn on_game_cleared(_e: *mut Event) -> i32 {
 
 extern "C" fn on_flag_set(e: *mut FlagSet) -> i32 {
     let flag = unsafe { (*e).flag };
+    if std::option_env!("ARKH_TRACE_FLAGS").is_some() {
+        let mark = Eidos.work_get(0x805F);
+        Eidos.log(&format!("arkhipelagos: flag.set {flag}, work 0x805f {mark:?}"));
+    }
     with_game(|g, h| {
         g.on_flag(h, flag);
     });
@@ -303,22 +307,31 @@ extern "C" fn on_tick() {
 
 #[no_mangle]
 pub extern "C" fn eidos_mod_start() -> i32 {
-    unsafe {
-        let ok = on(EVENT_GAME_NEW, on_game_new as *const () as usize as u32) == 0
-            && on(EVENT_SAVE_LOAD, on_save_load as *const () as usize as u32) == 0
-            && on(EVENT_SAVE_BEGIN, on_save_begin as *const () as usize as u32) == 0
-            && on(EVENT_FLAG_SET, on_flag_set as *const () as usize as u32) == 0
-            && on(EVENT_SCRIPT_DONE, on_script_done as *const () as usize as u32) == 0
-            && on(EVENT_STARTER_CHOICES, on_starter_choices as *const () as usize as u32) == 0
-            && on(EVENT_GAME_CLEARED, on_game_cleared as *const () as usize as u32) == 0
-            && on(EVENT_WORLD, on_world as *const () as usize as u32) == 0;
-        on_frame(on_tick as *const () as usize as u32);
-        if ok {
-            0
-        } else {
-            1
+    let binds: [(u32, u32, &str); 8] = [
+        (EVENT_GAME_NEW, on_game_new as *const () as usize as u32, "game.new"),
+        (EVENT_SAVE_LOAD, on_save_load as *const () as usize as u32, "save.load"),
+        (EVENT_SAVE_BEGIN, on_save_begin as *const () as usize as u32, "save.begin"),
+        (EVENT_FLAG_SET, on_flag_set as *const () as usize as u32, "flag.set"),
+        (EVENT_SCRIPT_DONE, on_script_done as *const () as usize as u32, "script.done"),
+        (EVENT_STARTER_CHOICES, on_starter_choices as *const () as usize as u32, "starter.choices"),
+        (EVENT_GAME_CLEARED, on_game_cleared as *const () as usize as u32, "game.cleared"),
+        (EVENT_WORLD, on_world as *const () as usize as u32, "world"),
+    ];
+    // a bind that fails is logged and the others still work
+    let mut failed = Vec::new();
+    for (kind, f, name) in binds {
+        if unsafe { on(kind, f) } != 0 {
+            failed.push(name);
         }
     }
+    unsafe { on_frame(on_tick as *const () as usize as u32) };
+    let h = &mut Eidos;
+    if failed.is_empty() {
+        h.log("arkhipelagos: started");
+    } else {
+        h.log(&format!("arkhipelagos: started; these events could not be bound: {failed:?}"));
+    }
+    0
 }
 
 #[no_mangle]
