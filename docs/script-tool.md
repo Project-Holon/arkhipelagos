@@ -131,7 +131,7 @@ appended) and a same-size replace. `arkh-apply scripts` checks each
 edited member: every byte outside the edits is the original, and the
 member disassembles and assembles back the same. `tools/check_apply.py`
 then reads every edited member back on all 12 cartridges and compares the
-checks it finds with item_sites.json: 78 members, 148 checks, 8,420 bytes
+checks it finds with item_sites.json: 78 members, 148 checks, 8,426 bytes
 added (with the message script), the same in every cartridge.
 
 ## Edits

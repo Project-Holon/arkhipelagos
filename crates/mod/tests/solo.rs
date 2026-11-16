@@ -168,6 +168,9 @@ fn solo_world_checks_give_their_items() {
     g.script_done(&mut h);
     assert_eq!(h.scripts.len(), 2);
 
+    // nothing is stored until the game saves (save.begin)
+    assert!(h.state.is_none());
+    g.save(&mut h);
     // the save keeps the checks; loading gives the same game back
     let loaded = Game::load(&mut h).expect("load").expect("a world");
     assert_eq!(loaded.state, g.state);

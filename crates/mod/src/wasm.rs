@@ -32,6 +32,7 @@ extern "C" {
 
 // event kinds (sdk/api/v6/eidos_wasm.h)
 const EVENT_GAME_NEW: u32 = 1;
+const EVENT_SAVE_BEGIN: u32 = 2;
 const EVENT_SAVE_LOAD: u32 = 4;
 const EVENT_FLAG_SET: u32 = 111;
 const EVENT_SCRIPT_DONE: u32 = 114;
@@ -219,6 +220,11 @@ extern "C" fn on_save_load(_e: *mut Event) -> i32 {
     CONTINUE
 }
 
+extern "C" fn on_save_begin(_e: *mut Event) -> i32 {
+    with_game(|g, h| g.save(h));
+    CONTINUE
+}
+
 extern "C" fn on_flag_set(e: *mut FlagSet) -> i32 {
     let flag = unsafe { (*e).flag };
     with_game(|g, h| {
@@ -258,6 +264,7 @@ pub extern "C" fn eidos_mod_start() -> i32 {
     unsafe {
         let ok = on(EVENT_GAME_NEW, on_game_new as *const () as usize as u32) == 0
             && on(EVENT_SAVE_LOAD, on_save_load as *const () as usize as u32) == 0
+            && on(EVENT_SAVE_BEGIN, on_save_begin as *const () as usize as u32) == 0
             && on(EVENT_FLAG_SET, on_flag_set as *const () as usize as u32) == 0
             && on(EVENT_SCRIPT_DONE, on_script_done as *const () as usize as u32) == 0
             && on(EVENT_STARTER_CHOICES, on_starter_choices as *const () as usize as u32) == 0;

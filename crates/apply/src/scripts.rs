@@ -316,31 +316,46 @@ pub fn members_for(
     Ok(out)
 }
 
-/// The mod's message script, 862 entry 15 (script 2815): "You obtained
-/// X!" through the game's own routine (the one 862 entry 4 calls), with the
-/// item and count from the saved works 0x40FE and 0x40FF (no script uses
-/// them). It starts and ends the way the hidden-item scripts do.
+/// The mod's message script, 862 entry 15 (script 2815): the game's own
+/// "obtained X" with its fanfare, then "put X in the pocket", the two calls
+/// around `AddItem` in the shared give routine (L01cf), without the
+/// `AddItem`: the item and count come from the saved works 0x40FE and
+/// 0x40FF (no script uses them) into 0x8008 and 0x8009, which those
+/// routines read. It starts and ends the way the hidden-item scripts do.
 pub const MSG_ENTRY: usize = 15;
 
 fn add_message_script(s: &mut Script) -> Result<(), String> {
     if s.entries.len() != MSG_ENTRY {
         return Err(format!("862 has {} entries, not {MSG_ENTRY}", s.entries.len()));
     }
-    let start = label_index(s, &s.entries[4])?;
-    let show = match s.items.get(start + 1) {
+    // Call A; AddItem 0x8000 0x8001 0x8010; PALPARK_SetBeacon; Call B
+    let call_label = |it: Option<&Item>| match it {
         Some(Item::Cmd { name, args }) if name == "SCRIPT_WORK_CmdCall" => match args.first() {
-            Some(arkh_script::Value::Label(l)) => l.clone(),
-            _ => return Err("862 entry 4: no call".into()),
+            Some(arkh_script::Value::Label(l)) => Some(l.clone()),
+            _ => None,
         },
-        _ => return Err("862 entry 4: no call".into()),
+        _ => None,
     };
+    let mut found = None;
+    for i in 1..s.items.len().saturating_sub(2) {
+        if let Some((n, a)) = num_args(&s.items[i]) {
+            if n == "SCRCMD_AddItem" && a == [0x8000, 0x8001, 0x8010] {
+                if let (Some(get), Some(put)) = (call_label(s.items.get(i - 1)), call_label(s.items.get(i + 2))) {
+                    found = Some((get, put));
+                    break;
+                }
+            }
+        }
+    }
+    let (get, put) = found.ok_or("862: no give routine to show the message with")?;
     s.entries.push("ArkMsg".into());
     s.items.extend([
         Item::Label("ArkMsg".into()),
         cmd("SCRIPT_WORK_CmdCallFieldCommand", &[]),
         cmd(COPY, &[0x8008, 0x40FE]),
         cmd(COPY, &[0x8009, 0x40FF]),
-        cmd_label("SCRIPT_WORK_CmdCall", &show),
+        cmd_label("SCRIPT_WORK_CmdCall", &get),
+        cmd_label("SCRIPT_WORK_CmdCall", &put),
         cmd("SCRIPT_WORK_CmdCallScriptEvent", &[]),
         cmd("SCRIPT_WORK_CmdPopAllBgm", &[]),
         cmd("SCRIPT_WORK_CmdHalt", &[]),

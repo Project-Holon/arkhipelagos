@@ -146,9 +146,7 @@ impl Game {
             return Err(format!("could not store {file}"));
         }
         let state = SaveState { world: file, slot: 1, ..Default::default() };
-        let g = Game::new(world, 1, Family::of_game_code(std::str::from_utf8(&code).unwrap_or("IRBO")), state)?;
-        g.save(host);
-        Ok(g)
+        Game::new(world, 1, Family::of_game_code(std::str::from_utf8(&code).unwrap_or("IRBO")), state)
     }
 
     /// The game of a loaded save, or None when the save has no world.
@@ -166,6 +164,10 @@ impl Game {
         Game::new(world, slot, family, state).map(Some)
     }
 
+    /// Store the state. Called at `save.begin` only: eidos writes it with
+    /// the game's save (docs/mod-state.md, section 2), so the checks and
+    /// the flags they set always agree; a game reset without saving loses
+    /// both together.
     pub fn save(&self, host: &mut dyn Host) {
         if let Ok(b) = serde_json::to_vec(&self.state) {
             if !host.state_store(&b) {
@@ -236,7 +238,6 @@ impl Game {
             }
             // items for other players go out with the online flow
         }
-        self.save(host);
         true
     }
 
