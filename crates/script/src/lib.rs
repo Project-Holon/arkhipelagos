@@ -11,6 +11,7 @@
 //! offsets stay valid), changes commands in place, or appends new code at
 //! the end.
 
+pub mod edit;
 pub mod script;
 pub mod table;
 pub mod zone;

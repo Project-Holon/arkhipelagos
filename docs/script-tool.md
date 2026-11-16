@@ -86,6 +86,34 @@ zone event file and order. 20 locations have no site (`none`, with the
 reason: items chosen at run time, flags set nowhere, BWAP's own new items);
 the generator leaves them out, so they keep the game's items.
 
+## Check edits (`crates/apply/src/scripts.rs`)
+
+The mod changes the give scripts so that they set the location's flag
+with a marker instead of giving the item (the contract is in
+`docs/v6-calls.md`). The edits are the same for every world:
+
+- 862 `L003e` (NPC gifts with the flag in 0x8002), 862 `L01ae` (hidden
+  items), 864 `L23e2` (item balls: the object's flag, then the object is
+  removed), 863's after-battle gift (`SetTrainerDefeatedFlag` again, with
+  the marker);
+- every give site: the `LoadWork 0x8000 item` becomes a jump to new code
+  that loads the original item and count into 0x8008 and 0x8009, the key
+  into 0x805E, sets the flag with the marker, sets 0x8010 to 1 and jumps
+  past the give;
+- `SetBadge N`: the flag 370 + N with the marker instead (0x8008 is 0: the
+  mod gives the badge itself when the location is not in the world); in
+  the gym leaders' members, `CheckBadge N` becomes `CheckEventFlag 370 + N`
+  (same size), so a beaten leader stays beaten whoever holds the badge.
+
+`edit.rs` does the two edit kinds that never move bytes: a detour (the
+covered commands become a jump padded with `Nop`, the new code is
+appended) and a same-size replace. `arkh-apply scripts` checks each
+edited member: every byte outside the edits is the original, and the
+member disassembles and assembles back the same. `tools/check_apply.py`
+then reads every edited member back on all 12 cartridges and compares the
+checks it finds with item_sites.json: 78 members, 148 checks, 8,390 bytes
+added, the same in every cartridge.
+
 ## Edits
 
 The tool never moves existing bytes. It can:

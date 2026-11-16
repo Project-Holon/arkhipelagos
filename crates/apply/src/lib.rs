@@ -6,6 +6,8 @@
 //! The eidos mod calls `members` for each archive and gives the results to
 //! `vfs_member_set`; the type chart goes to `type_chart_set`.
 
+pub mod scripts;
+
 use arkh_gen::facts::{EncounterBlock, Move, Personal, Trainer};
 use arkh_gen::species::Changes;
 

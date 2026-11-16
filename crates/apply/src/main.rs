@@ -2,6 +2,11 @@
 //! own files (a test of the apply step without eidos).
 //!
 //!   arkh-apply <world.json> <slot> <cartridge data folder> <out folder>
+//!   arkh-apply scripts <eu|ja> <cartridge data folder> <out folder>
+//!
+//! `scripts` writes <out>/a/0/5/7 with the check edits (scripts.rs), each
+//! edited member checked: original bytes kept outside the edits, and the
+//! member reads back the same.
 //!
 //! Writes <out>/a/0/1/6 and the other touched archives as whole NARCs, and
 //! <out>/type_chart.bin when the chart changed.
@@ -13,6 +18,15 @@ use arkh_gen::gen::World;
 
 fn main() -> ExitCode {
     let a: Vec<String> = std::env::args().collect();
+    if a.len() == 5 && a[1] == "scripts" {
+        return match scripts(&a[2], &a[3], &a[4]) {
+            Ok(()) => ExitCode::SUCCESS,
+            Err(e) => {
+                eprintln!("{e}");
+                ExitCode::FAILURE
+            }
+        };
+    }
     if a.len() != 5 {
         eprintln!("usage: arkh-apply <world.json> <slot> <cartridge data folder> <out folder>");
         return ExitCode::FAILURE;
@@ -58,5 +72,27 @@ fn run(world: &str, slot: &str, data: &str, out: &str) -> Result<(), String> {
         println!("type chart");
     }
     println!("{touched} archives written");
+    Ok(())
+}
+
+fn scripts(fam: &str, data: &str, out: &str) -> Result<(), String> {
+    let family = arkh_script::Family::parse(fam).ok_or("family: eu or ja")?;
+    let arc = arkh_apply::scripts::SCRIPTS;
+    let path = format!("{data}/{arc}");
+    let bytes = std::fs::read(&path).map_err(|e| format!("{path}: {e}"))?;
+    let mut narc = Narc::parse(&bytes).map_err(|e| format!("{path}: {}", e.0))?;
+    let files = narc.files.clone();
+    let changed = arkh_apply::scripts::members(family, &|i| files.get(i as usize).cloned())?;
+    let mut grown = 0;
+    for (i, d) in &changed {
+        grown += d.len() - files[*i as usize].len();
+        narc.files[*i as usize] = d.clone();
+    }
+    let dst = format!("{out}/{arc}");
+    if let Some(dir) = std::path::Path::new(&dst).parent() {
+        std::fs::create_dir_all(dir).map_err(|e| format!("{dst}: {e}"))?;
+    }
+    std::fs::write(&dst, narc.pack()).map_err(|e| format!("{dst}: {e}"))?;
+    println!("{arc}: {} members edited, {grown} bytes added", changed.len());
     Ok(())
 }
