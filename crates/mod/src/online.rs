@@ -21,7 +21,7 @@ use std::collections::{BTreeMap, BTreeSet};
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
-use crate::{solo_config, version_of, Game, Host, SaveState};
+use crate::{options_from_settings, solo_config, version_of, Game, Host, SaveState};
 use arkh_gen::gen::{PlayerOut, World};
 
 // the `world` event's kinds (EIDOS_WORLD_*)
@@ -35,6 +35,11 @@ pub const PLAYER_OUT: u32 = 6;
 pub const ERROR: u32 = 7;
 pub const CLOSED: u32 = 8;
 pub const OWNER_DONE: u32 = 9;
+
+/// The owner key of a GENERATED answer ("<code> <owner key>").
+fn it_owner(text: &str) -> &str {
+    text.split_whitespace().nth(1).unwrap_or("")
+}
 
 /// The mod file that names the world a new game joins: "<code> <name>".
 pub const JOIN_FILE: &str = "join.txt";
@@ -121,6 +126,15 @@ pub struct Mod {
     pub joining: Option<Online>,
     /// player number -> name, of this world
     pub names: BTreeMap<u32, String>,
+    /// a world asked for (multiworld, create): this player's name, joined
+    /// once metaxy has made it
+    pub creating: Option<String>,
+    /// the code of the world just made: shown to the player once joined
+    pub made: Option<String>,
+    /// the join on its way went by player key (a refusal then joins by name)
+    pub by_key: bool,
+    /// the last "Player N" tried after the player's own name (0: none yet)
+    pub next_free: u32,
 }
 
 impl Mod {
@@ -133,25 +147,93 @@ impl Mod {
         }
     }
 
-    /// A new game: join the world of `join.txt`, else make a solo world.
+    /// Join a world by its code and a player name (or the key that name got
+    /// before on this device).
+    fn join(&mut self, host: &mut dyn Host, code: &str, name: &str) {
+        let mut o = Online { code: code.trim().to_ascii_uppercase(), name: name.trim().to_string(), ..Default::default() };
+        host.member_clear_all();
+        // a name this game joined before goes back in by its key
+        o.key = stored_key(host, &o.code, &o.name).unwrap_or_default();
+        let who = if o.key.is_empty() { o.name.clone() } else { o.key.clone() };
+        host.log(&format!("arkhipelagos: joining world {} as {}", o.code, o.name));
+        if !host.world_join(&o.code, &who) {
+            host.log("arkhipelagos: the join was not sent (no relay?)");
+        }
+        self.by_key = !o.key.is_empty();
+        self.next_free = 0;
+        self.joining = Some(o);
+    }
+
+    /// A new game.  On an eidos with modes, the mode the player chose on
+    /// the Multiplayer screen decides: "solo" makes a solo world from the
+    /// screen's options, "multiworld" joins a world by code and name or
+    /// asks metaxy to make one, and the plain New Game (no mode) is the
+    /// plain game.  Without modes (an older eidos), and for test runs,
+    /// `join.txt` joins its world and anything else is a solo world.
     pub fn new_game(&mut self, host: &mut dyn Host, seed: u64) {
         self.game = None;
+        self.creating = None;
+        let mode = host.mode();
         let join = host.file_read(JOIN_FILE).and_then(|b| String::from_utf8(b).ok());
-        if let Some((code, name)) = join.as_deref().and_then(|t| t.trim().split_once(' ')) {
-            let mut o = Online { code: code.trim().to_string(), name: name.trim().to_string(), ..Default::default() };
-            host.member_clear_all();
-            // a name this game joined before goes back in by its key
-            o.key = stored_key(host, &o.code, &o.name).unwrap_or_default();
-            let who = if o.key.is_empty() { o.name.clone() } else { o.key.clone() };
-            host.log(&format!("arkhipelagos: joining world {} as {}", o.code, o.name));
-            if !host.world_join(&o.code, &who) {
-                host.log("arkhipelagos: the join was not sent (no relay?)");
-            }
-            self.joining = Some(o);
-            return;
-        }
+        let join = join.as_deref().and_then(|t| t.trim().split_once(' ')).map(|(c, n)| (c.to_string(), n.to_string()));
         let code = host.game_code();
-        let cfg = solo_config(version_of(&code), seed, "Player", Default::default());
+        let options = match mode.as_deref() {
+            Some("multiworld") => {
+                // the name the player chose on the Multiplayer screen: never asked again here
+                let name = host.player_name().unwrap_or_default();
+                let world = host.mode_code().unwrap_or_default();
+                if !world.trim().is_empty() {
+                    // join: the code typed in eidos's Join box (eidos asked
+                    // the relay first that it names an open world with room)
+                    if name.trim().is_empty() {
+                        host.log("arkhipelagos: a multiworld join needs a multiplayer name; the plain game");
+                        host.member_clear_all();
+                        return;
+                    }
+                    self.join(host, world.trim(), &name);
+                    return;
+                }
+                // create: this player and the others, every one on this
+                // cartridge's version; joiners take the names Player 2 ...
+                let n = host.setting("arkh.players").unwrap_or(2).clamp(1, 16) as usize;
+                let me = if name.trim().is_empty() { "Player 1".to_string() } else { name.trim().to_string() };
+                let mut cfg = solo_config(version_of(&code), seed, &me, options_from_settings(host));
+                for k in 2..=n {
+                    let mut p = cfg.players[0].clone();
+                    p.name = format!("Player {k}");
+                    cfg.players.push(p);
+                }
+                match serde_json::to_string(&cfg) {
+                    Ok(json) if host.world_create(&json) => {
+                        host.log(&format!("arkhipelagos: making a world for {n} players"));
+                        host.member_clear_all();
+                        self.creating = Some(me);
+                    }
+                    _ => host.log("arkhipelagos: the world was not asked for (no relay?)"),
+                }
+                return;
+            }
+            Some("solo") => options_from_settings(host),
+            Some(_) => {
+                // the plain New Game (or another mod's mode): no world,
+                // unless a test run names one in join.txt
+                if let Some((c, n)) = join {
+                    self.join(host, &c, &n);
+                    return;
+                }
+                host.log("arkhipelagos: a plain new game (the Multiplayer screen's cards start a randomizer)");
+                host.member_clear_all();
+                return;
+            }
+            None => {
+                if let Some((c, n)) = join {
+                    self.join(host, &c, &n);
+                    return;
+                }
+                Default::default()
+            }
+        };
+        let cfg = solo_config(version_of(&code), seed, "Player", options);
         match Game::create_solo(host, &cfg) {
             Ok(g) => {
                 self.game = Some(g);
@@ -176,6 +258,8 @@ impl Mod {
                         o.key = k;
                     }
                     host.world_join(&o.code, &o.key);
+                    self.by_key = true;
+                    self.next_free = 0;
                     self.joining = Some(o);
                 }
             }
@@ -192,6 +276,34 @@ impl Mod {
     pub fn on_world(&mut self, host: &mut dyn Host, kind: u32, body: &[u8]) {
         let text = String::from_utf8_lossy(body).to_string();
         match kind {
+            GENERATED => {
+                // "<code> <owner key>": the world asked for is made
+                let mut it = text.split_whitespace();
+                let Some(code) = it.next().map(|c| c.to_ascii_uppercase()) else { return };
+                if let Some(owner) = it.next() {
+                    if !host.file_write(&format!("owner-{code}.txt"), owner.as_bytes()) {
+                        host.log("arkhipelagos: could not store the world's owner key");
+                    }
+                }
+                host.log(&format!("arkhipelagos: world {code} made"));
+                if self.creating.is_some() {
+                    // nobody joins a world before its owner starts it
+                    self.made = Some(code.clone());
+                    if !host.world_start(&code, it_owner(&text)) {
+                        host.log("arkhipelagos: the world's start was not sent");
+                    }
+                }
+            }
+            OWNER_DONE => {
+                // "<code> started": this player joins the world it made
+                let mut it = text.split_whitespace();
+                let (code, state) = (it.next().unwrap_or("").to_ascii_uppercase(), it.next().unwrap_or(""));
+                if state == "started" && self.made.as_deref() == Some(code.as_str()) {
+                    if let Some(me) = self.creating.take() {
+                        self.join(host, &code, &me);
+                    }
+                }
+            }
             JOINED => {
                 if let Err(e) = self.joined(host, &text) {
                     host.log(&format!("arkhipelagos: join: {e}"));
@@ -212,11 +324,26 @@ impl Mod {
             ERROR => {
                 let reason = text.split_whitespace().next().unwrap_or("");
                 host.log(&format!("arkhipelagos: metaxy: {text}"));
-                if reason == "bad-key" {
-                    // the claim was released before it was confirmed: join
-                    // again by name and keep the new key
-                    if let Some(o) = self.joining.clone() {
-                        host.world_join(&o.code, &o.name);
+                if reason == "bad-key" || reason == "name-taken" {
+                    if let Some(mut o) = self.joining.clone() {
+                        if self.by_key {
+                            // the claim was released before it was confirmed:
+                            // join again by name and keep the new key
+                            self.by_key = false;
+                            host.world_join(&o.code, &o.name);
+                        } else if self.next_free < 16 {
+                            // the multiplayer name is not one of the world's
+                            // players, or is taken: the next "Player N" of a
+                            // world made in the game
+                            self.next_free = if self.next_free == 0 { 2 } else { self.next_free + 1 };
+                            o.name = format!("Player {}", self.next_free);
+                            host.log(&format!("arkhipelagos: joining world {} as {}", o.code, o.name));
+                            host.world_join(&o.code, &o.name);
+                            self.joining = Some(o);
+                        } else {
+                            host.log("arkhipelagos: no free player in this world");
+                            self.joining = None;
+                        }
                     }
                 }
             }
@@ -302,6 +429,11 @@ impl Mod {
         }
         if let Some(g) = self.game.as_mut() {
             g.names = self.names.clone();
+            // a world this player just made: the code to give the others
+            if self.made.as_deref() == Some(g.state.online.as_ref().map(|o| o.code.as_str()).unwrap_or("")) {
+                let code = self.made.take().unwrap_or_default();
+                g.messages.push_back(crate::Message::Line { id: "world.made", item: 0, name: code });
+            }
         }
         self.joining = None;
         let g = self.game.as_ref().expect("set above");

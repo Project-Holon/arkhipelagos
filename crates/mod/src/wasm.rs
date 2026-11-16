@@ -29,6 +29,7 @@ extern "C" {
     fn state_load(buf: *mut u8, size: u32) -> i32;
     fn state_store(buf: *const u8, size: u32) -> i32;
     fn work_get(id: u32, out: *mut u16) -> i32;
+    fn dex_caught(species: u32) -> i32;
     fn work_set(id: u32, value: u32) -> i32;
     fn badge_set(bit: u32) -> i32;
     fn vfs_member_set(archive: *const u8, index: u32, data: *const u8, size: u32) -> i32;
@@ -38,6 +39,13 @@ extern "C" {
     fn type_chart_set(chart: *const u8) -> i32;
     fn mod_file_write(name: *const u8, data: *const u8, size: u32) -> i32;
     fn mod_file_read(name: *const u8, out: *mut u8, size: u32, got: *mut u32) -> i32;
+    fn mode_get(out: *mut u8, size: u32) -> i32;
+    fn mode_code(out: *mut u8, size: u32) -> i32;
+    fn setting_get(key: *const u8) -> i32;
+    fn setting_text(key: *const u8, out: *mut u8, size: u32) -> i32;
+    fn world_create(config_json: *const u8, ticket: *mut u32) -> i32;
+    fn player_name(out: *mut u8, size: u32) -> i32;
+    fn world_owner(code: *const u8, owner_key: *const u8, action: u32) -> i32;
 }
 
 // event kinds (sdk/api/v6/eidos_wasm.h)
@@ -49,6 +57,8 @@ const EVENT_FLAG_SET: u32 = 111;
 const EVENT_SCRIPT_DONE: u32 = 114;
 const EVENT_STARTER_CHOICES: u32 = 121;
 const EVENT_WORLD: u32 = 124;
+const EVENT_BATTLE_END: u32 = 80;
+const EVENT_DEX_REGISTER: u32 = 112;
 const CONTINUE: i32 = 0;
 
 /// The DS addresses of the cartridge header's game code (the header copies
@@ -128,6 +138,10 @@ impl Host for Eidos {
     fn work_get(&mut self, id: u16) -> Option<u16> {
         let mut v = 0u16;
         (unsafe { work_get(id as u32, &mut v) } == 0).then_some(v)
+    }
+    fn dex_caught(&mut self, species: u16) -> Option<bool> {
+        let r = unsafe { dex_caught(species as u32) };
+        (r >= 0).then_some(r > 0)
     }
     fn work_set(&mut self, id: u16, value: u16) -> bool {
         unsafe { work_set(id as u32, value as u32) == 0 }
@@ -227,6 +241,41 @@ impl Host for Eidos {
     fn text_set(&mut self, archive: u32, file: u32, entry: u32, block: u32, units: &[u16]) -> bool {
         unsafe { text_set(archive, file, entry, block, units.as_ptr(), units.len() as u32) == 0 }
     }
+    fn mode(&mut self) -> Option<String> {
+        let mut b = [0u8; 64];
+        let n = unsafe { mode_get(b.as_mut_ptr(), b.len() as u32) };
+        (n >= 0).then(|| String::from_utf8_lossy(&b[..(n as usize).min(63)]).to_string())
+    }
+    fn mode_code(&mut self) -> Option<String> {
+        let mut b = [0u8; 32];
+        let n = unsafe { mode_code(b.as_mut_ptr(), b.len() as u32) };
+        (n >= 0).then(|| String::from_utf8_lossy(&b[..(n as usize).min(31)]).to_string())
+    }
+    fn setting(&mut self, key: &str) -> Option<i32> {
+        let k = cstr(key);
+        let v = unsafe { setting_get(k.as_ptr()) };
+        (v >= 0).then_some(v)
+    }
+    fn setting_text(&mut self, key: &str) -> Option<String> {
+        let k = cstr(key);
+        let mut b = [0u8; 128];
+        let n = unsafe { setting_text(k.as_ptr(), b.as_mut_ptr(), b.len() as u32) };
+        (n >= 0).then(|| String::from_utf8_lossy(&b[..(n as usize).min(127)]).to_string())
+    }
+    fn player_name(&mut self) -> Option<String> {
+        let mut b = [0u8; 64];
+        let n = unsafe { player_name(b.as_mut_ptr(), b.len() as u32) };
+        (n > 0).then(|| String::from_utf8_lossy(&b[..(n as usize).min(63)]).to_string())
+    }
+    fn world_start(&mut self, code: &str, owner_key: &str) -> bool {
+        let (c, k) = (cstr(code), cstr(owner_key));
+        unsafe { world_owner(c.as_ptr(), k.as_ptr(), 0) == 0 }
+    }
+    fn world_create(&mut self, config_json: &str) -> bool {
+        let c = cstr(config_json);
+        let mut t = 0u32;
+        unsafe { world_create(c.as_ptr(), &mut t) == 0 }
+    }
 }
 
 thread_local! {
@@ -282,6 +331,38 @@ extern "C" fn on_flag_set(e: *mut FlagSet) -> i32 {
     CONTINUE
 }
 
+/// `dex.register` (BwDexRegister).
+#[repr(C)]
+struct DexRegister {
+    h: Event,
+    species: u16,
+    caught: u8,
+}
+
+/// `battle.end` (BwBattleEnd).
+#[repr(C)]
+struct BattleEnd {
+    h: Event,
+    outcome: u8,
+    wild: u8,
+    trainer_id: [u16; 2],
+    turns: u16,
+}
+
+extern "C" fn on_dex_register(e: *mut DexRegister) -> i32 {
+    let (species, caught) = unsafe { ((*e).species, (*e).caught != 0) };
+    with_game(|g, h| g.on_dex_register(h, species, caught));
+    CONTINUE
+}
+
+extern "C" fn on_battle_end(e: *mut BattleEnd) -> i32 {
+    let (outcome, wild, trainers) = unsafe { ((*e).outcome, (*e).wild, (*e).trainer_id) };
+    if wild == 0 {
+        with_game(|g, h| g.on_battle_end(h, outcome, trainers));
+    }
+    CONTINUE
+}
+
 extern "C" fn on_script_done(e: *mut ScriptDone) -> i32 {
     let id = unsafe { (*e).script_id };
     if id == crate::MSG_SCRIPT {
@@ -321,7 +402,7 @@ extern "C" fn on_tick() {
 
 #[no_mangle]
 pub extern "C" fn eidos_mod_start() -> i32 {
-    let binds: [(u32, u32, &str); 8] = [
+    let binds: [(u32, u32, &str); 10] = [
         (EVENT_GAME_NEW, on_game_new as *const () as usize as u32, "game.new"),
         (EVENT_SAVE_LOAD, on_save_load as *const () as usize as u32, "save.load"),
         (EVENT_SAVE_BEGIN, on_save_begin as *const () as usize as u32, "save.begin"),
@@ -330,6 +411,8 @@ pub extern "C" fn eidos_mod_start() -> i32 {
         (EVENT_STARTER_CHOICES, on_starter_choices as *const () as usize as u32, "starter.choices"),
         (EVENT_GAME_CLEARED, on_game_cleared as *const () as usize as u32, "game.cleared"),
         (EVENT_WORLD, on_world as *const () as usize as u32, "world"),
+        (EVENT_DEX_REGISTER, on_dex_register as *const () as usize as u32, "dex.register"),
+        (EVENT_BATTLE_END, on_battle_end as *const () as usize as u32, "battle.end"),
     ];
     // a bind that fails is logged and the others still work
     let mut failed = Vec::new();

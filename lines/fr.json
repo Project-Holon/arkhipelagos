@@ -96,6 +96,7 @@
   "menu.players": "Joueurs",
   "menu.connection": "Connexion",
   "menu.pc": "PC portable",
-  "menu.close": "Fermer"
+  "menu.close": "Fermer",
+  "world.made": "Ton monde est prêt!\nCode pour tes amis: {buf:1}.\\c"
  }
 }

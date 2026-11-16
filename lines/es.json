@@ -96,7 +96,8 @@
   "menu.players": "Jugadores",
   "menu.connection": "Conexión",
   "menu.pc": "PC portátil",
-  "menu.close": "Cerrar"
+  "menu.close": "Cerrar",
+  "world.made": "¡Tu mundo está listo!\nCódigo para amigos: {buf:1}.\\c"
  },
  "own_terms": {
   "seasons.spring": "the cartridge writes the season in capitals (PRIMAVERA); a sentence needs the plain word with its article",

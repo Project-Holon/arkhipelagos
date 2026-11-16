@@ -610,6 +610,12 @@
    "kind": "menu",
    "source": "arkh",
    "text": "Close"
+  },
+  {
+   "id": "world.made",
+   "kind": "game",
+   "source": "arkh",
+   "text": "Your world is ready!\nFriends join with {buf:1}.\\c"
   }
  ]
 }

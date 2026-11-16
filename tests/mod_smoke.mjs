@@ -42,6 +42,12 @@ const eidos = {
   world_join: () => -1, world_checks: () => -1, world_leave: () => {}, world_read: () => -1,
   peer_position: () => 0, townmap_marker_set: () => 0, townmap_marker_clear: () => 0,
   text_get: () => -1, text_set: () => 0,
+  // the Multiplayer screen's services: the new game came from the Solo
+  // randomizer card, with the options at their defaults
+  mode_get: (out, size) => { new Uint8Array(mem.buffer, out, 4).set([0x73, 0x6f, 0x6c, 0x6f]); return 4; },
+  mode_code: () => 0, setting_get: () => -1, setting_text: () => -1,
+  player_name: () => 0, world_create: () => -1, world_owner: () => -1,
+  dex_caught: () => 0,
 };
 const { instance } = await WebAssembly.instantiate(bytes, { eidos });
 mem = instance.exports.memory;

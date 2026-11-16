@@ -20,6 +20,7 @@ use serde_json::{Map, Value};
 
 pub mod lines;
 pub mod online;
+pub mod sanity;
 #[cfg(target_arch = "wasm32")]
 mod wasm;
 
@@ -72,6 +73,10 @@ pub trait Host {
     fn world_checks(&mut self, _ids: &[u32]) -> bool {
         false
     }
+    /// Whether the species is caught in the game's dex (`dex_caught`).
+    fn dex_caught(&mut self, _species: u16) -> Option<bool> {
+        None
+    }
     fn world_leave(&mut self) {}
     /// other players: field avatars (the port draws them) and Town Map markers
     fn peer_position(&mut self, _on: bool) {}
@@ -85,6 +90,111 @@ pub trait Host {
     fn text_set(&mut self, _archive: u32, _file: u32, _entry: u32, _block: u32, _units: &[u16]) -> bool {
         false
     }
+    /// The way to play the player chose on eidos's Multiplayer screen for
+    /// this new game (`mode` lines of mod/settings.txt): "solo",
+    /// "multiworld", or "" for the plain game. None: an eidos without modes.
+    fn mode(&mut self) -> Option<String> {
+        None
+    }
+    /// The world code the player typed in eidos's Join box for this new
+    /// game (a mode marked `joins`); "" for a world made here. None: an
+    /// eidos without it.
+    fn mode_code(&mut self) -> Option<String> {
+        None
+    }
+    /// A choice or number of mod/settings.txt (the chosen index).
+    fn setting(&mut self, _key: &str) -> Option<i32> {
+        None
+    }
+    /// A text of mod/settings.txt.
+    fn setting_text(&mut self, _key: &str) -> Option<String> {
+        None
+    }
+    /// The player's multiplayer name (eidos's Multiplayer screen), when chosen.
+    fn player_name(&mut self) -> Option<String> {
+        None
+    }
+    /// Make a world this player made joinable (the owner's start); the
+    /// answer is the world event OWNER_DONE ("<code> started").
+    fn world_start(&mut self, _code: &str, _owner_key: &str) -> bool {
+        false
+    }
+    /// Ask metaxy to make a world from a configuration; the answer is the
+    /// world event GENERATED ("<code> <owner key>").
+    fn world_create(&mut self, _config_json: &str) -> bool {
+        false
+    }
+}
+
+/// The options of mod/settings.txt as the generator's configuration
+/// options (docs/generator.md, "Configuration and world").  The indices
+/// follow the choice names in mod/settings.txt.
+pub fn options_from_settings(host: &mut dyn Host) -> Map<String, Value> {
+    let mut o = Map::new();
+    let pick = |host: &mut dyn Host, key: &str| host.setting(key).unwrap_or(0);
+    let goal = ["ghetsis", "champion"][(pick(host, "arkh.goal") as usize).min(1)];
+    o.insert("goal".into(), Value::from(goal));
+    let seasons = ["vanilla", "changeable"][(pick(host, "arkh.seasons") as usize).min(1)];
+    o.insert("season_control".into(), Value::from(seasons));
+    let list = |v: &[&str]| Value::from(v.iter().map(|s| Value::from(*s)).collect::<Vec<_>>());
+    match pick(host, "arkh.wild") {
+        1 => { o.insert("randomize_wild_pokemon".into(), list(&["randomize"])); }
+        2 => { o.insert("randomize_wild_pokemon".into(), list(&["randomize", "similar_stats"])); }
+        _ => {}
+    }
+    if pick(host, "arkh.starters") == 1 {
+        o.insert("randomize_starter_pokemon".into(), list(&["randomize"]));
+    }
+    match pick(host, "arkh.trainers") {
+        1 => { o.insert("randomize_trainer_pokemon".into(), list(&["randomize"])); }
+        2 => { o.insert("randomize_trainer_pokemon".into(), list(&["randomize", "similar_stats"])); }
+        _ => {}
+    }
+    if pick(host, "arkh.types") == 1 {
+        o.insert("randomize_types".into(), list(&["shuffle"]));
+    }
+    // what counts as a check (the choices' amounts, as mod/settings.txt
+    // lists them; the yaml lines there give the same values to Archipelago)
+    if pick(host, "arkh.hidden") == 1 {
+        o.insert("hidden_items".into(), Value::Bool(false));
+    }
+    const SPECIES: [u32; 7] = [0, 25, 50, 100, 200, 400, 649];
+    const TRAINERS: [u32; 6] = [0, 20, 50, 100, 200, 400];
+    let amount = |v: i32, list: &[u32]| list[(v.max(0) as usize).min(list.len() - 1)];
+    let n = amount(pick(host, "arkh.dex"), &SPECIES);
+    if n > 0 {
+        o.insert("dexsanity".into(), Value::from(n));
+    }
+    let n = amount(pick(host, "arkh.seen"), &SPECIES);
+    if n > 0 {
+        o.insert("seensanity".into(), Value::from(n));
+    }
+    // Every 10 up to 100, every 25 up to 200, every 50 up to 400
+    const COUNTS: [(u32, u32); 4] = [(0, 1), (100, 10), (200, 25), (400, 50)];
+    let (max, steps) = COUNTS[(pick(host, "arkh.dexcount").max(0) as usize).min(COUNTS.len() - 1)];
+    if max > 0 {
+        o.insert(
+            "dexcountsanity".into(),
+            serde_json::json!({"Maximum": max, "Steps": steps, "Leniency": 0}),
+        );
+    }
+    let n = amount(pick(host, "arkh.trainersanity"), &TRAINERS);
+    if n > 0 {
+        o.insert("trainersanity".into(), Value::from(n));
+    }
+    // what gym leaders and TM gifts may give (the first choice is the
+    // generator's default, anything, and is left out)
+    match pick(host, "arkh.badges") {
+        1 => { o.insert("shuffle_badge_rewards".into(), Value::from("shuffle")); }
+        2 => { o.insert("shuffle_badge_rewards".into(), Value::from("vanilla")); }
+        _ => {}
+    }
+    match pick(host, "arkh.tms") {
+        1 => { o.insert("shuffle_tm_rewards".into(), Value::from("shuffle")); }
+        2 => { o.insert("shuffle_tm_rewards".into(), Value::from("hm_with_badge")); }
+        _ => {}
+    }
+    o
 }
 
 /// A message the field shows when it is idle, one at a time.
@@ -297,6 +407,14 @@ impl Game {
             self.give_original(host, flag, orig_item, orig_count);
             return true;
         }
+        self.award(host, mine);
+        true
+    }
+
+    /// Record checks of this player's locations: the player's own items at
+    /// once, a line for the others' (sent online). Checks already recorded
+    /// are skipped.
+    pub fn award(&mut self, host: &mut dyn Host, mine: Vec<u32>) {
         let mut new = Vec::new();
         for l in mine {
             if !self.state.checked.insert(l) {
@@ -318,7 +436,6 @@ impl Game {
             online::note_checks(self, host, &new);
             host.world_checks(&new);
         }
-        true
     }
 
     /// The ending (game.cleared): the goal is reached at the first ending

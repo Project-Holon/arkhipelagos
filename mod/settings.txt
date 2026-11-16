@@ -1,0 +1,75 @@
+# arkhipelagos: the ways to play and their options (eidos's settings
+# grammar, docs/mod-services.md in eidos, "Mod settings").  eidos shows
+# each mode as a card on its Multiplayer screen; the options tagged with a
+# mode are on that mode's screen, and Start makes a new game in a free save
+# slot.  The mod reads them in game.new (mode_get, mode_code, setting_get).
+# The choice names' order is the order lib.rs reads.
+#
+# - multiworld `joins`: a world's code typed in eidos's Join box starts a
+#   new game that joins it (mode_code); its card makes worlds.
+# - archipelago is a type on the Multiworld card; it saves the player's
+#   options as an Archipelago options file (the `yaml` lines: the names and
+#   values of arkhipelagos.apworld, docs/apworld.md) for the room's host.
+
+mode solo        "Solo randomizer" "A shuffled game for you alone, made on this device."
+mode multiworld  "Multiworld"      "Everyone plays on their own save; the items you find go to the others. Make a world here, and friends join with its code." joins
+mode archipelago "Archipelago"     "A game in an Archipelago room with other games. Save your options as a file and send it to the room's host." in=multiworld export "Pokemon {version} (arkhipelagos)"
+
+heading "World"
+option arkh.players  int    "Players"      2 8 2                @multiworld
+help arkh.players "How many players the world has room for. Each one joins with the world's code and plays on their own save."
+
+option arkh.goal     choice "Goal"         Ghetsis|Champion     @solo,multiworld,archipelago
+help arkh.goal "What ends the game: beating Ghetsis, or becoming the Champion after him."
+yaml arkh.goal goal ghetsis|champion
+
+option arkh.seasons  choice "Seasons"      Vanilla|Changeable   @solo,multiworld,archipelago
+help arkh.seasons "Vanilla: the season changes each month, as in the game. Changeable: items in the world let you pick the season, so its places can be reached any time."
+yaml arkh.seasons season_control vanilla|changeable
+
+heading "Pokemon"
+option arkh.wild     choice "Wild Pokemon" Off|Random|Similar   @solo,multiworld,archipelago
+help arkh.wild "Which Pokemon live in grass, caves and water. Random: any species. Similar: species of about the same strength."
+yaml arkh.wild randomize_wild_pokemon []|[randomize]|[randomize, similar_stats]
+
+option arkh.starters choice "Starters"     Off|Random           @solo,multiworld,archipelago
+help arkh.starters "The three Pokemon you choose from at the start."
+yaml arkh.starters randomize_starter_pokemon []|[randomize]
+
+option arkh.trainers choice "Trainers"     Off|Random|Similar   @solo,multiworld,archipelago
+help arkh.trainers "The Pokemon trainers use. Random: any species. Similar: species of about the same strength."
+yaml arkh.trainers randomize_trainer_pokemon []|[randomize]|[randomize, similar_stats]
+
+heading "Checks"
+option arkh.hidden   choice "Hidden items" On|Off             @solo,multiworld,archipelago
+help arkh.hidden "On: the items hidden on the ground are checks, found with the Dowsing Machine or by touch. Off: they keep the game's own items."
+yaml arkh.hidden hidden_items true|false
+
+option arkh.dex      choice "Catches"      Off|25|50|100|200|400|649  @solo,multiworld,archipelago
+help arkh.dex "This many species are checks: catching one for the first time finds its item. The species are picked from those the world can reach."
+yaml arkh.dex dexsanity 0|25|50|100|200|400|649
+
+option arkh.seen     choice "Sightings"    Off|25|50|100|200|400|649  @solo,multiworld,archipelago
+help arkh.seen "This many species are checks when you first see one, in battle or in the Pokedex."
+yaml arkh.seen seensanity 0|25|50|100|200|400|649
+
+option arkh.dexcount choice "Dex counts"   Off|Every 10 to 100|Every 25 to 200|Every 50 to 400  @solo,multiworld,archipelago
+help arkh.dexcount "Reaching a number of species caught is a check: 10, 20, 30 and so on, up to the last number."
+yaml arkh.dexcount dexcountsanity {Leniency: 0, Maximum: 0, Steps: 1}|{Leniency: 0, Maximum: 100, Steps: 10}|{Leniency: 0, Maximum: 200, Steps: 25}|{Leniency: 0, Maximum: 400, Steps: 50}
+
+option arkh.trainersanity choice "Trainers beaten" Off|20|50|100|200|400  @solo,multiworld,archipelago
+help arkh.trainersanity "This many trainers are checks: winning against one finds its item. Rivals and gym trainers count; Gym Leaders, the Elite Four and the story's bosses do not."
+yaml arkh.trainersanity trainersanity 0|20|50|100|200|400
+
+option arkh.badges   choice "Gym rewards"  Anything|Badges only|Own badge  @solo,multiworld,archipelago
+help arkh.badges "What Gym Leaders give. Anything: any item, and the badges can be anywhere. Badges only: each gives one of the eight badges. Own badge: each gives their own, as in the game."
+yaml arkh.badges shuffle_badge_rewards anything|shuffle|vanilla
+
+option arkh.tms      choice "TM rewards"   Anything|TMs and HMs|HMs at gyms  @solo,multiworld,archipelago
+help arkh.tms "What the 35 TM gifts give. Anything: any item. TMs and HMs: always a TM or an HM. HMs at gyms: the HMs are among the gym leaders' TM gifts."
+yaml arkh.tms shuffle_tm_rewards anything|shuffle|hm_with_badge
+
+heading "Species"
+option arkh.types    choice "Types"        Off|Shuffled         @solo,multiworld,archipelago
+help arkh.types "Shuffled: every species gets other types, the same for all Pokemon of that species."
+yaml arkh.types randomize_types []|[shuffle]

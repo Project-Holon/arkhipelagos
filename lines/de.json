@@ -96,7 +96,8 @@
   "menu.players": "Spieler",
   "menu.connection": "Verbindung",
   "menu.pc": "Mobiler PC",
-  "menu.close": "Schließen"
+  "menu.close": "Schließen",
+  "world.made": "Deine Welt ist bereit!\nCode für Freunde: {buf:1}.\\c"
  },
  "own_terms": {
   "item.explorer_kit.desc": "the cartridge holds 'Alter Palast'; after 'im' German needs 'Alten Palast', as the game itself writes it (des Alten Palastes)"
