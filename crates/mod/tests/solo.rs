@@ -211,7 +211,7 @@ fn apply_to_a_cartridge() {
     let g = Game::create_solo(&mut h, &cfg).expect("world");
     let n = g.apply(&mut h).expect("apply");
     let scripts = h.set.keys().filter(|(a, _)| a == "a/0/5/7").count();
-    assert_eq!(scripts, 78, "the check edits");
+    assert_eq!(scripts, 77, "the check edits");
     assert!(n > scripts, "and the tables");
     assert!(h.chart.is_some(), "the type chart");
     // applying again builds on the originals, not on the first apply

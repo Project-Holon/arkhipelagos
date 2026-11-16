@@ -9,7 +9,7 @@ module against it (`EIDOS_SDK=<eidos>/sdk sh tests/check.sh`).
 
 ## What the module imports now (solo flow)
 
-19 imports, all from module `eidos`:
+20 imports, all from module `eidos`:
 
 | Import | Version | Proposal | What for |
 |---|---|---|---|
@@ -23,8 +23,9 @@ module against it (`EIDOS_SDK=<eidos>/sdk sh tests/check.sh`).
 | `script_run` | 6 | item 5 | the message script 2815 ("You obtained X!") after an item |
 | `mod_file_write`, `mod_file_read` | 6 | item 15 | the stored solo world (`world-<config hash>.json`) |
 | `log`, `on`, `on_frame` | core | | log; bind the handlers; the frame tick (retries a full bag, starts the next message) |
-| `rd32` | core | | the cartridge's game code from the header copy at 0x027FFE0C or 0x02FFFE0C, if the port fills it |
-| `text_language` | 6 | item 2 | the language family when there is no header copy (Black is then assumed; a `game_code` call is requested in the proposal) |
+| `game_code` | 6 | addition 1 | the cartridge's game code: version (Black or White) and language family |
+| `rd32` | core | | only if `game_code` fails: the header copy at 0x027FFE0C or 0x02FFFE0C |
+| `text_language` | 6 | item 2 | only if both fail: the language family (Black is then assumed) |
 | `rand_next` | 5 | | the seed of a new solo world |
 | `item_add` | 5 | | gives items |
 | `state_load`, `state_store` | 5 | | the per-save state: world file, slot, checked locations, items waiting for room |

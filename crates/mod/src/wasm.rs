@@ -14,6 +14,7 @@ extern "C" {
     fn rd32(addr: u32) -> u32;
     fn rand_next() -> u32;
     fn text_language() -> u32;
+    fn game_code(out: *mut u8, size: u32) -> i32;
     fn item_add(item: u32, count: u32) -> i32;
     fn state_load(buf: *mut u8, size: u32) -> i32;
     fn state_store(buf: *const u8, size: u32) -> i32;
@@ -38,9 +39,7 @@ const EVENT_STARTER_CHOICES: u32 = 121;
 const CONTINUE: i32 = 0;
 
 /// The DS addresses of the cartridge header's game code (the header copies
-/// the firmware leaves in main memory). eidos does not promise them; a
-/// state call for the game code is requested (docs/eidos-api-proposal.md,
-/// "Additions requested").
+/// the firmware leaves in main memory): only used if `game_code` fails.
 const GAME_CODE_ADDRS: [u32; 2] = [0x027F_FE0C, 0x02FF_FE0C];
 
 #[repr(C)]
@@ -149,6 +148,10 @@ impl Host for Eidos {
         unsafe { mod_file_write(n.as_ptr(), data.as_ptr(), data.len() as u32) == 0 }
     }
     fn game_code(&mut self) -> [u8; 4] {
+        let mut c = [0u8; 5];
+        if unsafe { game_code(c.as_mut_ptr(), c.len() as u32) } == 0 {
+            return [c[0], c[1], c[2], c[3]];
+        }
         for a in GAME_CODE_ADDRS {
             let c = unsafe { rd32(a) }.to_le_bytes();
             if c[0] == b'I' && c[1] == b'R' && (c[2] == b'B' || c[2] == b'A') {

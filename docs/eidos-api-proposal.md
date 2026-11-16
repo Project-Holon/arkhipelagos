@@ -326,10 +326,9 @@ test in eidos's own suite before the next.
 
 Found while building the mod (2026-11-16); not part of the approved text.
 
-1. `game_code(char out[4])`, state: the cartridge's game code ("IRBO",
-   "IRAJ" and so on), from `bw_lang_gamecode()`. The mod needs the version
-   (Black or White) and the language family to make a world and pick the
-   script table. eidos keeps both in host memory (`g_pm_version`), so a mod
-   cannot read them; the header copy at 0x027FFE00 is not filled by the
-   port. Until it exists the mod tries that copy, then takes the language
-   from `text_language` and assumes Black.
+1. `game_code(char *out, u32 size)`, state: the cartridge's game code
+   ("IRBO", "IRAJ" and so on), from `bw_lang_gamecode()`: the 4 letters,
+   plus a NUL when size > 4; returns 0. The mod needs the version (Black or
+   White) and the language family to make a world and pick the script
+   table; eidos keeps both in host memory (`g_pm_version`). Built in v6 on
+   2026-11-16.

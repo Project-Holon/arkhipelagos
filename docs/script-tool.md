@@ -69,7 +69,7 @@ For each location, where the game gives its item, in all 12 cartridges
 | ball | 276 | map object with script 7000 + e; flag from the object (a/1/2/5); 864 `L23e2` |
 | hidden | 146 | background event with script 8000 + e; 865 entry e calls 2811 (862 `L01ae`) |
 | routine | 27 | NPC gift through 2800 (862 `L003e`), flag in work 0x8002 |
-| give | 119 | a give through a flagless routine (2801, 2802, 2805, 2806, 2807, 2814) |
+| give | 118 | a give through a flagless routine (2801, 2802, 2805, 2806, 2807, 2814) |
 | trainer | 42 | the shared after-battle gift of 863 (`L0c01`); flag 1420 + trainer |
 | badge | 8 | `SetBadge N` in the gym scripts; flag 370 + N |
 
@@ -82,8 +82,9 @@ so each site has one per family, checked in all 12 cartridges.
 
 14 hidden items have BWAP numbers (438 to 461) that are not the game's
 flags; their sites carry `game_flag` (the game sets 954 to 1025), paired by
-zone event file and order. 20 locations have no site (`none`, with the
-reason: items chosen at run time, flags set nowhere, BWAP's own new items);
+zone event file and order. 21 locations have no site (`none`, with the
+reason: items chosen at run time, flags set nowhere, BWAP's own new items,
+and the Driftveil lady until her script asks for the world's TM pick);
 the generator leaves them out, so they keep the game's items.
 
 ## Check edits (`crates/apply/src/scripts.rs`)
@@ -111,8 +112,8 @@ appended) and a same-size replace. `arkh-apply scripts` checks each
 edited member: every byte outside the edits is the original, and the
 member disassembles and assembles back the same. `tools/check_apply.py`
 then reads every edited member back on all 12 cartridges and compares the
-checks it finds with item_sites.json: 78 members, 148 checks, 8,390 bytes
-added, the same in every cartridge.
+checks it finds with item_sites.json: 77 members, 146 checks, 8,304 bytes
+added (with the message script), the same in every cartridge.
 
 ## Edits
 

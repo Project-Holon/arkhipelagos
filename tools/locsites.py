@@ -64,6 +64,13 @@ MARK_WORKS = ("0x805e", "0x805f")
 # holds the background event, and by order inside the file (flags rise with
 # the "#" number, west to east): each game flag below is used by no other
 # location, and its event file is the location's zone.
+# Locations whose rule asks for a per-world pick (has_value) while the
+# mod does not yet change the script to ask for the world's pick: a world
+# must not count on them.
+PICK_PENDING = {
+    444: "its rule needs the world's Driftveil TM pick; the script does not ask for it yet",
+}
+
 HIDDEN_GAME_FLAG = {
     438: 1020,                       # Route 18 lower coast (event file 387)
     446: 954, 445: 956,              # Route 6: behind the lab #1 (x 128), east (x 150); #2 is 955
@@ -426,6 +433,9 @@ def main():
             else:
                 why[lid] = bad or ("the flag is set nowhere in the original scripts nor in BWAP's"
                                    if not cands else "no give before the flag")
+        if s is not None and f in PICK_PENDING:
+            why[lid] = PICK_PENDING[f]
+            s = None
         if s is None and lid not in why:
             why[lid] = "no site found"
         if s is not None:
