@@ -7,9 +7,9 @@ version 6). Names and signatures are those of eidos's generated header
 `sdk/api/v6/eidos_wasm.h`; `tools/wasm_imports.py` checks the built
 module against it (`EIDOS_SDK=<eidos>/sdk sh tests/check.sh`).
 
-## What the module imports now (solo flow)
+## What the module imports now (solo and online)
 
-20 imports, all from module `eidos`:
+27 imports, all from module `eidos`:
 
 | Import | Version | Proposal | What for |
 |---|---|---|---|
@@ -21,7 +21,10 @@ module against it (`EIDOS_SDK=<eidos>/sdk sh tests/check.sh`).
 | `work_set` | 6 | item 3 | saved works 0x40FE and 0x40FF, the item and count the message script shows |
 | `badge_set` | 6 | item 4 | a badge received as an item, or a badge location that is not in the world |
 | `script_run` | 6 | item 5 | the message script 2815 ("You obtained X!") after an item |
-| `mod_file_write`, `mod_file_read` | 6 | item 15 | the stored solo world (`world-<config hash>.json`) |
+| `mod_file_write`, `mod_file_read` | 6 | item 15 | the stored world (`world-<config hash>.json` solo, `online-<code>-<player>.json` online), the online checks (`checks-<code>-<player>.json`), and `join.txt` ("<code> <name>": a new game joins that world) |
+| `world_join`, `world_checks`, `world_leave`, `world_read`, event `world` | 6 | item 16 | online worlds: join by name or key, checks as they happen and all again on each join, location 0 for the goal; the push (JOINED), items by index (ITEMS), errors (a `bad-key` joins again by name), positions |
+| `peer_position` | 6 | item 17 | on after a join: the port shares the position and draws the others in the same zone |
+| `townmap_marker_set`, `townmap_marker_clear` | 6 | item 17 | the other players' zones on the Town Map |
 | `log`, `on`, `on_frame` | core | | log; bind the handlers; the frame tick (retries a full bag, starts the next message) |
 | `game_code` | 6 | addition 1 | the cartridge's game code: version (Black or White) and language family |
 | `rd32` | core | | only if `game_code` fails: the header copy at 0x027FFE0C or 0x02FFFE0C |
@@ -30,21 +33,22 @@ module against it (`EIDOS_SDK=<eidos>/sdk sh tests/check.sh`).
 | `item_add` | 5 | | gives items |
 | `state_load`, `state_store` | 5 | | the per-save state: world file, slot, checked locations, items waiting for room |
 
-Events it binds: `game.new` (1: make, store and apply a solo world),
-`save.load` (4: load the save's world and apply it), `flag.set` (111: the
-check), `script.done` (114: the message ended), `starter.choices` (121:
-the world's three starters).
+Events it binds: `game.new` (1: join the world of `join.txt`, else make,
+store and apply a solo world), `save.begin` (2: the state goes with the
+game's save), `save.load` (4: load the save's world, apply it, join again
+by key when online), `game.cleared` (5: the ending; the goal is the first
+for "ghetsis", the second for "champion"), `flag.set` (111: the check),
+`script.done` (114: the message ended), `starter.choices` (121: the
+world's three starters), `world` (124: metaxy's answers).
 
-## Later (online and Archipelago)
+## Later
 
 | Import or event | Proposal | What for |
 |---|---|---|
-| `text_get`, `text_set`, `text_language` | item 2 | the mod's own lines ("found X for Y", "Y sent you X"), per-world pick lines |
-| `text_input`, event `text_input.done` | item 14 | world code and player name; the title is UTF-8 |
-| `world_create`, `world_owner`, `world_join`, `world_checks`, `world_leave` | item 16 | metaxy world sessions |
-| event `world`, `world_read` | item 16 | the world's answers come as an event; the mod reads the bytes with `world_read` (player data is too big for a handler copy) |
-| `ap_link`, `ap_send`, event `ap`, `ap_read` | item 16 | Archipelago rooms, the same way |
-| `peer_position`, `townmap_marker_set`, `townmap_marker_clear` | item 17 | other players of the world |
+| `text_get`, `text_set` | item 2 | the mod's own lines ("found X for Y", "Y sent you X"); a received item shows the game's "obtained" line for now |
+| `text_input`, event `text_input.done` | item 14 | world code and player name in the game (now `join.txt`) |
+| `world_create`, `world_owner` | item 16 | making and starting a world from the game (now done outside: metaxy `N` and `O`) |
+| `ap_link`, `ap_send`, event `ap`, `ap_read` | item 16 | Archipelago rooms |
 
 ## How a check works (the contract with the scripts)
 

@@ -17,6 +17,9 @@ for code in IRBO IRAJ; do
   data=$(python -I -c "import json,sys; print(json.load(open('tools/carts.local.json'))[sys.argv[1]]['data'])" $code)
   ARKH_CART_CODE=$code ARKH_CART_DATA="$data" cargo test --release -q -p arkh-mod --test solo
 done
+echo "== mod: a two-player online world against metaxy (ARKH_METAXY=host:port)"
+if [ -n "${ARKH_METAXY:-}" ]; then cargo test --release -q -p arkh-mod --test online
+else echo "ARKH_METAXY not set: skipped"; fi
 echo "== mod: wasm imports against eidos's v6 header"
 H="${EIDOS_SDK:-}/api/v6/eidos_wasm.h"
 if [ -f "$H" ]; then python -I tools/wasm_imports.py "$T/wasm32-unknown-unknown/release/arkh_mod.wasm" "$H" | tail -1

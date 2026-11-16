@@ -38,8 +38,9 @@ cartridge files when the game starts.
 | `docs` | how each part works, and the design proposals |
 | `lines` | the mod's in-game lines and their translations |
 
-Still to come here: the Archipelago world (`apworld`) and the online
-flow of the mod. Releases will carry `mod.bw` and `mod.json` for katalogos.
+Still to come here: the Archipelago world (`apworld`), and making online
+worlds from inside the game (they are made on metaxy for now; a new game
+joins the world named in the mod file `join.txt`). Releases will carry `mod.bw` and `mod.json` for katalogos.
 The mod needs eidos's mod API version 6.
 
 ## Build and check

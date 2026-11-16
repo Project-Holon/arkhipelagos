@@ -18,6 +18,7 @@ use arkh_script::Family;
 use serde::{Deserialize, Serialize};
 use serde_json::{Map, Value};
 
+pub mod online;
 #[cfg(target_arch = "wasm32")]
 mod wasm;
 
@@ -55,6 +56,20 @@ pub trait Host {
     fn file_write(&mut self, name: &str, data: &[u8]) -> bool;
     /// the cartridge's game code ("IRBO" and so on)
     fn game_code(&mut self) -> [u8; 4];
+    /// metaxy world sessions (online): join by name or player key; send
+    /// checks (location 0 is the goal); leave. The answers come as world
+    /// events (`online::on_world`).
+    fn world_join(&mut self, _code: &str, _name_or_key: &str) -> bool {
+        false
+    }
+    fn world_checks(&mut self, _ids: &[u32]) -> bool {
+        false
+    }
+    fn world_leave(&mut self) {}
+    /// other players: field avatars (the port draws them) and Town Map markers
+    fn peer_position(&mut self, _on: bool) {}
+    fn townmap_marker_set(&mut self, _id: u32, _zone: u32, _name: &str) {}
+    fn townmap_marker_clear(&mut self, _id: u32) {}
 }
 
 /// What the mod keeps with the save.
@@ -69,6 +84,15 @@ pub struct SaveState {
     pub received: u32,
     /// items the bag could not take yet: (item, count)
     pub pending: Vec<(u16, u16)>,
+    /// an online world (metaxy): code, this player's name and key
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub online: Option<online::Online>,
+    /// endings seen (game.cleared): the first follows Ghetsis, the second Alder
+    #[serde(default)]
+    pub clears: u32,
+    /// the goal was reached (and, online, sent)
+    #[serde(default)]
+    pub goal: bool,
 }
 
 /// One running game: the world, this player's part, the check table.
@@ -228,17 +252,39 @@ impl Game {
             self.give_original(host, flag, orig_item, orig_count);
             return true;
         }
+        let mut new = Vec::new();
         for l in mine {
             if !self.state.checked.insert(l) {
                 continue;
             }
+            new.push(l);
             let (item, to) = self.placed[&l];
             if to == self.slot {
                 self.receive(host, item);
             }
-            // items for other players go out with the online flow
+        }
+        // online: every check goes to metaxy (it hands other players their
+        // items and ignores what it has); kept in a file at once, so a check
+        // made offline or before a crash is sent again on the next connect
+        if self.state.online.is_some() && !new.is_empty() {
+            online::note_checks(self, host, &new);
+            host.world_checks(&new);
         }
         true
+    }
+
+    /// The ending (game.cleared): the goal is reached at the first ending
+    /// for "ghetsis", at the second for "champion".
+    pub fn on_cleared(&mut self, host: &mut dyn Host) {
+        self.state.clears += 1;
+        let goal = self.player().options.get("goal").and_then(Value::as_str).unwrap_or("ghetsis").to_string();
+        let need = if goal == "champion" { 2 } else { 1 };
+        if self.state.clears >= need && !self.state.goal {
+            self.state.goal = true;
+        }
+        if self.state.goal && self.state.online.is_some() {
+            host.world_checks(&[0]);
+        }
     }
 
     fn give_original(&mut self, host: &mut dyn Host, flag: u16, item: u16, count: u16) {

@@ -4,7 +4,8 @@
 
 use std::cell::RefCell;
 
-use crate::{solo_config, version_of, Game, Host};
+use crate::online::Mod;
+use crate::{Game, Host};
 
 #[link(wasm_import_module = "eidos")]
 extern "C" {
@@ -15,6 +16,13 @@ extern "C" {
     fn rand_next() -> u32;
     fn text_language() -> u32;
     fn game_code(out: *mut u8, size: u32) -> i32;
+    fn world_join(code: *const u8, name_or_key: *const u8, ticket: *mut u32) -> i32;
+    fn world_checks(ids: *const u32, count: u32) -> i32;
+    fn world_leave();
+    fn world_read(out: *mut u8, size: u32) -> i32;
+    fn peer_position(on: i32) -> i32;
+    fn townmap_marker_set(id: u32, zone: u32, icon: u32, name: *const u8) -> i32;
+    fn townmap_marker_clear(id: u32) -> i32;
     fn item_add(item: u32, count: u32) -> i32;
     fn state_load(buf: *mut u8, size: u32) -> i32;
     fn state_store(buf: *const u8, size: u32) -> i32;
@@ -33,10 +41,12 @@ extern "C" {
 // event kinds (sdk/api/v6/eidos_wasm.h)
 const EVENT_GAME_NEW: u32 = 1;
 const EVENT_SAVE_BEGIN: u32 = 2;
+const EVENT_GAME_CLEARED: u32 = 5;
 const EVENT_SAVE_LOAD: u32 = 4;
 const EVENT_FLAG_SET: u32 = 111;
 const EVENT_SCRIPT_DONE: u32 = 114;
 const EVENT_STARTER_CHOICES: u32 = 121;
+const EVENT_WORLD: u32 = 124;
 const CONTINUE: i32 = 0;
 
 /// The DS addresses of the cartridge header's game code (the header copies
@@ -62,6 +72,15 @@ struct ScriptDone {
     ticket: u32,
     script_id: u16,
     pad: u16,
+}
+
+#[repr(C)]
+struct WorldEvent {
+    h: Event,
+    kind: u32,
+    size: u32,
+    ticket: u32,
+    player: u32,
 }
 
 #[repr(C)]
@@ -172,56 +191,68 @@ impl Host for Eidos {
         self.log("arkhipelagos: no game code in memory; Black assumed");
         [b'I', b'R', b'B', l]
     }
+    fn world_join(&mut self, code: &str, name_or_key: &str) -> bool {
+        let (c, n) = (cstr(code), cstr(name_or_key));
+        let mut t = 0u32;
+        unsafe { world_join(c.as_ptr(), n.as_ptr(), &mut t) == 0 }
+    }
+    fn world_checks(&mut self, ids: &[u32]) -> bool {
+        // the port sends them in as many V frames as it needs
+        unsafe { world_checks(ids.as_ptr(), ids.len() as u32) == 0 }
+    }
+    fn world_leave(&mut self) {
+        unsafe { world_leave() }
+    }
+    fn peer_position(&mut self, on: bool) {
+        unsafe { peer_position(on as i32) };
+    }
+    fn townmap_marker_set(&mut self, id: u32, zone: u32, name: &str) {
+        let n = cstr(name);
+        unsafe { townmap_marker_set(id, zone, 0, n.as_ptr()) };
+    }
+    fn townmap_marker_clear(&mut self, id: u32) {
+        unsafe { townmap_marker_clear(id) };
+    }
 }
 
 thread_local! {
-    static GAME: RefCell<Option<Game>> = const { RefCell::new(None) };
+    static MOD: RefCell<Mod> = RefCell::new(Mod::default());
 }
 
-fn with_game(f: impl FnOnce(&mut Game, &mut Eidos)) {
-    GAME.with(|g| {
-        if let Ok(mut g) = g.try_borrow_mut() {
-            if let Some(game) = g.as_mut() {
-                f(game, &mut Eidos);
-            }
+fn with_mod(f: impl FnOnce(&mut Mod, &mut Eidos)) {
+    MOD.with(|m| {
+        if let Ok(mut m) = m.try_borrow_mut() {
+            f(&mut m, &mut Eidos);
         }
     });
 }
 
-fn start(game: Result<Option<Game>, String>) {
-    let h = &mut Eidos;
-    match game {
-        Ok(Some(g)) => {
-            match g.apply(h) {
-                Ok(n) => h.log(&format!("arkhipelagos: world {} applied ({n} members)", g.state.world)),
-                Err(e) => h.log(&format!("arkhipelagos: apply failed: {e}")),
-            }
-            GAME.with(|c| *c.borrow_mut() = Some(g));
+fn with_game(f: impl FnOnce(&mut Game, &mut Eidos)) {
+    with_mod(|m, h| {
+        if let Some(g) = m.game.as_mut() {
+            f(g, h);
         }
-        Ok(None) => {
-            h.member_clear_all();
-            GAME.with(|c| *c.borrow_mut() = None);
-        }
-        Err(e) => h.log(&format!("arkhipelagos: {e}")),
-    }
+    });
 }
 
 extern "C" fn on_game_new(_e: *mut Event) -> i32 {
-    let h = &mut Eidos;
-    let code = h.game_code();
     let seed = unsafe { ((rand_next() as u64) << 32) | rand_next() as u64 };
-    let cfg = solo_config(version_of(&code), seed, "Player", Default::default());
-    start(Game::create_solo(h, &cfg).map(Some));
+    with_mod(|m, h| m.new_game(h, seed));
     CONTINUE
 }
 
 extern "C" fn on_save_load(_e: *mut Event) -> i32 {
-    start(Game::load(&mut Eidos));
+    with_mod(|m, h| m.save_load(h));
     CONTINUE
 }
 
 extern "C" fn on_save_begin(_e: *mut Event) -> i32 {
     with_game(|g, h| g.save(h));
+    CONTINUE
+}
+
+extern "C" fn on_game_cleared(_e: *mut Event) -> i32 {
+    with_game(|g, h| g.on_cleared(h));
     CONTINUE
 }
 
@@ -255,6 +286,17 @@ extern "C" fn on_starter_choices(e: *mut StarterChoices) -> i32 {
     CONTINUE
 }
 
+extern "C" fn on_world(e: *mut WorldEvent) -> i32 {
+    let (kind, size) = unsafe { ((*e).kind, (*e).size) };
+    let mut body = vec![0u8; size as usize];
+    let n = unsafe { world_read(body.as_mut_ptr(), size) };
+    if n >= 0 {
+        body.truncate(n as usize);
+        with_mod(|m, h| m.on_world(h, kind, &body));
+    }
+    CONTINUE
+}
+
 extern "C" fn on_tick() {
     with_game(|g, h| g.tick(h));
 }
@@ -267,7 +309,9 @@ pub extern "C" fn eidos_mod_start() -> i32 {
             && on(EVENT_SAVE_BEGIN, on_save_begin as *const () as usize as u32) == 0
             && on(EVENT_FLAG_SET, on_flag_set as *const () as usize as u32) == 0
             && on(EVENT_SCRIPT_DONE, on_script_done as *const () as usize as u32) == 0
-            && on(EVENT_STARTER_CHOICES, on_starter_choices as *const () as usize as u32) == 0;
+            && on(EVENT_STARTER_CHOICES, on_starter_choices as *const () as usize as u32) == 0
+            && on(EVENT_GAME_CLEARED, on_game_cleared as *const () as usize as u32) == 0
+            && on(EVENT_WORLD, on_world as *const () as usize as u32) == 0;
         on_frame(on_tick as *const () as usize as u32);
         if ok {
             0
@@ -279,5 +323,5 @@ pub extern "C" fn eidos_mod_start() -> i32 {
 
 #[no_mangle]
 pub extern "C" fn eidos_mod_stop() {
-    GAME.with(|c| *c.borrow_mut() = None);
+    MOD.with(|c| *c.borrow_mut() = Mod::default());
 }
