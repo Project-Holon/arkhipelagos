@@ -12,7 +12,7 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-gen = sys.argv[1]
+gen = str(Path(sys.argv[1]).resolve())  # absolute: the script works in a temp folder
 items = {i["id"]: i for i in json.loads((ROOT / "data/world/items.json").read_text(encoding="utf-8"))["items"]}
 locs = {l["id"]: l for l in json.loads((ROOT / "data/world/locations.json").read_text(encoding="utf-8"))["locations"]}
 os.chdir(tempfile.mkdtemp())
