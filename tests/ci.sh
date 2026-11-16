@@ -24,6 +24,8 @@ while read -r h f; do
   if [ "$got" != "$h" ]; then echo "DIFFERS (wasm32) $f: $got, golden $h"; fail=1; fi
 done < tests/golden.txt
 [ $fail = 0 ] && echo "golden hashes match, native and wasm32"
+echo "== mod: the wasm module run with fake eidos imports"
+node tests/mod_smoke.mjs "$T/wasm32-unknown-unknown/release/arkh_mod.wasm"
 echo "== generator: finishable worlds"
 "$T/release/arkh-gen" sweep 150
 echo "== lines (no cartridge)"
