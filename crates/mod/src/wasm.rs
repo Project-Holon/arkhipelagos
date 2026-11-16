@@ -13,6 +13,7 @@ extern "C" {
     fn on_frame(handler: u32);
     fn rd32(addr: u32) -> u32;
     fn rand_next() -> u32;
+    fn text_language() -> u32;
     fn item_add(item: u32, count: u32) -> i32;
     fn state_load(buf: *mut u8, size: u32) -> i32;
     fn state_store(buf: *const u8, size: u32) -> i32;
@@ -36,9 +37,11 @@ const EVENT_SCRIPT_DONE: u32 = 114;
 const EVENT_STARTER_CHOICES: u32 = 121;
 const CONTINUE: i32 = 0;
 
-/// The DS address of the cartridge header's game code (the header copy
-/// the firmware leaves in main memory).
-const GAME_CODE_ADDR: u32 = 0x027F_FE0C;
+/// The DS addresses of the cartridge header's game code (the header copies
+/// the firmware leaves in main memory). eidos does not promise them; a
+/// state call for the game code is requested (docs/eidos-api-proposal.md,
+/// "Additions requested").
+const GAME_CODE_ADDRS: [u32; 2] = [0x027F_FE0C, 0x02FF_FE0C];
 
 #[repr(C)]
 struct Event {
@@ -146,7 +149,24 @@ impl Host for Eidos {
         unsafe { mod_file_write(n.as_ptr(), data.as_ptr(), data.len() as u32) == 0 }
     }
     fn game_code(&mut self) -> [u8; 4] {
-        unsafe { rd32(GAME_CODE_ADDR) }.to_le_bytes()
+        for a in GAME_CODE_ADDRS {
+            let c = unsafe { rd32(a) }.to_le_bytes();
+            if c[0] == b'I' && c[1] == b'R' && (c[2] == b'B' || c[2] == b'A') {
+                return c;
+            }
+        }
+        // no header copy: the language from the text, Black assumed
+        let lang = unsafe { text_language() };
+        let l = match lang {
+            1 => b'J',
+            3 => b'F',
+            4 => b'I',
+            5 => b'D',
+            7 => b'S',
+            _ => b'O',
+        };
+        self.log("arkhipelagos: no game code in memory; Black assumed");
+        [b'I', b'R', b'B', l]
     }
 }
 
