@@ -163,3 +163,42 @@ fn sent_at_most_once_a_second_and_only_when_changed() {
     assert_eq!(h.sent.len(), 4);
     assert_eq!(h.sent[3], h.sent[2]);
 }
+
+/// The most checks the Multiplayer screen's options allow: every species
+/// caught and seen, 400 trainers, a catch count check for each species up
+/// to 400 (about 1800 locations). The text keeps to eidos's limits (160 areas, 2048 checks,
+/// 128 KB) and the count line still has the whole total.
+#[test]
+fn the_most_checks_fit_eidos() {
+    let mut h = Fake::default();
+    let mut o = serde_json::Map::new();
+    o.insert("dexsanity".into(), 649.into());
+    o.insert("seensanity".into(), 649.into());
+    o.insert("trainersanity".into(), 400.into());
+    o.insert("dexcountsanity".into(), serde_json::json!({"Maximum": 400, "Steps": 1, "Leniency": 0}));
+    let cfg = solo_config("black", 9, "Player", o);
+    let g = Game::create_solo(&mut h, &cfg).unwrap();
+    let t0 = Instant::now();
+    let t = Tracker::new(g.player(), &g.state.world).unwrap();
+    let built = t0.elapsed();
+    let t1 = Instant::now();
+    let text = t.text(&g);
+    let made = t1.elapsed();
+    let areas = lines(&text, "area");
+    let checks = lines(&text, "check");
+    eprintln!(
+        "tracker, most checks: {} locations, {} areas, {} checks shown, {} bytes; made in {built:?}, text in {made:?}",
+        g.placed.len(),
+        areas.len(),
+        checks.len(),
+        text.len()
+    );
+    let extra: Vec<&str> = areas.iter().filter(|a| a[2].is_empty()).map(|a| a[1]).collect();
+    eprintln!("areas without a zone: {extra:?}");
+    assert!(g.placed.len() > 1500);
+    assert_eq!(checks.len(), g.placed.len(), "every check shown");
+    assert!(areas.len() <= 160);
+    assert!(checks.len() <= 2000);
+    assert!(text.len() <= 128 * 1024);
+    assert_eq!(lines(&text, "count"), vec![vec!["count", "0", &g.placed.len().to_string()]]);
+}
