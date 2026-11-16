@@ -18,6 +18,7 @@ use arkh_script::Family;
 use serde::{Deserialize, Serialize};
 use serde_json::{Map, Value};
 
+pub mod lines;
 pub mod online;
 #[cfg(target_arch = "wasm32")]
 mod wasm;
@@ -27,6 +28,12 @@ pub const MSG_ITEM_WORK: u16 = 0x40FE;
 pub const MSG_COUNT_WORK: u16 = 0x40FF;
 /// The message script (862 entry 15): "You obtained X!" from those works.
 pub const MSG_SCRIPT: u16 = 2815;
+/// The line script (862 entry 16): the line in 862's text bank (283) whose
+/// entry is in work 0x40FD, with the item of 0x40FE in buffer 0.
+pub const LINE_SCRIPT: u16 = 2816;
+pub const LINE_ENTRY_WORK: u16 = 0x40FD;
+/// 862's text bank in a/0/0/3 (the scripts 2800-2819 use it).
+pub const LINE_BANK: u32 = 283;
 /// Item ids of the world that are not game items.
 pub const BADGE_ITEM: u32 = 0x1000;
 pub const SEASON_ITEM: u32 = 0x1100;
@@ -70,6 +77,24 @@ pub trait Host {
     fn peer_position(&mut self, _on: bool) {}
     fn townmap_marker_set(&mut self, _id: u32, _zone: u32, _name: &str) {}
     fn townmap_marker_clear(&mut self, _id: u32) {}
+    /// text entries: archive 2 or 3, file, entry, block (Japanese: 0 kana,
+    /// 1 kanji); units without the end code
+    fn text_get(&mut self, _archive: u32, _file: u32, _entry: u32, _block: u32) -> Option<Vec<u16>> {
+        None
+    }
+    fn text_set(&mut self, _archive: u32, _file: u32, _entry: u32, _block: u32, _units: &[u16]) -> bool {
+        false
+    }
+}
+
+/// A message the field shows when it is idle, one at a time.
+#[derive(Clone, Debug, PartialEq)]
+pub enum Message {
+    /// the game's own "obtained X" (an item this player found)
+    Obtained(u16, u16),
+    /// one of the mod's lines: "share.received" (from `name`) or
+    /// "share.found_for" (for `name`), about `item`
+    Line { id: &'static str, item: u32, name: String },
 }
 
 /// What the mod keeps with the save.
@@ -105,8 +130,15 @@ pub struct Game {
     pub checks: BTreeMap<(u16, u16), Vec<u32>>,
     /// location id -> (item id, receiving slot), this player's locations
     pub placed: BTreeMap<u32, (u32, u32)>,
-    /// messages waiting for the field: (item, count)
-    pub messages: VecDeque<(u16, u16)>,
+    /// messages waiting for the field
+    pub messages: VecDeque<Message>,
+    /// the cartridge's game code (the language of the lines)
+    pub code: [u8; 4],
+    /// the other players' names, by number (online)
+    pub names: BTreeMap<u32, String>,
+    /// the entry of bank 283 the line script shows (the bank's first free
+    /// entry, found before the first line is written)
+    pub line_entry: Option<u16>,
     /// a message script is running
     pub showing: bool,
 }
@@ -149,10 +181,23 @@ pub fn world_file(w: &World) -> String {
 }
 
 impl Game {
-    pub fn new(world: World, slot: u32, family: Family, state: SaveState) -> Result<Game, String> {
+    pub fn new(world: World, slot: u32, code: [u8; 4], state: SaveState) -> Result<Game, String> {
         let p = world.players.iter().find(|p| p.slot == slot).ok_or("no such slot in the world")?;
         let placed = p.locations.iter().map(|l| (l[0], (l[1], l[2]))).collect();
-        Ok(Game { slot, family, state, checks: check_table()?, placed, messages: VecDeque::new(), showing: false, world })
+        let family = Family::of_game_code(std::str::from_utf8(&code).unwrap_or("IRBO"));
+        Ok(Game {
+            slot,
+            family,
+            state,
+            checks: check_table()?,
+            placed,
+            messages: VecDeque::new(),
+            showing: false,
+            world,
+            code,
+            names: BTreeMap::new(),
+            line_entry: None,
+        })
     }
 
     pub fn player(&self) -> &PlayerOut {
@@ -170,7 +215,7 @@ impl Game {
             return Err(format!("could not store {file}"));
         }
         let state = SaveState { world: file, slot: 1, ..Default::default() };
-        Game::new(world, 1, Family::of_game_code(std::str::from_utf8(&code).unwrap_or("IRBO")), state)
+        Game::new(world, 1, code, state)
     }
 
     /// The game of a loaded save, or None when the save has no world.
@@ -183,9 +228,8 @@ impl Game {
         let text = host.file_read(&state.world).ok_or(format!("the world file {} is missing", state.world))?;
         let world: World = serde_json::from_slice(&text).map_err(|e| format!("{}: {e}", state.world))?;
         let code = host.game_code();
-        let family = Family::of_game_code(std::str::from_utf8(&code).unwrap_or("IRBO"));
         let slot = state.slot;
-        Game::new(world, slot, family, state).map(Some)
+        Game::new(world, slot, code, state).map(Some)
     }
 
     /// Store the state. Called at `save.begin` only: eidos writes it with
@@ -262,6 +306,9 @@ impl Game {
             let (item, to) = self.placed[&l];
             if to == self.slot {
                 self.receive(host, item);
+            } else {
+                let name = self.names.get(&to).cloned().unwrap_or_else(|| format!("{to}"));
+                self.messages.push_back(Message::Line { id: "share.found_for", item, name });
             }
         }
         // online: every check goes to metaxy (it hands other players their
@@ -296,24 +343,89 @@ impl Game {
         }
     }
 
-    /// An item of the world reaches this player.
+    /// An item of the world this player found for themself.
     pub fn receive(&mut self, host: &mut dyn Host, item: u32) {
+        self.take(host, item, None);
+    }
+
+    /// An item another player found for this player (online).
+    pub fn receive_from(&mut self, host: &mut dyn Host, item: u32, from: u32) {
+        let name = self.names.get(&from).cloned().unwrap_or_else(|| format!("{from}"));
+        self.take(host, item, Some(Message::Line { id: "share.received", item, name }));
+    }
+
+    fn take(&mut self, host: &mut dyn Host, item: u32, msg: Option<Message>) {
         if (BADGE_ITEM..BADGE_ITEM + 8).contains(&item) {
             host.badge_set(item - BADGE_ITEM);
+            self.messages.extend(msg);
         } else if (SEASON_ITEM..SEASON_ITEM + 4).contains(&item) {
             // season items open the season choice (season.change, later)
             host.log(&format!("arkhipelagos: season item {}", item - SEASON_ITEM));
+            self.messages.extend(msg);
         } else if item < 0x1000 {
-            self.give(host, item as u16, 1);
+            if host.item_add(item as u16, 1) {
+                self.messages.push_back(msg.unwrap_or(Message::Obtained(item as u16, 1)));
+            } else {
+                self.state.pending.push((item as u16, 1));
+                self.messages.extend(msg);
+            }
         }
     }
 
     fn give(&mut self, host: &mut dyn Host, item: u16, count: u16) {
         if host.item_add(item, count) {
-            self.messages.push_back((item, count));
+            self.messages.push_back(Message::Obtained(item, count));
         } else {
             self.state.pending.push((item, count));
         }
+    }
+
+    /// The name of an item that is not a game item: a badge's from the
+    /// cartridge (a/0/0/3 file 64, entries 11 to 18), else "Far Item".
+    fn other_name(&self, host: &mut dyn Host, item: u32, block: u32) -> Vec<u16> {
+        if (BADGE_ITEM..BADGE_ITEM + 8).contains(&item) {
+            if let Some(u) = host.text_get(3, 64, 11 + item - BADGE_ITEM, block) {
+                let u = lines::strip(&u);
+                if !u.is_empty() {
+                    return u;
+                }
+            }
+        }
+        let t = lines::text(&self.code, "item.other.name").unwrap_or_default();
+        let b = t.get(block as usize).or(t.first()).cloned().unwrap_or_else(|| "Far Item".into());
+        lines::render(&b, &|_| None)
+    }
+
+    /// Write one of the mod's lines into bank 283 and start the line script.
+    fn show_line(&mut self, host: &mut dyn Host, id: &str, item: u32, name: &str) -> bool {
+        if self.line_entry.is_none() {
+            // the bank's entry count, before any line was added to it
+            let d = host.member_get("a/0/0/3", LINE_BANK);
+            self.line_entry = d.filter(|d| d.len() >= 4).map(|d| u16::from_le_bytes([d[2], d[3]]));
+        }
+        let Some(entry) = self.line_entry else {
+            host.log("arkhipelagos: no text bank for the line");
+            return false;
+        };
+        let Some(blocks) = lines::text(&self.code, id) else { return false };
+        for (b, t) in blocks.iter().enumerate() {
+            // the script waits for a key itself: no clear code at the end
+            let t = t.trim_end_matches("\\c");
+            let other = (item >= 0x1000).then(|| self.other_name(host, item, b as u32));
+            let who = lines::plain(name);
+            let units = lines::render(t, &|n| match n {
+                0 => other.clone(),
+                1 => Some(who.clone()),
+                _ => None,
+            });
+            if !host.text_set(3, LINE_BANK, entry as u32, b as u32, &units) {
+                host.log("arkhipelagos: the line was not taken");
+                return false;
+            }
+        }
+        host.work_set(MSG_ITEM_WORK, if item < 0x1000 { item as u16 } else { 0 });
+        host.work_set(LINE_ENTRY_WORK, entry);
+        host.script_run(LINE_SCRIPT).is_some()
     }
 
     /// Called when the field may be idle (each frame, or after a message
@@ -328,11 +440,16 @@ impl Game {
         if self.showing {
             return;
         }
-        if let Some((item, count)) = self.messages.pop_front() {
-            host.work_set(MSG_ITEM_WORK, item);
-            host.work_set(MSG_COUNT_WORK, count);
-            let ran = host.script_run(MSG_SCRIPT).is_some();
-            host.log(&format!("arkhipelagos: message for item {item} x{count}: script {MSG_SCRIPT} {}", if ran { "queued" } else { "refused" }));
+        if let Some(m) = self.messages.pop_front() {
+            let ran = match &m {
+                Message::Obtained(item, count) => {
+                    host.work_set(MSG_ITEM_WORK, *item);
+                    host.work_set(MSG_COUNT_WORK, *count);
+                    host.script_run(MSG_SCRIPT).is_some()
+                }
+                Message::Line { id, item, name } => self.show_line(host, id, *item, name),
+            };
+            host.log(&format!("arkhipelagos: message {m:?}: {}", if ran { "queued" } else { "not shown" }));
             if ran {
                 self.showing = true;
             }

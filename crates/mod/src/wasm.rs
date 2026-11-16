@@ -23,6 +23,8 @@ extern "C" {
     fn peer_position(on: i32) -> i32;
     fn townmap_marker_set(id: u32, zone: u32, icon: u32, name: *const u8) -> i32;
     fn townmap_marker_clear(id: u32) -> i32;
+    fn text_get(archive: u32, file: u32, entry: u32, block: u32, out: *mut u16, max_units: u32) -> i32;
+    fn text_set(archive: u32, file: u32, entry: u32, block: u32, units: *const u16, count: u32) -> i32;
     fn item_add(item: u32, count: u32) -> i32;
     fn state_load(buf: *mut u8, size: u32) -> i32;
     fn state_store(buf: *const u8, size: u32) -> i32;
@@ -212,6 +214,18 @@ impl Host for Eidos {
     }
     fn townmap_marker_clear(&mut self, id: u32) {
         unsafe { townmap_marker_clear(id) };
+    }
+    fn text_get(&mut self, archive: u32, file: u32, entry: u32, block: u32) -> Option<Vec<u16>> {
+        let mut v = vec![0u16; 512];
+        let n = unsafe { text_get(archive, file, entry, block, v.as_mut_ptr(), v.len() as u32) };
+        if n < 0 {
+            return None;
+        }
+        v.truncate((n as usize).min(512));
+        Some(v)
+    }
+    fn text_set(&mut self, archive: u32, file: u32, entry: u32, block: u32, units: &[u16]) -> bool {
+        unsafe { text_set(archive, file, entry, block, units.as_ptr(), units.len() as u32) == 0 }
     }
 }
 

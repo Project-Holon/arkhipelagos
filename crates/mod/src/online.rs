@@ -23,7 +23,6 @@ use serde_json::Value;
 
 use crate::{solo_config, version_of, Game, Host, SaveState};
 use arkh_gen::gen::{PlayerOut, World};
-use arkh_script::Family;
 
 // the `world` event's kinds (EIDOS_WORLD_*)
 pub const GENERATED: u32 = 0;
@@ -125,11 +124,6 @@ pub struct Mod {
 }
 
 impl Mod {
-    fn family(host: &mut dyn Host) -> Family {
-        let code = host.game_code();
-        Family::of_game_code(std::str::from_utf8(&code).unwrap_or("IRBO"))
-    }
-
     fn apply(&self, host: &mut dyn Host) {
         if let Some(g) = &self.game {
             match g.apply(host) {
@@ -209,7 +203,7 @@ impl Mod {
                 for t in n.chunks(3) {
                     if let [index, item, _from] = *t {
                         if index > g.state.received {
-                            g.receive(host, item);
+                            g.receive_from(host, item, _from);
                             g.state.received = index;
                         }
                     }
@@ -297,14 +291,17 @@ impl Mod {
             let mut state = self.game.take().expect("mine").state;
             state.online = Some(online);
             state.world = file;
-            let family = Mod::family(host);
-            self.game = Some(Game::new(world, player, family, state)?);
+            let code = host.game_code();
+            self.game = Some(Game::new(world, player, code, state)?);
             self.apply(host);
         } else {
             let state = SaveState { world: file, slot: player, online: Some(online), ..Default::default() };
-            let family = Mod::family(host);
-            self.game = Some(Game::new(world, player, family, state)?);
+            let code = host.game_code();
+            self.game = Some(Game::new(world, player, code, state)?);
             self.apply(host);
+        }
+        if let Some(g) = self.game.as_mut() {
+            g.names = self.names.clone();
         }
         self.joining = None;
         let g = self.game.as_ref().expect("set above");

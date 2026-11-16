@@ -136,8 +136,15 @@ appended) and a same-size replace. `arkh-apply scripts` checks each
 edited member: every byte outside the edits is the original, and the
 member disassembles and assembles back the same. `tools/check_apply.py`
 then reads every edited member back on all 12 cartridges and compares the
-checks it finds with item_sites.json: 78 members, 148 checks, 8,426 bytes
-added (with the message script), the same in every cartridge.
+checks it finds with item_sites.json: 78 members, 148 checks, 8,459 bytes
+added (with the two message scripts), the same in every cartridge.
+
+862 gets two entries of the mod's own: 15 (script 2815) shows the game's
+"obtained" fanfare and pocket line for the item in work 0x40FE; 16
+(script 2816) shows the line in entry `0x40FD` of 862's text bank, with
+the item of 0x40FE in buffer 0. The mod writes that line (`text_set`)
+before each run: "<player> sent you <item>!" or "You found <item> for
+<player>!", from `lines/` in the cartridge's language.
 
 ## Edits
 

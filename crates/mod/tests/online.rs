@@ -153,6 +153,9 @@ struct Net {
     badges: Vec<u32>,
     markers: BTreeMap<u32, u32>,
     log: Vec<String>,
+    /// text_set calls: (archive, file, entry, block, units)
+    texts: Vec<(u32, u32, u32, u32, Vec<u16>)>,
+    scripts: Vec<u16>,
     code: [u8; 4],
 }
 
@@ -160,8 +163,10 @@ impl Host for Net {
     fn log(&mut self, t: &str) {
         self.log.push(t.to_string());
     }
-    fn member_get(&mut self, _a: &str, _i: u32) -> Option<Vec<u8>> {
-        None // no cartridge here: apply is tested elsewhere
+    fn member_get(&mut self, a: &str, i: u32) -> Option<Vec<u8>> {
+        // no cartridge here (apply is tested elsewhere); 862's text bank
+        // header for the line entry: 1 block, 15 entries
+        (a == "a/0/0/3" && i == 283).then(|| vec![1, 0, 15, 0, 0, 0, 0, 0])
     }
     fn member_set(&mut self, _a: &str, _i: u32, _d: &[u8]) -> bool {
         true
@@ -185,8 +190,13 @@ impl Host for Net {
         self.badges.push(bit);
         true
     }
-    fn script_run(&mut self, _id: u16) -> Option<u32> {
+    fn script_run(&mut self, id: u16) -> Option<u32> {
+        self.scripts.push(id);
         Some(1)
+    }
+    fn text_set(&mut self, a: u32, f: u32, e: u32, b: u32, u: &[u16]) -> bool {
+        self.texts.push((a, f, e, b, u.to_vec()));
+        true
     }
     fn state_load(&mut self) -> Option<Vec<u8>> {
         self.state.clone()
@@ -295,6 +305,20 @@ fn pump_as(m: &mut Mod, h: &mut Net, wait: Duration, confirm: bool) {
     }
 }
 
+/// Show every waiting message (script.done after each); the lines written.
+fn show_all(m: &mut Mod, h: &mut Net) -> Vec<String> {
+    let g = m.game.as_mut().unwrap();
+    let before = h.texts.len();
+    for _ in 0..32 {
+        g.tick(h);
+        g.script_done(h);
+    }
+    h.texts[before..]
+        .iter()
+        .map(|t| char::decode_utf16(t.4.iter().copied().filter(|&u| u < 0xF000)).map(|c| c.unwrap_or('?')).collect())
+        .collect()
+}
+
 /// What the edited script does at a check.
 fn check(m: &mut Mod, h: &mut Net, flag: u16, key: u16) {
     h.works.insert(0x805E, key);
@@ -374,6 +398,16 @@ fn two_players_online() {
     pump(&mut mb, &mut hb, wait);
     assert_eq!(mb.game.as_ref().unwrap().state.received, 2);
     assert_eq!(hb.items, vec![(i1 as u16, 1), (i2 as u16, 1)]);
+
+    // the lines: B sees "<A> sent you <item>!", A "You found <item> for <B>!"
+    let shown = show_all(&mut mb, &mut hb);
+    assert_eq!(shown.len(), 2, "{shown:?}");
+    assert!(shown.iter().all(|t| t.starts_with(&format!("{na} sent you"))), "{shown:?}");
+    assert!(hb.texts.iter().all(|t| (t.0, t.1, t.2) == (3, 283, 15)), "bank 283, its first free entry");
+    assert!(hb.scripts.iter().filter(|&&s| s == arkh_mod::LINE_SCRIPT).count() == 2);
+    let found = show_all(&mut ma, &mut ha);
+    assert_eq!(found.len(), 2, "{found:?}");
+    assert!(found.iter().all(|t| t.starts_with("You found") && t.contains(&nb)), "{found:?}");
 
     // A's own item: given at once, nothing comes back from metaxy
     let own_before = ha.items.len();

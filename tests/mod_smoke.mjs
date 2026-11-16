@@ -41,6 +41,7 @@ const eidos = {
   mod_file_read: (n, out, size, got) => { const f = files[str(n)]; if (!f) return -1; if (size) new Uint8Array(mem.buffer, out, f.length).set(f); new DataView(mem.buffer).setUint32(got, size ? f.length : 0, true); return f.length; },
   world_join: () => -1, world_checks: () => -1, world_leave: () => {}, world_read: () => -1,
   peer_position: () => 0, townmap_marker_set: () => 0, townmap_marker_clear: () => 0,
+  text_get: () => -1, text_set: () => 0,
 };
 const { instance } = await WebAssembly.instantiate(bytes, { eidos });
 mem = instance.exports.memory;

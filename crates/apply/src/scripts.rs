@@ -360,6 +360,23 @@ fn add_message_script(s: &mut Script) -> Result<(), String> {
         cmd("SCRIPT_WORK_CmdPopAllBgm", &[]),
         cmd("SCRIPT_WORK_CmdHalt", &[]),
     ]);
+    // 862 entry 16 (script 2816): one line the mod writes into this bank
+    // (text_set) before it runs the script: "<player> sent you <item>!",
+    // "You found <item> for <player>!". Buffer 0 holds the item (0x40FE),
+    // work 0x40FD the line's entry; neither work is used by the game.
+    s.entries.push("ArkLine".into());
+    s.items.extend([
+        Item::Label("ArkLine".into()),
+        cmd("SCRIPT_WORK_CmdCallFieldCommand", &[]),
+        cmd(COPY, &[0x8008, 0x40FE]),
+        cmd("SCRCMD_BufferItemName", &[0, 0x8008]),
+        cmd("SCRCMD_MSGWIN_CmdInfoSysWinMsg", &[0x40FD, 0]),
+        cmd("SCRIPT_WORK_CmdWaitKeyAny", &[]),
+        cmd("SCRCMD_MSGWIN_CmdCloseInfoSysWin", &[]),
+        cmd("SCRIPT_WORK_CmdCallScriptEvent", &[]),
+        cmd("SCRIPT_WORK_CmdPopAllBgm", &[]),
+        cmd("SCRIPT_WORK_CmdHalt", &[]),
+    ]);
     Ok(())
 }
 

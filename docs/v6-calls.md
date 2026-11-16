@@ -9,7 +9,7 @@ module against it (`EIDOS_SDK=<eidos>/sdk sh tests/check.sh`).
 
 ## What the module imports now (solo and online)
 
-27 imports, all from module `eidos`:
+29 imports, all from module `eidos`:
 
 | Import | Version | Proposal | What for |
 |---|---|---|---|
@@ -18,9 +18,10 @@ module against it (`EIDOS_SDK=<eidos>/sdk sh tests/check.sh`).
 | `vfs_member_clear` | 6 | item 1 | `("", 0xFFFFFFFF)`, all of the mod's members, before each apply and for a save with no world |
 | `type_chart_set` | 6 | item 11 | the world's type chart, 289 bytes, `cell[atk * 17 + def]` |
 | `work_get` | 6 | item 3 | inside `flag.set`: works 0x805F (marker), 0x805E (key), 0x8008 and 0x8009 (original item and count) |
-| `work_set` | 6 | item 3 | saved works 0x40FE and 0x40FF, the item and count the message script shows |
+| `work_set` | 6 | item 3 | saved works 0x40FE and 0x40FF (the item and count the message scripts show) and 0x40FD (the line's entry) |
 | `badge_set` | 6 | item 4 | a badge received as an item, or a badge location that is not in the world |
-| `script_run` | 6 | item 5 | the message script 2815 ("You obtained X!") after an item |
+| `script_run` | 6 | item 5 | the message scripts: 2815 (the game's "obtained X" after an item this player found) and 2816 (one of the mod's lines) |
+| `text_set`, `text_get` | 6 | item 2 | the mod's lines ("<player> sent you <item>!", "You found <item> for <player>!") written into a free entry of 862's text bank (a/0/0/3 file 283) before script 2816 shows it; badge names (a/0/0/3 file 64, entries 11 to 18) |
 | `mod_file_write`, `mod_file_read` | 6 | item 15 | the stored world (`world-<config hash>.json` solo, `online-<code>-<player>.json` online), the online checks (`checks-<code>-<player>.json`), and `join.txt` ("<code> <name>": a new game joins that world) |
 | `world_join`, `world_checks`, `world_leave`, `world_read`, event `world` | 6 | item 16 | online worlds: join by name or key, checks as they happen and all again on each join, location 0 for the goal; the push (JOINED), items by index (ITEMS), errors (a `bad-key` joins again by name), positions |
 | `peer_position` | 6 | item 17 | on after a join: the port shares the position and draws the others in the same zone |
@@ -45,7 +46,6 @@ world's three starters), `world` (124: metaxy's answers).
 
 | Import or event | Proposal | What for |
 |---|---|---|
-| `text_get`, `text_set` | item 2 | the mod's own lines ("found X for Y", "Y sent you X"); a received item shows the game's "obtained" line for now |
 | `text_input`, event `text_input.done` | item 14 | world code and player name in the game (now `join.txt`) |
 | `world_create`, `world_owner` | item 16 | making and starting a world from the game (now done outside: metaxy `N` and `O`) |
 | `ap_link`, `ap_send`, event `ap`, `ap_read` | item 16 | Archipelago rooms |
@@ -73,6 +73,6 @@ no location of the world, or a location already checked (the game repeats
 some gifts each day), gives the original item, or the badge. A flag set
 without the marker is the game's own and is ignored.
 
-Works 0x805E, 0x805F, 0x40FE and 0x40FF are used by no original script in
+Works 0x805E, 0x805F, 0x40FD, 0x40FE and 0x40FF are used by no original script in
 the 12 cartridges and by no game code (0x4000-0x401F are the only saved
 works the game clears).
