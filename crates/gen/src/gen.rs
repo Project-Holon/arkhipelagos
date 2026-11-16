@@ -748,3 +748,7 @@ pub fn summary(w: &World) -> BTreeMap<String, usize> {
     }
     s
 }
+
+/// The Archipelago world's data (see ap.rs).
+#[path = "ap.rs"]
+pub mod ap;

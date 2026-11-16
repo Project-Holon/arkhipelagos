@@ -18,7 +18,10 @@ fn main() -> ExitCode {
         Some("hash") if a.len() == 3 => world(&a[2], None, true),
         Some("sweep") if a.len() == 3 => sweep(a[2].parse().unwrap_or(100)),
         Some("spheres") if a.len() == 3 => spheres(&a[2]),
-        _ => Err("usage: arkh-gen world <config> [out] | hash <config> | sweep <count>".into()),
+        Some("ap-static") if a.len() == 3 => ap_static(&a[2]),
+        Some("ap-pack") if a.len() == 4 => ap_pack(&a[2], &a[3]),
+        Some("ap-reach") if a.len() == 5 => ap_reach(&a[2], &a[3], &a[4]),
+        _ => Err("usage: arkh-gen world <config> [out] | hash <config> | sweep <count> | ap-static <out> | ap-pack <config or -> <player> | ap-reach <config> <player> <items.json>".into()),
     };
     match r {
         Ok(()) => ExitCode::SUCCESS,
@@ -44,6 +47,47 @@ fn world(path: &str, out: Option<&str>, hash_only: bool) -> Result<(), String> {
         std::fs::write(o, serde_json::to_vec_pretty(&w).unwrap()).map_err(|e| format!("{o}: {e}"))?;
     }
     println!("world {h:016x}: {:?}", summary(&w));
+    Ok(())
+}
+
+/// Read a configuration from a file, or from standard input for "-".
+fn read_config(path: &str) -> Result<Config, String> {
+    let text = if path == "-" {
+        let mut s = String::new();
+        std::io::Read::read_to_string(&mut std::io::stdin(), &mut s).map_err(|e| e.to_string())?;
+        s
+    } else {
+        std::fs::read_to_string(path).map_err(|e| format!("{path}: {e}"))?
+    };
+    serde_json::from_str(&text).map_err(|e| format!("{path}: {e}"))
+}
+
+/// The Archipelago world's static file: every item and location number.
+fn ap_static(out: &str) -> Result<(), String> {
+    let m = arkh_gen::model()?;
+    let v = arkh_gen::gen::ap::static_json(&m);
+    std::fs::write(out, serde_json::to_vec(&v).unwrap()).map_err(|e| format!("{out}: {e}"))
+}
+
+/// One player's pack for the Archipelago world, on standard output.
+fn ap_pack(path: &str, player: &str) -> Result<(), String> {
+    let cfg = read_config(path)?;
+    let m = arkh_gen::model()?;
+    let i: usize = player.parse().map_err(|_| "player is a number".to_string())?;
+    let v = arkh_gen::gen::ap::pack_json(&m, &cfg, i)?;
+    println!("{}", serde_json::to_string(&v).unwrap());
+    Ok(())
+}
+
+/// The locations one player reaches with the items in a JSON list of ids.
+fn ap_reach(path: &str, player: &str, items: &str) -> Result<(), String> {
+    let cfg = read_config(path)?;
+    let m = arkh_gen::model()?;
+    let i: usize = player.parse().map_err(|_| "player is a number".to_string())?;
+    let text = std::fs::read_to_string(items).map_err(|e| format!("{items}: {e}"))?;
+    let list: Vec<u32> = serde_json::from_str(&text).map_err(|e| format!("{items}: {e}"))?;
+    let v = arkh_gen::gen::ap::reach_json(&m, &cfg, i, &list)?;
+    println!("{}", serde_json::to_string(&v).unwrap());
     Ok(())
 }
 
