@@ -4,7 +4,7 @@
 
 - eidos with the arkhipelagos mod.
 - Your own Pokemon Black or White cartridge dump, as eidos asks for.
-- For the host: Archipelago 0.6.9 or newer, with `arkhipelagos.apworld` installed.
+- For the host: Archipelago 0.6.8 or newer, with `arkhipelagos.apworld` installed.
 
 ## Install the apworld (host)
 

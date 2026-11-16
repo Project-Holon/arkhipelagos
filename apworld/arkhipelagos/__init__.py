@@ -238,6 +238,9 @@ class ArkhWorld(World):
             "generator": self.pack["generator"],
             "data_hash": self.pack["data_hash"],
             "player": self.player,
+            # the fields of an eidos-only world's player data (PlayerOut)
+            "slot": self.player,
+            "name": self.player_name,
             "config": self.config,
             "locations": locations,
         })

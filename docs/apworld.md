@@ -124,7 +124,7 @@ with the world's Python, `data/static.json`, `data/packs/*.json`,
 `bin/<system>/arkh-gen[.exe]`, the docs, and `archipelago.json`:
 
 ```json
-{"game": "Pokemon Black (arkhipelagos)", "minimum_ap_version": "0.6.9",
+{"game": "Pokemon Black (arkhipelagos)", "minimum_ap_version": "0.6.8",
  "world_version": "0.1.0", "authors": ["Project-Holon"],
  "version": 7, "compatible_version": 7}
 ```
@@ -142,7 +142,8 @@ the same packs, and attaches the file to the release.
 
 Install: put the file in Archipelago's `custom_worlds` folder (or open it
 with the Archipelago Launcher). The world's tests (`test/`) run from an
-Archipelago source checkout with the world folder in `worlds/` and
+Archipelago source checkout with the world folder in `worlds/`, its
+`data/static.json` written by `arkh-gen ap-static`, and
 `ARKHIPELAGOS_GEN` set:
 `python -m pytest worlds/arkhipelagos/test`.
 

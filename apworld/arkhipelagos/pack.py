@@ -22,7 +22,12 @@ def _data(path: str) -> bytes | None:
         return None
 
 
-STATIC: dict[str, Any] = json.loads(_data("data/static.json") or b"{}")
+_static = _data("data/static.json")
+if _static is None:
+    raise RuntimeError(
+        "arkhipelagos: data/static.json is missing. Use a built arkhipelagos.apworld, or in a source "
+        "checkout run: arkh-gen ap-static apworld/arkhipelagos/data/static.json")
+STATIC: dict[str, Any] = json.loads(_static)
 
 
 def _platform() -> tuple[str, str]:

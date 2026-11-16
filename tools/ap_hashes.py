@@ -16,15 +16,20 @@ ROOT = Path(__file__).resolve().parent.parent
 
 def main() -> None:
     gen = sys.argv[1]
+    if not Path(gen).exists() and Path(gen + ".exe").exists():
+        gen += ".exe"
+    lines = []
     with tempfile.TemporaryDirectory() as d:
         static = Path(d) / "static.json"
         subprocess.run([gen, "ap-static", str(static)], check=True)
-        print(hashlib.sha256(static.read_bytes()).hexdigest(), "static")
+        lines.append(f"{hashlib.sha256(static.read_bytes()).hexdigest()} static")
     for cfg in sorted((ROOT / "tests" / "configs").glob("*.json")):
         players = len(json.loads(cfg.read_text(encoding="utf-8"))["players"])
         for i in range(players):
             out = subprocess.run([gen, "ap-pack", str(cfg), str(i)], check=True, capture_output=True).stdout
-            print(hashlib.sha256(out).hexdigest(), f"{cfg.name} {i}")
+            lines.append(f"{hashlib.sha256(out).hexdigest()} {cfg.name} {i}")
+    # the same bytes on every system (no CRLF from Windows text output)
+    sys.stdout.buffer.write(("\n".join(lines) + "\n").encode())
 
 
 if __name__ == "__main__":

@@ -10,7 +10,7 @@ windows-x86_64, linux-x86_64 or macos (the folder names pack.py looks for).
 
 The zip holds one folder, arkhipelagos/, with archipelago.json carrying the
 container versions Archipelago's "Build APWorlds" adds (version 7,
-compatible_version 7 in Archipelago 0.6.9)."""
+compatible_version 7 in Archipelago 0.6.8 and 0.6.9)."""
 
 import argparse
 import itertools

@@ -122,3 +122,12 @@ class TestWhiteRandom(LogicMatches, WorldTestBase):
         self.assertEqual(slot["config"]["players"][0]["options"]["randomize_types"], ["follow_evolutions", "randomize"])
         own = sum(1 for _, item, p in slot["locations"] if p == self.world.player and item)
         self.assertGreater(own, 0)
+        text = json.dumps(slot)
+        # it travels whole through metaxy's bridge (2 MB per message)
+        self.assertLess(len(text), 2_000_000)
+        for k in ("slot", "name", "version", "options", "locations", "left_out", "starters", "picks", "tables"):
+            self.assertIn(k, slot)
+        dump = os.environ.get("ARKHIPELAGOS_DUMP_SLOT")
+        if dump:
+            with open(dump, "w", encoding="utf-8") as f:
+                f.write(text)
