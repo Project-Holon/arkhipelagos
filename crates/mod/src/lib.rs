@@ -18,6 +18,7 @@ use arkh_script::Family;
 use serde::{Deserialize, Serialize};
 use serde_json::{Map, Value};
 
+pub mod ap;
 pub mod lines;
 pub mod online;
 pub mod sanity;
@@ -124,6 +125,15 @@ pub trait Host {
     fn world_create(&mut self, _config_json: &str) -> bool {
         false
     }
+    /// Open the Archipelago link (metaxy's bridge) to a room; the answers
+    /// come as `ap` events (`ap`, `Mod::on_ap`).
+    fn ap_link(&mut self, _room: &str, _slot: &str, _password: &str) -> bool {
+        false
+    }
+    /// One Archipelago message (a JSON array of commands) to the room.
+    fn ap_send(&mut self, _json: &str) -> bool {
+        false
+    }
 }
 
 /// The options of mod/settings.txt as the generator's configuration
@@ -203,8 +213,9 @@ pub enum Message {
     /// the game's own "obtained X" (an item this player found)
     Obtained(u16, u16),
     /// one of the mod's lines: "share.received" (from `name`) or
-    /// "share.found_for" (for `name`), about `item`
-    Line { id: &'static str, item: u32, name: String },
+    /// "share.found_for" (for `name`), about `item`; `label` names an item
+    /// of another game (Archipelago) in place of `item`
+    Line { id: &'static str, item: u32, name: String, label: Option<String> },
 }
 
 /// What the mod keeps with the save.
@@ -215,13 +226,17 @@ pub struct SaveState {
     pub slot: u32,
     /// locations checked, by id
     pub checked: BTreeSet<u32>,
-    /// items received from others, by index (online)
+    /// items received from others: the last index given (online), or how
+    /// many were given (Archipelago, whose indexes start at 0)
     pub received: u32,
     /// items the bag could not take yet: (item, count)
     pub pending: Vec<(u16, u16)>,
     /// an online world (metaxy): code, this player's name and key
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub online: Option<online::Online>,
+    /// an Archipelago room: address, slot, password, seed and slot number
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub ap: Option<ap::Room>,
     /// endings seen (game.cleared): the first follows Ghetsis, the second Alder
     #[serde(default)]
     pub clears: u32,
@@ -251,6 +266,10 @@ pub struct Game {
     pub line_entry: Option<u16>,
     /// a message script is running
     pub showing: bool,
+    /// Archipelago: the item of another game at a location, by location
+    pub labels: BTreeMap<u32, String>,
+    /// Archipelago: the room is connected (checks and the goal go now)
+    pub ap_live: bool,
 }
 
 /// The check table from item_sites.json: (game flag, key) -> location ids.
@@ -307,6 +326,8 @@ impl Game {
             code,
             names: BTreeMap::new(),
             line_entry: None,
+            labels: BTreeMap::new(),
+            ap_live: false,
         })
     }
 
@@ -426,9 +447,13 @@ impl Game {
                 self.receive(host, item);
             } else {
                 let name = self.names.get(&to).cloned().unwrap_or_else(|| format!("{to}"));
-                self.messages.push_back(Message::Line { id: "share.found_for", item, name });
+                let label = self.labels.get(&l).cloned();
+                self.messages.push_back(Message::Line { id: "share.found_for", item, name, label });
             }
         }
+        // Archipelago: the new checks go to the room when it is connected
+        // (all of them again on each connect)
+        self.ap_checks(host, &new);
         // online: every check goes to metaxy (it hands other players their
         // items and ignores what it has); kept in a file at once, so a check
         // made offline or before a crash is sent again on the next connect
@@ -450,6 +475,7 @@ impl Game {
         if self.state.goal && self.state.online.is_some() {
             host.world_checks(&[0]);
         }
+        self.ap_goal(host);
     }
 
     fn give_original(&mut self, host: &mut dyn Host, flag: u16, item: u16, count: u16) {
@@ -468,7 +494,7 @@ impl Game {
     /// An item another player found for this player (online).
     pub fn receive_from(&mut self, host: &mut dyn Host, item: u32, from: u32) {
         let name = self.names.get(&from).cloned().unwrap_or_else(|| format!("{from}"));
-        self.take(host, item, Some(Message::Line { id: "share.received", item, name }));
+        self.take(host, item, Some(Message::Line { id: "share.received", item, name, label: None }));
     }
 
     fn take(&mut self, host: &mut dyn Host, item: u32, msg: Option<Message>) {
@@ -514,7 +540,7 @@ impl Game {
     }
 
     /// Write one of the mod's lines into bank 283 and start the line script.
-    fn show_line(&mut self, host: &mut dyn Host, id: &str, item: u32, name: &str) -> bool {
+    fn show_line(&mut self, host: &mut dyn Host, id: &str, item: u32, name: &str, label: Option<&str>) -> bool {
         if self.line_entry.is_none() {
             // the bank's entry count, before any line was added to it
             let d = host.member_get("a/0/0/3", LINE_BANK);
@@ -528,7 +554,10 @@ impl Game {
         for (b, t) in blocks.iter().enumerate() {
             // the script waits for a key itself: no clear code at the end
             let t = t.trim_end_matches("\\c");
-            let other = (item >= 0x1000).then(|| self.other_name(host, item, b as u32));
+            let other = match label {
+                Some(l) => Some(lines::plain(l)),
+                None => (item >= 0x1000).then(|| self.other_name(host, item, b as u32)),
+            };
             let who = lines::plain(name);
             let units = lines::render(t, &|n| match n {
                 0 => other.clone(),
@@ -564,7 +593,7 @@ impl Game {
                     host.work_set(MSG_COUNT_WORK, *count);
                     host.script_run(MSG_SCRIPT).is_some()
                 }
-                Message::Line { id, item, name } => self.show_line(host, id, *item, name),
+                Message::Line { id, item, name, label } => self.show_line(host, id, *item, name, label.as_deref()),
             };
             host.log(&format!("arkhipelagos: message {m:?}: {}", if ran { "queued" } else { "not shown" }));
             if ran {

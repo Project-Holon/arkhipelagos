@@ -46,6 +46,9 @@ extern "C" {
     fn world_create(config_json: *const u8, ticket: *mut u32) -> i32;
     fn player_name(out: *mut u8, size: u32) -> i32;
     fn world_owner(code: *const u8, owner_key: *const u8, action: u32) -> i32;
+    fn ap_link(room: *const u8, slot: *const u8, password: *const u8, ticket: *mut u32) -> i32;
+    fn ap_send(json: *const u8, size: u32) -> i32;
+    fn ap_read(out: *mut u8, size: u32) -> i32;
 }
 
 // event kinds (sdk/api/v6/eidos_wasm.h)
@@ -57,6 +60,7 @@ const EVENT_FLAG_SET: u32 = 111;
 const EVENT_SCRIPT_DONE: u32 = 114;
 const EVENT_STARTER_CHOICES: u32 = 121;
 const EVENT_WORLD: u32 = 124;
+const EVENT_AP: u32 = 125;
 const EVENT_BATTLE_END: u32 = 80;
 const EVENT_DEX_REGISTER: u32 = 112;
 const CONTINUE: i32 = 0;
@@ -93,6 +97,15 @@ struct WorldEvent {
     size: u32,
     ticket: u32,
     player: u32,
+}
+
+/// `ap` (BwApEvent)
+#[repr(C)]
+struct ApEvent {
+    h: Event,
+    kind: u32,
+    size: u32,
+    ticket: u32,
 }
 
 #[repr(C)]
@@ -247,9 +260,10 @@ impl Host for Eidos {
         (n >= 0).then(|| String::from_utf8_lossy(&b[..(n as usize).min(63)]).to_string())
     }
     fn mode_code(&mut self) -> Option<String> {
-        let mut b = [0u8; 32];
+        // a world code, or an Archipelago room's line (up to 160 bytes)
+        let mut b = [0u8; 256];
         let n = unsafe { mode_code(b.as_mut_ptr(), b.len() as u32) };
-        (n >= 0).then(|| String::from_utf8_lossy(&b[..(n as usize).min(31)]).to_string())
+        (n >= 0).then(|| String::from_utf8_lossy(&b[..(n as usize).min(255)]).to_string())
     }
     fn setting(&mut self, key: &str) -> Option<i32> {
         let k = cstr(key);
@@ -275,6 +289,14 @@ impl Host for Eidos {
         let c = cstr(config_json);
         let mut t = 0u32;
         unsafe { world_create(c.as_ptr(), &mut t) == 0 }
+    }
+    fn ap_link(&mut self, room: &str, slot: &str, password: &str) -> bool {
+        let (r, s, p) = (cstr(room), cstr(slot), cstr(password));
+        let mut t = 0u32;
+        unsafe { ap_link(r.as_ptr(), s.as_ptr(), p.as_ptr(), &mut t) == 0 }
+    }
+    fn ap_send(&mut self, json: &str) -> bool {
+        unsafe { ap_send(json.as_ptr(), json.len() as u32) == 0 }
     }
 }
 
@@ -310,7 +332,7 @@ extern "C" fn on_save_load(_e: *mut Event) -> i32 {
 }
 
 extern "C" fn on_save_begin(_e: *mut Event) -> i32 {
-    with_game(|g, h| g.save(h));
+    with_mod(|m, h| m.save(h));
     CONTINUE
 }
 
@@ -365,7 +387,8 @@ extern "C" fn on_battle_end(e: *mut BattleEnd) -> i32 {
 
 extern "C" fn on_script_done(e: *mut ScriptDone) -> i32 {
     let id = unsafe { (*e).script_id };
-    if id == crate::MSG_SCRIPT {
+    // both message scripts: the game's "obtained X" and the mod's lines
+    if id == crate::MSG_SCRIPT || id == crate::LINE_SCRIPT {
         with_game(|g, h| g.script_done(h));
     }
     CONTINUE
@@ -396,13 +419,33 @@ extern "C" fn on_world(e: *mut WorldEvent) -> i32 {
     CONTINUE
 }
 
+/// The event `ap`: one Archipelago message (up to 2 MB, read while the
+/// handler runs), the link's answer, an error, or its end.
+extern "C" fn on_ap(e: *mut ApEvent) -> i32 {
+    let (kind, size) = unsafe { ((*e).kind, (*e).size) };
+    let mut body = vec![0u8; size as usize];
+    let mut n = unsafe { ap_read(body.as_mut_ptr(), size) };
+    if n > size as i32 {
+        // more than the payload said: read it whole
+        body = vec![0u8; n as usize];
+        n = unsafe { ap_read(body.as_mut_ptr(), n as u32) };
+    }
+    if n >= 0 {
+        body.truncate(n as usize);
+    } else {
+        body.clear();
+    }
+    with_mod(|m, h| m.on_ap(h, kind, &body));
+    CONTINUE
+}
+
 extern "C" fn on_tick() {
-    with_game(|g, h| g.tick(h));
+    with_mod(|m, h| m.tick(h));
 }
 
 #[no_mangle]
 pub extern "C" fn eidos_mod_start() -> i32 {
-    let binds: [(u32, u32, &str); 10] = [
+    let binds: [(u32, u32, &str); 11] = [
         (EVENT_GAME_NEW, on_game_new as *const () as usize as u32, "game.new"),
         (EVENT_SAVE_LOAD, on_save_load as *const () as usize as u32, "save.load"),
         (EVENT_SAVE_BEGIN, on_save_begin as *const () as usize as u32, "save.begin"),
@@ -413,6 +456,7 @@ pub extern "C" fn eidos_mod_start() -> i32 {
         (EVENT_WORLD, on_world as *const () as usize as u32, "world"),
         (EVENT_DEX_REGISTER, on_dex_register as *const () as usize as u32, "dex.register"),
         (EVENT_BATTLE_END, on_battle_end as *const () as usize as u32, "battle.end"),
+        (EVENT_AP, on_ap as *const () as usize as u32, "ap"),
     ];
     // a bind that fails is logged and the others still work
     let mut failed = Vec::new();

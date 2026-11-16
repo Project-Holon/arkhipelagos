@@ -7,9 +7,9 @@ version 6). Names and signatures are those of eidos's generated header
 `sdk/api/v6/eidos_wasm.h`; `tools/wasm_imports.py` checks the built
 module against it (`EIDOS_SDK=<eidos>/sdk sh tests/check.sh`).
 
-## What the module imports now (solo and online)
+## What the module imports now (solo, online and Archipelago)
 
-29 imports, all from module `eidos`:
+40 imports, all from module `eidos`:
 
 | Import | Version | Proposal | What for |
 |---|---|---|---|
@@ -32,23 +32,30 @@ module against it (`EIDOS_SDK=<eidos>/sdk sh tests/check.sh`).
 | `text_language` | 6 | item 2 | only if both fail: the language family (Black is then assumed) |
 | `rand_next` | 5 | | the seed of a new solo world |
 | `item_add` | 5 | | gives items |
-| `state_load`, `state_store` | 5 | | the per-save state: world file, slot, checked locations, items waiting for room |
+| `state_load`, `state_store` | 5 | | the per-save state: world file, slot, checked locations, items waiting for room, the online world or Archipelago room |
+| `mode_get`, `mode_code` | 6 | | the way to play chosen on eidos's Multiplayer screen (`mode` lines of mod/settings.txt) and what its Join box gave: a world code, or an Archipelago room's line `ap <host:port> <slot> <password>` (read into 256 bytes; eidos makes it up to 160) |
+| `setting_get`, `setting_text`, `player_name` | 6 | | the screen's options and the player's multiplayer name |
+| `world_create`, `world_owner` | 6 | item 16 | a world made from the game: metaxy makes it (`N`), the owner starts it (`O`) |
+| `dex_caught` | 6 | | the species caught, for the dex count checks |
+| `ap_link`, `ap_send`, `ap_read`, event `ap` | 6 | item 16 | Archipelago rooms through metaxy's bridge: open the link to the room, send Archipelago messages (JSON arrays of commands), read one message (up to 2 MB) inside the `ap` handler (`crates/mod/src/ap.rs`) |
 
-Events it binds: `game.new` (1: join the world of `join.txt`, else make,
-store and apply a solo world), `save.begin` (2: the state goes with the
-game's save), `save.load` (4: load the save's world, apply it, join again
-by key when online), `game.cleared` (5: the ending; the goal is the first
-for "ghetsis", the second for "champion"), `flag.set` (111: the check),
-`script.done` (114: the message ended), `starter.choices` (121: the
-world's three starters), `world` (124: metaxy's answers).
+Events it binds: `game.new` (1: by the mode: make, store and apply a solo
+world; join or make a multiworld; link to an Archipelago room; without a
+mode, join the world of `join.txt`), `save.begin` (2: the state goes with
+the game's save), `save.load` (4: load the save's world, apply it, join
+again by key when online, link to the room again in Archipelago),
+`game.cleared` (5: the ending; the goal is the first for "ghetsis", the
+second for "champion"), `battle.end` (80) and `dex.register` (112: the
+extra checks), `flag.set` (111: the check), `script.done` (114: either
+message script ended), `starter.choices` (121: the world's three
+starters), `world` (124: metaxy's answers; in Archipelago, the link's end),
+`ap` (125: the Archipelago link's answers).
 
 ## Later
 
 | Import or event | Proposal | What for |
 |---|---|---|
 | `text_input`, event `text_input.done` | item 14 | world code and player name in the game (now `join.txt`) |
-| `world_create`, `world_owner` | item 16 | making and starting a world from the game (now done outside: metaxy `N` and `O`) |
-| `ap_link`, `ap_send`, event `ap`, `ap_read` | item 16 | Archipelago rooms |
 
 ## How a check works (the contract with the scripts)
 

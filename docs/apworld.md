@@ -125,6 +125,45 @@ The pack's `slot` part, plus:
 | `left_out` | locations no item can unlock in this player's game (they keep the game's items) |
 | `locations` | `[location, item, player]` for each of this player's locations: `item` is our item number when the item is this player's own, else 0; `player` is the receiving slot |
 
+## How the mod plays a room
+
+The client is `crates/mod/src/ap.rs`. eidos's Multiplayer screen starts a
+new game in the mode `archipelago` and gives the room as one line
+(`mode_code`): `ap <host:port> <slot> <password>`, `-` for no password.
+The slot may hold spaces; the password is the last word.
+
+1. The mod opens the link through metaxy's bridge (`ap_link`). After the
+   server's `RoomInfo` it sends `Connect`: the game of the cartridge's
+   version, the slot, the password, `items_handling` 1 (only items from
+   other worlds come from the server; the game's own checks give this
+   player's items), `slot_data` true.
+2. `Connected`: slot_data reads as the generator's `PlayerOut`. The mod
+   stores it (`ap-<seed>-<slot>.json`) and applies it as an eidos-only
+   world. The save keeps the room, its seed and the slot number. Then
+   every check of the save goes in `LocationChecks`, and the goal again if
+   reached.
+3. `ReceivedItems`: items by index, from 0. The save keeps how many were
+   given, so a list sent again from 0 gives nothing twice; a list that
+   starts past that count asks for the whole list again (`Sync`). Each
+   item from another player shows "<player> sent you <item>!".
+4. A check sends `LocationChecks` at once (while connected; otherwise on
+   the next connect). An item of another game shows "You found <item> for
+   <player>!": its name comes from `LocationScouts` (the items at this
+   player's locations) and `GetDataPackage`, one game at a time. The names
+   are kept in `ap-<seed>-<slot>-names.json` for offline play, cut to 20
+   characters.
+5. The goal (the first or second ending, by `goal`) sends `StatusUpdate`
+   30.
+6. A loaded save applies its stored world at once and links again. It only
+   connects to a room with the same seed. When the link ends, the mod links
+   again every 30 seconds, unless the room refused the slot
+   (`ConnectionRefused`) or plays another seed. The log says why.
+
+`crates/mod/tests/ap.rs` plays recorded messages of a room (this world and
+APQuest, made with Archipelago 0.6.8); `tests/mod_smoke.mjs` plays them
+through the wasm module; `crates/mod/tests/ap_bridge.rs` plays a real room
+through a real metaxy bridge (`ARKH_METAXY`, `ARKH_AP_ROOM`).
+
 ## The .apworld file
 
 A zip named `arkhipelagos.apworld` holding one folder, `arkhipelagos/`,

@@ -135,10 +135,12 @@ pub struct Mod {
     pub by_key: bool,
     /// the last "Player N" tried after the player's own name (0: none yet)
     pub next_free: u32,
+    /// an Archipelago room this game plays in (`ap`)
+    pub ap: Option<crate::ap::Client>,
 }
 
 impl Mod {
-    fn apply(&self, host: &mut dyn Host) {
+    pub(crate) fn apply(&self, host: &mut dyn Host) {
         if let Some(g) = &self.game {
             match g.apply(host) {
                 Ok(n) => host.log(&format!("arkhipelagos: world {} applied ({n} members)", g.state.world)),
@@ -173,6 +175,7 @@ impl Mod {
     pub fn new_game(&mut self, host: &mut dyn Host, seed: u64) {
         self.game = None;
         self.creating = None;
+        self.ap = None;
         let mode = host.mode();
         let join = host.file_read(JOIN_FILE).and_then(|b| String::from_utf8(b).ok());
         let join = join.as_deref().and_then(|t| t.trim().split_once(' ')).map(|(c, n)| (c.to_string(), n.to_string()));
@@ -222,6 +225,12 @@ impl Mod {
                 return;
             }
             Some("solo") => options_from_settings(host),
+            Some("archipelago") => {
+                // a game in an Archipelago room (eidos's Join box gave the
+                // room, the slot and the password)
+                self.ap_new_game(host);
+                return;
+            }
             Some(_) => {
                 // the plain New Game (or another mod's mode): no world,
                 // unless a test run names one in join.txt
@@ -255,11 +264,17 @@ impl Mod {
     /// world is joined again with the player key.
     pub fn save_load(&mut self, host: &mut dyn Host) {
         self.joining = None;
+        self.ap = None;
         match Game::load(host) {
             Ok(Some(g)) => {
                 let online = g.state.online.clone();
+                let room = g.state.ap.clone();
                 self.game = Some(g);
                 self.apply(host);
+                if let Some(room) = room {
+                    // an Archipelago game: the room again (same seed only)
+                    self.ap_resume(host, room);
+                }
                 if let Some(mut o) = online {
                     // a key given after the last save is in the key file
                     if let Some(k) = stored_key(host, &o.code, &o.name) {
@@ -272,17 +287,61 @@ impl Mod {
                 }
             }
             Ok(None) => {
-                host.log("arkhipelagos: this save has no world: the plain game");
                 host.member_clear_all();
                 self.game = None;
+                // a game saved in a room before its first connect
+                let room = host
+                    .state_load()
+                    .and_then(|b| serde_json::from_slice::<SaveState>(&b).ok())
+                    .and_then(|s| s.ap);
+                match room {
+                    Some(room) => self.ap_resume(host, room),
+                    None => host.log("arkhipelagos: this save has no world: the plain game"),
+                }
             }
             Err(e) => host.log(&format!("arkhipelagos: {e}")),
         }
     }
 
     /// The `world` event.
+    /// `save.begin`: the game's state, or (a room not connected yet) the room.
+    pub fn save(&self, host: &mut dyn Host) {
+        if let Some(g) = &self.game {
+            g.save(host);
+        } else if let Some(c) = &self.ap {
+            let s = SaveState { ap: Some(c.room.clone()), ..Default::default() };
+            if let Ok(b) = serde_json::to_vec(&s) {
+                host.state_store(&b);
+            }
+        }
+    }
+
+    /// Each frame: the Archipelago link's retries, then the game's messages.
+    pub fn tick(&mut self, host: &mut dyn Host) {
+        self.ap_tick(host);
+        if let Some(g) = self.game.as_mut() {
+            g.tick(host);
+        }
+    }
+
+    /// The event `world`.
     pub fn on_world(&mut self, host: &mut dyn Host, kind: u32, body: &[u8]) {
         let text = String::from_utf8_lossy(body).to_string();
+        if self.ap.is_some() {
+            // the Archipelago link is a world session of the port: its end
+            // comes as the world's CLOSED, and errors without the `ap-`
+            // prefix (busy, version) only as the world's ERROR
+            match kind {
+                CLOSED => return self.ap_closed(host),
+                ERROR => {
+                    if !text.starts_with("ap-") {
+                        host.log(&format!("arkhipelagos: Archipelago link: {text}"));
+                    }
+                    return;
+                }
+                _ => {}
+            }
+        }
         match kind {
             GENERATED => {
                 // "<code> <owner key>": the world asked for is made
@@ -440,7 +499,7 @@ impl Mod {
             // a world this player just made: the code to give the others
             if self.made.as_deref() == Some(g.state.online.as_ref().map(|o| o.code.as_str()).unwrap_or("")) {
                 let code = self.made.take().unwrap_or_default();
-                g.messages.push_back(crate::Message::Line { id: "world.made", item: 0, name: code });
+                g.messages.push_back(crate::Message::Line { id: "world.made", item: 0, name: code, label: None });
             }
         }
         self.joining = None;

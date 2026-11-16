@@ -13,7 +13,7 @@
 
 mode solo        "Solo randomizer" "A shuffled game for you alone, made on this device."
 mode multiworld  "Multiworld"      "Everyone plays on their own save; the items you find go to the others. Make a world here, and friends join with its code." joins
-mode archipelago "Archipelago"     "A game in an Archipelago room with other games. Save your options as a file and send it to the room's host." in=multiworld export "Pokemon {version} (arkhipelagos)"
+mode archipelago "Archipelago"     "A game in an Archipelago room with other games. Save your options as a file and send it to the room's host." in=multiworld joins export "Pokemon {version} (arkhipelagos)"
 
 heading "World"
 option arkh.players  int    "Players"      2 8 2                @multiworld

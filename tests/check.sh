@@ -20,6 +20,9 @@ done
 echo "== mod: a two-player online world against metaxy (ARKH_METAXY=host:port)"
 if [ -n "${ARKH_METAXY:-}" ]; then cargo test --release -q -p arkh-mod --test online
 else echo "ARKH_METAXY not set: skipped"; fi
+echo "== mod: an Archipelago room through metaxy's bridge (ARKH_METAXY, ARKH_AP_ROOM=host:port)"
+if [ -n "${ARKH_METAXY:-}" ] && [ -n "${ARKH_AP_ROOM:-}" ]; then cargo test --release -q -p arkh-mod --test ap_bridge
+else echo "ARKH_METAXY or ARKH_AP_ROOM not set: skipped"; fi
 echo "== mod: wasm imports against eidos's v6 header"
 H="${EIDOS_SDK:-}/api/v6/eidos_wasm.h"
 if [ -f "$H" ]; then python -I tools/wasm_imports.py "$T/wasm32-unknown-unknown/release/arkh_mod.wasm" "$H" | tail -1
