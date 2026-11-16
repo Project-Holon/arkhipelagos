@@ -29,6 +29,7 @@ cartridge files when the game starts.
 | `crates/gen-wasm` | the generator built for wasm32 |
 | `crates/apply` | turns a world's table changes into the player's own game files (no game data shipped), and the check edits of the give scripts |
 | `crates/mod` | the eidos mod (wasm): makes a solo world, applies it, turns checks into items |
+| `apworld/arkhipelagos` | the Archipelago world: two games, Pokemon Black and Pokemon White (arkhipelagos), built on the generator's data (`docs/apworld.md`) |
 | `mod` | the mod folder: `eidos_mod.txt` (the wasm file is built into it) |
 | `data/world` | the game's logic: items, regions, connections, events, locations, rules |
 | `data/facts` | the original game's tables as plain numbers (stats, learnsets, encounters, trainers and more) |
@@ -38,7 +39,7 @@ cartridge files when the game starts.
 | `docs` | how each part works, and the design proposals |
 | `lines` | the mod's in-game lines and their translations |
 
-Still to come here: the Archipelago world (`apworld`), and making online
+Still to come here: making online
 worlds from inside the game (they are made on metaxy for now; a new game
 joins the world named in the mod file `join.txt`). Releases will carry `mod.bw` and `mod.json` for katalogos.
 The mod needs eidos's mod API version 6.
@@ -54,12 +55,20 @@ The script check needs the 12 cartridges' extracted data; list where they
 are in `tools/carts.local.json` (see `tools/carts.example.json`).
 `sh tests/ci.sh` runs the checks that need no cartridge; GitHub Actions
 runs it on every push. A tag `v*` builds the mod and publishes `mod.bw` and
-`mod.json` with katalogos's release workflow.
+`mod.json` with katalogos's release workflow, then attaches
+`arkhipelagos.apworld` (`tools/build_apworld.py`).
+
+An Archipelago host installs `arkhipelagos.apworld` in `custom_worlds`.
+Games that keep the original tables need nothing else. Options that change
+the tables (any `randomize_*` or `replace_evo_methods`, a `starter_pool`,
+`species_sources` other than the default) run the generator program that
+the apworld carries for Windows, Linux and macOS (`docs/apworld.md`).
 
 ## Documents
 
 - `docs/script-tool.md`: the field-script tool and its checks
 - `docs/generator.md`: the generator, its data and its checks
+- `docs/apworld.md`: the Archipelago world, its options and slot_data
 - `docs/facts.md`: the game facts, how they are read and checked
 - `docs/eidos-api-proposal.md`: the eidos mod API it needs (approved)
 - `docs/v6-calls.md`: the API calls the mod uses, and how a check works

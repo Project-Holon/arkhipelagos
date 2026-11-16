@@ -17,3 +17,37 @@ jobs:
         with:
           node-version: 20
       - run: sh tests/ci.sh
+
+  # The apworld's generator helper must give the same data on every system
+  # an Archipelago host may use.
+  ap-packs:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: cargo build --release -p arkh-gen
+      - run: python tools/ap_hashes.py target/release/arkh-gen > ap-hashes-${{ matrix.os }}.txt
+        shell: bash
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ap-hashes-${{ matrix.os }}
+          path: ap-hashes-${{ matrix.os }}.txt
+  ap-packs-same:
+    needs: ap-packs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: ap-hashes-*
+          merge-multiple: true
+      - name: the three systems give the same packs
+        run: |
+          cat ap-hashes-ubuntu-latest.txt
+          diff ap-hashes-ubuntu-latest.txt ap-hashes-windows-latest.txt
+          diff ap-hashes-ubuntu-latest.txt ap-hashes-macos-latest.txt

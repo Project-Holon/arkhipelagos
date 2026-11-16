@@ -48,8 +48,9 @@ def helper() -> str:
     blob = _data(f"bin/{folder}/{name}")
     if blob is None:
         raise RuntimeError(
-            f"arkhipelagos: this apworld has no generator for {folder}; "
-            "use a release that includes it")
+            f"this apworld has no arkhipelagos generator for this computer ({folder}). "
+            f"Only these options need it: {TABLE_OPTIONS}. Turn them off, use a release "
+            "that has a generator for this computer, or set ARKHIPELAGOS_GEN to an arkh-gen you built.")
     import Utils
     digest = hashlib.sha256(blob).hexdigest()[:16]
     path = Utils.cache_path("arkhipelagos", digest, name)
@@ -63,14 +64,57 @@ def helper() -> str:
     return path
 
 
+TABLE_OPTIONS = "any randomize_* or replace_evo_methods modifier, a starter_pool, or species_sources other than the default"
+DEFAULT_SOURCES = ["evolutions", "form_change", "static", "trainers"]
+
+
+def needs_helper(opts: dict[str, Any]) -> bool:
+    """True when the options change the game's tables (or the species the
+    logic counts), so only the generator can make the pack."""
+    if opts.get("starter_pool"):
+        return True
+    if sorted(opts.get("species_sources", DEFAULT_SOURCES)) != DEFAULT_SOURCES:
+        return True
+    return any(v for k, v in opts.items() if k.startswith("randomize_") or k == "replace_evo_methods")
+
+
+def prebuilt_key(version: str, opts: dict[str, Any]) -> str:
+    """The name of the prebuilt pack for options that keep the tables."""
+    logic = "+".join(sorted(opts.get("modify_logic", []))) or "none"
+    return f"{version}-{opts['goal']}-{opts['season_control']}-{logic}"
+
+
+def prebuilt(version: str, opts: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any]] | None:
+    """A prebuilt pack and the configuration that made it, when the apworld
+    has one for these options."""
+    blob = _data(f"data/packs/{prebuilt_key(version, opts)}.json")
+    if blob is None:
+        return None
+    v = json.loads(blob)
+    return v["config"], v["pack"]
+
+
+def _cannot_run(path: str, e: Exception) -> RuntimeError:
+    return RuntimeError(
+        f"could not run the arkhipelagos generator ({path}): {e}. "
+        "On macOS, allow it in System Settings, Privacy and Security, or run "
+        f"xattr -d com.apple.quarantine \"{path}\". On Linux, the cache folder must allow "
+        "running programs. Or set ARKHIPELAGOS_GEN to an arkh-gen you built. "
+        f"Only these options need it: {TABLE_OPTIONS}.")
+
+
 def make_pack(config: dict[str, Any], player_index: int = 0) -> dict[str, Any]:
     """One player's pack from a generator configuration."""
-    r = subprocess.run(
-        [helper(), "ap-pack", "-", str(player_index)],
-        input=json.dumps(config).encode(),
-        capture_output=True,
-        timeout=300,
-    )
+    path = helper()
+    try:
+        r = subprocess.run(
+            [path, "ap-pack", "-", str(player_index)],
+            input=json.dumps(config).encode(),
+            capture_output=True,
+            timeout=300,
+        )
+    except (OSError, subprocess.SubprocessError) as e:
+        raise _cannot_run(path, e) from e
     if r.returncode != 0:
         raise RuntimeError("arkhipelagos generator: " + r.stderr.decode(errors="replace").strip())
     pack = json.loads(r.stdout)

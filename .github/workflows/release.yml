@@ -1,6 +1,8 @@
 # On a tag v*: build the mod, pack the mod folder into mod.bw, write
 # mod.json and publish both as the release (katalogos's workflow,
-# katalogos docs/publishing.md).
+# katalogos docs/publishing.md). Then build arkhipelagos.apworld, the
+# Archipelago world, with the generator helper for Windows, Linux and
+# macOS (checked to give the same packs), and attach it to the release.
 name: release
 on:
   push:
@@ -13,3 +15,71 @@ jobs:
     with:
       mod-dir: mod
       build: sh tools/build_mod.sh
+
+  helper:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            platform: linux-x86_64
+          - os: windows-latest
+            platform: windows-x86_64
+          - os: macos-latest
+            platform: macos
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.platform == 'macos' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: "build (on macOS, one program for Apple silicon and Intel)"
+        shell: bash
+        run: |
+          mkdir -p helper
+          if [ "${{ matrix.platform }}" = macos ]; then
+            cargo build --release -p arkh-gen --target aarch64-apple-darwin
+            cargo build --release -p arkh-gen --target x86_64-apple-darwin
+            lipo -create -output helper/arkh-gen target/aarch64-apple-darwin/release/arkh-gen target/x86_64-apple-darwin/release/arkh-gen
+          elif [ "${{ matrix.platform }}" = windows-x86_64 ]; then
+            cargo build --release -p arkh-gen
+            cp target/release/arkh-gen.exe helper/arkh-gen.exe
+          else
+            cargo build --release -p arkh-gen
+            cp target/release/arkh-gen helper/arkh-gen
+          fi
+          python tools/ap_hashes.py helper/arkh-gen* > helper/ap-hashes.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: helper-${{ matrix.platform }}
+          path: helper/
+  apworld:
+    needs: [release, helper]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: helper-*
+          path: helpers
+      - name: the three helpers give the same packs
+        run: |
+          diff helpers/helper-linux-x86_64/ap-hashes.txt helpers/helper-windows-x86_64/ap-hashes.txt
+          diff helpers/helper-linux-x86_64/ap-hashes.txt helpers/helper-macos/ap-hashes.txt
+      - name: build arkhipelagos.apworld
+        run: |
+          chmod +x helpers/helper-linux-x86_64/arkh-gen helpers/helper-macos/arkh-gen
+          python tools/build_apworld.py --gen helpers/helper-linux-x86_64/arkh-gen \
+            --helper linux-x86_64=helpers/helper-linux-x86_64/arkh-gen \
+            --helper windows-x86_64=helpers/helper-windows-x86_64/arkh-gen.exe \
+            --helper macos=helpers/helper-macos/arkh-gen \
+            --out dist
+      - name: attach it to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "${{ github.ref_name }}" dist/arkhipelagos.apworld --clobber --repo "${{ github.repository }}"

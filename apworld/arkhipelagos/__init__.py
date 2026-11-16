@@ -18,7 +18,7 @@ from worlds.AutoWorld import WebWorld, World
 
 from .logic import Compiler, Effects, TOP_STEP, regions_read
 from .options import ArkhOptions, generator_options
-from .pack import STATIC, make_pack
+from .pack import STATIC, make_pack, needs_helper, prebuilt
 
 GAME_BLACK = "Pokemon Black (arkhipelagos)"
 GAME_WHITE = "Pokemon White (arkhipelagos)"
@@ -28,6 +28,15 @@ ITEM_NAME_TO_ID: dict[str, int] = {i["name"]: i["id"] for i in STATIC.get("items
 ITEM_ID_TO_NAME: dict[int, str] = {v: k for k, v in ITEM_NAME_TO_ID.items()}
 LOCATION_NAME_TO_ID: dict[str, int] = {loc["name"]: loc["id"] for loc in STATIC.get("locations", [])}
 LOCATION_BY_ID: dict[int, dict[str, Any]] = {loc["id"]: loc for loc in STATIC.get("locations", [])}
+ITEM_CLASS: dict[str, str] = {i["name"]: i.get("class", "filler") for i in STATIC.get("items", [])}
+# the classes that depend on options are useful unless an option says otherwise
+STATIC_CLASS = {
+    "progression": ItemClassification.progression,
+    "useful": ItemClassification.useful,
+    "filler": ItemClassification.filler,
+    "tm_hm_class": ItemClassification.useful,
+    "dowsing_machine_logic": ItemClassification.useful,
+}
 ITEM_GROUPS: dict[str, set[str]] = {}
 for _i in STATIC.get("items", []):
     if _i.get("group"):
@@ -60,6 +69,8 @@ class ArkhWorld(World):
     randomizers."""
 
     version_name: ClassVar[str] = ""
+    config: dict[str, Any]
+    pack: dict[str, Any]
     options_dataclass = ArkhOptions
     options: ArkhOptions
     web = ArkhWeb()
@@ -70,20 +81,22 @@ class ArkhWorld(World):
         pool = [int(x) for x in self.options.starter_pool.value]
         if any(not 1 <= x <= 649 for x in pool):
             raise OptionError(f"{self.player_name}: starter_pool holds National Dex numbers, 1 to 649")
-        self.config: dict[str, Any] = {
-            "schema": 1,
-            "seed": self.random.getrandbits(64),
-            "options": {},
-            "players": [{
-                "name": self.player_name,
-                "version": self.version_name,
-                "options": generator_options(self.options),
-            }],
-        }
-        try:
-            self.pack: dict[str, Any] = make_pack(self.config)
-        except RuntimeError as e:
-            raise OptionError(f"{self.player_name}: {e}") from e
+        opts = generator_options(self.options)
+        made = None if needs_helper(opts) else prebuilt(self.version_name, opts)
+        if made is not None:
+            # the original tables: a pack made when the apworld was built
+            self.config, self.pack = made
+        else:
+            self.config = {
+                "schema": 1,
+                "seed": self.random.getrandbits(64),
+                "options": {},
+                "players": [{"name": "player", "version": self.version_name, "options": opts}],
+            }
+            try:
+                self.pack = make_pack(self.config)
+            except RuntimeError as e:
+                raise OptionError(f"{self.player_name}: {e}") from e
         self.origin_region_name = self.pack["menu"]
         p = self.pack["pool"]
         self.prog_ids = set(p["progression"])
@@ -167,7 +180,10 @@ class ArkhWorld(World):
 
     def create_item(self, name: str) -> ArkhItem:
         code = ITEM_NAME_TO_ID[name]
-        if code in self.prog_ids:
+        if not hasattr(self, "prog_ids"):
+            # a world with no pack (an item link group): the item's own class
+            c = STATIC_CLASS[ITEM_CLASS.get(name, "filler")]
+        elif code in self.prog_ids:
             c = ItemClassification.progression
         elif code in self.useful_ids:
             c = ItemClassification.useful
@@ -187,6 +203,8 @@ class ArkhWorld(World):
         self.multiworld.itempool += [self.create_item(ITEM_ID_TO_NAME[i]) for i in ids]
 
     def get_filler_item_name(self) -> str:
+        if not hasattr(self, "pack"):
+            return self.random.choice(sorted(n for n, c in ITEM_CLASS.items() if c == "filler"))
         return ITEM_ID_TO_NAME[self.random.choice(self.pack["pool"]["filler"])]
 
     # ------------------------------------------------------------ species

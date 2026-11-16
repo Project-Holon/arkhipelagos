@@ -51,7 +51,9 @@ def modifiers(name: str, doc: str, keys: list[str]) -> type[OptionSet]:
     """An option that is a list of modifiers; an empty list (the default)
     leaves that part of the game as it is."""
     display = re.sub(r"(?<!^)(?=[A-Z])", " ", name).capitalize().replace("pokemon", "Pokemon")
-    return type(name, (OptionSet,), {"__doc__": doc, "display_name": display, "valid_keys": keys})
+    # a module-level class of this name, so options pickle
+    return type(name, (OptionSet,), {"__doc__": doc, "display_name": display, "valid_keys": keys,
+                                      "__module__": __name__, "__qualname__": name})
 
 
 RandomizeWildPokemon = modifiers(

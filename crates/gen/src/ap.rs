@@ -114,7 +114,7 @@ pub fn static_json(m: &Model) -> Value {
     let items: Vec<Value> = m
         .items
         .iter()
-        .filter_map(|it| it.id.map(|id| json!({"name": it.name, "id": id, "group": it.group})))
+        .filter_map(|it| it.id.map(|id| json!({"name": it.name, "id": id, "group": it.group, "class": it.class})))
         .collect();
     let locations: Vec<Value> = m
         .locs
