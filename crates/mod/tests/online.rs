@@ -6,7 +6,10 @@
 //! The hosts' world calls speak metaxy's frames the way eidos's port does
 //! (`I` join, `V` checks, the push `S` as the event JOINED, `Y` as ITEMS,
 //! `U` as POSITION). Run with ARKH_METAXY=127.0.0.1:20609; without it the
-//! test only says it was skipped.
+//! test only says it was skipped. metaxy allows 10 new connections per
+//! address per minute (refused with a reset) and 6 worlds per hour; the
+//! test paces its connections, so a run takes about a minute.
+//! ARKH_NET_TRACE=1 prints the frames.
 
 use std::collections::{BTreeMap, BTreeSet};
 use std::io::{Read, Write};
@@ -18,17 +21,48 @@ use arkh_mod::Host;
 
 const V2: &str = "eidos-net/2";
 
+/// metaxy takes at most 10 new connections per address per minute and
+/// refuses more with a reset (SPEC section 6); the test keeps under it.
+/// The times are kept in a file in the temp folder, so runs one after the
+/// other share them.
+fn pace() {
+    let f = std::env::temp_dir().join("arkh-metaxy-connections.txt");
+    let now = || std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap().as_secs_f64();
+    let mut times: Vec<f64> = std::fs::read_to_string(&f)
+        .unwrap_or_default()
+        .lines()
+        .filter_map(|l| l.parse().ok())
+        .filter(|t| now() - t < 61.0)
+        .collect();
+    if times.len() >= 9 {
+        let wait = 61.0 - (now() - times[0]);
+        if wait > 0.0 {
+            std::thread::sleep(Duration::from_secs_f64(wait));
+        }
+        times.remove(0);
+    }
+    times.push(now());
+    let text: Vec<String> = times.iter().map(|t| t.to_string()).collect();
+    std::fs::write(&f, text.join("\n")).ok();
+}
+
+fn trace() -> bool {
+    std::env::var("ARKH_NET_TRACE").is_ok()
+}
+
 struct Link {
     s: TcpStream,
     buf: Vec<u8>,
     pieces: BTreeMap<String, Vec<u8>>,
+    closed: bool,
 }
 
 impl Link {
     fn open(addr: &str) -> Link {
+        pace();
         let s = TcpStream::connect(addr).expect("metaxy");
         s.set_read_timeout(Some(Duration::from_millis(100))).unwrap();
-        Link { s, buf: Vec::new(), pieces: BTreeMap::new() }
+        Link { s, buf: Vec::new(), pieces: BTreeMap::new(), closed: false }
     }
     /// false when metaxy closed the connection
     fn send(&mut self, t: char, body: &[u8]) -> bool {
@@ -66,8 +100,14 @@ impl Link {
                                 Some(_) => [format!("{first}\n").into_bytes(), whole].concat(),
                                 None => whole,
                             };
+                            if trace() {
+                                eprintln!("<- {t} (pieces) {}", String::from_utf8_lossy(&body[..40.min(body.len())]));
+                            }
                             return Some((t, body));
                         }
+                    }
+                    if trace() {
+                        eprintln!("<- {t} {}", String::from_utf8_lossy(&body[..body.len().min(60)]));
                     }
                     return Some((t, body));
                 }
@@ -77,9 +117,19 @@ impl Link {
             }
             let mut b = [0u8; 65536];
             match self.s.read(&mut b) {
-                Ok(0) => return None,
+                Ok(0) => {
+                    self.closed = true;
+                    return None;
+                }
                 Ok(n) => self.buf.extend_from_slice(&b[..n]),
-                Err(_) => {}
+                Err(e) if matches!(e.kind(), std::io::ErrorKind::TimedOut | std::io::ErrorKind::WouldBlock) => {}
+                Err(e) => {
+                    if trace() {
+                        eprintln!("<- (link lost: {e})");
+                    }
+                    self.closed = true;
+                    return None;
+                }
             }
         }
     }
@@ -156,6 +206,9 @@ impl Host for Net {
         self.code
     }
     fn world_join(&mut self, code: &str, who: &str) -> bool {
+        if trace() {
+            eprintln!("-> I {code} {who}");
+        }
         let mut l = Link::open(&self.addr);
         l.send('I', format!("{V2} {} {code} {who}", token()).as_bytes());
         self.link = Some(l);
@@ -204,10 +257,19 @@ fn pump(m: &mut Mod, h: &mut Net, wait: Duration) {
 /// `confirm` false: the port's V after the push is not sent (a game that
 /// closes before it confirms its claim).
 fn pump_as(m: &mut Mod, h: &mut Net, wait: Duration, confirm: bool) {
-    let end = Instant::now() + wait;
+    // `wait` with no frame ends it (a paced join inside may take longer)
+    let mut end = Instant::now() + wait;
     while Instant::now() < end {
         let Some(l) = h.link.as_mut() else { return };
-        let Some((t, body)) = l.next(Duration::from_millis(150)) else { continue };
+        let Some((t, body)) = l.next(Duration::from_millis(150)) else {
+            if l.closed {
+                // as the port: the link ended (CLOSED); checks wait for the next join
+                h.link = None;
+                m.on_world(h, online::CLOSED, b"");
+                return;
+            }
+            continue;
+        };
         match t {
             'S' => {
                 m.on_world(h, online::JOINED, &body);
@@ -229,6 +291,7 @@ fn pump_as(m: &mut Mod, h: &mut Net, wait: Duration, confirm: bool) {
             }
             _ => {}
         }
+        end = Instant::now() + wait;
     }
 }
 
@@ -393,7 +456,7 @@ fn two_players_online() {
     mc2.new_game(&mut hc2, 1);
     pump(&mut mc2, &mut hc2, wait);
     assert!(hc2.log.iter().any(|l| l.contains("bad-key")), "bad-key seen: {:?}", hc2.log);
-    let fresh = mc2.game.as_ref().expect("C joined again").state.online.as_ref().unwrap().key.clone();
+    let fresh = mc2.game.as_ref().unwrap_or_else(|| panic!("C joined again: {:?}", hc2.log)).state.online.as_ref().unwrap().key.clone();
     assert_ne!(fresh, dead);
     assert!(hc2.files.values().any(|v| v == fresh.as_bytes()), "the new key is in the key file");
     hc2.world_leave();
