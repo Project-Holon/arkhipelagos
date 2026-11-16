@@ -23,6 +23,8 @@ pub struct Loc {
     pub region: u32,
     pub rule: Rule,
     pub include: Rule,
+    /// the game gives this location's item somewhere the mod can change
+    pub site: bool,
 }
 
 pub struct Ev {
@@ -177,6 +179,7 @@ impl Model {
                 region: m.region(&l.region, &l.name)?,
                 rule: c(&m, &l.rule, &l.name)?,
                 include: c(&m, &l.include, &l.name)?,
+                site: !d.no_site.contains(&l.id),
             });
         }
         let mut events = Vec::new();

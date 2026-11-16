@@ -173,11 +173,14 @@ new option or stage does not reshuffle the others.
   6 players with mixed versions, both goals, both season modes, logic
   options, and in half of them random randomizers with random modifiers:
   200 of 200 made and finishable.
-- Nothing is left out: with the default options every location of every
-  test world is in the world (1,234 in the two-player test).
+- Nothing is left out by the logic: with the default options every
+  location of every test world that has a site in the game's scripts is in
+  the world (1,198 in the two-player test). The 20 locations with no site
+  (`data/world/item_sites.json`, `none`; 18 of them in a version) keep the
+  game's items and are listed as left out.
 - The logic holds items back: in the two-player test world, 50 of 1,234
-  locations are reachable with nothing; the world opens over 13 spheres
-  (`arkh-gen spheres`).
+  locations were reachable with nothing before the 20 were left out; the
+  world opens over 13 spheres.
 - Speed (release build, x86-64): 1 player 0.2 s, 2 players 0.15 s,
   8 players 0.9 s, 16 players 3.9 s; 2 players with every randomizer on
   0.3 s. The wasm module is 3.1 MB with the logic and facts in it. With

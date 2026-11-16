@@ -550,7 +550,8 @@ pub fn generate(m: &Model, cfg: &Config) -> Result<World, String> {
     let mut in_world: Vec<Vec<bool>> = vec![vec![false; m.locs.len()]; np];
     for p in 0..np {
         for l in 0..m.locs.len() {
-            in_world[p][l] = loc_ok(m, &ws[p], &full, p, l);
+            // a location the mod cannot change keeps the game's item
+            in_world[p][l] = m.locs[l].site && loc_ok(m, &ws[p], &full, p, l);
         }
         if full.counts[p][ws[p].goal as usize] == 0 {
             return Err(format!("{}: the goal cannot be reached even with every item", ws[p].name));

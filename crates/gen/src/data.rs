@@ -35,12 +35,15 @@ pub const LOCATIONS: &str = include_str!("../../../data/world/locations.json");
 pub const RULES: &str = include_str!("../../../data/world/rules.json");
 pub const SPECIES_LOGIC: &str = include_str!("../../../data/world/species.json");
 pub const SPECIES_RULES: &str = include_str!("../../../data/world/species_rules.json");
+/// Where the game gives each location's item (tools/locsites.py); the
+/// generator reads the locations that have no site.
+pub const ITEM_SITES: &str = include_str!("../../../data/world/item_sites.json");
 
 /// The hash of the compiled-in data (logic and game facts). Carriage
 /// returns are skipped, so a checkout with CRLF line ends (Windows) hashes
 /// the same as one with LF.
 pub fn data_hash() -> u64 {
-    let mut all = vec![ITEMS, REGIONS, CONNECTIONS, EVENTS, LOCATIONS, RULES, SPECIES_LOGIC, SPECIES_RULES];
+    let mut all = vec![ITEMS, REGIONS, CONNECTIONS, EVENTS, LOCATIONS, RULES, SPECIES_LOGIC, SPECIES_RULES, ITEM_SITES];
     all.extend(crate::facts::ALL);
     let parts: Vec<Vec<u8>> = all
         .iter()
@@ -199,6 +202,8 @@ pub struct Data {
     pub include: std::collections::BTreeMap<String, Value>,
     pub species: SpeciesLogic,
     pub species_rules: SpeciesRules,
+    /// locations with no site in the game's scripts (item_sites.json "none")
+    pub no_site: std::collections::BTreeSet<u32>,
 }
 
 impl Data {
@@ -213,7 +218,15 @@ impl Data {
         let species: SpeciesLogic = serde_json::from_str(SPECIES_LOGIC).map_err(|e| p("species.json", e))?;
         let species_rules: SpeciesRules =
             serde_json::from_str(SPECIES_RULES).map_err(|e| p("species_rules.json", e))?;
+        let sites: Value = serde_json::from_str(ITEM_SITES).map_err(|e| p("item_sites.json", e))?;
+        let no_site = sites["none"]
+            .as_object()
+            .ok_or("item_sites.json: no none list")?
+            .keys()
+            .map(|k| k.parse::<u32>().map_err(|e| format!("item_sites.json: {k}: {e}")))
+            .collect::<Result<_, _>>()?;
         Ok(Data {
+            no_site,
             species,
             species_rules,
             items: items.items,
