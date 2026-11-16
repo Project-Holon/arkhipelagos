@@ -1,0 +1,9387 @@
+{
+ "_source": "found in the cartridges' scripts and zone event files by tools/locsites.py; the same in all 12. cmd: a command's ordinal in the member's listing",
+ "sites": {
+  "85216": {
+   "how": "ball",
+   "script": 7273,
+   "event_file": 317,
+   "object": 8,
+   "item": 39,
+   "count": 1,
+   "flag": 1230,
+   "n": 0,
+   "key": 0
+  },
+  "83824": {
+   "how": "ball",
+   "script": 7274,
+   "event_file": 317,
+   "object": 9,
+   "item": 88,
+   "count": 1,
+   "flag": 1143,
+   "n": 0,
+   "key": 0
+  },
+  "85056": {
+   "how": "ball",
+   "script": 7280,
+   "event_file": 423,
+   "object": 5,
+   "item": 333,
+   "count": 1,
+   "flag": 1220,
+   "n": 0,
+   "key": 0
+  },
+  "85072": {
+   "how": "ball",
+   "script": 7281,
+   "event_file": 423,
+   "object": 6,
+   "item": 226,
+   "count": 1,
+   "flag": 1221,
+   "n": 0,
+   "key": 0
+  },
+  "85136": {
+   "how": "ball",
+   "script": 7277,
+   "event_file": 387,
+   "object": 10,
+   "item": 41,
+   "count": 1,
+   "flag": 1225,
+   "n": 0,
+   "key": 0
+  },
+  "85152": {
+   "how": "ball",
+   "script": 7278,
+   "event_file": 387,
+   "object": 11,
+   "item": 424,
+   "count": 1,
+   "flag": 1226,
+   "n": 0,
+   "key": 0
+  },
+  "85120": {
+   "how": "ball",
+   "script": 7276,
+   "event_file": 387,
+   "object": 8,
+   "item": 235,
+   "count": 1,
+   "flag": 1224,
+   "n": 0,
+   "key": 0
+  },
+  "87392": {
+   "how": "ball",
+   "script": 7279,
+   "event_file": 387,
+   "object": 12,
+   "item": 93,
+   "count": 1,
+   "flag": 1366,
+   "n": 0,
+   "key": 0
+  },
+  "85104": {
+   "how": "ball",
+   "script": 7275,
+   "event_file": 387,
+   "object": 7,
+   "item": 346,
+   "count": 1,
+   "flag": 1223,
+   "n": 0,
+   "key": 0
+  },
+  "87808": {
+   "how": "ball",
+   "script": 7228,
+   "event_file": 239,
+   "object": 1,
+   "item": 324,
+   "count": 1,
+   "flag": 1392,
+   "n": 0,
+   "key": 0
+  },
+  "85088": {
+   "how": "ball",
+   "script": 7227,
+   "event_file": 238,
+   "object": 1,
+   "item": 351,
+   "count": 1,
+   "flag": 1222,
+   "n": 0,
+   "key": 0
+  },
+  "83248": {
+   "how": "ball",
+   "script": 7268,
+   "event_file": 319,
+   "object": 9,
+   "item": 17,
+   "count": 1,
+   "flag": 1107,
+   "n": 0,
+   "key": 0
+  },
+  "83361": {
+   "how": "ball",
+   "script": 7272,
+   "event_file": 319,
+   "object": 13,
+   "item": 17,
+   "count": 1,
+   "flag": 1114,
+   "n": 1,
+   "key": 0
+  },
+  "83234": {
+   "how": "ball",
+   "script": 7267,
+   "event_file": 319,
+   "object": 7,
+   "item": 4,
+   "count": 1,
+   "flag": 1106,
+   "n": 2,
+   "key": 0
+  },
+  "83264": {
+   "how": "ball",
+   "script": 7269,
+   "event_file": 319,
+   "object": 8,
+   "item": 50,
+   "count": 1,
+   "flag": 1108,
+   "n": 0,
+   "key": 0
+  },
+  "83281": {
+   "how": "ball",
+   "script": 7270,
+   "event_file": 319,
+   "object": 6,
+   "item": 26,
+   "count": 1,
+   "flag": 1109,
+   "n": 1,
+   "key": 0
+  },
+  "83298": {
+   "how": "ball",
+   "script": 7271,
+   "event_file": 319,
+   "object": 12,
+   "item": 3,
+   "count": 1,
+   "flag": 1110,
+   "n": 2,
+   "key": 0
+  },
+  "87328": {
+   "how": "ball",
+   "script": 7171,
+   "event_file": 6,
+   "object": 13,
+   "item": 59,
+   "count": 1,
+   "flag": 1362,
+   "n": 0,
+   "key": 0
+  },
+  "85632": {
+   "how": "ball",
+   "script": 7170,
+   "event_file": 6,
+   "object": 14,
+   "item": 3,
+   "count": 1,
+   "flag": 1256,
+   "n": 0,
+   "key": 0
+  },
+  "87888": {
+   "how": "ball",
+   "script": 7032,
+   "event_file": 152,
+   "object": 22,
+   "item": 58,
+   "count": 1,
+   "flag": 1397,
+   "n": 0,
+   "key": 0
+  },
+  "83888": {
+   "how": "ball",
+   "script": 7030,
+   "event_file": 152,
+   "object": 15,
+   "item": 4,
+   "count": 1,
+   "flag": 1147,
+   "n": 0,
+   "key": 0
+  },
+  "83312": {
+   "how": "ball",
+   "script": 7026,
+   "event_file": 152,
+   "object": 6,
+   "item": 22,
+   "count": 1,
+   "flag": 1111,
+   "n": 0,
+   "key": 0
+  },
+  "83344": {
+   "how": "ball",
+   "script": 7028,
+   "event_file": 152,
+   "object": 4,
+   "item": 79,
+   "count": 1,
+   "flag": 1113,
+   "n": 0,
+   "key": 0
+  },
+  "83328": {
+   "how": "ball",
+   "script": 7027,
+   "event_file": 152,
+   "object": 5,
+   "item": 17,
+   "count": 1,
+   "flag": 1112,
+   "n": 0,
+   "key": 0
+  },
+  "83872": {
+   "how": "ball",
+   "script": 7029,
+   "event_file": 152,
+   "object": 14,
+   "item": 28,
+   "count": 1,
+   "flag": 1146,
+   "n": 0,
+   "key": 0
+  },
+  "83904": {
+   "how": "ball",
+   "script": 7031,
+   "event_file": 152,
+   "object": 16,
+   "item": 25,
+   "count": 1,
+   "flag": 1148,
+   "n": 0,
+   "key": 0
+  },
+  "88032": {
+   "how": "ball",
+   "script": 7033,
+   "event_file": 153,
+   "object": 8,
+   "item": 412,
+   "count": 1,
+   "flag": 1406,
+   "n": 0,
+   "key": 0
+  },
+  "88048": {
+   "how": "ball",
+   "script": 7034,
+   "event_file": 153,
+   "object": 9,
+   "item": 248,
+   "count": 1,
+   "flag": 1407,
+   "n": 0,
+   "key": 0
+  },
+  "83424": {
+   "how": "ball",
+   "script": 7259,
+   "event_file": 321,
+   "object": 17,
+   "item": 79,
+   "count": 1,
+   "flag": 1118,
+   "n": 0,
+   "key": 0
+  },
+  "83856": {
+   "how": "ball",
+   "script": 7266,
+   "event_file": 321,
+   "object": 29,
+   "item": 26,
+   "count": 1,
+   "flag": 1145,
+   "n": 0,
+   "key": 0
+  },
+  "83840": {
+   "how": "ball",
+   "script": 7265,
+   "event_file": 321,
+   "object": 30,
+   "item": 18,
+   "count": 1,
+   "flag": 1144,
+   "n": 0,
+   "key": 0
+  },
+  "83456": {
+   "how": "ball",
+   "script": 7261,
+   "event_file": 321,
+   "object": 19,
+   "item": 3,
+   "count": 1,
+   "flag": 1120,
+   "n": 0,
+   "key": 0
+  },
+  "87904": {
+   "how": "ball",
+   "script": 7264,
+   "event_file": 321,
+   "object": 31,
+   "item": 21,
+   "count": 1,
+   "flag": 1398,
+   "n": 0,
+   "key": 0
+  },
+  "83440": {
+   "how": "ball",
+   "script": 7260,
+   "event_file": 321,
+   "object": 18,
+   "item": 27,
+   "count": 1,
+   "flag": 1119,
+   "n": 0,
+   "key": 0
+  },
+  "83921": {
+   "how": "ball",
+   "script": 7262,
+   "event_file": 321,
+   "object": 25,
+   "item": 39,
+   "count": 1,
+   "flag": 1149,
+   "n": 1,
+   "key": 0
+  },
+  "83938": {
+   "how": "ball",
+   "script": 7263,
+   "event_file": 321,
+   "object": 26,
+   "item": 45,
+   "count": 1,
+   "flag": 1150,
+   "n": 2,
+   "key": 0
+  },
+  "85344": {
+   "how": "ball",
+   "script": 7145,
+   "event_file": 324,
+   "object": 7,
+   "item": 373,
+   "count": 1,
+   "flag": 1238,
+   "n": 0,
+   "key": 0
+  },
+  "85376": {
+   "how": "ball",
+   "script": 7141,
+   "event_file": 324,
+   "object": 6,
+   "item": 40,
+   "count": 1,
+   "flag": 1240,
+   "n": 0,
+   "key": 0
+  },
+  "85360": {
+   "how": "ball",
+   "script": 7146,
+   "event_file": 324,
+   "object": 1,
+   "item": 78,
+   "count": 1,
+   "flag": 1239,
+   "n": 0,
+   "key": 0
+  },
+  "85392": {
+   "how": "ball",
+   "script": 7147,
+   "event_file": 325,
+   "object": 0,
+   "item": 379,
+   "count": 1,
+   "flag": 1241,
+   "n": 0,
+   "key": 0
+  },
+  "85456": {
+   "how": "ball",
+   "script": 7144,
+   "event_file": 325,
+   "object": 2,
+   "item": 374,
+   "count": 1,
+   "flag": 1245,
+   "n": 0,
+   "key": 0
+  },
+  "85424": {
+   "how": "ball",
+   "script": 7142,
+   "event_file": 325,
+   "object": 1,
+   "item": 243,
+   "count": 1,
+   "flag": 1243,
+   "n": 0,
+   "key": 0
+  },
+  "85440": {
+   "how": "ball",
+   "script": 7143,
+   "event_file": 325,
+   "object": 4,
+   "item": 7,
+   "count": 1,
+   "flag": 1244,
+   "n": 0,
+   "key": 0
+  },
+  "83984": {
+   "how": "ball",
+   "script": 7037,
+   "event_file": 154,
+   "object": 6,
+   "item": 26,
+   "count": 1,
+   "flag": 1153,
+   "n": 0,
+   "key": 0
+  },
+  "84000": {
+   "how": "ball",
+   "script": 7038,
+   "event_file": 154,
+   "object": 13,
+   "item": 38,
+   "count": 1,
+   "flag": 1154,
+   "n": 0,
+   "key": 0
+  },
+  "86784": {
+   "how": "ball",
+   "script": 7039,
+   "event_file": 154,
+   "object": 7,
+   "item": 3,
+   "count": 1,
+   "flag": 1328,
+   "n": 0,
+   "key": 0
+  },
+  "83968": {
+   "how": "ball",
+   "script": 7036,
+   "event_file": 154,
+   "object": 5,
+   "item": 18,
+   "count": 1,
+   "flag": 1152,
+   "n": 0,
+   "key": 0
+  },
+  "83952": {
+   "how": "ball",
+   "script": 7035,
+   "event_file": 154,
+   "object": 4,
+   "item": 6,
+   "count": 1,
+   "flag": 1151,
+   "n": 0,
+   "key": 0
+  },
+  "83617": {
+   "how": "ball",
+   "script": 7042,
+   "event_file": 155,
+   "object": 30,
+   "item": 296,
+   "count": 1,
+   "flag": 1130,
+   "n": 1,
+   "key": 0
+  },
+  "87922": {
+   "how": "ball",
+   "script": 7047,
+   "event_file": 155,
+   "object": 46,
+   "item": 26,
+   "count": 1,
+   "flag": 1399,
+   "n": 2,
+   "key": 0
+  },
+  "84960": {
+   "how": "ball",
+   "script": 7048,
+   "event_file": 155,
+   "object": 47,
+   "item": 18,
+   "count": 1,
+   "flag": 1214,
+   "n": 0,
+   "key": 0
+  },
+  "83600": {
+   "how": "ball",
+   "script": 7041,
+   "event_file": 155,
+   "object": 28,
+   "item": 22,
+   "count": 1,
+   "flag": 1129,
+   "n": 0,
+   "key": 0
+  },
+  "83633": {
+   "how": "ball",
+   "script": 7043,
+   "event_file": 155,
+   "object": 29,
+   "item": 413,
+   "count": 1,
+   "flag": 1131,
+   "n": 1,
+   "key": 0
+  },
+  "83586": {
+   "how": "ball",
+   "script": 7040,
+   "event_file": 155,
+   "object": 36,
+   "item": 222,
+   "count": 1,
+   "flag": 1128,
+   "n": 2,
+   "key": 0
+  },
+  "85488": {
+   "how": "ball",
+   "script": 7046,
+   "event_file": 155,
+   "object": 39,
+   "item": 239,
+   "count": 1,
+   "flag": 1247,
+   "n": 0,
+   "key": 0
+  },
+  "85472": {
+   "how": "ball",
+   "script": 7045,
+   "event_file": 155,
+   "object": 38,
+   "item": 25,
+   "count": 1,
+   "flag": 1246,
+   "n": 0,
+   "key": 0
+  },
+  "83648": {
+   "how": "ball",
+   "script": 7044,
+   "event_file": 155,
+   "object": 31,
+   "item": 349,
+   "count": 1,
+   "flag": 1132,
+   "n": 0,
+   "key": 0
+  },
+  "84912": {
+   "how": "ball",
+   "script": 7108,
+   "event_file": 45,
+   "object": 7,
+   "item": 28,
+   "count": 1,
+   "flag": 1211,
+   "n": 0,
+   "key": 0
+  },
+  "87664": {
+   "how": "ball",
+   "script": 7107,
+   "event_file": 46,
+   "object": 5,
+   "item": 25,
+   "count": 1,
+   "flag": 1383,
+   "n": 0,
+   "key": 0
+  },
+  "84016": {
+   "how": "ball",
+   "script": 7252,
+   "event_file": 326,
+   "object": 12,
+   "item": 60,
+   "count": 1,
+   "flag": 1155,
+   "n": 0,
+   "key": 0
+  },
+  "84064": {
+   "how": "ball",
+   "script": 7253,
+   "event_file": 326,
+   "object": 13,
+   "item": 3,
+   "count": 1,
+   "flag": 1158,
+   "n": 0,
+   "key": 0
+  },
+  "85504": {
+   "how": "ball",
+   "script": 7256,
+   "event_file": 326,
+   "object": 19,
+   "item": 25,
+   "count": 1,
+   "flag": 1248,
+   "n": 0,
+   "key": 0
+  },
+  "85536": {
+   "how": "ball",
+   "script": 7257,
+   "event_file": 326,
+   "object": 18,
+   "item": 368,
+   "count": 1,
+   "flag": 1250,
+   "n": 0,
+   "key": 0
+  },
+  "84096": {
+   "how": "ball",
+   "script": 7255,
+   "event_file": 326,
+   "object": 14,
+   "item": 19,
+   "count": 1,
+   "flag": 1160,
+   "n": 0,
+   "key": 0
+  },
+  "84080": {
+   "how": "ball",
+   "script": 7254,
+   "event_file": 326,
+   "object": 17,
+   "item": 38,
+   "count": 1,
+   "flag": 1159,
+   "n": 0,
+   "key": 0
+  },
+  "83488": {
+   "how": "ball",
+   "script": 7258,
+   "event_file": 326,
+   "object": 4,
+   "item": 26,
+   "count": 1,
+   "flag": 1122,
+   "n": 0,
+   "key": 0
+  },
+  "85553": {
+   "how": "ball",
+   "script": 7023,
+   "event_file": 158,
+   "object": 20,
+   "item": 240,
+   "count": 1,
+   "flag": 1251,
+   "n": 1,
+   "key": 0
+  },
+  "84114": {
+   "how": "ball",
+   "script": 7020,
+   "event_file": 158,
+   "object": 21,
+   "item": 30,
+   "count": 1,
+   "flag": 1161,
+   "n": 2,
+   "key": 0
+  },
+  "84147": {
+   "how": "ball",
+   "script": 7022,
+   "event_file": 158,
+   "object": 24,
+   "item": 90,
+   "count": 1,
+   "flag": 1163,
+   "n": 3,
+   "key": 0
+  },
+  "84128": {
+   "how": "ball",
+   "script": 7021,
+   "event_file": 158,
+   "object": 22,
+   "item": 82,
+   "count": 1,
+   "flag": 1162,
+   "n": 0,
+   "key": 0
+  },
+  "85568": {
+   "how": "ball",
+   "script": 7024,
+   "event_file": 158,
+   "object": 23,
+   "item": 366,
+   "count": 1,
+   "flag": 1252,
+   "n": 0,
+   "key": 0
+  },
+  "83664": {
+   "how": "ball",
+   "script": 7018,
+   "event_file": 158,
+   "object": 11,
+   "item": 93,
+   "count": 1,
+   "flag": 1133,
+   "n": 0,
+   "key": 0
+  },
+  "83680": {
+   "how": "ball",
+   "script": 7019,
+   "event_file": 158,
+   "object": 12,
+   "item": 26,
+   "count": 1,
+   "flag": 1134,
+   "n": 0,
+   "key": 0
+  },
+  "84304": {
+   "how": "ball",
+   "script": 7180,
+   "event_file": 190,
+   "object": 0,
+   "item": 353,
+   "count": 1,
+   "flag": 1173,
+   "n": 0,
+   "key": 0
+  },
+  "83472": {
+   "how": "ball",
+   "script": 7174,
+   "event_file": 161,
+   "object": 2,
+   "item": 28,
+   "count": 1,
+   "flag": 1121,
+   "n": 0,
+   "key": 0
+  },
+  "84033": {
+   "how": "ball",
+   "script": 7175,
+   "event_file": 162,
+   "object": 3,
+   "item": 24,
+   "count": 1,
+   "flag": 1156,
+   "n": 1,
+   "key": 0
+  },
+  "84162": {
+   "how": "ball",
+   "script": 7176,
+   "event_file": 162,
+   "object": 0,
+   "item": 357,
+   "count": 1,
+   "flag": 1164,
+   "n": 2,
+   "key": 0
+  },
+  "84609": {
+   "how": "ball",
+   "script": 7179,
+   "event_file": 163,
+   "object": 1,
+   "item": 29,
+   "count": 1,
+   "flag": 1192,
+   "n": 1,
+   "key": 0
+  },
+  "84178": {
+   "how": "ball",
+   "script": 7177,
+   "event_file": 163,
+   "object": 0,
+   "item": 51,
+   "count": 1,
+   "flag": 1165,
+   "n": 2,
+   "key": 0
+  },
+  "84192": {
+   "how": "ball",
+   "script": 7178,
+   "event_file": 164,
+   "object": 0,
+   "item": 80,
+   "count": 1,
+   "flag": 1166,
+   "n": 0,
+   "key": 0
+  },
+  "84048": {
+   "how": "ball",
+   "script": 7025,
+   "event_file": 64,
+   "object": 8,
+   "item": 57,
+   "count": 1,
+   "flag": 1157,
+   "n": 0,
+   "key": 0
+  },
+  "83408": {
+   "how": "ball",
+   "script": 7250,
+   "event_file": 329,
+   "object": 2,
+   "item": 25,
+   "count": 1,
+   "flag": 1117,
+   "n": 0,
+   "key": 0
+  },
+  "83392": {
+   "how": "ball",
+   "script": 7249,
+   "event_file": 329,
+   "object": 4,
+   "item": 52,
+   "count": 1,
+   "flag": 1116,
+   "n": 0,
+   "key": 0
+  },
+  "85520": {
+   "how": "ball",
+   "script": 7251,
+   "event_file": 329,
+   "object": 16,
+   "item": 3,
+   "count": 1,
+   "flag": 1249,
+   "n": 0,
+   "key": 0
+  },
+  "83376": {
+   "how": "ball",
+   "script": 7248,
+   "event_file": 329,
+   "object": 3,
+   "item": 28,
+   "count": 1,
+   "flag": 1115,
+   "n": 0,
+   "key": 0
+  },
+  "85232": {
+   "how": "ball",
+   "script": 7081,
+   "event_file": 105,
+   "object": 7,
+   "item": 89,
+   "count": 1,
+   "flag": 1231,
+   "n": 0,
+   "key": 0
+  },
+  "85248": {
+   "how": "ball",
+   "script": 7082,
+   "event_file": 96,
+   "object": 26,
+   "item": 2,
+   "count": 1,
+   "flag": 1232,
+   "n": 0,
+   "key": 0
+  },
+  "85264": {
+   "how": "ball",
+   "script": 7083,
+   "event_file": 96,
+   "object": 27,
+   "item": 84,
+   "count": 1,
+   "flag": 1233,
+   "n": 0,
+   "key": 0
+  },
+  "84640": {
+   "how": "ball",
+   "script": 7002,
+   "event_file": 191,
+   "object": 6,
+   "item": 46,
+   "count": 1,
+   "flag": 1194,
+   "n": 0,
+   "key": 0
+  },
+  "84224": {
+   "how": "ball",
+   "script": 7000,
+   "event_file": 191,
+   "object": 4,
+   "item": 93,
+   "count": 1,
+   "flag": 1168,
+   "n": 0,
+   "key": 0
+  },
+  "84624": {
+   "how": "ball",
+   "script": 7001,
+   "event_file": 191,
+   "object": 5,
+   "item": 38,
+   "count": 1,
+   "flag": 1193,
+   "n": 0,
+   "key": 0
+  },
+  "85584": {
+   "how": "ball",
+   "script": 7006,
+   "event_file": 192,
+   "object": 11,
+   "item": 6,
+   "count": 1,
+   "flag": 1253,
+   "n": 0,
+   "key": 0
+  },
+  "84208": {
+   "how": "ball",
+   "script": 7005,
+   "event_file": 192,
+   "object": 10,
+   "item": 382,
+   "count": 1,
+   "flag": 1167,
+   "n": 0,
+   "key": 0
+  },
+  "83696": {
+   "how": "ball",
+   "script": 7003,
+   "event_file": 192,
+   "object": 5,
+   "item": 20,
+   "count": 1,
+   "flag": 1135,
+   "n": 0,
+   "key": 0
+  },
+  "83712": {
+   "how": "ball",
+   "script": 7004,
+   "event_file": 192,
+   "object": 4,
+   "item": 25,
+   "count": 1,
+   "flag": 1136,
+   "n": 0,
+   "key": 0
+  },
+  "87936": {
+   "how": "ball",
+   "script": 7007,
+   "event_file": 193,
+   "object": 15,
+   "item": 246,
+   "count": 1,
+   "flag": 1400,
+   "n": 0,
+   "key": 0
+  },
+  "84272": {
+   "how": "ball",
+   "script": 7245,
+   "event_file": 331,
+   "object": 12,
+   "item": 25,
+   "count": 1,
+   "flag": 1171,
+   "n": 0,
+   "key": 0
+  },
+  "85280": {
+   "how": "ball",
+   "script": 7246,
+   "event_file": 331,
+   "object": 13,
+   "item": 411,
+   "count": 1,
+   "flag": 1234,
+   "n": 0,
+   "key": 0
+  },
+  "84256": {
+   "how": "ball",
+   "script": 7244,
+   "event_file": 331,
+   "object": 11,
+   "item": 251,
+   "count": 1,
+   "flag": 1170,
+   "n": 0,
+   "key": 0
+  },
+  "85296": {
+   "how": "ball",
+   "script": 7247,
+   "event_file": 331,
+   "object": 14,
+   "item": 40,
+   "count": 1,
+   "flag": 1235,
+   "n": 0,
+   "key": 0
+  },
+  "84240": {
+   "how": "ball",
+   "script": 7243,
+   "event_file": 331,
+   "object": 10,
+   "item": 85,
+   "count": 1,
+   "flag": 1169,
+   "n": 0,
+   "key": 0
+  },
+  "85616": {
+   "how": "ball",
+   "script": 7097,
+   "event_file": 333,
+   "object": 6,
+   "item": 25,
+   "count": 1,
+   "flag": 1255,
+   "n": 0,
+   "key": 0
+  },
+  "85600": {
+   "how": "ball",
+   "script": 7096,
+   "event_file": 333,
+   "object": 5,
+   "item": 77,
+   "count": 1,
+   "flag": 1254,
+   "n": 0,
+   "key": 0
+  },
+  "85648": {
+   "how": "ball",
+   "script": 7098,
+   "event_file": 334,
+   "object": 3,
+   "item": 407,
+   "count": 1,
+   "flag": 1257,
+   "n": 0,
+   "key": 0
+  },
+  "85664": {
+   "how": "ball",
+   "script": 7099,
+   "event_file": 334,
+   "object": 5,
+   "item": 47,
+   "count": 1,
+   "flag": 1258,
+   "n": 0,
+   "key": 0
+  },
+  "85680": {
+   "how": "ball",
+   "script": 7100,
+   "event_file": 334,
+   "object": 4,
+   "item": 238,
+   "count": 1,
+   "flag": 1259,
+   "n": 0,
+   "key": 0
+  },
+  "85712": {
+   "how": "ball",
+   "script": 7102,
+   "event_file": 335,
+   "object": 3,
+   "item": 28,
+   "count": 1,
+   "flag": 1261,
+   "n": 0,
+   "key": 0
+  },
+  "85696": {
+   "how": "ball",
+   "script": 7101,
+   "event_file": 335,
+   "object": 4,
+   "item": 108,
+   "count": 1,
+   "flag": 1260,
+   "n": 0,
+   "key": 0
+  },
+  "85728": {
+   "how": "ball",
+   "script": 7103,
+   "event_file": 335,
+   "object": 5,
+   "item": 50,
+   "count": 1,
+   "flag": 1262,
+   "n": 0,
+   "key": 0
+  },
+  "87953": {
+   "how": "ball",
+   "script": 7127,
+   "event_file": 195,
+   "object": 15,
+   "item": 22,
+   "count": 1,
+   "flag": 1401,
+   "n": 1,
+   "key": 0
+  },
+  "83746": {
+   "how": "ball",
+   "script": 7121,
+   "event_file": 195,
+   "object": 7,
+   "item": 28,
+   "count": 1,
+   "flag": 1138,
+   "n": 2,
+   "key": 0
+  },
+  "83731": {
+   "how": "ball",
+   "script": 7120,
+   "event_file": 195,
+   "object": 6,
+   "item": 14,
+   "count": 1,
+   "flag": 1137,
+   "n": 3,
+   "key": 0
+  },
+  "83776": {
+   "how": "ball",
+   "script": 7123,
+   "event_file": 195,
+   "object": 9,
+   "item": 242,
+   "count": 1,
+   "flag": 1140,
+   "n": 0,
+   "key": 0
+  },
+  "87969": {
+   "how": "ball",
+   "script": 7128,
+   "event_file": 195,
+   "object": 16,
+   "item": 25,
+   "count": 1,
+   "flag": 1402,
+   "n": 1,
+   "key": 0
+  },
+  "83762": {
+   "how": "ball",
+   "script": 7122,
+   "event_file": 195,
+   "object": 8,
+   "item": 47,
+   "count": 1,
+   "flag": 1139,
+   "n": 2,
+   "key": 0
+  },
+  "83792": {
+   "how": "ball",
+   "script": 7124,
+   "event_file": 196,
+   "object": 2,
+   "item": 83,
+   "count": 1,
+   "flag": 1141,
+   "n": 0,
+   "key": 0
+  },
+  "84288": {
+   "how": "ball",
+   "script": 7126,
+   "event_file": 196,
+   "object": 9,
+   "item": 10,
+   "count": 1,
+   "flag": 1172,
+   "n": 0,
+   "key": 0
+  },
+  "83808": {
+   "how": "ball",
+   "script": 7125,
+   "event_file": 197,
+   "object": 0,
+   "item": 213,
+   "count": 1,
+   "flag": 1142,
+   "n": 0,
+   "key": 0
+  },
+  "87984": {
+   "how": "ball",
+   "script": 7129,
+   "event_file": 197,
+   "object": 3,
+   "item": 50,
+   "count": 1,
+   "flag": 1403,
+   "n": 0,
+   "key": 0
+  },
+  "88000": {
+   "how": "ball",
+   "script": 7130,
+   "event_file": 197,
+   "object": 4,
+   "item": 25,
+   "count": 1,
+   "flag": 1404,
+   "n": 0,
+   "key": 0
+  },
+  "68432": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 214,
+     "cmd": {
+      "eu": 60,
+      "ja": 60
+     },
+     "resume": {
+      "eu": 63,
+      "ja": 63
+     },
+     "item": 367,
+     "count": 1,
+     "routine": 2814
+    }
+   ],
+   "flag": 181,
+   "n": 0
+  },
+  "85744": {
+   "how": "ball",
+   "script": 7104,
+   "event_file": 107,
+   "object": 12,
+   "item": 385,
+   "count": 1,
+   "flag": 1263,
+   "n": 0,
+   "key": 0
+  },
+  "84320": {
+   "how": "ball",
+   "script": 7239,
+   "event_file": 337,
+   "object": 7,
+   "item": 2,
+   "count": 1,
+   "flag": 1174,
+   "n": 0,
+   "key": 0
+  },
+  "84336": {
+   "how": "ball",
+   "script": 7240,
+   "event_file": 337,
+   "object": 8,
+   "item": 51,
+   "count": 1,
+   "flag": 1175,
+   "n": 0,
+   "key": 0
+  },
+  "84368": {
+   "how": "ball",
+   "script": 7242,
+   "event_file": 337,
+   "object": 10,
+   "item": 39,
+   "count": 1,
+   "flag": 1177,
+   "n": 0,
+   "key": 0
+  },
+  "84352": {
+   "how": "ball",
+   "script": 7241,
+   "event_file": 337,
+   "object": 9,
+   "item": 408,
+   "count": 1,
+   "flag": 1176,
+   "n": 0,
+   "key": 0
+  },
+  "85168": {
+   "how": "ball",
+   "script": 7148,
+   "event_file": 339,
+   "object": 4,
+   "item": 388,
+   "count": 1,
+   "flag": 1227,
+   "n": 0,
+   "key": 0
+  },
+  "85184": {
+   "how": "ball",
+   "script": 7149,
+   "event_file": 339,
+   "object": 5,
+   "item": 25,
+   "count": 1,
+   "flag": 1228,
+   "n": 0,
+   "key": 0
+  },
+  "85200": {
+   "how": "ball",
+   "script": 7150,
+   "event_file": 340,
+   "object": 5,
+   "item": 247,
+   "count": 1,
+   "flag": 1229,
+   "n": 0,
+   "key": 0
+  },
+  "85760": {
+   "how": "ball",
+   "script": 7151,
+   "event_file": 341,
+   "object": 2,
+   "item": 392,
+   "count": 1,
+   "flag": 1264,
+   "n": 0,
+   "key": 0
+  },
+  "85776": {
+   "how": "ball",
+   "script": 7152,
+   "event_file": 341,
+   "object": 3,
+   "item": 28,
+   "count": 1,
+   "flag": 1265,
+   "n": 0,
+   "key": 0
+  },
+  "86096": {
+   "how": "ball",
+   "script": 7119,
+   "event_file": 199,
+   "object": 6,
+   "item": 28,
+   "count": 1,
+   "flag": 1285,
+   "n": 0,
+   "key": 0
+  },
+  "84384": {
+   "how": "ball",
+   "script": 7109,
+   "event_file": 199,
+   "object": 4,
+   "item": 27,
+   "count": 1,
+   "flag": 1178,
+   "n": 0,
+   "key": 0
+  },
+  "84656": {
+   "how": "ball",
+   "script": 7115,
+   "event_file": 199,
+   "object": 2,
+   "item": 38,
+   "count": 1,
+   "flag": 1195,
+   "n": 0,
+   "key": 0
+  },
+  "84432": {
+   "how": "ball",
+   "script": 7112,
+   "event_file": 199,
+   "object": 1,
+   "item": 24,
+   "count": 1,
+   "flag": 1181,
+   "n": 0,
+   "key": 0
+  },
+  "84400": {
+   "how": "ball",
+   "script": 7110,
+   "event_file": 200,
+   "object": 3,
+   "item": 81,
+   "count": 1,
+   "flag": 1179,
+   "n": 0,
+   "key": 0
+  },
+  "85313": {
+   "how": "ball",
+   "script": 7116,
+   "event_file": 201,
+   "object": 12,
+   "item": 92,
+   "count": 1,
+   "flag": 1236,
+   "n": 1,
+   "key": 0
+  },
+  "84418": {
+   "how": "ball",
+   "script": 7111,
+   "event_file": 201,
+   "object": 4,
+   "item": 51,
+   "count": 1,
+   "flag": 1180,
+   "n": 2,
+   "key": 0
+  },
+  "84464": {
+   "how": "ball",
+   "script": 7114,
+   "event_file": 203,
+   "object": 0,
+   "item": 418,
+   "count": 1,
+   "flag": 1183,
+   "n": 0,
+   "key": 0
+  },
+  "84480": {
+   "how": "ball",
+   "script": 7009,
+   "event_file": 206,
+   "object": 7,
+   "item": 390,
+   "count": 1,
+   "flag": 1184,
+   "n": 0,
+   "key": 0
+  },
+  "85328": {
+   "how": "ball",
+   "script": 7012,
+   "event_file": 208,
+   "object": 1,
+   "item": 25,
+   "count": 1,
+   "flag": 1237,
+   "n": 0,
+   "key": 0
+  },
+  "85856": {
+   "how": "ball",
+   "script": 7016,
+   "event_file": 208,
+   "object": 2,
+   "item": 90,
+   "count": 1,
+   "flag": 1270,
+   "n": 0,
+   "key": 0
+  },
+  "85968": {
+   "how": "ball",
+   "script": 7013,
+   "event_file": 209,
+   "object": 0,
+   "item": 107,
+   "count": 1,
+   "flag": 1277,
+   "n": 0,
+   "key": 0
+  },
+  "88112": {
+   "how": "ball",
+   "script": 7015,
+   "event_file": 210,
+   "object": 13,
+   "item": 250,
+   "count": 1,
+   "flag": 1411,
+   "n": 0,
+   "key": 0
+  },
+  "86017": {
+   "how": "ball",
+   "script": 7014,
+   "event_file": 211,
+   "object": 0,
+   "item": 90,
+   "count": 1,
+   "flag": 1280,
+   "n": 1,
+   "key": 0
+  },
+  "86002": {
+   "how": "ball",
+   "script": 7011,
+   "event_file": 211,
+   "object": 1,
+   "item": 28,
+   "count": 1,
+   "flag": 1279,
+   "n": 2,
+   "key": 0
+  },
+  "85939": {
+   "how": "ball",
+   "script": 7010,
+   "event_file": 211,
+   "object": 2,
+   "item": 91,
+   "count": 1,
+   "flag": 1275,
+   "n": 3,
+   "key": 0
+  },
+  "85008": {
+   "how": "ball",
+   "script": 7017,
+   "event_file": 212,
+   "object": 5,
+   "item": 41,
+   "count": 1,
+   "flag": 1217,
+   "n": 0,
+   "key": 0
+  },
+  "88064": {
+   "how": "ball",
+   "script": 7238,
+   "event_file": 345,
+   "object": 11,
+   "item": 2,
+   "count": 1,
+   "flag": 1408,
+   "n": 0,
+   "key": 0
+  },
+  "84512": {
+   "how": "ball",
+   "script": 7236,
+   "event_file": 345,
+   "object": 7,
+   "item": 27,
+   "count": 1,
+   "flag": 1186,
+   "n": 0,
+   "key": 0
+  },
+  "84496": {
+   "how": "ball",
+   "script": 7235,
+   "event_file": 345,
+   "object": 6,
+   "item": 245,
+   "count": 1,
+   "flag": 1185,
+   "n": 0,
+   "key": 0
+  },
+  "85824": {
+   "how": "ball",
+   "script": 7237,
+   "event_file": 345,
+   "object": 8,
+   "item": 363,
+   "count": 1,
+   "flag": 1268,
+   "n": 0,
+   "key": 0
+  },
+  "86512": {
+   "how": "ball",
+   "script": 7155,
+   "event_file": 346,
+   "object": 12,
+   "item": 24,
+   "count": 1,
+   "flag": 1311,
+   "n": 0,
+   "key": 0
+  },
+  "86560": {
+   "how": "ball",
+   "script": 7156,
+   "event_file": 346,
+   "object": 13,
+   "item": 41,
+   "count": 1,
+   "flag": 1314,
+   "n": 0,
+   "key": 0
+  },
+  "86577": {
+   "how": "ball",
+   "script": 7157,
+   "event_file": 346,
+   "object": 14,
+   "item": 2,
+   "count": 1,
+   "flag": 1315,
+   "n": 1,
+   "key": 0
+  },
+  "86450": {
+   "how": "ball",
+   "script": 7154,
+   "event_file": 346,
+   "object": 11,
+   "item": 48,
+   "count": 1,
+   "flag": 1307,
+   "n": 2,
+   "key": 0
+  },
+  "84529": {
+   "how": "ball",
+   "script": 7233,
+   "event_file": 348,
+   "object": 6,
+   "item": 45,
+   "count": 1,
+   "flag": 1187,
+   "n": 1,
+   "key": 0
+  },
+  "84546": {
+   "how": "ball",
+   "script": 7234,
+   "event_file": 348,
+   "object": 7,
+   "item": 23,
+   "count": 1,
+   "flag": 1188,
+   "n": 2,
+   "key": 0
+  },
+  "86688": {
+   "how": "ball",
+   "script": 7173,
+   "event_file": 351,
+   "object": 1,
+   "item": 51,
+   "count": 1,
+   "flag": 1322,
+   "n": 0,
+   "key": 0
+  },
+  "85872": {
+   "how": "ball",
+   "script": 7085,
+   "event_file": 353,
+   "object": 3,
+   "item": 51,
+   "count": 1,
+   "flag": 1271,
+   "n": 0,
+   "key": 0
+  },
+  "85840": {
+   "how": "ball",
+   "script": 7084,
+   "event_file": 353,
+   "object": 2,
+   "item": 92,
+   "count": 1,
+   "flag": 1269,
+   "n": 0,
+   "key": 0
+  },
+  "85905": {
+   "how": "ball",
+   "script": 7087,
+   "event_file": 354,
+   "object": 6,
+   "item": 398,
+   "count": 1,
+   "flag": 1273,
+   "n": 1,
+   "key": 0
+  },
+  "85890": {
+   "how": "ball",
+   "script": 7086,
+   "event_file": 354,
+   "object": 2,
+   "item": 46,
+   "count": 1,
+   "flag": 1272,
+   "n": 2,
+   "key": 0
+  },
+  "85920": {
+   "how": "ball",
+   "script": 7088,
+   "event_file": 354,
+   "object": 3,
+   "item": 110,
+   "count": 1,
+   "flag": 1274,
+   "n": 0,
+   "key": 0
+  },
+  "85952": {
+   "how": "ball",
+   "script": 7089,
+   "event_file": 354,
+   "object": 5,
+   "item": 241,
+   "count": 1,
+   "flag": 1276,
+   "n": 0,
+   "key": 0
+  },
+  "85984": {
+   "how": "ball",
+   "script": 7090,
+   "event_file": 354,
+   "object": 4,
+   "item": 10,
+   "count": 1,
+   "flag": 1278,
+   "n": 0,
+   "key": 0
+  },
+  "85040": {
+   "how": "ball",
+   "script": 7283,
+   "event_file": 383,
+   "object": 7,
+   "item": 50,
+   "count": 1,
+   "flag": 1219,
+   "n": 0,
+   "key": 0
+  },
+  "87824": {
+   "how": "ball",
+   "script": 7284,
+   "event_file": 383,
+   "object": 11,
+   "item": 249,
+   "count": 1,
+   "flag": 1393,
+   "n": 0,
+   "key": 0
+  },
+  "85024": {
+   "how": "ball",
+   "script": 7282,
+   "event_file": 383,
+   "object": 9,
+   "item": 393,
+   "count": 1,
+   "flag": 1218,
+   "n": 0,
+   "key": 0
+  },
+  "87792": {
+   "how": "ball",
+   "script": 7050,
+   "event_file": 385,
+   "object": 2,
+   "item": 87,
+   "count": 1,
+   "flag": 1391,
+   "n": 0,
+   "key": 0
+  },
+  "85408": {
+   "how": "ball",
+   "script": 7049,
+   "event_file": 385,
+   "object": 3,
+   "item": 50,
+   "count": 1,
+   "flag": 1242,
+   "n": 0,
+   "key": 0
+  },
+  "84976": {
+   "how": "ball",
+   "script": 7285,
+   "event_file": 378,
+   "object": 7,
+   "item": 252,
+   "count": 1,
+   "flag": 1215,
+   "n": 0,
+   "key": 0
+  },
+  "84992": {
+   "how": "ball",
+   "script": 7286,
+   "event_file": 378,
+   "object": 8,
+   "item": 336,
+   "count": 1,
+   "flag": 1216,
+   "n": 0,
+   "key": 0
+  },
+  "84944": {
+   "how": "ball",
+   "script": 7288,
+   "event_file": 374,
+   "object": 7,
+   "item": 325,
+   "count": 1,
+   "flag": 1213,
+   "n": 0,
+   "key": 0
+  },
+  "84928": {
+   "how": "ball",
+   "script": 7287,
+   "event_file": 374,
+   "object": 6,
+   "item": 2,
+   "count": 1,
+   "flag": 1212,
+   "n": 0,
+   "key": 0
+  },
+  "87712": {
+   "how": "ball",
+   "script": 7093,
+   "event_file": 376,
+   "object": 6,
+   "item": 327,
+   "count": 1,
+   "flag": 1386,
+   "n": 0,
+   "key": 0
+  },
+  "87728": {
+   "how": "ball",
+   "script": 7094,
+   "event_file": 376,
+   "object": 7,
+   "item": 362,
+   "count": 1,
+   "flag": 1387,
+   "n": 0,
+   "key": 0
+  },
+  "87760": {
+   "how": "ball",
+   "script": 7095,
+   "event_file": 376,
+   "object": 8,
+   "item": 25,
+   "count": 1,
+   "flag": 1389,
+   "n": 0,
+   "key": 0
+  },
+  "87648": {
+   "how": "ball",
+   "script": 7091,
+   "event_file": 376,
+   "object": 4,
+   "item": 419,
+   "count": 1,
+   "flag": 1382,
+   "n": 0,
+   "key": 0
+  },
+  "87680": {
+   "how": "ball",
+   "script": 7092,
+   "event_file": 376,
+   "object": 5,
+   "item": 50,
+   "count": 1,
+   "flag": 1384,
+   "n": 0,
+   "key": 0
+  },
+  "86608": {
+   "how": "ball",
+   "script": 7172,
+   "event_file": 412,
+   "object": 7,
+   "item": 581,
+   "count": 1,
+   "flag": 1317,
+   "n": 0,
+   "key": 0
+  },
+  "84848": {
+   "how": "ball",
+   "script": 7290,
+   "event_file": 370,
+   "object": 17,
+   "item": 39,
+   "count": 1,
+   "flag": 1207,
+   "n": 0,
+   "key": 0
+  },
+  "84736": {
+   "how": "ball",
+   "script": 7289,
+   "event_file": 370,
+   "object": 21,
+   "item": 537,
+   "count": 1,
+   "flag": 1200,
+   "n": 0,
+   "key": 0
+  },
+  "84881": {
+   "how": "ball",
+   "script": 7292,
+   "event_file": 370,
+   "object": 18,
+   "item": 326,
+   "count": 1,
+   "flag": 1209,
+   "n": 1,
+   "key": 0
+  },
+  "84896": {
+   "how": "ball",
+   "script": 7293,
+   "event_file": 370,
+   "object": 20,
+   "item": 356,
+   "count": 1,
+   "flag": 1210,
+   "n": 0,
+   "key": 0
+  },
+  "87632": {
+   "how": "ball",
+   "script": 7294,
+   "event_file": 370,
+   "object": 28,
+   "item": 322,
+   "count": 1,
+   "flag": 1381,
+   "n": 0,
+   "key": 0
+  },
+  "84864": {
+   "how": "ball",
+   "script": 7291,
+   "event_file": 370,
+   "object": 19,
+   "item": 227,
+   "count": 1,
+   "flag": 1208,
+   "n": 0,
+   "key": 0
+  },
+  "86064": {
+   "how": "ball",
+   "script": 7160,
+   "event_file": 231,
+   "object": 5,
+   "item": 91,
+   "count": 1,
+   "flag": 1283,
+   "n": 0,
+   "key": 0
+  },
+  "86080": {
+   "how": "ball",
+   "script": 7161,
+   "event_file": 231,
+   "object": 6,
+   "item": 583,
+   "count": 1,
+   "flag": 1284,
+   "n": 0,
+   "key": 0
+  },
+  "86048": {
+   "how": "ball",
+   "script": 7159,
+   "event_file": 231,
+   "object": 4,
+   "item": 91,
+   "count": 1,
+   "flag": 1282,
+   "n": 0,
+   "key": 0
+  },
+  "87600": {
+   "how": "ball",
+   "script": 7168,
+   "event_file": 232,
+   "object": 6,
+   "item": 41,
+   "count": 1,
+   "flag": 1379,
+   "n": 0,
+   "key": 0
+  },
+  "87568": {
+   "how": "ball",
+   "script": 7166,
+   "event_file": 232,
+   "object": 4,
+   "item": 24,
+   "count": 1,
+   "flag": 1377,
+   "n": 0,
+   "key": 0
+  },
+  "87505": {
+   "how": "ball",
+   "script": 7162,
+   "event_file": 232,
+   "object": 0,
+   "item": 28,
+   "count": 1,
+   "flag": 1373,
+   "n": 1,
+   "key": 0
+  },
+  "87522": {
+   "how": "ball",
+   "script": 7163,
+   "event_file": 232,
+   "object": 1,
+   "item": 48,
+   "count": 1,
+   "flag": 1374,
+   "n": 2,
+   "key": 0
+  },
+  "87537": {
+   "how": "ball",
+   "script": 7164,
+   "event_file": 232,
+   "object": 2,
+   "item": 340,
+   "count": 1,
+   "flag": 1375,
+   "n": 1,
+   "key": 0
+  },
+  "87554": {
+   "how": "ball",
+   "script": 7165,
+   "event_file": 232,
+   "object": 3,
+   "item": 27,
+   "count": 1,
+   "flag": 1376,
+   "n": 2,
+   "key": 0
+  },
+  "87616": {
+   "how": "ball",
+   "script": 7169,
+   "event_file": 232,
+   "object": 7,
+   "item": 29,
+   "count": 1,
+   "flag": 1380,
+   "n": 0,
+   "key": 0
+  },
+  "87584": {
+   "how": "ball",
+   "script": 7167,
+   "event_file": 232,
+   "object": 5,
+   "item": 330,
+   "count": 1,
+   "flag": 1378,
+   "n": 0,
+   "key": 0
+  },
+  "84800": {
+   "how": "ball",
+   "script": 7295,
+   "event_file": 368,
+   "object": 6,
+   "item": 27,
+   "count": 1,
+   "flag": 1204,
+   "n": 0,
+   "key": 0
+  },
+  "84832": {
+   "how": "ball",
+   "script": 7297,
+   "event_file": 368,
+   "object": 8,
+   "item": 28,
+   "count": 1,
+   "flag": 1206,
+   "n": 0,
+   "key": 0
+  },
+  "84816": {
+   "how": "ball",
+   "script": 7296,
+   "event_file": 368,
+   "object": 7,
+   "item": 380,
+   "count": 1,
+   "flag": 1205,
+   "n": 0,
+   "key": 0
+  },
+  "87840": {
+   "how": "ball",
+   "script": 7105,
+   "event_file": 255,
+   "object": 10,
+   "item": 49,
+   "count": 1,
+   "flag": 1394,
+   "n": 0,
+   "key": 0
+  },
+  "87872": {
+   "how": "ball",
+   "script": 7106,
+   "event_file": 255,
+   "object": 11,
+   "item": 2,
+   "count": 1,
+   "flag": 1396,
+   "n": 0,
+   "key": 0
+  },
+  "84784": {
+   "how": "ball",
+   "script": 7300,
+   "event_file": 365,
+   "object": 6,
+   "item": 321,
+   "count": 1,
+   "flag": 1203,
+   "n": 0,
+   "key": 0
+  },
+  "84768": {
+   "how": "ball",
+   "script": 7299,
+   "event_file": 365,
+   "object": 5,
+   "item": 377,
+   "count": 1,
+   "flag": 1202,
+   "n": 0,
+   "key": 0
+  },
+  "84752": {
+   "how": "ball",
+   "script": 7298,
+   "event_file": 365,
+   "object": 4,
+   "item": 25,
+   "count": 1,
+   "flag": 1201,
+   "n": 0,
+   "key": 0
+  },
+  "84592": {
+   "how": "ball",
+   "script": 7303,
+   "event_file": 355,
+   "object": 17,
+   "item": 27,
+   "count": 1,
+   "flag": 1191,
+   "n": 0,
+   "key": 0
+  },
+  "84560": {
+   "how": "ball",
+   "script": 7301,
+   "event_file": 355,
+   "object": 13,
+   "item": 332,
+   "count": 1,
+   "flag": 1189,
+   "n": 0,
+   "key": 0
+  },
+  "86032": {
+   "how": "ball",
+   "script": 7304,
+   "event_file": 355,
+   "object": 11,
+   "item": 23,
+   "count": 1,
+   "flag": 1281,
+   "n": 0,
+   "key": 0
+  },
+  "84577": {
+   "how": "ball",
+   "script": 7302,
+   "event_file": 355,
+   "object": 10,
+   "item": 109,
+   "count": 1,
+   "flag": 1190,
+   "n": 1,
+   "key": 0
+  },
+  "87698": {
+   "how": "ball",
+   "script": 7305,
+   "event_file": 355,
+   "object": 16,
+   "item": 25,
+   "count": 1,
+   "flag": 1385,
+   "n": 2,
+   "key": 0
+  },
+  "83521": {
+   "how": "ball",
+   "script": 7139,
+   "event_file": 214,
+   "object": 1,
+   "item": 23,
+   "count": 1,
+   "flag": 1124,
+   "n": 1,
+   "key": 0
+  },
+  "83538": {
+   "how": "ball",
+   "script": 7135,
+   "event_file": 214,
+   "object": 2,
+   "item": 618,
+   "count": 1,
+   "flag": 1125,
+   "n": 2,
+   "key": 0
+  },
+  "83555": {
+   "how": "ball",
+   "script": 7136,
+   "event_file": 214,
+   "object": 3,
+   "item": 92,
+   "count": 1,
+   "flag": 1126,
+   "n": 3,
+   "key": 0
+  },
+  "83572": {
+   "how": "ball",
+   "script": 7137,
+   "event_file": 214,
+   "object": 4,
+   "item": 2,
+   "count": 1,
+   "flag": 1127,
+   "n": 4,
+   "key": 0
+  },
+  "83509": {
+   "how": "ball",
+   "script": 7138,
+   "event_file": 214,
+   "object": 8,
+   "item": 339,
+   "count": 1,
+   "flag": 1123,
+   "n": 5,
+   "key": 0
+  },
+  "87750": {
+   "how": "ball",
+   "script": 7140,
+   "event_file": 214,
+   "object": 9,
+   "item": 27,
+   "count": 1,
+   "flag": 1388,
+   "n": 6,
+   "key": 0
+  },
+  "84672": {
+   "how": "ball",
+   "script": 7131,
+   "event_file": 215,
+   "object": 0,
+   "item": 29,
+   "count": 1,
+   "flag": 1196,
+   "n": 0,
+   "key": 0
+  },
+  "84688": {
+   "how": "ball",
+   "script": 7132,
+   "event_file": 220,
+   "object": 0,
+   "item": 50,
+   "count": 1,
+   "flag": 1197,
+   "n": 0,
+   "key": 0
+  },
+  "84704": {
+   "how": "ball",
+   "script": 7133,
+   "event_file": 223,
+   "object": 1,
+   "item": 329,
+   "count": 1,
+   "flag": 1198,
+   "n": 0,
+   "key": 0
+  },
+  "84720": {
+   "how": "ball",
+   "script": 7134,
+   "event_file": 224,
+   "object": 2,
+   "item": 49,
+   "count": 1,
+   "flag": 1199,
+   "n": 0,
+   "key": 0
+  },
+  "87856": {
+   "how": "ball",
+   "script": 7232,
+   "event_file": 268,
+   "object": 2,
+   "item": 24,
+   "count": 1,
+   "flag": 1395,
+   "n": 0,
+   "key": 0
+  },
+  "88016": {
+   "how": "ball",
+   "script": 7230,
+   "event_file": 271,
+   "object": 1,
+   "item": 29,
+   "count": 1,
+   "flag": 1405,
+   "n": 0,
+   "key": 0
+  },
+  "87776": {
+   "how": "ball",
+   "script": 7231,
+   "event_file": 275,
+   "object": 1,
+   "item": 23,
+   "count": 1,
+   "flag": 1390,
+   "n": 0,
+   "key": 0
+  },
+  "88080": {
+   "how": "ball",
+   "script": 7229,
+   "event_file": 274,
+   "object": 0,
+   "item": 50,
+   "count": 1,
+   "flag": 1409,
+   "n": 0,
+   "key": 0
+  },
+  "86496": {
+   "how": "ball",
+   "script": 7223,
+   "event_file": 245,
+   "object": 6,
+   "item": 586,
+   "count": 1,
+   "flag": 1310,
+   "n": 0,
+   "key": 0
+  },
+  "86336": {
+   "how": "ball",
+   "script": 7215,
+   "event_file": 245,
+   "object": 7,
+   "item": 584,
+   "count": 1,
+   "flag": 1300,
+   "n": 0,
+   "key": 0
+  },
+  "86272": {
+   "how": "ball",
+   "script": 7211,
+   "event_file": 245,
+   "object": 27,
+   "item": 309,
+   "count": 1,
+   "flag": 1296,
+   "n": 0,
+   "key": 0
+  },
+  "86256": {
+   "how": "ball",
+   "script": 7210,
+   "event_file": 245,
+   "object": 8,
+   "item": 308,
+   "count": 1,
+   "flag": 1295,
+   "n": 0,
+   "key": 0
+  },
+  "86240": {
+   "how": "ball",
+   "script": 7209,
+   "event_file": 245,
+   "object": 12,
+   "item": 307,
+   "count": 1,
+   "flag": 1294,
+   "n": 0,
+   "key": 0
+  },
+  "86176": {
+   "how": "ball",
+   "script": 7205,
+   "event_file": 245,
+   "object": 20,
+   "item": 303,
+   "count": 1,
+   "flag": 1290,
+   "n": 0,
+   "key": 0
+  },
+  "86545": {
+   "how": "ball",
+   "script": 7225,
+   "event_file": 245,
+   "object": 21,
+   "item": 586,
+   "count": 1,
+   "flag": 1313,
+   "n": 1,
+   "key": 0
+  },
+  "86146": {
+   "how": "ball",
+   "script": 7203,
+   "event_file": 245,
+   "object": 4,
+   "item": 301,
+   "count": 1,
+   "flag": 1288,
+   "n": 2,
+   "key": 0
+  },
+  "86289": {
+   "how": "ball",
+   "script": 7212,
+   "event_file": 245,
+   "object": 22,
+   "item": 302,
+   "count": 1,
+   "flag": 1297,
+   "n": 1,
+   "key": 0
+  },
+  "86162": {
+   "how": "ball",
+   "script": 7204,
+   "event_file": 245,
+   "object": 5,
+   "item": 585,
+   "count": 1,
+   "flag": 1289,
+   "n": 2,
+   "key": 0
+  },
+  "86400": {
+   "how": "ball",
+   "script": 7218,
+   "event_file": 245,
+   "object": 24,
+   "item": 584,
+   "count": 1,
+   "flag": 1304,
+   "n": 0,
+   "key": 0
+  },
+  "86480": {
+   "how": "ball",
+   "script": 7222,
+   "event_file": 245,
+   "object": 23,
+   "item": 310,
+   "count": 1,
+   "flag": 1309,
+   "n": 0,
+   "key": 0
+  },
+  "86305": {
+   "how": "ball",
+   "script": 7213,
+   "event_file": 245,
+   "object": 9,
+   "item": 312,
+   "count": 1,
+   "flag": 1298,
+   "n": 1,
+   "key": 0
+  },
+  "86418": {
+   "how": "ball",
+   "script": 7219,
+   "event_file": 245,
+   "object": 10,
+   "item": 585,
+   "count": 1,
+   "flag": 1305,
+   "n": 2,
+   "key": 0
+  },
+  "86320": {
+   "how": "ball",
+   "script": 7214,
+   "event_file": 245,
+   "object": 11,
+   "item": 313,
+   "count": 1,
+   "flag": 1299,
+   "n": 0,
+   "key": 0
+  },
+  "86113": {
+   "how": "ball",
+   "script": 7201,
+   "event_file": 245,
+   "object": 2,
+   "item": 298,
+   "count": 1,
+   "flag": 1286,
+   "n": 1,
+   "key": 0
+  },
+  "86370": {
+   "how": "ball",
+   "script": 7217,
+   "event_file": 245,
+   "object": 15,
+   "item": 584,
+   "count": 1,
+   "flag": 1302,
+   "n": 2,
+   "key": 0
+  },
+  "86128": {
+   "how": "ball",
+   "script": 7202,
+   "event_file": 245,
+   "object": 3,
+   "item": 300,
+   "count": 1,
+   "flag": 1287,
+   "n": 0,
+   "key": 0
+  },
+  "86192": {
+   "how": "ball",
+   "script": 7206,
+   "event_file": 245,
+   "object": 25,
+   "item": 304,
+   "count": 1,
+   "flag": 1291,
+   "n": 0,
+   "key": 0
+  },
+  "86464": {
+   "how": "ball",
+   "script": 7221,
+   "event_file": 245,
+   "object": 26,
+   "item": 305,
+   "count": 1,
+   "flag": 1308,
+   "n": 0,
+   "key": 0
+  },
+  "86208": {
+   "how": "ball",
+   "script": 7207,
+   "event_file": 245,
+   "object": 17,
+   "item": 587,
+   "count": 1,
+   "flag": 1292,
+   "n": 0,
+   "key": 0
+  },
+  "86352": {
+   "how": "ball",
+   "script": 7216,
+   "event_file": 245,
+   "object": 19,
+   "item": 584,
+   "count": 1,
+   "flag": 1301,
+   "n": 0,
+   "key": 0
+  },
+  "86225": {
+   "how": "ball",
+   "script": 7208,
+   "event_file": 245,
+   "object": 14,
+   "item": 306,
+   "count": 1,
+   "flag": 1293,
+   "n": 1,
+   "key": 0
+  },
+  "86434": {
+   "how": "ball",
+   "script": 7220,
+   "event_file": 245,
+   "object": 13,
+   "item": 585,
+   "count": 1,
+   "flag": 1306,
+   "n": 2,
+   "key": 0
+  },
+  "86592": {
+   "how": "ball",
+   "script": 7226,
+   "event_file": 245,
+   "object": 16,
+   "item": 589,
+   "count": 1,
+   "flag": 1316,
+   "n": 0,
+   "key": 0
+  },
+  "86528": {
+   "how": "ball",
+   "script": 7224,
+   "event_file": 245,
+   "object": 18,
+   "item": 586,
+   "count": 1,
+   "flag": 1312,
+   "n": 0,
+   "key": 0
+  },
+  "86672": {
+   "how": "ball",
+   "script": 7193,
+   "event_file": 246,
+   "object": 8,
+   "item": 585,
+   "count": 1,
+   "flag": 1321,
+   "n": 0,
+   "key": 0
+  },
+  "86640": {
+   "how": "ball",
+   "script": 7191,
+   "event_file": 246,
+   "object": 10,
+   "item": 584,
+   "count": 1,
+   "flag": 1319,
+   "n": 0,
+   "key": 0
+  },
+  "86800": {
+   "how": "ball",
+   "script": 7198,
+   "event_file": 246,
+   "object": 5,
+   "item": 588,
+   "count": 1,
+   "flag": 1329,
+   "n": 0,
+   "key": 0
+  },
+  "87312": {
+   "how": "ball",
+   "script": 7200,
+   "event_file": 246,
+   "object": 7,
+   "item": 589,
+   "count": 1,
+   "flag": 1361,
+   "n": 0,
+   "key": 0
+  },
+  "86624": {
+   "how": "ball",
+   "script": 7190,
+   "event_file": 246,
+   "object": 9,
+   "item": 584,
+   "count": 1,
+   "flag": 1318,
+   "n": 0,
+   "key": 0
+  },
+  "86816": {
+   "how": "ball",
+   "script": 7199,
+   "event_file": 246,
+   "object": 11,
+   "item": 588,
+   "count": 1,
+   "flag": 1330,
+   "n": 0,
+   "key": 0
+  },
+  "86736": {
+   "how": "ball",
+   "script": 7196,
+   "event_file": 246,
+   "object": 12,
+   "item": 586,
+   "count": 1,
+   "flag": 1325,
+   "n": 0,
+   "key": 0
+  },
+  "86720": {
+   "how": "ball",
+   "script": 7195,
+   "event_file": 246,
+   "object": 6,
+   "item": 586,
+   "count": 1,
+   "flag": 1324,
+   "n": 0,
+   "key": 0
+  },
+  "86656": {
+   "how": "ball",
+   "script": 7192,
+   "event_file": 246,
+   "object": 4,
+   "item": 585,
+   "count": 1,
+   "flag": 1320,
+   "n": 0,
+   "key": 0
+  },
+  "86768": {
+   "how": "ball",
+   "script": 7197,
+   "event_file": 246,
+   "object": 2,
+   "item": 587,
+   "count": 1,
+   "flag": 1327,
+   "n": 0,
+   "key": 0
+  },
+  "86704": {
+   "how": "ball",
+   "script": 7194,
+   "event_file": 246,
+   "object": 3,
+   "item": 586,
+   "count": 1,
+   "flag": 1323,
+   "n": 0,
+   "key": 0
+  },
+  "87408": {
+   "how": "ball",
+   "script": 7185,
+   "event_file": 247,
+   "object": 3,
+   "item": 587,
+   "count": 1,
+   "flag": 1367,
+   "n": 0,
+   "key": 0
+  },
+  "87360": {
+   "how": "ball",
+   "script": 7183,
+   "event_file": 247,
+   "object": 7,
+   "item": 586,
+   "count": 1,
+   "flag": 1364,
+   "n": 0,
+   "key": 0
+  },
+  "87472": {
+   "how": "ball",
+   "script": 7189,
+   "event_file": 247,
+   "object": 2,
+   "item": 589,
+   "count": 1,
+   "flag": 1371,
+   "n": 0,
+   "key": 0
+  },
+  "87440": {
+   "how": "ball",
+   "script": 7187,
+   "event_file": 247,
+   "object": 4,
+   "item": 588,
+   "count": 1,
+   "flag": 1369,
+   "n": 0,
+   "key": 0
+  },
+  "87344": {
+   "how": "ball",
+   "script": 7182,
+   "event_file": 247,
+   "object": 8,
+   "item": 585,
+   "count": 1,
+   "flag": 1363,
+   "n": 0,
+   "key": 0
+  },
+  "87456": {
+   "how": "ball",
+   "script": 7188,
+   "event_file": 247,
+   "object": 9,
+   "item": 588,
+   "count": 1,
+   "flag": 1370,
+   "n": 0,
+   "key": 0
+  },
+  "87376": {
+   "how": "ball",
+   "script": 7184,
+   "event_file": 247,
+   "object": 5,
+   "item": 587,
+   "count": 1,
+   "flag": 1365,
+   "n": 0,
+   "key": 0
+  },
+  "87424": {
+   "how": "ball",
+   "script": 7186,
+   "event_file": 247,
+   "object": 6,
+   "item": 588,
+   "count": 1,
+   "flag": 1368,
+   "n": 0,
+   "key": 0
+  },
+  "87488": {
+   "how": "ball",
+   "script": 7181,
+   "event_file": 248,
+   "object": 0,
+   "item": 590,
+   "count": 1,
+   "flag": 1372,
+   "n": 0,
+   "key": 0
+  },
+  "85792": {
+   "how": "ball",
+   "script": 7117,
+   "event_file": 201,
+   "object": 13,
+   "item": 417,
+   "count": 1,
+   "flag": 1266,
+   "n": 0,
+   "key": 0
+  },
+  "84448": {
+   "how": "ball",
+   "script": 7113,
+   "event_file": 202,
+   "object": 8,
+   "item": 233,
+   "count": 1,
+   "flag": 1182,
+   "n": 0,
+   "key": 0
+  },
+  "85808": {
+   "how": "ball",
+   "script": 7118,
+   "event_file": 202,
+   "object": 4,
+   "item": 2,
+   "count": 1,
+   "flag": 1267,
+   "n": 0,
+   "key": 0
+  },
+  "86752": {
+   "how": "ball",
+   "script": 7158,
+   "event_file": 113,
+   "object": 15,
+   "item": 50,
+   "count": 1,
+   "flag": 1326,
+   "n": 0,
+   "key": 0
+  },
+  "88096": {
+   "how": "ball",
+   "script": 7008,
+   "event_file": 205,
+   "object": 5,
+   "item": 92,
+   "count": 1,
+   "flag": 1410,
+   "n": 0,
+   "key": 0
+  },
+  "86384": {
+   "how": "ball",
+   "script": 7153,
+   "event_file": 346,
+   "object": 10,
+   "item": 29,
+   "count": 1,
+   "flag": 1303,
+   "n": 0,
+   "key": 0
+  },
+  "81904": {
+   "how": "hidden",
+   "entry": 123,
+   "item": 87,
+   "count": 1,
+   "flag": 1023,
+   "n": 0,
+   "key": 0
+  },
+  "81793": {
+   "how": "hidden",
+   "entry": 116,
+   "item": 93,
+   "count": 1,
+   "flag": 1016,
+   "n": 1,
+   "key": 0
+  },
+  "81810": {
+   "how": "hidden",
+   "entry": 117,
+   "item": 93,
+   "count": 1,
+   "flag": 1017,
+   "n": 2,
+   "key": 0
+  },
+  "81875": {
+   "how": "hidden",
+   "entry": 121,
+   "item": 93,
+   "count": 1,
+   "flag": 1021,
+   "n": 3,
+   "key": 0
+  },
+  "82096": {
+   "how": "hidden",
+   "entry": 135,
+   "item": 89,
+   "count": 1,
+   "flag": 1035,
+   "n": 0,
+   "key": 0
+  },
+  "81824": {
+   "how": "hidden",
+   "entry": 118,
+   "item": 49,
+   "count": 1,
+   "flag": 1018,
+   "n": 0,
+   "key": 0
+  },
+  "81840": {
+   "how": "hidden",
+   "entry": 119,
+   "item": 89,
+   "count": 1,
+   "flag": 1019,
+   "n": 0,
+   "key": 0
+  },
+  "72544": {
+   "how": "hidden",
+   "entry": 120,
+   "item": 88,
+   "count": 1,
+   "game_flag": 1020,
+   "flag": 438,
+   "n": 0,
+   "key": 0
+  },
+  "79937": {
+   "how": "hidden",
+   "entry": 0,
+   "item": 580,
+   "count": 1,
+   "flag": 900,
+   "n": 1,
+   "key": 0
+  },
+  "79954": {
+   "how": "hidden",
+   "entry": 1,
+   "item": 52,
+   "count": 1,
+   "flag": 901,
+   "n": 2,
+   "key": 0
+  },
+  "79968": {
+   "how": "hidden",
+   "entry": 2,
+   "item": 24,
+   "count": 1,
+   "flag": 902,
+   "n": 0,
+   "key": 0
+  },
+  "80032": {
+   "how": "hidden",
+   "entry": 6,
+   "item": 21,
+   "count": 1,
+   "flag": 906,
+   "n": 0,
+   "key": 0
+  },
+  "81968": {
+   "how": "hidden",
+   "entry": 127,
+   "item": 21,
+   "count": 1,
+   "flag": 1027,
+   "n": 0,
+   "key": 0
+  },
+  "80048": {
+   "how": "hidden",
+   "entry": 7,
+   "item": 21,
+   "count": 1,
+   "flag": 907,
+   "n": 0,
+   "key": 0
+  },
+  "79984": {
+   "how": "hidden",
+   "entry": 3,
+   "item": 2,
+   "count": 1,
+   "flag": 903,
+   "n": 0,
+   "key": 0
+  },
+  "80000": {
+   "how": "hidden",
+   "entry": 4,
+   "item": 50,
+   "count": 1,
+   "flag": 904,
+   "n": 0,
+   "key": 0
+  },
+  "82529": {
+   "how": "hidden",
+   "entry": 162,
+   "item": 27,
+   "count": 1,
+   "flag": 1062,
+   "n": 1,
+   "key": 0
+  },
+  "82514": {
+   "how": "hidden",
+   "entry": 161,
+   "item": 51,
+   "count": 1,
+   "flag": 1061,
+   "n": 2,
+   "key": 0
+  },
+  "82560": {
+   "how": "hidden",
+   "entry": 164,
+   "item": 24,
+   "count": 1,
+   "flag": 1064,
+   "n": 0,
+   "key": 0
+  },
+  "82544": {
+   "how": "hidden",
+   "entry": 163,
+   "item": 28,
+   "count": 1,
+   "flag": 1063,
+   "n": 0,
+   "key": 0
+  },
+  "82112": {
+   "how": "hidden",
+   "entry": 136,
+   "item": 25,
+   "count": 1,
+   "flag": 1036,
+   "n": 0,
+   "key": 0
+  },
+  "81888": {
+   "how": "hidden",
+   "entry": 122,
+   "item": 41,
+   "count": 1,
+   "flag": 1022,
+   "n": 0,
+   "key": 0
+  },
+  "80016": {
+   "how": "hidden",
+   "entry": 5,
+   "item": 28,
+   "count": 1,
+   "flag": 905,
+   "n": 0,
+   "key": 0
+  },
+  "80576": {
+   "how": "hidden",
+   "entry": 40,
+   "item": 2,
+   "count": 1,
+   "flag": 940,
+   "n": 0,
+   "key": 0
+  },
+  "80592": {
+   "how": "hidden",
+   "entry": 41,
+   "item": 26,
+   "count": 1,
+   "flag": 941,
+   "n": 0,
+   "key": 0
+  },
+  "80064": {
+   "how": "hidden",
+   "entry": 8,
+   "item": 38,
+   "count": 1,
+   "flag": 908,
+   "n": 0,
+   "key": 0
+  },
+  "80608": {
+   "how": "hidden",
+   "entry": 42,
+   "item": 18,
+   "count": 1,
+   "flag": 942,
+   "n": 0,
+   "key": 0
+  },
+  "80624": {
+   "how": "hidden",
+   "entry": 43,
+   "item": 86,
+   "count": 1,
+   "flag": 943,
+   "n": 0,
+   "key": 0
+  },
+  "80656": {
+   "how": "hidden",
+   "entry": 45,
+   "item": 86,
+   "count": 1,
+   "flag": 945,
+   "n": 0,
+   "key": 0
+  },
+  "82736": {
+   "how": "hidden",
+   "entry": 175,
+   "item": 86,
+   "count": 1,
+   "flag": 1075,
+   "n": 0,
+   "key": 0
+  },
+  "80640": {
+   "how": "hidden",
+   "entry": 44,
+   "item": 50,
+   "count": 1,
+   "flag": 944,
+   "n": 0,
+   "key": 0
+  },
+  "82208": {
+   "how": "hidden",
+   "entry": 142,
+   "item": 2,
+   "count": 1,
+   "flag": 1042,
+   "n": 0,
+   "key": 0
+  },
+  "82480": {
+   "how": "hidden",
+   "entry": 159,
+   "item": 88,
+   "count": 1,
+   "flag": 1059,
+   "n": 0,
+   "key": 0
+  },
+  "80672": {
+   "how": "hidden",
+   "entry": 46,
+   "item": 2,
+   "count": 1,
+   "flag": 946,
+   "n": 0,
+   "key": 0
+  },
+  "82465": {
+   "how": "hidden",
+   "entry": 158,
+   "item": 19,
+   "count": 1,
+   "flag": 1058,
+   "n": 1,
+   "key": 0
+  },
+  "82754": {
+   "how": "hidden",
+   "entry": 176,
+   "item": 38,
+   "count": 1,
+   "flag": 1076,
+   "n": 2,
+   "key": 0
+  },
+  "80688": {
+   "how": "hidden",
+   "entry": 47,
+   "item": 25,
+   "count": 1,
+   "flag": 947,
+   "n": 0,
+   "key": 0
+  },
+  "82000": {
+   "how": "hidden",
+   "entry": 129,
+   "item": 50,
+   "count": 1,
+   "flag": 1029,
+   "n": 0,
+   "key": 0
+  },
+  "80720": {
+   "how": "hidden",
+   "entry": 49,
+   "item": 90,
+   "count": 1,
+   "flag": 949,
+   "n": 0,
+   "key": 0
+  },
+  "80736": {
+   "how": "hidden",
+   "entry": 50,
+   "item": 25,
+   "count": 1,
+   "flag": 950,
+   "n": 0,
+   "key": 0
+  },
+  "80704": {
+   "how": "hidden",
+   "entry": 48,
+   "item": 38,
+   "count": 1,
+   "flag": 948,
+   "n": 0,
+   "key": 0
+  },
+  "82352": {
+   "how": "hidden",
+   "entry": 151,
+   "item": 40,
+   "count": 1,
+   "flag": 1051,
+   "n": 0,
+   "key": 0
+  },
+  "82368": {
+   "how": "hidden",
+   "entry": 152,
+   "item": 26,
+   "count": 1,
+   "flag": 1052,
+   "n": 0,
+   "key": 0
+  },
+  "80752": {
+   "how": "hidden",
+   "entry": 51,
+   "item": 53,
+   "count": 1,
+   "flag": 951,
+   "n": 0,
+   "key": 0
+  },
+  "80768": {
+   "how": "hidden",
+   "entry": 52,
+   "item": 76,
+   "count": 1,
+   "flag": 952,
+   "n": 0,
+   "key": 0
+  },
+  "82192": {
+   "how": "hidden",
+   "entry": 141,
+   "item": 2,
+   "count": 1,
+   "flag": 1041,
+   "n": 0,
+   "key": 0
+  },
+  "82448": {
+   "how": "hidden",
+   "entry": 157,
+   "item": 93,
+   "count": 1,
+   "flag": 1057,
+   "n": 0,
+   "key": 0
+  },
+  "82640": {
+   "how": "hidden",
+   "entry": 169,
+   "item": 25,
+   "count": 1,
+   "flag": 1069,
+   "n": 0,
+   "key": 0
+  },
+  "80784": {
+   "how": "hidden",
+   "entry": 53,
+   "item": 7,
+   "count": 1,
+   "flag": 953,
+   "n": 0,
+   "key": 0
+  },
+  "82624": {
+   "how": "hidden",
+   "entry": 168,
+   "item": 51,
+   "count": 1,
+   "flag": 1068,
+   "n": 0,
+   "key": 0
+  },
+  "72656": {
+   "how": "hidden",
+   "entry": 56,
+   "item": 86,
+   "count": 1,
+   "game_flag": 956,
+   "flag": 445,
+   "n": 0,
+   "key": 0
+  },
+  "72673": {
+   "how": "hidden",
+   "entry": 54,
+   "item": 86,
+   "count": 1,
+   "game_flag": 954,
+   "flag": 446,
+   "n": 1,
+   "key": 0
+  },
+  "80818": {
+   "how": "hidden",
+   "entry": 55,
+   "item": 87,
+   "count": 1,
+   "flag": 955,
+   "n": 2,
+   "key": 0
+  },
+  "82384": {
+   "how": "hidden",
+   "entry": 153,
+   "item": 40,
+   "count": 1,
+   "flag": 1053,
+   "n": 0,
+   "key": 0
+  },
+  "82400": {
+   "how": "hidden",
+   "entry": 154,
+   "item": 25,
+   "count": 1,
+   "flag": 1054,
+   "n": 0,
+   "key": 0
+  },
+  "82592": {
+   "how": "hidden",
+   "entry": 166,
+   "item": 51,
+   "count": 1,
+   "flag": 1066,
+   "n": 0,
+   "key": 0
+  },
+  "82576": {
+   "how": "hidden",
+   "entry": 165,
+   "item": 2,
+   "count": 1,
+   "flag": 1065,
+   "n": 0,
+   "key": 0
+  },
+  "80864": {
+   "how": "hidden",
+   "entry": 58,
+   "item": 25,
+   "count": 1,
+   "flag": 958,
+   "n": 0,
+   "key": 0
+  },
+  "80880": {
+   "how": "hidden",
+   "entry": 59,
+   "item": 2,
+   "count": 1,
+   "flag": 959,
+   "n": 0,
+   "key": 0
+  },
+  "82416": {
+   "how": "hidden",
+   "entry": 155,
+   "item": 48,
+   "count": 1,
+   "flag": 1055,
+   "n": 0,
+   "key": 0
+  },
+  "80896": {
+   "how": "hidden",
+   "entry": 60,
+   "item": 45,
+   "count": 1,
+   "flag": 960,
+   "n": 0,
+   "key": 0
+  },
+  "82305": {
+   "how": "hidden",
+   "entry": 148,
+   "item": 40,
+   "count": 1,
+   "flag": 1048,
+   "n": 1,
+   "key": 0
+  },
+  "80914": {
+   "how": "hidden",
+   "entry": 61,
+   "item": 24,
+   "count": 1,
+   "flag": 961,
+   "n": 2,
+   "key": 0
+  },
+  "82320": {
+   "how": "hidden",
+   "entry": 149,
+   "item": 22,
+   "count": 1,
+   "flag": 1049,
+   "n": 0,
+   "key": 0
+  },
+  "80928": {
+   "how": "hidden",
+   "entry": 62,
+   "item": 28,
+   "count": 1,
+   "flag": 962,
+   "n": 0,
+   "key": 0
+  },
+  "82336": {
+   "how": "hidden",
+   "entry": 150,
+   "item": 22,
+   "count": 1,
+   "flag": 1050,
+   "n": 0,
+   "key": 0
+  },
+  "80944": {
+   "how": "hidden",
+   "entry": 63,
+   "item": 91,
+   "count": 1,
+   "flag": 963,
+   "n": 0,
+   "key": 0
+  },
+  "80961": {
+   "how": "hidden",
+   "entry": 64,
+   "item": 22,
+   "count": 1,
+   "flag": 964,
+   "n": 1,
+   "key": 0
+  },
+  "80978": {
+   "how": "hidden",
+   "entry": 65,
+   "item": 79,
+   "count": 1,
+   "flag": 965,
+   "n": 2,
+   "key": 0
+  },
+  "80995": {
+   "how": "hidden",
+   "entry": 66,
+   "item": 39,
+   "count": 1,
+   "flag": 966,
+   "n": 3,
+   "key": 0
+  },
+  "81008": {
+   "how": "hidden",
+   "entry": 67,
+   "item": 2,
+   "count": 1,
+   "flag": 967,
+   "n": 0,
+   "key": 0
+  },
+  "81088": {
+   "how": "hidden",
+   "entry": 72,
+   "item": 90,
+   "count": 1,
+   "flag": 972,
+   "n": 0,
+   "key": 0
+  },
+  "81072": {
+   "how": "hidden",
+   "entry": 71,
+   "item": 25,
+   "count": 1,
+   "flag": 971,
+   "n": 0,
+   "key": 0
+  },
+  "81121": {
+   "how": "hidden",
+   "entry": 74,
+   "item": 28,
+   "count": 1,
+   "flag": 974,
+   "n": 1,
+   "key": 0
+  },
+  "81138": {
+   "how": "hidden",
+   "entry": 75,
+   "item": 40,
+   "count": 1,
+   "flag": 975,
+   "n": 2,
+   "key": 0
+  },
+  "81104": {
+   "how": "hidden",
+   "entry": 73,
+   "item": 90,
+   "count": 1,
+   "flag": 973,
+   "n": 0,
+   "key": 0
+  },
+  "81168": {
+   "how": "hidden",
+   "entry": 77,
+   "item": 29,
+   "count": 1,
+   "flag": 977,
+   "n": 0,
+   "key": 0
+  },
+  "82673": {
+   "how": "hidden",
+   "entry": 171,
+   "item": 2,
+   "count": 1,
+   "flag": 1071,
+   "n": 1,
+   "key": 0
+  },
+  "82690": {
+   "how": "hidden",
+   "entry": 172,
+   "item": 10,
+   "count": 1,
+   "flag": 1072,
+   "n": 2,
+   "key": 0
+  },
+  "81200": {
+   "how": "hidden",
+   "entry": 79,
+   "item": 93,
+   "count": 1,
+   "flag": 979,
+   "n": 0,
+   "key": 0
+  },
+  "82608": {
+   "how": "hidden",
+   "entry": 167,
+   "item": 23,
+   "count": 1,
+   "flag": 1067,
+   "n": 0,
+   "key": 0
+  },
+  "82144": {
+   "how": "hidden",
+   "entry": 138,
+   "item": 92,
+   "count": 1,
+   "flag": 1038,
+   "n": 0,
+   "key": 0
+  },
+  "82160": {
+   "how": "hidden",
+   "entry": 139,
+   "item": 87,
+   "count": 1,
+   "flag": 1039,
+   "n": 0,
+   "key": 0
+  },
+  "82176": {
+   "how": "hidden",
+   "entry": 140,
+   "item": 28,
+   "count": 1,
+   "flag": 1040,
+   "n": 0,
+   "key": 0
+  },
+  "72752": {
+   "how": "hidden",
+   "entry": 82,
+   "item": 32,
+   "count": 1,
+   "game_flag": 982,
+   "flag": 451,
+   "n": 0,
+   "key": 0
+  },
+  "81232": {
+   "how": "hidden",
+   "entry": 81,
+   "item": 39,
+   "count": 1,
+   "flag": 981,
+   "n": 0,
+   "key": 0
+  },
+  "81296": {
+   "how": "hidden",
+   "entry": 85,
+   "item": 38,
+   "count": 1,
+   "flag": 985,
+   "n": 0,
+   "key": 0
+  },
+  "81312": {
+   "how": "hidden",
+   "entry": 86,
+   "item": 24,
+   "count": 1,
+   "flag": 986,
+   "n": 0,
+   "key": 0
+  },
+  "81328": {
+   "how": "hidden",
+   "entry": 87,
+   "item": 23,
+   "count": 1,
+   "flag": 987,
+   "n": 0,
+   "key": 0
+  },
+  "82032": {
+   "how": "hidden",
+   "entry": 131,
+   "item": 39,
+   "count": 1,
+   "flag": 1031,
+   "n": 0,
+   "key": 0
+  },
+  "81345": {
+   "how": "hidden",
+   "entry": 88,
+   "item": 50,
+   "count": 1,
+   "flag": 988,
+   "n": 1,
+   "key": 0
+  },
+  "82018": {
+   "how": "hidden",
+   "entry": 130,
+   "item": 91,
+   "count": 1,
+   "flag": 1030,
+   "n": 2,
+   "key": 0
+  },
+  "82048": {
+   "how": "hidden",
+   "entry": 132,
+   "item": 93,
+   "count": 1,
+   "flag": 1032,
+   "n": 0,
+   "key": 0
+  },
+  "82656": {
+   "how": "hidden",
+   "entry": 170,
+   "item": 46,
+   "count": 1,
+   "flag": 1070,
+   "n": 0,
+   "key": 0
+  },
+  "81776": {
+   "how": "hidden",
+   "entry": 115,
+   "item": 29,
+   "count": 1,
+   "flag": 1015,
+   "n": 0,
+   "key": 0
+  },
+  "82080": {
+   "how": "hidden",
+   "entry": 134,
+   "item": 2,
+   "count": 1,
+   "flag": 1034,
+   "n": 0,
+   "key": 0
+  },
+  "82288": {
+   "how": "hidden",
+   "entry": 147,
+   "item": 41,
+   "count": 1,
+   "flag": 1047,
+   "n": 0,
+   "key": 0
+  },
+  "81744": {
+   "how": "hidden",
+   "entry": 113,
+   "item": 580,
+   "count": 1,
+   "flag": 1013,
+   "n": 0,
+   "key": 0
+  },
+  "81760": {
+   "how": "hidden",
+   "entry": 114,
+   "item": 87,
+   "count": 1,
+   "flag": 1014,
+   "n": 0,
+   "key": 0
+  },
+  "82496": {
+   "how": "hidden",
+   "entry": 160,
+   "item": 86,
+   "count": 1,
+   "flag": 1060,
+   "n": 0,
+   "key": 0
+  },
+  "82064": {
+   "how": "hidden",
+   "entry": 133,
+   "item": 86,
+   "count": 1,
+   "flag": 1033,
+   "n": 0,
+   "key": 0
+  },
+  "81712": {
+   "how": "hidden",
+   "entry": 111,
+   "item": 86,
+   "count": 1,
+   "flag": 1011,
+   "n": 0,
+   "key": 0
+  },
+  "72785": {
+   "how": "hidden",
+   "entry": 109,
+   "item": 90,
+   "count": 1,
+   "game_flag": 1009,
+   "flag": 453,
+   "n": 1,
+   "key": 0
+  },
+  "72802": {
+   "how": "hidden",
+   "entry": 110,
+   "item": 88,
+   "count": 1,
+   "game_flag": 1010,
+   "flag": 454,
+   "n": 2,
+   "key": 0
+  },
+  "81728": {
+   "how": "hidden",
+   "entry": 112,
+   "item": 93,
+   "count": 1,
+   "flag": 1012,
+   "n": 0,
+   "key": 0
+  },
+  "72817": {
+   "how": "hidden",
+   "entry": 103,
+   "item": 88,
+   "count": 1,
+   "game_flag": 1003,
+   "flag": 455,
+   "n": 1,
+   "key": 0
+  },
+  "72834": {
+   "how": "hidden",
+   "entry": 104,
+   "item": 90,
+   "count": 1,
+   "game_flag": 1004,
+   "flag": 456,
+   "n": 2,
+   "key": 0
+  },
+  "72851": {
+   "how": "hidden",
+   "entry": 105,
+   "item": 90,
+   "count": 1,
+   "game_flag": 1005,
+   "flag": 457,
+   "n": 3,
+   "key": 0
+  },
+  "81633": {
+   "how": "hidden",
+   "entry": 106,
+   "item": 29,
+   "count": 1,
+   "flag": 1006,
+   "n": 1,
+   "key": 0
+  },
+  "81650": {
+   "how": "hidden",
+   "entry": 107,
+   "item": 50,
+   "count": 1,
+   "flag": 1007,
+   "n": 2,
+   "key": 0
+  },
+  "82432": {
+   "how": "hidden",
+   "entry": 156,
+   "item": 582,
+   "count": 1,
+   "flag": 1056,
+   "n": 0,
+   "key": 0
+  },
+  "81664": {
+   "how": "hidden",
+   "entry": 108,
+   "item": 93,
+   "count": 1,
+   "flag": 1008,
+   "n": 0,
+   "key": 0
+  },
+  "82224": {
+   "how": "hidden",
+   "entry": 143,
+   "item": 87,
+   "count": 1,
+   "flag": 1043,
+   "n": 0,
+   "key": 0
+  },
+  "82256": {
+   "how": "hidden",
+   "entry": 145,
+   "item": 86,
+   "count": 1,
+   "flag": 1045,
+   "n": 0,
+   "key": 0
+  },
+  "82240": {
+   "how": "hidden",
+   "entry": 144,
+   "item": 86,
+   "count": 1,
+   "flag": 1044,
+   "n": 0,
+   "key": 0
+  },
+  "81552": {
+   "how": "hidden",
+   "entry": 101,
+   "item": 40,
+   "count": 1,
+   "flag": 1001,
+   "n": 0,
+   "key": 0
+  },
+  "81568": {
+   "how": "hidden",
+   "entry": 102,
+   "item": 77,
+   "count": 1,
+   "flag": 1002,
+   "n": 0,
+   "key": 0
+  },
+  "72881": {
+   "how": "hidden",
+   "entry": 97,
+   "item": 86,
+   "count": 1,
+   "game_flag": 997,
+   "flag": 459,
+   "n": 1,
+   "key": 0
+  },
+  "72898": {
+   "how": "hidden",
+   "entry": 98,
+   "item": 86,
+   "count": 1,
+   "game_flag": 998,
+   "flag": 460,
+   "n": 2,
+   "key": 0
+  },
+  "81523": {
+   "how": "hidden",
+   "entry": 99,
+   "item": 87,
+   "count": 1,
+   "flag": 999,
+   "n": 3,
+   "key": 0
+  },
+  "72916": {
+   "how": "hidden",
+   "entry": 100,
+   "item": 86,
+   "count": 1,
+   "game_flag": 1000,
+   "flag": 461,
+   "n": 4,
+   "key": 0
+  },
+  "81984": {
+   "how": "hidden",
+   "entry": 128,
+   "item": 234,
+   "count": 1,
+   "flag": 1028,
+   "n": 0,
+   "key": 0
+  },
+  "82705": {
+   "how": "hidden",
+   "entry": 173,
+   "item": 45,
+   "count": 1,
+   "flag": 1073,
+   "n": 1,
+   "key": 0
+  },
+  "82722": {
+   "how": "hidden",
+   "entry": 174,
+   "item": 23,
+   "count": 1,
+   "flag": 1074,
+   "n": 2,
+   "key": 0
+  },
+  "81472": {
+   "how": "hidden",
+   "entry": 96,
+   "item": 25,
+   "count": 1,
+   "flag": 996,
+   "n": 0,
+   "key": 0
+  },
+  "82272": {
+   "how": "hidden",
+   "entry": 146,
+   "item": 29,
+   "count": 1,
+   "flag": 1046,
+   "n": 0,
+   "key": 0
+  },
+  "81264": {
+   "how": "hidden",
+   "entry": 83,
+   "item": 77,
+   "count": 1,
+   "flag": 983,
+   "n": 0,
+   "key": 0
+  },
+  "81280": {
+   "how": "hidden",
+   "entry": 84,
+   "item": 2,
+   "count": 1,
+   "flag": 984,
+   "n": 0,
+   "key": 0
+  },
+  "80848": {
+   "how": "hidden",
+   "entry": 57,
+   "item": 24,
+   "count": 1,
+   "flag": 957,
+   "n": 0,
+   "key": 0
+  },
+  "81393": {
+   "how": "hidden",
+   "entry": 91,
+   "item": 29,
+   "count": 1,
+   "flag": 991,
+   "n": 1,
+   "key": 0
+  },
+  "81410": {
+   "how": "hidden",
+   "entry": 92,
+   "item": 24,
+   "count": 1,
+   "flag": 992,
+   "n": 2,
+   "key": 0
+  },
+  "81376": {
+   "how": "hidden",
+   "entry": 90,
+   "item": 2,
+   "count": 1,
+   "flag": 990,
+   "n": 0,
+   "key": 0
+  },
+  "81360": {
+   "how": "hidden",
+   "entry": 89,
+   "item": 25,
+   "count": 1,
+   "flag": 989,
+   "n": 0,
+   "key": 0
+  },
+  "81424": {
+   "how": "hidden",
+   "entry": 93,
+   "item": 28,
+   "count": 1,
+   "flag": 993,
+   "n": 0,
+   "key": 0
+  },
+  "81441": {
+   "how": "hidden",
+   "entry": 94,
+   "item": 27,
+   "count": 1,
+   "flag": 994,
+   "n": 1,
+   "key": 0
+  },
+  "81458": {
+   "how": "hidden",
+   "entry": 95,
+   "item": 48,
+   "count": 1,
+   "flag": 995,
+   "n": 2,
+   "key": 0
+  },
+  "81056": {
+   "how": "hidden",
+   "entry": 70,
+   "item": 50,
+   "count": 1,
+   "flag": 970,
+   "n": 0,
+   "key": 0
+  },
+  "81024": {
+   "how": "hidden",
+   "entry": 68,
+   "item": 90,
+   "count": 1,
+   "flag": 968,
+   "n": 0,
+   "key": 0
+  },
+  "81040": {
+   "how": "hidden",
+   "entry": 69,
+   "item": 47,
+   "count": 1,
+   "flag": 969,
+   "n": 0,
+   "key": 0
+  },
+  "81152": {
+   "how": "hidden",
+   "entry": 76,
+   "item": 46,
+   "count": 1,
+   "flag": 976,
+   "n": 0,
+   "key": 0
+  },
+  "81184": {
+   "how": "hidden",
+   "entry": 78,
+   "item": 24,
+   "count": 1,
+   "flag": 978,
+   "n": 0,
+   "key": 0
+  },
+  "72704": {
+   "how": "hidden",
+   "entry": 124,
+   "item": 86,
+   "count": 1,
+   "game_flag": 1024,
+   "flag": 448,
+   "n": 0,
+   "key": 0
+  },
+  "72720": {
+   "how": "hidden",
+   "entry": 125,
+   "item": 86,
+   "count": 1,
+   "game_flag": 1025,
+   "flag": 449,
+   "n": 0,
+   "key": 0
+  },
+  "81952": {
+   "how": "hidden",
+   "entry": 126,
+   "item": 87,
+   "count": 1,
+   "flag": 1026,
+   "n": 0,
+   "key": 0
+  },
+  "81216": {
+   "how": "hidden",
+   "entry": 80,
+   "item": 41,
+   "count": 1,
+   "flag": 980,
+   "n": 0,
+   "key": 0
+  },
+  "82128": {
+   "how": "hidden",
+   "entry": 137,
+   "item": 39,
+   "count": 1,
+   "flag": 1037,
+   "n": 0,
+   "key": 0
+  },
+  "71824": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 780,
+     "cmd": {
+      "eu": 88,
+      "ja": 88
+     },
+     "resume": {
+      "eu": 91,
+      "ja": 91
+     },
+     "item": 621,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 780,
+     "cmd": {
+      "eu": 96,
+      "ja": 96
+     },
+     "resume": {
+      "eu": 99,
+      "ja": 99
+     },
+     "item": 626,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 393,
+   "n": 0
+  },
+  "71760": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 778,
+     "cmd": {
+      "eu": 151,
+      "ja": 152
+     },
+     "resume": {
+      "eu": 154,
+      "ja": 155
+     },
+     "item": 442,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 389,
+   "n": 0
+  },
+  "71840": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 780,
+     "cmd": {
+      "eu": 269,
+      "ja": 269
+     },
+     "resume": {
+      "eu": 272,
+      "ja": 272
+     },
+     "item": 447,
+     "count": 1,
+     "routine": 2805,
+     "matched": "by order"
+    }
+   ],
+   "flag": 394,
+   "n": 0
+  },
+  "71857": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 634,
+     "cmd": {
+      "eu": 30,
+      "ja": 30
+     },
+     "resume": {
+      "eu": 33,
+      "ja": 33
+     },
+     "item": 4,
+     "count": 5,
+     "routine": 2805
+    }
+   ],
+   "flag": 395,
+   "n": 1
+  },
+  "71858": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 634,
+     "cmd": {
+      "eu": 30,
+      "ja": 30
+     },
+     "resume": {
+      "eu": 33,
+      "ja": 33
+     },
+     "item": 4,
+     "count": 5,
+     "routine": 2805
+    }
+   ],
+   "flag": 395,
+   "n": 2
+  },
+  "71859": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 634,
+     "cmd": {
+      "eu": 30,
+      "ja": 30
+     },
+     "resume": {
+      "eu": 33,
+      "ja": 33
+     },
+     "item": 4,
+     "count": 5,
+     "routine": 2805
+    }
+   ],
+   "flag": 395,
+   "n": 3
+  },
+  "71860": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 634,
+     "cmd": {
+      "eu": 30,
+      "ja": 30
+     },
+     "resume": {
+      "eu": 33,
+      "ja": 33
+     },
+     "item": 4,
+     "count": 5,
+     "routine": 2805
+    }
+   ],
+   "flag": 395,
+   "n": 4
+  },
+  "71861": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 634,
+     "cmd": {
+      "eu": 30,
+      "ja": 30
+     },
+     "resume": {
+      "eu": 33,
+      "ja": 33
+     },
+     "item": 4,
+     "count": 5,
+     "routine": 2805
+    }
+   ],
+   "flag": 395,
+   "n": 5
+  },
+  "67648": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 634,
+     "cmd": {
+      "eu": 106,
+      "ja": 106
+     }
+    }
+   ],
+   "flag": 132,
+   "n": 0,
+   "key": 0
+  },
+  "96752": {
+   "how": "trainer",
+   "trainer": 531,
+   "flag": 1951,
+   "n": 0,
+   "key": 0
+  },
+  "96768": {
+   "how": "trainer",
+   "trainer": 532,
+   "flag": 1952,
+   "n": 0,
+   "key": 0
+  },
+  "73217": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 478,
+     "cmd": {
+      "eu": 126,
+      "ja": 126
+     },
+     "resume": {
+      "eu": 129,
+      "ja": 129
+     },
+     "item": 32802,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 480,
+   "n": 1
+  },
+  "73218": {
+   "how": "give",
+   "from": "bwap",
+   "key": 2,
+   "sites": [
+    {
+     "member": 478,
+     "cmd": {
+      "eu": 139,
+      "ja": 139
+     },
+     "resume": {
+      "eu": 142,
+      "ja": 142
+     },
+     "item": 32803,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 480,
+   "n": 2
+  },
+  "67280": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 808,
+     "cmd": {
+      "eu": 10,
+      "ja": 10
+     }
+    }
+   ],
+   "flag": 109,
+   "n": 0,
+   "key": 0
+  },
+  "67312": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 22,
+     "cmd": {
+      "eu": 10,
+      "ja": 10
+     }
+    }
+   ],
+   "flag": 111,
+   "n": 0,
+   "key": 0
+  },
+  "68560": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 12,
+     "cmd": {
+      "eu": 313,
+      "ja": 313
+     }
+    }
+   ],
+   "flag": 189,
+   "n": 0,
+   "key": 0
+  },
+  "68609": {
+   "how": "give",
+   "from": "game",
+   "key": 1,
+   "sites": [
+    {
+     "member": 30,
+     "cmd": {
+      "eu": 289,
+      "ja": 289
+     },
+     "resume": {
+      "eu": 292,
+      "ja": 292
+     },
+     "item": 155,
+     "count": 3,
+     "routine": 2805
+    }
+   ],
+   "flag": 192,
+   "n": 1
+  },
+  "68610": {
+   "how": "give",
+   "from": "game",
+   "key": 1,
+   "sites": [
+    {
+     "member": 30,
+     "cmd": {
+      "eu": 289,
+      "ja": 289
+     },
+     "resume": {
+      "eu": 292,
+      "ja": 292
+     },
+     "item": 155,
+     "count": 3,
+     "routine": 2805
+    }
+   ],
+   "flag": 192,
+   "n": 2
+  },
+  "68611": {
+   "how": "give",
+   "from": "game",
+   "key": 1,
+   "sites": [
+    {
+     "member": 30,
+     "cmd": {
+      "eu": 289,
+      "ja": 289
+     },
+     "resume": {
+      "eu": 292,
+      "ja": 292
+     },
+     "item": 155,
+     "count": 3,
+     "routine": 2805
+    }
+   ],
+   "flag": 192,
+   "n": 3
+  },
+  "68576": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 30,
+     "cmd": {
+      "eu": 88,
+      "ja": 88
+     },
+     "resume": {
+      "eu": 91,
+      "ja": 91
+     },
+     "item": 27,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 190,
+   "n": 0
+  },
+  "71872": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 20,
+     "cmd": {
+      "eu": 154,
+      "ja": 154
+     },
+     "resume": {
+      "eu": 157,
+      "ja": 157
+     },
+     "item": 437,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 396,
+   "n": 0
+  },
+  "68528": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 12,
+     "cmd": {
+      "eu": 280,
+      "ja": 280
+     }
+    }
+   ],
+   "flag": 187,
+   "n": 0,
+   "key": 0
+  },
+  "67424": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 14,
+     "cmd": {
+      "eu": 151,
+      "ja": 151
+     },
+     "resume": {
+      "eu": 154,
+      "ja": 154
+     },
+     "item": 30,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 118,
+   "n": 0
+  },
+  "88576": {
+   "how": "trainer",
+   "trainer": 20,
+   "flag": 1440,
+   "n": 0,
+   "key": 0
+  },
+  "71905": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 642,
+     "cmd": {
+      "eu": 606,
+      "ja": 606
+     },
+     "resume": {
+      "eu": 609,
+      "ja": 609
+     },
+     "item": 14,
+     "count": 3,
+     "routine": 2805
+    }
+   ],
+   "flag": 398,
+   "n": 1
+  },
+  "71906": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 642,
+     "cmd": {
+      "eu": 606,
+      "ja": 606
+     },
+     "resume": {
+      "eu": 609,
+      "ja": 609
+     },
+     "item": 14,
+     "count": 3,
+     "routine": 2805
+    }
+   ],
+   "flag": 398,
+   "n": 2
+  },
+  "71907": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 642,
+     "cmd": {
+      "eu": 606,
+      "ja": 606
+     },
+     "resume": {
+      "eu": 609,
+      "ja": 609
+     },
+     "item": 14,
+     "count": 3,
+     "routine": 2805
+    }
+   ],
+   "flag": 398,
+   "n": 3
+  },
+  "88560": {
+   "how": "trainer",
+   "trainer": 19,
+   "flag": 1439,
+   "n": 0,
+   "key": 0
+  },
+  "70352": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 50,
+     "cmd": {
+      "eu": 76,
+      "ja": 76
+     },
+     "resume": {
+      "eu": 79,
+      "ja": 79
+     },
+     "item": 239,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 50,
+     "cmd": {
+      "eu": 76,
+      "ja": 76
+     },
+     "resume": {
+      "eu": 79,
+      "ja": 79
+     },
+     "item": 239,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 50,
+     "cmd": {
+      "eu": 91,
+      "ja": 91
+     },
+     "resume": {
+      "eu": 94,
+      "ja": 94
+     },
+     "item": 243,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 50,
+     "cmd": {
+      "eu": 76,
+      "ja": 76
+     },
+     "resume": {
+      "eu": 79,
+      "ja": 79
+     },
+     "item": 239,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 50,
+     "cmd": {
+      "eu": 91,
+      "ja": 91
+     },
+     "resume": {
+      "eu": 94,
+      "ja": 94
+     },
+     "item": 243,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 50,
+     "cmd": {
+      "eu": 106,
+      "ja": 106
+     },
+     "resume": {
+      "eu": 109,
+      "ja": 109
+     },
+     "item": 249,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 301,
+   "n": 0
+  },
+  "72560": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 52,
+     "cmd": {
+      "eu": 23,
+      "ja": 23
+     },
+     "resume": {
+      "eu": 26,
+      "ja": 26
+     },
+     "item": 31,
+     "count": 1,
+     "routine": 2806
+    }
+   ],
+   "flag": 439,
+   "n": 0
+  },
+  "71920": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 32,
+     "cmd": {
+      "eu": 250,
+      "ja": 243
+     },
+     "resume": {
+      "eu": 253,
+      "ja": 246
+     },
+     "item": 471,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 399,
+   "n": 0
+  },
+  "72016": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 32,
+     "cmd": {
+      "eu": 467,
+      "ja": 460
+     },
+     "resume": {
+      "eu": 470,
+      "ja": 463
+     },
+     "item": 616,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 32,
+     "cmd": {
+      "eu": 475,
+      "ja": 468
+     },
+     "resume": {
+      "eu": 478,
+      "ja": 471
+     },
+     "item": 617,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 405,
+   "n": 0
+  },
+  "67440": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 36,
+     "cmd": {
+      "eu": 57,
+      "ja": 57
+     },
+     "resume": {
+      "eu": 60,
+      "ja": 60
+     },
+     "item": 30,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 119,
+   "n": 0
+  },
+  "72576": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 308,
+     "cmd": {
+      "eu": 75,
+      "ja": 75
+     },
+     "resume": {
+      "eu": 78,
+      "ja": 78
+     },
+     "item": 91,
+     "count": 1,
+     "routine": 2806
+    }
+   ],
+   "flag": 440,
+   "n": 0
+  },
+  "88672": {
+   "how": "trainer",
+   "trainer": 26,
+   "flag": 1446,
+   "n": 0,
+   "key": 0
+  },
+  "88720": {
+   "how": "trainer",
+   "trainer": 29,
+   "flag": 1449,
+   "n": 0,
+   "key": 0
+  },
+  "88688": {
+   "how": "trainer",
+   "trainer": 27,
+   "flag": 1447,
+   "n": 0,
+   "key": 0
+  },
+  "88704": {
+   "how": "trainer",
+   "trainer": 28,
+   "flag": 1448,
+   "n": 0,
+   "key": 0
+  },
+  "71792": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 310,
+     "cmd": {
+      "eu": 455,
+      "ja": 455
+     },
+     "resume": {
+      "eu": 458,
+      "ja": 458
+     },
+     "item": 579,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 391,
+   "n": 0
+  },
+  "71808": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 310,
+     "cmd": {
+      "eu": 548,
+      "ja": 548
+     },
+     "resume": {
+      "eu": 551,
+      "ja": 551
+     },
+     "item": 81,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 392,
+   "n": 0
+  },
+  "69824": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 502,
+     "cmd": {
+      "eu": 24,
+      "ja": 24
+     }
+    }
+   ],
+   "flag": 268,
+   "n": 0,
+   "key": 0
+  },
+  "69840": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 80,
+     "cmd": {
+      "eu": 136,
+      "ja": 136
+     },
+     "resume": {
+      "eu": 139,
+      "ja": 139
+     },
+     "item": 85,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 80,
+     "cmd": {
+      "eu": 136,
+      "ja": 136
+     },
+     "resume": {
+      "eu": 139,
+      "ja": 139
+     },
+     "item": 85,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 80,
+     "cmd": {
+      "eu": 153,
+      "ja": 153
+     },
+     "resume": {
+      "eu": 156,
+      "ja": 156
+     },
+     "item": 82,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 80,
+     "cmd": {
+      "eu": 136,
+      "ja": 136
+     },
+     "resume": {
+      "eu": 139,
+      "ja": 139
+     },
+     "item": 85,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 80,
+     "cmd": {
+      "eu": 153,
+      "ja": 153
+     },
+     "resume": {
+      "eu": 156,
+      "ja": 156
+     },
+     "item": 82,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 80,
+     "cmd": {
+      "eu": 170,
+      "ja": 170
+     },
+     "resume": {
+      "eu": 173,
+      "ja": 173
+     },
+     "item": 84,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 269,
+   "n": 0
+  },
+  "69793": {
+   "how": "give",
+   "from": "game",
+   "key": 1,
+   "sites": [
+    {
+     "member": 90,
+     "cmd": {
+      "eu": 11,
+      "ja": 11
+     },
+     "resume": {
+      "eu": 14,
+      "ja": 14
+     },
+     "item": 15,
+     "count": 3,
+     "routine": 2805
+    }
+   ],
+   "flag": 266,
+   "n": 1
+  },
+  "69794": {
+   "how": "give",
+   "from": "game",
+   "key": 1,
+   "sites": [
+    {
+     "member": 90,
+     "cmd": {
+      "eu": 11,
+      "ja": 11
+     },
+     "resume": {
+      "eu": 14,
+      "ja": 14
+     },
+     "item": 15,
+     "count": 3,
+     "routine": 2805
+    }
+   ],
+   "flag": 266,
+   "n": 2
+  },
+  "69795": {
+   "how": "give",
+   "from": "game",
+   "key": 1,
+   "sites": [
+    {
+     "member": 90,
+     "cmd": {
+      "eu": 11,
+      "ja": 11
+     },
+     "resume": {
+      "eu": 14,
+      "ja": 14
+     },
+     "item": 15,
+     "count": 3,
+     "routine": 2805
+    }
+   ],
+   "flag": 266,
+   "n": 3
+  },
+  "69796": {
+   "how": "give",
+   "from": "game",
+   "key": 4,
+   "sites": [
+    {
+     "member": 90,
+     "cmd": {
+      "eu": 20,
+      "ja": 20
+     },
+     "resume": {
+      "eu": 23,
+      "ja": 23
+     },
+     "item": 10,
+     "count": 3,
+     "routine": 2805
+    }
+   ],
+   "flag": 266,
+   "n": 4
+  },
+  "69797": {
+   "how": "give",
+   "from": "game",
+   "key": 4,
+   "sites": [
+    {
+     "member": 90,
+     "cmd": {
+      "eu": 20,
+      "ja": 20
+     },
+     "resume": {
+      "eu": 23,
+      "ja": 23
+     },
+     "item": 10,
+     "count": 3,
+     "routine": 2805
+    }
+   ],
+   "flag": 266,
+   "n": 5
+  },
+  "69798": {
+   "how": "give",
+   "from": "game",
+   "key": 4,
+   "sites": [
+    {
+     "member": 90,
+     "cmd": {
+      "eu": 20,
+      "ja": 20
+     },
+     "resume": {
+      "eu": 23,
+      "ja": 23
+     },
+     "item": 10,
+     "count": 3,
+     "routine": 2805
+    }
+   ],
+   "flag": 266,
+   "n": 6
+  },
+  "68592": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 90,
+     "cmd": {
+      "eu": 46,
+      "ja": 46
+     }
+    }
+   ],
+   "flag": 191,
+   "n": 0,
+   "key": 0
+  },
+  "68144": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 92,
+     "cmd": {
+      "eu": 22,
+      "ja": 22
+     },
+     "resume": {
+      "eu": 25,
+      "ja": 25
+     },
+     "item": 216,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 163,
+   "n": 0
+  },
+  "72608": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 86,
+     "cmd": {
+      "eu": 134,
+      "ja": 134
+     },
+     "resume": {
+      "eu": 137,
+      "ja": 137
+     },
+     "item": 149,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 86,
+     "cmd": {
+      "eu": 149,
+      "ja": 149
+     },
+     "resume": {
+      "eu": 152,
+      "ja": 152
+     },
+     "item": 150,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 86,
+     "cmd": {
+      "eu": 164,
+      "ja": 164
+     },
+     "resume": {
+      "eu": 167,
+      "ja": 167
+     },
+     "item": 151,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 86,
+     "cmd": {
+      "eu": 179,
+      "ja": 179
+     },
+     "resume": {
+      "eu": 182,
+      "ja": 182
+     },
+     "item": 152,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 86,
+     "cmd": {
+      "eu": 194,
+      "ja": 194
+     },
+     "resume": {
+      "eu": 197,
+      "ja": 197
+     },
+     "item": 153,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 442,
+   "n": 0
+  },
+  "68160": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 106,
+     "cmd": {
+      "eu": 155,
+      "ja": 155
+     }
+    }
+   ],
+   "flag": 164,
+   "n": 0,
+   "key": 0
+  },
+  "72080": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 112,
+     "cmd": {
+      "eu": 197,
+      "ja": 197
+     },
+     "resume": {
+      "eu": 200,
+      "ja": 200
+     },
+     "item": 188,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 409,
+   "n": 0
+  },
+  "72032": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 60,
+     "cmd": {
+      "eu": 186,
+      "ja": 186
+     },
+     "resume": {
+      "eu": 189,
+      "ja": 189
+     },
+     "item": 223,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 406,
+   "n": 0
+  },
+  "70784": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 116,
+     "cmd": {
+      "eu": 35,
+      "ja": 35
+     }
+    }
+   ],
+   "flag": 328,
+   "n": 0,
+   "key": 0
+  },
+  "67456": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 58,
+     "cmd": {
+      "eu": 38,
+      "ja": 38
+     },
+     "resume": {
+      "eu": 41,
+      "ja": 41
+     },
+     "item": 30,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 120,
+   "n": 0
+  },
+  "72064": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 78,
+     "cmd": {
+      "eu": 33,
+      "ja": 33
+     },
+     "resume": {
+      "eu": 36,
+      "ja": 36
+     },
+     "item": 43,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 78,
+     "cmd": {
+      "eu": 44,
+      "ja": 44
+     },
+     "resume": {
+      "eu": 47,
+      "ja": 47
+     },
+     "item": 42,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 78,
+     "cmd": {
+      "eu": 55,
+      "ja": 55
+     },
+     "resume": {
+      "eu": 58,
+      "ja": 58
+     },
+     "item": 54,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 78,
+     "cmd": {
+      "eu": 66,
+      "ja": 66
+     },
+     "resume": {
+      "eu": 69,
+      "ja": 69
+     },
+     "item": 42,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 78,
+     "cmd": {
+      "eu": 77,
+      "ja": 77
+     },
+     "resume": {
+      "eu": 80,
+      "ja": 80
+     },
+     "item": 504,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 78,
+     "cmd": {
+      "eu": 88,
+      "ja": 88
+     },
+     "resume": {
+      "eu": 91,
+      "ja": 91
+     },
+     "item": 50,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 408,
+   "n": 0
+  },
+  "72113": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 180,
+     "cmd": {
+      "eu": 94,
+      "ja": 94
+     },
+     "resume": {
+      "eu": 97,
+      "ja": 97
+     },
+     "item": 2,
+     "count": 10,
+     "routine": 2805
+    }
+   ],
+   "flag": 411,
+   "n": 1
+  },
+  "72114": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 180,
+     "cmd": {
+      "eu": 94,
+      "ja": 94
+     },
+     "resume": {
+      "eu": 97,
+      "ja": 97
+     },
+     "item": 2,
+     "count": 10,
+     "routine": 2805
+    }
+   ],
+   "flag": 411,
+   "n": 2
+  },
+  "72115": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 180,
+     "cmd": {
+      "eu": 94,
+      "ja": 94
+     },
+     "resume": {
+      "eu": 97,
+      "ja": 97
+     },
+     "item": 2,
+     "count": 10,
+     "routine": 2805
+    }
+   ],
+   "flag": 411,
+   "n": 3
+  },
+  "72116": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 180,
+     "cmd": {
+      "eu": 94,
+      "ja": 94
+     },
+     "resume": {
+      "eu": 97,
+      "ja": 97
+     },
+     "item": 2,
+     "count": 10,
+     "routine": 2805
+    }
+   ],
+   "flag": 411,
+   "n": 4
+  },
+  "72117": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 180,
+     "cmd": {
+      "eu": 94,
+      "ja": 94
+     },
+     "resume": {
+      "eu": 97,
+      "ja": 97
+     },
+     "item": 2,
+     "count": 10,
+     "routine": 2805
+    }
+   ],
+   "flag": 411,
+   "n": 5
+  },
+  "72118": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 180,
+     "cmd": {
+      "eu": 94,
+      "ja": 94
+     },
+     "resume": {
+      "eu": 97,
+      "ja": 97
+     },
+     "item": 2,
+     "count": 10,
+     "routine": 2805
+    }
+   ],
+   "flag": 411,
+   "n": 6
+  },
+  "72119": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 180,
+     "cmd": {
+      "eu": 94,
+      "ja": 94
+     },
+     "resume": {
+      "eu": 97,
+      "ja": 97
+     },
+     "item": 2,
+     "count": 10,
+     "routine": 2805
+    }
+   ],
+   "flag": 411,
+   "n": 7
+  },
+  "72120": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 180,
+     "cmd": {
+      "eu": 94,
+      "ja": 94
+     },
+     "resume": {
+      "eu": 97,
+      "ja": 97
+     },
+     "item": 2,
+     "count": 10,
+     "routine": 2805
+    }
+   ],
+   "flag": 411,
+   "n": 8
+  },
+  "72121": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 180,
+     "cmd": {
+      "eu": 94,
+      "ja": 94
+     },
+     "resume": {
+      "eu": 97,
+      "ja": 97
+     },
+     "item": 2,
+     "count": 10,
+     "routine": 2805
+    }
+   ],
+   "flag": 411,
+   "n": 9
+  },
+  "72122": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 180,
+     "cmd": {
+      "eu": 94,
+      "ja": 94
+     },
+     "resume": {
+      "eu": 97,
+      "ja": 97
+     },
+     "item": 2,
+     "count": 10,
+     "routine": 2805
+    }
+   ],
+   "flag": 411,
+   "n": 10
+  },
+  "69952": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 316,
+     "cmd": {
+      "eu": 14,
+      "ja": 14
+     }
+    }
+   ],
+   "flag": 276,
+   "n": 0,
+   "key": 0
+  },
+  "97040": {
+   "how": "trainer",
+   "trainer": 549,
+   "flag": 1969,
+   "n": 0,
+   "key": 0
+  },
+  "97056": {
+   "how": "trainer",
+   "trainer": 550,
+   "flag": 1970,
+   "n": 0,
+   "key": 0
+  },
+  "72128": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 316,
+     "cmd": {
+      "eu": 441,
+      "ja": 442
+     },
+     "resume": {
+      "eu": 444,
+      "ja": 445
+     },
+     "item": 504,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 412,
+   "n": 0
+  },
+  "67856": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 320,
+     "cmd": {
+      "eu": 46,
+      "ja": 46
+     },
+     "resume": {
+      "eu": 49,
+      "ja": 49
+     },
+     "item": 572,
+     "count": 1,
+     "routine": 2806
+    },
+    {
+     "member": 320,
+     "cmd": {
+      "eu": 46,
+      "ja": 46
+     },
+     "resume": {
+      "eu": 49,
+      "ja": 49
+     },
+     "item": 572,
+     "count": 1,
+     "routine": 2806
+    },
+    {
+     "member": 320,
+     "cmd": {
+      "eu": 61,
+      "ja": 61
+     },
+     "resume": {
+      "eu": 64,
+      "ja": 64
+     },
+     "item": 573,
+     "count": 1,
+     "routine": 2806
+    },
+    {
+     "member": 320,
+     "cmd": {
+      "eu": 46,
+      "ja": 46
+     },
+     "resume": {
+      "eu": 49,
+      "ja": 49
+     },
+     "item": 572,
+     "count": 1,
+     "routine": 2806
+    },
+    {
+     "member": 320,
+     "cmd": {
+      "eu": 61,
+      "ja": 61
+     },
+     "resume": {
+      "eu": 64,
+      "ja": 64
+     },
+     "item": 573,
+     "count": 1,
+     "routine": 2806
+    },
+    {
+     "member": 320,
+     "cmd": {
+      "eu": 87,
+      "ja": 87
+     },
+     "resume": {
+      "eu": 90,
+      "ja": 90
+     },
+     "item": 572,
+     "count": 1,
+     "routine": 2806
+    },
+    {
+     "member": 320,
+     "cmd": {
+      "eu": 46,
+      "ja": 46
+     },
+     "resume": {
+      "eu": 49,
+      "ja": 49
+     },
+     "item": 572,
+     "count": 1,
+     "routine": 2806
+    },
+    {
+     "member": 320,
+     "cmd": {
+      "eu": 61,
+      "ja": 61
+     },
+     "resume": {
+      "eu": 64,
+      "ja": 64
+     },
+     "item": 573,
+     "count": 1,
+     "routine": 2806
+    },
+    {
+     "member": 320,
+     "cmd": {
+      "eu": 87,
+      "ja": 87
+     },
+     "resume": {
+      "eu": 90,
+      "ja": 90
+     },
+     "item": 572,
+     "count": 1,
+     "routine": 2806
+    },
+    {
+     "member": 320,
+     "cmd": {
+      "eu": 102,
+      "ja": 102
+     },
+     "resume": {
+      "eu": 105,
+      "ja": 105
+     },
+     "item": 573,
+     "count": 1,
+     "routine": 2806
+    }
+   ],
+   "flag": 145,
+   "n": 0
+  },
+  "67984": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 124,
+     "cmd": {
+      "eu": 132,
+      "ja": 132
+     },
+     "resume": {
+      "eu": 135,
+      "ja": 135
+     },
+     "item": 450,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 153,
+   "n": 0
+  },
+  "71392": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 178,
+     "cmd": {
+      "eu": 36,
+      "ja": 36
+     },
+     "resume": {
+      "eu": 39,
+      "ja": 39
+     },
+     "item": 218,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 366,
+   "n": 0
+  },
+  "72160": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 124,
+     "cmd": {
+      "eu": 491,
+      "ja": 491
+     },
+     "resume": {
+      "eu": 494,
+      "ja": 494
+     },
+     "item": 465,
+     "count": 1,
+     "routine": 2805,
+     "matched": "by order"
+    }
+   ],
+   "flag": 414,
+   "n": 0
+  },
+  "69904": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 190,
+     "cmd": {
+      "eu": 11,
+      "ja": 11
+     },
+     "resume": {
+      "eu": 14,
+      "ja": 14
+     },
+     "item": 80,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 273,
+   "n": 0
+  },
+  "71408": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 184,
+     "cmd": {
+      "eu": 39,
+      "ja": 39
+     }
+    }
+   ],
+   "flag": 367,
+   "n": 0,
+   "key": 0
+  },
+  "67472": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 126,
+     "cmd": {
+      "eu": 306,
+      "ja": 304
+     },
+     "resume": {
+      "eu": 309,
+      "ja": 307
+     },
+     "item": 30,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 121,
+   "n": 0
+  },
+  "94064": {
+   "how": "trainer",
+   "trainer": 363,
+   "flag": 1783,
+   "n": 0,
+   "key": 0
+  },
+  "94080": {
+   "how": "trainer",
+   "trainer": 364,
+   "flag": 1784,
+   "n": 0,
+   "key": 0
+  },
+  "94416": {
+   "how": "trainer",
+   "trainer": 385,
+   "flag": 1805,
+   "n": 0,
+   "key": 0
+  },
+  "94400": {
+   "how": "trainer",
+   "trainer": 384,
+   "flag": 1804,
+   "n": 0,
+   "key": 0
+  },
+  "94288": {
+   "how": "trainer",
+   "trainer": 377,
+   "flag": 1797,
+   "n": 0,
+   "key": 0
+  },
+  "94096": {
+   "how": "trainer",
+   "trainer": 365,
+   "flag": 1785,
+   "n": 0,
+   "key": 0
+  },
+  "94112": {
+   "how": "trainer",
+   "trainer": 366,
+   "flag": 1786,
+   "n": 0,
+   "key": 0
+  },
+  "93968": {
+   "how": "trainer",
+   "trainer": 357,
+   "flag": 1777,
+   "n": 0,
+   "key": 0
+  },
+  "93984": {
+   "how": "trainer",
+   "trainer": 358,
+   "flag": 1778,
+   "n": 0,
+   "key": 0
+  },
+  "94000": {
+   "how": "trainer",
+   "trainer": 359,
+   "flag": 1779,
+   "n": 0,
+   "key": 0
+  },
+  "94016": {
+   "how": "trainer",
+   "trainer": 360,
+   "flag": 1780,
+   "n": 0,
+   "key": 0
+  },
+  "94304": {
+   "how": "trainer",
+   "trainer": 378,
+   "flag": 1798,
+   "n": 0,
+   "key": 0
+  },
+  "90608": {
+   "how": "trainer",
+   "trainer": 147,
+   "flag": 1567,
+   "n": 0,
+   "key": 0
+  },
+  "93920": {
+   "how": "trainer",
+   "trainer": 354,
+   "flag": 1774,
+   "n": 0,
+   "key": 0
+  },
+  "94384": {
+   "how": "trainer",
+   "trainer": 383,
+   "flag": 1803,
+   "n": 0,
+   "key": 0
+  },
+  "94368": {
+   "how": "trainer",
+   "trainer": 382,
+   "flag": 1802,
+   "n": 0,
+   "key": 0
+  },
+  "94160": {
+   "how": "trainer",
+   "trainer": 369,
+   "flag": 1789,
+   "n": 0,
+   "key": 0
+  },
+  "94176": {
+   "how": "trainer",
+   "trainer": 370,
+   "flag": 1790,
+   "n": 0,
+   "key": 0
+  },
+  "72176": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 154,
+     "cmd": {
+      "eu": 27,
+      "ja": 27
+     },
+     "resume": {
+      "eu": 30,
+      "ja": 30
+     },
+     "item": 578,
+     "count": 1,
+     "routine": 2805,
+     "matched": "by order"
+    }
+   ],
+   "flag": 415,
+   "n": 0
+  },
+  "69760": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 202,
+     "cmd": {
+      "eu": 17,
+      "ja": 17
+     },
+     "resume": {
+      "eu": 20,
+      "ja": 20
+     },
+     "item": 253,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 264,
+   "n": 0
+  },
+  "71376": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 210,
+     "cmd": {
+      "eu": 63,
+      "ja": 63
+     },
+     "resume": {
+      "eu": 66,
+      "ja": 66
+     },
+     "item": 268,
+     "count": 1,
+     "routine": 2806
+    }
+   ],
+   "flag": 365,
+   "n": 0
+  },
+  "72640": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 212,
+     "cmd": {
+      "eu": 84,
+      "ja": 84
+     },
+     "resume": {
+      "eu": 87,
+      "ja": 87
+     },
+     "item": 93,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 212,
+     "cmd": {
+      "eu": 84,
+      "ja": 84
+     },
+     "resume": {
+      "eu": 87,
+      "ja": 87
+     },
+     "item": 93,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 212,
+     "cmd": {
+      "eu": 114,
+      "ja": 114
+     },
+     "resume": {
+      "eu": 117,
+      "ja": 117
+     },
+     "item": 93,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 444,
+   "n": 0
+  },
+  "67488": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 196,
+     "cmd": {
+      "eu": 40,
+      "ja": 40
+     },
+     "resume": {
+      "eu": 43,
+      "ja": 43
+     },
+     "item": 30,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 122,
+   "n": 0
+  },
+  "70592": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 382,
+     "cmd": {
+      "eu": 107,
+      "ja": 107
+     }
+    }
+   ],
+   "flag": 316,
+   "n": 0,
+   "key": 0
+  },
+  "91232": {
+   "how": "trainer",
+   "trainer": 186,
+   "flag": 1606,
+   "n": 0,
+   "key": 0
+  },
+  "91168": {
+   "how": "trainer",
+   "trainer": 182,
+   "flag": 1602,
+   "n": 0,
+   "key": 0
+  },
+  "69712": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 672,
+     "cmd": {
+      "eu": 20,
+      "ja": 20
+     },
+     "resume": {
+      "eu": 23,
+      "ja": 23
+     },
+     "item": 107,
+     "count": 1,
+     "routine": 2806
+    }
+   ],
+   "flag": 261,
+   "n": 0
+  },
+  "68241": {
+   "how": "give",
+   "from": "game",
+   "key": 1,
+   "sites": [
+    {
+     "member": 392,
+     "cmd": {
+      "eu": 35,
+      "ja": 35
+     },
+     "resume": {
+      "eu": 38,
+      "ja": 38
+     },
+     "item": 92,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 392,
+     "cmd": {
+      "eu": 97,
+      "ja": 97
+     },
+     "resume": {
+      "eu": 100,
+      "ja": 100
+     },
+     "item": 92,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 169,
+   "n": 1
+  },
+  "68242": {
+   "how": "give",
+   "from": "game",
+   "key": 2,
+   "sites": [
+    {
+     "member": 392,
+     "cmd": {
+      "eu": 44,
+      "ja": 44
+     },
+     "resume": {
+      "eu": 47,
+      "ja": 47
+     },
+     "item": 92,
+     "count": 1,
+     "routine": 2806
+    },
+    {
+     "member": 392,
+     "cmd": {
+      "eu": 112,
+      "ja": 112
+     },
+     "resume": {
+      "eu": 115,
+      "ja": 115
+     },
+     "item": 92,
+     "count": 1,
+     "routine": 2806
+    }
+   ],
+   "flag": 169,
+   "n": 2
+  },
+  "67840": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 222,
+     "cmd": {
+      "eu": 104,
+      "ja": 104
+     }
+    }
+   ],
+   "flag": 144,
+   "n": 0,
+   "key": 0
+  },
+  "67504": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 216,
+     "cmd": {
+      "eu": 44,
+      "ja": 44
+     }
+    }
+   ],
+   "flag": 123,
+   "n": 0,
+   "key": 0
+  },
+  "91248": {
+   "how": "trainer",
+   "trainer": 187,
+   "flag": 1607,
+   "n": 0,
+   "key": 0
+  },
+  "91184": {
+   "how": "trainer",
+   "trainer": 183,
+   "flag": 1603,
+   "n": 0,
+   "key": 0
+  },
+  "72688": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 404,
+     "cmd": {
+      "eu": 116,
+      "ja": 116
+     },
+     "resume": {
+      "eu": 119,
+      "ja": 119
+     },
+     "item": 100,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 404,
+     "cmd": {
+      "eu": 128,
+      "ja": 128
+     },
+     "resume": {
+      "eu": 131,
+      "ja": 131
+     },
+     "item": 101,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 404,
+     "cmd": {
+      "eu": 140,
+      "ja": 140
+     },
+     "resume": {
+      "eu": 143,
+      "ja": 143
+     },
+     "item": 102,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 404,
+     "cmd": {
+      "eu": 152,
+      "ja": 152
+     },
+     "resume": {
+      "eu": 155,
+      "ja": 155
+     },
+     "item": 103,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 404,
+     "cmd": {
+      "eu": 164,
+      "ja": 164
+     },
+     "resume": {
+      "eu": 167,
+      "ja": 167
+     },
+     "item": 104,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 404,
+     "cmd": {
+      "eu": 172,
+      "ja": 172
+     },
+     "resume": {
+      "eu": 175,
+      "ja": 175
+     },
+     "item": 105,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 447,
+   "n": 0
+  },
+  "73328": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 234,
+     "cmd": {
+      "eu": 148,
+      "ja": 148
+     },
+     "resume": {
+      "eu": 151,
+      "ja": 151
+     },
+     "item": 32804,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 487,
+   "n": 0
+  },
+  "69552": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 238,
+     "cmd": {
+      "eu": 100,
+      "ja": 100
+     },
+     "resume": {
+      "eu": 103,
+      "ja": 103
+     },
+     "item": 216,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 251,
+   "n": 0
+  },
+  "69568": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 238,
+     "cmd": {
+      "eu": 78,
+      "ja": 78
+     },
+     "resume": {
+      "eu": 81,
+      "ja": 81
+     },
+     "item": 224,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 252,
+   "n": 0
+  },
+  "69584": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 238,
+     "cmd": {
+      "eu": 56,
+      "ja": 56
+     },
+     "resume": {
+      "eu": 59,
+      "ja": 59
+     },
+     "item": 221,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 253,
+   "n": 0
+  },
+  "67520": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 228,
+     "cmd": {
+      "eu": 104,
+      "ja": 104
+     },
+     "resume": {
+      "eu": 107,
+      "ja": 107
+     },
+     "item": 30,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 124,
+   "n": 0
+  },
+  "70496": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 410,
+     "cmd": {
+      "eu": 216,
+      "ja": 216
+     },
+     "resume": {
+      "eu": 219,
+      "ja": 219
+     },
+     "item": 54,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 310,
+   "n": 0
+  },
+  "91200": {
+   "how": "trainer",
+   "trainer": 184,
+   "flag": 1604,
+   "n": 0,
+   "key": 0
+  },
+  "91264": {
+   "how": "trainer",
+   "trainer": 188,
+   "flag": 1608,
+   "n": 0,
+   "key": 0
+  },
+  "72736": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 690,
+     "cmd": {
+      "eu": 147,
+      "ja": 147
+     },
+     "resume": {
+      "eu": 150,
+      "ja": 150
+     },
+     "item": 285,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 690,
+     "cmd": {
+      "eu": 161,
+      "ja": 161
+     },
+     "resume": {
+      "eu": 164,
+      "ja": 164
+     },
+     "item": 284,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 690,
+     "cmd": {
+      "eu": 175,
+      "ja": 175
+     },
+     "resume": {
+      "eu": 178,
+      "ja": 178
+     },
+     "item": 283,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 690,
+     "cmd": {
+      "eu": 185,
+      "ja": 185
+     },
+     "resume": {
+      "eu": 188,
+      "ja": 188
+     },
+     "item": 282,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 450,
+   "n": 0
+  },
+  "97568": {
+   "how": "trainer",
+   "trainer": 582,
+   "flag": 2002,
+   "n": 0,
+   "key": 0
+  },
+  "97584": {
+   "how": "trainer",
+   "trainer": 583,
+   "flag": 2003,
+   "n": 0,
+   "key": 0
+  },
+  "69728": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 700,
+     "cmd": {
+      "eu": 100,
+      "ja": 100
+     },
+     "resume": {
+      "eu": 103,
+      "ja": 103
+     },
+     "item": 83,
+     "count": 1,
+     "routine": 2806
+    }
+   ],
+   "flag": 262,
+   "n": 0
+  },
+  "72353": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 526,
+     "cmd": {
+      "eu": 136,
+      "ja": 136
+     },
+     "resume": {
+      "eu": 139,
+      "ja": 139
+     },
+     "item": 135,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 426,
+   "n": 1
+  },
+  "72370": {
+   "how": "give",
+   "from": "bwap",
+   "key": 2,
+   "sites": [
+    {
+     "member": 526,
+     "cmd": {
+      "eu": 157,
+      "ja": 157
+     },
+     "resume": {
+      "eu": 160,
+      "ja": 160
+     },
+     "item": 136,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 427,
+   "n": 2
+  },
+  "72387": {
+   "how": "give",
+   "from": "bwap",
+   "key": 3,
+   "sites": [
+    {
+     "member": 526,
+     "cmd": {
+      "eu": 178,
+      "ja": 178
+     },
+     "resume": {
+      "eu": 181,
+      "ja": 181
+     },
+     "item": 112,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 428,
+   "n": 3
+  },
+  "72768": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 526,
+     "cmd": {
+      "eu": 786,
+      "ja": 785
+     },
+     "resume": {
+      "eu": 789,
+      "ja": 788
+     },
+     "item": 87,
+     "count": 1,
+     "routine": 2805,
+     "matched": "by order"
+    }
+   ],
+   "flag": 452,
+   "n": 0
+  },
+  "95520": {
+   "how": "trainer",
+   "trainer": 454,
+   "flag": 1874,
+   "n": 0,
+   "key": 0
+  },
+  "95552": {
+   "how": "trainer",
+   "trainer": 456,
+   "flag": 1876,
+   "n": 0,
+   "key": 0
+  },
+  "71280": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 826,
+     "cmd": {
+      "eu": 46,
+      "ja": 46
+     },
+     "resume": {
+      "eu": 49,
+      "ja": 49
+     },
+     "item": 537,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 359,
+   "n": 0
+  },
+  "71233": {
+   "how": "give",
+   "from": "game",
+   "key": 1,
+   "sites": [
+    {
+     "member": 742,
+     "cmd": {
+      "eu": 15,
+      "ja": 15
+     },
+     "resume": {
+      "eu": 18,
+      "ja": 18
+     },
+     "item": 299,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 356,
+   "n": 1
+  },
+  "71234": {
+   "how": "give",
+   "from": "game",
+   "key": 2,
+   "sites": [
+    {
+     "member": 742,
+     "cmd": {
+      "eu": 24,
+      "ja": 24
+     },
+     "resume": {
+      "eu": 27,
+      "ja": 27
+     },
+     "item": 311,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 356,
+   "n": 2
+  },
+  "70624": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 740,
+     "cmd": {
+      "eu": 564,
+      "ja": 564
+     },
+     "resume": {
+      "eu": 567,
+      "ja": 567
+     },
+     "item": 623,
+     "count": 1,
+     "routine": 2806
+    }
+   ],
+   "flag": 318,
+   "n": 0
+  },
+  "70640": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 740,
+     "cmd": {
+      "eu": 602,
+      "ja": 602
+     },
+     "resume": {
+      "eu": 605,
+      "ja": 605
+     },
+     "item": 625,
+     "count": 1,
+     "routine": 2806
+    }
+   ],
+   "flag": 319,
+   "n": 0
+  },
+  "72864": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 822,
+     "cmd": {
+      "eu": 142,
+      "ja": 142
+     },
+     "resume": {
+      "eu": 145,
+      "ja": 145
+     },
+     "item": 151,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 822,
+     "cmd": {
+      "eu": 154,
+      "ja": 154
+     },
+     "resume": {
+      "eu": 157,
+      "ja": 157
+     },
+     "item": 165,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 822,
+     "cmd": {
+      "eu": 166,
+      "ja": 166
+     },
+     "resume": {
+      "eu": 169,
+      "ja": 169
+     },
+     "item": 157,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 822,
+     "cmd": {
+      "eu": 174,
+      "ja": 174
+     },
+     "resume": {
+      "eu": 177,
+      "ja": 177
+     },
+     "item": 154,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 458,
+   "n": 0
+  },
+  "70800": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 814,
+     "cmd": {
+      "eu": 244,
+      "ja": 244
+     },
+     "resume": {
+      "eu": 247,
+      "ja": 247
+     },
+     "item": 466,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 329,
+   "n": 0
+  },
+  "95488": {
+   "how": "trainer",
+   "trainer": 452,
+   "flag": 1872,
+   "n": 0,
+   "key": 0
+  },
+  "95472": {
+   "how": "trainer",
+   "trainer": 451,
+   "flag": 1871,
+   "n": 0,
+   "key": 0
+  },
+  "72432": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 510,
+     "cmd": {
+      "eu": 385,
+      "ja": 385
+     },
+     "resume": {
+      "eu": 388,
+      "ja": 388
+     },
+     "item": 157,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 431,
+   "n": 0
+  },
+  "95504": {
+   "how": "trainer",
+   "trainer": 453,
+   "flag": 1873,
+   "n": 0,
+   "key": 0
+  },
+  "95536": {
+   "how": "trainer",
+   "trainer": 455,
+   "flag": 1875,
+   "n": 0,
+   "key": 0
+  },
+  "70528": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 268,
+     "cmd": {
+      "eu": 19,
+      "ja": 19
+     }
+    }
+   ],
+   "flag": 312,
+   "n": 0,
+   "key": 0
+  },
+  "70720": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 248,
+     "cmd": {
+      "eu": 29,
+      "ja": 29
+     }
+    }
+   ],
+   "flag": 324,
+   "n": 0,
+   "key": 0
+  },
+  "70736": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 248,
+     "cmd": {
+      "eu": 62,
+      "ja": 62
+     },
+     "resume": {
+      "eu": 65,
+      "ja": 65
+     },
+     "item": 543,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 325,
+   "n": 0
+  },
+  "67536": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 242,
+     "cmd": {
+      "eu": 249,
+      "ja": 249
+     },
+     "resume": {
+      "eu": 252,
+      "ja": 252
+     },
+     "item": 30,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 125,
+   "n": 0
+  },
+  "72464": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 240,
+     "cmd": {
+      "eu": 543,
+      "ja": 543
+     },
+     "resume": {
+      "eu": 546,
+      "ja": 546
+     },
+     "item": 1,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 433,
+   "n": 0
+  },
+  "69744": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 710,
+     "cmd": {
+      "eu": 175,
+      "ja": 175
+     }
+    }
+   ],
+   "flag": 263,
+   "n": 0,
+   "key": 0
+  },
+  "72481": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 710,
+     "cmd": {
+      "eu": 108,
+      "ja": 108
+     },
+     "resume": {
+      "eu": 111,
+      "ja": 111
+     },
+     "item": 29,
+     "count": 2,
+     "routine": 2805
+    }
+   ],
+   "flag": 434,
+   "n": 1
+  },
+  "72482": {
+   "how": "give",
+   "from": "bwap",
+   "key": 1,
+   "sites": [
+    {
+     "member": 710,
+     "cmd": {
+      "eu": 108,
+      "ja": 108
+     },
+     "resume": {
+      "eu": 111,
+      "ja": 111
+     },
+     "item": 29,
+     "count": 2,
+     "routine": 2805
+    }
+   ],
+   "flag": 434,
+   "n": 2
+  },
+  "71328": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 544,
+     "cmd": {
+      "eu": 51,
+      "ja": 51
+     },
+     "resume": {
+      "eu": 54,
+      "ja": 54
+     },
+     "item": 2,
+     "count": 1,
+     "routine": 2806
+    }
+   ],
+   "flag": 362,
+   "n": 0
+  },
+  "71136": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 664,
+     "cmd": {
+      "eu": 136,
+      "ja": 136
+     },
+     "resume": {
+      "eu": 139,
+      "ja": 139
+     },
+     "item": 85,
+     "count": 1,
+     "routine": 2806
+    }
+   ],
+   "flag": 350,
+   "n": 0
+  },
+  "67680": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 236,
+     "cmd": {
+      "eu": 28,
+      "ja": 28
+     }
+    }
+   ],
+   "flag": 134,
+   "n": 0,
+   "key": 0
+  },
+  "71456": {
+   "how": "badge",
+   "badge": 0,
+   "sites": [
+    {
+     "member": 14,
+     "cmd": {
+      "eu": 338,
+      "ja": 338
+     }
+    },
+    {
+     "member": 14,
+     "cmd": {
+      "eu": 433,
+      "ja": 433
+     }
+    },
+    {
+     "member": 14,
+     "cmd": {
+      "eu": 528,
+      "ja": 528
+     }
+    }
+   ],
+   "flag": 370,
+   "n": 0,
+   "key": 0
+  },
+  "71472": {
+   "how": "badge",
+   "badge": 1,
+   "sites": [
+    {
+     "member": 38,
+     "cmd": {
+      "eu": 52,
+      "ja": 52
+     }
+    }
+   ],
+   "flag": 371,
+   "n": 0,
+   "key": 0
+  },
+  "71488": {
+   "how": "badge",
+   "badge": 2,
+   "sites": [
+    {
+     "member": 58,
+     "cmd": {
+      "eu": 124,
+      "ja": 124
+     }
+    }
+   ],
+   "flag": 372,
+   "n": 0,
+   "key": 0
+  },
+  "71504": {
+   "how": "badge",
+   "badge": 3,
+   "sites": [
+    {
+     "member": 126,
+     "cmd": {
+      "eu": 82,
+      "ja": 82
+     }
+    }
+   ],
+   "flag": 373,
+   "n": 0,
+   "key": 0
+  },
+  "71520": {
+   "how": "badge",
+   "badge": 4,
+   "sites": [
+    {
+     "member": 194,
+     "cmd": {
+      "eu": 36,
+      "ja": 36
+     }
+    }
+   ],
+   "flag": 374,
+   "n": 0,
+   "key": 0
+  },
+  "71536": {
+   "how": "badge",
+   "badge": 5,
+   "sites": [
+    {
+     "member": 216,
+     "cmd": {
+      "eu": 114,
+      "ja": 114
+     }
+    }
+   ],
+   "flag": 375,
+   "n": 0,
+   "key": 0
+  },
+  "71552": {
+   "how": "badge",
+   "badge": 6,
+   "sites": [
+    {
+     "member": 228,
+     "cmd": {
+      "eu": 22,
+      "ja": 22
+     }
+    }
+   ],
+   "flag": 376,
+   "n": 0,
+   "key": 0
+  },
+  "71568": {
+   "how": "badge",
+   "badge": 7,
+   "sites": [
+    {
+     "member": 242,
+     "cmd": {
+      "eu": 38,
+      "ja": 38
+     }
+    },
+    {
+     "member": 242,
+     "cmd": {
+      "eu": 110,
+      "ja": 110
+     }
+    }
+   ],
+   "flag": 377,
+   "n": 0,
+   "key": 0
+  },
+  "71464": {
+   "how": "give",
+   "from": "gym",
+   "sites": [
+    {
+     "member": 14,
+     "cmd": {
+      "eu": 361,
+      "ja": 361
+     },
+     "resume": {
+      "eu": 364,
+      "ja": 364
+     },
+     "item": 410,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 14,
+     "cmd": {
+      "eu": 456,
+      "ja": 456
+     },
+     "resume": {
+      "eu": 459,
+      "ja": 459
+     },
+     "item": 410,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 14,
+     "cmd": {
+      "eu": 548,
+      "ja": 548
+     },
+     "resume": {
+      "eu": 551,
+      "ja": 551
+     },
+     "item": 410,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 370,
+   "n": 8,
+   "key": 8
+  },
+  "71480": {
+   "how": "give",
+   "from": "gym",
+   "sites": [
+    {
+     "member": 38,
+     "cmd": {
+      "eu": 72,
+      "ja": 72
+     },
+     "resume": {
+      "eu": 75,
+      "ja": 75
+     },
+     "item": 394,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 371,
+   "n": 8,
+   "key": 8
+  },
+  "71496": {
+   "how": "give",
+   "from": "gym",
+   "sites": [
+    {
+     "member": 58,
+     "cmd": {
+      "eu": 144,
+      "ja": 144
+     },
+     "resume": {
+      "eu": 147,
+      "ja": 147
+     },
+     "item": 403,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 372,
+   "n": 8,
+   "key": 8
+  },
+  "71512": {
+   "how": "give",
+   "from": "gym",
+   "sites": [
+    {
+     "member": 126,
+     "cmd": {
+      "eu": 102,
+      "ja": 102
+     },
+     "resume": {
+      "eu": 105,
+      "ja": 105
+     },
+     "item": 399,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 373,
+   "n": 8,
+   "key": 8
+  },
+  "72232": {
+   "how": "give",
+   "from": "bwap",
+   "key": 8,
+   "sites": [
+    {
+     "member": 388,
+     "cmd": {
+      "eu": 155,
+      "ja": 155
+     },
+     "resume": {
+      "eu": 158,
+      "ja": 158
+     },
+     "item": 405,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 418,
+   "n": 8
+  },
+  "71544": {
+   "how": "give",
+   "from": "gym",
+   "sites": [
+    {
+     "member": 216,
+     "cmd": {
+      "eu": 134,
+      "ja": 134
+     },
+     "resume": {
+      "eu": 137,
+      "ja": 137
+     },
+     "item": 389,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 375,
+   "n": 8,
+   "key": 8
+  },
+  "71560": {
+   "how": "give",
+   "from": "gym",
+   "sites": [
+    {
+     "member": 228,
+     "cmd": {
+      "eu": 42,
+      "ja": 42
+     },
+     "resume": {
+      "eu": 45,
+      "ja": 45
+     },
+     "item": 406,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 376,
+   "n": 8,
+   "key": 8
+  },
+  "71576": {
+   "how": "give",
+   "from": "gym",
+   "sites": [
+    {
+     "member": 242,
+     "cmd": {
+      "eu": 58,
+      "ja": 58
+     },
+     "resume": {
+      "eu": 61,
+      "ja": 61
+     },
+     "item": 409,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 242,
+     "cmd": {
+      "eu": 130,
+      "ja": 130
+     },
+     "resume": {
+      "eu": 133,
+      "ja": 133
+     },
+     "item": 409,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 377,
+   "n": 8,
+   "key": 8
+  },
+  "68320": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 884,
+     "cmd": {
+      "eu": 193,
+      "ja": 193
+     },
+     "resume": {
+      "eu": 196,
+      "ja": 196
+     },
+     "item": 381,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 174,
+   "n": 0
+  },
+  "68336": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 884,
+     "cmd": {
+      "eu": 218,
+      "ja": 218
+     },
+     "resume": {
+      "eu": 221,
+      "ja": 221
+     },
+     "item": 344,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 175,
+   "n": 0
+  },
+  "68352": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 884,
+     "cmd": {
+      "eu": 242,
+      "ja": 242
+     },
+     "resume": {
+      "eu": 245,
+      "ja": 245
+     },
+     "item": 337,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 176,
+   "n": 0
+  },
+  "71776": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 774,
+     "cmd": {
+      "eu": 17,
+      "ja": 17
+     },
+     "resume": {
+      "eu": 20,
+      "ja": 20
+     },
+     "item": 359,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 390,
+   "n": 0
+  },
+  "71888": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 20,
+     "cmd": {
+      "eu": 13,
+      "ja": 13
+     },
+     "resume": {
+      "eu": 16,
+      "ja": 16
+     },
+     "item": 420,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 397,
+   "n": 0
+  },
+  "72096": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 304,
+     "cmd": {
+      "eu": 561,
+      "ja": 561
+     },
+     "resume": {
+      "eu": 564,
+      "ja": 564
+     },
+     "item": 402,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 410,
+   "n": 0
+  },
+  "69872": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 308,
+     "cmd": {
+      "eu": 117,
+      "ja": 117
+     }
+    }
+   ],
+   "flag": 271,
+   "n": 0,
+   "key": 0
+  },
+  "69776": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 110,
+     "cmd": {
+      "eu": 20,
+      "ja": 20
+     },
+     "resume": {
+      "eu": 23,
+      "ja": 23
+     },
+     "item": 371,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 265,
+   "n": 0
+  },
+  "72048": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 70,
+     "cmd": {
+      "eu": 34,
+      "ja": 34
+     },
+     "resume": {
+      "eu": 37,
+      "ja": 37
+     },
+     "item": 397,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 70,
+     "cmd": {
+      "eu": 95,
+      "ja": 95
+     },
+     "resume": {
+      "eu": 98,
+      "ja": 98
+     },
+     "item": 397,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 407,
+   "n": 0
+  },
+  "69856": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 122,
+     "cmd": {
+      "eu": 46,
+      "ja": 46
+     }
+    }
+   ],
+   "flag": 270,
+   "n": 0,
+   "key": 0
+  },
+  "70464": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 100,
+     "cmd": {
+      "eu": 107,
+      "ja": 107
+     },
+     "resume": {
+      "eu": 110,
+      "ja": 110
+     },
+     "item": 620,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 308,
+   "n": 0
+  },
+  "69888": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 656,
+     "cmd": {
+      "eu": 19,
+      "ja": 19
+     }
+    }
+   ],
+   "flag": 272,
+   "n": 0,
+   "key": 0
+  },
+  "72144": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 362,
+     "cmd": {
+      "eu": 47,
+      "ja": 47
+     },
+     "resume": {
+      "eu": 50,
+      "ja": 50
+     },
+     "item": 331,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 413,
+   "n": 0
+  },
+  "70176": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 176,
+     "cmd": {
+      "eu": 10,
+      "ja": 10
+     }
+    }
+   ],
+   "flag": 290,
+   "n": 0,
+   "key": 0
+  },
+  "69808": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 154,
+     "cmd": {
+      "eu": 380,
+      "ja": 380
+     }
+    }
+   ],
+   "flag": 267,
+   "n": 0,
+   "key": 0
+  },
+  "72192": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 192,
+     "cmd": {
+      "eu": 271,
+      "ja": 271
+     },
+     "resume": {
+      "eu": 274,
+      "ja": 274
+     },
+     "item": 421,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 416,
+   "n": 0
+  },
+  "72208": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 386,
+     "cmd": {
+      "eu": 465,
+      "ja": 465
+     },
+     "resume": {
+      "eu": 468,
+      "ja": 468
+     },
+     "item": 328,
+     "count": 1,
+     "routine": 2805,
+     "matched": "by order"
+    }
+   ],
+   "flag": 417,
+   "n": 0
+  },
+  "72256": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 394,
+     "cmd": {
+      "eu": 200,
+      "ja": 200
+     },
+     "resume": {
+      "eu": 203,
+      "ja": 203
+     },
+     "item": 396,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 420,
+   "n": 0
+  },
+  "67664": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 674,
+     "cmd": {
+      "eu": 43,
+      "ja": 43
+     }
+    }
+   ],
+   "flag": 133,
+   "n": 0,
+   "key": 0
+  },
+  "72272": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 396,
+     "cmd": {
+      "eu": 135,
+      "ja": 135
+     },
+     "resume": {
+      "eu": 138,
+      "ja": 138
+     },
+     "item": 422,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 421,
+   "n": 0
+  },
+  "67696": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 230,
+     "cmd": {
+      "eu": 36,
+      "ja": 36
+     }
+    }
+   ],
+   "flag": 135,
+   "n": 0,
+   "key": 0
+  },
+  "69664": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 690,
+     "cmd": {
+      "eu": 114,
+      "ja": 114
+     }
+    }
+   ],
+   "flag": 258,
+   "n": 0,
+   "key": 0
+  },
+  "69696": {
+   "how": "give",
+   "from": "game",
+   "key": 0,
+   "sites": [
+    {
+     "member": 508,
+     "cmd": {
+      "eu": 116,
+      "ja": 116
+     },
+     "resume": {
+      "eu": 119,
+      "ja": 119
+     },
+     "item": 370,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 260,
+   "n": 0
+  },
+  "72336": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 696,
+     "cmd": {
+      "eu": 60,
+      "ja": 60
+     },
+     "resume": {
+      "eu": 63,
+      "ja": 63
+     },
+     "item": 383,
+     "count": 1,
+     "routine": 2805,
+     "matched": "by order"
+    }
+   ],
+   "flag": 425,
+   "n": 0
+  },
+  "72400": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 748,
+     "cmd": {
+      "eu": 17,
+      "ja": 17
+     },
+     "resume": {
+      "eu": 20,
+      "ja": 20
+     },
+     "item": 335,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 429,
+   "n": 0
+  },
+  "71072": {
+   "how": "routine",
+   "sites": [
+    {
+     "member": 824,
+     "cmd": {
+      "eu": 258,
+      "ja": 258
+     }
+    }
+   ],
+   "flag": 346,
+   "n": 0,
+   "key": 0
+  }
+ },
+ "none": {
+  "72498": "a give in BWAP's script has no matching line in the original",
+  "72001": "1 gives for 3 locations",
+  "72002": "1 gives for 3 locations",
+  "72003": "1 gives for 3 locations",
+  "70704": "no give before the flag",
+  "67889": "the flag is set nowhere in the original scripts nor in BWAP's",
+  "67890": "the flag is set nowhere in the original scripts nor in BWAP's",
+  "67891": "the flag is set nowhere in the original scripts nor in BWAP's",
+  "72240": "a give in BWAP's script has no matching line in the original",
+  "72304": "the flag is set nowhere in the original scripts nor in BWAP's",
+  "72288": "the flag is set nowhere in the original scripts nor in BWAP's",
+  "70000": "no give before the flag",
+  "72449": "0 gives for 5 locations",
+  "72450": "0 gives for 5 locations",
+  "72451": "0 gives for 5 locations",
+  "72452": "0 gives for 5 locations",
+  "72453": "0 gives for 5 locations",
+  "72416": "a give in BWAP's script has no matching line in the original",
+  "72512": "BWAP's give has no matching line in the original (its place is another location's)",
+  "72320": "BWAP's give has no matching line in the original (its place is another location's)"
+ },
+ "trainer_gift": [
+  {
+   "member": 863,
+   "cmd": {
+    "eu": 130,
+    "ja": 130
+   },
+   "resume": {
+    "eu": 132,
+    "ja": 132
+   }
+  }
+ ],
+ "checkbadge": {
+  "12": [
+   {
+    "cmd": {
+     "eu": 91,
+     "ja": 91
+    },
+    "badge": 0,
+    "out": "0x8008"
+   }
+  ],
+  "14": [
+   {
+    "cmd": {
+     "eu": 3,
+     "ja": 3
+    },
+    "badge": 0,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 108,
+     "ja": 108
+    },
+    "badge": 0,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 181,
+     "ja": 181
+    },
+    "badge": 0,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 306,
+     "ja": 306
+    },
+    "badge": 0,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 401,
+     "ja": 401
+    },
+    "badge": 0,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 496,
+     "ja": 496
+    },
+    "badge": 0,
+    "out": "0x8008"
+   }
+  ],
+  "18": [
+   {
+    "cmd": {
+     "eu": 0,
+     "ja": 0
+    },
+    "badge": 0,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 32,
+     "ja": 32
+    },
+    "badge": 0,
+    "out": "0x8008"
+   }
+  ],
+  "34": [
+   {
+    "cmd": {
+     "eu": 0,
+     "ja": 0
+    },
+    "badge": 1,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 70,
+     "ja": 70
+    },
+    "badge": 1,
+    "out": "0x8008"
+   }
+  ],
+  "36": [
+   {
+    "cmd": {
+     "eu": 93,
+     "ja": 93
+    },
+    "badge": 1,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 124,
+     "ja": 124
+    },
+    "badge": 1,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 148,
+     "ja": 148
+    },
+    "badge": 1,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 171,
+     "ja": 171
+    },
+    "badge": 1,
+    "out": "0x8008"
+   }
+  ],
+  "38": [
+   {
+    "cmd": {
+     "eu": 4,
+     "ja": 4
+    },
+    "badge": 1,
+    "out": "0x8008"
+   }
+  ],
+  "58": [
+   {
+    "cmd": {
+     "eu": 25,
+     "ja": 25
+    },
+    "badge": 2,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 60,
+     "ja": 60
+    },
+    "badge": 2,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 89,
+     "ja": 89
+    },
+    "badge": 2,
+    "out": "0x8008"
+   }
+  ],
+  "124": [
+   {
+    "cmd": {
+     "eu": 392,
+     "ja": 392
+    },
+    "badge": 3,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 419,
+     "ja": 419
+    },
+    "badge": 3,
+    "out": "0x8008"
+   }
+  ],
+  "126": [
+   {
+    "cmd": {
+     "eu": 39,
+     "ja": 39
+    },
+    "badge": 3,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 293,
+     "ja": 291
+    },
+    "badge": 3,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 329,
+     "ja": 327
+    },
+    "badge": 3,
+    "out": "0x8008"
+   }
+  ],
+  "162": [
+   {
+    "cmd": {
+     "eu": 35,
+     "ja": 35
+    },
+    "badge": 4,
+    "out": "0x8020"
+   },
+   {
+    "cmd": {
+     "eu": 41,
+     "ja": 41
+    },
+    "badge": 6,
+    "out": "0x8020"
+   },
+   {
+    "cmd": {
+     "eu": 58,
+     "ja": 58
+    },
+    "badge": 4,
+    "out": "0x8020"
+   },
+   {
+    "cmd": {
+     "eu": 65,
+     "ja": 65
+    },
+    "badge": 6,
+    "out": "0x8020"
+   }
+  ],
+  "164": [
+   {
+    "cmd": {
+     "eu": 35,
+     "ja": 35
+    },
+    "badge": 4,
+    "out": "0x8020"
+   },
+   {
+    "cmd": {
+     "eu": 41,
+     "ja": 41
+    },
+    "badge": 6,
+    "out": "0x8020"
+   },
+   {
+    "cmd": {
+     "eu": 58,
+     "ja": 58
+    },
+    "badge": 4,
+    "out": "0x8020"
+   },
+   {
+    "cmd": {
+     "eu": 65,
+     "ja": 65
+    },
+    "badge": 6,
+    "out": "0x8020"
+   }
+  ],
+  "166": [
+   {
+    "cmd": {
+     "eu": 35,
+     "ja": 35
+    },
+    "badge": 4,
+    "out": "0x8020"
+   },
+   {
+    "cmd": {
+     "eu": 41,
+     "ja": 41
+    },
+    "badge": 6,
+    "out": "0x8020"
+   },
+   {
+    "cmd": {
+     "eu": 58,
+     "ja": 58
+    },
+    "badge": 4,
+    "out": "0x8020"
+   },
+   {
+    "cmd": {
+     "eu": 65,
+     "ja": 65
+    },
+    "badge": 6,
+    "out": "0x8020"
+   }
+  ],
+  "172": [
+   {
+    "cmd": {
+     "eu": 35,
+     "ja": 35
+    },
+    "badge": 4,
+    "out": "0x8020"
+   },
+   {
+    "cmd": {
+     "eu": 41,
+     "ja": 41
+    },
+    "badge": 6,
+    "out": "0x8020"
+   },
+   {
+    "cmd": {
+     "eu": 58,
+     "ja": 58
+    },
+    "badge": 4,
+    "out": "0x8020"
+   },
+   {
+    "cmd": {
+     "eu": 65,
+     "ja": 65
+    },
+    "badge": 6,
+    "out": "0x8020"
+   }
+  ],
+  "174": [
+   {
+    "cmd": {
+     "eu": 35,
+     "ja": 35
+    },
+    "badge": 4,
+    "out": "0x8020"
+   },
+   {
+    "cmd": {
+     "eu": 41,
+     "ja": 41
+    },
+    "badge": 6,
+    "out": "0x8020"
+   },
+   {
+    "cmd": {
+     "eu": 58,
+     "ja": 58
+    },
+    "badge": 4,
+    "out": "0x8020"
+   },
+   {
+    "cmd": {
+     "eu": 65,
+     "ja": 65
+    },
+    "badge": 6,
+    "out": "0x8020"
+   }
+  ],
+  "194": [
+   {
+    "cmd": {
+     "eu": 17,
+     "ja": 17
+    },
+    "badge": 4,
+    "out": "0x8008"
+   }
+  ],
+  "196": [
+   {
+    "cmd": {
+     "eu": 27,
+     "ja": 27
+    },
+    "badge": 4,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 63,
+     "ja": 63
+    },
+    "badge": 4,
+    "out": "0x8008"
+   }
+  ],
+  "216": [
+   {
+    "cmd": {
+     "eu": 30,
+     "ja": 30
+    },
+    "badge": 5,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 69,
+     "ja": 69
+    },
+    "badge": 5,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 77,
+     "ja": 77
+    },
+    "badge": 6,
+    "out": "0x8020"
+   },
+   {
+    "cmd": {
+     "eu": 95,
+     "ja": 95
+    },
+    "badge": 5,
+    "out": "0x8008"
+   }
+  ],
+  "220": [
+   {
+    "cmd": {
+     "eu": 10,
+     "ja": 10
+    },
+    "badge": 5,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 40,
+     "ja": 40
+    },
+    "badge": 5,
+    "out": "0x8008"
+   }
+  ],
+  "228": [
+   {
+    "cmd": {
+     "eu": 3,
+     "ja": 3
+    },
+    "badge": 6,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 91,
+     "ja": 91
+    },
+    "badge": 6,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 127,
+     "ja": 127
+    },
+    "badge": 6,
+    "out": "0x8008"
+   }
+  ],
+  "242": [
+   {
+    "cmd": {
+     "eu": 15,
+     "ja": 15
+    },
+    "badge": 7,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 236,
+     "ja": 236
+    },
+    "badge": 7,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 274,
+     "ja": 274
+    },
+    "badge": 7,
+    "out": "0x8008"
+   }
+  ],
+  "652": [
+   {
+    "cmd": {
+     "eu": 4,
+     "ja": 4
+    },
+    "badge": 2,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 15,
+     "ja": 15
+    },
+    "badge": 2,
+    "out": "0x8008"
+   },
+   {
+    "cmd": {
+     "eu": 56,
+     "ja": 56
+    },
+    "badge": 2,
+    "out": "0x8008"
+   }
+  ],
+  "662": [
+   {
+    "cmd": {
+     "eu": 1,
+     "ja": 1
+    },
+    "badge": 4,
+    "out": "0x8008"
+   }
+  ],
+  "712": [
+   {
+    "cmd": {
+     "eu": 48,
+     "ja": 48
+    },
+    "badge": 0,
+    "out": "0x8010"
+   }
+  ],
+  "714": [
+   {
+    "cmd": {
+     "eu": 47,
+     "ja": 47
+    },
+    "badge": 1,
+    "out": "0x8010"
+   }
+  ],
+  "716": [
+   {
+    "cmd": {
+     "eu": 47,
+     "ja": 47
+    },
+    "badge": 2,
+    "out": "0x8010"
+   }
+  ],
+  "718": [
+   {
+    "cmd": {
+     "eu": 47,
+     "ja": 47
+    },
+    "badge": 3,
+    "out": "0x8010"
+   }
+  ],
+  "720": [
+   {
+    "cmd": {
+     "eu": 47,
+     "ja": 47
+    },
+    "badge": 4,
+    "out": "0x8010"
+   }
+  ],
+  "722": [
+   {
+    "cmd": {
+     "eu": 47,
+     "ja": 47
+    },
+    "badge": 5,
+    "out": "0x8010"
+   }
+  ],
+  "724": [
+   {
+    "cmd": {
+     "eu": 47,
+     "ja": 47
+    },
+    "badge": 6,
+    "out": "0x8010"
+   }
+  ],
+  "726": [
+   {
+    "cmd": {
+     "eu": 47,
+     "ja": 47
+    },
+    "badge": 7,
+    "out": "0x8010"
+   }
+  ],
+  "814": [
+   {
+    "cmd": {
+     "eu": 47,
+     "ja": 47
+    },
+    "badge": 0,
+    "out": "0x8010"
+   },
+   {
+    "cmd": {
+     "eu": 53,
+     "ja": 53
+    },
+    "badge": 1,
+    "out": "0x8010"
+   },
+   {
+    "cmd": {
+     "eu": 59,
+     "ja": 59
+    },
+    "badge": 2,
+    "out": "0x8010"
+   },
+   {
+    "cmd": {
+     "eu": 65,
+     "ja": 65
+    },
+    "badge": 3,
+    "out": "0x8010"
+   },
+   {
+    "cmd": {
+     "eu": 71,
+     "ja": 71
+    },
+    "badge": 4,
+    "out": "0x8010"
+   },
+   {
+    "cmd": {
+     "eu": 77,
+     "ja": 77
+    },
+    "badge": 5,
+    "out": "0x8010"
+   },
+   {
+    "cmd": {
+     "eu": 83,
+     "ja": 83
+    },
+    "badge": 6,
+    "out": "0x8010"
+   },
+   {
+    "cmd": {
+     "eu": 89,
+     "ja": 89
+    },
+    "badge": 7,
+    "out": "0x8010"
+   }
+  ],
+  "854": [
+   {
+    "cmd": {
+     "eu": 37,
+     "ja": 37
+    },
+    "badge": 0,
+    "out": "0x8010"
+   }
+  ]
+ }
+}

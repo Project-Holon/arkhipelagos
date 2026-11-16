@@ -50,7 +50,41 @@ row says `bwap-differs`.
 - Zone member: the zone's script triggers (type 1: a list of work variable,
   value, script rows; types 2 to 4: a script to run on map load or
   recover). 427 per cartridge.
-- One member (865) is neither; it is kept as it is.
+- One member (865, the hidden items) is a script member with no 0xFD13:
+  its entry table ends where the first entry's code starts. The tool keeps
+  it as it is; `tools/locsites.py` reads it.
+- Script ids map to members through a table of 46 ranges in ov010
+  (`SCRIPT_SYS_GetScriptFileId`): 2800-2819 member 862 (shared routines),
+  3000-6999 member 863 (trainers), 7000-7799 member 864 (item balls),
+  8000-8799 member 865 (hidden items); ids below 2000 are the zone's own
+  member.
+
+## Item sites (`tools/locsites.py`)
+
+For each location, where the game gives its item, in all 12 cartridges
+(written to `data/world/item_sites.json`):
+
+| How | Count | Where |
+|---|---|---|
+| ball | 276 | map object with script 7000 + e; flag from the object (a/1/2/5); 864 `L23e2` |
+| hidden | 146 | background event with script 8000 + e; 865 entry e calls 2811 (862 `L01ae`) |
+| routine | 27 | NPC gift through 2800 (862 `L003e`), flag in work 0x8002 |
+| give | 119 | a give through a flagless routine (2801, 2802, 2805, 2806, 2807, 2814) |
+| trainer | 42 | the shared after-battle gift of 863 (`L0c01`); flag 1420 + trainer |
+| badge | 8 | `SetBadge N` in the gym scripts; flag 370 + N |
+
+Give sites: for the game's own flags, the give before the `SetEventFlag`;
+for the flags PokemonBWAP added (370 to 480: its patched scripts set them,
+the original game never does), the give is taken from BWAP's patched
+script and matched to the original line by line (six by their order in
+the member, all six checked by hand). Japanese command positions differ,
+so each site has one per family, checked in all 12 cartridges.
+
+14 hidden items have BWAP numbers (438 to 461) that are not the game's
+flags; their sites carry `game_flag` (the game sets 954 to 1025), paired by
+zone event file and order. 20 locations have no site (`none`, with the
+reason: items chosen at run time, flags set nowhere, BWAP's own new items);
+the generator leaves them out, so they keep the game's items.
 
 ## Edits
 
