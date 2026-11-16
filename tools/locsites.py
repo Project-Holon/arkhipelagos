@@ -49,7 +49,9 @@ from textcodec import narc_files  # noqa: E402
 TARGET = os.environ.get("CARGO_TARGET_DIR", os.path.join(ROOT, "target"))
 BIN = os.path.join(TARGET, "release", "arkh-script")
 CACHE = os.path.join(ROOT, "out", "listings")
-BWAP_BASE = os.environ.get("BWAP_BASE", "E:/dev/research/bwap/eidos-port/out/base_en/a/0/5/7")
+# BWAP's base patch decoded onto English Black's data: the folder of its
+# a/0/5/7 members (needed to write the file)
+BWAP_BASE = os.environ.get("BWAP_BASE", "")
 
 # Shared give routines without a flag (script ids; 862 entries 1, 2, 5, 6, 7, 14).
 GIVERS = {0xaf1, 0xaf2, 0xaf5, 0xaf6, 0xaf7, 0xafe}
@@ -60,10 +62,10 @@ BADGE_BASE = 370
 MARK_WORKS = ("0x805e", "0x805f")
 
 # The 14 hidden items BWAP gave its own numbers to: BWAP flag -> the flag the
-# game's hidden-item entry (865) sets. Paired by the zone event file that
-# holds the background event, and by order inside the file (flags rise with
-# the "#" number, west to east): each game flag below is used by no other
-# location, and its event file is the location's zone.
+# game's hidden-item entry (865) sets. BWAP's patched 865 sets its flag in
+# the same entry where the original sets the game's flag; the pairs below
+# are those entries (54, 56, 82, 97, 98, 100, 103-105, 109, 110, 120, 124,
+# 125), checked by bwap_hidden_pairs().
 # Locations whose rule asks for a per-world pick (has_value) while the
 # mod does not change the script to ask for the world's pick: a world must
 # not count on them. (The Castelia studio and the Driftveil lady ask for
@@ -79,6 +81,25 @@ HIDDEN_GAME_FLAG = {
     455: 1003, 456: 1004, 457: 1005,  # Route 13 south eastern coast (file 370)
     448: 1024, 449: 1025,            # Icirrus City south, winter (file 113)
 }
+
+
+def bwap_hidden_pairs():
+    """BWAP flag -> game flag, from the entries of BWAP's patched 865 and
+    the original's (each entry loads its flag into 0x8002)."""
+    C = carts.load()
+    orig = narc_files(os.path.join(C["IRBO"]["data"], "a", "0", "5", "7"))[865]
+    bw = open(os.path.join(BWAP_BASE, "865"), "rb").read()
+
+    def flags(m):
+        first = 4 + struct.unpack_from("<I", m, 0)[0]
+        out = []
+        for e in range(first // 4):
+            t = 4 * e + 4 + struct.unpack_from("<i", m, 4 * e)[0]
+            k = m.find(bytes([0x2A, 0, 2, 0x80]), t)
+            out.append(struct.unpack_from("<H", m, k + 4)[0])
+        return out
+
+    return {b: a for a, b in zip(flags(orig), flags(bw)) if a != b}
 
 
 def fam(code):
@@ -513,6 +534,10 @@ def main():
         print("  none:", l["flag"], l["name"].encode("ascii", "replace").decode(), "-", w)
 
     if "--write" in sys.argv:
+        if not os.path.isdir(BWAP_BASE):
+            raise SystemExit("not written: set BWAP_BASE to BWAP's decoded a/0/5/7 (the BWAP-flag sites need it)")
+        if bwap_hidden_pairs() != HIDDEN_GAME_FLAG:
+            raise SystemExit("not written: the hidden-item pairs differ from BWAP's patched 865")
         # routine, badge and trainer sites are the same everywhere; give
         # sites and CheckBadge were checked per family above
         differ = same("balls") + same("ball_entries") + same("hidden") + sum(

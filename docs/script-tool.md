@@ -81,10 +81,15 @@ the member, all six checked by hand). Japanese command positions differ,
 so each site has one per family, checked in all 12 cartridges.
 
 14 hidden items have BWAP numbers (438 to 461) that are not the game's
-flags; their sites carry `game_flag` (the game sets 954 to 1025), paired by
-zone event file and order. 20 locations have no site (`none`, with the
+flags; their sites carry `game_flag` (the game sets 954 to 1025). The pairs
+come from BWAP's patched 865, which sets its flag in the same entry where
+the original sets the game's. 20 locations have no site (`none`, with the
 reason: items chosen at run time, flags set nowhere, BWAP's own new items);
 the generator leaves them out, so they keep the game's items.
+
+Writing the file needs BWAP's base patch decoded onto English Black's data
+(`BWAP_BASE`, the folder of its a/0/5/7 members); without it the tool
+refuses to write.
 
 ## Check edits (`crates/apply/src/scripts.rs`)
 
