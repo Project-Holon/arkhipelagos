@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["crates/formats", "crates/script", "crates/gen", "crates/gen-wasm", "crates/apply"]
+members = ["crates/formats", "crates/script", "crates/gen", "crates/gen-wasm", "crates/apply", "crates/mod"]
 
 [workspace.package]
 edition = "2021"

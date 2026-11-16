@@ -27,7 +27,9 @@ cartridge files when the game starts.
 | `crates/script` | field-script disassembler and assembler, all 12 cartridges |
 | `crates/formats` | NARC archives (and later text) |
 | `crates/gen-wasm` | the generator built for wasm32 |
-| `crates/apply` | turns a world's table changes into the player's own game files (no game data shipped) |
+| `crates/apply` | turns a world's table changes into the player's own game files (no game data shipped), and the check edits of the give scripts |
+| `crates/mod` | the eidos mod (wasm): makes a solo world, applies it, turns checks into items |
+| `mod` | the mod folder: `eidos_mod.txt` (the wasm file is built into it) |
 | `data/world` | the game's logic: items, regions, connections, events, locations, rules |
 | `data/facts` | the original game's tables as plain numbers (stats, learnsets, encounters, trainers and more) |
 | `data/script` | the field-script command table per language family |
@@ -36,8 +38,9 @@ cartridge files when the game starts.
 | `docs` | how each part works, and the design proposals |
 | `lines` | the mod's in-game lines and their translations |
 
-Still to come here: the Archipelago world (`apworld`) and the eidos mod
-(`mod`). Releases will carry `mod.bw` and `mod.json` for katalogos.
+Still to come here: the Archipelago world (`apworld`) and the online
+flow of the mod. Releases will carry `mod.bw` and `mod.json` for katalogos.
+The mod needs eidos's mod API version 6.
 
 ## Build and check
 
@@ -58,6 +61,7 @@ runs it on every push. A tag `v*` builds the mod and publishes `mod.bw` and
 - `docs/generator.md`: the generator, its data and its checks
 - `docs/facts.md`: the game facts, how they are read and checked
 - `docs/eidos-api-proposal.md`: the eidos mod API it needs (approved)
+- `docs/v6-calls.md`: the API calls the mod uses, and how a check works
 - `docs/metaxy-proposal.md`: world sessions and the Archipelago bridge in
   metaxy (approved)
 

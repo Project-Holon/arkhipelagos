@@ -33,6 +33,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "arkh-mod"
+version = "0.1.0"
+dependencies = [
+ "arkh-apply",
+ "arkh-formats",
+ "arkh-gen",
+ "arkh-script",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "arkh-script"
 version = "0.1.0"
 dependencies = [

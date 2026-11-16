@@ -1,0 +1,5 @@
+# arkhipelagos: randomizer and Archipelago for eidos
+name = arkhipelagos
+api = 6
+code = arkhipelagos.wasm
+state = arkhipelagos

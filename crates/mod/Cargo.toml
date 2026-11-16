@@ -1,0 +1,17 @@
+[package]
+name = "arkh-mod"
+description = "The arkhipelagos eidos mod: makes a world, applies it to the player's own files, and turns checks into items"
+edition.workspace = true
+license.workspace = true
+version.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+arkh-gen = { path = "../gen" }
+arkh-apply = { path = "../apply" }
+arkh-script = { path = "../script" }
+arkh-formats = { path = "../formats" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

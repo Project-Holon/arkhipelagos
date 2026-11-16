@@ -253,22 +253,76 @@ pub fn members(family: Family, get: &dyn Fn(u32) -> Option<Vec<u8>>) -> Result<V
         let mut s = scripts.remove(&m).ok_or("lost a member")?;
         let orig = get(m).ok_or("lost a member")?;
         let offsets = edit::cmd_offsets(&s, family).map_err(|er| format!("member {m}: {}", er.0))?;
+        let entries = s.entries.len();
         let changed = edit::apply(&mut s, family, e.detours, e.replaces).map_err(|er| format!("member {m}: {}", er.0))?;
+        if m == ROUTINES {
+            add_message_script(&mut s)?;
+        }
         let bytes = arkh_script::assemble(&s, family).map_err(|er| format!("member {m}: {}", er.0))?;
-        verify(m, family, &orig, &bytes, &changed.iter().map(|&o| offsets[o]).collect::<Vec<_>>())?;
+        let changed: Vec<(usize, usize)> = changed.iter().map(|&o| offsets[o]).collect();
+        verify(m, family, &orig, &bytes, &changed, entries, s.entries.len())?;
         out.push((m, bytes));
     }
     Ok(out)
 }
 
-/// An edited member keeps every original byte outside the changed commands,
-/// and reads back: disassembled and assembled again it is the same.
-fn verify(m: u32, family: Family, orig: &[u8], new: &[u8], changed: &[(usize, usize)]) -> Result<(), String> {
-    if new.len() < orig.len() {
+/// The mod's message script, 862 entry 15 (script 2815): "You obtained
+/// X!" through the game's own routine (the one 862 entry 4 calls), with the
+/// item and count from the saved works 0x40FE and 0x40FF (no script uses
+/// them). It starts and ends the way the hidden-item scripts do.
+pub const MSG_ENTRY: usize = 15;
+
+fn add_message_script(s: &mut Script) -> Result<(), String> {
+    if s.entries.len() != MSG_ENTRY {
+        return Err(format!("862 has {} entries, not {MSG_ENTRY}", s.entries.len()));
+    }
+    let start = label_index(s, &s.entries[4])?;
+    let show = match s.items.get(start + 1) {
+        Some(Item::Cmd { name, args }) if name == "SCRIPT_WORK_CmdCall" => match args.first() {
+            Some(arkh_script::Value::Label(l)) => l.clone(),
+            _ => return Err("862 entry 4: no call".into()),
+        },
+        _ => return Err("862 entry 4: no call".into()),
+    };
+    s.entries.push("ArkMsg".into());
+    s.items.extend([
+        Item::Label("ArkMsg".into()),
+        cmd("SCRIPT_WORK_CmdCallFieldCommand", &[]),
+        cmd(COPY, &[0x8008, 0x40FE]),
+        cmd(COPY, &[0x8009, 0x40FF]),
+        cmd_label("SCRIPT_WORK_CmdCall", &show),
+        cmd("SCRIPT_WORK_CmdCallScriptEvent", &[]),
+        cmd("SCRIPT_WORK_CmdPopAllBgm", &[]),
+        cmd("SCRIPT_WORK_CmdHalt", &[]),
+    ]);
+    Ok(())
+}
+
+/// An edited member keeps every original byte outside the changed commands
+/// (after its entry table, which grows by 4 bytes per added entry, so the
+/// code moves by that much), and reads back: disassembled and assembled
+/// again it is the same.
+fn verify(
+    m: u32,
+    family: Family,
+    orig: &[u8],
+    new: &[u8],
+    changed: &[(usize, usize)],
+    entries_before: usize,
+    entries_after: usize,
+) -> Result<(), String> {
+    let (h0, h1) = (4 * entries_before + 2, 4 * entries_after + 2);
+    if new.len() < orig.len() + (h1 - h0) {
         return Err(format!("member {m}: shorter after the edit"));
     }
-    for (i, (a, b)) in orig.iter().zip(new.iter()).enumerate() {
-        if a != b && !changed.iter().any(|&(p, n)| p <= i && i < p + n) {
+    for i in 0..entries_before {
+        let rel = |d: &[u8], h: usize| i32::from_le_bytes(d[4 * i..4 * i + 4].try_into().unwrap()) as i64 + 4 * i as i64 + 4 - h as i64;
+        if rel(orig, h0) != rel(new, h1) {
+            return Err(format!("member {m}: entry {i} moved"));
+        }
+    }
+    for i in h0..orig.len() {
+        if orig[i] != new[i - h0 + h1] && !changed.iter().any(|&(p, n)| p <= i && i < p + n) {
             return Err(format!("member {m}: byte {i:#x} changed outside the edits"));
         }
     }

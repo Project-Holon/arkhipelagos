@@ -6,11 +6,21 @@ cd "$(dirname "$0")/.."
 T="${CARGO_TARGET_DIR:-target}"
 cargo build --release
 cargo build --release -p arkh-gen-wasm --target wasm32-unknown-unknown
+cargo build --release -p arkh-mod --target wasm32-unknown-unknown
 cargo test --release
 echo "== field scripts, 12 cartridges"
 python tools/check_scripts.py
 echo "== apply step: written archives read back, 12 cartridges"
 python tools/check_apply.py
+echo "== mod: solo flow applied to an English and a Japanese cartridge"
+for code in IRBO IRAJ; do
+  data=$(python -I -c "import json,sys; print(json.load(open('tools/carts.local.json'))[sys.argv[1]]['data'])" $code)
+  ARKH_CART_CODE=$code ARKH_CART_DATA="$data" cargo test --release -q -p arkh-mod --test solo
+done
+echo "== mod: wasm imports against eidos's v6 header"
+H="${EIDOS_SDK:-}/api/v6/eidos_wasm.h"
+if [ -f "$H" ]; then python -I tools/wasm_imports.py "$T/wasm32-unknown-unknown/release/arkh_mod.wasm" "$H" | tail -1
+else echo "no eidos header (set EIDOS_SDK): skipped"; fi
 echo "== generator: golden hashes (native)"
 fail=0
 while read -r h f; do

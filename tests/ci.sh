@@ -10,6 +10,7 @@ mkdir -p out
 cargo test --release
 cargo build --release
 cargo build --release -p arkh-gen-wasm --target wasm32-unknown-unknown
+cargo build --release -p arkh-mod --target wasm32-unknown-unknown
 fail=0
 echo "== generator: golden hashes (native)"
 while read -r h f; do
