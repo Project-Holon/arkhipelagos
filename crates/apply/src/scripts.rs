@@ -97,6 +97,8 @@ pub struct WorldSpecies<'a> {
     pub changes: &'a arkh_gen::species::Changes,
     /// the three starters (left, middle, right), empty when unchanged
     pub starters: &'a [u32],
+    /// the per-world picks the Castelia studio and the Driftveil lady ask for
+    pub picks: &'a arkh_gen::species::Picks,
 }
 
 /// The check edits, and the world's species edits when a world is given.
@@ -272,6 +274,28 @@ pub fn members_for(
             load(m, &mut scripts)?;
             edits.entry(m).or_default().replaces.extend(reps);
         }
+        // the picks: the studio's type and the Driftveil lady's move are
+        // the world's, not the day's random ones
+        if let Some(ty) = w.picks.studio_castelia_type {
+            load(STUDIO, &mut scripts)?;
+            let s = &scripts[&STUDIO];
+            let at = find(s, 0, "SCRCMD_WORK_CmdGetRandom", &[0x4137, 0x10])?;
+            edits.entry(STUDIO).or_default().replaces.push(Replace { at, with: cmd(LOAD_CONST, &[0x4137, ty]) });
+        }
+        if let Some(tm) = w.picks.driftveil_tm {
+            let machines: Value = serde_json::from_str(arkh_gen::facts::MACHINES).map_err(|e| e.to_string())?;
+            let mv = machines["all"]
+                .as_array()
+                .and_then(|a| a.iter().find(|x| x["item"].as_u64() == Some(tm as u64)))
+                .and_then(|x| x["move"].as_u64())
+                .ok_or(format!("no machine {tm}"))? as u32;
+            load(DRIFTVEIL_LADY, &mut scripts)?;
+            let s = &scripts[&DRIFTVEIL_LADY];
+            let at = find(s, 0, "SCRCMD_POKEMON_FLD_GetRandomBagPocketValue", &[0x413b])?;
+            expect(s, at + 1, SET_FLAG, &[0xab3])?;
+            let body = vec![cmd(LOAD_CONST, &[0x413b, mv]), cmd(SET_FLAG, &[0xab3]), cmd_label(JUMP, RESUME)];
+            edits.entry(DRIFTVEIL_LADY).or_default().detours.push(Detour { at, cover: 2, body, resume: Some(at + 2) });
+        }
     }
 
     let mut out = Vec::new();
@@ -383,6 +407,11 @@ const STATIC_MEMBERS: &[(&str, u32)] = &[
     ("Route 6 Item Encounter", 897),
     ("Route 10 Item Encounter", 897),
 ];
+
+/// Castelia's studio: `GetRandom 0x4137 16` picks the day's type.
+const STUDIO: u32 = 86;
+/// Driftveil's lady: `GetRandomBagPocketValue 0x413b` picks the day's move.
+const DRIFTVEIL_LADY: u32 = 212;
 
 /// The starter script: the choice loads 0x8021 with the species.
 const STARTER_MEMBER: u32 = 782;

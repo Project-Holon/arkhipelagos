@@ -65,11 +65,10 @@ MARK_WORKS = ("0x805e", "0x805f")
 # the "#" number, west to east): each game flag below is used by no other
 # location, and its event file is the location's zone.
 # Locations whose rule asks for a per-world pick (has_value) while the
-# mod does not yet change the script to ask for the world's pick: a world
-# must not count on them.
-PICK_PENDING = {
-    444: "its rule needs the world's Driftveil TM pick; the script does not ask for it yet",
-}
+# mod does not change the script to ask for the world's pick: a world must
+# not count on them. (The Castelia studio and the Driftveil lady ask for
+# the world's picks: crates/apply/src/scripts.rs.)
+PICK_PENDING = {}
 
 HIDDEN_GAME_FLAG = {
     438: 1020,                       # Route 18 lower coast (event file 387)

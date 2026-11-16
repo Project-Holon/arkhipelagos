@@ -191,7 +191,7 @@ impl Game {
         }
         let scripts = arkh_apply::scripts::SCRIPTS;
         let get = |i: u32| cell.borrow_mut().member_get(scripts, i);
-        let ws = arkh_apply::scripts::WorldSpecies { version: &p.version, changes: &p.tables, starters: &p.starters };
+        let ws = arkh_apply::scripts::WorldSpecies { version: &p.version, changes: &p.tables, starters: &p.starters, picks: &p.picks };
         for (i, d) in arkh_apply::scripts::members_for(self.family, Some(&ws), &get)? {
             sets.push((scripts, i, d));
         }
@@ -219,8 +219,10 @@ impl Game {
         let orig_count = host.work_get(0x8009).unwrap_or(0);
         let locs = self.checks.get(&(flag, key)).cloned().unwrap_or_default();
         let mine: Vec<u32> = locs.iter().copied().filter(|l| self.placed.contains_key(l)).collect();
-        if mine.is_empty() {
-            // not a location of this world: the game's own item
+        if mine.is_empty() || mine.iter().all(|l| self.state.checked.contains(l)) {
+            // not a location of this world, or one already checked (a gift
+            // the game gives again, as the Driftveil lady does each day):
+            // the game's own item
             self.give_original(host, flag, orig_item, orig_count);
             return true;
         }

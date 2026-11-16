@@ -143,10 +143,13 @@ fn solo_world_checks_give_their_items() {
                 want_items += 1;
             }
         }
-        // a second time gives nothing
-        let after = (h.items.len(), h.badges.len());
-        assert!(fire(&mut g, &mut h, *flag, *key, (1, 1)));
-        assert_eq!((h.items.len(), h.badges.len()), after, "flag {flag}: checked twice");
+        // a second time gives the game's own item, never the world's again
+        let checked = g.state.checked.len();
+        let after = h.items.len();
+        assert!(fire(&mut g, &mut h, *flag, *key, (7, 2)));
+        assert_eq!(g.state.checked.len(), checked);
+        assert_eq!(&h.items[after..], &[(7, 2)], "flag {flag}: the original on a repeat");
+        h.items.truncate(after);
     }
     let in_world = g.player().locations.len();
     assert_eq!(checks, in_world, "every location of the world has a check");

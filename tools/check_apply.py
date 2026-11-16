@@ -152,6 +152,18 @@ def check_species(p, code, out):
         if got != p["starters"]:
             bad += 1
             print(f"  {code}: starters {got}, want {p['starters']}")
+    picks = p.get("picks", {})
+    if picks.get("studio_castelia_type") is not None:
+        want = ["SCRIPT_WORK_CmdLoadWorkConst", "0x4137", hex(picks["studio_castelia_type"])]
+        if want not in dis(code, arc, 86)[0]:
+            bad += 1
+            print(f"  {code}: the studio does not ask for type {picks['studio_castelia_type']}")
+    if picks.get("driftveil_tm") is not None:
+        mach = json.load(open(os.path.join(ROOT, "data", "facts", "machines.json"), encoding="utf-8"))["all"]
+        mv = next(x["move"] for x in mach if x["item"] == picks["driftveil_tm"])
+        if ["SCRIPT_WORK_CmdLoadWorkConst", "0x413b", hex(mv)] not in dis(code, arc, 212)[0]:
+            bad += 1
+            print(f"  {code}: the Driftveil lady does not ask for move {mv}")
     trades = p["tables"].get("trades", {})
     if trades:
         recs = narc_files(os.path.join(out, "a", "1", "6", "5"))

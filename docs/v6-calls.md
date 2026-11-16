@@ -65,7 +65,8 @@ so the giving script still runs and `work_get` sees its works): with the
 marker, (flag, key) gives the location ids (`data/world/item_sites.json`;
 the game flag where a site has `game_flag`). A location of the player's
 world gives its item once (the save keeps the checked ids); a flag that is
-no location of the world gives the original item, or the badge. A flag set
+no location of the world, or a location already checked (the game repeats
+some gifts each day), gives the original item, or the badge. A flag set
 without the marker is the game's own and is ignored.
 
 Works 0x805E, 0x805F, 0x40FE and 0x40FF are used by no original script in

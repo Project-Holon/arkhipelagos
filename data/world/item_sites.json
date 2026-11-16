@@ -6552,6 +6552,57 @@
    "flag": 365,
    "n": 0
   },
+  "72640": {
+   "how": "give",
+   "from": "bwap",
+   "key": 0,
+   "sites": [
+    {
+     "member": 212,
+     "cmd": {
+      "eu": 84,
+      "ja": 84
+     },
+     "resume": {
+      "eu": 87,
+      "ja": 87
+     },
+     "item": 93,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 212,
+     "cmd": {
+      "eu": 84,
+      "ja": 84
+     },
+     "resume": {
+      "eu": 87,
+      "ja": 87
+     },
+     "item": 93,
+     "count": 1,
+     "routine": 2805
+    },
+    {
+     "member": 212,
+     "cmd": {
+      "eu": 114,
+      "ja": 114
+     },
+     "resume": {
+      "eu": 117,
+      "ja": 117
+     },
+     "item": 93,
+     "count": 1,
+     "routine": 2805
+    }
+   ],
+   "flag": 444,
+   "n": 0
+  },
   "67488": {
    "how": "give",
    "from": "game",
@@ -8601,7 +8652,6 @@
   "67889": "the flag is set nowhere in the original scripts nor in BWAP's",
   "67890": "the flag is set nowhere in the original scripts nor in BWAP's",
   "67891": "the flag is set nowhere in the original scripts nor in BWAP's",
-  "72640": "its rule needs the world's Driftveil TM pick; the script does not ask for it yet",
   "72240": "a give in BWAP's script has no matching line in the original",
   "72304": "the flag is set nowhere in the original scripts nor in BWAP's",
   "72288": "the flag is set nowhere in the original scripts nor in BWAP's",

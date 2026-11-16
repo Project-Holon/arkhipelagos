@@ -74,7 +74,7 @@ fn run(world: &str, slot: &str, data: &str, out: &str, fam: &str) -> Result<(), 
         let bytes = std::fs::read(&path).map_err(|e| format!("{path}: {e}"))?;
         let mut narc = Narc::parse(&bytes).map_err(|e| format!("{path}: {}", e.0))?;
         let files = narc.files.clone();
-        let ws = arkh_apply::scripts::WorldSpecies { version: &p.version, changes: &p.tables, starters: &p.starters };
+        let ws = arkh_apply::scripts::WorldSpecies { version: &p.version, changes: &p.tables, starters: &p.starters, picks: &p.picks };
         let changed = arkh_apply::scripts::members_for(family, Some(&ws), &|i| files.get(i as usize).cloned())?;
         for (i, d) in &changed {
             narc.files[*i as usize] = d.clone();
