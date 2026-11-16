@@ -33,6 +33,7 @@ struct Fake {
     texts: Vec<(u32, u32, u32, u32, Vec<u16>)>,
     scripts: Vec<u16>,
     links: Vec<(String, String, String)>,
+    leaves: u32,
     link_ok: bool,
     sent: Vec<Value>,
     log: Vec<String>,
@@ -120,6 +121,9 @@ impl Host for Fake {
     fn ap_link(&mut self, room: &str, slot: &str, password: &str) -> bool {
         self.links.push((room.into(), slot.into(), password.into()));
         self.link_ok
+    }
+    fn world_leave(&mut self) {
+        self.leaves += 1;
     }
     fn ap_send(&mut self, json: &str) -> bool {
         self.sent.push(serde_json::from_str(json).expect("the mod sends JSON"));
@@ -377,4 +381,50 @@ fn white_connects_as_white_and_a_line_without_a_room_is_the_plain_game() {
     m.new_game(&mut h, 1);
     assert!(h.links.is_empty());
     assert!(m.ap.is_none());
+}
+
+#[test]
+fn an_unnamed_item_of_another_game_is_a_far_item() {
+    let (mut m, mut h) = connected();
+    show_all(&mut m, &mut h);
+    // checked before the names came: the cartridge's "Far Item"
+    check(&mut m, &mut h, FOREIGN_LOC);
+    assert_eq!(show_all(&mut m, &mut h), vec!["You found Far Itemfor Quest!".to_string()]);
+}
+
+#[test]
+fn a_second_game_leaves_the_first_link() {
+    let (mut m, mut h) = connected();
+    m.save(&mut h);
+    let links = h.links.len();
+    // Continue on the same run: the earlier link ends before the new one
+    let leaves = h.leaves;
+    m.save_load(&mut h);
+    assert!(h.leaves > leaves);
+    assert_eq!(h.links.len(), links + 1);
+    m.save_load(&mut h);
+    assert_eq!(h.links.len(), links + 2);
+    // a plain new game after it: the room's link ends, none opens
+    let leaves = h.leaves;
+    h.mode = String::new();
+    m.new_game(&mut h, 1);
+    assert!(h.leaves > leaves);
+    assert!(m.ap.is_none());
+    assert_eq!(h.links.len(), links + 2);
+}
+
+#[test]
+fn a_data_package_that_ends_the_link_is_not_asked_again() {
+    let (mut m, mut h) = connected();
+    msg(&mut m, &mut h, LOCATION_INFO);
+    assert_eq!(h.sent_cmds("GetDataPackage").len(), 1);
+    // the answer was too big for the bridge: the link closed
+    m.on_world(&mut h, arkh_mod::online::CLOSED, b"");
+    for _ in 0..=RETRY_FRAMES {
+        m.tick(&mut h);
+    }
+    msg(&mut m, &mut h, ROOM_INFO);
+    msg(&mut m, &mut h, CONNECTED);
+    msg(&mut m, &mut h, LOCATION_INFO);
+    assert_eq!(h.sent_cmds("GetDataPackage").len(), 1, "APQuest not asked again");
 }

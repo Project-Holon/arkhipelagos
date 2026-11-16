@@ -175,7 +175,10 @@ impl Mod {
     pub fn new_game(&mut self, host: &mut dyn Host, seed: u64) {
         self.game = None;
         self.creating = None;
-        self.ap = None;
+        if self.ap.take().is_some() {
+            // the room of the game before this one: its link ends
+            host.world_leave();
+        }
         let mode = host.mode();
         let join = host.file_read(JOIN_FILE).and_then(|b| String::from_utf8(b).ok());
         let join = join.as_deref().and_then(|t| t.trim().split_once(' ')).map(|(c, n)| (c.to_string(), n.to_string()));
@@ -264,7 +267,9 @@ impl Mod {
     /// world is joined again with the player key.
     pub fn save_load(&mut self, host: &mut dyn Host) {
         self.joining = None;
-        self.ap = None;
+        if self.ap.take().is_some() {
+            host.world_leave();
+        }
         match Game::load(host) {
             Ok(Some(g)) => {
                 let online = g.state.online.clone();

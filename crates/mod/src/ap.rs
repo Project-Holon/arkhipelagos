@@ -140,6 +140,9 @@ pub struct Client {
     /// the games whose names are still to ask for, and the one asked
     pub asking: VecDeque<String>,
     pub asked: Option<String>,
+    /// games whose data package ended the link (too big for the bridge):
+    /// not asked again this run
+    pub skip: BTreeSet<String>,
 }
 
 impl Client {
@@ -152,6 +155,7 @@ impl Client {
             scouted: BTreeMap::new(),
             asking: VecDeque::new(),
             asked: None,
+            skip: BTreeSet::new(),
         }
     }
 }
@@ -226,6 +230,9 @@ impl Mod {
 
     fn ap_link(&mut self, host: &mut dyn Host) {
         let Some(c) = self.ap.as_mut() else { return };
+        // a link of an earlier game, or a world session, may still be open
+        // on the port's connection: metaxy refuses a second L on it
+        host.world_leave();
         if host.ap_link(&c.room.room, &c.room.slot, &c.room.password) {
             c.phase = Phase::Linking;
         } else {
@@ -259,7 +266,12 @@ impl Mod {
         host.log("arkhipelagos: the Archipelago link closed; linking again in 30 seconds");
         c.phase = Phase::Waiting;
         c.retry = RETRY_FRAMES;
-        c.asked = None;
+        // a data package that ended the link (over the bridge's 2 MB) is
+        // not asked for again: its items keep the "Far Item" name
+        if let Some(game) = c.asked.take() {
+            host.log(&format!("arkhipelagos: the link closed while {game}'s names came; not asking again"));
+            c.skip.insert(game);
+        }
         c.asking.clear();
     }
 
@@ -509,7 +521,12 @@ impl Mod {
             c.scouted.insert(loc as u32, (item, to as u32));
         }
         // the games of those items, one at a time (each answer stays small)
-        let games: BTreeSet<String> = c.scouted.values().filter_map(|(_, to)| c.games.get(to).cloned()).collect();
+        let games: BTreeSet<String> = c
+            .scouted
+            .values()
+            .filter_map(|(_, to)| c.games.get(to).cloned())
+            .filter(|g| !c.skip.contains(g))
+            .collect();
         c.asking = games.into_iter().collect();
         self.ap_ask_next(host);
     }

@@ -556,6 +556,8 @@ impl Game {
             let t = t.trim_end_matches("\\c");
             let other = match label {
                 Some(l) => Some(lines::plain(l)),
+                // an item of another game not named yet (Archipelago: item 0)
+                None if item == 0 && id == "share.found_for" => Some(self.other_name(host, item, b as u32)),
                 None => (item >= 0x1000).then(|| self.other_name(host, item, b as u32)),
             };
             let who = lines::plain(name);

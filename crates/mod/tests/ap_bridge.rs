@@ -103,6 +103,12 @@ impl Host for Port {
         self.link = Some(l);
         ok
     }
+    fn world_leave(&mut self) {
+        // as the port: B, and the connection closes
+        if let Some(mut l) = self.link.take() {
+            l.send('B', b"");
+        }
+    }
     fn ap_send(&mut self, json: &str) -> bool {
         if trace() {
             eprintln!("-> T {}", &json[..json.len().min(120)]);
