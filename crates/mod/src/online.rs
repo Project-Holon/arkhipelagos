@@ -71,6 +71,19 @@ fn data_file(code: &str, player: u32) -> String {
     format!("online-{}-{player}.json", code.to_ascii_uppercase())
 }
 
+/// The player key of a name in a world, written at once when metaxy gives
+/// it: a game that closes before its first save keeps its claim.
+fn key_file(code: &str, name: &str) -> String {
+    let n: String = name.chars().map(|c| if c.is_ascii_alphanumeric() { c } else { '_' }).collect();
+    format!("key-{}-{n}.txt", code.to_ascii_uppercase())
+}
+
+fn stored_key(host: &mut dyn Host, code: &str, name: &str) -> Option<String> {
+    let t = String::from_utf8(host.file_read(&key_file(code, name))?).ok()?;
+    let k = t.trim().to_string();
+    (k.len() == 32).then_some(k)
+}
+
 fn checks_file(code: &str, player: u32) -> String {
     format!("checks-{}-{player}.json", code.to_ascii_uppercase())
 }
@@ -131,10 +144,13 @@ impl Mod {
         self.game = None;
         let join = host.file_read(JOIN_FILE).and_then(|b| String::from_utf8(b).ok());
         if let Some((code, name)) = join.as_deref().and_then(|t| t.trim().split_once(' ')) {
-            let o = Online { code: code.trim().to_string(), name: name.trim().to_string(), ..Default::default() };
+            let mut o = Online { code: code.trim().to_string(), name: name.trim().to_string(), ..Default::default() };
             host.member_clear_all();
+            // a name this game joined before goes back in by its key
+            o.key = stored_key(host, &o.code, &o.name).unwrap_or_default();
+            let who = if o.key.is_empty() { o.name.clone() } else { o.key.clone() };
             host.log(&format!("arkhipelagos: joining world {} as {}", o.code, o.name));
-            if !host.world_join(&o.code, &o.name) {
+            if !host.world_join(&o.code, &who) {
                 host.log("arkhipelagos: the join was not sent (no relay?)");
             }
             self.joining = Some(o);
@@ -160,7 +176,11 @@ impl Mod {
                 let online = g.state.online.clone();
                 self.game = Some(g);
                 self.apply(host);
-                if let Some(o) = online {
+                if let Some(mut o) = online {
+                    // a key given after the last save is in the key file
+                    if let Some(k) = stored_key(host, &o.code, &o.name) {
+                        o.key = k;
+                    }
                     host.world_join(&o.code, &o.key);
                     self.joining = Some(o);
                 }
@@ -254,10 +274,15 @@ impl Mod {
             config_hash: pd.world_hash.clone(),
             players: vec![pd.data],
         };
+        if !host.file_write(&key_file(&online.code, &online.name), online.key.as_bytes()) {
+            host.log("arkhipelagos: could not store the player key");
+        }
         let file = data_file(&online.code, player);
-        let same = self.game.as_ref().is_some_and(|g| {
-            g.state.online.as_ref().is_some_and(|o| o.code == online.code && o.player == player) && g.world == world
-        });
+        let mine = self
+            .game
+            .as_ref()
+            .is_some_and(|g| g.state.online.as_ref().is_some_and(|o| o.code == online.code && o.player == player));
+        let same = mine && self.game.as_ref().is_some_and(|g| g.world == world);
         if !host.file_write(&file, &serde_json::to_vec(&world).map_err(|e| e.to_string())?) {
             host.log("arkhipelagos: could not store the world's data");
         }
@@ -266,6 +291,14 @@ impl Mod {
             if let Some(g) = self.game.as_mut() {
                 g.state.online = Some(online);
             }
+        } else if mine {
+            // the same player's world, sent anew: keep the save's progress
+            let mut state = self.game.take().expect("mine").state;
+            state.online = Some(online);
+            state.world = file;
+            let family = Mod::family(host);
+            self.game = Some(Game::new(world, player, family, state)?);
+            self.apply(host);
         } else {
             let state = SaveState { world: file, slot: player, online: Some(online), ..Default::default() };
             let family = Mod::family(host);

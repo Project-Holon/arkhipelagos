@@ -198,6 +198,12 @@ impl Host for Net {
 /// world events; after a join's push, send the session's checks (`V`, empty
 /// when there are none), as the port does.
 fn pump(m: &mut Mod, h: &mut Net, wait: Duration) {
+    pump_as(m, h, wait, true)
+}
+
+/// `confirm` false: the port's V after the push is not sent (a game that
+/// closes before it confirms its claim).
+fn pump_as(m: &mut Mod, h: &mut Net, wait: Duration, confirm: bool) {
     let end = Instant::now() + wait;
     while Instant::now() < end {
         let Some(l) = h.link.as_mut() else { return };
@@ -205,16 +211,21 @@ fn pump(m: &mut Mod, h: &mut Net, wait: Duration) {
         match t {
             'S' => {
                 m.on_world(h, online::JOINED, &body);
+                if !confirm {
+                    return;
+                }
                 let ids: Vec<String> = h.sent.iter().map(|x| x.to_string()).collect();
-                let l = h.link.as_mut().unwrap();
-                l.send('V', ids.join(" ").as_bytes());
+                if let Some(l) = h.link.as_mut() {
+                    l.send('V', ids.join(" ").as_bytes());
+                }
             }
             'Y' => m.on_world(h, online::ITEMS, &body),
             'U' => m.on_world(h, online::POSITION, &body),
             'X' => m.on_world(h, online::PLAYER_OUT, &body),
             'E' => {
-                m.on_world(h, online::ERROR, &body);
+                // the relay closes after an error; the mod may join again
                 h.link = None;
+                m.on_world(h, online::ERROR, &body);
             }
             _ => {}
         }
@@ -256,12 +267,12 @@ fn two_players_online() {
     };
     let wait = Duration::from_secs(3);
     let stamp = token();
-    let (na, nb) = (format!("Ash{}", &stamp[..6]), format!("Misty{}", &stamp[..6]));
+    let (na, nb, nc) = (format!("Ash{}", &stamp[..6]), format!("Misty{}", &stamp[..6]), format!("Brock{}", &stamp[..6]));
 
     // the owner makes and starts the world
     let mut owner = Link::open(&addr);
     let cfg = serde_json::json!({"schema": 1, "seed": 4242,
-        "players": [{"name": na, "version": "black"}, {"name": nb, "version": "white"}]});
+        "players": [{"name": na, "version": "black"}, {"name": nb, "version": "white"}, {"name": nc, "version": "black"}]});
     owner.send('N', format!("{V2} {}\n{}", token(), cfg).as_bytes());
     let (code, okey) = loop {
         let (t, body) = owner.next(Duration::from_secs(60)).expect("an answer to N");
@@ -351,6 +362,41 @@ fn two_players_online() {
     pump(&mut mb, &mut hb, wait);
     assert_eq!(hb.items.last(), Some(&(ib as u16, 1)), "the offline check reached B");
     assert_eq!(mb.game.as_ref().unwrap().state.received, 3);
+
+    // a new game on A's files (no save): back in by the stored key, no name-taken
+    let mut ha5 = Net { addr: addr.clone(), code: *b"IRBO", files: ha4.files.clone(), ..Default::default() };
+    let mut ma5 = Mod::default();
+    ha4.world_leave();
+    ma5.new_game(&mut ha5, 1);
+    pump(&mut ma5, &mut ha5, wait);
+    assert_eq!(ma5.game.as_ref().map(|g| g.slot), Some(1), "joined by key: {:?}", ha5.log);
+    assert!(ha5.log.iter().all(|l| !l.contains("metaxy:")), "no error: {:?}", ha5.log);
+    ha5.world_leave();
+    let mut ma4 = ma5;
+    let mut ha4 = ha5;
+    ha4.world_join(&code, &ma4.game.as_ref().unwrap().state.online.as_ref().unwrap().key);
+    pump(&mut ma4, &mut ha4, wait);
+
+    // bad key: C joins by name and closes before confirming, so metaxy
+    // releases the claim; C's next game joins with the dead key, gets
+    // bad-key, joins again by name and keeps the new key
+    let mut hc = Net { addr: addr.clone(), code: *b"IRBO", ..Default::default() };
+    hc.files.insert(online::JOIN_FILE.into(), format!("{code} {nc}").into_bytes());
+    let mut mc = Mod::default();
+    mc.new_game(&mut hc, 1);
+    pump_as(&mut mc, &mut hc, wait, false);
+    let dead = mc.game.as_ref().expect("C joined").state.online.as_ref().unwrap().key.clone();
+    hc.link = None; // closed with no V
+    std::thread::sleep(Duration::from_millis(500));
+    let mut hc2 = Net { addr: addr.clone(), code: *b"IRBO", files: hc.files.clone(), ..Default::default() };
+    let mut mc2 = Mod::default();
+    mc2.new_game(&mut hc2, 1);
+    pump(&mut mc2, &mut hc2, wait);
+    assert!(hc2.log.iter().any(|l| l.contains("bad-key")), "bad-key seen: {:?}", hc2.log);
+    let fresh = mc2.game.as_ref().expect("C joined again").state.online.as_ref().unwrap().key.clone();
+    assert_ne!(fresh, dead);
+    assert!(hc2.files.values().any(|v| v == fresh.as_bytes()), "the new key is in the key file");
+    hc2.world_leave();
 
     // both goals
     ma4.game.as_mut().unwrap().on_cleared(&mut ha4);
