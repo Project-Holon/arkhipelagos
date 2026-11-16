@@ -92,6 +92,28 @@ class Trainersanity(Range):
     default = 0
 
 
+class ShuffleBadgeRewards(Choice):
+    """What gym leaders give. vanilla: their own badge. shuffle: your eight
+    badges, in any order. anything: any item of any world."""
+    display_name = "Shuffle badge rewards"
+    option_vanilla = 0
+    option_shuffle = 1
+    option_anything = 3
+    default = 3
+
+
+class ShuffleTMRewards(Choice):
+    """What the 35 TM rewards give. shuffle: a TM or HM of your own world.
+    hm_with_badge: the same, and your HMs and TM70 Flash are among the nine
+    TM rewards of gym leaders and Clay on Route 6. anything: any item of
+    any world."""
+    display_name = "Shuffle TM rewards"
+    option_shuffle = 0
+    option_hm_with_badge = 1
+    option_anything = 3
+    default = 3
+
+
 def modifiers(name: str, doc: str, keys: list[str]) -> type[OptionSet]:
     """An option that is a list of modifiers; an empty list (the default)
     leaves that part of the game as it is."""
@@ -188,6 +210,8 @@ class ArkhOptions(PerGameCommonOptions):
     species_sources: SpeciesSources
     starter_pool: StarterPool
     hidden_items: HiddenItems
+    shuffle_badge_rewards: ShuffleBadgeRewards
+    shuffle_tm_rewards: ShuffleTMRewards
     dexsanity: Dexsanity
     seensanity: Seensanity
     dexcountsanity: Dexcountsanity
@@ -215,7 +239,8 @@ class ArkhOptions(PerGameCommonOptions):
 
 # option field name -> how it goes into the generator's configuration
 CHOICES = ["goal", "season_control"]
-CHECKS = ["hidden_items", "dexsanity", "seensanity", "dexcountsanity", "trainersanity"]
+CHECKS = ["hidden_items", "dexsanity", "seensanity", "dexcountsanity", "trainersanity",
+          "shuffle_badge_rewards", "shuffle_tm_rewards"]
 SETS = [f for f in ArkhOptions.__annotations__ if f not in CHOICES + CHECKS + ["starter_pool"]
         and f not in PerGameCommonOptions.__annotations__]
 
@@ -232,6 +257,11 @@ def generator_options(o: ArkhOptions) -> dict:
     # game without them is the same configuration as before them
     if not o.hidden_items.value:
         out["hidden_items"] = False
+    # placement rules: the fill's, not the pack's (an eidos-only world's
+    # generator reads them; here the world's pre_fill does)
+    for f in ("shuffle_badge_rewards", "shuffle_tm_rewards"):
+        if getattr(o, f).current_key != "anything":
+            out[f] = getattr(o, f).current_key
     for f in ("dexsanity", "seensanity", "trainersanity"):
         if getattr(o, f).value:
             out[f] = int(getattr(o, f).value)

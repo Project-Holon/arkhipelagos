@@ -30,4 +30,6 @@ echo "== generator: finishable worlds"
 "$T/release/arkh-gen" sweep 150
 echo "== lines (no cartridge)"
 "${PYTHON:-python3}" tools/checklines.py --no-carts
+echo "== generator: badge and TM reward rules"
+"${PYTHON:-python3}" tools/check_rewards.py "$T/release/arkh-gen" || fail=1
 exit $fail

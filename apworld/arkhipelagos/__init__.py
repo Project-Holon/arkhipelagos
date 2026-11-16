@@ -37,6 +37,7 @@ STATIC_CLASS = {
     "tm_hm_class": ItemClassification.useful,
     "dowsing_machine_logic": ItemClassification.useful,
 }
+ITEM_GROUPS_BY_ID: dict[int, str] = {i["id"]: i.get("group", "") for i in STATIC.get("items", [])}
 ITEM_GROUPS: dict[str, set[str]] = {}
 for _i in STATIC.get("items", []):
     if _i.get("group"):
@@ -194,13 +195,83 @@ class ArkhWorld(World):
     def create_items(self) -> None:
         n = len(self.pack["locations"])
         p = self.pack["pool"]
-        prog = p["progression"]
+        prog = list(p["progression"])
+        useful = list(p["useful"])
+        group = lambda i: ITEM_GROUPS_BY_ID.get(i, "")
+        here = {a for a, _ in self.pack["locations"]}
+        # badge and TM rewards with rules of their own are filled in pre_fill
+        self.badge_items: list[int] = []
+        self.hm_items: list[int] = []
+        self.tm_items: list[int] = []
+        if self.options.shuffle_badge_rewards.current_key != "anything":
+            self.badge_items = [i for i in prog if group(i) == "badge"]
+            prog = [i for i in prog if group(i) != "badge"]
+        if self.options.shuffle_tm_rewards.current_key != "anything":
+            if self.options.shuffle_tm_rewards.current_key == "hm_with_badge":
+                hm = lambda i: group(i) == "hm" or ITEM_ID_TO_NAME[i].startswith("TM70")
+                self.hm_items = [i for i in prog + useful if hm(i)]
+                prog = [i for i in prog if not hm(i)]
+                useful = [i for i in useful if not hm(i)]
+            spots = sum(1 for a in here if LOCATION_BY_ID[a]["kind"] == "tm") - len(self.hm_items)
+            tms = [i for i in useful if group(i) == "tm"]
+            self.random.shuffle(tms)
+            self.tm_items = tms[:spots]
+            if len(self.tm_items) < spots:
+                raise OptionError(f"{self.player_name}: too few TMs for the TM rewards")
+            taken = set(self.tm_items)
+            useful = [i for i in useful if i not in taken]
+        n -= len(self.badge_items) + len(self.hm_items) + len(self.tm_items)
         if len(prog) > n:
             raise OptionError(f"{self.player_name}: {len(prog)} progression items for {n} locations")
-        ids = prog + p["useful"][: n - len(prog)]
+        ids = prog + useful[: n - len(prog)]
         while len(ids) < n:
             ids.append(self.random.choice(p["filler"]))
         self.multiworld.itempool += [self.create_item(ITEM_ID_TO_NAME[i]) for i in ids]
+
+    def get_pre_fill_items(self) -> list[Item]:
+        return [self.create_item(ITEM_ID_TO_NAME[i]) for i in
+                getattr(self, "badge_items", []) + getattr(self, "hm_items", []) + getattr(self, "tm_items", [])]
+
+    def pre_fill(self) -> None:
+        from Fill import fill_restrictive
+        mine = [loc for loc in self.multiworld.get_locations(self.player) if loc.address is not None]
+        kind = lambda loc: LOCATION_BY_ID[loc.address]["kind"]
+
+        player = self.player
+        badges = [loc for loc in mine if kind(loc) == "badge"]
+        tm_spots = [loc for loc in mine if kind(loc) == "tm"]
+        if self.options.shuffle_badge_rewards.current_key == "vanilla":
+            for loc in badges:
+                badge = 0x1000 + ((loc.address - 0x10000) >> 4) - 370
+                loc.place_locked_item(self.create_item(ITEM_ID_TO_NAME[badge]))
+        # the shuffled badges and the HMs go in one fill, each to its own
+        # kind of reward, so neither is placed behind the other
+        items: list[int] = list(self.hm_items)
+        spots: list[Location] = []
+        if self.badge_items and self.options.shuffle_badge_rewards.current_key == "shuffle":
+            names = {ITEM_ID_TO_NAME[i] for i in self.badge_items}
+            for loc in badges:
+                loc.item_rule = lambda it, names=names: it.player == player and it.name in names
+            items += self.badge_items
+            spots += badges
+        if self.hm_items:
+            names = {ITEM_ID_TO_NAME[i] for i in self.hm_items} | {ITEM_ID_TO_NAME[i] for i in self.tm_items}
+            for loc in tm_spots:
+                if loc.address & 0xF == 8:
+                    loc.item_rule = lambda it, names=names: it.player == player and it.name in names
+                    spots.append(loc)
+        if items:
+            made = [self.create_item(ITEM_ID_TO_NAME[i]) for i in items]
+            state = self.multiworld.get_all_state(False)
+            for it in made:
+                state.remove(it)
+            self.random.shuffle(spots)
+            fill_restrictive(self.multiworld, state, spots, made, single_player_placement=True,
+                             lock=True, allow_excluded=True, allow_partial=False, name="arkhipelagos rewards")
+        empty = [loc for loc in tm_spots if loc.item is None]
+        self.random.shuffle(empty)
+        for loc, i in zip(empty, self.tm_items):
+            loc.place_locked_item(self.create_item(ITEM_ID_TO_NAME[i]))
 
     def get_filler_item_name(self) -> str:
         if not hasattr(self, "pack"):

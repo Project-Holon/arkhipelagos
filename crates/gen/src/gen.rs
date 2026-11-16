@@ -583,10 +583,11 @@ pub fn generate(m: &Model, cfg: &Config) -> Result<World, String> {
         fill_rest.extend(rest.into_iter().map(|i| (p as u32, i)));
     }
 
+    let rw = rewards::Rewards::new(&ws);
     let mut attempt = 0;
     let placed = loop {
         attempt += 1;
-        match fill_progression(m, &ws, &in_world, &prog_all, &mut rng) {
+        match fill_progression(m, &ws, &in_world, &prog_all, &rw, &mut rng) {
             Ok(p) => break p,
             Err(e) if attempt >= 20 => return Err(format!("fill failed 20 times: {e}")),
             Err(_) => continue,
@@ -608,6 +609,22 @@ pub fn generate(m: &Model, cfg: &Config) -> Result<World, String> {
     }
     rng.shuffle(&mut empty);
     rng.shuffle(&mut fill_rest);
+    if !rw.none() {
+        // locations with a rule of their own take the first item they allow
+        let mut rest = Vec::new();
+        for (p, l) in empty {
+            if rw.restricted(m, p as usize, l as usize) {
+                let k = fill_rest
+                    .iter()
+                    .position(|(rcv, item)| rw.allowed(m, p as usize, l as usize, *rcv as usize, *item))
+                    .ok_or_else(|| format!("{}: no item fits {}", ws[p as usize].name, m.locs[l as usize].name))?;
+                placed[p as usize][l as usize] = Some(fill_rest.remove(k));
+            } else {
+                rest.push((p, l));
+            }
+        }
+        empty = rest;
+    }
     for ((p, l), (rcv, item)) in empty.into_iter().zip(fill_rest) {
         placed[p as usize][l as usize] = Some((rcv, item));
     }
@@ -668,6 +685,7 @@ fn fill_progression(
     ws: &[PlayerWorld],
     in_world: &[Vec<bool>],
     prog_all: &[(u32, u32)],
+    rw: &rewards::Rewards,
     rng: &mut Rng,
 ) -> Result<Placement, String> {
     let np = ws.len();
@@ -686,7 +704,11 @@ fn fill_progression(
         let mut cands: Vec<(u32, u32)> = Vec::new();
         for q in 0..np {
             for l in 0..m.locs.len() {
-                if in_world[q][l] && placed[q][l].is_none() && loc_ok(m, &ws[q], &st, q, l) {
+                if in_world[q][l]
+                    && placed[q][l].is_none()
+                    && rw.allowed(m, q, l, p as usize, i)
+                    && loc_ok(m, &ws[q], &st, q, l)
+                {
                     cands.push((q as u32, l as u32));
                 }
             }
@@ -757,6 +779,10 @@ pub fn summary(w: &World) -> BTreeMap<String, usize> {
     }
     s
 }
+
+/// Which items badge and TM rewards may hold.
+#[path = "rewards.rs"]
+mod rewards;
 
 /// Extra checks: dexsanity, seensanity, dexcountsanity, trainersanity.
 #[path = "sanity.rs"]

@@ -91,6 +91,8 @@ player file means the same in eidos-only games and in Archipelago.
 | `seensanity` | 0 to 649 species seen are checks | 0 |
 | `dexcountsanity` | `{Maximum: 0-649, Steps: 1-649, Leniency: 0-648}`: catching 1 to Maximum species are checks | `{Maximum: 0, Steps: 1, Leniency: 0}` |
 | `trainersanity` | 0 to 600 won trainer battles are checks | 0 |
+| `shuffle_badge_rewards` | `vanilla`, `shuffle`, `anything` | `anything` |
+| `shuffle_tm_rewards` | `shuffle`, `hm_with_badge`, `anything` | `anything` |
 
 Archipelago's common options (`progression_balancing`, `accessibility`,
 `local_items` and the others) work as usual.

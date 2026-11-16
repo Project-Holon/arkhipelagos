@@ -71,7 +71,8 @@ def helper() -> str:
 
 TABLE_OPTIONS = ("any randomize_* or replace_evo_methods modifier, a starter_pool, species_sources other "
                  "than the default, hidden_items off, or any dexsanity, seensanity, dexcountsanity or trainersanity")
-CHECK_OPTIONS = ("hidden_items", "dexsanity", "seensanity", "dexcountsanity", "trainersanity")
+CHECK_OPTIONS = ("hidden_items", "dexsanity", "seensanity", "dexcountsanity", "trainersanity",
+                 "shuffle_badge_rewards", "shuffle_tm_rewards")
 DEFAULT_SOURCES = ["evolutions", "form_change", "static", "trainers"]
 
 
@@ -80,7 +81,7 @@ def needs_helper(opts: dict[str, Any]) -> bool:
     logic counts), so only the generator can make the pack."""
     if opts.get("starter_pool"):
         return True
-    if any(k in opts for k in CHECK_OPTIONS):
+    if any(k in opts for k in CHECK_OPTIONS if not k.startswith("shuffle_")):
         return True
     if sorted(opts.get("species_sources", DEFAULT_SOURCES)) != DEFAULT_SOURCES:
         return True

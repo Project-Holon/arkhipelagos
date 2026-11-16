@@ -125,6 +125,13 @@ Without these options a world is the same as before them.
 | `seensanity` | the same for seen species | 0 |
 | `dexcountsanity` | `{"Maximum": M, "Steps": S, "Leniency": L}`: catching 1 to M species are checks, counts divisible by S and M itself; each needs L more species catchable; M is cut to the species the player can catch | Maximum 0 |
 | `trainersanity` | N: N regular trainers (no gym leader, Elite Four or story boss) the player can reach; a won battle is a check | 0 |
+| `shuffle_badge_rewards` | `vanilla` (each gym leader gives their own badge), `shuffle` (the player's eight badges, any order), `anything` | `anything` |
+| `shuffle_tm_rewards` | `shuffle` (the 35 TM rewards give a TM or HM of the same player), `hm_with_badge` (the same, and the HMs and TM70 are among the nine TM rewards of gym leaders and Clay), `anything` | `anything` |
+
+The two reward options are rules of the fill (`crates/gen/src/rewards.rs`;
+`tools/check_rewards.py` checks them). PokemonBWAP's defaults are `shuffle`
+and `shuffle`; here they are `anything`, so worlds made before these
+options stay the same.
 
 The mod sees catches and sightings in `dex.register` (the count with
 `dex_caught`) and won trainer battles in `battle.end` (`crates/mod/src/sanity.rs`).
