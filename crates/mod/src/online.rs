@@ -137,6 +137,10 @@ pub struct Mod {
     pub next_free: u32,
     /// an Archipelago room this game plays in (`ap`)
     pub ap: Option<crate::ap::Client>,
+    /// eidos's field Tracker for the running game (`tracker`)
+    pub tracker: Option<crate::tracker::Tracker>,
+    /// the world whose Tracker could not be made (not tried again)
+    pub tracker_failed: Option<String>,
 }
 
 impl Mod {
@@ -175,6 +179,7 @@ impl Mod {
     pub fn new_game(&mut self, host: &mut dyn Host, seed: u64) {
         self.game = None;
         self.creating = None;
+        self.tracker_reset();
         if self.ap.take().is_some() {
             // the room of the game before this one: its link ends
             host.world_leave();
@@ -267,6 +272,7 @@ impl Mod {
     /// world is joined again with the player key.
     pub fn save_load(&mut self, host: &mut dyn Host) {
         self.joining = None;
+        self.tracker_reset();
         if self.ap.take().is_some() {
             host.world_leave();
         }
@@ -321,11 +327,44 @@ impl Mod {
         }
     }
 
-    /// Each frame: the Archipelago link's retries, then the game's messages.
+    /// Each frame: the Archipelago link's retries, the game's messages, the
+    /// Tracker.
     pub fn tick(&mut self, host: &mut dyn Host) {
         self.ap_tick(host);
         if let Some(g) = self.game.as_mut() {
             g.tick(host);
+        }
+        self.tracker_tick(host);
+    }
+
+    /// eidos clears the Tracker at a new game and a load: send it again.
+    fn tracker_reset(&mut self) {
+        if let Some(t) = self.tracker.as_mut() {
+            t.sent = None;
+            t.dirty = true;
+            t.wait = 0;
+        }
+    }
+
+    fn tracker_tick(&mut self, host: &mut dyn Host) {
+        let Some(g) = self.game.as_ref() else { return };
+        let world = g.state.world.clone();
+        if self.tracker.as_ref().map(|t| t.world.as_str()) != Some(world.as_str())
+            && self.tracker_failed.as_deref() != Some(world.as_str())
+        {
+            self.tracker = match crate::tracker::Tracker::new(g.player(), &world) {
+                Ok(t) => Some(t),
+                Err(e) => {
+                    host.log(&format!("arkhipelagos: no tracker: {e}"));
+                    self.tracker_failed = Some(world);
+                    None
+                }
+            };
+        }
+        if let Some(t) = self.tracker.as_mut() {
+            if t.world == g.state.world {
+                t.tick(host, g);
+            }
         }
     }
 

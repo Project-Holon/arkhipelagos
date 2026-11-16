@@ -29,6 +29,7 @@ async function start(opts) {
     reading: null, // the bytes ap_read gives while a handler runs
     texts: [],
     scripts: [],
+    trackers: [],
   };
   let mem;
   const str = (p) => {
@@ -82,6 +83,7 @@ async function start(opts) {
     setting_get: () => -1, setting_text: () => -1,
     player_name: () => 0, world_create: () => -1, world_owner: () => -1,
     dex_caught: () => 0,
+    tracker_set: (p, size) => { s.trackers.push(new TextDecoder().decode(new Uint8Array(mem.buffer, p, size))); return 0; },
     ap_link: (room, slot, pass, ticket) => { s.links.push([str(room), str(slot), str(pass)]); new DataView(mem.buffer).setUint32(ticket, 1, true); return 0; },
     ap_send: (p, size) => { s.sent.push(...JSON.parse(new TextDecoder().decode(new Uint8Array(mem.buffer, p, size)))); return 0; },
     ap_read: (out, size) => {
@@ -136,6 +138,31 @@ async function start(opts) {
   const want = placed ? placed[1] : 17;
   if (s.given.length !== 1 || s.given[0][0] !== want) throw new Error(`gave ${JSON.stringify(s.given)}, want ${want}`);
   console.log(`flag.set 132: gave item ${s.given[0][0]} (location ${loc})`);
+  // the Tracker: made on the first frame (the logic is built then), sent
+  const t1 = performance.now();
+  s.frame();
+  const built = performance.now() - t1;
+  const tr = s.trackers[0];
+  if (!tr) throw new Error("no tracker sent: " + s.logs.join(" | "));
+  const rows = tr.split("\n").filter(Boolean).map((l) => l.split("\t"));
+  const count = rows.find((r) => r[0] === "count");
+  if (!rows.some((r) => r[0] === "area" && r[1] === "Route 1" && r[2] === "317")) throw new Error("tracker: no Route 1");
+  if (!count || count[1] !== "1" || +count[2] !== w.players[0].locations.length) throw new Error(`tracker count ${count}`);
+  if (!rows.some((r) => r[0] === "check" && r[1] === "found")) throw new Error("tracker: the check is not found");
+  // a frame that remakes the text after a check (every second at most)
+  for (let i = 0; i < 61; i++) s.frame();
+  s.check(125, 0, 1); // Opelucid Gym's guide: a new check
+  s.done();
+  let slow = 0;
+  for (let i = 0; i < 61; i++) {
+    const t = performance.now();
+    s.frame();
+    slow = Math.max(slow, performance.now() - t);
+  }
+  if (s.trackers.length !== 2) throw new Error(`tracker sent ${s.trackers.length} times, want 2`);
+  const count2 = s.trackers[1].split("\n").find((l) => l.startsWith("count"));
+  if (count2 !== `count\t2\t${w.players[0].locations.length}`) throw new Error(`tracker after a check: ${count2}`);
+  console.log(`tracker: ${rows.filter((r) => r[0] === "area").length} areas, ${rows.filter((r) => r[0] === "check").length} checks, ${tr.length} bytes; first frame (logic built) ${built.toFixed(1)} ms, slowest frame after a check (text made again) ${slow.toFixed(2)} ms`);
   console.log("logs:", s.logs.join(" | "));
 }
 
@@ -163,6 +190,13 @@ async function start(opts) {
   s.frame();
   for (let i = 0; i < 4 && s.done().length; i++);
   if (s.texts.length !== 2 || !s.texts.every((t) => t.startsWith("Quest sent you"))) fail(`lines ${JSON.stringify(s.texts)}`);
+  // the Tracker of the room's slot: the two items received count (Parcel
+  // is a key item), every location of the slot listed
+  const tr = s.trackers[s.trackers.length - 1];
+  if (!tr) fail("no tracker");
+  const rows = tr.split("\n").filter(Boolean).map((l) => l.split("\t"));
+  if (!rows.some((r) => r[0] === "item" && r[1] === "Key items" && r[3] === "Parcel" && r[2] === "1")) fail("tracker: Parcel not held");
+  if (rows.filter((r) => r[0] === "check").length !== 617) fail("tracker: not 617 checks");
   // one more item, by index
   s.ap(1, JSON.stringify([{ cmd: "ReceivedItems", index: 2, items: [{ item: 280, location: 5, player: 2, flags: 0 }] }]));
   if (s.given.length !== 3 || s.given[2][0] !== 280) fail(`gave ${JSON.stringify(s.given)}`);

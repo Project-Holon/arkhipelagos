@@ -22,6 +22,7 @@ pub mod ap;
 pub mod lines;
 pub mod online;
 pub mod sanity;
+pub mod tracker;
 #[cfg(target_arch = "wasm32")]
 mod wasm;
 
@@ -134,6 +135,10 @@ pub trait Host {
     fn ap_send(&mut self, _json: &str) -> bool {
         false
     }
+    /// The field Tracker's whole text (`tracker`).
+    fn tracker_set(&mut self, _text: &str) -> bool {
+        false
+    }
 }
 
 /// The options of mod/settings.txt as the generator's configuration
@@ -229,6 +234,9 @@ pub struct SaveState {
     /// items received from others: the last index given (online), or how
     /// many were given (Archipelago, whose indexes start at 0)
     pub received: u32,
+    /// the items others sent, in order (the Tracker's logic counts them)
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub got: Vec<u32>,
     /// items the bag could not take yet: (item, count)
     pub pending: Vec<(u16, u16)>,
     /// an online world (metaxy): code, this player's name and key
@@ -494,6 +502,7 @@ impl Game {
     /// An item another player found for this player (online).
     pub fn receive_from(&mut self, host: &mut dyn Host, item: u32, from: u32) {
         let name = self.names.get(&from).cloned().unwrap_or_else(|| format!("{from}"));
+        self.state.got.push(item);
         self.take(host, item, Some(Message::Line { id: "share.received", item, name, label: None }));
     }
 

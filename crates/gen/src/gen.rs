@@ -389,7 +389,7 @@ fn build_player(m: &Model, cfg: &Config, p: &PlayerConfig, index: usize) -> Resu
         let mut tables = Tables::vanilla(m, if p.version == "black" { 0 } else { 1 });
         let rc = randomize::Ctx { m, o: &opts, fam: &fam, legendary: &m.species.legendaries };
         let st = randomize::run(&rc, &mut tables, &|stage: &str| stream(cfg, &format!("rand:{stage}:{attempt}"), index));
-        let mut w = build_player_with(m, cfg, p, index, opts, tables, st.0)?;
+        let mut w = build_player_with(m, cfg, p, index, opts, tables, st.0, None)?;
         if player_can_finish(m, &w) {
             sanity::select(m, cfg, index, &mut w)?;
             return Ok(w);
@@ -418,6 +418,7 @@ fn build_player_with(
     opts: Opts,
     tables: Tables,
     starters: Vec<u32>,
+    given: Option<&species::Picks>,
 ) -> Result<PlayerWorld, String> {
     let flags = PlayerSpecies::flags(m, &tables);
     let empty_counts = vec![0u32; m.items.len()];
@@ -452,7 +453,7 @@ fn build_player_with(
         trainers: opts.has("species_sources", "trainers"),
     };
     let mut rng = stream(cfg, "picks", index);
-    let ps = species::build(m, &tables, &use_, &|r: &Rule| eval(r, &ctx), &mut rng)?;
+    let ps = species::build(m, &tables, &use_, &|r: &Rule| eval(r, &ctx), &mut rng, given)?;
     Ok(PlayerWorld {
         name: p.name.clone(),
         version: p.version.clone(),
@@ -787,6 +788,10 @@ mod rewards;
 /// Extra checks: dexsanity, seensanity, dexcountsanity, trainersanity.
 #[path = "sanity.rs"]
 mod sanity;
+
+/// A player's logic rebuilt from their world data (the mod's Tracker).
+#[path = "reach.rs"]
+pub mod reach;
 
 /// The Archipelago world's data (see ap.rs).
 #[path = "ap.rs"]

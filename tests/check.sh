@@ -12,6 +12,8 @@ echo "== field scripts, 12 cartridges"
 python tools/check_scripts.py
 echo "== apply step: written archives read back, 12 cartridges"
 python tools/check_apply.py
+echo "== Tracker areas: zones from the English cartridges"
+python -I tools/areas.py --check
 echo "== mod: solo flow applied to an English and a Japanese cartridge"
 for code in IRBO IRAJ; do
   data=$(python -I -c "import json,sys; print(json.load(open('tools/carts.local.json'))[sys.argv[1]]['data'])" $code)

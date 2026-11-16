@@ -9,7 +9,7 @@ module against it (`EIDOS_SDK=<eidos>/sdk sh tests/check.sh`).
 
 ## What the module imports now (solo, online and Archipelago)
 
-40 imports, all from module `eidos`:
+41 imports, all from module `eidos`:
 
 | Import | Version | Proposal | What for |
 |---|---|---|---|
@@ -38,6 +38,7 @@ module against it (`EIDOS_SDK=<eidos>/sdk sh tests/check.sh`).
 | `world_create`, `world_owner` | 6 | item 16 | a world made from the game: metaxy makes it (`N`), the owner starts it (`O`) |
 | `dex_caught` | 6 | | the species caught, for the dex count checks |
 | `ap_link`, `ap_send`, `ap_read`, event `ap` | 6 | item 16 | Archipelago rooms through metaxy's bridge: open the link to the room, send Archipelago messages (JSON arrays of commands), read one message (up to 2 MB) inside the `ap` handler (`crates/mod/src/ap.rs`) |
+| `tracker_set` | 6 | | the field's Tracker (`crates/mod/src/tracker.rs`): one `area` line per place of `data/world/areas.json` (`tools/areas.py`: the place's zones from the cartridges' zone headers), a `check found/open/locked` line per location of the player (open: reachable with the items held, by the generator's own rules, `crates/gen/src/reach.rs`), `item` lines for the items that open locations (Badges, HMs, Key items, Seasons) with the count held, and the `count` line; made again when a check is found or an item comes, at most once a second, and sent only when it changed (a new game and a load send it again). Measured in the wasm module under node: the logic built once in about 25 ms, the text made in under 1 ms |
 
 Events it binds: `game.new` (1: by the mode: make, store and apply a solo
 world; join or make a multiworld; link to an Archipelago room; without a

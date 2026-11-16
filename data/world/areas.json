@@ -1,0 +1,479 @@
+{
+ "_source": "tools/areas.py: location names (locations.json), item ball event files (item_sites.json), and the zone headers and place names of the English Black and White cartridges",
+ "merge": [
+  [
+   "Abyssal Ruins",
+   "Abyssal Ruins"
+  ],
+  [
+   "Victory Road",
+   "Victory Road"
+  ],
+  [
+   "Giant Chasm",
+   "Giant Chasm"
+  ],
+  [
+   "Dreamyard",
+   "Dreamyard"
+  ],
+  [
+   "Pinwheel Forest",
+   "Pinwheel Forest"
+  ],
+  [
+   "Cold Storage",
+   "Cold Storage"
+  ],
+  [
+   "Route 3 or Dreamyard",
+   "Route 3"
+  ]
+ ],
+ "areas": [
+  {
+   "name": "Route 1",
+   "zones": [
+    317
+   ]
+  },
+  {
+   "name": "Route 2",
+   "zones": [
+    319
+   ]
+  },
+  {
+   "name": "Route 3",
+   "zones": [
+    321
+   ]
+  },
+  {
+   "name": "Route 4",
+   "zones": [
+    326
+   ]
+  },
+  {
+   "name": "Route 5",
+   "zones": [
+    304,
+    329
+   ]
+  },
+  {
+   "name": "Route 6",
+   "zones": [
+    305,
+    331
+   ]
+  },
+  {
+   "name": "Route 7",
+   "zones": [
+    306,
+    337
+   ]
+  },
+  {
+   "name": "Route 8",
+   "zones": [
+    307,
+    345
+   ]
+  },
+  {
+   "name": "Route 9",
+   "zones": [
+    308,
+    348
+   ]
+  },
+  {
+   "name": "Route 10",
+   "zones": [
+    355
+   ]
+  },
+  {
+   "name": "Route 11",
+   "zones": [
+    309,
+    365
+   ]
+  },
+  {
+   "name": "Route 12",
+   "zones": [
+    310,
+    368
+   ]
+  },
+  {
+   "name": "Route 13",
+   "zones": [
+    311,
+    370
+   ]
+  },
+  {
+   "name": "Route 14",
+   "zones": [
+    312,
+    374
+   ]
+  },
+  {
+   "name": "Route 15",
+   "zones": [
+    313,
+    378
+   ]
+  },
+  {
+   "name": "Route 16",
+   "zones": [
+    314,
+    383
+   ]
+  },
+  {
+   "name": "Route 17",
+   "zones": [
+    423
+   ]
+  },
+  {
+   "name": "Route 18",
+   "zones": [
+    387
+   ]
+  },
+  {
+   "name": "Abundant Shrine",
+   "zones": [
+    376
+   ]
+  },
+  {
+   "name": "Abyssal Ruins",
+   "zones": [
+    241
+   ]
+  },
+  {
+   "name": "Accumula Town",
+   "zones": [
+    397
+   ]
+  },
+  {
+   "name": "Anville Town",
+   "zones": [
+    418
+   ]
+  },
+  {
+   "name": "Battle Company",
+   "zones": [
+    45,
+    46
+   ]
+  },
+  {
+   "name": "Castelia City",
+   "zones": [
+    28
+   ]
+  },
+  {
+   "name": "Castelia Gym",
+   "zones": [
+    29
+   ]
+  },
+  {
+   "name": "Celestial Tower",
+   "zones": [
+    338
+   ]
+  },
+  {
+   "name": "Challenger's Cave",
+   "zones": [
+    352
+   ]
+  },
+  {
+   "name": "Chargestone Cave",
+   "zones": [
+    194,
+    297
+   ]
+  },
+  {
+   "name": "Cold Storage",
+   "zones": [
+    191,
+    296
+   ]
+  },
+  {
+   "name": "Desert Resort",
+   "zones": [
+    157
+   ]
+  },
+  {
+   "name": "Dragonspiral Tower",
+   "zones": [
+    205,
+    299
+   ]
+  },
+  {
+   "name": "Dreamyard",
+   "zones": [
+    152
+   ]
+  },
+  {
+   "name": "Driftveil City",
+   "zones": [
+    96,
+    290
+   ]
+  },
+  {
+   "name": "Driftveil Gym",
+   "zones": [
+    97,
+    98
+   ]
+  },
+  {
+   "name": "Giant Chasm",
+   "zones": [
+    230,
+    300
+   ]
+  },
+  {
+   "name": "Guidance Chamber",
+   "zones": [
+    335
+   ]
+  },
+  {
+   "name": "Icirrus City",
+   "zones": [
+    113,
+    292
+   ]
+  },
+  {
+   "name": "Icirrus Gym",
+   "zones": [
+    114
+   ]
+  },
+  {
+   "name": "Lacunosa Town",
+   "zones": [
+    315,
+    406
+   ]
+  },
+  {
+   "name": "Liberty Garden",
+   "zones": [
+    235
+   ]
+  },
+  {
+   "name": "Lostlorn Forest",
+   "zones": [
+    385
+   ]
+  },
+  {
+   "name": "Marvelous Bridge",
+   "zones": [
+    263,
+    303
+   ]
+  },
+  {
+   "name": "Mistralton Cave",
+   "zones": [
+    333
+   ]
+  },
+  {
+   "name": "Mistralton City",
+   "zones": [
+    107,
+    291
+   ]
+  },
+  {
+   "name": "Mistralton Gym",
+   "zones": [
+    108
+   ]
+  },
+  {
+   "name": "Moor of Icirrus",
+   "zones": [
+    346
+   ]
+  },
+  {
+   "name": "N's Castle",
+   "zones": [
+    264
+   ]
+  },
+  {
+   "name": "Nacrene City",
+   "zones": [
+    16
+   ]
+  },
+  {
+   "name": "Nacrene Gym",
+   "zones": [
+    18,
+    19
+   ]
+  },
+  {
+   "name": "Nimbasa City",
+   "zones": [
+    62,
+    92,
+    289
+   ]
+  },
+  {
+   "name": "Nimbasa Gym",
+   "zones": [
+    63
+   ]
+  },
+  {
+   "name": "Nuvema Town",
+   "zones": [
+    389
+   ]
+  },
+  {
+   "name": "Opelucid City",
+   "zones": [
+    120,
+    293
+   ]
+  },
+  {
+   "name": "Opelucid Gym",
+   "zones": [
+    121
+   ]
+  },
+  {
+   "name": "P2 Laboratory",
+   "zones": [
+    238
+   ]
+  },
+  {
+   "name": "Pinwheel Forest",
+   "zones": [
+    154
+   ]
+  },
+  {
+   "name": "Relic Castle",
+   "zones": [
+    160
+   ]
+  },
+  {
+   "name": "Royal Unova",
+   "zones": [
+    39
+   ]
+  },
+  {
+   "name": "Shopping Mall Nine",
+   "zones": [
+    350,
+    351
+   ]
+  },
+  {
+   "name": "Skyarrow Bridge",
+   "zones": [
+    249
+   ]
+  },
+  {
+   "name": "Striaton City",
+   "zones": [
+    6
+   ]
+  },
+  {
+   "name": "Striaton Gym",
+   "zones": [
+    7
+   ]
+  },
+  {
+   "name": "Tubeline Bridge",
+   "zones": [
+    254,
+    302
+   ]
+  },
+  {
+   "name": "Twist Mountain",
+   "zones": [
+    198,
+    298
+   ]
+  },
+  {
+   "name": "Undella Bay",
+   "zones": [
+    240
+   ]
+  },
+  {
+   "name": "Undella Town",
+   "zones": [
+    316,
+    412
+   ]
+  },
+  {
+   "name": "Victory Road",
+   "zones": [
+    214
+   ]
+  },
+  {
+   "name": "Village Bridge",
+   "zones": [
+    255
+   ]
+  },
+  {
+   "name": "Wellspring Cave",
+   "zones": [
+    324
+   ]
+  }
+ ]
+}

@@ -264,6 +264,54 @@ pub struct Changes {
 }
 
 impl Changes {
+    /// The tables these changes make from the original ones (the inverse of
+    /// `of`).
+    pub fn apply(&self, m: &Model, t: &mut Tables) {
+        for (i, p) in &self.personal {
+            if let Some(x) = t.personal.get_mut(*i as usize) {
+                *x = p.clone();
+            }
+        }
+        for (i, v) in &self.learnsets {
+            if let Some(x) = t.learnsets.get_mut(*i as usize) {
+                *x = v.clone();
+            }
+        }
+        for (i, v) in &self.evolutions {
+            if let Some(x) = t.evolutions.get_mut(*i as usize) {
+                *x = v.clone();
+            }
+        }
+        for (i, v) in &self.moves {
+            if let Some(x) = t.moves.get_mut(*i as usize) {
+                *x = Some(v.clone());
+            }
+        }
+        if let Some(c) = &self.type_chart {
+            t.type_chart = c.clone();
+        }
+        for (i, v) in &self.wild {
+            if let Some(x) = t.wild.get_mut(*i as usize) {
+                *x = v.clone();
+            }
+        }
+        for (k, s) in m.species.statics.iter().enumerate() {
+            if let Some(v) = self.statics.get(&s.name) {
+                t.statics[k] = *v;
+            }
+        }
+        for (k, tr) in m.species.trades.iter().enumerate() {
+            if let Some(v) = self.trades.get(&tr.name) {
+                t.trades[k] = *v;
+            }
+        }
+        for (i, v) in &self.trainers {
+            if let Some(x) = t.trainers.get_mut(*i as usize) {
+                *x = Some(v.clone());
+            }
+        }
+    }
+
     pub fn of(m: &Model, t: &Tables) -> Changes {
         let v = Tables::vanilla(m, t.version);
         let mut c = Changes::default();
@@ -471,6 +519,7 @@ pub fn build(
     use_: &Use,
     on: &dyn Fn(&Rule) -> bool,
     rng: &mut Rng,
+    given: Option<&Picks>,
 ) -> Result<PlayerSpecies, String> {
     let sm = &m.species;
     let mut ps = PlayerSpecies::flags(m, t);
@@ -595,7 +644,12 @@ pub fn build(
         .filter(|&x| catchable[x as usize] && m.facts.mons[x as usize].1 == 0)
         .filter(|&x| !t.personal_of(m, x).machines.is_empty())
         .collect();
-    if !cands.is_empty() {
+    if let Some(p) = given {
+        // the picks a world was made with (the mod rebuilding a player's logic)
+        ps.picks = p.clone();
+        ps.other_mon = p.other_locations_species.and_then(|[d, f]| mon_of(m, d, f));
+        ps.tm_item = p.driftveil_tm.and_then(|i| m.item_by_id.get(&i).copied());
+    } else if !cands.is_empty() {
         let mon = *rng.pick(&cands);
         let (dex, form) = m.facts.mons[mon as usize];
         let per = t.personal_of(m, mon);

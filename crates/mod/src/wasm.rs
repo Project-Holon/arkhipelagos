@@ -49,6 +49,7 @@ extern "C" {
     fn ap_link(room: *const u8, slot: *const u8, password: *const u8, ticket: *mut u32) -> i32;
     fn ap_send(json: *const u8, size: u32) -> i32;
     fn ap_read(out: *mut u8, size: u32) -> i32;
+    fn tracker_set(text: *const u8, size: u32) -> i32;
 }
 
 // event kinds (sdk/api/v6/eidos_wasm.h)
@@ -297,6 +298,9 @@ impl Host for Eidos {
     }
     fn ap_send(&mut self, json: &str) -> bool {
         unsafe { ap_send(json.as_ptr(), json.len() as u32) == 0 }
+    }
+    fn tracker_set(&mut self, text: &str) -> bool {
+        unsafe { tracker_set(text.as_ptr(), text.len() as u32) == 0 }
     }
 }
 
