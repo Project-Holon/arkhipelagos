@@ -2,6 +2,7 @@
 //!
 //!   arkh-script check <eu|ja> <a/0/5/7 archive>      every member, every check
 //!   arkh-script dis <eu|ja> <archive> <index>         listing of one member
+//!   arkh-script dis-file <eu|ja> <member file>        listing of a loose member
 //!   arkh-script asm <eu|ja> <listing> <out>           assemble a listing
 //!
 //! Checks, per member:
@@ -25,6 +26,7 @@ fn main() -> ExitCode {
     let res = match a.get(1).map(|s| s.as_str()) {
         Some("check") if a.len() == 4 => check(&a[2], &a[3]),
         Some("dis") if a.len() == 5 => dis(&a[2], &a[3], &a[4]),
+        Some("dis-file") if a.len() == 4 => dis_file(&a[2], &a[3]),
         Some("asm") if a.len() == 5 => asm(&a[2], &a[3], &a[4]),
         Some("port") if a.len() == 6 => port(&a[2], &a[3], &a[4], &a[5]),
         _ => Err("usage: arkh-script check|dis|asm ...".to_string()),
@@ -53,6 +55,15 @@ fn dis(fam: &str, path: &str, idx: &str) -> Result<(), String> {
     let (_, n) = load(path)?;
     let i: usize = idx.parse().map_err(|_| "bad index".to_string())?;
     let d = n.files.get(i).ok_or("no such member")?;
+    dis_bytes(f, d)
+}
+
+fn dis_file(fam: &str, path: &str) -> Result<(), String> {
+    let d = std::fs::read(path).map_err(|e| format!("{path}: {e}"))?;
+    dis_bytes(family(fam)?, &d)
+}
+
+fn dis_bytes(f: Family, d: &[u8]) -> Result<(), String> {
     match script::classify(d) {
         Kind::Script => print!("{}", script::to_text(&script::disassemble(d, f).map_err(|e| e.0)?)),
         Kind::Zone => print!("{}", Zone::parse(d).unwrap().to_text()),
