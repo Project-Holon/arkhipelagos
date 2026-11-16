@@ -25,7 +25,8 @@ pub const FORMAT: &str = "arkhipelagos-ap/1";
 /// A rule as JSON for Python: `true`/`false`, `["has", item, n]`,
 /// `["all", r...]`, `["any", r...]`, `["not", r]`, `["reach", region]`,
 /// `["rule", i]`, `["if", c, t]`, `["set", s]`, `["seen", n]`,
-/// `["caught", mon]`, `["level", l]`.
+/// `["caught", mon]`, `["level", l]`, `["seendex", dex]`,
+/// `["caughtcount", n]`.
 fn rule_json(m: &Model, r: &Rule) -> Value {
     match r {
         Rule::Const(b) => json!(b),
@@ -48,6 +49,9 @@ fn rule_json(m: &Model, r: &Rule) -> Value {
         Rule::Seen(n) => json!(["seen", n]),
         Rule::Caught(mon) => json!(["caught", mon]),
         Rule::Level(l) => json!(["level", l]),
+        Rule::SeenDex(d) => json!(["seendex", d]),
+        // folded: the number of species, leniency and cap applied
+        Rule::CaughtCount(n) => json!(["caughtcount", n]),
         // folded away before export
         Rule::OptEq(..) | Rule::OptHas(..) | Rule::OptSet(..) | Rule::Value(_) | Rule::Pick(_) => {
             unreachable!("option rules are folded")
@@ -62,6 +66,7 @@ fn fold(r: &Rule, c: &Ctx) -> Rule {
         Rule::OptEq(..) | Rule::OptHas(..) | Rule::OptSet(..) | Rule::Value(_) => Rule::Const(eval(r, c)),
         Rule::Pick(0) => c.ps.other_mon.map_or(Rule::Const(false), Rule::Caught),
         Rule::Pick(_) => c.ps.tm_item.map_or(Rule::Const(false), |i| Rule::Has(i, 1)),
+        Rule::CaughtCount(n) => Rule::CaughtCount(n.saturating_add(c.ps.count_leniency).min(c.ps.count_cap)),
         Rule::All(v) => {
             let mut out = Vec::new();
             for x in v {
@@ -119,7 +124,7 @@ pub fn static_json(m: &Model) -> Value {
     let locations: Vec<Value> = m
         .locs
         .iter()
-        .map(|l| json!({"name": l.name, "id": l.id, "region": m.regions[l.region as usize]}))
+        .map(|l| json!({"name": l.name, "id": l.id, "region": m.regions[l.region as usize], "kind": l.kind}))
         .collect();
     json!({
         "format": FORMAT,

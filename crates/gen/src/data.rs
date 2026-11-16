@@ -35,6 +35,9 @@ pub const LOCATIONS: &str = include_str!("../../../data/world/locations.json");
 pub const RULES: &str = include_str!("../../../data/world/rules.json");
 pub const SPECIES_LOGIC: &str = include_str!("../../../data/world/species.json");
 pub const SPECIES_RULES: &str = include_str!("../../../data/world/species_rules.json");
+/// Species names (English) for the names of dexsanity and seensanity
+/// locations. Not in the data hash: names never change a world.
+pub const SPECIES_NAMES: &str = include_str!("../../../data/world/species_names.json");
 /// Where the game gives each location's item (tools/locsites.py); the
 /// generator reads the locations that have no site.
 pub const ITEM_SITES: &str = include_str!("../../../data/world/item_sites.json");
@@ -265,6 +268,11 @@ pub enum Rule {
     Level(u32),
     /// 0: has caught the "other locations" species; 1: holds the Driftveil TM
     Pick(u32),
+    /// has seen the species (National Dex number); seensanity
+    SeenDex(u32),
+    /// has caught this many species (with the player's leniency and cap);
+    /// dexcountsanity
+    CaughtCount(u32),
 }
 
 pub struct Names<'a> {

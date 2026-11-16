@@ -41,6 +41,7 @@ Linux and macOS) for each such player. These options need it:
 - any `randomize_*` option or `replace_evo_methods` that is not empty,
 - a `starter_pool`,
 - `species_sources` other than the default.
+- `hidden_items` false, or any `dexsanity`, `seensanity`, `dexcountsanity` or `trainersanity`.
 
 Every other game (the original tables, any goal, season control and
 modify_logic) uses one of 32 packs made when the apworld is built, and
@@ -85,6 +86,11 @@ player file means the same in eidos-only games and in Archipelago.
 | `randomize_levelup_movesets` | `randomize`, `match_types` | `[]` |
 | `randomize_move_data` | `power`, `type`, `accuracy`, `pp` | `[]` |
 | `randomize_type_chart` | `shuffle` | `[]` |
+| `hidden_items` | `true`, `false` (false: hidden items keep the game's items and are no checks) | `true` |
+| `dexsanity` | 0 to 649 species caught are checks | 0 |
+| `seensanity` | 0 to 649 species seen are checks | 0 |
+| `dexcountsanity` | `{Maximum: 0-649, Steps: 1-649, Leniency: 0-648}`: catching 1 to Maximum species are checks | `{Maximum: 0, Steps: 1, Leniency: 0}` |
+| `trainersanity` | 0 to 600 won trainer battles are checks | 0 |
 
 Archipelago's common options (`progression_balancing`, `accessibility`,
 `local_items` and the others) work as usual.

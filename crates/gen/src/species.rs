@@ -359,6 +359,10 @@ pub struct PlayerSpecies {
     pub tm_item: Option<u32>,
     pub monkeys_not_split: bool,
     pub hall: Option<u32>,
+    /// dexcountsanity: a count check needs this many more species ...
+    pub count_leniency: u32,
+    /// ... but never more than this many (the species the player can catch)
+    pub count_cap: u32,
 }
 
 impl PlayerSpecies {
@@ -374,6 +378,8 @@ impl PlayerSpecies {
             tm_item: None,
             monkeys_not_split: monkeys_not_split(m, t),
             hall: m.species.hall,
+            count_leniency: 0,
+            count_cap: u32::MAX,
         }
     }
 }
@@ -632,6 +638,9 @@ pub struct SpState {
     pub seen_dex: Vec<bool>,
     pub seen_n: u32,
     pub set_hit: Vec<bool>,
+    /// species (National Dex numbers) caught, any form
+    pub caught_dex: Vec<bool>,
+    pub caught_dex_n: u32,
     pub level: u32,
     pub src_done: Vec<bool>,
     pub evo_done: Vec<bool>,
@@ -644,6 +653,8 @@ impl SpState {
             seen_dex: vec![false; LAST_DEX as usize + 1],
             seen_n: 0,
             set_hit: vec![false; m.set_names.len()],
+            caught_dex: vec![false; LAST_DEX as usize + 1],
+            caught_dex_n: 0,
             level: 0,
             src_done: Vec::new(),
             evo_done: Vec::new(),
@@ -662,7 +673,12 @@ impl SpState {
             return false;
         }
         self.caught[mon as usize] = true;
-        self.see(m.facts.mons[mon as usize].0 as u32);
+        let dex = m.facts.mons[mon as usize].0 as usize;
+        if dex < self.caught_dex.len() && !self.caught_dex[dex] {
+            self.caught_dex[dex] = true;
+            self.caught_dex_n += 1;
+        }
+        self.see(dex as u32);
         for &s in &ps.sets_of[mon as usize] {
             self.set_hit[s as usize] = true;
         }

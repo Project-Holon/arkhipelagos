@@ -131,3 +131,29 @@ class TestWhiteRandom(LogicMatches, WorldTestBase):
         if dump:
             with open(dump, "w", encoding="utf-8") as f:
                 f.write(text)
+
+
+class TestBlackChecks(LogicMatches, WorldTestBase):
+    """Every extra check option on, hidden items off."""
+    game = GAME_BLACK
+    options = {
+        "hidden_items": False,
+        "dexsanity": 60,
+        "seensanity": 40,
+        "dexcountsanity": {"Maximum": 120, "Steps": 10, "Leniency": 5},
+        "trainersanity": 80,
+    }
+
+    def test_the_checks_are_there(self) -> None:
+        kinds = {}
+        for loc in self.multiworld.get_locations(self.world.player):
+            if loc.address is not None:
+                k = loc.address >> 12
+                kinds[k] = kinds.get(k, 0) + 1
+        self.assertEqual(kinds.get(0x20), 60)
+        self.assertEqual(kinds.get(0x21), 40)
+        self.assertEqual(kinds.get(0x22), 12)
+        self.assertEqual(kinds.get(0x23), 80)
+        from .. import LOCATION_BY_ID
+        hidden = [a for a, _ in self.world.pack["locations"] if LOCATION_BY_ID[a].get("kind") == "hidden"]
+        self.assertEqual(hidden, [])

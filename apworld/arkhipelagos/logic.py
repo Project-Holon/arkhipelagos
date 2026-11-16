@@ -18,6 +18,8 @@ from BaseClasses import CollectionState
 Rule = Callable[[CollectionState], bool]
 
 CAUGHT = "arkh caught "
+CAUGHT_DEX = "arkh caught dex "
+CAUGHT_N = "arkh caught n"
 SEEN_DEX = "arkh seen dex "
 SEEN = "arkh seen"
 SET = "arkh set "
@@ -82,6 +84,12 @@ class Compiler:
         if op == "caught":
             key = CAUGHT + str(r[1])
             return lambda s: s.has(key, p)
+        if op == "seendex":
+            key = SEEN_DEX + str(r[1])
+            return lambda s: s.has(key, p)
+        if op == "caughtcount":
+            n = r[1]
+            return lambda s: s.has(CAUGHT_N, p, n)
         if op == "level":
             if r[1] // 5 == 0:
                 return always  # the generator starts at level 0
@@ -133,6 +141,13 @@ class Effects:
                 if (before == 0) != (c[key] == 0):
                     step = 1 if before == 0 else -1
                     self._see(c, self.dex[x], step)
+                    dkey = CAUGHT_DEX + str(self.dex[x])
+                    dbefore = c[dkey]
+                    c[dkey] = dbefore + step
+                    if dbefore == 0 and c[dkey] > 0:
+                        c[CAUGHT_N] += 1
+                    elif dbefore > 0 and c[dkey] == 0:
+                        c[CAUGHT_N] -= 1
                     for s in self.sets_of.get(x, ()):
                         c[SET + str(s)] += step
             elif kind == "see":

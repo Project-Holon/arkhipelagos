@@ -20,6 +20,11 @@ pub struct Conn {
 pub struct Loc {
     pub id: u32,
     pub name: String,
+    /// item_ball, npc, hidden, tm, badge; and the extra checks options turn
+    /// on: dex, seen, dexcount, trainer
+    pub kind: String,
+    /// the extra check's National Dex number, count or trainer number
+    pub key: u32,
     pub region: u32,
     pub rule: Rule,
     pub include: Rule,
@@ -180,6 +185,8 @@ impl Model {
                 rule: c(&m, &l.rule, &l.name)?,
                 include: c(&m, &l.include, &l.name)?,
                 site: !d.no_site.contains(&l.id),
+                kind: l.kind.clone(),
+                key: 0,
             });
         }
         let mut events = Vec::new();
@@ -196,6 +203,64 @@ impl Model {
         m.locs = locs;
         m.events = events;
         m.species = SpeciesModel::build(&m, d)?;
+        let extra = extra_locations(&m)?;
+        m.locs.extend(extra);
         Ok(m)
     }
+}
+
+/// Permanent numbers of the extra checks (docs/generator.md).
+pub const DEX_BASE: u32 = 0x20000;
+pub const SEEN_BASE: u32 = 0x21000;
+pub const DEXCOUNT_BASE: u32 = 0x22000;
+pub const TRAINER_BASE: u32 = 0x23000;
+
+/// The extra checks, after the game's locations so no number or order of
+/// those moves. They are off (include false) until an option picks them.
+fn extra_locations(m: &Model) -> Result<Vec<Loc>, String> {
+    #[derive(serde::Deserialize)]
+    struct Names {
+        names: Vec<String>,
+    }
+    let names: Names = serde_json::from_str(crate::data::SPECIES_NAMES).map_err(|e| format!("species_names.json: {e}"))?;
+    let dex_region = m.region_by_name.get("Pokédex").copied().unwrap_or(m.menu);
+    let mut out = Vec::new();
+    let mut add = |id: u32, name: String, region: u32, rule: Rule, kind: &str, key: u32| {
+        out.push(Loc { id, name, region, rule, include: Rule::Const(false), site: true, kind: kind.into(), key });
+    };
+    let last = crate::facts::LAST_DEX;
+    for d in 1..=last {
+        let mons: Vec<Rule> = m
+            .facts
+            .mons
+            .iter()
+            .enumerate()
+            .filter(|(_, x)| x.0 as u32 == d)
+            .map(|(i, _)| Rule::Caught(i as u32))
+            .collect();
+        let name = &names.names[d as usize];
+        add(DEX_BASE + d, format!("Pokédex - {name}"), dex_region, Rule::Any(mons), "dex", d);
+    }
+    for d in 1..=last {
+        let name = &names.names[d as usize];
+        add(SEEN_BASE + d, format!("Pokédex - Seen {name}"), dex_region, Rule::SeenDex(d), "seen", d);
+    }
+    for c in 1..=last {
+        add(DEXCOUNT_BASE + c, format!("Pokédex - Catch {c} Pokémon"), dex_region, Rule::CaughtCount(c), "dexcount", c);
+    }
+    for t in &m.species.trainers {
+        let Some(region) = t.region else { continue };
+        if t.boss {
+            continue;
+        }
+        add(
+            TRAINER_BASE + t.id,
+            format!("{} - Trainer {}", m.regions[region as usize], t.id),
+            region,
+            t.rule.clone(),
+            "trainer",
+            t.id,
+        );
+    }
+    Ok(out)
 }

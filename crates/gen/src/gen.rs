@@ -97,6 +97,8 @@ pub(crate) fn eval(r: &Rule, c: &Ctx) -> bool {
         Rule::Level(l) => c.sp.level / 5 >= *l / 5,
         Rule::Pick(0) => c.ps.other_mon.map(|x| c.sp.caught[x as usize]) == Some(true),
         Rule::Pick(_) => c.ps.tm_item.map(|x| c.counts[x as usize] > 0) == Some(true),
+        Rule::SeenDex(d) => c.sp.seen_dex.get(*d as usize) == Some(&true),
+        Rule::CaughtCount(n) => c.sp.caught_dex_n >= n.saturating_add(c.ps.count_leniency).min(c.ps.count_cap),
     }
 }
 
@@ -387,8 +389,9 @@ fn build_player(m: &Model, cfg: &Config, p: &PlayerConfig, index: usize) -> Resu
         let mut tables = Tables::vanilla(m, if p.version == "black" { 0 } else { 1 });
         let rc = randomize::Ctx { m, o: &opts, fam: &fam, legendary: &m.species.legendaries };
         let st = randomize::run(&rc, &mut tables, &|stage: &str| stream(cfg, &format!("rand:{stage}:{attempt}"), index));
-        let w = build_player_with(m, cfg, p, index, opts, tables, st.0)?;
+        let mut w = build_player_with(m, cfg, p, index, opts, tables, st.0)?;
         if player_can_finish(m, &w) {
+            sanity::select(m, cfg, index, &mut w)?;
             return Ok(w);
         }
         last = format!("{}: no random tables let the goal be reached ({} tries)", p.name, attempt + 1);
@@ -427,7 +430,13 @@ fn build_player_with(
         .iter()
         .map(|c| eval(&c.include, &ctx) && region_on[c.from as usize] && region_on[c.to as usize])
         .collect();
-    let loc_on: Vec<bool> = m.locs.iter().map(|l| eval(&l.include, &ctx) && region_on[l.region as usize]).collect();
+    // hidden_items false: hidden items keep the game's items and are no checks
+    let hidden_off = opts.0.get("hidden_items") == Some(&Value::Bool(false));
+    let loc_on: Vec<bool> = m
+        .locs
+        .iter()
+        .map(|l| eval(&l.include, &ctx) && region_on[l.region as usize] && !(hidden_off && l.kind == "hidden"))
+        .collect();
     let event_on: Vec<bool> = m.events.iter().map(|e| eval(&e.include, &ctx) && region_on[e.region as usize]).collect();
     let goal_name = match opts.str("goal") {
         "ghetsis" => "[Event] Defeating Ghetsis",
@@ -748,6 +757,10 @@ pub fn summary(w: &World) -> BTreeMap<String, usize> {
     }
     s
 }
+
+/// Extra checks: dexsanity, seensanity, dexcountsanity, trainersanity.
+#[path = "sanity.rs"]
+mod sanity;
 
 /// The Archipelago world's data (see ap.rs).
 #[path = "ap.rs"]

@@ -34,7 +34,11 @@ Permanent numbers (Archipelago ids, never changed once released):
   0x1100 + index;
 - locations: 0x10000 + (event flag << 4) + n, where n is the number of the
   gift when one person gives several ("#2"), and 8 for the TM a gym leader
-  gives (it shares the badge's flag).
+  gives (it shares the badge's flag);
+- the extra checks options turn on: dexsanity 0x20000 + National Dex
+  number, seensanity 0x21000 + number, dexcountsanity 0x22000 + count,
+  trainersanity 0x23000 + trainer number. They come after the game's
+  locations in the model, so no number or order of those moves.
 
 They come from game facts, never from list order.
 
@@ -106,6 +110,24 @@ locations no item can unlock, the starters, the picks, and `tables`: what
 the randomizers changed in the player's game (only the entries that
 differ from the original tables). It also records the generator version,
 the hash of the data files and the configuration's hash.
+
+## Check options
+
+What counts as a check (PokemonBWAP's names and meaning; `crates/gen/src/sanity.rs`).
+Each extra check is picked among those the player can reach with every
+item, so worlds stay finishable; each option has its own random stream.
+Without these options a world is the same as before them.
+
+| Option | Values | Default |
+|---|---|---|
+| `hidden_items` | `true`, `false`: false leaves hidden items out (they keep the game's items) | `true` |
+| `dexsanity` | N (0 to 649): N species picked among those the player can catch; or a list of National Dex numbers | 0 |
+| `seensanity` | the same for seen species | 0 |
+| `dexcountsanity` | `{"Maximum": M, "Steps": S, "Leniency": L}`: catching 1 to M species are checks, counts divisible by S and M itself; each needs L more species catchable; M is cut to the species the player can catch | Maximum 0 |
+| `trainersanity` | N: N regular trainers (no gym leader, Elite Four or story boss) the player can reach; a won battle is a check | 0 |
+
+The mod sees catches and sightings in `dex.register` (the count with
+`dex_caught`) and won trainer battles in `battle.end` (`crates/mod/src/sanity.rs`).
 
 ## Randomizers
 
