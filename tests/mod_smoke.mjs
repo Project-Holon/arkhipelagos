@@ -48,6 +48,8 @@ async function start(opts) {
     on: (kind, idx) => { s.handlers[kind] = idx; return 0; },
     on_frame: (idx) => { s.handlers.frame = idx; },
     rd32: () => 0,
+    time_utc: () => 1764158400n,   // (i64: a BigInt)
+    ticks_ms: () => 1000n,
     rand_next: () => 12345,
     text_language: () => 2,
     game_code: (out, size) => { put(out, size, opts.code ?? "IRBO"); return 0; },
