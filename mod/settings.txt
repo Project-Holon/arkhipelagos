@@ -11,65 +11,63 @@
 #   options as an Archipelago options file (the `yaml` lines: the names and
 #   values of arkhipelagos.apworld, docs/apworld.md) for the room's host.
 
-mode solo        "Solo randomizer" "A shuffled game for you alone, made on this device."
-mode multiworld  "Multiworld"      "Everyone plays on their own save; the items you find go to the others. Make a world here, and friends join with its code." joins
-mode archipelago "Archipelago"     "A game in an Archipelago room with other games. Save your options as a file and send it to the room's host." in=multiworld joins export "Pokemon {version} (arkhipelagos)"
+mode solo        "Solo randomizer" "Generated locally on this device."
+mode multiworld  "Multiworld"      "Each player uses their own save and sends found items to others." joins
+mode archipelago "Archipelago"     "Cross-game Archipelago room. Export your options file and send it to the room host." in=multiworld joins export "Pokemon {version} (arkhipelagos)"
 
 heading "World"
 option arkh.players  int    "Players"      2 8 2                @multiworld
-help arkh.players "How many players the world has room for. Each one joins with the world's code and plays on their own save."
 
 option arkh.goal     choice "Goal"         Ghetsis|Champion     @solo,multiworld,archipelago
-help arkh.goal "What ends the game: beating Ghetsis, or becoming the Champion after him."
+help arkh.goal "Champion is the post-game goal after defeating Ghetsis."
 yaml arkh.goal goal ghetsis|champion
 
 option arkh.seasons  choice "Seasons"      Vanilla|Changeable   @solo,multiworld,archipelago
-help arkh.seasons "Vanilla: the season changes each month, as in the game. Changeable: items in the world let you pick the season, so its places can be reached any time."
+help arkh.seasons "Changeable: adds season items to the world so seasonal areas can be reached anytime."
 yaml arkh.seasons season_control vanilla|changeable
 
 heading "Pokemon"
 option arkh.wild     choice "Wild Pokemon" Off|Random|Similar   @solo,multiworld,archipelago
-help arkh.wild "Which Pokemon live in grass, caves and water. Random: any species. Similar: species of about the same strength."
+help arkh.wild "Similar: species with similar stats."
 yaml arkh.wild randomize_wild_pokemon []|[randomize]|[randomize, similar_stats]
 
 option arkh.starters choice "Starters"     Off|Random           @solo,multiworld,archipelago
-help arkh.starters "The three Pokemon you choose from at the start."
 yaml arkh.starters randomize_starter_pokemon []|[randomize]
 
 option arkh.trainers choice "Trainers"     Off|Random|Similar   @solo,multiworld,archipelago
-help arkh.trainers "The Pokemon trainers use. Random: any species. Similar: species of about the same strength."
+help arkh.trainers "Similar: species with similar stats."
 yaml arkh.trainers randomize_trainer_pokemon []|[randomize]|[randomize, similar_stats]
 
 heading "Checks"
 option arkh.hidden   choice "Hidden items" On|Off             @solo,multiworld,archipelago
-help arkh.hidden "On: the items hidden on the ground are checks, found with the Dowsing Machine or by touch. Off: they keep the game's own items."
+help arkh.hidden "On: hidden items are checks. Off: they keep the game's items."
 yaml arkh.hidden hidden_items true|false
 
 option arkh.dex      choice "Catches"      Off|25|50|100|200|400|649  @solo,multiworld,archipelago
-help arkh.dex "This many species are checks: catching one for the first time finds its item. The species are picked from those the world can reach."
+help arkh.dex "This many reachable species become checks on first catch."
 yaml arkh.dex dexsanity 0|25|50|100|200|400|649
 
 option arkh.seen     choice "Sightings"    Off|25|50|100|200|400|649  @solo,multiworld,archipelago
-help arkh.seen "This many species are checks when you first see one, in battle or in the Pokedex."
+help arkh.seen "This many species become checks when first seen in battle or the Pokedex."
 yaml arkh.seen seensanity 0|25|50|100|200|400|649
 
 option arkh.dexcount choice "Dex counts"   Off|Every 10 to 100|Every 25 to 200|Every 50 to 400  @solo,multiworld,archipelago
-help arkh.dexcount "Reaching a number of species caught is a check: 10, 20, 30 and so on, up to the last number."
+help arkh.dexcount "Each species-caught milestone becomes a check."
 yaml arkh.dexcount dexcountsanity {Leniency: 0, Maximum: 0, Steps: 1}|{Leniency: 0, Maximum: 100, Steps: 10}|{Leniency: 0, Maximum: 200, Steps: 25}|{Leniency: 0, Maximum: 400, Steps: 50}
 
 option arkh.trainersanity choice "Trainers beaten" Off|20|50|100|200|400  @solo,multiworld,archipelago
-help arkh.trainersanity "This many trainers are checks: winning against one finds its item. Rivals and gym trainers count; Gym Leaders, the Elite Four and the story's bosses do not."
+help arkh.trainersanity "This many trainers become checks. Includes rivals and Gym trainers, but not Gym Leaders, the Elite Four, or story bosses."
 yaml arkh.trainersanity trainersanity 0|20|50|100|200|400
 
 option arkh.badges   choice "Gym rewards"  Anything|Badges only|Own badge  @solo,multiworld,archipelago
-help arkh.badges "What Gym Leaders give. Anything: any item, and the badges can be anywhere. Badges only: each gives one of the eight badges. Own badge: each gives their own, as in the game."
+help arkh.badges "Applies to Gym Leader badge slots. Anything: badges can appear anywhere. Badges only: shuffled among Gyms."
 yaml arkh.badges shuffle_badge_rewards anything|shuffle|vanilla
 
 option arkh.tms      choice "TM rewards"   Anything|TMs and HMs|HMs at gyms  @solo,multiworld,archipelago
-help arkh.tms "What the 35 TM gifts give. Anything: any item. TMs and HMs: always a TM or an HM. HMs at gyms: the HMs are among the gym leaders' TM gifts."
+help arkh.tms "Applies to the 35 TM gifts. HMs at gyms: places HMs in Gym Leaders' TM gifts."
 yaml arkh.tms shuffle_tm_rewards anything|shuffle|hm_with_badge
 
 heading "Species"
 option arkh.types    choice "Types"        Off|Shuffled         @solo,multiworld,archipelago
-help arkh.types "Shuffled: every species gets other types, the same for all Pokemon of that species."
+help arkh.types "All Pokemon of a species share the same randomized types."
 yaml arkh.types randomize_types []|[shuffle]
