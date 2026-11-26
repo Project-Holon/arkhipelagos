@@ -42,7 +42,7 @@ cartridge files when the game starts.
 Still to come here: making online
 worlds from inside the game (they are made on metaxy for now; a new game
 joins the world named in the mod file `join.txt`). Releases will carry `mod.bw` and `mod.json` for katalogos.
-The mod needs eidos's mod API version 6.
+The mod needs eidos's mod API version 7 (eidos 0.2.7 or newer).
 
 ## Build and check
 

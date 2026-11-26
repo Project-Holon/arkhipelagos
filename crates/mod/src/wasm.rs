@@ -13,7 +13,8 @@ extern "C" {
     fn on(kind: u32, handler: u32) -> i32;
     fn on_frame(handler: u32);
     fn rd32(addr: u32) -> u32;
-    fn rand_next() -> u32;
+    fn time_utc() -> i64;
+    fn ticks_ms() -> u64;
     fn text_language() -> u32;
     fn game_code(out: *mut u8, size: u32) -> i32;
     fn world_join(code: *const u8, name_or_key: *const u8, ticket: *mut u32) -> i32;
@@ -324,9 +325,22 @@ fn with_game(f: impl FnOnce(&mut Game, &mut Eidos)) {
 }
 
 extern "C" fn on_game_new(_e: *mut Event) -> i32 {
-    let seed = unsafe { ((rand_next() as u64) << 32) | rand_next() as u64 };
+    // eidos's rand_next starts every run at the same fixed seed until a mod
+    // seeds it (sdk/mod_timer.c), so it gave every new world the same seed.
+    // The clock differs from game to game: the seconds since 1970 and the
+    // milliseconds since eidos started, mixed by SplitMix64's finalizer.
+    let seed = unsafe { mix((time_utc() as u64) ^ ticks_ms().rotate_left(32)) };
     with_mod(|m, h| m.new_game(h, seed));
     CONTINUE
+}
+
+/// SplitMix64's output step (Steele, Lea and Flood 2014): every input bit
+/// reaches every output bit.
+fn mix(mut z: u64) -> u64 {
+    z = z.wrapping_add(0x9E37_79B9_7F4A_7C15);
+    z = (z ^ (z >> 30)).wrapping_mul(0xBF58_476D_1CE4_E5B9);
+    z = (z ^ (z >> 27)).wrapping_mul(0x94D0_49BB_1331_11EB);
+    z ^ (z >> 31)
 }
 
 extern "C" fn on_save_load(_e: *mut Event) -> i32 {

@@ -1,7 +1,7 @@
 # The eidos API calls the arkhipelagos mod uses
 
 The mod is a wasm code mod (`crates/mod`, built into `mod/arkhipelagos.wasm`
-by `tools/build_mod.sh`; manifest `mod/eidos_mod.txt`, `api = 6`). Item
+by `tools/build_mod.sh`; manifest `mod/eidos_mod.txt`, `api = 7`: the clock calls are version 7). Item
 numbers point to `docs/eidos-api-proposal.md` (approved, interface
 version 6). Names and signatures are those of eidos's generated header
 `sdk/api/v6/eidos_wasm.h`; `tools/wasm_imports.py` checks the built
@@ -9,7 +9,7 @@ module against it (`EIDOS_SDK=<eidos>/sdk sh tests/check.sh`).
 
 ## What the module imports now (solo, online and Archipelago)
 
-41 imports, all from module `eidos`:
+42 imports, all from module `eidos`:
 
 | Import | Version | Proposal | What for |
 |---|---|---|---|
@@ -30,7 +30,7 @@ module against it (`EIDOS_SDK=<eidos>/sdk sh tests/check.sh`).
 | `game_code` | 6 | addition 1 | the cartridge's game code: version (Black or White) and language family |
 | `rd32` | core | | only if `game_code` fails: the header copy at 0x027FFE0C or 0x02FFFE0C |
 | `text_language` | 6 | item 2 | only if both fail: the language family (Black is then assumed) |
-| `rand_next` | 5 | | the seed of a new solo world |
+| `time_utc`, `ticks_ms` | 7 | | the seed of a new world: the clock, mixed (`rand_next` starts at a fixed seed in every run, so every world had the same one) |
 | `item_add` | 5 | | gives items |
 | `state_load`, `state_store` | 5 | | the per-save state: world file, slot, checked locations, items waiting for room, the online world or Archipelago room |
 | `mode_get`, `mode_code` | 6 | | the way to play chosen on eidos's Multiplayer screen (`mode` lines of mod/settings.txt) and what its Join box gave: a world code, or an Archipelago room's line `ap <host:port> <slot> <password>` (read into 256 bytes; eidos makes it up to 160) |
