@@ -2,7 +2,7 @@
 name        = arkhipelagos
 description = Randomizer for Pokemon Black and White. Play solo, share a multiworld with other eidos players, or join a cross-game Archipelago room. Works with every language of both games and needs no patch file.
 author      = Project Holon
-version     = 0.1.3
+version     = 0.1.4
 icon        = item 428
 tags        = randomizer, archipelago, multiworld
 api         = 7
